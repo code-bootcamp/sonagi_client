@@ -1,7 +1,7 @@
 import * as S from "./MainPage.styles";
 import LayoutBanner from "../../commons/layout/banner";
 // import Fade from "react-reveal/Fade";
-import CarouselContainer from "../../commons/layout/carousel/1/Carousel.container";
+import CarouselContainer from "../../commons/carousel/1/Carousel.container";
 
 export default function MainPagePresenter() {
   return (
