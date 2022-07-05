@@ -80,7 +80,7 @@ export const PhoneSubImg4 = styled.img`
 `;
 
 export const QuestionWrapper = styled.div`
-  height: 580px;
+  /* height: 580px; */
   background: #bee3ff;
   padding: 50px 0px;
   display: flex;
@@ -98,7 +98,7 @@ export const QuestionTitle = styled.div`
 
 export const QuestionBox = styled.div`
   width: 900px;
-  height: 60px;
+  height: ${(props: any) => (props.isAnswer ? "245px" : "60px")};
   margin-bottom: 25px;
   padding: 10px 10px 10px 20px;
   background: #ffffff;
@@ -110,6 +110,6 @@ export const QuestionBox = styled.div`
   color: #4d4d4d;
   background-image: url("/mainpage/arrow.png");
   background-repeat: no-repeat;
-  background-position: 850px;
+  background-position: top 25px right 20px;
   cursor: pointer;
 `;
