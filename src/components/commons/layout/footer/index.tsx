@@ -4,6 +4,7 @@ export default function LayoutFooter() {
     <S.Wrapper>
       <S.LeftBox>
         <S.Notice>공지사항</S.Notice>
+        {/* d */}
         <S.Title>(주)소나기 사업자 정보</S.Title>
         <S.Contents>
           사업자 등록번호 000 - 00 - 00000 | 통신판매업신고번호
