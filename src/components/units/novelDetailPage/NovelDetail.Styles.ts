@@ -12,8 +12,50 @@ export const SelectAll = styled.div`
   margin-right: 10px;
 `;
 
+export const Arrow = styled.div`
+  margin: 0px 10px 0px 10px;
+`;
+
 export const DIV = styled.div`
   display: flex;
+`;
+
+export const Flexs = styled.div`
+  display: flex;
+`;
+
+export const LookFirstBtn = styled.div`
+  width: 148.64px;
+  height: 46px;
+  background-color: #2277d8;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+`;
+
+export const Buttons = styled.div`
+  width: 148.64px;
+  height: 46px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+`;
+
+export const LookButtonWrapper = styled.div`
+  display: flex;
+  margin-left: 230px;
+`;
+
+export const Count = styled.div`
+  font-size: 12px;
+  color: #808080;
 `;
 
 export const TopFont = styled.div`
@@ -21,9 +63,9 @@ export const TopFont = styled.div`
 `;
 
 export const NovelTitle = styled.div`
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 36px;
   margin: 30px 0px 10px 0px;
+  color: #484848;
 `;
 
 export const StarImg = styled.img`
@@ -34,6 +76,8 @@ export const StarImg = styled.img`
 export const Score = styled.div`
   font-size: 15px;
   margin-left: 10px;
+  color: #484848;
+  margin-right: 10px;
 `;
 
 export const StarWrapper = styled.div`
@@ -51,17 +95,19 @@ export const NovelRemarks = styled.div`
   font-size: 15px;
   color: #757575;
   margin-top: 10px;
+  width: 706px;
+  height: 51px;
 `;
 
 export const WriterFont = styled.div`
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
   margin: 0px 10px 0px 10px;
+  color: #484848;
 `;
 
 export const NovelImage = styled.img`
-  width: 275px;
-  height: 292px;
+  width: 250px;
+  height: 330px;
 `;
 
 export const SmallArrow = styled.img`
@@ -77,7 +123,7 @@ export const TopWrapper = styled.div`
 export const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 70px;
 `;
 
 export const FlexWrapper = styled.div`
@@ -86,36 +132,35 @@ export const FlexWrapper = styled.div`
 `;
 
 export const Divs = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 38px;
-  height: 20px;
-  background-color: #d9d9d9;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  margin: 0px 5px 0px 5px;
+  color: #484848;
 `;
 
 export const HeartImg = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 18.35px;
+  color: #ed6c5e;
 `;
 
 export const HeartCount = styled.div`
-  font-size: 22px;
+  font-size: 16px;
   margin-left: 10px;
+  color: #484848;
 `;
 
 export const ProfileWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 250px 0px 0px;
+  /* margin: 10px 250px 0px 0px; */
+  margin-right: 600px;
 `;
 
 export const Line = styled.div`
-  border-bottom: 1px solid black;
-  /* width: 826px; */
+  border-bottom: 1px solid #d9d9d9;
+  width: 820px;
+  margin-top: 30px;
 `;
 
 export const ArrowImg = styled.img`
@@ -184,7 +229,7 @@ export const HeartWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #bdbdbd;
   width: 126px;
   height: 40px;
   margin: 0px 50px 0px 75px;
@@ -227,12 +272,12 @@ export const Borrow = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f7f7f7;
 `;
 
 export const Get = styled.div`
   width: 560px;
   height: 40px;
-  background-color: #ececec;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,5 +329,45 @@ export const TableSonWrapper = styled.div`
 `;
 
 export const Margin = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+`;
+
+export const TableInnerLine = styled.div`
+  border-bottom: 1px solid #4f4f4f;
+  margin: 10px 0px 10px 0px;
+`;
+
+export const Cart = styled.div`
+  width: 70px;
+  height: 35px;
+  background-color: white;
+  color: #4f4f4f;
+  border: 1px solid #bdbdbd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 17px;
+`;
+
+export const Borrows = styled.div`
+  width: 70px;
+  height: 35px;
+  background-color: #2277d8;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 17px;
+`;
+
+export const LookBtn = styled.div`
+  width: 60px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #484848;
+  border: 1px solid #bdbdbd;
+  margin-left: 891px;
 `;
