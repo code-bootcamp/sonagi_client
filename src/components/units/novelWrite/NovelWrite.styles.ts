@@ -6,15 +6,24 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `;
 
+export const WrapHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+`;
+
+export const WrapTitleWarning = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const MainTitle = styled.div`
   font-size: 30px;
   font-weight: bold;
   color: #747474;
   padding-bottom: 25px;
-  padding-top: 25px;
 `;
-
-export const WrapperBody = styled.div``;
 
 export const WrapperLavel = styled.div`
   padding: 25px 0;
@@ -25,6 +34,8 @@ export const WarningText = styled.div`
   font-size: 16px;
   color: #b1b1b1;
 `;
+
+export const WriteImage = styled.img``;
 
 export const WrapTitle = styled.div`
   display: flex;
