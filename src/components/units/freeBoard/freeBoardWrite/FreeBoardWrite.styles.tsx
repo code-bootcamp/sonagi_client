@@ -65,6 +65,19 @@ export const Image = styled.div`
   border: 1px solid black;
 `;
 
-export const WrapButton = styled.div``;
+export const WrapButton = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
-export const ClickButton = styled.div``;
+export const ClickButton = styled.div`
+  width: 160px;
+  height: 60px;
+  background-color: #2277d8;
+  color: white;
+  margin: 30px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+`;
