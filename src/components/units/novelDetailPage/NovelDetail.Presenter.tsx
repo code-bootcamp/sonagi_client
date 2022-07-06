@@ -28,6 +28,7 @@ export default function NovelDetailPresenter() {
             </S.ProfileWrapper>
             <S.NovelRemarks>소설 요약</S.NovelRemarks>
           </S.ColumnWrapper>
+
           <S.Line />
         </S.FlexWrapper>
 
@@ -36,12 +37,8 @@ export default function NovelDetailPresenter() {
             <S.HeartImg src="novelDetail/heart.png" />
             <S.HeartCount>3,000</S.HeartCount>
           </S.HeartWrapper>
-          <S.MiddelButtonWrapper>
-            <S.MiddelButton>첫화보기</S.MiddelButton>
-            <S.MiddelButton>이어보기</S.MiddelButton>
-            <S.MiddelButton>찜하기</S.MiddelButton>
-          </S.MiddelButtonWrapper>
         </S.ButtonWrapper>
+
         <div>
           <S.TableLine />
           <S.TableTop>

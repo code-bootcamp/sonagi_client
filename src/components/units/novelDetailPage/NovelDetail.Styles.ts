@@ -39,7 +39,7 @@ export const Score = styled.div`
 export const StarWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 0px 0px 10px 0px;
+  margin: 15px 0px 10px 0px;
 `;
 
 export const WriterImg = styled.img`
@@ -82,7 +82,7 @@ export const ColumnWrapper = styled.div`
 
 export const FlexWrapper = styled.div`
   display: flex;
-  margin-top: 20px;
+  margin-top: 60px;
 `;
 
 export const Divs = styled.div`
@@ -110,6 +110,7 @@ export const ProfileWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px 250px 0px 0px;
 `;
 
 export const Line = styled.div`
@@ -196,7 +197,7 @@ export const ButtonWrapper = styled.div`
 
 export const MiddelButtonWrapper = styled.div`
   display: flex;
-  margin-left: 260px;
+  margin-top: 100px;
 `;
 
 export const MiddelButton = styled.div`
@@ -251,6 +252,7 @@ export const SortButton = styled.div`
   width: 76px;
   height: 30px;
   border: 1px solid black;
+  margin: 5px 0px 0px 10px;
 `;
 
 export const TableButton = styled.div`
