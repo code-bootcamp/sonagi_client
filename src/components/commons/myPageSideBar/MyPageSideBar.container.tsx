@@ -10,12 +10,12 @@ export default function MyPageSideBarContainer() {
   };
 
   const onClickMoveToRecentWatch = () => {
-    router.push("/recentWatch");
+    router.push("/myPage/recentWatch");
     console.log("최근본상품");
   };
 
   const onClickMoveToMyNovel = () => {
-    router.push("/myNovel");
+    router.push("/myPage/myNovel");
   };
 
   return (
