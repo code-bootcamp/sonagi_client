@@ -10,7 +10,7 @@ export default function LayoutBanner() {
     slidesToScroll: 1,
     draggable: true,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 4000,
     pauseOnHover: true,
   };
 
@@ -26,6 +26,9 @@ export default function LayoutBanner() {
           </S.CarouselBox>
           <S.CarouselBox>
             <S.CarouselImg src="/banner/carousel3.png" />
+          </S.CarouselBox>
+          <S.CarouselBox>
+            <S.CarouselImg src="/banner/carousel4.png" />
           </S.CarouselBox>
         </S.MySlide>
       </S.SliderWrapper>
