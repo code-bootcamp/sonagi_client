@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 1150px;
   display: flex;
   flex-direction: column;
 `;
@@ -10,17 +10,14 @@ export const MainTitle = styled.div`
   font-size: 30px;
   font-weight: bold;
   color: #747474;
-  border-bottom: 1px solid black;
-  padding-bottom: 30px;
+  padding-bottom: 25px;
   padding-top: 25px;
 `;
 
-export const WrapperBody = styled.div`
-  padding: 0 50px;
-`;
+export const WrapperBody = styled.div``;
 
 export const WrapperLavel = styled.div`
-  padding: 40px 0;
+  padding: 25px 0;
   border-bottom: 1px solid #b1b1b1;
 `;
 
@@ -37,6 +34,7 @@ export const WrapTitle = styled.div`
 export const TitleLabel = styled.input`
   ::placeholder {
     color: black;
+    font-size: 24px;
   }
   width: 100%;
   font-size: 24px;
@@ -81,6 +79,7 @@ export const GenreLabel = styled.div`
 export const SelectButton = styled.img`
   width: 24px;
   height: 24px;
+  background-color: #2277d8;
 `;
 
 export const WrapCycle = styled.div`
@@ -120,11 +119,11 @@ export const CoverImage = styled.img`
 `;
 
 export const WrapIntroduce = styled.div`
-  padding: 40px 0;
+  padding-top: 25px;
 `;
 
 export const IntroduceInput = styled.input`
-  margin-top: 40px;
+  margin-top: 25px;
   width: 100%;
   height: 440px;
 `;

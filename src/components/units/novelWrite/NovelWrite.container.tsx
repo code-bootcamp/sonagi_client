@@ -9,6 +9,7 @@ export default function NovelWriteContainer() {
     setIsClickPre((prev) => !prev);
     setIsClickDay((prev) => !prev);
   };
+
   return (
     <NovelWritePresenter
       onClickCycleButton={onClickCycleButton}

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 1150px;
   display: flex;
   flex-direction: column;
 `;
@@ -10,17 +10,13 @@ export const MainTitle = styled.div`
   font-size: 30px;
   font-weight: bold;
   color: #747474;
-  border-bottom: 1px solid black;
-  padding-bottom: 30px;
-  padding-top: 25px;
+  padding: 25px 0;
 `;
 
-export const WrapperBody = styled.div`
-  padding: 0 50px;
-`;
+export const WrapperBody = styled.div``;
 
 export const WrapperLavel = styled.div`
-  padding: 40px 0;
+  padding: 25px 0;
   border-bottom: 1px solid #b1b1b1;
 `;
 
@@ -92,7 +88,7 @@ export const NoticeLabel = styled.input`
 `;
 
 export const WrapIntroduce = styled.div`
-  padding: 40px 0;
+  padding: 25px 0;
 `;
 
 export const IntroduceInput = styled.input`
@@ -102,7 +98,7 @@ export const IntroduceInput = styled.input`
 `;
 
 export const WrapperWriterSay = styled.div`
-  padding: 40px 0;
+  padding: 25px 0;
 `;
 
 export const WriteSay = styled.input`
@@ -114,7 +110,6 @@ export const WriteSay = styled.input`
 export const WrapperRule = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
 `;
 
 export const WrapRule = styled.div`
@@ -134,6 +129,10 @@ export const MoveRule = styled.div`
   border-bottom: 1px solid gray;
   color: gray;
   margin-left: 7px;
+`;
+
+export const CheckButtonFoot = styled.img`
+  margin: 10px 10px 10px 0;
 `;
 
 export const WrapSubmitButton = styled.div`
