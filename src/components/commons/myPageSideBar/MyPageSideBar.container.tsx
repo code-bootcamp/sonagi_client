@@ -14,10 +14,15 @@ export default function MyPageSideBarContainer() {
     console.log("최근본상품");
   };
 
+  const onClickMoveToMyNovel = () => {
+    router.push("/myNovel");
+  };
+
   return (
     <MyPageSideBarPresenter
       onClickMoveToRecentWatch={onClickMoveToRecentWatch}
       onClickMoveToMyPage={onClickMoveToMyPage}
+      onClickMoveToMyNovel={onClickMoveToMyNovel}
     />
   );
 }

@@ -9,7 +9,7 @@ export default function MyPageSideBarPresenter(props: any) {
           <S.Title>소설</S.Title>
           <S.Menu onClick={props.onClickMoveToRecentWatch}>최근 본 작품</S.Menu>
           <S.Menu>찜한 작품</S.Menu>
-          <S.Menu>내 작품</S.Menu>
+          <S.Menu onClick={props.onClickMoveToMyNovel}>내 작품</S.Menu>
         </S.Column>
       </S.Flex>
       <S.Line />
