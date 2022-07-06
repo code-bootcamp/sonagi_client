@@ -1,4 +1,4 @@
-import * as S from "./Header.Styles";
+import * as S from "./header.styles";
 export default function LayoutHeader() {
   return (
     <>
