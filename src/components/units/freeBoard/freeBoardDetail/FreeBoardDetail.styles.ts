@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   width: 1150px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 120px;
 `;
 
 export const MainTitle = styled.div`
@@ -43,6 +44,7 @@ export const ReportIcon = styled.img`
   width: 13px;
   height: 13px;
   margin-left: 12px;
+  cursor: pointer;
 `;
 export const Contents = styled.input`
   margin: 40px 0;
@@ -60,4 +62,5 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   align-self: flex-end;
+  cursor: pointer;
 `;
