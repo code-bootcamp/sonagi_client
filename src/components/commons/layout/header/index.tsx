@@ -6,6 +6,7 @@ export default function LayoutHeader() {
   const onClickSignUp = () => {
     router.push("/signup");
   };
+
   const onClickLogin = () => {
     router.push("/login");
   };
