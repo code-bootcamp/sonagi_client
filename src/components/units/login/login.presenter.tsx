@@ -1,11 +1,11 @@
 import * as S from "./login.styles";
 
-export default function LoginPresenter() {
+export default function LoginPresenter(props) {
   return (
     <S.Wrapper>
       <S.BookImg src="/login/book.png" />
       <S.LoginWrapper>
-        <S.LogoImg src="/header/logo.png" />
+        <S.LogoImg onClick={props.onClickMain} src="/header/logo.png" />
         <S.SubTitle>소나기에 돌아오신 것을 환영해요!</S.SubTitle>
         <S.InputBox type="text" placeholder="이메일 입력"></S.InputBox>
         <S.InputBox type="password" placeholder="비밀번호 입력"></S.InputBox>

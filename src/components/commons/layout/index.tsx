@@ -20,9 +20,9 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const HIDDEN_HEADER = ["/login"];
-const HIDDEN_NAVIGATION = ["/login"];
-const HIDDEN_FOOTER = ["/login"];
+const HIDDEN_HEADER = ["/login", "/signup"];
+const HIDDEN_NAVIGATION = ["/login", "/signup"];
+const HIDDEN_FOOTER = ["/login", "/signup"];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();

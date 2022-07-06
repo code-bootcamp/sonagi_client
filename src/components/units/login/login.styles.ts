@@ -23,6 +23,7 @@ export const BookImg = styled.img`
 
 export const LogoImg = styled.img`
   margin-bottom: 15px;
+  cursor: pointer;
 `;
 
 export const SubTitle = styled.div`
