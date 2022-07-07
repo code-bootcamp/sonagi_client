@@ -75,6 +75,13 @@ export default function NoticeListPresenter() {
           </S.TextWrap>
         </S.NoticeWrap>
       </S.NoticeListWrap>
+      {/* 페이지 */}
+      <S.WriteBtn>공지 작성하기</S.WriteBtn>
+      <S.RowWrap3>
+        <S.Arrow> </S.Arrow>
+        <S.PageNum>1 2 3 4 5</S.PageNum>
+        <S.Arrow> </S.Arrow>
+      </S.RowWrap3>
     </S.Wrap>
   );
 }
