@@ -17,6 +17,26 @@ export const ChargeButton = styled.div`
   } */
 `;
 
+export const MyPageFont = styled.div`
+  font-size: 32px;
+  margin-bottom: 50px;
+  @media (min-width: 768px) and (max-width: 991px) {
+    display: none;
+  }
+  @media (min-width: 767px) {
+    display: none;
+  }
+`;
+
+export const ChargeHistory = styled.div`
+  @media (min-width: 768px) and (max-width: 991px) {
+    display: none;
+  }
+  @media (min-width: 767px) {
+    display: none;
+  }
+`;
+
 export const Wrapper = styled.div`
   /* display: flex; */
   width: 1000px;
@@ -162,12 +182,13 @@ export const Dash = styled.div`
 export const MainFlex = styled.div`
   display: flex;
   justify-content: space-around;
+  @media (min-width: 1500px) and (max-width: 2500px) {
+    margin-top: 130px;
+  }
   @media (min-width: 768px) and (max-width: 1500px) {
     margin-top: 130px;
   }
   @media (max-width: 767px) {
-    display: flex;
-    margin-left: 4.375rem;
   }
 `;
 
