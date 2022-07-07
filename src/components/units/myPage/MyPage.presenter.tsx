@@ -44,10 +44,11 @@ export default function MyPagePresenter(props: any) {
 
       {/* </Modal> */}
       <S.LargeBox>
+        <S.MyPageFont>마이 페이지</S.MyPageFont>
         <S.InnerLeftBox>
           <img src="myPage/ProfileVector.png" />
           <S.ChangeButton>변경</S.ChangeButton>
-          <S.Name>이름님</S.Name>
+          <S.Name>닉네임 님</S.Name>
           <S.Email>abcdefghij@gamil.com</S.Email>
           <S.Flex>
             <S.Point>포인트 100P</S.Point>
@@ -77,6 +78,7 @@ export default function MyPagePresenter(props: any) {
               <S.MainBottom>문의 내역</S.MainBottom>
             </S.Column>
           </S.MainFlex>
+          <S.ChargeHistory>충전 내역 {"> >"}</S.ChargeHistory>
         </S.InnerRightBox>
       </S.LargeBox>
     </S.Wrapper>
