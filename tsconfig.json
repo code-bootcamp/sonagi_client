@@ -15,6 +15,11 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/units/myPage/profileChange/ProfileModify/ProfileModify.queries.ts"
+  ],
   "exclude": ["node_modules"]
 }

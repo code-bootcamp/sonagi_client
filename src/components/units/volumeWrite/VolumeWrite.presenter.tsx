@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./VolumeWrite.styles";
 
-export default function VolumeWritePresenter() {
+export default function VolumeWritePresenter(props: any) {
   return (
     <S.Wrapper>
       <S.WrapHeader>
@@ -67,7 +67,9 @@ export default function VolumeWritePresenter() {
         </S.WrapRule>
       </S.WrapperRule>
       <S.WrapSubmitButton>
-        <S.ClickButton>취소</S.ClickButton>
+        <S.ClickButton onClick={props.onClickMoveToPage("/")}>
+          취소
+        </S.ClickButton>
         <S.ClickButton>임시저장</S.ClickButton>
         <S.ClickButton>저장</S.ClickButton>
       </S.WrapSubmitButton>
