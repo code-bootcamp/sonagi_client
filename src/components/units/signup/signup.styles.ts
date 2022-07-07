@@ -4,6 +4,17 @@ export const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: row;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    min-width: 767px;
+    max-width: 991px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 767px;
+    width: 100vw;
+    justify-content: center;
+  }
 `;
 
 export const LoginWrapper = styled.div`
@@ -14,11 +25,31 @@ export const LoginWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    min-width: 767px;
+    max-width: 991px;
+    padding: 80px 30px 30px 30px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 767px;
+    width: 100vw;
+    padding: 50px 30px 30px 30px;
+  }
 `;
 
 export const PhoneImg = styled.img`
   width: 65vmax;
   height: 100vh;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const LogoImg = styled.img`
@@ -26,12 +57,16 @@ export const LogoImg = styled.img`
 `;
 
 export const SubTitle = styled.div`
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-weight: 400;
   font-size: 16px;
   text-align: center;
   letter-spacing: 0.232836px;
   color: #484848;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -87,10 +122,11 @@ export const InputText = styled.div`
 
 export const CheckWrapper = styled.div`
   width: 100%;
+  height: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 5px 5px;
+  margin: 1px 0px;
 `;
 
 export const CheckImg = styled.img`

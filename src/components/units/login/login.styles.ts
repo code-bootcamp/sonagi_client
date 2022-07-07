@@ -4,6 +4,17 @@ export const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: row;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    min-width: 767px;
+    max-width: 991px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 767px;
+    width: 100vw;
+    justify-content: center;
+  }
 `;
 
 export const LoginWrapper = styled.div`
@@ -14,11 +25,30 @@ export const LoginWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    min-width: 767px;
+    max-width: 991px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 767px;
+    width: 100vw;
+    padding: 120px 30px 30px 30px;
+  }
 `;
 
 export const BookImg = styled.img`
   width: 65vmax;
   height: 100vh;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const LogoImg = styled.img`

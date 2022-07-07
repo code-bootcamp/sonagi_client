@@ -1,9 +1,19 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 80%;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 991px) {
+    width: 1200px;
+  }
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    min-width: 767px;
+    max-width: 991px;
+    width: 95%;
+  }
 `;
 
 export const TopBox = styled.div`
@@ -49,6 +59,11 @@ export const SearchBox = styled.div`
   padding: 8px;
   margin-right: -665px;
   cursor: pointer;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    width: 200px;
+    margin-right: -45%;
+  }
 `;
 
 export const SearchButton = styled.img``;

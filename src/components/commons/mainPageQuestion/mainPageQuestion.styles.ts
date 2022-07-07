@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const QuestionWrapper = styled.div`
   /* height: 580px; */
+  width: 100%;
   background: #bee3ff;
   padding: 50px 0px;
   display: flex;
@@ -37,6 +38,14 @@ export const QuestionBox = styled.div`
   background-repeat: no-repeat;
   background-position: top 25px right 20px;
   cursor: pointer;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    width: 95%;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 767px;
+  }
 `;
 
 export const QuestionContents = styled.div`
@@ -49,6 +58,10 @@ export const QuestionContents = styled.div`
     props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
       ? "1px solid #4f4f4f"
       : "none"};
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    width: 100%;
+  }
 `;
 
 export const AnswerContents = styled.div`
@@ -57,4 +70,8 @@ export const AnswerContents = styled.div`
   font-size: 16px;
   line-height: 29px;
   color: #555555;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    width: 100%;
+  }
 `;
