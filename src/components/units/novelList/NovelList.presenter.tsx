@@ -13,13 +13,13 @@ export default function NovelListPresenter() {
       <S.GridWrap>
         {itemimg.map((item: any) => (
           <S.ItemWrap key={item.length}>
-            <S.ItemPic src={`/search/${item}.png`} />
+            <S.ItemPic src={`/novelList/${item}.png`} />
             <S.ItemInfo>
               <S.ItemName>Kick off</S.ItemName>
               <S.ItemNum>10화</S.ItemNum>
             </S.ItemInfo>
             <S.ItemWriterWrap>
-              <S.WriterIcon src="../search/writer-icon.png" />
+              <S.WriterIcon src="../novelList/writer-icon.png" />
               <S.WrtiterName>작가명</S.WrtiterName>
             </S.ItemWriterWrap>
             <S.Contents>소설 회차 부제목입니다~</S.Contents>

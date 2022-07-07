@@ -26,7 +26,7 @@ export const Title = styled.label`
 export const Subtitle = styled.div`
   font-size: 18px;
   color: #828282;
-  padding-top: 100px;
+  padding-top: 50px;
 `;
 export const NoticeIcon = styled.img`
   width: 188px;
@@ -41,6 +41,7 @@ export const NoticeListWrap = styled.div`
 export const Total = styled.span`
   font-size: 15px;
   color: #808080;
+  margin-bottom: 10px;
 `;
 export const NoticeWrap = styled.div`
   display: flex;
@@ -94,10 +95,10 @@ export const Ago = styled.span`
 
 export const WriteBtn = styled.div`
   width: 150px;
-  height: 55px;
-  padding: 17px;
+  height: 46px;
   text-align: center;
   border-radius: 10px;
+  line-height: 46px;
   border: 1px solid #bdbdbd;
 `;
 
@@ -109,14 +110,19 @@ export const RowWrap3 = styled.div`
   justify-content: center;
   padding: 50px;
 `;
-export const Arrow = styled.div`
-  /* background-color: #f2f2f2; */
-  width: 5px;
-  height: 10px;
-  padding: 14px;
-  border-radius: 7px;
+export const Arrow = styled.img`
+  width: 34px;
+  height: 34px;
+  padding-left: 10px;
 `;
 export const PageNum = styled.div`
   font-size: 24px;
   color: #808080;
+  padding: 0px 15px;
+`;
+
+export const FooterWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
