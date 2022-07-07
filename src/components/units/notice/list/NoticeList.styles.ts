@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrap = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -18,13 +18,13 @@ export const NoticeTitleWrap = styled.div`
   flex-direction: column;
 `;
 export const Title = styled.label`
-  font-size: 30px;
+  font-size: 1.875em;
   font-weight: 700;
   color: #484848;
   margin-top: 20px;
 `;
 export const Subtitle = styled.div`
-  font-size: 18px;
+  font-size: 1.125em;
   color: #828282;
   padding-top: 50px;
 `;
@@ -39,9 +39,8 @@ export const NoticeListWrap = styled.div`
   margin-bottom: 20px;
 `;
 export const Total = styled.span`
-  font-size: 15px;
+  font-size: 1em;
   color: #808080;
-  margin-bottom: 10px;
 `;
 export const NoticeWrap = styled.div`
   display: flex;
@@ -70,8 +69,15 @@ export const TextRowWrap = styled.div`
   align-items: center;
 `;
 
+export const RowWrap2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  justify-content: space-between;
+`;
+
 export const NoticeName = styled.label`
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 700;
   color: #484848;
   margin-right: 40px;
@@ -85,22 +91,33 @@ export const NoticeTag = styled.div`
   font-size: 11px;
 `;
 export const CreatAt = styled.span`
-  font-size: 20px;
+  font-size: 0.75em;
   color: #808080;
 `;
 export const Ago = styled.span`
-  font-size: 20px;
+  font-size: 1.25em;
   color: #828282;
 `;
 
-export const WriteBtn = styled.div`
-  width: 150px;
-  height: 46px;
+export const NoticeWrite = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 160px;
+  height: 55px;
+  padding: 17px;
   text-align: center;
-  border-radius: 10px;
-  line-height: 46px;
-  border: 1px solid #bdbdbd;
+  /* border: 1px solid #bdbdbd; */
+  background-color: #2277d8;
+  color: #fff;
 `;
+
+export const Noticeicon = styled.img`
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+`;
+export const WriteBtn = styled.div``;
 
 export const RowWrap3 = styled.div`
   width: 1200px;
@@ -111,18 +128,17 @@ export const RowWrap3 = styled.div`
   padding: 50px;
 `;
 export const Arrow = styled.img`
-  width: 34px;
-  height: 34px;
-  padding-left: 10px;
+  width: 35px;
+  height: 35px;
+  margin: 0px 30px;
 `;
 export const PageNum = styled.div`
-  font-size: 24px;
-  color: #808080;
-  padding: 0px 15px;
-`;
-
-export const FooterWrap = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  font-size: 1.5em;
+`;
+
+export const Page = styled.div`
+  color: #808080;
+  padding: 0px 10px;
 `;

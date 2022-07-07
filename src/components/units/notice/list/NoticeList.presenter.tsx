@@ -20,10 +20,10 @@ export default function NoticeListPresenter() {
               <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
               <S.NoticeTag>NEW</S.NoticeTag>
             </S.TextRowWrap>
-            <S.RowWrap>
+            <S.RowWrap2>
               <S.CreatAt>2022.00.00 00:00</S.CreatAt>
               <S.Ago>2일 전</S.Ago>
-            </S.RowWrap>
+            </S.RowWrap2>
           </S.TextWrap>
         </S.NoticeWrap>
       </S.NoticeListWrap>
@@ -36,10 +36,10 @@ export default function NoticeListPresenter() {
               <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
               <S.NoticeTag>NEW</S.NoticeTag>
             </S.TextRowWrap>
-            <S.RowWrap>
+            <S.RowWrap2>
               <S.CreatAt>2022.00.00 00:00</S.CreatAt>
               <S.Ago>2일 전</S.Ago>
-            </S.RowWrap>
+            </S.RowWrap2>
           </S.TextWrap>
         </S.NoticeWrap>
       </S.NoticeListWrap>
@@ -52,10 +52,10 @@ export default function NoticeListPresenter() {
               <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
               <S.NoticeTag>NEW</S.NoticeTag>
             </S.TextRowWrap>
-            <S.RowWrap>
+            <S.RowWrap2>
               <S.CreatAt>2022.00.00 00:00</S.CreatAt>
               <S.Ago>2일 전</S.Ago>
-            </S.RowWrap>
+            </S.RowWrap2>
           </S.TextWrap>
         </S.NoticeWrap>
       </S.NoticeListWrap>
@@ -68,26 +68,31 @@ export default function NoticeListPresenter() {
               <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
               <S.NoticeTag>NEW</S.NoticeTag>
             </S.TextRowWrap>
-            <S.RowWrap>
+            <S.RowWrap2>
               <S.CreatAt>2022.00.00 00:00</S.CreatAt>
               <S.Ago>2일 전</S.Ago>
-            </S.RowWrap>
+            </S.RowWrap2>
           </S.TextWrap>
         </S.NoticeWrap>
       </S.NoticeListWrap>
       {/* 페이지 */}
-      <S.FooterWrap>
+      <S.RowWrap>
         <div></div>
-        <S.WriteBtn>공지 작성하기</S.WriteBtn>
-      </S.FooterWrap>
+        <S.NoticeWrite>
+          <S.Noticeicon src="../notice/noticewrite.svg" />
+          <S.WriteBtn>공지 작성하기</S.WriteBtn>
+        </S.NoticeWrite>
+      </S.RowWrap>
       <S.RowWrap3>
-        <S.Arrow src="../notice/left.svg" />
-        <S.PageNum>1</S.PageNum>
-        <S.PageNum>2</S.PageNum>
-        <S.PageNum>3</S.PageNum>
-        <S.PageNum>4</S.PageNum>
-        <S.PageNum>5</S.PageNum>
-        <S.Arrow src="../notice/right.svg" />
+        <S.Arrow src="../notice/leftArrow.svg" />
+        <S.PageNum>
+          <S.Page>1</S.Page>
+          <S.Page>2</S.Page>
+          <S.Page>3</S.Page>
+          <S.Page>4</S.Page>
+          <S.Page>5</S.Page>
+        </S.PageNum>
+        <S.Arrow src="../notice/rightArrow.svg" />
       </S.RowWrap3>
     </S.Wrap>
   );
