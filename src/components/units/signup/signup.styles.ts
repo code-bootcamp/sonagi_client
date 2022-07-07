@@ -26,7 +26,7 @@ export const LogoImg = styled.img`
 `;
 
 export const SubTitle = styled.div`
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-weight: 400;
   font-size: 16px;
   text-align: center;
@@ -87,10 +87,11 @@ export const InputText = styled.div`
 
 export const CheckWrapper = styled.div`
   width: 100%;
+  height: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 5px 5px;
+  margin: 1px 0px;
 `;
 
 export const CheckImg = styled.img`
