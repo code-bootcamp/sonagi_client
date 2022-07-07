@@ -1,28 +1,52 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 80vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 991px) {
+    width: 1200px;
+  }
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    min-width: 767px;
+    max-width: 991px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 767px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
+  width: 100%;
   height: 400px;
   padding: 0px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    min-width: 767px;
+    max-width: 991px;
+  }
 `;
 
 export const PhoneWrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   padding: 50px 0px 0px 0px;
   background: #f7f7f7;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: -10px;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    min-width: 767px;
+    max-width: 991px;
+  }
 `;
 
 export const Title = styled.div`
@@ -53,6 +77,10 @@ export const PhoneSubImg = styled.img`
   position: absolute;
   margin-top: 480px;
   margin-left: -390px;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    display: none;
+  }
 `;
 
 export const PhoneSubImg2 = styled.img`
@@ -61,6 +89,10 @@ export const PhoneSubImg2 = styled.img`
   position: absolute;
   margin-top: 480px;
   margin-left: 390px;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    display: none;
+  }
 `;
 
 export const PhoneSubImg3 = styled.img`
@@ -69,6 +101,10 @@ export const PhoneSubImg3 = styled.img`
   position: absolute;
   margin-top: 300px;
   margin-left: -320px;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    display: none;
+  }
 `;
 
 export const PhoneSubImg4 = styled.img`
@@ -77,4 +113,8 @@ export const PhoneSubImg4 = styled.img`
   position: absolute;
   margin-top: 300px;
   margin-left: 320px;
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    display: none;
+  }
 `;

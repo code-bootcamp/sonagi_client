@@ -1,12 +1,22 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 80vw;
   height: 200px;
   display: flex;
   flex-direction: row;
   padding: 20px 100px;
   background: #f7f7f7;
+
+  @media (min-width: 991px) {
+    width: 1200px;
+  }
+
+  @media (min-width: 767px) and (max-width: 991px) {
+    min-width: 767px;
+    max-width: 991px;
+    padding: 30px 50px;
+  }
 `;
 
 export const LeftBox = styled.div`

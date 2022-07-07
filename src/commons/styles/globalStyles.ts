@@ -10,7 +10,6 @@ export const globalStyles = css`
       Helvetica Neue, sans-serif;
     display: flex;
     flex-direction: column;
-    width: 100%;
     color: #484848;
   }
 
