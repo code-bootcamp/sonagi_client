@@ -7,7 +7,7 @@ export default function MyNovelPresenter() {
         <S.Box>
           <div>
             <S.Flex>
-              <img src="myNovel/Rectangle.png" />
+              <img src="../myNovel/Rectangle.png" />
               <S.InnerFlex>
                 <S.Column>
                   <S.Title>글 제목</S.Title>
@@ -27,7 +27,7 @@ export default function MyNovelPresenter() {
         <S.Box>
           <div>
             <S.Flex>
-              <img src="myNovel/Rectangle.png" />
+              <img src="../myNovel/Rectangle.png" />
               <S.InnerFlex>
                 <S.Column>
                   <S.Title>글 제목</S.Title>

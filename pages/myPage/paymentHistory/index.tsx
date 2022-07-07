@@ -4,13 +4,20 @@ import PaymentHistoryPresenter from "../../../src/components/units/paymentHistor
 
 const Wrapper = styled.div`
   display: flex;
+  width: 1200px;
+`;
+
+const Margin = styled.div`
+  margin: 30px 0px 0px 130px;
 `;
 
 export default function PaymentHistory() {
   return (
     <Wrapper>
       <MyPageSideBarContainer />
-      <PaymentHistoryPresenter />
+      <Margin>
+        <PaymentHistoryPresenter />
+      </Margin>
     </Wrapper>
   );
 }

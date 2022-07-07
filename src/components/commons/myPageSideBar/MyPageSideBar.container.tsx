@@ -18,11 +18,16 @@ export default function MyPageSideBarContainer() {
     router.push("/myPage/myNovel");
   };
 
+  const onClickMoveToPaymentHistory = () => {
+    router.push("/myPage/paymentHistory");
+  };
+
   return (
     <MyPageSideBarPresenter
       onClickMoveToRecentWatch={onClickMoveToRecentWatch}
       onClickMoveToMyPage={onClickMoveToMyPage}
       onClickMoveToMyNovel={onClickMoveToMyNovel}
+      onClickMoveToPaymentHistory={onClickMoveToPaymentHistory}
     />
   );
 }
