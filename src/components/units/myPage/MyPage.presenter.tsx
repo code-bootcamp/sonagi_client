@@ -1,8 +1,48 @@
 import * as S from "./MyPage.styles";
-export default function MyPagePresenter() {
+import React from "react";
+// import { useForm } from "react-hook-form";
+
+export default function MyPagePresenter(props: any) {
   return (
     <S.Wrapper>
-      <S.CashCharge>캐시충전</S.CashCharge>
+      <S.DIV>
+        <S.ChargeButton onClick={props.handleOk}>캐시충전</S.ChargeButton>
+      </S.DIV>
+
+      {props.isModalVisible && (
+        <S.PayMentWrapper>
+          {/* <S.Overlay onClick={props.handleCancel} /> */}
+          <S.Titles>포인트 충전</S.Titles>
+          <S.MoneyWrapper>
+            <S.MySelect onChange={props.onChangeMoney}>
+              <S.MyOption onClick={props.SelectMoney}>
+                {props.selected}
+              </S.MyOption>
+              {props.isSelect && (
+                <>
+                  <S.Table>
+                    <S.MyLi onClick={props.onClickMoney} value="100">
+                      100
+                    </S.MyLi>
+                    <S.MyLi onClick={props.onClickMoney} value="500">
+                      500
+                    </S.MyLi>
+                    <S.MyLi onClick={props.onClickMoney} value="2000">
+                      2000
+                    </S.MyLi>
+                    <S.MyLis onClick={props.onClickMoney} value="5000">
+                      5000
+                    </S.MyLis>
+                  </S.Table>
+                </>
+              )}
+            </S.MySelect>
+          </S.MoneyWrapper>
+          <S.MoneyButton onClick={props.requestpay}>충전하기</S.MoneyButton>
+        </S.PayMentWrapper>
+      )}
+
+      {/* </Modal> */}
       <S.LargeBox>
         <S.InnerLeftBox>
           <img src="myPage/ProfileVector.png" />
@@ -10,7 +50,8 @@ export default function MyPagePresenter() {
           <S.Name>이름님</S.Name>
           <S.Email>abcdefghij@gamil.com</S.Email>
           <S.Flex>
-            <S.Point>포인트 100P |</S.Point>
+            <S.Point>포인트 100P</S.Point>
+            <S.Dash>|</S.Dash>
             <S.Point>충전하기</S.Point>
           </S.Flex>
           <S.LogoutButton>로그아웃</S.LogoutButton>
