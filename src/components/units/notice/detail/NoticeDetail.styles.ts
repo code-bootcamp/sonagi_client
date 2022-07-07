@@ -11,7 +11,7 @@ export const NoticeDetailWrap = styled.div`
 `;
 
 export const Title = styled.label`
-  font-size: 30px;
+  font-size: 1.875em;
   font-weight: 700;
   color: #484848;
   margin-top: 20px;
@@ -23,7 +23,7 @@ export const NoticeDetail = styled.div`
   justify-content: center;
 `;
 export const NoticeName = styled.div`
-  font-size: 24px;
+  font-size: 1.5em;
   padding: 50px 0px 20px;
 `;
 export const WriterWrap = styled.div`
@@ -32,11 +32,11 @@ export const WriterWrap = styled.div`
   align-items: center;
 `;
 export const WriterName = styled.div`
-  font-size: 20px;
+  font-size: 1.25em;
   margin-right: 20px;
 `;
 export const WriteAt = styled.div`
-  font-size: 13px;
+  font-size: 0.813em;
   color: #808080;
 `;
 export const Line = styled.div`
