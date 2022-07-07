@@ -11,6 +11,7 @@ export const globalStyles = css`
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: #484848;
   }
 
   a {

@@ -25,6 +25,6 @@ export const BookImg = styled.img`
 export const Title = styled.div`
   font-weight: 500;
   font-size: 22px;
-  color: #141414;
+  color: #484848;
   padding: 10px;
 `;
