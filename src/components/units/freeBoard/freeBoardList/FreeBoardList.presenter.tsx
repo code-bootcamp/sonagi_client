@@ -5,7 +5,6 @@ export default function FreeBoardListPresenter() {
     <S.Wrapper>
       <S.WrapTitle>
         <S.MainTitle>자유게시판</S.MainTitle>
-        <S.ClickButton>작성하기</S.ClickButton>
       </S.WrapTitle>
       <S.WrapperBoard>
         <S.Title>글 제목 글 제목 글 제목 글 제목 글 제목</S.Title>
@@ -106,6 +105,9 @@ export default function FreeBoardListPresenter() {
           <S.Date>추천 0</S.Date>
         </S.WrapInfo>
       </S.WrapperBoard>
+      <S.WrapButton>
+        <S.ClickButton>작성하기</S.ClickButton>
+      </S.WrapButton>
     </S.Wrapper>
   );
 }

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   width: 1150px;
-  height: 2000px;
+  height: 1700px;
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
@@ -12,13 +12,19 @@ export const WrapTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 30px 0;
+  padding: 40px 0 15px 0;
 `;
 
 export const MainTitle = styled.div`
   font-size: 30px;
   font-weight: bold;
   color: #484848;
+`;
+
+export const WrapButton = styled.div`
+  padding-top: 40px;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 export const ClickButton = styled.div`
@@ -35,7 +41,7 @@ export const ClickButton = styled.div`
 export const WrapperBoard = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 15px 0;
+  padding: 30px 0 15px 0;
   border-bottom: 1px solid #bdbdbd;
 `;
 
@@ -52,7 +58,7 @@ export const WrapInfo = styled.div`
 
 export const Writer = styled.div`
   font-size: 20px;
-  color: #484848;
+  color: #2277d8;
 `;
 
 export const Date = styled.div`
