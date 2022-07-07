@@ -50,7 +50,8 @@ export default function MyPagePresenter(props: any) {
           <S.Name>이름님</S.Name>
           <S.Email>abcdefghij@gamil.com</S.Email>
           <S.Flex>
-            <S.Point>포인트 100P |</S.Point>
+            <S.Point>포인트 100P</S.Point>
+            <S.Dash>|</S.Dash>
             <S.Point>충전하기</S.Point>
           </S.Flex>
           <S.LogoutButton>로그아웃</S.LogoutButton>
