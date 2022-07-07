@@ -9,6 +9,8 @@ export default function FreeBoardDetailPresenter() {
         <S.WrapUserInfo>
           <S.UserLabel>작성자</S.UserLabel>
           <S.Date>2022.07.04</S.Date>
+          <S.Date>조회 60</S.Date>
+          <S.Date>추천 10</S.Date>
           <S.ReportIcon src="/freeBoard/report.png" />
         </S.WrapUserInfo>
       </S.WrapTitleInfo>

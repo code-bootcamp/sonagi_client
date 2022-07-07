@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   width: 1150px;
+  height: 1000px;
   display: flex;
   justify-content: space-between;
 `;
@@ -23,7 +24,7 @@ export const BestComment = styled.div`
 
 export const WrapInfo = styled.div`
   display: flex;
-  padding: 10px 0;
+  padding: 10px 3px;
 `;
 
 export const ProfileIcon = styled.img`
@@ -39,6 +40,7 @@ export const WrapCommentInfo = styled.div`
 
 export const Comment = styled.div`
   color: #484848;
+  font-size: 20px;
 `;
 
 export const WrapUserInfo = styled.div`
@@ -49,25 +51,25 @@ export const WrapUserInfo = styled.div`
 
 export const Name = styled.div`
   color: #808080;
-  font-size: 14px;
+  font-size: 17px;
 `;
 
 export const Date = styled.div`
   color: #808080;
-  font-size: 13px;
+  font-size: 17px;
   margin-left: 10px;
 `;
 
 export const UpIcon = styled.img`
-  width: 13px;
-  height: 13px;
+  width: 17px;
+  height: 17px;
   margin-left: 10px;
   cursor: pointer;
 `;
 
 export const UpCount = styled.div`
   color: #808080;
-  font-size: 13px;
+  font-size: 17px;
   margin-left: 5px;
 `;
 

@@ -36,13 +36,13 @@ export const UserLabel = styled.div`
   color: #484848;
 `;
 export const Date = styled.div`
-  font-size: 13px;
+  font-size: 20px;
   color: #808080;
   margin-left: 12px;
 `;
 export const ReportIcon = styled.img`
-  width: 13px;
-  height: 13px;
+  width: 20px;
+  height: 20px;
   margin-left: 12px;
   cursor: pointer;
 `;

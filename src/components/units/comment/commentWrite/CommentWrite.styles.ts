@@ -32,7 +32,9 @@ export const WrapContents = styled.div`
 
 export const ContentsInput = styled.input`
   width: 100%;
-  height: 110px;
+  height: 70px;
+  padding-left: 20px;
+  font-size: 20px;
 `;
 
 export const Wraplength = styled.div`
