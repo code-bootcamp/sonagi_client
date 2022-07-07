@@ -18,7 +18,7 @@ export default function MyPageSideBarPresenter(props: any) {
         <S.Img src="../myPageSideBar/local_atm.png" />
         <S.Column>
           <S.Title>구매</S.Title>
-          <S.Menu>결제 내역</S.Menu>
+          <S.Menu onClick={props.onClickMoveToPaymentHistory}>결제 내역</S.Menu>
           <S.Menu>포인트 충전</S.Menu>
         </S.Column>
       </S.Flex>

@@ -1,65 +1,48 @@
-import { Button, Modal } from "@material-ui/core";
-import Box from "@mui/material/Box";
 import * as S from "./MyPage.styles";
-import { useForm } from "react-hook-form";
 import React from "react";
+// import { useForm } from "react-hook-form";
 
-export default function MyPagePresenter(props) {
-  const { handleSubmit } = useForm();
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const boxStyle = {
-    color: "black",
-    fontSize: 16,
-    border: "#808080",
-  };
-  const style = {
-    position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 464,
-    height: 316,
-    bgcolor: "background.paper",
-    borderRadius: 3,
-    boxShadow: 24,
-    p: 4,
-  };
-
+export default function MyPagePresenter(props: any) {
   return (
     <S.Wrapper>
-      {/* <S.CashCharge>캐시충전</S.CashCharge> */}
-      <Button sx={boxStyle} onClick={handleOpen}>
-        캐시충전
-      </Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <form onSubmit={handleSubmit(props.requestpay)}>
-            <S.SelectWrapper>
-              <S.SelectCash>포인트 충전</S.SelectCash>
-              <S.Select onChange={props.onChangeAmount}>
-                <S.Option selected>충전하실 금액을 선택해주세요</S.Option>
-                <S.Option value="100">100</S.Option>
-                <S.Option value="500">500</S.Option>
-                <S.Option value="1000">1000</S.Option>
-                <S.Option value="2000">2000</S.Option>
-                <S.Option value="5000">5000</S.Option>
-              </S.Select>
-            </S.SelectWrapper>
-            <S.ButtonWrapper>
-              <S.Buttons>충전하기</S.Buttons>
-              {/* <S.Button onClick={props.onClickCharge}>취소하기</S.Button> */}
-            </S.ButtonWrapper>
-          </form>
-        </Box>
-      </Modal>
+      <S.DIV>
+        <S.ChargeButton onClick={props.handleOk}>캐시충전</S.ChargeButton>
+      </S.DIV>
+
+      {props.isModalVisible && (
+        <S.PayMentWrapper>
+          {/* <S.Overlay onClick={props.handleCancel} /> */}
+          <S.Titles>포인트 충전</S.Titles>
+          <S.MoneyWrapper>
+            <S.MySelect onChange={props.onChangeMoney}>
+              <S.MyOption onClick={props.SelectMoney}>
+                {props.selected}
+              </S.MyOption>
+              {props.isSelect && (
+                <>
+                  <S.Table>
+                    <S.MyLi onClick={props.onClickMoney} value="100">
+                      100
+                    </S.MyLi>
+                    <S.MyLi onClick={props.onClickMoney} value="500">
+                      500
+                    </S.MyLi>
+                    <S.MyLi onClick={props.onClickMoney} value="2000">
+                      2000
+                    </S.MyLi>
+                    <S.MyLis onClick={props.onClickMoney} value="5000">
+                      5000
+                    </S.MyLis>
+                  </S.Table>
+                </>
+              )}
+            </S.MySelect>
+          </S.MoneyWrapper>
+          <S.MoneyButton onClick={props.requestpay}>충전하기</S.MoneyButton>
+        </S.PayMentWrapper>
+      )}
+
+      {/* </Modal> */}
       <S.LargeBox>
         <S.InnerLeftBox>
           <img src="myPage/ProfileVector.png" />
