@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
 
 export const DIV = styled.div`
   margin-left: 750px;
+  margin-bottom: 30px;
 `;
 
 export const CashCharge = styled.div`
