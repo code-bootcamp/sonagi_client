@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrap = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -18,13 +18,13 @@ export const NoticeTitleWrap = styled.div`
   flex-direction: column;
 `;
 export const Title = styled.label`
-  font-size: 30px;
+  font-size: 1.875em;
   font-weight: 700;
   color: #484848;
   margin-top: 20px;
 `;
 export const Subtitle = styled.div`
-  font-size: 18px;
+  font-size: 1.125em;
   color: #828282;
   padding-top: 50px;
 `;
@@ -39,7 +39,7 @@ export const NoticeListWrap = styled.div`
   margin-bottom: 20px;
 `;
 export const Total = styled.span`
-  font-size: 15px;
+  font-size: 1em;
   color: #808080;
 `;
 export const NoticeWrap = styled.div`
@@ -77,7 +77,7 @@ export const RowWrap2 = styled.div`
 `;
 
 export const NoticeName = styled.label`
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 700;
   color: #484848;
   margin-right: 40px;
@@ -91,11 +91,11 @@ export const NoticeTag = styled.div`
   font-size: 11px;
 `;
 export const CreatAt = styled.span`
-  font-size: 20px;
+  font-size: 0.75em;
   color: #808080;
 `;
 export const Ago = styled.span`
-  font-size: 20px;
+  font-size: 1.25em;
   color: #828282;
 `;
 
@@ -135,7 +135,7 @@ export const Arrow = styled.img`
 export const PageNum = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: 24px;
+  font-size: 1.5em;
 `;
 
 export const Page = styled.div`
