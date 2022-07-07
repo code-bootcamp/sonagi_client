@@ -132,3 +132,48 @@ export const LogoutButton = styled.div`
   top: 40px;
   right: 90px;
 `;
+
+export const SelectWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const SelectCash = styled.option`
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 30px;
+`;
+
+export const Select = styled.select`
+  width: 400px;
+  padding: 5px;
+  border: 0px solid;
+  border-bottom: 1px solid;
+  margin-bottom: 20px;
+  font-size: 30px;
+`;
+
+export const Buttons = styled.button`
+  width: 100px;
+  height: 40px;
+  background-color: #2277d8;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Option = styled.option`
+  font-size: 10px;
+  color: #141414;
+`;

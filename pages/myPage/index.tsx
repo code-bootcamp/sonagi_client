@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import MyPageSideBarContainer from "../../src/components/commons/myPageSideBar/MyPageSideBar.container";
-import MyPagePresenter from "../../src/components/units/myPage/MyPage.presenter";
+import MyPageContainer from "../../src/components/units/myPage/MyPage.container";
 
 const Div = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export default function MyPage() {
   return (
     <Div>
       <MyPageSideBarContainer />
-      <MyPagePresenter />
+      <MyPageContainer />
     </Div>
   );
 }
