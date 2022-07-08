@@ -7,49 +7,49 @@ export default function InquireListPresenter() {
       <S.MainTitle>1 : 1 문의</S.MainTitle>
       <S.WrapperList>
         <S.WrapInfo>
-          <S.Title>글 제목</S.Title>
+          <S.Title>글 제목입니다</S.Title>
           <S.Date>2022.07.04</S.Date>
         </S.WrapInfo>
         <S.Answer>답변 완료</S.Answer>
       </S.WrapperList>
       <S.WrapperList>
         <S.WrapInfo>
-          <S.Title>글 제목</S.Title>
+          <S.Title>글 제목입니다</S.Title>
           <S.Date>2022.07.04</S.Date>
         </S.WrapInfo>
         <S.Answer>답변 완료</S.Answer>
       </S.WrapperList>
       <S.WrapperList>
         <S.WrapInfo>
-          <S.Title>글 제목</S.Title>
+          <S.Title>글 제목입니다</S.Title>
           <S.Date>2022.07.04</S.Date>
         </S.WrapInfo>
         <S.Answer>답변 완료</S.Answer>
       </S.WrapperList>
       <S.WrapperList>
         <S.WrapInfo>
-          <S.Title>글 제목</S.Title>
+          <S.Title>글 제목입니다</S.Title>
           <S.Date>2022.07.04</S.Date>
         </S.WrapInfo>
         <S.Answer>답변 완료</S.Answer>
       </S.WrapperList>
       <S.WrapperList>
         <S.WrapInfo>
-          <S.Title>글 제목</S.Title>
+          <S.Title>글 제목입니다</S.Title>
           <S.Date>2022.07.04</S.Date>
         </S.WrapInfo>
         <S.Answer>답변 완료</S.Answer>
       </S.WrapperList>
       <S.WrapperList>
         <S.WrapInfo>
-          <S.Title>글 제목</S.Title>
+          <S.Title>글 제목입니다</S.Title>
           <S.Date>2022.07.04</S.Date>
         </S.WrapInfo>
         <S.Answer>답변 완료</S.Answer>
       </S.WrapperList>
       <S.WrapperList>
         <S.WrapInfo>
-          <S.Title>글 제목</S.Title>
+          <S.Title>글 제목입니다</S.Title>
           <S.Date>2022.07.04</S.Date>
         </S.WrapInfo>
         <S.Answer>답변 완료</S.Answer>

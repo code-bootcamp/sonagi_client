@@ -16,10 +16,11 @@ export const WrapperList = styled.div`
   padding: 0 15px;
   display: flex;
   justify-content: space-between;
-  border: 1px solid;
+  border: 1px solid #bdbdbd;
   height: 100px;
   align-items: center;
   margin-bottom: 25px;
+  border-radius: 8px; ;
 `;
 
 export const WrapInfo = styled.div`
@@ -31,6 +32,7 @@ export const WrapInfo = styled.div`
 export const Title = styled.div`
   font-size: 18px;
   padding-bottom: 5px;
+  font-weight: 800;
 `;
 
 export const Date = styled.div`

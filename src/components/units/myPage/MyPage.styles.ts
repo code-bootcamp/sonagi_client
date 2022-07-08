@@ -35,7 +35,7 @@ export const ChargeHistory = styled.div`
 
 export const Wrapper = styled.div`
   /* display: flex; */
-  width: 100%;
+  /* width: 1000px; */
   margin: 0 auto;
 `;
 
@@ -61,15 +61,15 @@ export const CashCharge = styled.div`
 
 export const LargeBox = styled.div`
   /* width: 800px; */
-  width: 100%;
   height: 400px;
+  width: 100%;
   display: flex;
   @media ${breakPoints.tablet} {
     width: 550px;
     height: 400px;
   }
   @media ${breakPoints.mobile} {
-    width: 360px;
+    width: 500px;
     /* height: 694px; */
     display: flex;
     flex-direction: column;
@@ -159,10 +159,11 @@ export const Column = styled.div`
   justify-content: center;
   align-items: center;
   height: 144px;
-  width: 60%;
-  @media (min-width: 768px) and (max-width: 991px) {
+  /* width: 90%; */
+  @media ${breakPoints.mobile} {
+    margin-right: 33px;
   }
-  @media (max-width: 767px) {
+  @media ${breakPoints.tablet} {
   }
 `;
 
@@ -193,11 +194,12 @@ export const Title = styled.div`
   font-weight: 400;
   color: #141414;
   margin-top: 7px;
-  @media (min-width: 768px) and (max-width: 991px) {
-  }
-  @media (max-width: 767px) {
+
+  @media ${breakPoints.mobile} {
     font-size: 0.938rem;
     font-weight: 800;
+  }
+  @media ${breakPoints.tablet} {
   }
 `;
 
