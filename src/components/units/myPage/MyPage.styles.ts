@@ -9,6 +9,7 @@ export const ChargeButton = styled.div`
   border: 1px solid #808080;
   color: #828282;
   cursor: pointer;
+  border-radius: 8px;
   @media (min-width: 768px) and (max-width: 991px) {
     margin-right: 700px;
   }
@@ -74,6 +75,7 @@ export const LargeBox = styled.div`
 `;
 
 export const InnerLeftBox = styled.div`
+  border-radius: 8px 0px 0px 8px;
   width: 280px;
   height: 400px;
   background-color: #ebf6ff;
