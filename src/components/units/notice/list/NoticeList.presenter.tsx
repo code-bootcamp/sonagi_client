@@ -1,3 +1,4 @@
+import Button01 from "../../../commons/buttons/01";
 import * as S from "./NoticeList.styles";
 
 export default function NoticeListPresenter() {
@@ -77,11 +78,7 @@ export default function NoticeListPresenter() {
       </S.NoticeListWrap>
       {/* 페이지 */}
       <S.RowWrap>
-        <div></div>
-        <S.NoticeWrite>
-          <S.Noticeicon src="../notice/noticewrite.svg" />
-          <S.WriteBtn>공지 작성하기</S.WriteBtn>
-        </S.NoticeWrite>
+        <Button01 title="공지 작성하기" />
       </S.RowWrap>
       <S.RowWrap3>
         <S.Arrow src="../notice/leftArrow.svg" />

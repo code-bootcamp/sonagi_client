@@ -1,3 +1,5 @@
+import Button01 from "../../commons/buttons/01";
+import Button02 from "../../commons/buttons/02";
 import * as S from "./EventWrite.styles";
 
 export default function EventWritePresenter(props) {
@@ -33,8 +35,8 @@ export default function EventWritePresenter(props) {
         </S.UploadButton>
       </S.UploadBox>
       <S.ButtonWrapper>
-        <S.Button onClick={props.onClickList}>취소</S.Button>
-        <S.Button>등록</S.Button>
+        <Button02 onClick={props.onClickList} title="취소" />
+        <Button01 title="등록" />
       </S.ButtonWrapper>
     </S.Wrapper>
   );

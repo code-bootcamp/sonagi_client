@@ -60,18 +60,3 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
   margin-bottom: 100px;
 `;
-
-export const Button = styled.div`
-  width: 160px;
-  height: 60px;
-  padding: 14px 0px;
-  margin: 0px 15px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  letter-spacing: 0.232836px;
-  color: #ffffff;
-  background-color: #2277d8;
-  cursor: pointer;
-`;

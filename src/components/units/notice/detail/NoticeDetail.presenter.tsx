@@ -1,3 +1,4 @@
+import Button01 from "../../../commons/buttons/01";
 import * as S from "./NoticeDetail.styles";
 
 export default function NoticeDetailPresenter() {
@@ -14,7 +15,7 @@ export default function NoticeDetailPresenter() {
           <S.Line></S.Line>
           <S.contents></S.contents>
           <S.BtnWrap>
-            <S.Btn>목록으로</S.Btn>
+            <Button01 title="목록으로" />
           </S.BtnWrap>
         </S.NoticeDetail>
       </S.NoticeDetailWrap>
