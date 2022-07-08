@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const MyNovel = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #141414;
   @media (max-width: 767px) {
     box-shadow: inset 0 -14px #bee3ff;
@@ -12,6 +12,7 @@ export const MyNovel = styled.div`
 `;
 
 export const Img = styled.img`
+  border-radius: 8px;
   @media (max-width: 767px) {
     width: 7.875rem;
     height: 10rem;
@@ -19,7 +20,7 @@ export const Img = styled.img`
 `;
 
 export const Bottom = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
 `;
 
 export const Wrapper = styled.div`
@@ -30,22 +31,23 @@ export const Wrapper = styled.div`
 export const Box = styled.div`
   width: 830px;
   height: 110px;
-  border: 1px solid black;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
   margin-top: 40px;
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 770px) and (max-width: 2000px) {
     width: 700px;
     height: 110px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 769px) {
     border: none;
     margin-bottom: 150px;
   }
 `;
 
 export const Title = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
   @media (max-width: 767px) {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 800;
   }
   @media (max-width: 2000px) {
@@ -53,11 +55,11 @@ export const Title = styled.div`
 `;
 
 export const Genre = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
 `;
 
 export const Time = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #cccccc;
   margin-left: 15px;
   @media (max-width: 767px) {
@@ -79,7 +81,7 @@ export const Flex = styled.div`
 export const BoxFlex = styled.div`
   display: flex;
   @media (max-width: 3000px) {
-    margin-left: 290px;
+    margin-left: 180px;
   }
   @media (min-width: 768px) and (max-width: 991px) {
     margin-left: 47%;
@@ -122,6 +124,7 @@ export const Button1 = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+  border-radius: 8px;
 `;
 
 export const Button2 = styled.div`
@@ -132,10 +135,11 @@ export const Button2 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
 `;
 
 export const MyPageFont = styled.div`
-  font-size: 32px;
+  font-size: 2rem;
   margin-bottom: 50px;
   @media (min-width: 768px) and (max-width: 991px) {
     display: none;

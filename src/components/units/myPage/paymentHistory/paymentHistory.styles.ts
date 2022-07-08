@@ -4,6 +4,20 @@ export const Wrapper = styled.div`
   width: 1000px;
 `;
 
+export const MyNovel = styled.div`
+  font-size: 1.125rem;
+  color: #141414;
+  @media (min-width: 768px) and (max-width: 2000px) {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    box-shadow: inset 0 -14px #bee3ff;
+    line-height: 24px;
+    width: 113px;
+    font-size: 1.563rem;
+  }
+`;
+
 export const Top = styled.div`
   font-size: 18px;
   color: #141414;
@@ -33,6 +47,24 @@ export const Table = styled.table`
   border-collapse: collapse;
   margin-left: 90px;
   margin-bottom: 70px;
+  @media (max-width: 1200px) {
+    width: 70%;
+  }
+  @media (max-width: 803px) {
+    width: 60%;
+  }
+  @media (max-width: 786px) {
+    width: 60%;
+  }
+  @media (min-width: 767px) and (max-width: 1190px) {
+    width: 70%;
+  }
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+  @media (max-width: 727px) {
+    width: 40%;
+  }
 `;
 
 export const th = styled.th`
@@ -73,4 +105,7 @@ export const PageNation = styled.div`
   font-size: 24px;
 
   margin: 0px 0px 100px 340px;
+  @media (max-width: 767px) {
+    margin-right: 40px;
+  }
 `;

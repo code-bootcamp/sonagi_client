@@ -13,8 +13,8 @@ export default function MyNovelPresenter() {
                 <S.Column>
                   <S.Title>소설 제목</S.Title>
                   <S.GenreFlex>
-                    <S.Genre>장르</S.Genre>
-                    <S.Time>작성 시간</S.Time>
+                    <S.Genre>OO화</S.Genre>
+                    <S.Time>회차 제목</S.Time>
                   </S.GenreFlex>
                 </S.Column>
                 <S.BoxFlex>
@@ -33,8 +33,8 @@ export default function MyNovelPresenter() {
                 <S.Column>
                   <S.Title>글 제목</S.Title>
                   <S.GenreFlex>
-                    <S.Genre>장르</S.Genre>
-                    <S.Time>작성 시간</S.Time>
+                    <S.Genre>OO화</S.Genre>
+                    <S.Time>회차 제목</S.Time>
                   </S.GenreFlex>
                 </S.Column>
                 <S.BoxFlex>
