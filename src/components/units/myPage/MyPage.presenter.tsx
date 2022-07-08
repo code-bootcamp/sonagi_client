@@ -48,7 +48,7 @@ export default function MyPagePresenter(props: any) {
         <S.InnerLeftBox>
           <img src="myPage/ProfileVector.png" />
           <S.ChangeButton>변경</S.ChangeButton>
-          <S.Name>닉네임 님</S.Name>
+          <S.Name>닉네임 님!</S.Name>
           <S.Email>abcdefghij@gamil.com</S.Email>
           <S.Flex>
             <S.Point>포인트 100P</S.Point>
