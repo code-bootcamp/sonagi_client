@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 `;
 
 export const LoginWrapper = styled.div`
-  width: 35vmax;
+  width: 35vw;
   height: 100vh;
   padding: 120px 80px 30px 80px;
   display: flex;
@@ -39,8 +39,9 @@ export const LoginWrapper = styled.div`
 `;
 
 export const BookImg = styled.img`
-  width: 65vmax;
+  width: 65vw;
   height: 100vh;
+  object-fit: cover;
 
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;
