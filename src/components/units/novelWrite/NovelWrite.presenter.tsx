@@ -1,4 +1,6 @@
 import React from "react";
+import Button01 from "../../commons/buttons/01";
+import Button02 from "../../commons/buttons/02";
 import * as S from "./NovelWrite.styles";
 
 export default function NovelWritePresenter(props: any) {
@@ -26,10 +28,8 @@ export default function NovelWritePresenter(props: any) {
         <S.WrapGenreCycle>
           <S.WrapGenre>
             <S.Label>장르</S.Label>
-            <S.WrapSelect>
-              <S.GenreLabel>장르선택</S.GenreLabel>
-              <S.SelectButton src="/novelWrite/arrow_down.png" />
-            </S.WrapSelect>
+            <S.GenreLabel>장르선택</S.GenreLabel>
+            <S.SelectButton src="/novelWrite/arrow_down.png" />
           </S.WrapGenre>
           <S.WrapCycle>
             <S.Label>연재 주기</S.Label>
@@ -70,15 +70,13 @@ export default function NovelWritePresenter(props: any) {
           <S.CoverImage src="/novelWrite/cover_image.png" />
         </S.WrapCoverImage>
       </S.WrapperLavel>
-
       <S.WrapIntroduce>
         <S.Label>작품소개</S.Label>
         <S.IntroduceInput type="text" />
       </S.WrapIntroduce>
-
       <S.WrapSubmitButton>
-        <S.ClickButton>취소</S.ClickButton>
-        <S.ClickButton>저장</S.ClickButton>
+        <Button02 title="취소" />
+        <Button01 title="저장" />
       </S.WrapSubmitButton>
     </S.Wrapper>
   );

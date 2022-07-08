@@ -1,4 +1,5 @@
 import React from "react";
+import Button01 from "../../../commons/buttons/01";
 import * as S from "./FreeBoardDetail.styles";
 export default function FreeBoardDetailPresenter() {
   return (
@@ -15,7 +16,9 @@ export default function FreeBoardDetailPresenter() {
         </S.WrapUserInfo>
       </S.WrapTitleInfo>
       <S.Contents type="text" />
-      <S.Button>목록으로</S.Button>
+      <S.ButtonWrapper>
+        <Button01 title="목록으로" />
+      </S.ButtonWrapper>
     </S.Wrapper>
   );
 }

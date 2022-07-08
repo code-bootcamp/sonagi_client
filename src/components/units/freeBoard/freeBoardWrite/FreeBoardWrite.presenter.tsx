@@ -1,4 +1,6 @@
 import React from "react";
+import Button01 from "../../../commons/buttons/01";
+import Button02 from "../../../commons/buttons/02";
 import * as S from "./FreeBoardWrite.styles";
 export default function FreeBoardWritePresenter() {
   return (
@@ -20,8 +22,8 @@ export default function FreeBoardWritePresenter() {
         <S.Image>+</S.Image>
       </S.WrapperLabel>
       <S.WrapButton>
-        <S.ClickButton>취소</S.ClickButton>
-        <S.ClickButton>등록</S.ClickButton>
+        <Button02 title="취소" />
+        <Button01 title="등록" />
       </S.WrapButton>
     </S.Wrapper>
   );

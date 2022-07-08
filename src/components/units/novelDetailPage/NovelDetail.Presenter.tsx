@@ -1,3 +1,5 @@
+import Button01 from "../../commons/buttons/01";
+import Button02 from "../../commons/buttons/02";
 import * as S from "./NovelDetail.Styles";
 export default function NovelDetailPresenter() {
   return (
@@ -12,7 +14,6 @@ export default function NovelDetailPresenter() {
               <S.Arrow>{">"}</S.Arrow>
               <S.TopFont>소설장르</S.TopFont>
             </S.Genre>
-
             <S.NovelTitle>kick off</S.NovelTitle>
             <S.ProfileWrapper>
               <S.WriterImg src="novelDetail/profile.jpg" />
@@ -32,26 +33,23 @@ export default function NovelDetailPresenter() {
               <S.Score>5점</S.Score>
               <S.Count>(0,000 명)</S.Count>
             </S.StarWrapper>
-
             <S.NovelRemarks>
               소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다
             </S.NovelRemarks>
             <S.Line />
           </S.ColumnWrapper>
         </S.FlexWrapper>
-
         <S.ButtonWrapper>
           <S.HeartWrapper>
             <S.HeartImg src="novelDetail/HeartImg.png" />
             <S.HeartCount>3,000</S.HeartCount>
           </S.HeartWrapper>
           <S.LookButtonWrapper>
-            <S.LookFirstBtn>첫화보기</S.LookFirstBtn>
-            <S.Buttons>이어보기</S.Buttons>
-            <S.Buttons>찜하기</S.Buttons>
+            <Button02 title="첫화보기" />
+            <Button01 title="이어보기" />
+            <Button01 title="찜하기" />
           </S.LookButtonWrapper>
         </S.ButtonWrapper>
-
         <div>
           <S.TableLine />
           <S.TableTop>
@@ -82,12 +80,10 @@ export default function NovelDetailPresenter() {
             <S.Date>2022.07.05</S.Date>
           </S.TableSonWrapper>
           <S.VerticalLine />
-
           <S.SumCharacter>약 000 천자</S.SumCharacter>
           <S.LookBtn>보기</S.LookBtn>
         </S.TableLineWrapper>
         <S.TableInnerLine />
-
         <S.TableLineWrapper>
           <S.Square />
           <S.TableSonWrapper>
@@ -95,12 +91,10 @@ export default function NovelDetailPresenter() {
             <S.Date>2022.07.05</S.Date>
           </S.TableSonWrapper>
           <S.VerticalLine />
-
           <S.SumCharacter>약 000 천자</S.SumCharacter>
           <S.LookBtn>보기</S.LookBtn>
         </S.TableLineWrapper>
         <S.TableInnerLine />
-
         <S.TableLineWrapper>
           <S.Square />
           <S.TableSonWrapper>
@@ -108,7 +102,6 @@ export default function NovelDetailPresenter() {
             <S.Date>2022.07.05</S.Date>
           </S.TableSonWrapper>
           <S.VerticalLine />
-
           <S.SumCharacter>약 000 천자</S.SumCharacter>
           <S.LookBtn>보기</S.LookBtn>
         </S.TableLineWrapper>
