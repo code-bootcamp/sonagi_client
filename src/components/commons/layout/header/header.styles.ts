@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -24,11 +25,20 @@ export const BottomBox = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e0e0e0;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    height: 140px;
+  }
 `;
 
 export const WrapSearch = styled.div`
   display: flex;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    padding-top: 20px;
+  }
 `;
 
 export const SignUpLoginButton = styled.div`
@@ -53,8 +63,10 @@ export const SearchBox = styled.div`
   background: #f2f2f2;
   border-radius: 5px;
   padding: 8px;
-
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 70vw;
+  }
 `;
 
 export const SearchButton = styled.img``;

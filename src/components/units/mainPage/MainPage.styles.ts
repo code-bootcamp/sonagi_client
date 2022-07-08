@@ -1,37 +1,33 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 80vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 991px) {
-    width: 1200px;
-  }
-
-  @media (min-width: 767px) and (max-width: 991px) {
+  /* @media ${breakPoints.tablet} {
     min-width: 767px;
     max-width: 991px;
   }
 
-  @media (max-width: 767px) {
+  @media ${breakPoints.mobile} {
     max-width: 767px;
-  }
+  } */
 `;
 
 export const TitleWrapper = styled.div`
-  width: 100%;
   height: 400px;
   padding: 0px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  @media (min-width: 767px) and (max-width: 991px) {
+  /* @media (min-width: 767px) and (max-width: 991px) {
     min-width: 767px;
     max-width: 991px;
-  }
+  } */
 `;
 
 export const PhoneWrapper = styled.div`
@@ -43,10 +39,10 @@ export const PhoneWrapper = styled.div`
   align-items: center;
   margin-bottom: -10px;
 
-  @media (min-width: 767px) and (max-width: 991px) {
+  /* @media (min-width: 767px) and (max-width: 991px) {
     min-width: 767px;
     max-width: 991px;
-  }
+  } */
 `;
 
 export const Title = styled.div`

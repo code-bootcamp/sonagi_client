@@ -19,7 +19,7 @@ export const QuestionTitle = styled.div`
 `;
 
 export const QuestionBox = styled.div`
-  width: 900px;
+  width: 90%;
   height: ${(props: any) =>
     props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
       ? "200px"
@@ -40,7 +40,7 @@ export const QuestionBox = styled.div`
   cursor: pointer;
 
   @media (min-width: 767px) and (max-width: 991px) {
-    width: 95%;
+    width: 90%;
   }
 
   @media (max-width: 767px) {
