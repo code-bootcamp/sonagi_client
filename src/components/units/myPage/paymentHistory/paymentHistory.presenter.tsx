@@ -2,6 +2,7 @@ import * as S from "./paymentHistory.styles";
 export default function PaymentHistoryPresenter() {
   return (
     <S.Wrapper>
+      <S.MyNovel>나의 작품</S.MyNovel>
       <S.TopWrapper>
         <S.Top>충전내역</S.Top>
         <S.Top>후원내역</S.Top>
