@@ -2,13 +2,9 @@ import styled from "@emotion/styled";
 import Slider from "react-slick";
 
 export const SliderWrapper = styled.div`
-  width: 80vw;
+  width: 100%;
   height: 500px;
   background-color: gray;
-
-  @media (min-width: 991px) {
-    width: 1200px;
-  }
 
   @media (min-width: 767px) and (max-width: 991px) {
     width: 100%;

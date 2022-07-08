@@ -12,7 +12,9 @@ interface ILayoutProps {
 }
 
 const Wrapper = styled.div`
-  margin: 0px;
+  max-width: 1200px;
+
+  margin: 0 auto;
   padding: 0px;
   box-sizing: border-box;
   display: flex;
@@ -36,9 +38,9 @@ export default function Layout(props: ILayoutProps) {
     <Wrapper>
       {!isHiddenHeader && <LayoutHeader />}
       {!isHiddenNavigation && <LayoutNavigation />}
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div>{props.children}</div>
-      </div>
+      {/* <div style={{ display: "flex", justifyContent: "center" }}> */}
+      <div>{props.children}</div>
+      {/* </div> */}
       {!isHiddenFooter && <LayoutFooter />}
     </Wrapper>
   );
