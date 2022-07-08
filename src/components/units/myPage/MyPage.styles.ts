@@ -74,6 +74,7 @@ export const LargeBox = styled.div`
 `;
 
 export const InnerLeftBox = styled.div`
+  border-radius: 8px 0px 0px 8px;
   width: 280px;
   height: 400px;
   background-color: #ebf6ff;
