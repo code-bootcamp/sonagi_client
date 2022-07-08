@@ -3,6 +3,7 @@ import { breakPoints } from "../../../commons/styles/media";
 
 export const ChargeButton = styled.div`
   width: 102px;
+  /* width: 100%; */
   height: 47px;
   display: flex;
   justify-content: center;
@@ -40,8 +41,10 @@ export const Wrapper = styled.div`
 
 export const DIV = styled.div`
   /* margin-left: 750px; */
-  margin-bottom: 30px;
-  margin-left: 128%;
+  /* margin-bottom: 30px;
+  /* margin-left: 128%; */
+  margin-left: 700px;
+  width: 100%;
   @media ${breakPoints.tablet} {
   }
   @media ${breakPoints.mobile} {
@@ -58,7 +61,7 @@ export const CashCharge = styled.div`
 
 export const LargeBox = styled.div`
   /* width: 800px; */
-  width: 150%;
+  width: 100%;
   height: 400px;
   display: flex;
   @media ${breakPoints.tablet} {
@@ -76,21 +79,28 @@ export const LargeBox = styled.div`
 export const InnerLeftBox = styled.div`
   border-radius: 8px 0px 0px 8px;
   /* width: 280px; */
-  width: 60%;
+  width: 40%;
   height: 400px;
   background-color: #ebf6ff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media ${breakPoints.mobile} {
+    background-color: white;
+  }
 `;
 
 export const InnerRightBox = styled.div`
   border-radius: 0px 8px 8px 0px;
   /* width: 520px; */
-  width: 90%;
+  width: 60%;
   height: 400px;
   background-color: #f2f2f2;
+  @media ${breakPoints.mobile} {
+    background-color: white;
+  }
 `;
 
 export const ChangeButton = styled.div`
@@ -149,7 +159,7 @@ export const Column = styled.div`
   justify-content: center;
   align-items: center;
   height: 144px;
-  width: 104px;
+  width: 60%;
   @media (min-width: 768px) and (max-width: 991px) {
   }
   @media (max-width: 767px) {
@@ -166,6 +176,7 @@ export const Dash = styled.div`
 
 export const MainFlex = styled.div`
   display: flex;
+  width: 100%;
   justify-content: space-around;
   @media (min-width: 1500px) and (max-width: 2500px) {
     margin-top: 130px;
