@@ -8,5 +8,14 @@ export default function LoginContainer() {
     router.push("/");
   };
 
-  return <LoginPresenter onClickMain={onClickMain} />;
+  const onClickMoveToSignUp = () => {
+    router.push("/signup");
+  };
+
+  return (
+    <LoginPresenter
+      onClickMain={onClickMain}
+      onClickMoveToSignUp={onClickMoveToSignUp}
+    />
+  );
 }

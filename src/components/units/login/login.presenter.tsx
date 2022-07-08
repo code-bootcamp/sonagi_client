@@ -20,7 +20,9 @@ export default function LoginPresenter(props) {
         </S.SubBox>
         <S.SignUpBox>
           <S.SubButton>계정이 없으신가요?</S.SubButton>
-          <S.SignUpButton>회원가입</S.SignUpButton>
+          <S.SignUpButton onClick={props.onClickMoveToSignUp}>
+            회원가입
+          </S.SignUpButton>
         </S.SignUpBox>
         <S.OrBox>
           <S.Line></S.Line>

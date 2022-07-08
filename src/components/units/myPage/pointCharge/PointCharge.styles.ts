@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Input = styled.input`
-  margin-left: 15px;
-`;
+export const Input = styled.input``;
 
 export const MyPoint = styled.div`
   font-size: 18px;
@@ -27,8 +25,11 @@ export const InnerTableLeft = styled.div`
 `;
 
 export const InnerTableContents = styled.div`
+  width: 50%;
   font-size: 16px;
-  margin-left: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 `;
 
 export const TopFlex = styled.div`
@@ -83,6 +84,15 @@ export const InnerTable = styled.div`
     opacity: 90%;
     border: 1px solid #2277d8;
   }
+  background-color: ${(props: any) =>
+    props.el === props.value ? "#bee3ff" : "default"};
+  opacity: ${(props: any) => (props.el === props.value ? "90%" : "default")};
+  border: ${(props: any) =>
+    props.el === props.value ? "1px solid #2277d8" : "default"};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 3%;
 `;
 
 export const HowMuch = styled.div`
@@ -95,7 +105,6 @@ export const HowMuchs = styled.div`
   font-size: 20px;
   font-weight: 600;
   color: #2277d8;
-  margin-left: 22%;
 `;
 
 export const AmountDiv = styled.div`
@@ -126,6 +135,7 @@ export const ChargeButton = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0% 2% 0% 2%;
+  cursor: pointer;
 `;
 
 export const FooterAmountWon = styled.div`
@@ -135,7 +145,8 @@ export const FooterAmountWon = styled.div`
 
 export const FooterFlex = styled.div`
   display: flex;
-  margin-left: 52%;
+  margin-left: 46%;
+  padding-right: 3%;
   align-items: center;
 `;
 
@@ -147,10 +158,10 @@ export const ChargeAmount = styled.div`
 `;
 
 export const AmountFlex = styled.div`
+  width: 40%;
   display: flex;
   align-items: center;
-  margin-left: 53%;
-  width: 90px;
+  justify-content: right;
 `;
 
 export const AmountFlexs = styled.div`

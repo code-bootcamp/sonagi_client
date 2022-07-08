@@ -1,9 +1,12 @@
 import * as S from "./signup.styles";
 
-export default function SignUpPresenter() {
+export default function SignUpPresenter(props) {
   return (
     <S.Wrapper>
-      <S.PhoneImg src="/signup/sonagiphone.png" />
+      <S.PhoneImg
+        src="/signup/sonagiphone.png"
+        onClick={props.onClickMoveToMain}
+      />
       <S.LoginWrapper>
         <S.LogoImg src="/signup/signup.png" />
         <S.WrapSubTitle>
