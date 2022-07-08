@@ -25,11 +25,13 @@ export const Column = styled.div`
 `;
 
 export const NovelPic = styled.img`
-  width: 151px;
+  border-radius: 8px;
+  width: 160px;
   height: 210px;
   @media (max-width: 767px) {
+    border-radius: 8px;
     width: 140px;
-    height: 160px;
+    height: 190px;
   }
 `;
 
