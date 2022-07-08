@@ -11,9 +11,11 @@ const Div = styled.div`
 
 const Margin = styled.div`
   margin: 60px 0px 130px 130px;
+  width: 80%;
 `;
 
 const Break = styled.div`
+  width: 20%;
   @media ${breakPoints.mobile} {
     display: none;
   }

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const MyNovel = styled.div`
   font-size: 1.125rem;
@@ -13,10 +14,6 @@ export const MyNovel = styled.div`
 
 export const Img = styled.img`
   border-radius: 8px;
-  @media (max-width: 767px) {
-    width: 7.875rem;
-    height: 10rem;
-  }
 `;
 
 export const Bottom = styled.div`
@@ -24,8 +21,14 @@ export const Bottom = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 1000px;
+  /* width: 1000px; */
   display: flex;
+  width: 100%;
+  @media ${breakPoints.mobile} {
+    margin-left: 10%;
+  }
+  @media ${breakPoints.tablet} {
+  }
 `;
 
 export const Box = styled.div`
@@ -34,24 +37,17 @@ export const Box = styled.div`
   border: 1px solid #bdbdbd;
   border-radius: 8px;
   margin-top: 40px;
-  @media (min-width: 770px) and (max-width: 2000px) {
-    width: 700px;
-    height: 110px;
+  @media ${breakPoints.mobile} {
+    width: 600px;
+    margin-left: 10%;
   }
-  @media (max-width: 769px) {
-    border: none;
-    margin-bottom: 150px;
+  @media ${breakPoints.tablet} {
+    width: 700px;
   }
 `;
 
 export const Title = styled.div`
   font-size: 1.125rem;
-  @media (max-width: 767px) {
-    font-size: 1.25rem;
-    font-weight: 800;
-  }
-  @media (max-width: 2000px) {
-  }
 `;
 
 export const Genre = styled.div`
@@ -62,9 +58,6 @@ export const Time = styled.div`
   font-size: 0.875rem;
   color: #cccccc;
   margin-left: 15px;
-  @media (max-width: 767px) {
-    display: none;
-  }
 `;
 
 export const GenreFlex = styled.div`
@@ -76,43 +69,24 @@ export const GenreFlex = styled.div`
 
 export const Flex = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 export const BoxFlex = styled.div`
   display: flex;
-  @media (max-width: 3000px) {
-    margin-left: 180px;
-  }
-  @media (min-width: 768px) and (max-width: 991px) {
-    margin-left: 47%;
-  }
-  @media (max-width: 767px) {
-    margin: 18%;
-    margin-right: 35%;
-  }
+  margin-left: 20%;
 `;
 
 export const InnerFlex = styled.div`
   display: flex;
   align-items: center;
-  @media (max-width: 760px) {
-    display: flex;
-    flex-direction: column;
-    margin-left: 3%;
-  }
-  @media (max-width: 2000px) {
-  }
+  width: 80%;
 `;
 
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 1%;
-  @media (max-width: 767px) {
-    margin-right: 120px;
-  }
-  @media (max-width: 2000px) {
-  }
+  /* margin-left: 10px; */
 `;
 
 export const Button1 = styled.div`
@@ -141,10 +115,14 @@ export const Button2 = styled.div`
 export const MyPageFont = styled.div`
   font-size: 2rem;
   margin-bottom: 50px;
-  @media (min-width: 768px) and (max-width: 991px) {
-    display: none;
-  }
-  @media (min-width: 767px) {
-    display: none;
-  }
 `;
+
+export const ImageWrapper = styled.div`
+  width: 20%;
+`;
+
+export const BoxWrapper = styled.div`
+  width: 100%;
+`;
+
+export const ImgWrapper = styled.div``;

@@ -5,13 +5,8 @@ import React from "react";
 export default function MyPagePresenter(props: any) {
   return (
     <S.Wrapper>
-      <S.DIV>
-        <S.ChargeButton onClick={props.handleOk}>캐시충전</S.ChargeButton>
-      </S.DIV>
-
-      {props.isModalVisible && (
+      {/* {props.isModalVisible && (
         <S.PayMentWrapper>
-          {/* <S.Overlay onClick={props.handleCancel} /> */}
           <S.Titles>포인트 충전</S.Titles>
           <S.MoneyWrapper>
             <S.MySelect onChange={props.onChangeMoney}>
@@ -40,15 +35,16 @@ export default function MyPagePresenter(props: any) {
           </S.MoneyWrapper>
           <S.MoneyButton onClick={props.requestpay}>충전하기</S.MoneyButton>
         </S.PayMentWrapper>
-      )}
-
-      {/* </Modal> */}
+      )} */}
+      <S.DIV>
+        <S.ChargeButton onClick={props.handleOk}>캐시충전</S.ChargeButton>
+      </S.DIV>
+      <S.MyPageFont>마이 페이지</S.MyPageFont>
       <S.LargeBox>
-        <S.MyPageFont>마이 페이지</S.MyPageFont>
         <S.InnerLeftBox>
           <img src="myPage/ProfileVector.png" />
           <S.ChangeButton>변경</S.ChangeButton>
-          <S.Name>닉네임 님!</S.Name>
+          <S.Name>닉네임 님</S.Name>
           <S.Email>abcdefghij@gamil.com</S.Email>
           <S.Flex>
             <S.Point>포인트 100P</S.Point>

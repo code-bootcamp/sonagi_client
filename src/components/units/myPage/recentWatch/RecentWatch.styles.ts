@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 1000px;
@@ -6,6 +7,9 @@ export const Wrapper = styled.div`
 
 export const Flex = styled.div`
   display: flex;
+  @media ${breakPoints.mobile} {
+    justify-content: flex-start;
+  }
 `;
 
 export const RecentWatch = styled.div`
