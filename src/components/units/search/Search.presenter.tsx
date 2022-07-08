@@ -9,6 +9,7 @@ export default function SearchPresenter() {
       <S.TagWrap>
         <S.Tag>#학원</S.Tag>
         <S.Tag>#로맨스</S.Tag>
+        <S.Tag>#로맨스판타지</S.Tag>
         <S.Tag>#판타지</S.Tag>
         <S.Tag>#스릴러</S.Tag>
         <S.Tag>#미스테리</S.Tag>

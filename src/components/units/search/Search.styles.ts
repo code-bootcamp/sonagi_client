@@ -1,15 +1,24 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 10% 0;
+  justify-content: center;
+  align-items: center;
+
+  margin: 10% 0%;
 `;
 export const SearchInputWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 50px 0px;
+
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 export const SearchInput = styled.input`
   border: none;
@@ -18,14 +27,28 @@ export const SearchInput = styled.input`
   height: 35px;
   background-image: url("../search/search.svg");
   background-repeat: no-repeat;
-  background-position: 590px 0px;
-  padding: 10px 20px;
+  background-position: 10px;
+  padding: 10px 60px;
+
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 
 export const TagWrap = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 80px;
+
+  @media ${breakPoints.tablet} {
+    width: 96%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 200px;
+    background-color: blue;
+  }
 `;
 export const Tag = styled.div`
   width: 100%;
