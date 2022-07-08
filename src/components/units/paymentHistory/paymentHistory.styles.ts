@@ -18,14 +18,14 @@ export const ChargeHistory = styled.th`
 
 export const TopWrapper = styled.div`
   display: flex;
-  margin: 50px 0px 50px 10px;
+  margin: 20px 0px 50px 10px;
 `;
 
 export const TableTop = styled.th`
   border-bottom: 1px solid #d9d9d9;
   font-size: 15px;
   color: black;
-  padding: 5px;
+  padding: 8px;
 `;
 
 export const Table = styled.table`
@@ -46,7 +46,7 @@ export const td = styled.td`
 
 export const TD = styled.td`
   border-bottom: 1px solid #d9d9d9;
-  color: #ffd600;
+  color: #2277d8;
   text-align: center;
   width: 75%;
   font-weight: 600;
@@ -57,7 +57,7 @@ export const TableDate = styled.td`
   font-size: 16px;
   color: #4f4f4f;
   text-align: center;
-  padding: 5px;
+  padding: 8px;
 `;
 
 export const TablePointSum = styled.td`
@@ -66,6 +66,7 @@ export const TablePointSum = styled.td`
   font-weight: bold;
   color: #4f4f4f;
   text-align: center;
+  padding: 8px;
 `;
 
 export const PageNation = styled.div`
