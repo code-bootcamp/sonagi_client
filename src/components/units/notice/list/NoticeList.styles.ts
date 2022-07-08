@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrap = styled.div`
   width: 100%;
@@ -12,19 +13,33 @@ export const RowWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: right;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 export const NoticeTitleWrap = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const MTitle = styled.div`
+  font-size: 1.575rem;
+  font-weight: 700;
+  color: #484848;
+  padding-bottom: 20px;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
 export const Title = styled.label`
-  font-size: 1.875em;
+  font-size: 1.875rem;
   font-weight: 700;
   color: #484848;
   margin-top: 20px;
 `;
 export const Subtitle = styled.div`
-  font-size: 1.125em;
+  font-size: 1.125rem;
   color: #828282;
   padding-top: 50px;
 `;
@@ -33,13 +48,8 @@ export const NoticeIcon = styled.img`
   height: 202px;
 `;
 
-export const NoticeListWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-`;
 export const Total = styled.span`
-  font-size: 1em;
+  font-size: 1rem;
   color: #808080;
 `;
 export const NoticeWrap = styled.div`
@@ -51,36 +61,51 @@ export const NoticeWrap = styled.div`
   box-shadow: 0px 4px 4px 0px #f2f2f2;
   border-radius: 10px;
   padding: 27px 43px;
+  margin-bottom: 20px;
+  justify-content: sp;
 `;
 export const NoticeImg = styled.img`
-  width: 200px;
-  height: 120px;
+  height: 150px;
   background-color: #eee;
+
+  @media ${breakPoints.mobile} {
+    height: 100px;
+  }
 `;
 export const TextWrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   margin-left: 35px;
 `;
 export const TextRowWrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  @media ${breakPoints.mobile} {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
 `;
 
 export const RowWrap2 = styled.div`
   display: flex;
   flex-direction: row;
-  width: 900px;
   justify-content: space-between;
 `;
 
 export const NoticeName = styled.label`
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #484848;
-  margin-right: 40px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1rem;
+    padding-top: 6px;
+  }
 `;
 export const NoticeTag = styled.div`
   background-color: #ddf0ff;
@@ -88,15 +113,23 @@ export const NoticeTag = styled.div`
   height: 18px;
   color: #2277d8;
   text-align: center;
-  font-size: 11px;
+  font-size: 0.688rem;
 `;
 export const CreatAt = styled.span`
-  font-size: 0.75em;
+  font-size: 0.75rem;
   color: #808080;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.5rem;
+  }
 `;
 export const Ago = styled.span`
-  font-size: 1.25em;
+  font-size: 1.25rem;
   color: #828282;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const NoticeWrite = styled.div`
@@ -120,7 +153,6 @@ export const Noticeicon = styled.img`
 export const WriteBtn = styled.div``;
 
 export const RowWrap3 = styled.div`
-  width: 1200px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -135,7 +167,7 @@ export const Arrow = styled.img`
 export const PageNum = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 `;
 
 export const Page = styled.div`

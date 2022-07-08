@@ -32,14 +32,18 @@ export const BottomBox = styled.div`
   border-bottom: 1px solid #e0e0e0;
 
   @media ${breakPoints.mobile} {
-    /* flex-direction: column; */
-    height: 120px;
+    flex-direction: column;
+    height: 150px;
   }
 `;
 
 export const WrapSearch = styled.div`
   display: flex;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    justify-content: space-between;
+  }
 `;
 
 export const SignUpLoginButton = styled.div`
@@ -65,8 +69,9 @@ export const SearchBox = styled.div`
   border-radius: 5px;
   padding: 8px;
   cursor: pointer;
+
   @media ${breakPoints.mobile} {
-    width: 50vw;
+    width: 80vw;
   }
 `;
 

@@ -4,7 +4,7 @@ import * as S from "./NoticeList.styles";
 export default function NoticeListPresenter() {
   return (
     <S.Wrap>
-      {/* 첫번째 목록 */}
+      <S.MTitle>공지사항</S.MTitle>
       <S.RowWrap>
         <S.NoticeTitleWrap>
           <S.Title>공지사항</S.Title>
@@ -12,70 +12,70 @@ export default function NoticeListPresenter() {
         </S.NoticeTitleWrap>
         <S.NoticeIcon src="../notice/notice.svg" />
       </S.RowWrap>
-      <S.NoticeListWrap>
-        <S.Total>총 000개의 글</S.Total>
-        <S.NoticeWrap>
-          <S.NoticeImg />
-          <S.TextWrap>
-            <S.TextRowWrap>
-              <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
-              <S.NoticeTag>NEW</S.NoticeTag>
-            </S.TextRowWrap>
-            <S.RowWrap2>
-              <S.CreatAt>2022.00.00 00:00</S.CreatAt>
-              <S.Ago>2일 전</S.Ago>
-            </S.RowWrap2>
-          </S.TextWrap>
-        </S.NoticeWrap>
-      </S.NoticeListWrap>
+      <S.Total>총 000개의 글</S.Total>
+      {/* 첫번째 목록 */}
+      <S.NoticeWrap>
+        <S.NoticeImg src="/novelWrite/cover_image.png" />
+        <S.TextWrap>
+          <S.TextRowWrap>
+            <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
+            <S.NoticeTag>NEW</S.NoticeTag>
+          </S.TextRowWrap>
+          <S.RowWrap2>
+            <S.CreatAt>2022.00.00 00:00</S.CreatAt>
+            <S.Ago>2일 전</S.Ago>
+          </S.RowWrap2>
+        </S.TextWrap>
+      </S.NoticeWrap>
+
       {/* 두번째 목록 */}
-      <S.NoticeListWrap>
-        <S.NoticeWrap>
-          <S.NoticeImg />
-          <S.TextWrap>
-            <S.TextRowWrap>
-              <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
-              <S.NoticeTag>NEW</S.NoticeTag>
-            </S.TextRowWrap>
-            <S.RowWrap2>
-              <S.CreatAt>2022.00.00 00:00</S.CreatAt>
-              <S.Ago>2일 전</S.Ago>
-            </S.RowWrap2>
-          </S.TextWrap>
-        </S.NoticeWrap>
-      </S.NoticeListWrap>
+
+      <S.NoticeWrap>
+        <S.NoticeImg src="/novelWrite/cover_image.png" />
+        <S.TextWrap>
+          <S.TextRowWrap>
+            <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
+            <S.NoticeTag>NEW</S.NoticeTag>
+          </S.TextRowWrap>
+          <S.RowWrap2>
+            <S.CreatAt>2022.00.00 00:00</S.CreatAt>
+            <S.Ago>2일 전</S.Ago>
+          </S.RowWrap2>
+        </S.TextWrap>
+      </S.NoticeWrap>
+
       {/* 세번째 목록 */}
-      <S.NoticeListWrap>
-        <S.NoticeWrap>
-          <S.NoticeImg />
-          <S.TextWrap>
-            <S.TextRowWrap>
-              <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
-              <S.NoticeTag>NEW</S.NoticeTag>
-            </S.TextRowWrap>
-            <S.RowWrap2>
-              <S.CreatAt>2022.00.00 00:00</S.CreatAt>
-              <S.Ago>2일 전</S.Ago>
-            </S.RowWrap2>
-          </S.TextWrap>
-        </S.NoticeWrap>
-      </S.NoticeListWrap>
+
+      <S.NoticeWrap>
+        <S.NoticeImg src="/novelWrite/cover_image.png" />
+        <S.TextWrap>
+          <S.TextRowWrap>
+            <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
+            <S.NoticeTag>NEW</S.NoticeTag>
+          </S.TextRowWrap>
+          <S.RowWrap2>
+            <S.CreatAt>2022.00.00 00:00</S.CreatAt>
+            <S.Ago>2일 전</S.Ago>
+          </S.RowWrap2>
+        </S.TextWrap>
+      </S.NoticeWrap>
+
       {/* 네번째 목록 */}
-      <S.NoticeListWrap>
-        <S.NoticeWrap>
-          <S.NoticeImg />
-          <S.TextWrap>
-            <S.TextRowWrap>
-              <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
-              <S.NoticeTag>NEW</S.NoticeTag>
-            </S.TextRowWrap>
-            <S.RowWrap2>
-              <S.CreatAt>2022.00.00 00:00</S.CreatAt>
-              <S.Ago>2일 전</S.Ago>
-            </S.RowWrap2>
-          </S.TextWrap>
-        </S.NoticeWrap>
-      </S.NoticeListWrap>
+
+      <S.NoticeWrap>
+        <S.NoticeImg src="/novelWrite/cover_image.png" />
+        <S.TextWrap>
+          <S.TextRowWrap>
+            <S.NoticeName>공지사항 제목입니다.</S.NoticeName>
+            <S.NoticeTag>NEW</S.NoticeTag>
+          </S.TextRowWrap>
+          <S.RowWrap2>
+            <S.CreatAt>2022.00.00 00:00</S.CreatAt>
+            <S.Ago>2일 전</S.Ago>
+          </S.RowWrap2>
+        </S.TextWrap>
+      </S.NoticeWrap>
+
       {/* 페이지 */}
       <S.RowWrap>
         <Button01 title="공지 작성하기" />
