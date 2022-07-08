@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const QuestionWrapper = styled.div`
   /* height: 580px; */
@@ -61,6 +62,10 @@ export const QuestionContents = styled.div`
 
   @media (min-width: 767px) and (max-width: 991px) {
     width: 100%;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 18px;
   }
 `;
 

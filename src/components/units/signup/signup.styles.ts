@@ -28,6 +28,7 @@ export const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   /* justify-content: space-between; */
 
   @media (min-width: 767px) and (max-width: 991px) {
@@ -60,11 +61,15 @@ export const PhoneImg = styled.img`
 export const LogoImg = styled.img`
   margin-bottom: 20px;
 `;
-
+export const WrapSubTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 25px;
+`;
 export const SubTitle = styled.div`
   margin-bottom: 2px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1vw;
   text-align: center;
   letter-spacing: 0.232836px;
   color: #484848;
@@ -79,7 +84,7 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 1vh 0;
 `;
 
 export const InputBox = styled.input`
@@ -125,7 +130,12 @@ export const InputText = styled.div`
   color: #2277d8;
   text-align: center;
 `;
-
+export const WrapCheck = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+`;
 export const CheckWrapper = styled.div`
   width: 100%;
   height: 20px;
@@ -162,12 +172,13 @@ export const Arrow = styled.img`
 `;
 
 export const SignUpButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 50px;
+  padding: 15px 0;
   margin: 20px 0px;
-  padding-top: 13px;
   background-color: #bee3ff;
-  text-align: center;
   color: #474747;
   font-weight: 400;
   font-size: 13px;
