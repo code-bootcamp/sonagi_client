@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const ChargeButton = styled.div`
   width: 102px;
@@ -9,12 +10,6 @@ export const ChargeButton = styled.div`
   border: 1px solid #808080;
   color: #828282;
   cursor: pointer;
-  /* @media (min-width: 768px) and (max-width: 991px) {
-    margin-right: 700px;
-  }
-  @media (max-width: 767px) {
-    margin-right: 700px;
-  } */
 `;
 
 export const MyPageFont = styled.div`
@@ -39,15 +34,19 @@ export const ChargeHistory = styled.div`
 
 export const Wrapper = styled.div`
   /* display: flex; */
-  width: 1000px;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 export const DIV = styled.div`
-  margin-left: 750px;
+  /* margin-left: 750px; */
   margin-bottom: 30px;
-  /* @media (min-width: 768px) and (max-width: 991px) {
-    margin-left: 600px;
-  } */
+  margin-left: 128%;
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const CashCharge = styled.div`
@@ -58,14 +57,15 @@ export const CashCharge = styled.div`
 `;
 
 export const LargeBox = styled.div`
-  width: 800px;
+  /* width: 800px; */
+  width: 150%;
   height: 400px;
   display: flex;
-  @media (min-width: 768px) and (max-width: 991px) {
-    width: 750px;
+  @media ${breakPoints.tablet} {
+    width: 550px;
     height: 400px;
   }
-  @media (max-width: 767px) {
+  @media ${breakPoints.mobile} {
     width: 360px;
     /* height: 694px; */
     display: flex;
@@ -75,39 +75,22 @@ export const LargeBox = styled.div`
 
 export const InnerLeftBox = styled.div`
   border-radius: 8px 0px 0px 8px;
-  width: 280px;
+  /* width: 280px; */
+  width: 60%;
   height: 400px;
   background-color: #ebf6ff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  @media (min-width: 768px) and (max-width: 991px) {
-    width: 750px;
-    height: 400px;
-  }
-  @media (max-width: 767px) {
-    background-color: none;
-    width: 360px;
-    height: 694px;
-    background-color: white;
-  }
 `;
 
 export const InnerRightBox = styled.div`
   border-radius: 0px 8px 8px 0px;
-  width: 520px;
+  /* width: 520px; */
+  width: 90%;
   height: 400px;
   background-color: #f2f2f2;
-  @media (min-width: 768px) and (max-width: 991px) {
-    width: 750px;
-    height: 400px;
-  }
-  @media (max-width: 767px) {
-    background-color: none;
-    width: 360px;
-    background-color: white;
-  }
 `;
 
 export const ChangeButton = styled.div`
@@ -268,7 +251,7 @@ export const LogoutButton = styled.div`
   position: relative;
   top: 40px;
   right: 90px;
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media ${breakPoints.tablet} {
   }
   @media (max-width: 767px) {
     display: none;

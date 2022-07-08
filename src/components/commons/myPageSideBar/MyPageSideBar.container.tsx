@@ -22,12 +22,17 @@ export default function MyPageSideBarContainer() {
     router.push("/myPage/paymentHistory");
   };
 
+  const onClickMoveToPointCharge = () => {
+    router.push("/myPage/pointCharge");
+  };
+
   return (
     <MyPageSideBarPresenter
       onClickMoveToRecentWatch={onClickMoveToRecentWatch}
       onClickMoveToMyPage={onClickMoveToMyPage}
       onClickMoveToMyNovel={onClickMoveToMyNovel}
       onClickMoveToPaymentHistory={onClickMoveToPaymentHistory}
+      onClickMoveToPointCharge={onClickMoveToPointCharge}
     />
   );
 }
