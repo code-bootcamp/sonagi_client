@@ -9,32 +9,23 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 0px 2px;
   border-bottom: 1px solid #e0e0e0;
+  margin: 0 auto;
+`;
 
-  @media (min-width: 991px) {
-    width: 1200px;
-  }
-
-  @media (min-width: 767px) and (max-width: 991px) {
-    min-width: 767px;
-    max-width: 991px;
-    width: 95%;
-  }
+export const WrapList = styled.div`
+  display: flex;
 `;
 
 export const ListTitle = styled.div`
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  text-align: center;
+
+  margin-right: 30px;
   color: #141414;
   cursor: pointer;
 `;
 
 export const ListImg = styled.img`
-  margin-left: 400px;
   cursor: pointer;
-
-  @media (min-width: 767px) and (max-width: 991px) {
-    margin-left: 200px;
-  }
 `;

@@ -36,9 +36,9 @@ export default function Layout(props: ILayoutProps) {
     <Wrapper>
       {!isHiddenHeader && <LayoutHeader />}
       {!isHiddenNavigation && <LayoutNavigation />}
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div>{props.children}</div>
-      </div>
+      {/* <div style={{ display: "flex", justifyContent: "center" }}> */}
+      <div>{props.children}</div>
+      {/* </div> */}
       {!isHiddenFooter && <LayoutFooter />}
     </Wrapper>
   );
