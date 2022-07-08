@@ -6,10 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-
-  @media (min-width: 1200px) {
-    width: 1200px;
-  }
+  justify-content: center;
 `;
 
 export const TopBox = styled.div`
@@ -19,6 +16,10 @@ export const TopBox = styled.div`
   flex-direction: row;
   justify-content: right;
   border-bottom: 1px solid #e0e0e0;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const BottomBox = styled.div`
@@ -31,18 +32,14 @@ export const BottomBox = styled.div`
   border-bottom: 1px solid #e0e0e0;
 
   @media ${breakPoints.mobile} {
-    flex-direction: column;
-    height: 140px;
+    /* flex-direction: column; */
+    height: 120px;
   }
 `;
 
 export const WrapSearch = styled.div`
   display: flex;
   align-items: center;
-
-  @media ${breakPoints.mobile} {
-    padding-top: 20px;
-  }
 `;
 
 export const SignUpLoginButton = styled.div`
@@ -69,7 +66,7 @@ export const SearchBox = styled.div`
   padding: 8px;
   cursor: pointer;
   @media ${breakPoints.mobile} {
-    width: 70vw;
+    width: 50vw;
   }
 `;
 
@@ -79,5 +76,5 @@ export const MyPageButton = styled.img`
   width: 29px;
   height: 25px;
   cursor: pointer;
-  margin-left: 35px;
+  margin-left: 30px;
 `;
