@@ -78,6 +78,11 @@ export const InnerTable = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 2%;
+  :hover {
+    background-color: #bee3ff;
+    opacity: 90%;
+    border: 1px solid #2277d8;
+  }
 `;
 
 export const HowMuch = styled.div`
