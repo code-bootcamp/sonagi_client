@@ -1,3 +1,4 @@
+import Button01 from "../../commons/buttons/01";
 import * as S from "./EventDetail.styles";
 
 export default function EventDetailPresenter(props) {
@@ -11,9 +12,9 @@ export default function EventDetailPresenter(props) {
       </S.WriterWrapper>
       <S.DetailBox></S.DetailBox>
       <S.ButtonWrapper>
-        <S.Button onClick={props.onClickList}>목록으로</S.Button>
-        <S.Button onClick={props.onClickWrite}>수정하기</S.Button>
-        <S.Button>삭제하기</S.Button>
+        <Button01 onClick={props.onClickList} title="목록으로" />
+        <Button01 onClick={props.onClickList} title="수정하기" />
+        <Button01 title="삭제하기" />
       </S.ButtonWrapper>
     </S.Wrapper>
   );
