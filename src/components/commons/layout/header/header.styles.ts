@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
 `;
 
 export const TopBox = styled.div`

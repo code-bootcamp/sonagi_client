@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1150px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding-bottom: 120px;
@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
 export const MainTitle = styled.div`
   font-size: 30px;
   font-weight: bold;
-  color: #747474;
   padding: 25px 0;
 `;
 
@@ -63,4 +62,9 @@ export const Button = styled.div`
   align-items: center;
   align-self: flex-end;
   cursor: pointer;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: right;
 `;

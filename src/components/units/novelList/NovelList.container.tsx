@@ -1,5 +1,5 @@
-import NovelDetailPresenter from "../novelDetailPage/NovelDetail.Presenter";
+import NovelListPresenter from "./NovelList.presenter";
 
 export default function NovelListContainer() {
-  return <NovelDetailPresenter />;
+  return <NovelListPresenter />;
 }

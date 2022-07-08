@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrap = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 50px 20px;
@@ -15,7 +15,7 @@ export const Title = styled.label`
 `;
 export const MoreBtn = styled.div`
   text-align: right;
-  margin-right: 55px;
+  margin-right: 20px;
   margin-bottom: 10px;
 `;
 

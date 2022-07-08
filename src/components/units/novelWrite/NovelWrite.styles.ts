@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1150px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -21,7 +21,6 @@ export const WrapTitleWarning = styled.div`
 export const MainTitle = styled.div`
   font-size: 30px;
   font-weight: bold;
-  color: #747474;
   padding-bottom: 25px;
 `;
 
@@ -51,6 +50,9 @@ export const TitleLabel = styled.input`
   font-size: 24px;
   font-weight: bold;
   border: none;
+  :focus {
+    outline: none;
+  }
 `;
 
 export const Label = styled.div`
@@ -133,25 +135,17 @@ export const WrapIntroduce = styled.div`
   padding-top: 25px;
 `;
 
-export const IntroduceInput = styled.input`
+export const IntroduceInput = styled.textarea`
   margin-top: 25px;
   width: 100%;
   height: 440px;
+  :focus {
+    outline: none;
+  }
 `;
 
 export const WrapSubmitButton = styled.div`
   padding: 70px 0;
   display: flex;
   justify-content: center;
-`;
-
-export const ClickButton = styled.button`
-  margin: 0 50px;
-  background-color: #2277d8;
-  color: white;
-  text-align: center;
-  width: 160px;
-  height: 60px;
-  border: none;
-  font-size: 20px;
 `;
