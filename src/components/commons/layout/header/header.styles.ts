@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 991px) {
+  @media (min-width: 1200px) {
     width: 1200px;
   }
 
@@ -59,6 +59,10 @@ export const SearchBox = styled.div`
   padding: 8px;
   margin-right: -665px;
   cursor: pointer;
+
+  @media (min-width: 1200px) {
+    width: 200px;
+  }
 
   @media (min-width: 767px) and (max-width: 991px) {
     width: 200px;
