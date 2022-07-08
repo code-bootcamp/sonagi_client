@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -7,6 +8,12 @@ export const Wrapper = styled.div`
   padding: 20px 100px;
   background: #f7f7f7;
   margin: 0 auto;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
 `;
 
 export const LeftBox = styled.div`

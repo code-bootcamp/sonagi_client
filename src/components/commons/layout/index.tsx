@@ -13,13 +13,9 @@ interface ILayoutProps {
 
 const Wrapper = styled.div`
   max-width: 1200px;
-
   margin: 0 auto;
   padding: 0px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
 const HIDDEN_HEADER = ["/login", "/signup", "/novelRead"];

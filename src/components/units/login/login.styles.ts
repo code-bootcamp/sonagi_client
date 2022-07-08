@@ -2,8 +2,12 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   height: 100vh;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
 
   @media (min-width: 767px) and (max-width: 991px) {
     min-width: 767px;

@@ -1,13 +1,17 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  height: 100vh;
   display: flex;
   flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
 
   @media (min-width: 767px) and (max-width: 991px) {
     min-width: 767px;
     max-width: 991px;
+    justify-content: center;
   }
 
   @media (max-width: 767px) {
@@ -24,7 +28,7 @@ export const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   @media (min-width: 767px) and (max-width: 991px) {
     min-width: 767px;
@@ -75,6 +79,7 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 20px 0;
 `;
 
 export const InputBox = styled.input`
@@ -83,7 +88,7 @@ export const InputBox = styled.input`
   margin-bottom: 10px;
   border: none;
   border-bottom: 1px solid #cccccc;
-  color: #cccccc;
+  /* color: #cccccc; */
   &::placeholder {
     color: #cccccc;
   }

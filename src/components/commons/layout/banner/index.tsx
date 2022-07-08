@@ -18,18 +18,18 @@ export default function LayoutBanner() {
     <>
       <S.SliderWrapper>
         <S.MySlide {...settings}>
-          <S.CarouselBox>
-            {/* <S.CarouselImg src="/banner/carousel1.png" /> */}
+          {/* <S.CarouselBox> */}
+          <S.CarouselImg src="/banner/carousel1.png" />
+          {/* </S.CarouselBox> */}
+          {/* <S.CarouselBox2> */}
+          <S.CarouselImg src="/banner/carousel2.png" />
+          {/* </S.CarouselBox2> */}
+          {/* <S.CarouselBox>
+            <S.CarouselImg src="/banner/carousel3.png" />
           </S.CarouselBox>
-          <S.CarouselBox2>
-            {/* <S.CarouselImg src="/banner/carousel2.png" /> */}
-          </S.CarouselBox2>
           <S.CarouselBox>
-            {/* <S.CarouselImg src="/banner/carousel3.png" /> */}
-          </S.CarouselBox>
-          <S.CarouselBox>
-            {/* <S.CarouselImg src="/banner/carousel4.png" /> */}
-          </S.CarouselBox>
+            <S.CarouselImg src="/banner/carousel4.png" />
+          </S.CarouselBox> */}
         </S.MySlide>
       </S.SliderWrapper>
     </>
