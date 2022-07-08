@@ -4,16 +4,7 @@ export const Wrapper = styled.div`
   width: 80%;
   display: flex;
   flex-direction: column;
-
-  @media (min-width: 1200px) {
-    width: 1200px;
-  }
-
-  @media (min-width: 767px) and (max-width: 991px) {
-    min-width: 767px;
-    max-width: 991px;
-    width: 95%;
-  }
+  margin: 0 auto;
 `;
 
 export const TopBox = styled.div`
@@ -33,6 +24,11 @@ export const BottomBox = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e0e0e0;
+`;
+
+export const WrapSearch = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const SignUpLoginButton = styled.div`
@@ -57,17 +53,8 @@ export const SearchBox = styled.div`
   background: #f2f2f2;
   border-radius: 5px;
   padding: 8px;
-  margin-right: -665px;
+
   cursor: pointer;
-
-  @media (min-width: 1200px) {
-    width: 200px;
-  }
-
-  @media (min-width: 767px) and (max-width: 991px) {
-    width: 200px;
-    margin-right: -45%;
-  }
 `;
 
 export const SearchButton = styled.img``;
@@ -76,4 +63,5 @@ export const MyPageButton = styled.img`
   width: 29px;
   height: 25px;
   cursor: pointer;
+  margin-left: 35px;
 `;

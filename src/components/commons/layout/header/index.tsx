@@ -16,24 +16,22 @@ export default function LayoutHeader() {
   };
 
   return (
-    <>
-      <S.Wrapper>
-        <S.TopBox>
-          <S.SignUpLoginButton onClick={onClickSignUp}>
-            회원가입
-          </S.SignUpLoginButton>
-          <S.SignUpLoginButton onClick={onClickLogin}>
-            로그인
-          </S.SignUpLoginButton>
-        </S.TopBox>
-        <S.BottomBox>
-          <S.LogoImg onClick={onClickMain} src="/header/logo.png" />
+    <S.Wrapper>
+      <S.TopBox>
+        <S.SignUpLoginButton onClick={onClickSignUp}>
+          회원가입
+        </S.SignUpLoginButton>
+        <S.SignUpLoginButton onClick={onClickLogin}>로그인</S.SignUpLoginButton>
+      </S.TopBox>
+      <S.BottomBox>
+        <S.LogoImg onClick={onClickMain} src="/header/logo.png" />
+        <S.WrapSearch>
           <S.SearchBox>
             <S.SearchButton src="/header/search.png" />
           </S.SearchBox>
           <S.MyPageButton src="/header/mypage.png" />
-        </S.BottomBox>
-      </S.Wrapper>
-    </>
+        </S.WrapSearch>
+      </S.BottomBox>
+    </S.Wrapper>
   );
 }
