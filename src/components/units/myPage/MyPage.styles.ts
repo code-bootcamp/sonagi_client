@@ -69,10 +69,13 @@ export const LargeBox = styled.div`
     height: 400px;
   }
   @media ${breakPoints.mobile} {
-    width: 500px;
+    /* width: 500px; */
     /* height: 694px; */
+    /* align-items: center; */
     display: flex;
     flex-direction: column;
+    /* width: 100%; */
+    width: 450px;
   }
 `;
 
@@ -159,9 +162,10 @@ export const Column = styled.div`
   justify-content: center;
   align-items: center;
   height: 144px;
-  /* width: 90%; */
+  width: 70px;
   @media ${breakPoints.mobile} {
-    margin-right: 33px;
+    /* margin-right: 33px; */
+    width: 100%;
   }
   @media ${breakPoints.tablet} {
   }
