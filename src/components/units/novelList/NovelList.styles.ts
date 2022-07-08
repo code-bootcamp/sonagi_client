@@ -8,7 +8,7 @@ export const Wrap = styled.div`
 `;
 
 export const Title = styled.label`
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 500;
   color: #4d4d4d;
   margin-bottom: 20px;
@@ -42,7 +42,7 @@ export const ItemInfo = styled.div`
   margin: 10px 0px;
 `;
 export const ItemName = styled.div`
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-right: 65px;
 `;
@@ -61,5 +61,5 @@ export const WriterIcon = styled.img`
 `;
 export const WrtiterName = styled.div``;
 export const Contents = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
 `;

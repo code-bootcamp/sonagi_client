@@ -48,7 +48,7 @@ export const WrapSearch = styled.div`
 
 export const SignUpLoginButton = styled.div`
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 21px;
   text-align: center;
   margin-left: 30px;

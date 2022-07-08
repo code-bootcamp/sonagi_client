@@ -35,7 +35,7 @@ export const RightBox = styled.div`
 
 export const Notice = styled.div`
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 18px;
   color: #828282;
   margin-bottom: 15px;
@@ -43,7 +43,7 @@ export const Notice = styled.div`
 
 export const Title = styled.div`
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 18px;
   color: #828282;
   margin-bottom: 10px;
@@ -51,7 +51,7 @@ export const Title = styled.div`
 
 export const Contents = styled.div`
   font-weight: 400;
-  font-size: 11px;
+  font-size: 0.688rem;
   line-height: 15px;
   letter-spacing: 0.232836px;
   color: #bbbbbb;
@@ -60,7 +60,7 @@ export const Contents = styled.div`
 
 export const Corp = styled.div`
   font-weight: 400;
-  font-size: 11px;
+  font-size: 0.688rem;
   line-height: 15px;
   letter-spacing: 0.232836px;
   color: #bbbbbb;
@@ -81,7 +81,7 @@ export const SNSButton = styled.img`
 
 export const Number = styled.div`
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 27px;
   letter-spacing: 0.232836px;
   color: #2277d8;
@@ -94,7 +94,7 @@ export const QuestButton = styled.div`
   margin-top: 4px;
   background: #bbbbbb;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 14px;
   color: #ffffff;
   text-align: center;
@@ -105,7 +105,7 @@ export const QuestButton = styled.div`
 
 export const Contents2 = styled.div`
   font-weight: 400;
-  font-size: 11px;
+  font-size: 0.688rem;
   line-height: 15px;
   letter-spacing: 0.232836px;
   color: #bbbbbb;

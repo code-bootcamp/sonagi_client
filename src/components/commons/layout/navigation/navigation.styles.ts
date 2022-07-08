@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 export const ListTitle = styled.div`
   font-weight: 500;
   margin-right: 40px;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #141414;
   cursor: pointer;
   @media ${breakPoints.tablet} {

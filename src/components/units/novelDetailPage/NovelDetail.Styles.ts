@@ -6,7 +6,7 @@ export const Genre = styled.div`
 `;
 
 export const SelectAll = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-top: 9px;
   margin-left: 10px;
   margin-right: 10px;
@@ -29,7 +29,7 @@ export const LookFirstBtn = styled.div`
   height: 46px;
   background-color: #2277d8;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,7 @@ export const Buttons = styled.div`
   height: 46px;
   background-color: black;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,16 +54,16 @@ export const LookButtonWrapper = styled.div`
 `;
 
 export const Count = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #808080;
 `;
 
 export const TopFont = styled.div`
-  font-size: 15px;
+  font-size: 0.938rem;
 `;
 
 export const NovelTitle = styled.div`
-  font-size: 36px;
+  font-size: 2.25rem;
   margin: 30px 0px 10px 0px;
   color: #484848;
 `;
@@ -74,7 +74,7 @@ export const StarImg = styled.img`
 `;
 
 export const Score = styled.div`
-  font-size: 15px;
+  font-size: 0.938rem;
   margin-left: 10px;
   color: #484848;
   margin-right: 10px;
@@ -92,7 +92,7 @@ export const WriterImg = styled.img`
 `;
 
 export const NovelRemarks = styled.div`
-  font-size: 15px;
+  font-size: 0.938rem;
   color: #757575;
   margin-top: 10px;
   width: 706px;
@@ -100,7 +100,7 @@ export const NovelRemarks = styled.div`
 `;
 
 export const WriterFont = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0px 10px 0px 10px;
   color: #484848;
 `;
@@ -132,7 +132,7 @@ export const FlexWrapper = styled.div`
 `;
 
 export const Divs = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0px 5px 0px 5px;
   color: #484848;
 `;
@@ -144,7 +144,7 @@ export const HeartImg = styled.img`
 `;
 
 export const HeartCount = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
   margin-left: 10px;
   color: #484848;
 `;
@@ -168,16 +168,16 @@ export const ArrowImg = styled.img`
 `;
 
 export const New = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
 `;
 
 export const All = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
 `;
 
 export const Sum = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #00a0e9;
   margin-left: 10px;
@@ -197,7 +197,7 @@ export const VerticalLine = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 15px;
+  font-size: 0.938rem;
 `;
 
 export const Look = styled.div`
@@ -207,16 +207,16 @@ export const Look = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 0.938rem;
   margin-left: 850px;
 `;
 
 export const Date = styled.div`
-  font-size: 10px;
+  font-size: 0.625rem;
 `;
 
 export const SumCharacter = styled.div`
-  font-size: 10px;
+  font-size: 0.625rem;
   margin-top: 22px;
   margin-left: 10px;
 `;
@@ -249,7 +249,7 @@ export const MiddelButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 1rem;
   width: 99px;
   height: 40px;
   background-color: #2277d8;
@@ -307,7 +307,7 @@ export const TableButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 0.938rem;
   margin-left: 10px;
 `;
 
