@@ -8,8 +8,19 @@ export const Wrapper = styled.div`
   padding: 50px;
 `;
 
+export const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Require = styled.div`
+  font-size: 1.125rem;
+  color: red;
+  margin: 0px 0px 5px 10px;
+`;
+
 export const MainTitle = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
   padding-bottom: 25px;
 `;
 
@@ -17,9 +28,11 @@ export const WrapperInquire = styled.div`
   padding: 20px 40px;
   display: flex;
   flex-direction: column;
-  width: 830px;
+  /* width: 830px; */
+  width: 100%;
   height: 500;
-  border: 1px solid;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
 `;
 
 export const WrapTitle = styled.div`
@@ -29,18 +42,24 @@ export const WrapTitle = styled.div`
 `;
 
 export const Label = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
   padding-bottom: 15px;
 `;
 
 export const LabelInput = styled.input`
   width: 100%;
   height: 30px;
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 8px;
 `;
 
 export const ContentsInput = styled.input`
   width: 100%;
   height: 200px;
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 8px;
 `;
 
 export const WrapButton = styled.div`
@@ -57,4 +76,5 @@ export const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
 `;
