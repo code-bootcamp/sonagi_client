@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
 
 export const Wrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 20px 0px;
 `;
 export const NoticeDetailWrap = styled.div`
-  width: 1200px;
+  width: 100%;
 `;
 
 export const Title = styled.label`
