@@ -162,7 +162,7 @@ export const Column = styled.div`
   justify-content: center;
   align-items: center;
   height: 144px;
-  width: 70px;
+  width: 95px;
   @media ${breakPoints.mobile} {
     /* margin-right: 33px; */
     width: 100%;
