@@ -40,12 +40,17 @@ export default function PointChargePresenter(props) {
         ))}
       </S.TableBorder>
       <S.FooterBar>
-        <S.ChargeAmount>충전 금액</S.ChargeAmount>
+        <S.Div>
+          <S.ChargeAmount>충전 금액</S.ChargeAmount>
+        </S.Div>
         <S.FooterFlex>
           <S.HowMuch>{props.value.toLocaleString("ko-KR")}</S.HowMuch>
           <S.FooterAmountWon>원</S.FooterAmountWon>
         </S.FooterFlex>
-        <S.ChargeButton onClick={props.requestPay}>충전하기</S.ChargeButton>
+
+        <S.ButtonDiv>
+          <S.ChargeButton onClick={props.requestPay}>충전하기</S.ChargeButton>
+        </S.ButtonDiv>
       </S.FooterBar>
     </div>
   );

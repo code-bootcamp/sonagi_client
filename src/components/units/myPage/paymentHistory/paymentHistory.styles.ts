@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
-export const Wrapper = styled.div`
-  width: 1000px;
-`;
+export const Wrapper = styled.div``;
 
 export const MyNovel = styled.div`
   font-size: 1.125rem;
@@ -45,25 +44,14 @@ export const TableTop = styled.th`
 export const Table = styled.table`
   border-top: 1px solid #d9d9d9;
   border-collapse: collapse;
-  margin-left: 90px;
+  margin-left: 30px;
   margin-bottom: 70px;
-  @media (max-width: 1200px) {
+  width: 80%;
+  @media ${breakPoints.tablet} {
     width: 70%;
   }
-  @media (max-width: 803px) {
-    width: 60%;
-  }
-  @media (max-width: 786px) {
-    width: 60%;
-  }
-  @media (min-width: 767px) and (max-width: 1190px) {
-    width: 70%;
-  }
-  @media (max-width: 767px) {
-    width: 50%;
-  }
-  @media (max-width: 727px) {
-    width: 40%;
+  @media ${breakPoints.mobile} {
+    width: 30%;
   }
 `;
 
@@ -80,7 +68,7 @@ export const TD = styled.td`
   border-bottom: 1px solid #d9d9d9;
   color: #2277d8;
   text-align: center;
-  width: 75%;
+  width: 70%;
   font-weight: 600;
 `;
 
@@ -103,9 +91,14 @@ export const TablePointSum = styled.td`
 
 export const PageNation = styled.div`
   font-size: 24px;
-
-  margin: 0px 0px 100px 340px;
-  @media (max-width: 767px) {
-    margin-right: 40px;
+  width: 50%;
+  margin-left: 28%;
+  margin-bottom: 30px;
+  @media ${breakPoints.tablet} {
+    font-size: 1.2rem;
+  }
+  @media ${breakPoints.mobile} {
+    /* width: 10%; */
+    font-size: 1rem;
   }
 `;
