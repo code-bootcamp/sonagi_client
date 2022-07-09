@@ -42,7 +42,11 @@ export const WrapTitle = styled.div`
 export const Label = styled.div`
   font-size: 1.438rem;
   padding-bottom: 15px;
-  font-weight: 600;
+  /* font-weight: 600; */
+  @media ${breakPoints.mobile} {
+    font-size: 2.5rem;
+    margin-left: 14px;
+  }
 `;
 
 export const LabelInput = styled.input`
@@ -68,4 +72,12 @@ export const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const LabelWrapper = styled.div`
+  display: flex;
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
 `;
