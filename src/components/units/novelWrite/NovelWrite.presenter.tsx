@@ -28,39 +28,44 @@ export default function NovelWritePresenter(props: any) {
         <S.WrapGenreCycle>
           <S.WrapGenre>
             <S.Label>장르</S.Label>
-            <S.GenreLabel>장르선택</S.GenreLabel>
-            <S.SelectButton src="/novelWrite/arrow_down.png" />
+            <S.WrapSelect>
+              <S.GenreLabel>장르선택</S.GenreLabel>
+              <S.SelectButton src="/novelWrite/arrow_down.png" />
+            </S.WrapSelect>
           </S.WrapGenre>
           <S.WrapCycle>
             <S.Label>연재 주기</S.Label>
-
-            <S.CheckButton
-              onClick={props.onClickCycleButton}
-              src={
-                props.isClickPre
-                  ? "/novelWrite/check_box_fill.png"
-                  : "/novelWrite/check_box_blank.png"
-              }
-            />
-            <S.CycleLabel>자유연재</S.CycleLabel>
-            <S.CheckButton
-              onClick={props.onClickCycleButton}
-              src={
-                props.isClickDay
-                  ? "/novelWrite/check_box_fill.png"
-                  : "/novelWrite/check_box_blank.png"
-              }
-            />
-            <S.CycleLabel>요일연재</S.CycleLabel>
-            <S.WrapCycleButton>
-              <S.CycleButton>월</S.CycleButton>
-              <S.CycleButton>화</S.CycleButton>
-              <S.CycleButton>수</S.CycleButton>
-              <S.CycleButton>목</S.CycleButton>
-              <S.CycleButton>금</S.CycleButton>
-              <S.CycleButton>토</S.CycleButton>
-              <S.CycleButton>일</S.CycleButton>
-            </S.WrapCycleButton>
+            <S.WrapCheck>
+              <S.WrapChange>
+                <S.CheckButton
+                  onClick={props.onClickCycleButton}
+                  src={
+                    props.isClickPre
+                      ? "/novelWrite/check_box_fill.png"
+                      : "/novelWrite/check_box_blank.png"
+                  }
+                />
+                <S.CycleLabel>자유연재</S.CycleLabel>
+                <S.CheckButton
+                  onClick={props.onClickCycleButton}
+                  src={
+                    props.isClickDay
+                      ? "/novelWrite/check_box_fill.png"
+                      : "/novelWrite/check_box_blank.png"
+                  }
+                />
+                <S.CycleLabel>요일연재</S.CycleLabel>
+              </S.WrapChange>
+              <S.WrapCycleButton>
+                <S.CycleButton>월</S.CycleButton>
+                <S.CycleButton>화</S.CycleButton>
+                <S.CycleButton>수</S.CycleButton>
+                <S.CycleButton>목</S.CycleButton>
+                <S.CycleButton>금</S.CycleButton>
+                <S.CycleButton>토</S.CycleButton>
+                <S.CycleButton>일</S.CycleButton>
+              </S.WrapCycleButton>
+            </S.WrapCheck>
           </S.WrapCycle>
         </S.WrapGenreCycle>
       </S.WrapperLavel>
@@ -72,7 +77,7 @@ export default function NovelWritePresenter(props: any) {
       </S.WrapperLavel>
       <S.WrapIntroduce>
         <S.Label>작품소개</S.Label>
-        <S.IntroduceInput type="text" />
+        <S.IntroduceInput type="text" placeholder="소개글을 작성해주세요" />
       </S.WrapIntroduce>
       <S.WrapSubmitButton>
         <Button02 title="취소" />
