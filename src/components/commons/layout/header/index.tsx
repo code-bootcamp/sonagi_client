@@ -15,6 +15,10 @@ export default function LayoutHeader() {
     router.push("/");
   };
 
+  const onClickSearch = () => {
+    router.push("/search");
+  };
+
   return (
     <S.Wrapper>
       <S.TopBox>
@@ -27,7 +31,7 @@ export default function LayoutHeader() {
         <S.LogoImg onClick={onClickMain} src="/header/logo.png" />
         <S.WrapSearch>
           <S.SearchBox>
-            <S.SearchButton src="/header/search.png" />
+            <S.SearchButton onClick={onClickSearch} src="/header/search.png" />
           </S.SearchBox>
           <S.MyPageButton src="/header/mypage.png" />
         </S.WrapSearch>
