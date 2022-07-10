@@ -1,19 +1,9 @@
 import { useRouter } from "next/router";
+import useMoveToPage from "../../../../commons/hooks/UseMoveToPage";
 import * as S from "./header.styles";
 export default function LayoutHeader() {
+  const { onClickMoveToPage } = useMoveToPage();
   const router = useRouter();
-
-  const onClickSignUp = () => {
-    router.push("/signup");
-  };
-
-  const onClickLogin = () => {
-    router.push("/login");
-  };
-
-  const onClickMain = () => {
-    router.push("/");
-  };
 
   const onClickSearch = () => {
     router.push("/search");
@@ -22,13 +12,15 @@ export default function LayoutHeader() {
   return (
     <S.Wrapper>
       <S.TopBox>
-        <S.SignUpLoginButton onClick={onClickSignUp}>
+        <S.SignUpLoginButton onClick={onClickMoveToPage("/signup")}>
           회원가입
         </S.SignUpLoginButton>
-        <S.SignUpLoginButton onClick={onClickLogin}>로그인</S.SignUpLoginButton>
+        <S.SignUpLoginButton onClick={onClickMoveToPage("/login")}>
+          로그인
+        </S.SignUpLoginButton>
       </S.TopBox>
       <S.BottomBox>
-        <S.LogoImg onClick={onClickMain} src="/header/logo.png" />
+        <S.LogoImg onClick={onClickMoveToPage("/")} src="/header/logo.png" />
         <S.WrapSearch>
           <S.SearchBox>
             <S.SearchButton onClick={onClickSearch} src="/header/search.png" />
