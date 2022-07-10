@@ -1,9 +1,14 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  @media ${breakPoints.mobile} {
+    padding: 0 20px;
+  }
 `;
 
 export const WrapHeader = styled.div`
@@ -22,6 +27,11 @@ export const MainTitle = styled.div`
   font-size: 1.875rem;
   font-weight: bold;
   padding-bottom: 25px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5rem;
+    padding-bottom: 0;
+  }
 `;
 
 export const WrapperLavel = styled.div`
@@ -32,9 +42,17 @@ export const WrapperLavel = styled.div`
 export const WarningText = styled.div`
   font-size: 1rem;
   color: #b1b1b1;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
-export const WriteImage = styled.img``;
+export const WriteImage = styled.img`
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+`;
 
 export const WrapTitle = styled.div`
   display: flex;
@@ -52,11 +70,19 @@ export const TitleLabel = styled.input`
   :focus {
     outline: none;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Label = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
 `;
 
 export const InputTitle = styled.input`
@@ -67,11 +93,16 @@ export const InputTitle = styled.input`
 
 export const WrapGenreCycle = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 `;
 
 export const WrapGenre = styled.div`
   display: flex;
+  padding-bottom: 30px;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+  }
 `;
 
 export const WrapSelect = styled.div`
@@ -82,25 +113,62 @@ export const WrapSelect = styled.div`
   border: 1px solid #b1b1b1;
   width: 230px;
   height: 40px;
+
+  @media ${breakPoints.mobile} {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const GenreLabel = styled.div`
   font-size: 1.125rem;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.9rem;
+  }
 `;
 
 export const SelectButton = styled.img`
   width: 24px;
   height: 24px;
   background-color: #2277d8;
+
+  @media ${breakPoints.mobile} {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const WrapCycle = styled.div`
   display: flex;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+export const WrapCheck = styled.div`
+  display: flex;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+  }
+`;
+
+export const WrapChange = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  @media ${breakPoints.mobile} {
+    padding-bottom: 20px;
+  }
 `;
 
 export const CheckButton = styled.img`
-  margin: 0 10px;
+  margin: 0 15px;
 `;
 
 export const CycleLabel = styled.div`
@@ -108,8 +176,12 @@ export const CycleLabel = styled.div`
 `;
 
 export const WrapCycleButton = styled.div`
-  margin-left: 1rem;
+  margin-left: 25px;
   display: flex;
+
+  @media ${breakPoints.mobile} {
+    margin: 0;
+  }
 `;
 
 export const CycleButton = styled.div`
@@ -122,24 +194,36 @@ export const CycleButton = styled.div`
 
 export const WrapCoverImage = styled.div`
   display: flex;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+  }
 `;
 
 export const CoverImage = styled.img`
   margin-left: 100px;
   width: 150px;
   height: 210px;
+
+  @media ${breakPoints.mobile} {
+    margin: 0;
+  }
 `;
 
 export const WrapIntroduce = styled.div`
   padding-top: 25px;
 `;
 
-export const IntroduceInput = styled.textarea`
+export const IntroduceInput = styled.input`
   margin-top: 25px;
   width: 100%;
   height: 440px;
   :focus {
     outline: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8 rem;
   }
 `;
 
