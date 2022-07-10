@@ -1,13 +1,32 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 20px 0px;
+  margin: 0 2%;
 `;
 export const NoticeDetailWrap = styled.div`
-  width: 1200px;
+  width: 100%;
+
+  @media ${breakPoints.tablet} {
+    transition-duration: 1s;
+    width: 96%;
+  }
+
+  @media ${breakPoints.mobile} {
+    transition-duration: 1s;
+    width: 92%;
+    margin: 0 3%;
+  }
+`;
+export const RowWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 `;
 
 export const Title = styled.label`
@@ -15,7 +34,18 @@ export const Title = styled.label`
   font-weight: 700;
   color: #484848;
   margin-top: 20px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
 `;
+export const TitleLine = styled.div`
+  width: 1px;
+  height: 20px;
+  background-color: #bdbdbd;
+  margin: 0px 50px;
+`;
+
 export const NoticeDetail = styled.div`
   width: 100%;
   display: flex;
@@ -24,7 +54,12 @@ export const NoticeDetail = styled.div`
 `;
 export const NoticeName = styled.div`
   font-size: 1.5em;
-  padding: 50px 0px 20px;
+  font-weight: 500;
+  padding: 64px 0px 24px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.25em;
+  }
 `;
 export const WriterWrap = styled.div`
   display: flex;
@@ -32,12 +67,17 @@ export const WriterWrap = styled.div`
   align-items: center;
 `;
 export const WriterName = styled.div`
-  font-size: 1.25em;
+  font-size: 1.125em;
   margin-right: 20px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+  }
 `;
 export const WriteAt = styled.div`
   font-size: 0.813em;
   color: #808080;
+  font-weight: 300;
 `;
 export const Line = styled.div`
   width: 100%;
@@ -48,18 +88,23 @@ export const contents = styled.div`
   width: 100%;
   background-color: #eee;
   height: 70vh;
+  padding: 80px;
+  border: none;
+
+  @media ${breakPoints.tablet} {
+    transition-duration: 1s;
+    padding: 50px;
+  }
+
+  @media ${breakPoints.mobile} {
+    transition-duration: 1s;
+    padding: 30px;
+    font-size: 0.875em;
+  }
 `;
 export const BtnWrap = styled.div`
   margin: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-`;
-export const Btn = styled.div`
-  width: 160px;
-  height: 60px;
-  background-color: #2277d8;
-  color: #fff;
-  line-height: 60px;
-  text-align: center;
 `;
