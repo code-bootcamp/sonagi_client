@@ -1,26 +1,5 @@
-import styled from "@emotion/styled";
 import { useState } from "react";
-import { breakPoints } from "../../../../commons/styles/media";
-import MyPageSideBarContainer from "../../../commons/myPageSideBar/MyPageSideBar.container";
 import PointChargePresenter from "./PointCharge.presenter";
-
-const Wrapper = styled.div`
-  display: flex;
-  /* width: 1200px; */
-  width: 100%;
-`;
-
-const Margin = styled.div`
-  margin: 30px 0px 0px 130px;
-  width: 80%;
-`;
-
-const DIV = styled.div`
-  width: 20%;
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
-`;
 
 declare const window: typeof globalThis & {
   IMP: any;
@@ -84,18 +63,11 @@ export default function PointChargeContainer() {
     );
   };
   return (
-    <Wrapper>
-      <DIV>
-        <MyPageSideBarContainer />
-      </DIV>
-      <Margin>
-        <PointChargePresenter
-          Point={Point}
-          onClickPoint={onClickPoint}
-          value={value}
-          requestPay={requestPay}
-        />
-      </Margin>
-    </Wrapper>
+    <PointChargePresenter
+      Point={Point}
+      onClickPoint={onClickPoint}
+      value={value}
+      requestPay={requestPay}
+    />
   );
 }
