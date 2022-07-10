@@ -5,7 +5,10 @@ import * as S from "./EventWrite.styles";
 export default function EventWritePresenter(props) {
   return (
     <S.Wrapper>
-      <S.MainTitle>이벤트</S.MainTitle>
+      <S.RowWrap>
+        <S.MainTitle>이벤트</S.MainTitle>
+        <S.TitleLine></S.TitleLine>
+      </S.RowWrap>
       <S.SubTitle>제목</S.SubTitle>
       <S.InputTitle placeholder="제목을 입력해주세요"></S.InputTitle>
       <S.SubTitle>내용</S.SubTitle>

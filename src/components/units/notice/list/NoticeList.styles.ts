@@ -32,7 +32,7 @@ export const Title = styled.label`
 export const Subtitle = styled.div`
   font-size: 1.125em;
   color: #828282;
-  padding-top: 50px;
+  padding-top: 20px;
 
   @media ${breakPoints.mobile} {
     font-size: 1em;

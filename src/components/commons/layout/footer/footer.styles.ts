@@ -39,6 +39,7 @@ export const Notice = styled.div`
   line-height: 18px;
   color: #828282;
   margin-bottom: 15px;
+  cursor: pointer;
 `;
 
 export const Title = styled.div`

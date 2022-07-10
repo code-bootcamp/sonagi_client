@@ -1,11 +1,17 @@
+import { useRouter } from "next/router";
 import * as S from "./footer.styles";
 import FooterMobile from "./footerMobile";
 export default function LayoutFooter() {
+  const router = useRouter();
+  const MoveToNotice = () => {
+    router.push("/notice");
+  };
+
   return (
     <>
       <S.Wrapper>
         <S.LeftBox>
-          <S.Notice>공지사항</S.Notice>
+          <S.Notice onClick={MoveToNotice}>공지사항</S.Notice>
           {/* d */}
           <S.Title>(주)소나기 사업자 정보</S.Title>
           <S.Contents>

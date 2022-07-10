@@ -1,16 +1,12 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
-
-export const Wrap = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 20px 0px;
   margin: 0 2%;
-`;
-export const NoticeDetailWrap = styled.div`
-  width: 100%;
 
   @media ${breakPoints.tablet} {
     transition-duration: 1s;
@@ -23,6 +19,7 @@ export const NoticeDetailWrap = styled.div`
     margin: 0 3%;
   }
 `;
+
 export const RowWrap = styled.div`
   width: 100%;
   display: flex;
@@ -30,16 +27,16 @@ export const RowWrap = styled.div`
   align-items: baseline;
 `;
 
-export const Title = styled.label`
+export const MainTitle = styled.div`
   font-size: 1.875em;
   font-weight: 700;
-  color: #484848;
-  margin-top: 20px;
+  margin: 20px 0px;
 
   @media ${breakPoints.mobile} {
     font-size: 1.5em;
   }
 `;
+
 export const TitleLine = styled.div`
   width: 1px;
   height: 20px;
@@ -47,67 +44,42 @@ export const TitleLine = styled.div`
   margin: 0px 50px;
 `;
 
-export const NoticeDetail = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-export const NoticeName = styled.div`
+export const SubTitle = styled.div`
   font-size: 1.5em;
   font-weight: 500;
-  padding: 64px 0px 24px;
+  padding: 30px 0px 15px 0px;
 
   @media ${breakPoints.mobile} {
     font-size: 1.125em;
   }
 `;
 
-export const NameInput = styled.input`
-  width: 90%;
-  height: 40px;
+export const InputTitle = styled.input`
+  padding: 10px 20px;
   border: none;
-  margin-left: 20px;
-
-  @media ${breakPoints.tablet} {
-    width: 80%;
+  border-bottom: 1px solid #484848;
+  &::placeholder {
+    color: #cccccc;
   }
-
-  @media ${breakPoints.mobile} {
-    width: 70%;
+  &:focus {
+    outline: none;
   }
+  margin-bottom: 20px;
 `;
 
-export const WriterWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-export const WriterName = styled.div`
-  font-size: 1.125em;
-  margin-right: 20px;
-
-  @media ${breakPoints.mobile} {
-    font-size: 1em;
-  }
-`;
-export const WriteAt = styled.div`
-  font-size: 0.813em;
-  color: #808080;
-  font-weight: 300;
-`;
-export const Line = styled.div`
-  width: 100%;
-  border-bottom: 1px solid #bdbdbd;
-  margin: 30px 0px;
-`;
-export const contents = styled.textarea`
+export const InputContents = styled.textarea`
   width: 100%;
   background-color: #eee;
   height: 70vh;
-  padding: 50px;
+  padding: 20px;
   border: none;
+
+  &::placeholder {
+    color: #cccccc;
+  }
+  &:focus {
+    outline: none;
+  }
 
   @media ${breakPoints.tablet} {
     transition-duration: 1s;
@@ -120,9 +92,29 @@ export const contents = styled.textarea`
     font-size: 0.875em;
   }
 `;
-export const BtnWrap = styled.div`
-  margin: 50px;
+
+export const UploadBox = styled.div`
+  margin-top: 10px;
+  margin-bottom: 100px;
+  display: flex;
+`;
+
+export const UploadButton = styled.button`
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  background-color: #d9d9d9;
+  border: 0;
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+`;
+
+export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 100px;
 `;

@@ -76,8 +76,10 @@ export const WriterName = styled.div`
 `;
 export const WriteAt = styled.div`
   font-size: 0.813em;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
   color: #808080;
-  font-weight: 300;
 `;
 export const Line = styled.div`
   width: 100%;
