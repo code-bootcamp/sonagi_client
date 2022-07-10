@@ -24,11 +24,12 @@ export default function VolumeWritePresenter(props: any) {
       </S.WrapperLavel>
       <S.WrapperLavel>
         <S.WrapSellect>
+          <S.Label>분류</S.Label>
           <S.WrapNotice>
-            <S.SelectButton>제목</S.SelectButton>
             <S.SelectButton>회차</S.SelectButton>
+            <S.SelectButton>공지</S.SelectButton>
           </S.WrapNotice>
-          <S.WrapCheckButton>
+          {/* <S.WrapCheckButton>
             <S.CheckButton src="/novelWrite/check_box_fill.png" />
             <S.CheckLabel>공지</S.CheckLabel>
             <S.CheckButton src="/novelWrite/check_box_blank.png" />
@@ -37,7 +38,7 @@ export default function VolumeWritePresenter(props: any) {
             <S.CheckLabel>감사</S.CheckLabel>
             <S.CheckButton src="/novelWrite/check_box_blank.png" />
             <S.CheckLabel>기타</S.CheckLabel>
-          </S.WrapCheckButton>
+          </S.WrapCheckButton> */}
         </S.WrapSellect>
       </S.WrapperLavel>
       <S.WrapperLavel>
