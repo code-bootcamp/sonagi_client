@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 const Button = styled.button`
   background-color: #2277d8;
@@ -6,10 +7,16 @@ const Button = styled.button`
   width: 100px;
   height: 40px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   border: none;
   text-align: center;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 80px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
 `;
 export default function Button03(props: any) {
   return <Button>{props.title}</Button>;

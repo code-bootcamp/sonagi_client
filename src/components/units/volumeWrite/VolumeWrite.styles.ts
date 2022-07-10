@@ -184,9 +184,9 @@ export const CheckButtonFoot = styled.img`
 `;
 
 export const WrapSubmitButton = styled.div`
-  padding: 70px 0;
   display: flex;
-  justify-content: center;
+  padding: 20px 10%;
+  justify-content: space-around;
 `;
 
 export const ClickButton = styled.button`
