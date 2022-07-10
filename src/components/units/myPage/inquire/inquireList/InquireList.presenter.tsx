@@ -1,10 +1,14 @@
 import React from "react";
+import Hambuger from "../../../../commons/hambuger";
 import * as S from "./InquireList.styles";
 
 export default function InquireListPresenter() {
   return (
     <S.Wrapper>
-      <S.MainTitle>1 : 1 문의</S.MainTitle>
+      <S.WrapHambuger>
+        <S.MainTitle>1 : 1 문의</S.MainTitle>
+        <Hambuger />
+      </S.WrapHambuger>
       <S.WrapperList>
         <S.WrapInfo>
           <S.Title>글 제목입니다</S.Title>

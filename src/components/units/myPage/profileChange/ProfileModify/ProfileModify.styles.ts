@@ -1,23 +1,21 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1000px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 50px;
 `;
 
-export const Wrap = styled.div`
-  margin: 0 auto;
-`;
+export const Wrap = styled.div``;
 
 export const MainTitle = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
   padding-bottom: 25px;
 `;
 
 export const SubTitle = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
   color: #cccccc;
 `;
 
@@ -36,7 +34,7 @@ export const WrapTitle = styled.div`
 `;
 
 export const Label = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
   padding-bottom: 15px;
 `;
 
@@ -46,7 +44,7 @@ export const WrapNumber = styled.div`
 `;
 
 export const NumberInput = styled.input`
-  width: 400px;
+  width: 50%;
   height: 30px;
   margin-right: 20px;
 `;
@@ -56,12 +54,12 @@ export const NumberButton = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #bee3ff;
-  width: 112px;
+  width: 15%;
   height: 50px;
 `;
 
 export const LabelInput = styled.input`
-  width: 100%;
+  width: 70%;
   height: 30px;
 `;
 

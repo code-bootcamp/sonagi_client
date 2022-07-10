@@ -7,6 +7,10 @@ export const Wrapper = styled.div`
   padding: 50px;
 `;
 
+export const WrapHambuger = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 export const MainTitle = styled.div`
   font-size: 1.125rem;
   padding-bottom: 25px;
