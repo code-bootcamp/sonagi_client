@@ -11,9 +11,6 @@ export const Wrapper = styled.div`
   @media ${breakPoints.mobile} {
     display: none;
   }
-  @media ${breakPoints.tablet} {
-    display: none;
-  }
 `;
 
 export const LeftBox = styled.div`

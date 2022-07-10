@@ -1,4 +1,5 @@
 import React from "react";
+import Button01 from "../../commons/buttons/01";
 import * as S from "./VolumeWrite.styles";
 
 export default function VolumeWritePresenter(props: any) {
@@ -24,11 +25,12 @@ export default function VolumeWritePresenter(props: any) {
       </S.WrapperLavel>
       <S.WrapperLavel>
         <S.WrapSellect>
+          <S.Label>분류</S.Label>
           <S.WrapNotice>
-            <S.SelectButton>제목</S.SelectButton>
             <S.SelectButton>회차</S.SelectButton>
+            <S.SelectButton>공지</S.SelectButton>
           </S.WrapNotice>
-          <S.WrapCheckButton>
+          {/* <S.WrapCheckButton>
             <S.CheckButton src="/novelWrite/check_box_fill.png" />
             <S.CheckLabel>공지</S.CheckLabel>
             <S.CheckButton src="/novelWrite/check_box_blank.png" />
@@ -37,7 +39,7 @@ export default function VolumeWritePresenter(props: any) {
             <S.CheckLabel>감사</S.CheckLabel>
             <S.CheckButton src="/novelWrite/check_box_blank.png" />
             <S.CheckLabel>기타</S.CheckLabel>
-          </S.WrapCheckButton>
+          </S.WrapCheckButton> */}
         </S.WrapSellect>
       </S.WrapperLavel>
       <S.WrapperLavel>
@@ -67,11 +69,14 @@ export default function VolumeWritePresenter(props: any) {
         </S.WrapRule>
       </S.WrapperRule>
       <S.WrapSubmitButton>
-        <S.ClickButton onClick={props.onClickMoveToPage("/")}>
+        {/* <S.ClickButton onClick={props.onClickMoveToPage("/")}>
           취소
         </S.ClickButton>
         <S.ClickButton>임시저장</S.ClickButton>
-        <S.ClickButton>저장</S.ClickButton>
+        <S.ClickButton>저장</S.ClickButton> */}
+        <Button01 title="취소" />
+        <Button01 title="임시저장" />
+        <Button01 title="저장" />
       </S.WrapSubmitButton>
     </S.Wrapper>
   );
