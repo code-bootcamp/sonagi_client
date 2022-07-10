@@ -1,10 +1,15 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   padding-bottom: 120px;
+
+  @media ${breakPoints.mobile} {
+    padding: 0 20px;
+  }
 `;
 
 export const WrapTitle = styled.div`
@@ -19,9 +24,13 @@ export const CommentIcon = styled.img`
 `;
 
 export const CommentTitle = styled.div`
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #484848;
   margin-left: 10px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 export const WrapContents = styled.div`
@@ -34,7 +43,11 @@ export const ContentsInput = styled.input`
   width: 100%;
   height: 70px;
   padding-left: 20px;
-  font-size: 20px;
+  font-size: 1.25rem;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.95rem;
+  }
 `;
 
 export const Wraplength = styled.div`
@@ -50,6 +63,10 @@ export const Length = styled.div`
   display: flex;
   align-items: center;
   padding-left: 20px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const CommentButton = styled.div`
@@ -60,4 +77,9 @@ export const CommentButton = styled.div`
   background-color: #2277d8;
   color: white;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+    width: 20%;
+  }
 `;
