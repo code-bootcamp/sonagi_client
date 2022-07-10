@@ -6,8 +6,7 @@ export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 20px 0px;
-  margin: 0 2%;
+  padding: 20px;
 `;
 export const NoticeDetailWrap = styled.div`
   width: 100%;

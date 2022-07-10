@@ -6,8 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px 0px;
-  margin: 0 2%;
+  padding: 20px;
 `;
 
 export const EventDetailWrap = styled.div`
@@ -77,7 +76,6 @@ export const Writer = styled.div`
 
 export const CreatedDate = styled.div`
   font-size: 0.813em;
-  font-size: 13px;
   line-height: 16px;
   text-align: center;
   color: #808080;

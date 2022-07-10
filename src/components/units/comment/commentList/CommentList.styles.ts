@@ -3,9 +3,9 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding-bottom: 50px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
@@ -43,6 +43,7 @@ export const BestComment = styled.div`
 
 export const WrapInfo = styled.div`
   display: flex;
+  justify-content: space-between;
   padding: 10px;
 `;
 
@@ -52,6 +53,7 @@ export const ProfileIcon = styled.img`
 `;
 
 export const WrapCommentInfo = styled.div`
+  width: 90%;
   display: flex;
   flex-direction: column;
   margin-left: 25px;
@@ -129,9 +131,10 @@ export const EditIcon = styled.img`
 `;
 
 export const DeleteIcon = styled.img`
+  padding-top: 2px;
   margin-left: 20px;
-  width: 23px;
-  height: 23px;
+  width: 21px;
+  height: 22px;
   cursor: pointer;
 
   @media ${breakPoints.mobile} {

@@ -6,10 +6,6 @@ export default function CommentListPresenter() {
       <S.WrapperUserInfo>
         <S.WrapBestIcon>
           <S.BestComment>Best</S.BestComment>
-          <S.WrapIcon>
-            <S.EditIcon src="/comment/edit.png" />
-            <S.DeleteIcon src="/comment/delete.png" />
-          </S.WrapIcon>
         </S.WrapBestIcon>
         <S.WrapInfo>
           <S.ProfileIcon src="/comment/profile_icon.png" />
@@ -22,6 +18,10 @@ export default function CommentListPresenter() {
               <S.UpCount>325</S.UpCount>
             </S.WrapUserInfo>
           </S.WrapCommentInfo>
+          <S.WrapIcon>
+            <S.EditIcon src="/comment/edit.png" />
+            <S.DeleteIcon src="/comment/delete.png" />
+          </S.WrapIcon>
         </S.WrapInfo>
       </S.WrapperUserInfo>
     </S.Wrapper>
