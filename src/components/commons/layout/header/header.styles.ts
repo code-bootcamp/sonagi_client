@@ -68,6 +68,7 @@ export const SearchBox = styled.div`
   background: #f2f2f2;
   border-radius: 5px;
   padding: 8px;
+  display: flex;
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
@@ -76,6 +77,17 @@ export const SearchBox = styled.div`
 `;
 
 export const SearchButton = styled.img``;
+
+export const SearchInput = styled.input`
+  border: none;
+  background-color: #f2f2f2;
+  padding-left: 10px;
+  color: #808080;
+
+  &:focus {
+    outline: none;
+  }
+`;
 
 export const MyPageButton = styled.img`
   width: 29px;

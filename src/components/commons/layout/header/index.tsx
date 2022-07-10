@@ -32,6 +32,7 @@ export default function LayoutHeader() {
         <S.WrapSearch>
           <S.SearchBox>
             <S.SearchButton onClick={onClickSearch} src="/header/search.png" />
+            <S.SearchInput />
           </S.SearchBox>
           <S.MyPageButton src="/header/mypage.png" />
         </S.WrapSearch>
