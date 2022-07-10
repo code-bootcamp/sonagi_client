@@ -1,10 +1,15 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 2000px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 100px;
+
+  @media ${breakPoints.mobile} {
+    padding: 0 20px;
+  }
 `;
 
 export const WrapTitle = styled.div`
@@ -14,15 +19,23 @@ export const WrapTitle = styled.div`
 `;
 
 export const MainTitle = styled.div`
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
   color: #747474;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const SubTitle = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #484848;
   margin-left: 15px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.9rem;
+  }
 `;
 
 export const WrapperTitle = styled.div`
@@ -40,20 +53,32 @@ export const WrapperLabel = styled.div`
 `;
 
 export const Label = styled.div`
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #484848;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 export const TitleInput = styled.input`
-  font-size: 20px;
+  font-size: 1.25rem;
   margin-left: 30px;
   border: none;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.9rem;
+  }
 `;
 
 export const ContentsInput = styled.input`
-  font-size: 20px;
+  font-size: 1.25rem;
   height: 350px;
   margin-top: 25px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.9rem;
+  }
 `;
 
 export const Image = styled.div`
@@ -69,16 +94,4 @@ export const Image = styled.div`
 export const WrapButton = styled.div`
   display: flex;
   justify-content: center;
-`;
-
-export const ClickButton = styled.div`
-  width: 160px;
-  height: 60px;
-  background-color: #2277d8;
-  color: white;
-  margin: 30px 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
 `;

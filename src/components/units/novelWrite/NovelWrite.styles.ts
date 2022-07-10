@@ -19,7 +19,7 @@ export const WrapTitleWarning = styled.div`
 `;
 
 export const MainTitle = styled.div`
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
   padding-bottom: 25px;
 `;
@@ -30,7 +30,7 @@ export const WrapperLavel = styled.div`
 `;
 
 export const WarningText = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
   color: #b1b1b1;
 `;
 
@@ -44,10 +44,9 @@ export const WrapTitle = styled.div`
 export const TitleLabel = styled.input`
   ::placeholder {
     color: black;
-    font-size: 24px;
   }
   width: 100%;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   border: none;
   :focus {
@@ -56,7 +55,7 @@ export const TitleLabel = styled.input`
 `;
 
 export const Label = styled.div`
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
 `;
 
@@ -86,7 +85,7 @@ export const WrapSelect = styled.div`
 `;
 
 export const GenreLabel = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
 `;
 
 export const SelectButton = styled.img`
@@ -105,11 +104,11 @@ export const CheckButton = styled.img`
 `;
 
 export const CycleLabel = styled.div`
-  font-size: 15px;
+  font-size: 1rem;
 `;
 
 export const WrapCycleButton = styled.div`
-  margin-left: 15px;
+  margin-left: 1rem;
   display: flex;
 `;
 
@@ -117,7 +116,7 @@ export const CycleButton = styled.div`
   width: 30px;
   height: 30px;
   text-align: center;
-  font-size: 15px;
+  font-size: 1rem;
   border: 1px solid #b1b1b1;
 `;
 

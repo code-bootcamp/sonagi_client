@@ -4,7 +4,13 @@ export default function CommentListPresenter() {
   return (
     <S.Wrapper>
       <S.WrapperUserInfo>
-        <S.BestComment>Best</S.BestComment>
+        <S.WrapBestIcon>
+          <S.BestComment>Best</S.BestComment>
+          <S.WrapIcon>
+            <S.EditIcon src="/comment/edit.png" />
+            <S.DeleteIcon src="/comment/delete.png" />
+          </S.WrapIcon>
+        </S.WrapBestIcon>
         <S.WrapInfo>
           <S.ProfileIcon src="/comment/profile_icon.png" />
           <S.WrapCommentInfo>
@@ -18,10 +24,6 @@ export default function CommentListPresenter() {
           </S.WrapCommentInfo>
         </S.WrapInfo>
       </S.WrapperUserInfo>
-      <S.WrapIcon>
-        <S.EditIcon src="/comment/edit.png" />
-        <S.DeleteIcon src="/comment/delete.png" />
-      </S.WrapIcon>
     </S.Wrapper>
   );
 }

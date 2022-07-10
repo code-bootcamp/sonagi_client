@@ -85,14 +85,14 @@ export const TitleWrapper = styled.div`
 
 export const Title = styled.div`
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
   text-align: center;
 `;
 
 export const SubTitle = styled.div`
   font-weight: 500;
-  font-size: 17px;
+  font-size: 1.063rem;
   line-height: 25px;
   text-align: center;
 `;
@@ -115,7 +115,7 @@ export const Comment = styled.img``;
 export const CommentNumber = styled.div`
   padding-left: 5px;
   font-weight: 350;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 21px;
   letter-spacing: 0.232836px;
 `;
@@ -123,7 +123,7 @@ export const CommentNumber = styled.div`
 export const Content = styled.div`
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: center;
   padding: 0px 5px;
   cursor: pointer;
