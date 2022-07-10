@@ -14,7 +14,7 @@ export default function NoticeDetailPresenter(props: any) {
             [공지] iOS 12 미만 앱 업데이트 지원 종료 예정
           </S.NoticeName>
           <S.WriterWrap>
-            <S.WriterName>작성자</S.WriterName>
+            <S.WriterName>관리자</S.WriterName>
             <S.WriteAt>2022.00.00</S.WriteAt>
           </S.WriterWrap>
           <S.Line></S.Line>
