@@ -2,7 +2,7 @@ import Head from "next/head";
 import * as S from "./PointCharge.styles";
 export default function PointChargePresenter(props) {
   return (
-    <div>
+    <S.Wrapper>
       <Head>
         <script
           type="text/javascript"
@@ -47,11 +47,10 @@ export default function PointChargePresenter(props) {
           <S.HowMuch>{props.value.toLocaleString("ko-KR")}</S.HowMuch>
           <S.FooterAmountWon>원</S.FooterAmountWon>
         </S.FooterFlex>
-
         <S.ButtonDiv>
           <S.ChargeButton onClick={props.requestPay}>충전하기</S.ChargeButton>
         </S.ButtonDiv>
       </S.FooterBar>
-    </div>
+    </S.Wrapper>
   );
 }

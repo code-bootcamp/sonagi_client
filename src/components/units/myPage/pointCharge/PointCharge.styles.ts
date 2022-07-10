@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
+export const Wrapper = styled.div`
+  width: 100%;
+`;
+
 export const Input = styled.input``;
 
 export const MyPoint = styled.div`
@@ -97,13 +101,11 @@ export const InnerTable = styled.div`
   align-items: center;
   margin-bottom: 2%;
   :hover {
-    background-color: #bee3ff;
-    opacity: 90%;
+    background-color: #dcf0ff;
     border: 1px solid #2277d8;
   }
   background-color: ${(props: any) =>
-    props.el === props.value ? "#bee3ff" : "default"};
-  opacity: ${(props: any) => (props.el === props.value ? "90%" : "default")};
+    props.el === props.value ? "#DCF0FF" : "default"};
   border: ${(props: any) =>
     props.el === props.value ? "1px solid #2277d8" : "default"};
   display: flex;

@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  width: 100%;
+`;
 
 export const MyNovel = styled.div`
   font-size: 1.125rem;

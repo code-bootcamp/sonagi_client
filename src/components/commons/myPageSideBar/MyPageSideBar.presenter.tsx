@@ -13,7 +13,6 @@ export default function MyPageSideBarPresenter(props: any) {
         </S.Column>
       </S.Flex>
       <S.Line />
-
       <S.Flex>
         <S.Img src="../myPageSideBar/local_atm.png" />
         <S.Column>
@@ -23,7 +22,6 @@ export default function MyPageSideBarPresenter(props: any) {
         </S.Column>
       </S.Flex>
       <S.Line />
-
       <S.Flex>
         <S.Vector src="../myPageSideBar/Vector.png" />
         <S.Column>

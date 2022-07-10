@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  /* position: relative;
-  right: 200px; */
+  margin-right: 2.6%;
 `;
 
 export const MyPage = styled.div`
