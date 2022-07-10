@@ -1,30 +1,62 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0px 20px;
+  justify-content: space-around;
+  padding: 20px 0px;
+  margin: 0 2%;
+
+  @media ${breakPoints.tablet} {
+    transition-duration: 1s;
+    width: 96%;
+  }
+
+  @media ${breakPoints.mobile} {
+    transition-duration: 1s;
+    width: 92%;
+    margin: 0 3%;
+  }
+`;
+
+export const RowWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 `;
 
 export const MainTitle = styled.div`
-  font-size: 30px;
-  font-weight: 500;
-  color: #484848;
-  padding-bottom: 25px;
-  padding-top: 25px;
+  font-size: 1.875em;
+  font-weight: 700;
+  margin: 20px 0px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
+`;
+
+export const TitleLine = styled.div`
+  width: 1px;
+  height: 20px;
+  background-color: #bdbdbd;
+  margin: 0px 50px;
 `;
 
 export const SubTitle = styled.div`
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 500;
-  color: #484848;
-  padding-bottom: 10px;
+  padding: 30px 0px 15px 0px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.125em;
+  }
 `;
 
 export const InputTitle = styled.input`
-  padding: 10px 0px;
+  padding: 10px 20px;
   border: none;
   border-bottom: 1px solid #484848;
   &::placeholder {
@@ -36,22 +68,34 @@ export const InputTitle = styled.input`
   margin-bottom: 20px;
 `;
 
-export const InputContents = styled.input`
-  height: 350px;
-  padding: 10px;
-  background-color: #f6f6f6;
+export const InputContents = styled.textarea`
+  width: 100%;
+  background-color: #eee;
+  height: 70vh;
+  padding: 20px;
   border: none;
+
   &::placeholder {
     color: #cccccc;
   }
   &:focus {
     outline: none;
   }
-  margin-bottom: 20px;
+
+  @media ${breakPoints.tablet} {
+    transition-duration: 1s;
+    padding: 50px;
+  }
+
+  @media ${breakPoints.mobile} {
+    transition-duration: 1s;
+    padding: 30px;
+    font-size: 0.875em;
+  }
 `;
 
 export const UploadBox = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 100px;
   display: flex;
 `;

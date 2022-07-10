@@ -3,10 +3,9 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 1700px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 50px;
+  padding: 20px;
 
   @media ${breakPoints.mobile} {
     padding: 0 1.25rem;

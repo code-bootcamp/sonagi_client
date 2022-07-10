@@ -1,8 +1,12 @@
+import { useRouter } from "next/router";
 import NoticeWritePresenter from "./NoticeWrite.presenter";
-// import { useRouter } from "next/router";
 
 export default function NoticeWriteContainer() {
-  // const router = useRouter();
+  const router = useRouter();
 
-  return <NoticeWritePresenter />;
+  const onClickList = () => {
+    router.push("/event");
+  };
+
+  return <NoticeWritePresenter onClickList={onClickList} />;
 }

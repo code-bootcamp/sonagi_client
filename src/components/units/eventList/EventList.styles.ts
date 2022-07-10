@@ -1,35 +1,80 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 20px;
+  padding: 20px;
+`;
+
+export const RowWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const EventTitleWrap = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const MainTitle = styled.div`
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 1.875em;
+  font-weight: 700;
   color: #484848;
-  padding-bottom: 25px;
-  padding-top: 25px;
+  margin-top: 20px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+`;
+
+export const Subtitle = styled.div`
+  font-size: 1.125em;
+  color: #828282;
+  padding-top: 20px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+    padding-top: 20px;
+  }
+`;
+
+export const EventIcon = styled.img`
+  width: 188px;
+  height: 201px;
+
+  @media ${breakPoints.mobile} {
+    height: 150px;
+  }
 `;
 
 export const ListWrapper = styled.div`
-  width: 1160px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 20px;
+  padding-bottom: 20px;
 `;
 
 export const ListTitle = styled.div`
-  font-size: 26px;
-  font-weight: 400;
-  color: #484848;
   padding-bottom: 5px;
-  padding-top: 25px;
+  font-size: 1.5em;
+  font-weight: 700;
+
+  @media ${breakPoints.tablet} {
+    font-size: 1.25em;
+    margin-right: 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+    margin-right: 25px;
+  }
 `;
 
 export const ListDate = styled.div`
@@ -41,7 +86,8 @@ export const ListDate = styled.div`
 
 export const ListImg = styled.div`
   height: 350px;
-  background-color: #cccccc;
-  margin-bottom: 60px;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 4px 4px 0px #f2f2f2;
+  border-radius: 10px;
   cursor: pointer;
 `;

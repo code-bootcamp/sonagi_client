@@ -1,32 +1,46 @@
 import Button01 from "../../../commons/buttons/01";
+import Button02 from "../../../commons/buttons/02";
 import * as S from "./NoticeWrite.styles";
 
-export default function NoticeWritePresenter() {
+export default function NoticeWritePresenter(props) {
   return (
-    <S.Wrap>
-      <S.NoticeDetailWrap>
-        <S.RowWrap>
-          <S.Title>공지사항</S.Title>
-          <S.TitleLine></S.TitleLine>
-        </S.RowWrap>
-        <S.NoticeDetail>
-          <S.RowWrap>
-            <S.NoticeName>작성 제목</S.NoticeName>
-            <S.NameInput placeholder="ex) [공지]개인정보 처리방침 개정 안내" />
-          </S.RowWrap>
-          <S.WriterWrap>
-            <S.WriterName>관리자</S.WriterName>
-            <S.WriteAt>2022.00.00</S.WriteAt>
-          </S.WriterWrap>
-          <S.Line></S.Line>
-          <S.contents placeholder="내용을 입력해 주세요" />
-          <S.BtnWrap>
-            <Button01 title="목록으로" />
-            <Button01 title="수정하기" />
-            <Button01 title="삭제하기" />
-          </S.BtnWrap>
-        </S.NoticeDetail>
-      </S.NoticeDetailWrap>
-    </S.Wrap>
+    <S.Wrapper>
+      <S.RowWrap>
+        <S.MainTitle>이벤트</S.MainTitle>
+        <S.TitleLine></S.TitleLine>
+      </S.RowWrap>
+      <S.SubTitle>제목</S.SubTitle>
+      <S.InputTitle placeholder="제목을 입력해주세요"></S.InputTitle>
+      <S.SubTitle>내용</S.SubTitle>
+      <S.InputContents placeholder="내용을 입력하세요"></S.InputContents>
+      <S.SubTitle>사진첨부</S.SubTitle>
+      <S.UploadBox>
+        {/* {props.fileUrls.map((el: any, index: any) => (
+        <Uploads01
+          setFileUrls={props.setFileUrls}
+          fileUrls={props.fileUrls}
+          key={uuidv4()}
+          index={index}
+          files={props.files}
+          setFiles={props.setFiles}
+          fileUrl={el}
+          onChangeFileUrls={props.onChangeFileUrls}
+        />
+      ))} */}
+        <S.UploadButton>
+          <div>+</div>
+        </S.UploadButton>
+        <S.UploadButton>
+          <div>+</div>
+        </S.UploadButton>
+        <S.UploadButton>
+          <div>+</div>
+        </S.UploadButton>
+      </S.UploadBox>
+      <S.ButtonWrapper>
+        <Button02 onClick={props.onClickList} title="취소" />
+        <Button01 title="등록" />
+      </S.ButtonWrapper>
+    </S.Wrapper>
   );
 }
