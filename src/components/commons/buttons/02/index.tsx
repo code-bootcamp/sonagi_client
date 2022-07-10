@@ -8,7 +8,6 @@ const Button = styled.button`
   height: 60px;
   font-weight: 700;
   font-size: 1.25rem;
-  margin: 0 30px;
   border: none;
   text-align: center;
   cursor: pointer;
