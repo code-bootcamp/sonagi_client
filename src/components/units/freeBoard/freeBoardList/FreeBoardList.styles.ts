@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -6,6 +7,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
+
+  @media ${breakPoints.mobile} {
+    padding: 0 1.25rem;
+  }
 `;
 
 export const WrapTitle = styled.div`
@@ -16,15 +21,23 @@ export const WrapTitle = styled.div`
 `;
 
 export const MainTitle = styled.div`
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
   color: #484848;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const WrapButton = styled.div`
   padding-top: 40px;
   display: flex;
   justify-content: flex-end;
+
+  @media ${breakPoints.mobile} {
+    justify-content: center;
+  }
 `;
 
 export const ClickButton = styled.div`
@@ -46,8 +59,12 @@ export const WrapperBoard = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 25px;
+  font-size: 1.563rem;
   color: #484848;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.3rem;
+  }
 `;
 
 export const WrapInfo = styled.div`
@@ -57,12 +74,20 @@ export const WrapInfo = styled.div`
 `;
 
 export const Writer = styled.div`
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #2277d8;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1rem;
+  }
 `;
 
 export const Date = styled.div`
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #7e7e7e;
   margin-left: 10px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.1rem;
+  }
 `;
