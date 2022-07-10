@@ -4,7 +4,7 @@ export default function SearchPresenter() {
   return (
     <S.Wrap>
       <S.SearchInputWrap>
-        <S.SearchInput type="search" placeholder="  검색어를 입력하세요!" />
+        <S.SearchInput type="search" placeholder="검색어를 입력해주세요" />
       </S.SearchInputWrap>
       <S.TagWrap>
         <S.Tag>#학원</S.Tag>

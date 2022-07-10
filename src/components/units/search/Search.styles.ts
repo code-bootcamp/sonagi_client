@@ -7,13 +7,13 @@ export const Wrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10% 0%;
+  margin: 5% 0%;
 `;
 export const SearchInputWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 50px 0px;
+  padding-bottom: 50px;
 
   @media ${breakPoints.mobile} {
     transition-duration: 1s;
@@ -28,7 +28,11 @@ export const SearchInput = styled.input`
   background-image: url("../search/search.svg");
   background-repeat: no-repeat;
   background-position: 10px;
-  padding: 10px 60px;
+  padding: 25px 60px;
+
+  &:focus {
+    outline: none;
+  }
 
   @media ${breakPoints.mobile} {
     transition-duration: 1s;
@@ -40,7 +44,7 @@ export const SearchInput = styled.input`
 export const TagWrap = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
   margin-bottom: 80px;
 
   @media ${breakPoints.tablet} {
@@ -68,9 +72,9 @@ export const Tag = styled.div`
   color: #2277d8;
   border: 1px solid #2277d8;
   border-radius: 20px;
-  line-height: 40px;
+  line-height: 36px;
   text-align: center;
-  margin: 0px 10px;
+  margin: 0px 15px;
   cursor: pointer;
 
   :hover {
@@ -91,9 +95,10 @@ export const Tag = styled.div`
 
 // 소설 목록 wrap
 export const ItemRowWrap = styled.div`
+  width: 100%;
+  padding: 2%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
 
   @media ${breakPoints.tablet} {
     width: 96%;
@@ -110,8 +115,11 @@ export const ItemRowWrap = styled.div`
 
 // 소설 낱개
 export const ItemWrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
+  margin-bottom: 7%;
+  cursor: pointer;
 
   @media ${breakPoints.tablet} {
     width: 90%;
@@ -123,21 +131,25 @@ export const ItemWrap = styled.div`
     flex-flow: row wrap;
   }
 `;
+
 export const ItemPic = styled.img`
   width: 180px;
   height: 240px;
 `;
+
 export const ItemInfo = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 15px;
+  margin: 0px 15px;
 `;
+
 export const RowWrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 10px;
 `;
+
 export const ItemName = styled.div`
   font-size: 1.5em;
   font-weight: 700;
@@ -147,11 +159,14 @@ export const ItemName = styled.div`
     font-size: 1.25em;
   }
 `;
+
 export const ItemPlus = styled.div`
+  width: 30%;
   background-color: #eee;
   padding: 5px;
-  margin-left: 20px;
+  margin-left: 13px;
   font-size: 1em;
+  text-align: center;
 
   @media ${breakPoints.tablet} {
     padding: 2px;
@@ -162,11 +177,13 @@ export const ItemPlus = styled.div`
     font-size: 0.8em;
   }
 `;
+
 export const WriterIcon = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 10px;
 `;
+
 export const Writer = styled.div`
   font-size: 1em;
 
@@ -174,6 +191,7 @@ export const Writer = styled.div`
     font-size: 0.8em;
   }
 `;
+
 export const Contents = styled.div`
   width: 150px;
   margin-top: 20px;
