@@ -2,15 +2,23 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrap = styled.div`
-  width: 100%;
+  width: 96%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 5% 2%;
+
+  @media ${breakPoints.tablet} {
+    width: 96%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 96%;
+  }
 `;
 
 export const Title = styled.label`
-  width: 100%;
+  width: 98%;
   font-size: 2.25rem;
   font-weight: 500;
   color: #4d4d4d;
@@ -22,17 +30,16 @@ export const Title = styled.label`
 
   @media ${breakPoints.mobile} {
     width: 96%;
-    margin: 0 2%;
   }
 `;
 export const MoreBtn = styled.div`
-  width: 96%;
+  width: 93%;
   text-align: right;
   margin: 0;
   margin-bottom: 10px;
 
   @media ${breakPoints.tablet} {
-    width: 96%;
+    width: 95%;
     margin-right: 0px;
   }
 
@@ -52,12 +59,28 @@ export const GridWrap = styled.div`
     transition-duration: 1s;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 90%;
-    margin: 0 2%;
   }
 
   @media ${breakPoints.mobile} {
     transition-duration: 1s;
     grid-template-columns: 1fr 1fr 1fr;
+    width: 90%;
+  }
+
+  @media (min-width: 391px) and (max-width: 640px) {
+    transition-duration: 1s;
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+    justify-self: center;
+    width: 96%;
+    margin: 0 2%;
+  }
+
+  @media (max-width: 390px) {
+    transition-duration: 1s;
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+    justify-self: center;
     width: 96%;
     margin: 0 2%;
   }
@@ -74,7 +97,7 @@ export const ItemWrap = styled.div`
 
   @media ${breakPoints.mobile} {
     transition-duration: 1s;
-    width: 96%;
+    width: 90%;
     margin: 0 2%;
   }
 `;
