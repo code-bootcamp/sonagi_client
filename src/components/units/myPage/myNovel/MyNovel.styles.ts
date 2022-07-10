@@ -2,18 +2,18 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const MyNovel = styled.div`
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   color: #141414;
-  @media (max-width: 767px) {
+  @media ${breakPoints.mobile} {
     box-shadow: inset 0 -14px #bee3ff;
     line-height: 24px;
     width: 113px;
-    font-size: 1.563rem;
+    font-size: 1.3rem;
   }
 `;
 
 export const Img = styled.img`
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;
 `;
 
 export const Bottom = styled.div`
@@ -21,72 +21,73 @@ export const Bottom = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  /* width: 1000px; */
   display: flex;
   width: 100%;
+  flex-direction: column;
+  margin-bottom: 100px;
   @media ${breakPoints.mobile} {
-    margin-left: 10%;
-  }
-  @media ${breakPoints.tablet} {
-  }
-`;
-
-export const Box = styled.div`
-  width: 830px;
-  height: 110px;
-  border: 1px solid #bdbdbd;
-  border-radius: 8px;
-  margin-top: 40px;
-  @media ${breakPoints.mobile} {
-    width: 600px;
-    margin-left: 10%;
-  }
-  @media ${breakPoints.tablet} {
-    width: 700px;
+    padding: 0 10px;
   }
 `;
 
 export const Title = styled.div`
   font-size: 1.125rem;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const Genre = styled.div`
   font-size: 1rem;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.7rem;
+  }
 `;
 
 export const Time = styled.div`
   font-size: 0.875rem;
   color: #cccccc;
   margin-left: 15px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.7rem;
+  }
 `;
 
 export const GenreFlex = styled.div`
   display: flex;
   align-items: center;
   margin-top: 15px;
-  width: 150px;
-`;
-
-export const Flex = styled.div`
-  display: flex;
-  width: 100%;
 `;
 
 export const BoxFlex = styled.div`
   display: flex;
-  margin-left: 20%;
+  align-self: flex-end;
+  padding-top: 20px;
+  @media ${breakPoints.mobile} {
+    margin-right: 10px;
+  }
 `;
 
 export const InnerFlex = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
-  width: 80%;
+  justify-content: space-between;
+  margin: 0 20px;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    margin: 0 0 0 5px;
+  }
 `;
 
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  /* margin-left: 10px; */
+  align-self: flex-start;
 `;
 
 export const Button1 = styled.div`
@@ -99,6 +100,13 @@ export const Button1 = styled.div`
   align-items: center;
   margin-right: 20px;
   border-radius: 8px;
+
+  @media ${breakPoints.mobile} {
+    width: 80px;
+    height: 30px;
+    font-size: 0.7rem;
+    margin-right: 10px;
+  }
 `;
 
 export const Button2 = styled.div`
@@ -110,6 +118,12 @@ export const Button2 = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+
+  @media ${breakPoints.mobile} {
+    width: 80px;
+    height: 30px;
+    font-size: 0.7rem;
+  }
 `;
 
 export const MyPageFont = styled.div`
@@ -118,11 +132,20 @@ export const MyPageFont = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  width: 20%;
+  display: flex;
+  align-items: center;
 `;
 
 export const BoxWrapper = styled.div`
   width: 100%;
+  margin-top: 40px;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+
+  @media ${breakPoints.mobile} {
+  }
 `;
 
 export const ImgWrapper = styled.div``;
