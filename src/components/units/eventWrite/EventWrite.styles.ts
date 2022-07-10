@@ -6,8 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 20px 0px;
-  margin: 0 2%;
+  padding: 20px;
 
   @media ${breakPoints.tablet} {
     transition-duration: 1s;
@@ -74,6 +73,7 @@ export const InputContents = styled.textarea`
   height: 70vh;
   padding: 20px;
   border: none;
+  border-radius: 20px;
 
   &::placeholder {
     color: #cccccc;

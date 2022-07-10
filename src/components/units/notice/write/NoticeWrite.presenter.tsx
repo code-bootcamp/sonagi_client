@@ -1,5 +1,6 @@
 import Button01 from "../../../commons/buttons/01";
 import Button02 from "../../../commons/buttons/02";
+import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import * as S from "./NoticeWrite.styles";
 
 export default function NoticeWritePresenter(props) {
@@ -27,15 +28,7 @@ export default function NoticeWritePresenter(props) {
           onChangeFileUrls={props.onChangeFileUrls}
         />
       ))} */}
-        <S.UploadButton>
-          <div>+</div>
-        </S.UploadButton>
-        <S.UploadButton>
-          <div>+</div>
-        </S.UploadButton>
-        <S.UploadButton>
-          <div>+</div>
-        </S.UploadButton>
+        <Uploads01 />
       </S.UploadBox>
       <S.ButtonWrapper>
         <Button02 onClick={props.onClickList} title="취소" />

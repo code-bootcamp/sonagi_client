@@ -68,7 +68,7 @@ export const Title = styled.div`
 
 export const WrapInfo = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding-top: 5px;
 `;
 
@@ -82,7 +82,7 @@ export const Writer = styled.div`
 `;
 
 export const Date = styled.div`
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #7e7e7e;
   margin-left: 10px;
 

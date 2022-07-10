@@ -5,36 +5,67 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 120px;
+  padding: 20px;
+
+  @media ${breakPoints.tablet} {
+    transition-duration: 1s;
+    width: 96%;
+  }
 
   @media ${breakPoints.mobile} {
-    padding: 0 20px;
+    transition-duration: 1s;
+    width: 92%;
+    margin: 0 3%;
   }
+`;
+
+export const RowWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 `;
 
 export const MainTitle = styled.div`
   font-size: 1.875rem;
-  font-weight: bold;
-  padding: 25px 0;
+  font-weight: 700;
+  margin-top: 20px;
 
   @media ${breakPoints.mobile} {
-    font-size: 1.5rem;
+    font-size: 1.5em;
   }
 `;
 
-export const WrapTitleInfo = styled.div`
+export const TitleLine = styled.div`
+  width: 1px;
+  height: 20px;
+  background-color: #bdbdbd;
+  margin: 0px 50px;
+`;
+
+export const WriterWrapper = styled.div`
   display: flex;
-  padding: 25px 0;
-  border-bottom: 1px solid #dbdbdb;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #bdbdbd;
+`;
+
+export const Writer = styled.div`
+  font-size: 1.125em;
+  margin-right: 20px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+  }
 `;
 
 export const Title = styled.div`
-  font-size: 1.5rem;
-  color: #484848;
+  font-size: 1.5em;
+  font-weight: 500;
+  padding: 64px 0px 24px;
 
   @media ${breakPoints.mobile} {
-    font-size: 1.2rem;
+    font-size: 1.25em;
   }
 `;
 
@@ -52,9 +83,10 @@ export const UserLabel = styled.div`
   }
 `;
 export const Date = styled.div`
-  font-size: 1.25rem;
+  font-size: 1rem;
+  text-align: center;
   color: #808080;
-  margin-left: 12px;
+  margin-right: 10px;
 
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;
@@ -71,11 +103,10 @@ export const ReportIcon = styled.img`
     height: 15px;
   }
 `;
-export const Contents = styled.input`
-  margin: 40px 0;
-  width: 100%;
-  height: 350px;
-  margin-bottom: 50px;
+export const Contents = styled.div`
+  margin: 30px 0px 80px 0px;
+  height: 600px;
+  background-color: #eee;
 `;
 export const Button = styled.div`
   width: 160px;

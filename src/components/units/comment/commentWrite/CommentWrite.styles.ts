@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 120px;
+  padding: 20px;
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
@@ -19,12 +19,13 @@ export const WrapTitle = styled.div`
 `;
 
 export const CommentIcon = styled.img`
+  margin-top: 3px;
   width: 24px;
   height: 24px;
 `;
 
 export const CommentTitle = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #484848;
   margin-left: 10px;
 
@@ -43,7 +44,17 @@ export const ContentsInput = styled.input`
   width: 100%;
   height: 70px;
   padding-left: 20px;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-bottom: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    font-size: 1rem;
+  }
 
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;

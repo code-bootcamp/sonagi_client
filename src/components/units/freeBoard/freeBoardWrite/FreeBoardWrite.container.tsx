@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import FreeBoardWritePresenter from "./FreeBoardWrite.presenter";
 export default function FreeBoardWriteContainer() {
-  return <FreeBoardWritePresenter />;
+  const [fileUrls, setFileUrls] = useState(["", "", ""]);
+
+  return (
+    <FreeBoardWritePresenter fileUrls={fileUrls} setFileUrls={setFileUrls} />
+  );
 }
