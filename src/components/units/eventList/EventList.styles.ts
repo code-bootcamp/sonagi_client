@@ -58,7 +58,7 @@ export const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 20px;
+  margin-bottom: 50px;
 `;
 
 export const ListTitle = styled.div`

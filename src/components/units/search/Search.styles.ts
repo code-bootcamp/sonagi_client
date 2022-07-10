@@ -119,6 +119,7 @@ export const ItemWrap = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 7%;
+  cursor: pointer;
 
   @media ${breakPoints.tablet} {
     width: 90%;
@@ -135,17 +136,20 @@ export const ItemPic = styled.img`
   width: 180px;
   height: 240px;
 `;
+
 export const ItemInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0px 15px;
 `;
+
 export const RowWrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 10px;
 `;
+
 export const ItemName = styled.div`
   font-size: 1.5em;
   font-weight: 700;
@@ -155,6 +159,7 @@ export const ItemName = styled.div`
     font-size: 1.25em;
   }
 `;
+
 export const ItemPlus = styled.div`
   width: 30%;
   background-color: #eee;
@@ -172,11 +177,13 @@ export const ItemPlus = styled.div`
     font-size: 0.8em;
   }
 `;
+
 export const WriterIcon = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 10px;
 `;
+
 export const Writer = styled.div`
   font-size: 1em;
 
@@ -184,6 +191,7 @@ export const Writer = styled.div`
     font-size: 0.8em;
   }
 `;
+
 export const Contents = styled.div`
   width: 150px;
   margin-top: 20px;
