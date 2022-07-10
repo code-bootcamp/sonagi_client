@@ -18,9 +18,9 @@ const Wrapper = styled.div`
   box-sizing: border-box;
 `;
 
-const HIDDEN_HEADER = ["/login", "/signup", "/novelRead"];
-const HIDDEN_NAVIGATION = ["/login", "/signup", "/novelRead"];
-const HIDDEN_FOOTER = ["/login", "/signup", "/novelRead"];
+const HIDDEN_HEADER = ["/login", "/signup", "/novel/_id/novelRead"];
+const HIDDEN_NAVIGATION = ["/login", "/signup", "/novel/_id/novelRead"];
+const HIDDEN_FOOTER = ["/login", "/signup", "/novel/_id/novelRead"];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
