@@ -8,7 +8,7 @@ export default function NovelListPresenter() {
 
   return (
     <S.Wrap>
-      <S.Title>최신작품</S.Title>
+      <S.Title>연재작품</S.Title>
       <S.MoreBtn>더보기</S.MoreBtn>
       <S.GridWrap>
         {itemimg.map((item: any) => (
