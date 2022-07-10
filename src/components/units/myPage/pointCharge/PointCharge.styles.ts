@@ -3,6 +3,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
+  padding: 2%;
 `;
 
 export const Input = styled.input``;
@@ -46,14 +47,13 @@ export const InnerTableContents = styled.div`
 export const TopFlex = styled.div`
   display: flex;
   align-items: center;
-  margin: 3% 0% 3% 0%;
+  margin: 3% 0%;
 `;
 
 export const TableTop = styled.div`
   font-size: 1.375rem;
-  width: 42%;
   color: #484848;
-  margin: 2% 52% 2% 0%;
+  padding: 0 0 3% 3%;
   font-weight: 700;
   @media ${breakPoints.tablet} {
     /* display: none; */
@@ -62,6 +62,13 @@ export const TableTop = styled.div`
   @media ${breakPoints.mobile} {
     font-size: 1rem;
   }
+`;
+
+export const TableDiv = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const TitleAmount = styled.div`
@@ -77,12 +84,11 @@ export const AmountWon = styled.div`
 export const TableBorder = styled.div`
   /* width: 850px; */
   width: 100%;
-  height: 510px;
+  padding: 3% 0;
   border-radius: 8px;
   border: 1px solid #bdbdbd;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 export const Title = styled.div`
@@ -93,7 +99,7 @@ export const Title = styled.div`
 
 export const InnerTable = styled.div`
   /* width: 725px; */
-  width: 600px;
+  width: 80%;
   height: 50px;
   border-radius: 20px;
   border: 1px solid #bdbdbd;
@@ -113,11 +119,9 @@ export const InnerTable = styled.div`
   justify-content: space-between;
   padding: 0 3%;
   @media ${breakPoints.tablet} {
-    /* display: none; */
     width: 70%;
   }
   @media ${breakPoints.mobile} {
-    /* display: none; */
     width: 70%;
   }
 `;
@@ -161,8 +165,8 @@ export const AmountDiv = styled.div`
 `;
 
 export const FooterBar = styled.div`
-  /* width: 850px; */
   width: 100%;
+  padding: 3%;
   height: 80px;
   background-color: #f6f6f6;
   border-radius: 8px;
@@ -209,6 +213,14 @@ export const FooterFlex = styled.div`
   padding-right: 3%;
   align-items: center;
   width: 30%;
+
+  @media ${breakPoints.tablet} {
+    margin-left: 30%;
+  }
+  @media ${breakPoints.mobile} {
+    /* width: 30%; */
+    margin-left: 20%;
+  }
 `;
 
 export const ChargeAmount = styled.div`

@@ -3,6 +3,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
+  padding: 2%;
 `;
 
 export const MyNovel = styled.div`
@@ -33,7 +34,14 @@ export const ChargeHistory = styled.th`
 
 export const TopWrapper = styled.div`
   display: flex;
-  margin: 20px 0px 50px 10px;
+  margin: 3% 0%;
+`;
+
+export const TableWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const TableTop = styled.th`
@@ -46,9 +54,8 @@ export const TableTop = styled.th`
 export const Table = styled.table`
   border-top: 1px solid #d9d9d9;
   border-collapse: collapse;
-  margin-left: 30px;
   margin-bottom: 70px;
-  width: 80%;
+  width: 90%;
   @media ${breakPoints.tablet} {
     width: 70%;
   }
