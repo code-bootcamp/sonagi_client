@@ -10,7 +10,7 @@ export default function PointCharge() {
   return (
     <Wrapper>
       <MyPageSideBarContainer />
-      <PointChargeContainer />;
+      <PointChargeContainer />
     </Wrapper>
   );
 }

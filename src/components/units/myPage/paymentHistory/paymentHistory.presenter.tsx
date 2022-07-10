@@ -2,70 +2,71 @@ import * as S from "./paymentHistory.styles";
 export default function PaymentHistoryPresenter() {
   return (
     <S.Wrapper>
-      <S.MyNovel>나의 작품</S.MyNovel>
       <S.TopWrapper>
         <S.Top>충전내역</S.Top>
         <S.Top>후원내역</S.Top>
         <S.Top>결제내역</S.Top>
       </S.TopWrapper>
-      <S.Table>
-        <tr>
-          <S.TableTop>충전일</S.TableTop>
-          <S.ChargeHistory>충전내역</S.ChargeHistory>
-          <S.TableTop>충전 후 포인트</S.TableTop>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-        <tr>
-          <S.TableDate>2020.09.28</S.TableDate>
-          <S.TD>+1,000,000</S.TD>
-          <S.TablePointSum>￦1,222,000</S.TablePointSum>
-        </tr>
-      </S.Table>
-      <S.PageNation>1 2 3 4 5 6 7 8 9 10 {">"}</S.PageNation>
+      <S.TableWrapper>
+        <S.Table>
+          <tr>
+            <S.TableTop>충전일</S.TableTop>
+            <S.ChargeHistory>충전내역</S.ChargeHistory>
+            <S.TableTop>충전 후 포인트</S.TableTop>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+          <tr>
+            <S.TableDate>2020.09.28</S.TableDate>
+            <S.TD>+1,000,000</S.TD>
+            <S.TablePointSum>￦1,222,000</S.TablePointSum>
+          </tr>
+        </S.Table>
+        <S.PageNation>1 2 3 4 5 6 7 8 9 10 {">"}</S.PageNation>
+      </S.TableWrapper>
     </S.Wrapper>
   );
 }
