@@ -13,11 +13,11 @@ const Button = styled.button`
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
-    width: 80px;
-    height: 40px;
-    font-size: 1.1rem;
+    width: 100px;
+    height: 45px;
+    font-size: 0.9rem;
   }
 `;
 export default function Button02(props: any) {
-  return <Button>{props.title}</Button>;
+  return <Button onClick={props.onClick}>{props.title}</Button>;
 }

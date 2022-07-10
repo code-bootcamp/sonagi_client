@@ -230,5 +230,5 @@ export const IntroduceInput = styled.input`
 export const WrapSubmitButton = styled.div`
   padding: 70px 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 `;
