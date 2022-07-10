@@ -205,7 +205,6 @@ export const RowWrap3 = styled.div`
   @media ${breakPoints.mobile} {
     width: 40%;
     margin-left: auto;
-    margin-right: -30px;
   }
 `;
 

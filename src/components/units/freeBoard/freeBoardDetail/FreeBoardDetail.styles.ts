@@ -124,8 +124,4 @@ export const Button = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: right;
-
-  @media ${breakPoints.mobile} {
-    justify-content: center;
-  }
 `;

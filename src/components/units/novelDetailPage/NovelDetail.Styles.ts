@@ -49,8 +49,9 @@ export const Buttons = styled.div`
 `;
 
 export const LookButtonWrapper = styled.div`
+  width: 100%;
   display: flex;
-  margin-left: 230px;
+  justify-content: space-evenly;
 `;
 
 export const Count = styled.div`

@@ -116,6 +116,6 @@ export const UploadButton = styled.button`
 export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-bottom: 100px;
 `;
