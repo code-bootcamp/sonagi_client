@@ -16,13 +16,13 @@ export const WrapTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 40px 0 15px 0;
 `;
 
 export const MainTitle = styled.div`
-  font-size: 1.875rem;
-  font-weight: bold;
+  font-size: 1.875em;
+  font-weight: 700;
   color: #484848;
+  margin-top: 20px;
 
   @media ${breakPoints.mobile} {
     font-size: 1.5rem;
