@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   margin-right: 2.6%;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const MyPage = styled.div`
