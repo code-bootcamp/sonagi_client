@@ -99,7 +99,7 @@ export const Title = styled.div`
 
 export const InnerTable = styled.div`
   /* width: 725px; */
-  width: 80%;
+  width: 90%;
   height: 50px;
   border-radius: 20px;
   border: 1px solid #bdbdbd;
@@ -119,21 +119,31 @@ export const InnerTable = styled.div`
   justify-content: space-between;
   padding: 0 3%;
   @media ${breakPoints.tablet} {
-    width: 70%;
+    width: 87%;
   }
   @media ${breakPoints.mobile} {
-    width: 70%;
+    width: 90%;
   }
 `;
 
 export const Div = styled.div`
-  width: 35%;
+  width: 30%;
+  margin-left: 4%;
+  @media ${breakPoints.tablet} {
+    margin-left: 4%;
+  }
+  @media ${breakPoints.mobile} {
+    margin-left: 1%;
+  }
 `;
 
 export const ButtonDiv = styled.div`
-  width: 35%;
+  width: 30%;
+  margin-left: 10px;
   @media ${breakPoints.tablet} {
     font-size: 30%;
+  }
+  @media ${breakPoints.mobile} {
   }
 `;
 
@@ -191,7 +201,8 @@ export const ChargeButton = styled.div`
   cursor: pointer;
   @media ${breakPoints.tablet} {
     font-size: 0.938rem;
-    width: 90px;
+    height: 38.55px;
+    width: 80px;
   }
   @media ${breakPoints.mobile} {
     font-size: 0.938rem;
@@ -209,17 +220,16 @@ export const FooterAmountWon = styled.div`
 
 export const FooterFlex = styled.div`
   display: flex;
-  margin-left: 54%;
+  margin-left: 51%;
   padding-right: 3%;
   align-items: center;
-  width: 30%;
+  width: 20%;
 
   @media ${breakPoints.tablet} {
-    margin-left: 30%;
+    margin-left: 45%;
   }
   @media ${breakPoints.mobile} {
-    /* width: 30%; */
-    margin-left: 20%;
+    margin-right: 10px;
   }
 `;
 
@@ -237,6 +247,7 @@ export const ChargeAmount = styled.div`
   @media ${breakPoints.mobile} {
     /* width: 30%; */
     font-size: 0.813rem;
+    margin-left: 15px;
   }
 `;
 
@@ -252,4 +263,13 @@ export const AmountFlexs = styled.div`
   align-items: center;
   margin-left: 50.5%;
   width: 90px;
+`;
+
+export const FooterWrapper = styled.div`
+  display: flex;
+  /* margin-left: 300px; */
+  @media ${breakPoints.mobile} {
+    margin-left: 70px;
+    display: flex;
+  }
 `;
