@@ -44,7 +44,7 @@ export default function ApolloSetting(props: any) {
   });
 
   const uploadLink = createUploadLink({
-    uri: "https://miny-shrimp.shop/graphql",
+    uri: "https://041e-61-43-54-3.jp.ngrok.io/graphql",
     headers: {
       Authorization: `${accessToken}`,
     },

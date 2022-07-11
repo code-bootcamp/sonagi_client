@@ -13,14 +13,15 @@ export default function LoginPresenter(props) {
             placeholder="이메일 입력"
             {...props.register("email")}
           ></S.InputBox>
+          <S.Error>{props.formState.errors.email?.message}</S.Error>
           <S.InputBox
             type="password"
             placeholder="비밀번호 입력"
-            {...props.register("password")}
+            {...props.register("pwd")}
           ></S.InputBox>
-          <S.LoginButton isValid={props.formState.isValid}>
-            로그인
-          </S.LoginButton>
+          <S.Error>{props.formState.errors.password?.message}</S.Error>
+          <S.LoginButton>로그인</S.LoginButton>
+
           <S.SubBox>
             <S.CheckImg src="/login/check.png" />
             <S.SubButton>로그인 계정 유지</S.SubButton>

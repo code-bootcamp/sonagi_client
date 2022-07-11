@@ -85,17 +85,21 @@ export const InputBox = styled.input`
   }
 `;
 
-export const LoginButton = styled.div`
+export const Error = styled.div`
+  color: red;
+`;
+
+export const LoginButton = styled.button`
   width: 100%;
   height: 50px;
   margin: 20px 0px;
-  padding-top: 13px;
   background-color: #bee3ff;
   text-align: center;
   color: #474747;
   font-weight: 400;
   font-size: 13px;
   cursor: pointer;
+  border: none;
 `;
 
 export const SubBox = styled.div`
