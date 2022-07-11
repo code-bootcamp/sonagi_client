@@ -54,7 +54,7 @@ export default function LayoutHeader() {
         )}
       </S.TopBox>
       <S.BottomBox>
-        <S.LogoImg onClick={onClickMoveToPage("/")} src="/header/logo.png" />
+        <S.LogoImg onClick={onClickMoveToPage("/")} src="/header/logo.svg" />
         <S.WrapSearch>
           <S.SearchBox>
             <S.SearchButton onClick={onClickSearch} src="/header/search.png" />
