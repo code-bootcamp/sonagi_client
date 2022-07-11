@@ -52,7 +52,7 @@ export const QuestionBox = styled.div`
 export const QuestionContents = styled.div`
   padding-bottom: 10px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 41px;
   color: #484848;
   border-bottom: ${(props: any) =>
@@ -65,7 +65,7 @@ export const QuestionContents = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 18px;
+    font-size: 1rem;
   }
 `;
 
