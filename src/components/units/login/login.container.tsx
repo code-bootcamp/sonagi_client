@@ -15,10 +15,10 @@ const schema = yup.object({
     .required("필수 입력 사항"),
   pwd: yup
     .string()
-    // .matches(
-    //   /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/,
-    //   "비밀번호는 영문, 숫자, 특수문자를 포함한 8~16자리 문자열입니다"
-    // )
+    .matches(
+      /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/,
+      "비밀번호는 영문, 숫자, 특수문자를 포함한 8~16자리 문자열입니다"
+    )
     .required("필수 입력 사항"),
 });
 
@@ -56,7 +56,7 @@ export default function LoginContainer() {
       console.log(accessToken);
       console.log(result);
       alert("로그인 성공");
-      router.push("/");
+      window.location.replace("/");
     } catch (error) {
       alert(error.message);
     }

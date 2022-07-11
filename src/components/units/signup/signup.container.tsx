@@ -28,13 +28,13 @@ const schema = yup.object({
     )
     .required("필수 입력 사항"),
   pwdCheck: yup.string().oneOf([yup.ref("pwd"), null]),
-  phone: yup.string().required("필수 입력 사항"),
 });
 
 export default function SignUpContainer() {
   const router = useRouter();
 
   const [createUser] = useMutation(CREATE_USER);
+  const [phone, setPhone] = useState("");
   const [token, setToken] = useState("");
 
   const [SendPhone] = useMutation(SEND_PHONE);
@@ -50,28 +50,33 @@ export default function SignUpContainer() {
     router.push("/");
   };
 
-  const onClickSendPhone = (data: any) => {
-    try {
-      SendPhone({
-        variables: {
-          phone: String(data.phone),
-        },
-      }).then((result) => setToken(result.data.SendPhone));
-    } catch (error) {
-      console.log(error);
-    }
+  const onChangePhone = (event: any) => {
+    setPhone(event.target.value);
   };
 
   const onChangeToken = (event: any) => {
     setToken(event.target.value);
   };
 
-  const onClickAuthPhone = (data: any) => {
+  const onClickSendPhone = () => {
+    try {
+      SendPhone({
+        variables: {
+          phone,
+        },
+      }).then((result) => setToken(result.data.SendPhone));
+      console.log(phone);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onClickAuthPhone = () => {
     try {
       const result = AuthPhoneOK({
         variables: {
           phoneInput: {
-            phone: data.phone,
+            phone,
             token,
           },
         },
@@ -93,7 +98,7 @@ export default function SignUpContainer() {
               name: data.name,
               nickName: data.nickName,
               email: data.email,
-              phone: data.phone,
+              phone,
               pwd: data.pwd,
             },
           },
@@ -112,6 +117,7 @@ export default function SignUpContainer() {
       onClickSignUp={onClickSignUp}
       onClickSendPhone={onClickSendPhone}
       onChangeToken={onChangeToken}
+      onChangePhone={onChangePhone}
       onClickAuthPhone={onClickAuthPhone}
       register={register}
       handleSubmit={handleSubmit}
