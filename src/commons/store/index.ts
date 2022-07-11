@@ -8,11 +8,6 @@ export const accessTokenState = atom({
   default: "",
 });
 
-export const visitedPageState = atom({
-  key: "visitedPageState",
-  default: "/",
-});
-
 export const restoreAccessTokenLoadable = selector({
   key: "restoreAccessTokenLoadable",
   get: async () => {
