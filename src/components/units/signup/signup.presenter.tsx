@@ -23,6 +23,7 @@ export default function SignUpPresenter(props) {
               {...props.register("name")}
             ></S.InputBox>
           </S.InputWrapper>
+          <S.Error>{props.formState.errors.name?.message}</S.Error>
           <S.InputWrapper>
             <S.InputBox
               type="text"
@@ -30,6 +31,7 @@ export default function SignUpPresenter(props) {
               {...props.register("email")}
             ></S.InputBox>
             <S.InputButton>중복확인</S.InputButton>
+            <S.Error>{props.formState.errors.email?.message}</S.Error>
           </S.InputWrapper>
           <S.InputWrapper>
             <S.InputBox
@@ -38,6 +40,7 @@ export default function SignUpPresenter(props) {
               {...props.register("nickName")}
             ></S.InputBox>
           </S.InputWrapper>
+          <S.Error>{props.formState.errors.nickName?.message}</S.Error>
           <S.InputWrapper>
             <S.InputBox
               type="password"
@@ -45,6 +48,7 @@ export default function SignUpPresenter(props) {
               {...props.register("pwd")}
             ></S.InputBox>
           </S.InputWrapper>
+          <S.Error>{props.formState.errors.pwd?.message}</S.Error>
           <S.InputWrapper>
             <S.InputBox
               type="password"
@@ -52,19 +56,29 @@ export default function SignUpPresenter(props) {
               {...props.register("pwdCheck")}
             ></S.InputBox>
           </S.InputWrapper>
+          <S.Error>
+            {props.formState.errors.pwdCheck && "비밀번호가 일치하지 않습니다"}
+          </S.Error>
           <S.InputWrapper>
             <S.InputBox
               type="text"
               placeholder="휴대폰 번호"
               {...props.register("phone")}
             ></S.InputBox>
-            <S.InputButton type="button" onClick={props.onClickSendPhone}>
+            <S.InputButton onClick={props.onClickSendPhone}>
               휴대폰 인증
             </S.InputButton>
           </S.InputWrapper>
+          <S.Error>{props.formState.errors.phone?.message}</S.Error>
           <S.InputWrapper>
-            <S.InputBox type="text" placeholder="인증번호 입력"></S.InputBox>
-            <S.InputText>인증 완료</S.InputText>
+            <S.InputBox
+              type="text"
+              placeholder="인증번호 입력"
+              onChange={props.onChangeToken}
+            ></S.InputBox>
+            <S.InputText onClick={props.onClickAuthPhone}>
+              인증 완료
+            </S.InputText>
             <S.CheckImg src="signup/check.png" />
           </S.InputWrapper>
           <S.WrapCheck>

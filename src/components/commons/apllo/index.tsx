@@ -10,7 +10,7 @@ import { useRecoilState, useRecoilValueLoadable } from "recoil";
 import {
   accessTokenState,
   restoreAccessTokenLoadable,
-} from "../../../commons/store";
+} from "../../../commons/store/index";
 import { onError } from "@apollo/client/link/error";
 import { getAccessToken } from "../../../commons/libraries/getAccessToken";
 

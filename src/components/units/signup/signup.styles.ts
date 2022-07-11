@@ -102,7 +102,13 @@ export const InputBox = styled.input`
   }
 `;
 
-export const InputButton = styled.button`
+export const Error = styled.div`
+  color: black;
+  font-size: 10px;
+  padding-top: 2px;
+`;
+
+export const InputButton = styled.div`
   width: 100px;
   height: 34px;
   margin: 6px 0px 0px 10px;
@@ -116,7 +122,6 @@ export const InputButton = styled.button`
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
-  border: none;
 `;
 
 export const InputText = styled.div`
@@ -172,7 +177,7 @@ export const Arrow = styled.img`
   height: 10px;
 `;
 
-export const SignUpButton = styled.div`
+export const SignUpButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,6 +188,7 @@ export const SignUpButton = styled.div`
   color: #474747;
   font-weight: 400;
   font-size: 13px;
+  border: none;
   cursor: pointer;
 `;
 
