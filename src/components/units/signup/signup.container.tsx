@@ -105,6 +105,8 @@ export default function SignUpContainer() {
         });
         console.log(data);
         console.log(result);
+        alert("회원가입 완료");
+        router.push("/login");
       } catch (error) {
         console.log(error);
       }
