@@ -25,16 +25,13 @@ export const CREATE_USER = gql`
 `;
 
 export const SEND_PHONE = gql`
-  query SendPhone($phone: String!) {
+  mutation SendPhone($phone: String!) {
     SendPhone(phone: $phone)
   }
 `;
 
 export const AUTH_PHONE_OK = gql`
-  query AuthPhoneOK($phoneInput: PhoneInput!) {
-    AuthPhoneOK(phoneInput: $phoneInput) {
-      phone
-      token
-    }
+  mutation AuthPhoneOK($phoneInput: PhoneInput!) {
+    AuthPhoneOK(phoneInput: $phoneInput)
   }
 `;

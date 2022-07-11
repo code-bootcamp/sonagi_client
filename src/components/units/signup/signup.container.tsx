@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import SignUpPresenter from "./signup.presenter";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { AUTH_PHONE_OK, CREATE_USER, SEND_PHONE } from "./signup.queries";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
@@ -37,8 +37,8 @@ export default function SignUpContainer() {
   const [createUser] = useMutation(CREATE_USER);
   const [token, setToken] = useState("");
 
-  const { data: AuthPhoneOK } = useQuery(AUTH_PHONE_OK);
-  const { data: SendPhone } = useQuery(SEND_PHONE);
+  const [SendPhone] = useMutation(SEND_PHONE);
+  const [AuthPhoneOK] = useMutation(AUTH_PHONE_OK);
 
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(schema),
@@ -52,12 +52,11 @@ export default function SignUpContainer() {
 
   const onClickSendPhone = (data: any) => {
     try {
-      const result = SendPhone({
+      SendPhone({
         variables: {
-          phone: data.phone,
+          phone: String(data.phone),
         },
-      });
-      console.log(result);
+      }).then((result) => setToken(result.data.SendPhone));
     } catch (error) {
       console.log(error);
     }
@@ -99,8 +98,7 @@ export default function SignUpContainer() {
             },
           },
         });
-        alert("회원가입 성공");
-        router.push("/");
+        console.log(data);
         console.log(result);
       } catch (error) {
         console.log(error);
