@@ -1,6 +1,6 @@
 import * as S from "./NovelList.styles";
 
-export default function NovelListPresenter(props) {
+export default function NovelPbListPresenter(props) {
   return (
     <S.Wrap>
       <S.Title>연재작품</S.Title>
