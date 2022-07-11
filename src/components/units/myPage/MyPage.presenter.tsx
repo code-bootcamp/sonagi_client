@@ -37,9 +37,11 @@ export default function MyPagePresenter(props: any) {
         </S.PayMentWrapper>
       )} */}
       <S.DIV>
-        <S.ChargeButton onClick={props.handleOk}>캐시충전</S.ChargeButton>
+        {/* <S.ChargeButton onClick={props.handleOk}>포인트 충전</S.ChargeButton> */}
+        <S.ChargeButton onClick={props.onClickMoveToPointCharge}>
+          포인트 충전
+        </S.ChargeButton>
       </S.DIV>
-      <S.MyPageFont>마이 페이지</S.MyPageFont>
       <S.LargeBox>
         <S.InnerLeftBox>
           <img src="myPage/ProfileVector.png" />
@@ -48,8 +50,8 @@ export default function MyPagePresenter(props: any) {
           <S.Email>abcdefghij@gamil.com</S.Email>
           <S.Flex>
             <S.Point>포인트 100P</S.Point>
-            <S.Dash>|</S.Dash>
-            <S.Point>충전하기</S.Point>
+            {/* <S.Dash>|</S.Dash>
+            <S.Point>충전하기</S.Point> */}
           </S.Flex>
           <S.LogoutButton>로그아웃</S.LogoutButton>
         </S.InnerLeftBox>

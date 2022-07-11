@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const MyNovel = styled.div`
+  margin-top: 65px;
   font-size: 1.5rem;
   color: #141414;
   @media ${breakPoints.mobile} {

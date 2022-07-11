@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import MyPagePresenter from "./MyPage.presenter";
 declare const window: typeof globalThis & {
@@ -6,6 +7,7 @@ declare const window: typeof globalThis & {
 };
 
 export default function MyPageContainer() {
+  const router = useRouter();
   const [selected, setSelected] = useState(100);
   const [isSelect, setIsSelect] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -16,6 +18,10 @@ export default function MyPageContainer() {
   const onClickMoney = (event: any) => {
     setSelected(event.target.value);
     setIsSelect((prev) => !prev);
+  };
+
+  const onClickMoveToPointCharge = () => {
+    router.push("/myPage/pointCharge");
   };
 
   const SelectMoney = () => {
@@ -87,6 +93,7 @@ export default function MyPageContainer() {
         onChangeAmount={onChangeAmount}
         isModalVisible={isModalVisible}
         handleOk={handleOk}
+        onClickMoveToPointCharge={onClickMoveToPointCharge}
         // handleCancel={handleCancel}
       />
     </>
