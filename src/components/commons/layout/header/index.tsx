@@ -1,4 +1,4 @@
-import { gql, useMutation } from "@apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import useMoveToPage from "../../../../commons/hooks/UseMoveToPage";
@@ -13,8 +13,22 @@ const LOGOUT_USER = gql`
   }
 `;
 
+const FETCH_LOGIN_USER = gql`
+  query fetchLoginUser {
+    fetchLoginUser {
+      id
+      name
+      nickName
+      email
+      phone
+    }
+  }
+`;
+
 export default function LayoutHeader() {
   const [Logout] = useMutation(LOGOUT_USER);
+  const { data } = useQuery(FETCH_LOGIN_USER);
+  console.log(data?.fetchLoginUser.nickName);
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
 
   const { onClickMoveToPage } = useMoveToPage();
@@ -40,17 +54,24 @@ export default function LayoutHeader() {
   return (
     <S.Wrapper>
       <S.TopBox>
-        <S.SignUpLoginButton onClick={onClickMoveToPage("/signup")}>
-          회원가입
-        </S.SignUpLoginButton>
         {accessToken ? (
-          <S.SignUpLoginButton onClick={onClickLogout}>
-            로그아웃
-          </S.SignUpLoginButton>
+          <>
+            <S.SignUpLoginButton>
+              {data?.fetchLoginUser.nickName}님 환영합니다!
+            </S.SignUpLoginButton>
+            <S.SignUpLoginButton onClick={onClickLogout}>
+              로그아웃
+            </S.SignUpLoginButton>
+          </>
         ) : (
-          <S.SignUpLoginButton onClick={onClickMoveToPage("/login")}>
-            로그인
-          </S.SignUpLoginButton>
+          <>
+            <S.SignUpLoginButton onClick={onClickMoveToPage("/signup")}>
+              회원가입
+            </S.SignUpLoginButton>
+            <S.SignUpLoginButton onClick={onClickMoveToPage("/login")}>
+              로그인
+            </S.SignUpLoginButton>
+          </>
         )}
       </S.TopBox>
       <S.BottomBox>
