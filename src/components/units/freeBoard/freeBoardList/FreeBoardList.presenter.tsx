@@ -1,7 +1,7 @@
 import React from "react";
 import Button01 from "../../../commons/buttons/01";
 import * as S from "./FreeBoardList.styles";
-export default function FreeBoardListPresenter() {
+export default function FreeBoardListPresenter(props: any) {
   return (
     <S.Wrapper>
       <S.WrapTitle>
@@ -107,7 +107,10 @@ export default function FreeBoardListPresenter() {
         </S.WrapInfo>
       </S.WrapperBoard>
       <S.WrapButton>
-        <Button01 title="작성하기" />
+        <Button01
+          title="작성하기"
+          onClick={props.onClickMoveToFreeBoardWrite}
+        />
       </S.WrapButton>
     </S.Wrapper>
   );

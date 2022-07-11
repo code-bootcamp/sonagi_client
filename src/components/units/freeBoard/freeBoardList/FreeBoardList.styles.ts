@@ -23,6 +23,7 @@ export const MainTitle = styled.div`
   font-weight: 700;
   color: #484848;
   margin-top: 20px;
+  border-radius: 8px;
 
   @media ${breakPoints.mobile} {
     font-size: 1.5rem;
