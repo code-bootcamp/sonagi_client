@@ -115,7 +115,10 @@ export const UploadButton = styled.button`
 
 export const ButtonWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-bottom: 100px;
+`;
+
+export const Margin = styled.div`
+  margin-left: 40px;
 `;

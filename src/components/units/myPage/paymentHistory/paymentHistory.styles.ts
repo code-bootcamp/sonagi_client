@@ -21,14 +21,17 @@ export const MyNovel = styled.div`
 `;
 
 export const Top = styled.div`
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #141414;
   margin-right: 30px;
+  @media ${breakPoints.mobile} {
+    font-size: 0.813rem;
+  }
 `;
 
 export const ChargeHistory = styled.th`
   border-bottom: 1px solid #d9d9d9;
-  font-size: 15px;
+  font-size: 0.938rem;
   color: black;
 `;
 
@@ -46,7 +49,7 @@ export const TableWrapper = styled.div`
 
 export const TableTop = styled.th`
   border-bottom: 1px solid #d9d9d9;
-  font-size: 15px;
+  font-size: 0.938rem;
   color: black;
   padding: 8px;
 `;
@@ -55,12 +58,13 @@ export const Table = styled.table`
   border-top: 1px solid #d9d9d9;
   border-collapse: collapse;
   margin-bottom: 70px;
+  margin-top: 40px;
   width: 90%;
   @media ${breakPoints.tablet} {
     width: 70%;
   }
   @media ${breakPoints.mobile} {
-    width: 30%;
+    width: 90%;
   }
 `;
 
@@ -70,7 +74,7 @@ export const th = styled.th`
 
 export const td = styled.td`
   border-bottom: 1px solid #d9d9d9;
-  font-size: 16px;
+  font-size: 1rem;
 `;
 
 export const TD = styled.td`
@@ -83,15 +87,18 @@ export const TD = styled.td`
 
 export const TableDate = styled.td`
   border-bottom: 1px solid #d9d9d9;
-  font-size: 16px;
+  font-size: 1rem;
   color: #4f4f4f;
   text-align: center;
   padding: 8px;
+  @media ${breakPoints.mobile} {
+    width: 40%;
+  }
 `;
 
 export const TablePointSum = styled.td`
   border-bottom: 1px solid #d9d9d9;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   color: #4f4f4f;
   text-align: center;
@@ -99,7 +106,7 @@ export const TablePointSum = styled.td`
 `;
 
 export const PageNation = styled.div`
-  font-size: 24px;
+  font-size: 1.5rem;
   width: 50%;
   margin-left: 28%;
   margin-bottom: 30px;

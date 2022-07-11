@@ -9,6 +9,7 @@ const Button = styled.button`
   font-weight: 700;
   font-size: 1.25rem;
   border: none;
+  border-radius: 8px;
   text-align: center;
   cursor: pointer;
 
@@ -16,6 +17,7 @@ const Button = styled.button`
     width: 100px;
     height: 45px;
     font-size: 0.9rem;
+    margin-bottom: 35px;
   }
 `;
 export default function Button01(props: any) {
