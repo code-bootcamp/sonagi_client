@@ -102,7 +102,7 @@ export const InputBox = styled.input`
   }
 `;
 
-export const InputButton = styled.div`
+export const InputButton = styled.button`
   width: 100px;
   height: 34px;
   margin: 6px 0px 0px 10px;
@@ -116,6 +116,7 @@ export const InputButton = styled.div`
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
 `;
 
 export const InputText = styled.div`
