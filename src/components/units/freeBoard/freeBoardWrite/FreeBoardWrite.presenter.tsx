@@ -9,6 +9,7 @@ export default function FreeBoardWritePresenter(props) {
       <S.RowWrap>
         <S.MainTitle>자유게시판</S.MainTitle>
         <S.TitleLine></S.TitleLine>
+        <S.SubTitle>글쓰기</S.SubTitle>
       </S.RowWrap>
       <S.SubTitle>제목</S.SubTitle>
       <S.InputTitle placeholder="제목을 입력해주세요"></S.InputTitle>
@@ -32,7 +33,9 @@ export default function FreeBoardWritePresenter(props) {
       </S.UploadBox>
       <S.ButtonWrapper>
         <Button02 title="취소" />
-        <Button01 title="등록" />
+        <S.Margin>
+          <Button01 title="등록" />
+        </S.Margin>
       </S.ButtonWrapper>
     </S.Wrapper>
   );
