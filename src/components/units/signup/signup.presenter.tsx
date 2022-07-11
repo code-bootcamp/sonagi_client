@@ -63,7 +63,7 @@ export default function SignUpPresenter(props) {
             <S.InputBox
               type="text"
               placeholder="휴대폰 번호"
-              {...props.register("phone")}
+              onChange={props.onChangePhone}
             ></S.InputBox>
             <S.InputButton onClick={props.onClickSendPhone}>
               휴대폰 인증
