@@ -15,3 +15,8 @@ export const restoreAccessTokenLoadable = selector({
     return newAccessToken;
   },
 });
+
+export const visitedPageState = atom({
+  key: "visitedPageState",
+  default: "/",
+});

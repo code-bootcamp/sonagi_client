@@ -10,7 +10,7 @@ import { useRecoilState, useRecoilValueLoadable } from "recoil";
 import {
   accessTokenState,
   restoreAccessTokenLoadable,
-} from "../../../commons/store";
+} from "../../../commons/store/index";
 import { onError } from "@apollo/client/link/error";
 import { getAccessToken } from "../../../commons/libraries/getAccessToken";
 
@@ -44,7 +44,7 @@ export default function ApolloSetting(props: any) {
   });
 
   const uploadLink = createUploadLink({
-    uri: "https://miny-shrimp.shop/graphql",
+    uri: "https://041e-61-43-54-3.jp.ngrok.io/graphql",
     headers: {
       Authorization: `${accessToken}`,
     },

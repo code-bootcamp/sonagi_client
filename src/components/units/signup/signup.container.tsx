@@ -3,8 +3,9 @@ import SignUpPresenter from "./signup.presenter";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "@apollo/client";
-import { CREATE_USER, SEND_PHONE } from "./Signup.queries";
+import { AUTH_PHONE_OK, CREATE_USER, SEND_PHONE } from "./signup.queries";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const schema = yup.object({
   name: yup
@@ -26,7 +27,7 @@ const schema = yup.object({
       "비밀번호는 영문, 숫자, 특수문자를 포함한 8~16자리 문자열입니다"
     )
     .required("필수 입력 사항"),
-  pwdCheck: yup.string().oneOf([yup.ref("password"), null]),
+  pwdCheck: yup.string().oneOf([yup.ref("pwd"), null]),
   phone: yup.string().required("필수 입력 사항"),
 });
 
@@ -34,10 +35,10 @@ export default function SignUpContainer() {
   const router = useRouter();
 
   const [createUser] = useMutation(CREATE_USER);
-  const { data: SendPhone } = useQuery(SEND_PHONE, {
-    variables: { phone: "" },
-  });
-  // const [AuthPhoneOK] = useQuery(AUTH_PHONE_OK);
+  const [token, setToken] = useState("");
+
+  const { data: AuthPhoneOK } = useQuery(AUTH_PHONE_OK);
+  const { data: SendPhone } = useQuery(SEND_PHONE);
 
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(schema),
@@ -51,7 +52,31 @@ export default function SignUpContainer() {
 
   const onClickSendPhone = (data: any) => {
     try {
-      const result = SendPhone({ phone: data.phone });
+      const result = SendPhone({
+        variables: {
+          phone: data.phone,
+        },
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onChangeToken = (event: any) => {
+    setToken(event.target.value);
+  };
+
+  const onClickAuthPhone = (data: any) => {
+    try {
+      const result = AuthPhoneOK({
+        variables: {
+          phoneInput: {
+            phone: data.phone,
+            token,
+          },
+        },
+      });
       console.log(result);
     } catch (error) {
       console.log(error);
@@ -61,7 +86,7 @@ export default function SignUpContainer() {
   const onClickSignUp = (data: any) => {
     console.log(data);
 
-    if (data.password === data.passwordCheck) {
+    if (data.pwd === data.pwdCheck) {
       try {
         const result = createUser({
           variables: {
@@ -75,7 +100,7 @@ export default function SignUpContainer() {
           },
         });
         alert("회원가입 성공");
-        router.push("/login");
+        router.push("/");
         console.log(result);
       } catch (error) {
         console.log(error);
@@ -88,6 +113,8 @@ export default function SignUpContainer() {
       onClickMoveToMain={onClickMoveToMain}
       onClickSignUp={onClickSignUp}
       onClickSendPhone={onClickSendPhone}
+      onChangeToken={onChangeToken}
+      onClickAuthPhone={onClickAuthPhone}
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}
