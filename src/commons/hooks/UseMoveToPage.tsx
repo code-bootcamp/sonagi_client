@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
-import { visitedPageState } from "../../components/store";
+import { visitedPageState } from "../store";
 
 export default function useMoveToPage() {
   const router = useRouter();

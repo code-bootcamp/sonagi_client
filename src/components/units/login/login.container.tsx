@@ -13,7 +13,7 @@ const schema = yup.object({
     .string()
     .email("이메일 형식이 적합하지 않습니다")
     .required("필수 입력 사항"),
-  password: yup
+  pwd: yup
     .string()
     // .matches(
     //   /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/,
@@ -43,17 +43,23 @@ export default function LoginContainer() {
   };
 
   const onClickLogin = async (data: any) => {
-    const result = await loginUser({
-      variables: {
-        email: data.email,
-        password: data.password,
-      },
-    });
-    setAccessToken(result.data?.loginUser.accessToken);
-    console.log(accessToken);
-    localStorage.setItem("refreshToken", "true");
-    alert("로그인 성공");
-    router.push("/");
+    try {
+      const result = await loginUser({
+        variables: {
+          loginInput: {
+            email: data.email,
+            pwd: data.pwd,
+          },
+        },
+      });
+      setAccessToken(result.data?.loginUser);
+      console.log(accessToken);
+      console.log(result);
+      alert("로그인 성공");
+      router.push("/");
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
