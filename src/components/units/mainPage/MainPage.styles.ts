@@ -77,6 +77,10 @@ export const PhoneSubImg = styled.img`
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;
   }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const PhoneSubImg2 = styled.img`
@@ -87,6 +91,10 @@ export const PhoneSubImg2 = styled.img`
   margin-left: 390px;
 
   @media (min-width: 767px) and (max-width: 991px) {
+    display: none;
+  }
+
+  @media ${breakPoints.mobile} {
     display: none;
   }
 `;
@@ -101,6 +109,10 @@ export const PhoneSubImg3 = styled.img`
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;
   }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const PhoneSubImg4 = styled.img`
@@ -111,6 +123,10 @@ export const PhoneSubImg4 = styled.img`
   margin-left: 320px;
 
   @media (min-width: 767px) and (max-width: 991px) {
+    display: none;
+  }
+
+  @media ${breakPoints.mobile} {
     display: none;
   }
 `;
