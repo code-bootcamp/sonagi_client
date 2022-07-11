@@ -2,7 +2,7 @@ import * as S from "./MyNovel.styles";
 export default function MyNovelPresenter() {
   return (
     <S.Wrapper>
-      <S.MyPageFont>마이 페이지</S.MyPageFont>
+      {/* <S.MyPageFont>마이 페이지</S.MyPageFont> */}
       <S.MyNovel>나의 작품</S.MyNovel>
       <S.BoxWrapper>
         <S.ImageWrapper>

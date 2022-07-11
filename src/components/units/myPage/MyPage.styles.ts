@@ -3,25 +3,14 @@ import { breakPoints } from "../../../commons/styles/media";
 
 export const ChargeButton = styled.div`
   width: 102px;
-  /* width: 100%; */
   height: 47px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #808080;
+  border-radius: 8px;
   color: #828282;
   cursor: pointer;
-`;
-
-export const MyPageFont = styled.div`
-  font-size: 32px;
-  margin-bottom: 50px;
-  @media (min-width: 768px) and (max-width: 991px) {
-    display: none;
-  }
-  @media (min-width: 767px) {
-    display: none;
-  }
 `;
 
 export const ChargeHistory = styled.div`
@@ -36,15 +25,36 @@ export const ChargeHistory = styled.div`
 export const Wrapper = styled.div`
   /* display: flex; */
   /* width: 1000px; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+  margin-bottom: 80px;
+  /* position: relative;
+  left: 100px; */
+  @media ${breakPoints.tablet} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media ${breakPoints.mobile} {
+    margin: 80px 0px 90px 120px;
+  }
 `;
 
 export const DIV = styled.div`
   /* margin-left: 750px; */
-  /* margin-bottom: 30px;
   /* margin-left: 128%; */
-  margin-left: 700px;
+  /* margin-left: 700px; */
+  margin-top: 30px;
+  margin-bottom: 30px;
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  /* background-color: blue; */
   @media ${breakPoints.tablet} {
   }
   @media ${breakPoints.mobile} {
@@ -65,8 +75,7 @@ export const LargeBox = styled.div`
   width: 100%;
   display: flex;
   @media ${breakPoints.tablet} {
-    width: 550px;
-    height: 400px;
+    width: 80%;
   }
   @media ${breakPoints.mobile} {
     /* width: 500px; */
@@ -89,19 +98,27 @@ export const InnerLeftBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media ${breakPoints.tablet} {
+    width: 40%;
+  }
 
   @media ${breakPoints.mobile} {
     background-color: white;
+    margin-left: 30px;
   }
 `;
 
 export const InnerRightBox = styled.div`
   border-radius: 0px 8px 8px 0px;
   /* width: 520px; */
-  width: 60%;
+  width: 62%;
   height: 400px;
   background-color: #f2f2f2;
+  @media ${breakPoints.tablet} {
+    width: 70%;
+  }
   @media ${breakPoints.mobile} {
+    margin-right: 100px;
     background-color: white;
   }
 `;
@@ -162,7 +179,7 @@ export const Column = styled.div`
   justify-content: center;
   align-items: center;
   height: 144px;
-  width: 95px;
+  width: 100px;
   @media ${breakPoints.mobile} {
     /* margin-right: 33px; */
     width: 100%;
@@ -267,7 +284,7 @@ export const LogoutButton = styled.div`
   align-items: center;
   position: relative;
   top: 40px;
-  right: 90px;
+  right: 80px;
   @media ${breakPoints.tablet} {
   }
   @media (max-width: 767px) {

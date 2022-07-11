@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const MyNovel = styled.div`
+  margin-top: 65px;
   font-size: 1.5rem;
   color: #141414;
   @media ${breakPoints.mobile} {
@@ -65,7 +66,7 @@ export const GenreFlex = styled.div`
 export const BoxFlex = styled.div`
   display: flex;
   align-self: flex-end;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   @media ${breakPoints.mobile} {
     margin-right: 10px;
   }
@@ -120,7 +121,7 @@ export const Button2 = styled.div`
   border-radius: 8px;
 
   @media ${breakPoints.mobile} {
-    width: 80px;
+    width: 60px;
     height: 30px;
     font-size: 0.7rem;
   }
