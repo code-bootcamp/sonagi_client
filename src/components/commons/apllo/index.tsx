@@ -33,7 +33,7 @@ export default function ApolloSetting(props: any) {
             operation.setContext({
               headers: {
                 ...operation.getContext().headers, // operation 정보들을 가져오기
-                Authorization: `Bearer ${newAccessToken}`, // accessToken만 바꿔치기
+                Authorization: `${newAccessToken}`, // accessToken만 바꿔치기
               },
             });
             return forward(operation);
@@ -44,9 +44,9 @@ export default function ApolloSetting(props: any) {
   });
 
   const uploadLink = createUploadLink({
-    uri: "https://backend07.codebootcamp.co.kr/graphql",
+    uri: "https://miny-shrimp.shop/graphql",
     headers: {
-      Authorization: `Bearer ${accessToken}`,
+      Authorization: `${accessToken}`,
     },
     credentials: "include",
   });
