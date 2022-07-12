@@ -52,9 +52,9 @@ export default function LoginContainer() {
           },
         },
       });
-      setAccessToken(result.data?.loginUser);
+      setAccessToken(result.data?.Login);
+      localStorage.setItem("refreshToken", result.data?.Login);
       console.log(accessToken);
-      console.log(result);
       alert("로그인 성공");
       window.location.replace("/");
     } catch (error) {
