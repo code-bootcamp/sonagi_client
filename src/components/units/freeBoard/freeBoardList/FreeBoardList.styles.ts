@@ -77,11 +77,13 @@ export const WrapInfo = styled.div`
   align-items: center;
   padding-top: 5px;
   margin-left: 20px;
+  margin-top: 10px;
 `;
 
 export const Writer = styled.div`
   font-size: 1.25rem;
   color: #2277d8;
+  margin-right: 30px;
 
   @media ${breakPoints.mobile} {
     font-size: 1rem;

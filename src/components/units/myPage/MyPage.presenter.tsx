@@ -54,7 +54,19 @@ export default function MyPagePresenter(props: any) {
             {/* <S.Dash>|</S.Dash>
             <S.Point>충전하기</S.Point> */}
           </S.Flex>
-          <S.LogoutButton>로그아웃</S.LogoutButton>
+          {props.accessToken ? (
+            <>
+              <S.LogoutButton onClick={props.onClickLogout}>
+                로그아웃
+              </S.LogoutButton>
+            </>
+          ) : (
+            <>
+              <S.LogoutButton onClick={props.onClickMoveToLogin}>
+                로그인
+              </S.LogoutButton>
+            </>
+          )}
         </S.InnerLeftBox>
         <S.InnerRightBox>
           <S.MainFlex>
@@ -66,7 +78,9 @@ export default function MyPagePresenter(props: any) {
                 <S.Middle>{props.data?.fetchLoginUser?.point}</S.Middle>
                 <S.Middle>원</S.Middle>
               </S.Div>
-              <S.MainBottom>충전 내역</S.MainBottom>
+              <S.MainBottom onClick={props.onClickMoveToPaymentHistory}>
+                충전 내역
+              </S.MainBottom>
             </S.Column>
             <S.Column>
               <S.Hearts src="myPage/Hearts.png" />

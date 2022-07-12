@@ -286,6 +286,7 @@ export const LogoutButton = styled.div`
   position: relative;
   top: 40px;
   right: 80px;
+  cursor: pointer;
   @media ${breakPoints.tablet} {
   }
   @media (max-width: 767px) {
