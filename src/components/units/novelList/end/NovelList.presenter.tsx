@@ -65,7 +65,7 @@ export default function NovelEndListPresenter(props) {
                 <S.ItemNum>10화</S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
-                <S.WriterIcon src="../novelList/writer-icon.png" />
+                <S.WriterIcon src="/novelList/writer-icon.png" />
                 <S.WrtiterName>작가명</S.WrtiterName>
               </S.ItemWriterWrap>
               <S.Contents>소설 회차 부제목입니다~</S.Contents>
@@ -76,7 +76,7 @@ export default function NovelEndListPresenter(props) {
       {/* 판타지 */}
       <S.RowWrap>
         <S.Category>판타지</S.Category>
-        <S.Arrow src="../novelList/arrowend/.png" />
+        <S.Arrow src="/novelList/arrowend/.png" />
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
@@ -88,7 +88,7 @@ export default function NovelEndListPresenter(props) {
                 <S.ItemNum>10화</S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
-                <S.WriterIcon src="../novelList/writer-icon.png" />
+                <S.WriterIcon src="/novelList/writer-icon.png" />
                 <S.WrtiterName>작가명</S.WrtiterName>
               </S.ItemWriterWrap>
               <S.Contents>소설 회차 부제목입니다~</S.Contents>
@@ -99,7 +99,7 @@ export default function NovelEndListPresenter(props) {
       {/* 학원 */}
       <S.RowWrap>
         <S.Category>학원</S.Category>
-        <S.Arrow src="../novelList/arrow.png" />
+        <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
@@ -111,7 +111,7 @@ export default function NovelEndListPresenter(props) {
                 <S.ItemNum>10화</S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
-                <S.WriterIcon src="../novelList/writer-icon.png" />
+                <S.WriterIcon src="/novelList/writer-icon.png" />
                 <S.WrtiterName>작가명</S.WrtiterName>
               </S.ItemWriterWrap>
               <S.Contents>소설 회차 부제목입니다~</S.Contents>
