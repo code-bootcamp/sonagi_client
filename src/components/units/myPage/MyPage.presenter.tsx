@@ -46,22 +46,41 @@ export default function MyPagePresenter(props: any) {
         <S.InnerLeftBox>
           <img src="myPage/ProfileVector.png" />
           <S.ChangeButton>변경</S.ChangeButton>
-          <S.Name>닉네임 님</S.Name>
-          <S.Email>abcdefghij@gamil.com</S.Email>
+          {/* <S.Name>닉네임 님</S.Name> */}
+          <S.Name>{props.data?.fetchLoginUser?.nickName} 님</S.Name>
+          <S.Email>{props.data?.fetchLoginUser.email}</S.Email>
           <S.Flex>
-            <S.Point>포인트 100P</S.Point>
+            <S.Point>포인트 {props.data?.fetchLoginUser?.point}원</S.Point>
             {/* <S.Dash>|</S.Dash>
             <S.Point>충전하기</S.Point> */}
           </S.Flex>
-          <S.LogoutButton>로그아웃</S.LogoutButton>
+          {props.accessToken ? (
+            <>
+              <S.LogoutButton onClick={props.onClickLogout}>
+                로그아웃
+              </S.LogoutButton>
+            </>
+          ) : (
+            <>
+              <S.LogoutButton onClick={props.onClickMoveToLogin}>
+                로그인
+              </S.LogoutButton>
+            </>
+          )}
         </S.InnerLeftBox>
         <S.InnerRightBox>
           <S.MainFlex>
             <S.Column>
               <S.Pig src="myPage/Pig.png" />
               <S.Title>소나기 포인트</S.Title>
-              <S.Middle>0원</S.Middle>
-              <S.MainBottom>충전 내역</S.MainBottom>
+              {/* <S.Middle>0원</S.Middle> */}
+              <S.Div>
+                <S.Middle>{props.data?.fetchLoginUser?.point}</S.Middle>
+                <S.Middle>원</S.Middle>
+              </S.Div>
+              <S.MainBottom onClick={props.onClickMoveToPaymentHistory}>
+                충전 내역
+              </S.MainBottom>
             </S.Column>
             <S.Column>
               <S.Hearts src="myPage/Hearts.png" />
@@ -76,7 +95,9 @@ export default function MyPagePresenter(props: any) {
               <S.MainBottom>문의 내역</S.MainBottom>
             </S.Column>
           </S.MainFlex>
-          <S.ChargeHistory>충전 내역 {"> >"}</S.ChargeHistory>
+          <S.ChargeHistory onClick={props.onClickMoveToPaymentCharge}>
+            충전 내역 {"> >"}
+          </S.ChargeHistory>
         </S.InnerRightBox>
       </S.LargeBox>
     </S.Wrapper>

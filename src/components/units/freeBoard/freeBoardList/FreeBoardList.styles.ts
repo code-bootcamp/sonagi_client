@@ -16,11 +16,12 @@ export const WrapTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin-bottom: 40px; ;
 `;
 
 export const MainTitle = styled.div`
   font-size: 1.875em;
-  font-weight: 700;
+  font-weight: normal;
   color: #484848;
   margin-top: 20px;
   border-radius: 8px;
@@ -54,12 +55,16 @@ export const ClickButton = styled.div`
 export const WrapperBoard = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 30px 0 15px 0;
-  border-bottom: 1px solid #bdbdbd;
+  padding: 45px 0 45px 45px;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  margin: 20px 0px 20px 0px;
 `;
 
 export const Title = styled.div`
   font-size: 1.563rem;
+  font-weight: bold;
+  margin-left: 20px;
   color: #484848;
 
   @media ${breakPoints.mobile} {
@@ -71,11 +76,14 @@ export const WrapInfo = styled.div`
   display: flex;
   align-items: center;
   padding-top: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
 `;
 
 export const Writer = styled.div`
   font-size: 1.25rem;
   color: #2277d8;
+  margin-right: 30px;
 
   @media ${breakPoints.mobile} {
     font-size: 1rem;
@@ -90,4 +98,23 @@ export const Date = styled.div`
   @media ${breakPoints.mobile} {
     font-size: 1.1rem;
   }
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const New = styled.div`
+  width: 40px;
+  height: 18px;
+  border: none;
+  background-color: #ddf0ff;
+  color: #2277d8;
+  font-size: 0.688rem;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
 `;

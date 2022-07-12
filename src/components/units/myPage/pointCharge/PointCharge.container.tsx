@@ -8,7 +8,6 @@ declare const window: typeof globalThis & {
 export default function PointChargeContainer() {
   const Point = [2000, 5000, 10000, 20000, 50000, 100000, 200000];
   const [value, setValue] = useState(0);
-
   const onClickPoint = (el) => () => {
     setValue(el);
   };

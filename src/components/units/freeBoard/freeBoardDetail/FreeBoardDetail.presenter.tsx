@@ -20,7 +20,7 @@ export default function FreeBoardDetailPresenter(props: any) {
       </S.WriterWrapper>
       <S.Contents />
       <S.ButtonWrapper>
-        <Button01 title="목록으로" />
+        <Button01 title="목록으로" onClick={props.onClickMoveToBoardList} />
       </S.ButtonWrapper>
     </S.Wrapper>
     //   <S.Wrapper>
