@@ -1,10 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import NovelWritePresenter from "./NovelWrite.presenter";
 import * as yup from "yup";
 import { useMutation, useQuery } from "@apollo/client";
 import { CREATE_NOVEL, FETCH_NOVEL_CATEGORYS_ALL } from "./NovelWrite.queries";
+import { Editor } from "@toast-ui/react-editor";
 
 const schema = yup.object({
   title: yup.string().required("필수"),
@@ -22,10 +23,21 @@ export default function NovelWriteContainer() {
   const [createNovel] = useMutation(CREATE_NOVEL);
   const { data: categoryData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
 
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState, setValue, trigger } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+
+  // toastUI
+
+  const editorRef = useRef<Editor>(null);
+  const onChangeContents = (value: string) => {
+    const htmlData = editorRef.current?.getInstance()?.getHTML();
+
+    setValue("description", htmlData);
+
+    trigger("description");
+  };
 
   // image
 
@@ -79,6 +91,8 @@ export default function NovelWriteContainer() {
       onClickCycleButton={onClickCycleButton}
       isClickPre={isClickPre}
       isClickDay={isClickDay}
+      // toastUI
+      onChangeContents={onChangeContents}
       // yup
       register={register}
       handleSubmit={handleSubmit}
