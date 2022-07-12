@@ -7,7 +7,7 @@ export default function NoticeWritePresenter(props) {
   return (
     <S.Wrapper>
       <S.RowWrap>
-        <S.MainTitle>이벤트</S.MainTitle>
+        <S.MainTitle>공지사항</S.MainTitle>
         <S.TitleLine></S.TitleLine>
       </S.RowWrap>
       <S.SubTitle>제목</S.SubTitle>
