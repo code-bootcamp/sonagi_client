@@ -21,7 +21,6 @@ export default function LoginPresenter(props) {
           ></S.InputBox>
           <S.Error>{props.formState.errors.password?.message}</S.Error>
           <S.LoginButton>로그인</S.LoginButton>
-
           <S.SubBox>
             <S.CheckImg src="/login/check.png" />
             <S.SubButton>로그인 계정 유지</S.SubButton>
@@ -42,9 +41,15 @@ export default function LoginPresenter(props) {
             <S.Line></S.Line>
           </S.OrBox>
           <S.SignUpBox>
-            <S.LoginLogoImg src="/login/google.png" />
-            <S.LoginLogoImg src="/login/naver.png" />
-            <S.LoginLogoImg src="/login/kakao.png" />
+            <a href="https://041e-61-43-54-3.jp.ngrok.io/login/google">
+              <S.LoginLogoImg src="/login/google.png" />
+            </a>
+            <a href="https://041e-61-43-54-3.jp.ngrok.io/login/naver">
+              <S.LoginLogoImg src="/login/naver.png" />
+            </a>
+            <a href="https://041e-61-43-54-3.jp.ngrok.io/login/kakao">
+              <S.LoginLogoImg src="/login/kakao.png" />
+            </a>
           </S.SignUpBox>
           <S.Corp>ⓒ SONAGI Corp.</S.Corp>
         </S.LoginWrapper>

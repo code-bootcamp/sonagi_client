@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
+
   @media ${breakPoints.tablet} {
     justify-content: space-between;
   }
@@ -22,8 +23,15 @@ export const ListTitle = styled.div`
   font-weight: 500;
   margin-right: 40px;
   font-size: 1.125rem;
-  color: #141414;
+  color: ${(props: any) =>
+    props.el.page === props.activeMenu ? "#2277d2" : "default"};
   cursor: pointer;
+
+  &:hover {
+    border-bottom: 1px solid #2277d2;
+    padding-bottom: 1px;
+  }
+
   @media ${breakPoints.tablet} {
     font-size: 1.2rem;
     margin-right: 20px;
@@ -34,7 +42,3 @@ export const ListTitle = styled.div`
     margin-right: 10px;
   }
 `;
-
-// export const ListImg = styled.img`
-//   cursor: pointer;
-// `;

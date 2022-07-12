@@ -24,7 +24,7 @@ export const TopBox = styled.div`
 
 export const BottomBox = styled.div`
   height: 85px;
-  padding: 20px 2px;
+  padding: 2px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -34,6 +34,7 @@ export const BottomBox = styled.div`
   @media ${breakPoints.mobile} {
     flex-direction: column;
     height: 150px;
+    padding: 20px 2px;
   }
 `;
 
@@ -57,9 +58,12 @@ export const SignUpLoginButton = styled.div`
 `;
 
 export const LogoImg = styled.img`
-  width: 120px;
-  height: 40px;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 120px;
+    height: 40px;
+  }
 `;
 
 export const SearchBox = styled.div`
@@ -95,4 +99,21 @@ export const MyPageButton = styled.img`
   height: 25px;
   cursor: pointer;
   margin-left: 30px;
+`;
+
+export const LoginUser = styled.div`
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 21px;
+  text-align: center;
+  cursor: pointer;
+`;
+
+export const LoginUser2 = styled.div`
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 21px;
+  text-align: center;
+  color: #787878;
+  cursor: pointer;
 `;

@@ -24,18 +24,18 @@ export default function PointChargePresenter(props) {
       <S.TableBorder>
         <S.TableTop>소나기 포인트 충전</S.TableTop>
         <S.TableDiv>
-          {props.Point.map((el: any, index: any) => (
-            <S.InnerTable key={el.index} el={el} value={props.value}>
+          {props.pointData?.fetchProductsAll.map((el: any) => (
+            <S.InnerTable key={el._id} el={el} value={props.value}>
               <S.Input
                 type="radio"
                 name="cash"
                 onClick={props.onClickPoint(el)}
               />
               <S.InnerTableContents>
-                소나기 포인트 {el.toLocaleString("ko-KR")}원
+                소나기 포인트 {el.point.toLocaleString("ko-KR")}원
               </S.InnerTableContents>
               <S.AmountFlex>
-                <S.HowMuchs>{el.toLocaleString("ko-KR")}</S.HowMuchs>
+                <S.HowMuchs>{el.price.toLocaleString("ko-KR")}</S.HowMuchs>
                 <div>원</div>
               </S.AmountFlex>
             </S.InnerTable>
