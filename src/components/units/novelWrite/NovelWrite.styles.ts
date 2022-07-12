@@ -87,6 +87,10 @@ export const Label = styled.div`
   }
 `;
 
+export const WrapImage = styled.div`
+  display: flex;
+`;
+
 export const InputTitle = styled.input`
   width: 800px;
   height: 60px;
@@ -234,7 +238,7 @@ export const CoverImage = styled.img`
   margin-left: 100px;
   width: 150px;
   height: 210px;
-  display: none;
+  /* display: none; */
 
   @media ${breakPoints.mobile} {
     margin: 0;

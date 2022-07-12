@@ -25,6 +25,16 @@ export default function NovelWriteContainer() {
     mode: "onChange",
   });
 
+  // image
+
+  const [fileUrls, setFileUrls] = useState([""]);
+
+  const onChangeFileUrls = (fileUrl: string, index: number) => {
+    const newFileUrls = [...fileUrls];
+    newFileUrls[index] = fileUrl;
+    setFileUrls(newFileUrls);
+  };
+
   const onClickSubmit = async (data: any) => {
     try {
       const result = await createNovel({
@@ -34,6 +44,7 @@ export default function NovelWriteContainer() {
             description: data.description,
             tags: ["#태그 1"],
             categoryID: genre,
+            files: fileUrls,
           },
         },
       });
@@ -75,6 +86,9 @@ export default function NovelWriteContainer() {
       onClickGenre={onClickGenre}
       isSelect={isSelect}
       genre={genre}
+      // images
+      onChangeFileUrls={onChangeFileUrls}
+      fileUrls={fileUrls}
     />
   );
 }

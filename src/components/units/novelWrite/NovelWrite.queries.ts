@@ -7,6 +7,7 @@ export const CREATE_NOVEL = gql`
       title
       description
       createAt
+      files
     }
   }
 `;

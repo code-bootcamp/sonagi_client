@@ -1,7 +1,9 @@
 import React from "react";
 import Button01 from "../../commons/buttons/01";
 import Button02 from "../../commons/buttons/02";
+import Uploads01 from "../../commons/uploads/01/Uploads01.container";
 import * as S from "./NovelWrite.styles";
+import { v4 as uuidv4 } from "uuid";
 
 export default function NovelWritePresenter(props: any) {
   return (
@@ -106,7 +108,16 @@ export default function NovelWritePresenter(props: any) {
         <S.WrapperLavel>
           <S.WrapCoverImage>
             <S.Label>표지 이미지</S.Label>
-
+            <S.WrapImage>
+              {props.fileUrls.map((el, index) => (
+                <Uploads01
+                  key={uuidv4()}
+                  index={index}
+                  fileUrl={el}
+                  onChangeFileUrls={props.onChangeFileUrls}
+                />
+              ))}
+            </S.WrapImage>
             <S.CoverImage src="/novelWrite/cover_image.png" />
           </S.WrapCoverImage>
         </S.WrapperLavel>
