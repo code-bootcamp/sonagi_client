@@ -21,7 +21,6 @@ export default function LoginPresenter(props) {
           ></S.InputBox>
           <S.Error>{props.formState.errors.password?.message}</S.Error>
           <S.LoginButton>로그인</S.LoginButton>
-
           <S.SubBox>
             <S.CheckImg src="/login/check.png" />
             <S.SubButton>로그인 계정 유지</S.SubButton>

@@ -12,7 +12,7 @@ const LOGOUT_USER = gql`
   }
 `;
 
-const FETCH_LOGIN_USER = gql`
+export const FETCH_LOGIN_USER = gql`
   query fetchLoginUser {
     fetchLoginUser {
       id
