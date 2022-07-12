@@ -2,15 +2,16 @@ import { ChangeEvent, RefObject } from "react";
 
 export interface IUploads01Props {
   index: number;
-  fileUrl: string;
+  fileUrls: string;
+
   defaultFileUrl?: string;
   onChangeFileUrls: (fileUrl: string, index: number) => void;
 }
 
 export interface IUploads01UIProps {
   fileRef: RefObject<HTMLInputElement>;
-  fileUrl: string;
+  fileUrls: string;
   defaultFileUrl?: string;
   onClickUpload: () => void;
-  onChangeFile: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeFileUrls: (event: ChangeEvent<HTMLInputElement>) => void;
 }
