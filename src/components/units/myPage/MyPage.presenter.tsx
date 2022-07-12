@@ -19,19 +19,9 @@ export default function MyPagePresenter(props: any) {
           <S.Flex>
             <S.Point>포인트 {props.data?.fetchLoginUser?.point}원</S.Point>
           </S.Flex>
-          {props.accessToken ? (
-            <>
-              <S.LogoutButton onClick={props.onClickLogout}>
-                로그아웃
-              </S.LogoutButton>
-            </>
-          ) : (
-            <>
-              <S.LogoutButton onClick={props.onClickMoveToLogin}>
-                로그인
-              </S.LogoutButton>
-            </>
-          )}
+          <S.LogoutButton onClick={props.onClickLogout}>
+            로그아웃
+          </S.LogoutButton>
         </S.InnerLeftBox>
         <S.InnerRightBox>
           <S.MainFlex>

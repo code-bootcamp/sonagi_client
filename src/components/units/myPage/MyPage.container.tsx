@@ -1,13 +1,17 @@
+import { useQuery } from "@apollo/client";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { withAuth } from "../../../commons/hooks/withAuth";
 import MyPagePresenter from "./MyPage.presenter";
+import { FETCH_LOGIN_USER } from "./MyPage.queries";
 
 function MyPageContainer() {
   const router = useRouter();
   const [selected, setSelected] = useState(100);
   const [isSelect, setIsSelect] = useState(false);
+  const { data } = useQuery(FETCH_LOGIN_USER);
+  console.log(data);
   const onChangeAmount = (event: any) => {
     setSelected(event.target.value);
   };
@@ -39,6 +43,7 @@ function MyPageContainer() {
         onClickMoney={onClickMoney}
         onChangeAmount={onChangeAmount}
         onClickMoveToPointCharge={onClickMoveToPointCharge}
+        data={data}
         // handleCancel={handleCancel}
       />
     </>
