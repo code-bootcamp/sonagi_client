@@ -27,7 +27,6 @@ export const FETCH_LOGIN_USER = gql`
 export default function LayoutHeader() {
   const [Logout] = useMutation(LOGOUT_USER);
   const { data } = useQuery(FETCH_LOGIN_USER);
-  console.log(data?.fetchLoginUser.nickName);
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
 
   const { onClickMoveToPage } = useMoveToPage();
