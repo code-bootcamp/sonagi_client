@@ -5,6 +5,12 @@ import Uploads01 from "../../commons/uploads/01/Uploads01.container";
 import * as S from "./NovelWrite.styles";
 import { v4 as uuidv4 } from "uuid";
 
+import dynamic from "next/dynamic";
+
+const ToastUi = dynamic(() => import("../../commons/toastUI"), {
+  ssr: false,
+});
+
 export default function NovelWritePresenter(props: any) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
@@ -133,10 +139,15 @@ export default function NovelWritePresenter(props: any) {
         </S.WrapperLavel>
         <S.WrapIntroduce>
           <S.Label>작품소개</S.Label>
-          <S.IntroduceInput
+          {/* <S.IntroduceInput
             type="text"
             placeholder="소개글을 작성해주세요"
             {...props.register("description")}
+          /> */}
+          <ToastUi
+            onChangeContents={props.onChangeContents}
+            editorRef={props.editorRef}
+            initialValue={props.productData?.fetchUseditem.contents}
           />
           <S.Error>{props.formState.errors.description?.message}</S.Error>
         </S.WrapIntroduce>
