@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import NovelWritePresenter from "./NovelWrite.presenter";
 import * as yup from "yup";
-import { useMutation } from "@apollo/client";
-import { CREATE_NOVEL } from "./NovelWrite.queries";
+import { useMutation, useQuery } from "@apollo/client";
+import { CREATE_NOVEL, FETCH_NOVEL_CATEGORYS_ALL } from "./NovelWrite.queries";
 
 const schema = yup.object({
   title: yup.string().required("필수"),
@@ -19,13 +19,25 @@ export default function NovelWriteContainer() {
   const [isSelect, SetIsSelect] = useState(false);
 
   const [createNovel] = useMutation(CREATE_NOVEL);
-
+  const { data: categotyData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
+  console.log(categotyData);
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
 
+  // image
+
+  const [fileUrls, setFileUrls] = useState([""]);
+
+  const onChangeFileUrls = (fileUrl: string, index: number) => {
+    const newFileUrls = [...fileUrls];
+    newFileUrls[index] = fileUrl;
+    setFileUrls(newFileUrls);
+  };
+
   const onClickSubmit = async (data: any) => {
+    console.log(fileUrls[0]);
     try {
       const result = await createNovel({
         variables: {
@@ -34,6 +46,7 @@ export default function NovelWriteContainer() {
             description: data.description,
             tags: ["#태그 1"],
             categoryID: genre,
+            files: fileUrls,
           },
         },
       });
@@ -75,6 +88,10 @@ export default function NovelWriteContainer() {
       onClickGenre={onClickGenre}
       isSelect={isSelect}
       genre={genre}
+      // images
+      onChangeFileUrls={onChangeFileUrls}
+      fileUrls={fileUrls}
+      categotyData={categotyData}
     />
   );
 }

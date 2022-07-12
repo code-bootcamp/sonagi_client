@@ -1,7 +1,9 @@
 import React from "react";
 import Button01 from "../../commons/buttons/01";
 import Button02 from "../../commons/buttons/02";
+import Uploads01 from "../../commons/uploads/01/Uploads01.container";
 import * as S from "./NovelWrite.styles";
+import { v4 as uuidv4 } from "uuid";
 
 export default function NovelWritePresenter(props: any) {
   return (
@@ -47,21 +49,33 @@ export default function NovelWritePresenter(props: any) {
                 <S.WrapGenreList>
                   {props.isSelect && (
                     <>
-                      <S.List onClick={props.onClickGenre} id="공포">
-                        공포
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categotyData.fetchNovelCategorysAll[0].id}
+                      >
+                        라이트노벨
                       </S.List>
-                      <S.List onClick={props.onClickGenre} id="로맨스">
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categotyData.fetchNovelCategorysAll[1].id}
+                      >
+                        무협
+                      </S.List>
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categotyData.fetchNovelCategorysAll[2].id}
+                      >
                         로맨스
                       </S.List>
-                      <S.List onClick={props.onClickGenre} id="판타지">
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categotyData.fetchNovelCategorysAll[3].id}
+                      >
                         판타지
                       </S.List>
-                      <S.List onClick={props.onClickGenre} id="스릴러">
-                        스릴러
-                      </S.List>
-                      <S.List onClick={props.onClickGenre} id="소소한">
+                      {/* <S.List onClick={props.onClickGenre} id="소소한">
                         소소한
-                      </S.List>
+                      </S.List> */}
                     </>
                   )}
                 </S.WrapGenreList>
@@ -106,7 +120,16 @@ export default function NovelWritePresenter(props: any) {
         <S.WrapperLavel>
           <S.WrapCoverImage>
             <S.Label>표지 이미지</S.Label>
-
+            <S.WrapImage>
+              {props.fileUrls.map((el, index) => (
+                <Uploads01
+                  key={uuidv4()}
+                  index={index}
+                  fileUrl={el}
+                  onChangeFileUrls={props.onChangeFileUrls}
+                />
+              ))}
+            </S.WrapImage>
             <S.CoverImage src="/novelWrite/cover_image.png" />
           </S.WrapCoverImage>
         </S.WrapperLavel>

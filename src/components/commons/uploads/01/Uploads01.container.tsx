@@ -3,20 +3,38 @@
 import { ChangeEvent, useRef } from "react";
 import Uploads01UI from "./Uploads01.presenter";
 import { IUploads01Props } from "./Uploads01.types";
-// import { UPLOAD_FILE } from "./Uploads01.queries";
+import { UPLOAD_FILE } from "./Uploads01.queries";
+import { useMutation } from "@apollo/client";
+import { checkFileValidation } from "./Uploads01.fileValidation";
 
 export default function Uploads01(props: IUploads01Props) {
   // 사진 올리기
   const fileRef = useRef<HTMLInputElement>(null);
-  // const [uploadFile] = useMutation(UPLOAD_FILE);
+  const [uploadFile] = useMutation(UPLOAD_FILE);
+  // const [url,setUrl] = useState
 
   const onClickUpload = () => {
     fileRef.current?.click();
   };
 
   const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
-    // const file = checkFileValidation(event.target.files?.[0]);
-    // if (!file) return;
+    const file = checkFileValidation(event.target.files?.[0]);
+    if (!file) return;
+    console.log(file);
+    // props.onChangeFileUrls(file, props.index);
+
+    try {
+      const result = await uploadFile({
+        variables: {
+          FILE_TYPE: "NOVEL",
+          files: [file],
+        },
+      });
+      console.log(result);
+      props.onChangeFileUrls(result.data.uploadFile[0].id, props.index);
+    } catch (error) {
+      alert(error.message);
+    }
     // const fileReader = new FileReader();
     // fileReader.readAsDataURL(file);
     // // readAsDataURL : 파일을 url로 만들어줌
