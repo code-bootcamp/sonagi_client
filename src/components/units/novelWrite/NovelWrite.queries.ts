@@ -7,7 +7,19 @@ export const CREATE_NOVEL = gql`
       title
       description
       createAt
-      files
+      files {
+        id
+        url
+      }
+    }
+  }
+`;
+
+export const FETCH_NOVEL_CATEGORYS_ALL = gql`
+  query fetchNovelCategorysAll {
+    fetchNovelCategorysAll {
+      id
+      name
     }
   }
 `;

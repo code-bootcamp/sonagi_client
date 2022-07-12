@@ -49,21 +49,33 @@ export default function NovelWritePresenter(props: any) {
                 <S.WrapGenreList>
                   {props.isSelect && (
                     <>
-                      <S.List onClick={props.onClickGenre} id="공포">
-                        공포
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categotyData.fetchNovelCategorysAll[0].id}
+                      >
+                        라이트노벨
                       </S.List>
-                      <S.List onClick={props.onClickGenre} id="로맨스">
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categotyData.fetchNovelCategorysAll[1].id}
+                      >
+                        무협
+                      </S.List>
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categotyData.fetchNovelCategorysAll[2].id}
+                      >
                         로맨스
                       </S.List>
-                      <S.List onClick={props.onClickGenre} id="판타지">
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categotyData.fetchNovelCategorysAll[3].id}
+                      >
                         판타지
                       </S.List>
-                      <S.List onClick={props.onClickGenre} id="스릴러">
-                        스릴러
-                      </S.List>
-                      <S.List onClick={props.onClickGenre} id="소소한">
+                      {/* <S.List onClick={props.onClickGenre} id="소소한">
                         소소한
-                      </S.List>
+                      </S.List> */}
                     </>
                   )}
                 </S.WrapGenreList>

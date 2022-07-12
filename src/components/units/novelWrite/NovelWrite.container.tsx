@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import NovelWritePresenter from "./NovelWrite.presenter";
 import * as yup from "yup";
-import { useMutation } from "@apollo/client";
-import { CREATE_NOVEL } from "./NovelWrite.queries";
+import { useMutation, useQuery } from "@apollo/client";
+import { CREATE_NOVEL, FETCH_NOVEL_CATEGORYS_ALL } from "./NovelWrite.queries";
 
 const schema = yup.object({
   title: yup.string().required("필수"),
@@ -19,7 +19,8 @@ export default function NovelWriteContainer() {
   const [isSelect, SetIsSelect] = useState(false);
 
   const [createNovel] = useMutation(CREATE_NOVEL);
-
+  const { data: categotyData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
+  console.log(categotyData);
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
@@ -36,6 +37,7 @@ export default function NovelWriteContainer() {
   };
 
   const onClickSubmit = async (data: any) => {
+    console.log(fileUrls[0]);
     try {
       const result = await createNovel({
         variables: {
@@ -89,6 +91,7 @@ export default function NovelWriteContainer() {
       // images
       onChangeFileUrls={onChangeFileUrls}
       fileUrls={fileUrls}
+      categotyData={categotyData}
     />
   );
 }

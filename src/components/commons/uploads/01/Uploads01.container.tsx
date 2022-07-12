@@ -21,6 +21,7 @@ export default function Uploads01(props: IUploads01Props) {
     const file = checkFileValidation(event.target.files?.[0]);
     if (!file) return;
     console.log(file);
+    // props.onChangeFileUrls(file, props.index);
 
     try {
       const result = await uploadFile({
@@ -29,8 +30,8 @@ export default function Uploads01(props: IUploads01Props) {
           files: [file],
         },
       });
-      console.log(result.data.uploadFile[0].url);
-      props.onChangeFileUrls(result.data.uploadFile[0].url, props.index);
+      console.log(result);
+      props.onChangeFileUrls(result.data.uploadFile[0].id, props.index);
     } catch (error) {
       alert(error.message);
     }
