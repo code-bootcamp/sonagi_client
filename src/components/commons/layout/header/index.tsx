@@ -60,7 +60,7 @@ export default function LayoutHeader() {
             <S.SearchButton onClick={onClickSearch} src="/header/search.png" />
             <S.SearchInput />
           </S.SearchBox>
-          <S.MyPageButton onClick={onClickMyPage} src="/header/mypage.png" />
+          <S.MyPageButton onClick={onClickMyPage} src="/header/mypage.svg" />
         </S.WrapSearch>
       </S.BottomBox>
     </S.Wrapper>
