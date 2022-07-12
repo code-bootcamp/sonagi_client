@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
+export const Error = styled.div``;
+
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
@@ -107,12 +109,13 @@ export const WrapGenre = styled.div`
 
 export const WrapSelect = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-left: 60px;
   border: 1px solid #b1b1b1;
   width: 230px;
-  height: 40px;
+  height: ${(props: any) => (props.isSelect ? "100%" : "35px")};
 
   @media ${breakPoints.mobile} {
     margin: 0;
@@ -121,11 +124,38 @@ export const WrapSelect = styled.div`
   }
 `;
 
+export const WrapGenreSelect = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const WrapGenreList = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
 export const GenreLabel = styled.div`
   font-size: 1.125rem;
 
   @media ${breakPoints.mobile} {
     font-size: 0.9rem;
+  }
+`;
+
+export const List = styled.li`
+  width: 100%;
+  padding: 7px 0px 5px 0px;
+  background-color: white;
+  list-style: none;
+  color: #828282;
+  border: 1px solid gray;
+  &:hover {
+    font-weight: 700;
+    font-size: 17px;
   }
 `;
 
@@ -204,6 +234,7 @@ export const CoverImage = styled.img`
   margin-left: 100px;
   width: 150px;
   height: 210px;
+  display: none;
 
   @media ${breakPoints.mobile} {
     margin: 0;

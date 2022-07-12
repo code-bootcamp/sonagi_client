@@ -16,7 +16,7 @@ export default function NovelDetailPresenter() {
             </S.Genre>
             <S.NovelTitle>kick off</S.NovelTitle>
             <S.ProfileWrapper>
-              <S.WriterImg src="novelDetail/profile.jpg" />
+              <S.WriterImg src="/novelDetail/profile.jpg" />
               <S.WriterFont>작가</S.WriterFont>
               <S.Flexs>
                 <S.Divs>총 00화</S.Divs>
@@ -25,11 +25,11 @@ export default function NovelDetailPresenter() {
               </S.Flexs>
             </S.ProfileWrapper>
             <S.StarWrapper>
-              <S.StarImg src="novelDetail/star.png" />
-              <S.StarImg src="novelDetail/star.png" />
-              <S.StarImg src="novelDetail/star.png" />
-              <S.StarImg src="novelDetail/star.png" />
-              <S.StarImg src="novelDetail/star.png" />
+              <S.StarImg src="/novelDetail/star.png" />
+              <S.StarImg src="/novelDetail/star.png" />
+              <S.StarImg src="/novelDetail/star.png" />
+              <S.StarImg src="/novelDetail/star.png" />
+              <S.StarImg src="/novelDetail/star.png" />
               <S.Score>5점</S.Score>
               <S.Count>(0,000 명)</S.Count>
             </S.StarWrapper>
@@ -41,7 +41,7 @@ export default function NovelDetailPresenter() {
         </S.FlexWrapper>
         <S.ButtonWrapper>
           <S.HeartWrapper>
-            <S.HeartImg src="novelDetail/HeartImg.png" />
+            <S.HeartImg src="/novelDetail/HeartImg.png" />
             <S.HeartCount>3,000</S.HeartCount>
           </S.HeartWrapper>
           <S.LookButtonWrapper>
@@ -61,8 +61,8 @@ export default function NovelDetailPresenter() {
           <S.Square />
           <S.SelectAll>전체선택</S.SelectAll>
           <S.SortButton>
-            <S.ArrowImg src="novelDetail/Arrow 1.png" />
-            <S.ArrowImg src="novelDetail/Arrow 2.png" />
+            <S.ArrowImg src="/novelDetail/Arrow 1.png" />
+            <S.ArrowImg src="/novelDetail/Arrow 2.png" />
             <S.New>신간부터</S.New>
           </S.SortButton>
           <S.MarginWrapper>

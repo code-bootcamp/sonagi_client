@@ -1,5 +1,5 @@
-import NovelDetailPresenter from "../../../src/components/units/novelDetailPage/NovelDetail.Presenter";
+import NovelDetailContainer from "../../../src/components/units/novelDetailPage/NovelDetail.container";
 
 export default function NovelDetailPage() {
-  return <NovelDetailPresenter />;
+  return <NovelDetailContainer />;
 }

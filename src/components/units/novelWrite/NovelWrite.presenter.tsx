@@ -22,16 +22,49 @@ export default function NovelWritePresenter(props: any) {
         </S.WrapHeader>
         <S.WrapperLavel>
           <S.WrapTitle>
-            <S.TitleLabel type="text" placeholder="작품 제목" />
+            <S.TitleLabel
+              type="text"
+              placeholder="작품 제목"
+              {...props.register("title")}
+            />
+            <S.Error>{props.formState.errors.title?.message}</S.Error>
           </S.WrapTitle>
         </S.WrapperLavel>
         <S.WrapperLavel>
           <S.WrapGenreCycle>
             <S.WrapGenre>
               <S.Label>장르</S.Label>
-              <S.WrapSelect>
-                <S.GenreLabel>장르선택</S.GenreLabel>
-                <S.SelectButton src="/novelWrite/arrow_down.png" />
+              <S.WrapSelect isSelect={props.isSelect}>
+                <S.WrapGenreSelect>
+                  <S.GenreLabel>
+                    {!props.genre ? "장르 선택" : props.genre}
+                  </S.GenreLabel>
+                  <S.SelectButton
+                    src="/novelWrite/arrow_down.png"
+                    onClick={props.onClickSelectGenre}
+                  />
+                </S.WrapGenreSelect>
+                <S.WrapGenreList>
+                  {props.isSelect && (
+                    <>
+                      <S.List onClick={props.onClickGenre} id="공포">
+                        공포
+                      </S.List>
+                      <S.List onClick={props.onClickGenre} id="로맨스">
+                        로맨스
+                      </S.List>
+                      <S.List onClick={props.onClickGenre} id="판타지">
+                        판타지
+                      </S.List>
+                      <S.List onClick={props.onClickGenre} id="스릴러">
+                        스릴러
+                      </S.List>
+                      <S.List onClick={props.onClickGenre} id="소소한">
+                        소소한
+                      </S.List>
+                    </>
+                  )}
+                </S.WrapGenreList>
               </S.WrapSelect>
             </S.WrapGenre>
             <S.WrapCycle>
@@ -73,12 +106,18 @@ export default function NovelWritePresenter(props: any) {
         <S.WrapperLavel>
           <S.WrapCoverImage>
             <S.Label>표지 이미지</S.Label>
+
             <S.CoverImage src="/novelWrite/cover_image.png" />
           </S.WrapCoverImage>
         </S.WrapperLavel>
         <S.WrapIntroduce>
           <S.Label>작품소개</S.Label>
-          <S.IntroduceInput type="text" placeholder="소개글을 작성해주세요" />
+          <S.IntroduceInput
+            type="text"
+            placeholder="소개글을 작성해주세요"
+            {...props.register("description")}
+          />
+          <S.Error>{props.formState.errors.description?.message}</S.Error>
         </S.WrapIntroduce>
         <S.WrapSubmitButton>
           <Button02 title="취소" />

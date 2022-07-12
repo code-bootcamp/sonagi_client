@@ -5,7 +5,6 @@ export const CREATE_NOVEL = gql`
     createNovel(createNovelInput: $createNovelInput) {
       id
       title
-      subtitle
       description
       createAt
     }
