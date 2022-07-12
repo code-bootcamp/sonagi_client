@@ -55,8 +55,8 @@ export default function LoginContainer() {
       setAccessToken(result.data?.loginUser);
       console.log(accessToken);
       console.log(result);
-      alert("로그인 성공");
-      window.location.replace("/");
+      // alert("로그인 성공");
+      // window.location.replace("/");
     } catch (error) {
       alert(error.message);
     }
