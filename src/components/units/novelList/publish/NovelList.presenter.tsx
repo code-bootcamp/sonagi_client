@@ -122,7 +122,7 @@ export default function NovelPbListPresenter(props: any) {
       {/* 공포/미스터리 */}
       <S.RowWrap>
         <S.Category>공포/미스터리</S.Category>
-        <S.Arrow src="../novelList/arrow.png" />
+        <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
