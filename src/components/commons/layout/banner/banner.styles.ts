@@ -49,5 +49,4 @@ export const MySlide = styled(Slider)``;
 
 export const CarouselImg = styled.img`
   width: 80vw;
-  /* height: 500px; */
 `;
