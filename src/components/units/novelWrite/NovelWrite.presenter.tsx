@@ -39,7 +39,7 @@ export default function NovelWritePresenter(props: any) {
               <S.WrapSelect isSelect={props.isSelect}>
                 <S.WrapGenreSelect>
                   <S.GenreLabel>
-                    {!props.genre ? "장르 선택" : props.genre}
+                    {!props.genre ? "장르 선택" : props.name}
                   </S.GenreLabel>
                   <S.SelectButton
                     src="/novelWrite/arrow_down.png"
@@ -51,31 +51,28 @@ export default function NovelWritePresenter(props: any) {
                     <>
                       <S.List
                         onClick={props.onClickGenre}
-                        id={props.categotyData.fetchNovelCategorysAll[0].id}
+                        id={props.categoryData?.fetchNovelCategorysAll[0]}
                       >
                         라이트노벨
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
-                        id={props.categotyData.fetchNovelCategorysAll[1].id}
+                        id={props.categoryData?.fetchNovelCategorysAll[1].id}
                       >
                         무협
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
-                        id={props.categotyData.fetchNovelCategorysAll[2].id}
+                        id={props.categoryData?.fetchNovelCategorysAll[2].id}
                       >
                         로맨스
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
-                        id={props.categotyData.fetchNovelCategorysAll[3].id}
+                        id={props.categoryData?.fetchNovelCategorysAll[3].id}
                       >
                         판타지
                       </S.List>
-                      {/* <S.List onClick={props.onClickGenre} id="소소한">
-                        소소한
-                      </S.List> */}
                     </>
                   )}
                 </S.WrapGenreList>
@@ -124,13 +121,14 @@ export default function NovelWritePresenter(props: any) {
               {props.fileUrls.map((el, index) => (
                 <Uploads01
                   key={uuidv4()}
+                  fileUrls={el}
                   index={index}
-                  fileUrl={el}
+                  // fileId={el}
                   onChangeFileUrls={props.onChangeFileUrls}
                 />
               ))}
             </S.WrapImage>
-            <S.CoverImage src="/novelWrite/cover_image.png" />
+            {/* <S.CoverImage src="/novelWrite/cover_image.png" /> */}
           </S.WrapCoverImage>
         </S.WrapperLavel>
         <S.WrapIntroduce>

@@ -16,11 +16,12 @@ export default function NovelWriteContainer() {
   const [isClickPre, setIsClickPre] = useState(false);
   const [isClickDay, setIsClickDay] = useState(true);
   const [genre, setGenre] = useState("");
+  const [name, setName] = useState("");
   const [isSelect, SetIsSelect] = useState(false);
 
   const [createNovel] = useMutation(CREATE_NOVEL);
-  const { data: categotyData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
-  console.log(categotyData);
+  const { data: categoryData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
+
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
@@ -37,7 +38,7 @@ export default function NovelWriteContainer() {
   };
 
   const onClickSubmit = async (data: any) => {
-    console.log(fileUrls[0]);
+    // console.log(fileId[0]);
     try {
       const result = await createNovel({
         variables: {
@@ -46,7 +47,7 @@ export default function NovelWriteContainer() {
             description: data.description,
             tags: ["#태그 1"],
             categoryID: genre,
-            files: fileUrls,
+            fileURLs: fileUrls,
           },
         },
       });
@@ -69,6 +70,7 @@ export default function NovelWriteContainer() {
 
   const onClickGenre = (event) => {
     setGenre(event?.target.id);
+    setName(event.target.innerText);
     SetIsSelect((prev) => !prev);
   };
 
@@ -88,10 +90,11 @@ export default function NovelWriteContainer() {
       onClickGenre={onClickGenre}
       isSelect={isSelect}
       genre={genre}
+      name={name}
       // images
       onChangeFileUrls={onChangeFileUrls}
       fileUrls={fileUrls}
-      categotyData={categotyData}
+      categoryData={categoryData}
     />
   );
 }
