@@ -29,13 +29,15 @@ export default function FreeBoardWriteContainer() {
         },
       });
       console.log("result", result);
+      console.log("result.data.createBoard.id", result.data.createBoard.id);
       alert("게시글이 등록되었습니다");
-      router.push(`freeBoard/${result.data.createBoard.id}`);
+      router.push(`/freeBoard/${result.data?.createBoard.id}`);
     } catch (error) {
       console.log(error.message);
       alert(error.message);
     }
   };
+
   return (
     <FreeBoardWritePresenter
       fileUrls={fileUrls}

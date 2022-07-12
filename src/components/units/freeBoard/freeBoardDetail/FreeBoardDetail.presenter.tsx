@@ -1,19 +1,21 @@
 import React from "react";
 import Button01 from "../../../commons/buttons/01";
 import * as S from "./FreeBoardDetail.styles";
-export default function FreeBoardDetailPresenter(props) {
+export default function FreeBoardDetailPresenter(props: any) {
   return (
     <S.Wrapper>
       <S.RowWrap>
         <S.MainTitle>자유게시판</S.MainTitle>
         <S.TitleLine></S.TitleLine>
       </S.RowWrap>
-      <S.Title>{props.data?.fetchBoards?.title}</S.Title>
+      <S.Title>{props.data?.fetchBoards.title}</S.Title>
+
       <S.WriterWrapper>
-        <S.Writer>{props.data?.fetchBoards?.writer}</S.Writer>
-        <S.Date>{props.data?.fetchBoards?.createAt}</S.Date>
-        <S.Date>{props.data?.fetchBoards?.viewCount}</S.Date>
-        <S.Date>{props.data?.fetchBoards?.likeCount}</S.Date>
+        {/* <S.Writer>{props.data?.fetchBoards.writer}</S.Writer> */}
+        <S.Date>{props.data?.fetchBoards.contents}</S.Date>
+        {/* <S.Date>{props.data?.fetchBoards.createAt}</S.Date> */}
+        {/* <S.Date>{props.data?.fetchBoards.viewCount}</S.Date> */}
+        {/* <S.Date>{props.data?.fetchBoards.likeCount}</S.Date> */}
         <S.ReportIcon src="/freeBoard/report.png" />
       </S.WriterWrapper>
       <S.Contents />

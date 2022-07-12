@@ -1,6 +1,7 @@
 import React from "react";
 import Button01 from "../../../commons/buttons/01";
 import * as S from "./FreeBoardList.styles";
+import { getDate } from "./../../../../commons/libraries/utils";
 export default function FreeBoardListPresenter(props: any) {
   return (
     <S.Wrapper>
@@ -21,9 +22,9 @@ export default function FreeBoardListPresenter(props: any) {
           <S.Title>{el.title}</S.Title>
           <S.WrapInfo>
             <S.Writer>{el.user}</S.Writer>
-            <S.Date>{el.createAt}</S.Date>
-            <S.Date>{el.viewCount}</S.Date>
-            <S.Date>{el.likeCount}</S.Date>
+            <S.Date>{getDate(el.createAt)}</S.Date>
+            {/* <S.Date>{el.viewCount}</S.Date>
+            <S.Date>{el.likeCount}</S.Date> */}
           </S.WrapInfo>
         </S.WrapperBoard>
       ))}

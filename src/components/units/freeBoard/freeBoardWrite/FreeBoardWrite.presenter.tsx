@@ -3,7 +3,7 @@ import Button01 from "../../../commons/buttons/01";
 import Button02 from "../../../commons/buttons/02";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import * as S from "./FreeBoardWrite.styles";
-export default function FreeBoardWritePresenter(props) {
+export default function FreeBoardWritePresenter(props: any) {
   return (
     <S.Wrapper>
       <S.RowWrap>
