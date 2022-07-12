@@ -13,10 +13,10 @@ export default function MainPageQuestionPresenter(props) {
         </S.QuestionContents>
         {props.isAnswer1 && (
           <S.AnswerContents>
-            네 가능합니다! <br />
-            포인트 충전 후 소설을 열람하지 않으시면 포인트 환불이 가능합니다
+            아니요 안됩니다. <br />
+            결제 후 콘텐츠 다운로드 및 열람을 하지 않아도 환불이 불가능 합니다.
             <br />
-            1:1문의에서 환불 문의를 남겨주세요
+            돌아가서 어서 읽으세요!
           </S.AnswerContents>
         )}
       </S.QuestionBox>
