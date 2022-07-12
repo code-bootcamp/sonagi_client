@@ -12,7 +12,7 @@ export const QuestionWrapper = styled.div`
 `;
 
 export const QuestionTitle = styled.div`
-  font-weight: 400;
+  font-weight: 700;
   font-size: 35px;
   text-align: center;
   color: #484848;
@@ -23,7 +23,7 @@ export const QuestionBox = styled.div`
   width: 90%;
   height: ${(props: any) =>
     props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
-      ? "200px"
+      ? "260px"
       : "60px"};
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@ export const QuestionContents = styled.div`
   color: #484848;
   border-bottom: ${(props: any) =>
     props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
-      ? "1px solid #4f4f4f"
+      ? "1px solid #bdbdbd"
       : "none"};
 
   @media (min-width: 767px) and (max-width: 991px) {

@@ -4,6 +4,7 @@ export default function PointChargePresenter(props) {
   return (
     <S.Wrapper>
       <Head>
+        <link rel="shortcut icon" href="/header/favicon.ico" />
         <script
           type="text/javascript"
           src="https://code.jquery.com/jquery-1.12.4.min.js"
