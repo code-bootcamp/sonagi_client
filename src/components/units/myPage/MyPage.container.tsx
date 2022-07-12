@@ -1,17 +1,57 @@
+import { gql, useMutation, useQuery } from "@apollo/client";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { withAuth } from "../../../commons/hooks/withAuth";
+import { useRecoilState } from "recoil";
+import { accessTokenState } from "../../../commons/store";
 import MyPagePresenter from "./MyPage.presenter";
+import { FETCH_LOGIN_USER } from "./MyPage.queries";
 declare const window: typeof globalThis & {
   IMP: any;
 };
 
-function MyPageContainer() {
+const LOGOUT_USER = gql`
+  mutation Logout {
+    Logout {
+      msg
+    }
+  }
+`;
+
+export default function MyPageContainer() {
   const router = useRouter();
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+
   const [selected, setSelected] = useState(100);
   const [isSelect, setIsSelect] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const { data } = useQuery(FETCH_LOGIN_USER);
+  console.log("데이터", data);
+
+  const [Logout] = useMutation(LOGOUT_USER);
+  const onClickLogout = async () => {
+    const result = await Logout();
+    console.log(result);
+
+    localStorage.removeItem("refreshToken");
+    setAccessToken("");
+    window.location.replace("/");
+  };
+
+  const onClickMoveToLogin = () => {
+    console.log("로그인");
+    router.push("/login");
+  };
+
+  const onClickMoveToPaymentHistory = () => {
+    console.log("로그인");
+    router.push("/myPage/paymentHistory");
+  };
+
+  const onClickMoveToPaymentCharge = () => {
+    router.push("/myPage/paymentHistory");
+  };
+
   const onChangeAmount = (event: any) => {
     setSelected(event.target.value);
   };
@@ -95,10 +135,14 @@ function MyPageContainer() {
         isModalVisible={isModalVisible}
         handleOk={handleOk}
         onClickMoveToPointCharge={onClickMoveToPointCharge}
+        onClickMoveToPaymentCharge={onClickMoveToPaymentCharge}
+        data={data}
+        onClickLogout={onClickLogout}
+        accessToken={accessToken}
+        onClickMoveToLogin={onClickMoveToLogin}
+        onClickMoveToPaymentHistory={onClickMoveToPaymentHistory}
         // handleCancel={handleCancel}
       />
     </>
   );
 }
-
-export default withAuth(MyPageContainer);
