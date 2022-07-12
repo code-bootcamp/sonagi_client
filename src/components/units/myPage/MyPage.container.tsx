@@ -1,7 +1,9 @@
+import { useQuery } from "@apollo/client";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import MyPagePresenter from "./MyPage.presenter";
+import { FETCH_LOGIN_USER } from "./MyPage.queries";
 declare const window: typeof globalThis & {
   IMP: any;
 };
@@ -11,6 +13,13 @@ export default function MyPageContainer() {
   const [selected, setSelected] = useState(100);
   const [isSelect, setIsSelect] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const { data } = useQuery(FETCH_LOGIN_USER);
+  console.log("데이터", data);
+
+  const onClickMoveToPaymentCharge = () => {
+    router.push("/myPage/paymentHistory");
+  };
+
   const onChangeAmount = (event: any) => {
     setSelected(event.target.value);
   };
@@ -94,6 +103,8 @@ export default function MyPageContainer() {
         isModalVisible={isModalVisible}
         handleOk={handleOk}
         onClickMoveToPointCharge={onClickMoveToPointCharge}
+        onClickMoveToPaymentCharge={onClickMoveToPaymentCharge}
+        data={data}
         // handleCancel={handleCancel}
       />
     </>

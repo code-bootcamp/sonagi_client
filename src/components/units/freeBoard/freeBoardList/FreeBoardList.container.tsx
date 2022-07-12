@@ -8,7 +8,7 @@ export default function FreeBoardListContainer() {
   const router = useRouter();
 
   const { data } = useQuery(FETCH_BOARDS_ALL);
-  console.log(data);
+  console.log("데이터", data);
 
   const onClickMoveToFreeBoardWrite = () => {
     router.push("/freeBoard/new");

@@ -14,6 +14,7 @@ export const ChargeButton = styled.div`
 `;
 
 export const ChargeHistory = styled.div`
+  cursor: pointer;
   @media (min-width: 768px) and (max-width: 991px) {
     display: none;
   }
@@ -226,7 +227,7 @@ export const Title = styled.div`
 
 export const MainBottom = styled.div`
   font-size: 0.8em;
-  color: 4F4F4F;
+  color: #4f4f4f;
   cursor: pointer;
   @media (min-width: 768px) and (max-width: 991px) {
   }
@@ -448,6 +449,10 @@ export const Overlay = styled.div`
   z-index: 30;
   top: 0;
   left: 0;
+`;
+
+export const Div = styled.div`
+  display: flex;
 `;
 
 // export const SelectWrapper = styled.div`
