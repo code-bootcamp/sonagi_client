@@ -1,24 +1,24 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../commons/styles/media";
+// import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrap = styled.div`
-  width: 96%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px 20px;
+  margin: 30px 10px;
 
-  @media ${breakPoints.tablet} {
-    width: 96%;
-    margin: 5% 20px 0px;
+  @media (min-width: 991px) and (max-width: 1200px) {
+    width: 98%;
+    margin: 30px;
   }
 
-  @media ${breakPoints.mobile} {
+  @media (min-width: 768px) and (max-width: 991px) {
     width: 96%;
-    margin: 5% 10px 0px;
+    margin: 20px;
   }
 
-  @media (min-width: 391px) and (max-width: 640px) {
+  @media (min-width: 391px) and (max-width: 767px) {
     width: 90%;
   }
 
@@ -28,23 +28,22 @@ export const Wrap = styled.div`
 `;
 
 export const Title = styled.label`
-  width: 98%;
-  font-size: 2.25rem;
+  font-size: 1.875rem;
   font-weight: 700;
   color: #4d4d4d;
-  margin-bottom: 2%;
-  margin-left: 2%;
+  padding-bottom: 30px;
 
-  @media ${breakPoints.tablet} {
+  @media (min-width: 768px) and (max-width: 991px) {
     width: 96%;
-    font-size: 1.5em;
+    margin: 20px;
   }
 
-  @media ${breakPoints.mobile} {
-    width: 96%;
-    font-size: 1.75em;
-    margin-left: 0%;
-    margin-bottom: 20px;
+  @media (min-width: 391px) and (max-width: 767px) {
+    width: 90%;
+  }
+
+  @media (max-width: 390px) {
+    width: 90%;
   }
 `;
 
@@ -52,23 +51,14 @@ export const RowWrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 98%;
-  margin: 1% 2%;
-
-  @media ${breakPoints.tablet} {
-    margin: 0%;
-  }
-
-  @media ${breakPoints.mobile} {
-    margin: 0%;
-  }
+  margin: 20px 0px;
 `;
 
 export const Category = styled.span`
   font-size: 1.5em;
   font-weight: 700;
   color: #484848;
-  margin-right: 4%;
+  margin-right: 50px;
   cursor: pointer;
 
   background-image: linear-gradient(transparent calc(100% - 3px), #000 3px);
@@ -79,14 +69,6 @@ export const Category = styled.span`
   :hover {
     background-size: 100% 100%;
   }
-
-  @media ${breakPoints.tablet} {
-    font-size: 1.25em;
-  }
-
-  @media ${breakPoints.mobile} {
-    font-size: 1.125em;
-  }
 `;
 
 export const Arrow = styled.img`
@@ -95,6 +77,7 @@ export const Arrow = styled.img`
 `;
 
 export const ColumnWrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,41 +86,44 @@ export const ColumnWrap = styled.div`
 
 export const GridWrap = styled.div`
   width: 100%;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  /* column-gap: 30px; */
   padding: 0 10px;
-  margin: 0px 0 50px;
+  margin: 0px 0 50px; */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  flex-wrap: row;
   align-items: center;
   justify-content: center;
+  padding: 0px 20px;
 
-  @media ${breakPoints.tablet} {
-    transition-duration: 1s;
+  @media (min-width: 991px) and (max-width: 1200px) {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 90%;
+    align-items: center;
+    justify-content: center;
   }
 
-  @media ${breakPoints.mobile} {
-    transition-duration: 1s;
+  @media (min-width: 768px) and (max-width: 991px) {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 90%;
+    align-items: center;
+    justify-content: center;
   }
 
-  @media (min-width: 391px) and (max-width: 640px) {
-    transition-duration: 1s;
+  @media (min-width: 391px) and (max-width: 767px) {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    align-self: center;
-    justify-self: center;
-    width: 90%;
+    align-items: center;
+    justify-content: center;
   }
 
   @media (max-width: 390px) {
-    transition-duration: 1s;
-    grid-template-columns: 1fr 1fr;
-    align-self: center;
-    justify-self: center;
-    width: 90%;
-    margin: 0 2%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -146,34 +132,35 @@ export const ItemWrap = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0px 20px 30px;
+  align-items: center;
+  /* justify-content: center; */
+  padding-right: 20px;
 
-  @media ${breakPoints.tablet} {
-    transition-duration: 1s;
-    width: 90%;
-  }
-
-  @media ${breakPoints.mobile} {
-    transition-duration: 1s;
-    width: 90%;
-    padding: 0px 20px 10px;
+  :last-child {
+    padding-right: 0;
   }
 `;
 
 export const ItemPic = styled.img`
-  width: 180px;
-  height: 240px;
+  width: 210px;
 
-  @media ${breakPoints.tablet} {
+  @media (min-width: 991px) and (max-width: 1200px) {
     transition-duration: 1s;
-    width: 165px;
-    height: 210px;
+    width: 98%;
   }
 
-  @media ${breakPoints.mobile} {
+  @media (min-width: 768px) and (max-width: 991px) {
     transition-duration: 1s;
-    width: 150px;
-    height: 200px;
+    width: 96%;
+  }
+
+  @media (min-width: 391px) and (max-width: 767px) {
+    transition-duration: 1s;
+    width: 92%;
+  }
+
+  @media (max-width: 390px) {
+    width: 90%;
   }
 `;
 
@@ -183,45 +170,27 @@ export const ItemInfo = styled.div`
   flex-direction: row;
   align-items: center;
   margin: 10px 0px;
-
-  @media ${breakPoints.tablet} {
-    margin-bottom: 10% 0;
-  }
-
-  @media ${breakPoints.mobile} {
-    margin-bottom: 10% 0;
-  }
 `;
 export const ItemName = styled.div`
   font-size: 1.25rem;
   font-weight: 700;
   margin-right: 25px;
 
-  @media ${breakPoints.tablet} {
+  @media (min-width: 391px) and (max-width: 767px) {
     font-size: 1.125rem;
-    margin-right: 30px;
+    margin-right: 10px;
   }
 
-  @media ${breakPoints.mobile} {
-    font-size: 1.125rem;
-    margin-right: 20px;
+  @media (max-width: 390px) {
+    font-size: 1.25rem;
   }
 `;
 export const ItemNum = styled.div`
   background-color: #eee;
   padding: 5px;
-
-  @media ${breakPoints.tablet} {
-    padding: 3px;
-    font-size: 0.875em;
-  }
-
-  @media ${breakPoints.mobile} {
-    padding: 3px;
-    font-size: 0.875em;
-  }
 `;
 export const ItemWriterWrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
 `;
@@ -233,22 +202,23 @@ export const WriterIcon = styled.img`
 export const WrtiterName = styled.div`
   font-size: 1rem;
 
-  @media ${breakPoints.tablet} {
+  @media (min-width: 391px) and (max-width: 767px) {
     font-size: 0.875rem;
   }
 
-  @media ${breakPoints.mobile} {
+  @media (max-width: 390px) {
     font-size: 0.875rem;
   }
 `;
 export const Contents = styled.div`
+  width: 100%;
   font-size: 0.875rem;
 
-  @media ${breakPoints.tablet} {
-    font-size: 0.813em;
+  @media (min-width: 391px) and (max-width: 767px) {
+    font-size: 0.875rem;
   }
 
-  @media ${breakPoints.mobile} {
-    font-size: 0.813rem;
+  @media (max-width: 390px) {
+    display: none;
   }
 `;
