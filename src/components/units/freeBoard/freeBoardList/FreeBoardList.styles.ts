@@ -55,7 +55,7 @@ export const ClickButton = styled.div`
 export const WrapperBoard = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 30px 0 15px 0;
+  padding: 45px 0 45px 45px;
   border: 1px solid #bdbdbd;
   border-radius: 8px;
   margin: 20px 0px 20px 0px;
