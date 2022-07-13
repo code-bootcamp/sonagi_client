@@ -6,6 +6,7 @@ import * as S from "./NovelWrite.styles";
 import { v4 as uuidv4 } from "uuid";
 
 import dynamic from "next/dynamic";
+import Tags from "../../commons/tags";
 
 const ToastUi = dynamic(() => import("../../commons/toastUI"), {
   ssr: false,
@@ -156,6 +157,13 @@ export default function NovelWritePresenter(props: any) {
           />
           <S.Error>{props.formState.errors.description?.message}</S.Error>
         </S.WrapIntroduce>
+        <S.WrapperLavel>
+          <S.Label>태그 입력</S.Label>
+          <S.WrapTags>
+            <Tags tags={props.tags} setTags={props.setTags} />
+          </S.WrapTags>
+        </S.WrapperLavel>
+
         <S.WrapSubmitButton>
           <Button02 title="취소" />
           <Button01 title="저장" />

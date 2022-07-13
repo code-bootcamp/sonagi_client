@@ -12,6 +12,7 @@ const schema = yup.object({
   description: yup.string().required("작품 소개를 입력해 주세요!"),
   categoryID: yup.string().required("장르를 선택해 주세요!"),
   fileURLs: yup.array().required("표지 이미지를 등록해주세요!"),
+  // tags: yup.array().required("표지 이미지를 등록해주세요!"),
 });
 
 export default function NovelWriteContainer() {
@@ -49,8 +50,8 @@ export default function NovelWriteContainer() {
     setFileUrls(newFileUrls);
     // console.log(newFileUrls);
 
-    setValue("fileURLs", newFileUrls);
-    trigger("fileURLs");
+    // setValue("fileURLs", newFileUrls);
+    // trigger("fileURLs");
   };
 
   // 장르 선택
@@ -69,6 +70,12 @@ export default function NovelWriteContainer() {
     trigger("categoryID");
   };
 
+  // 태그
+
+  const [tags, setTags] = useState<string[]>([""]);
+  setValue("tags", tags);
+  trigger("tags");
+
   const onClickSubmit = async (data: any) => {
     // console.log(fileId[0]);
     try {
@@ -77,7 +84,7 @@ export default function NovelWriteContainer() {
           createNovelInput: {
             title: data.title,
             description: data.description,
-            tags: ["#태그 1"],
+            tags: data.tags,
             categoryID: data.categoryID,
             fileURLs: data.fileURLs,
           },
@@ -119,6 +126,9 @@ export default function NovelWriteContainer() {
       onChangeFileUrls={onChangeFileUrls}
       fileUrls={fileUrls}
       categoryData={categoryData}
+      // tags
+      tags={tags}
+      setTags={setTags}
     />
   );
 }

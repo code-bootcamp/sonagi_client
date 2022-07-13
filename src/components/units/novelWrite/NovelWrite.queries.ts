@@ -15,6 +15,10 @@ export const CREATE_NOVEL = gql`
         id
         name
       }
+      novelTags {
+        id
+        name
+      }
     }
   }
 `;

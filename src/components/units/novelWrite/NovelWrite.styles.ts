@@ -276,3 +276,12 @@ export const WrapSubmitButton = styled.div`
   display: flex;
   justify-content: space-evenly;
 `;
+
+export const WrapTags = styled.div`
+  width: 800px;
+  height: 56px;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
