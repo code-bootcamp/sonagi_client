@@ -4,11 +4,13 @@ export default function ProfileCertifyPresenter() {
   return (
     <S.Background>
       <S.Wrapper>
-        <S.MainTitle>회원정보 변경</S.MainTitle>
+        <S.Div>
+          <S.MainTitle>회원정보 변경</S.MainTitle>
+        </S.Div>
         <S.WrapperPassword>
           <S.WrapTitle>
             <S.LabelWrapper>
-              <S.Label>비밀번호를 </S.Label>
+              <S.Label>비밀번호를</S.Label>
               <S.Label>한번 더 입력해 주세요</S.Label>
             </S.LabelWrapper>
             <S.WrapInput>
