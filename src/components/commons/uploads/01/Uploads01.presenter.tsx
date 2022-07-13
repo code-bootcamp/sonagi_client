@@ -1,13 +1,15 @@
+import { memo } from "react";
 import * as S from "./Uploads01.styles";
 import { IUploads01UIProps } from "./Uploads01.types";
 
-export default function Uploads01UI(props: IUploads01UIProps) {
+function Uploads01UI(props: IUploads01UIProps) {
   return (
     <S.UploadWrapper>
       {props.fileUrls ? (
         <S.UploadImg
           onClick={props.onClickUpload}
           src={`https://storage.googleapis.com/code-camp-main-project/${props?.fileUrls}`}
+          // src={props.imageUrl}
         />
       ) : (
         <>
@@ -25,3 +27,5 @@ export default function Uploads01UI(props: IUploads01UIProps) {
     </S.UploadWrapper>
   );
 }
+
+export default memo(Uploads01UI);

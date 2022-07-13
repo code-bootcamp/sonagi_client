@@ -1,7 +1,11 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
-export const Error = styled.div``;
+export const Error = styled.div`
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: red;
+`;
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -88,7 +92,12 @@ export const Label = styled.div`
 `;
 
 export const WrapImage = styled.div`
+  padding-left: 70px;
   display: flex;
+
+  @media ${breakPoints.mobile} {
+    padding: 0px;
+  }
 `;
 
 export const InputTitle = styled.input`
@@ -104,7 +113,7 @@ export const WrapGenreCycle = styled.div`
 
 export const WrapGenre = styled.div`
   display: flex;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 
   @media ${breakPoints.mobile} {
     flex-direction: column;

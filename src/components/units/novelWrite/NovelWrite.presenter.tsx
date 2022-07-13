@@ -35,9 +35,10 @@ export default function NovelWritePresenter(props: any) {
               placeholder="작품 제목"
               {...props.register("title")}
             />
-            <S.Error>{props.formState.errors.title?.message}</S.Error>
           </S.WrapTitle>
         </S.WrapperLavel>
+        <S.Error>{props.formState.errors.title?.message}</S.Error>
+
         <S.WrapperLavel>
           <S.WrapGenreCycle>
             <S.WrapGenre>
@@ -57,7 +58,7 @@ export default function NovelWritePresenter(props: any) {
                     <>
                       <S.List
                         onClick={props.onClickGenre}
-                        id={props.categoryData?.fetchNovelCategorysAll[0]}
+                        id={props.categoryData?.fetchNovelCategorysAll[0].id}
                       >
                         라이트노벨
                       </S.List>
@@ -84,6 +85,7 @@ export default function NovelWritePresenter(props: any) {
                 </S.WrapGenreList>
               </S.WrapSelect>
             </S.WrapGenre>
+            <S.Error>{props.formState.errors.categoryID?.message}</S.Error>
             <S.WrapCycle>
               <S.Label>연재 주기</S.Label>
               <S.WrapCheck>
@@ -134,9 +136,12 @@ export default function NovelWritePresenter(props: any) {
                 />
               ))}
             </S.WrapImage>
+
             {/* <S.CoverImage src="/novelWrite/cover_image.png" /> */}
           </S.WrapCoverImage>
         </S.WrapperLavel>
+        <S.Error>{props.formState.errors.fileURLs?.message}</S.Error>
+
         <S.WrapIntroduce>
           <S.Label>작품소개</S.Label>
           {/* <S.IntroduceInput
@@ -145,9 +150,9 @@ export default function NovelWritePresenter(props: any) {
             {...props.register("description")}
           /> */}
           <ToastUi
-            onChangeContents={props.onChangeContents}
+            onChangeDescription={props.onChangeDescription}
             editorRef={props.editorRef}
-            initialValue={props.productData?.fetchUseditem.contents}
+            // initialValue={props.productData?.fetchUseditem.contents}
           />
           <S.Error>{props.formState.errors.description?.message}</S.Error>
         </S.WrapIntroduce>
