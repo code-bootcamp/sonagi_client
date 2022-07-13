@@ -14,12 +14,10 @@ export default function PointChargeContainer() {
   const [createPayment] = useMutation(CREATE_PAYMENT);
 
   const [value, setValue] = useState(0);
-  const [amount, setAmount] = useState(0);
   const [productID, setProductID] = useState("");
 
   const onClickPoint = (el: any) => () => {
     setValue(el.price);
-    setAmount(el.point);
     setProductID(el.id);
   };
 
@@ -44,6 +42,7 @@ export default function PointChargeContainer() {
         m_redirect_url: "http://localhost:3000/mypage",
       },
       async (rsp: any) => {
+        console.log(rsp);
         if (rsp.success) {
           try {
             const result = await createPayment({
@@ -51,7 +50,7 @@ export default function PointChargeContainer() {
                 createPaymentInput: {
                   impUid: rsp.imp_uid,
                   merchantUid: rsp.merchant_uid,
-                  amount,
+                  amount: rsp.paid_amount,
                   productID,
                 },
               },
