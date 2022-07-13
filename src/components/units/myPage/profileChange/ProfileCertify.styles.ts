@@ -23,14 +23,8 @@ export const Background = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  /* width: 1000px; */
-  /* width: 100%; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  @media ${breakPoints.mobile} {
-    /* padding: 30px; */
-  }
+  width: 100%;
+  padding: 2%;
 `;
 
 export const MainTitle = styled.div`
@@ -43,27 +37,41 @@ export const MainTitle = styled.div`
 `;
 
 export const WrapperPassword = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 export const WrapTitle = styled.div`
+  width: 70%;
+  height: 300px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  padding-top: 160px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 4px 4px 0px #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
   @media ${breakPoints.mobile} {
     margin-bottom: 120px;
   }
 `;
 
 export const Label = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.438rem;
-  padding-bottom: 15px;
-  margin-right: 10px;
   /* font-weight: 600; */
   @media ${breakPoints.mobile} {
-    font-size: 2.125rem;
-    margin-left: 14px;
+    font-size: 1rem;
   }
 `;
 
@@ -73,6 +81,10 @@ export const LabelInput = styled.input`
   border-radius: 8px;
   border: none;
   background-color: #f6f6f6;
+  padding: 20px;
+  &:focus {
+    outline: none;
+  }
   @media ${breakPoints.mobile} {
     width: 230px;
     height: 50px;
@@ -80,9 +92,9 @@ export const LabelInput = styled.input`
 `;
 
 export const WrapInput = styled.div`
-  display: flex;
-  margin-left: 20px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 export const Button = styled.div`
@@ -95,6 +107,8 @@ export const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
   @media ${breakPoints.mobile} {
     width: 70px;
     height: 50px;
@@ -103,12 +117,9 @@ export const Button = styled.div`
 
 export const LabelWrapper = styled.div`
   display: flex;
-  width: 100%;
-  margin-left: 26px;
-  @media ${breakPoints.mobile} {
-    flex-direction: column;
-    margin-bottom: 30px;
-  }
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
 `;
 
 export const Div = styled.div`
