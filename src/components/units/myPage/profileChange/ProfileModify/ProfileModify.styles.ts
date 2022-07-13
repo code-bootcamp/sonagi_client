@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -7,15 +8,18 @@ export const Wrapper = styled.div`
   padding: 50px;
 `;
 
-export const Wrap = styled.div``;
+export const Wrap = styled.div`
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+`;
 
 export const MainTitle = styled.div`
   font-size: 1.125rem;
-  padding-bottom: 25px;
 `;
 
 export const SubTitle = styled.div`
   font-size: 1rem;
+  margin: 15px 0px 15px 0px;
   color: #cccccc;
 `;
 
@@ -31,6 +35,7 @@ export const WrapTitle = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 20px;
+  margin-left: 40px;
 `;
 
 export const Label = styled.div`
@@ -44,9 +49,12 @@ export const WrapNumber = styled.div`
 `;
 
 export const NumberInput = styled.input`
-  width: 50%;
+  width: 70%;
   height: 30px;
   margin-right: 20px;
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 8px;
 `;
 
 export const NumberButton = styled.div`
@@ -54,13 +62,24 @@ export const NumberButton = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #bee3ff;
-  width: 15%;
-  height: 50px;
+  width: 18%;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 1rem;
+  @media ${breakPoints.tablet} {
+    font-size: 0.625rem;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 0.55rem;
+  }
 `;
 
 export const LabelInput = styled.input`
-  width: 70%;
+  width: 90%;
   height: 30px;
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 8px;
 `;
 
 export const WrapButton = styled.div`
@@ -72,9 +91,17 @@ export const WrapButton = styled.div`
 export const Button = styled.div`
   width: 100px;
   height: 40px;
+  font-size: 1rem;
   background-color: #2277d8;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  @media ${breakPoints.tablet} {
+    font-size: 0.813rem;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 0.813rem;
+  }
 `;
