@@ -19,9 +19,11 @@ export default function MyPagePresenter(props: any) {
           <S.Flex>
             <S.Point>포인트 {props.data?.fetchLoginUser?.point}원</S.Point>
           </S.Flex>
-          <S.LogoutButton onClick={props.onClickLogout}>
-            로그아웃
-          </S.LogoutButton>
+          <S.DIVS>
+            <S.LogoutButton onClick={props.onClickLogout}>
+              로그아웃
+            </S.LogoutButton>
+          </S.DIVS>
         </S.InnerLeftBox>
         <S.InnerRightBox>
           <S.MainFlex>

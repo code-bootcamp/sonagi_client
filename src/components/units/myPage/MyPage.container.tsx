@@ -11,7 +11,7 @@ function MyPageContainer() {
   const [selected, setSelected] = useState(100);
   const [isSelect, setIsSelect] = useState(false);
   const { data } = useQuery(FETCH_LOGIN_USER);
-  console.log(data);
+  console.log("데이터", data);
   const onChangeAmount = (event: any) => {
     setSelected(event.target.value);
   };
