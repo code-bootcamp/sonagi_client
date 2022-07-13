@@ -216,12 +216,8 @@ export const Title = styled.div`
   font-weight: 400;
   color: #141414;
   margin-top: 7px;
-
-  @media ${breakPoints.mobile} {
-    font-size: 0.938rem;
-    font-weight: 800;
-  }
   @media ${breakPoints.tablet} {
+    font-size: 0.75rem;
   }
 `;
 
@@ -240,35 +236,44 @@ export const Middle = styled.div`
   font-size: 1.5em;
   color: #2277d8;
   margin: 3px 0px 5px 0px;
+  @media ${breakPoints.tablet} {
+    font-size: 1.125rem;
+  }
 `;
 
 export const Pig = styled.img`
-  width: 1.875rem;
-  height: 1.563rem;
+  width: 30px;
+  height: 25px;
   margin-bottom: 5px;
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media ${breakPoints.tablet} {
+    width: 25px;
+    height: 20px;
   }
-  @media (max-width: 767px) {
+  @media ${breakPoints.mobile} {
     display: none;
   }
 `;
 
 export const Hearts = styled.img`
-  width: 1.625em;
-  height: 1.5em;
-  @media (min-width: 768px) and (max-width: 991px) {
+  width: 26px;
+  height: 24px;
+  @media ${breakPoints.tablet} {
+    width: 21px;
+    height: 19px;
   }
-  @media (max-width: 767px) {
+  @media ${breakPoints.mobile} {
     display: none;
   }
 `;
 
 export const MessageIcon = styled.img`
-  width: 1.563em;
-  height: 1.5em;
-  @media (min-width: 768px) and (max-width: 991px) {
+  width: 25px;
+  height: 24px;
+  @media ${breakPoints.tablet} {
+    width: 20px;
+    height: 19px;
   }
-  @media (max-width: 767px) {
+  @media ${breakPoints.mobile} {
     display: none;
   }
 `;
@@ -283,9 +288,7 @@ export const LogoutButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: 40px;
-  right: 80px;
+
   cursor: pointer;
   @media ${breakPoints.tablet} {
   }
@@ -454,6 +457,14 @@ export const Overlay = styled.div`
 
 export const Div = styled.div`
   display: flex;
+`;
+
+export const DIVS = styled.div`
+  width: 100%;
+  margin-left: 30px;
+  position: relative;
+  top: 40px;
+  right: 1px;
 `;
 
 // export const SelectWrapper = styled.div`
