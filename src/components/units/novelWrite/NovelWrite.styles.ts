@@ -278,9 +278,9 @@ export const WrapSubmitButton = styled.div`
 `;
 
 export const WrapTags = styled.div`
-  width: 800px;
-  height: 56px;
-  border: 1px solid gray;
+  padding-top: 50px;
+  width: 100%;
+  /* height: 56px; */
   display: flex;
   align-items: center;
   justify-content: flex-end;

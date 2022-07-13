@@ -81,9 +81,11 @@ export default function Tags(props) {
         const tagElem = (
           <Tag
             style={{
-              backgroundColor: "#008000",
-              borderRadius: 10,
+              backgroundColor: "#2277D8",
+              borderRadius: 8,
               color: "white",
+              padding: "6px 13px",
+              margin: "0 10px",
             }}
             className="edit-tag"
             key={tag}
@@ -131,6 +133,8 @@ export default function Tags(props) {
             backgroundColor: "gray",
             borderRadius: 10,
             color: "white",
+            padding: "6px 13px",
+            margin: "0 10px",
           }}
         >
           <PlusOutlined /> 태그
