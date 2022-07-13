@@ -5,6 +5,12 @@ import Uploads01 from "../../commons/uploads/01/Uploads01.container";
 import * as S from "./NovelWrite.styles";
 import { v4 as uuidv4 } from "uuid";
 
+import dynamic from "next/dynamic";
+
+const ToastUi = dynamic(() => import("../../commons/toastUI"), {
+  ssr: false,
+});
+
 export default function NovelWritePresenter(props: any) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
@@ -39,7 +45,7 @@ export default function NovelWritePresenter(props: any) {
               <S.WrapSelect isSelect={props.isSelect}>
                 <S.WrapGenreSelect>
                   <S.GenreLabel>
-                    {!props.genre ? "장르 선택" : props.genre}
+                    {!props.genre ? "장르 선택" : props.name}
                   </S.GenreLabel>
                   <S.SelectButton
                     src="/novelWrite/arrow_down.png"
@@ -51,31 +57,28 @@ export default function NovelWritePresenter(props: any) {
                     <>
                       <S.List
                         onClick={props.onClickGenre}
-                        id={props.categotyData.fetchNovelCategorysAll[0].id}
+                        id={props.categoryData?.fetchNovelCategorysAll[0]}
                       >
                         라이트노벨
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
-                        id={props.categotyData.fetchNovelCategorysAll[1].id}
+                        id={props.categoryData?.fetchNovelCategorysAll[1].id}
                       >
                         무협
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
-                        id={props.categotyData.fetchNovelCategorysAll[2].id}
+                        id={props.categoryData?.fetchNovelCategorysAll[2].id}
                       >
                         로맨스
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
-                        id={props.categotyData.fetchNovelCategorysAll[3].id}
+                        id={props.categoryData?.fetchNovelCategorysAll[3].id}
                       >
                         판타지
                       </S.List>
-                      {/* <S.List onClick={props.onClickGenre} id="소소한">
-                        소소한
-                      </S.List> */}
                     </>
                   )}
                 </S.WrapGenreList>
@@ -124,21 +127,27 @@ export default function NovelWritePresenter(props: any) {
               {props.fileUrls.map((el, index) => (
                 <Uploads01
                   key={uuidv4()}
+                  fileUrls={el}
                   index={index}
-                  fileUrl={el}
+                  // fileId={el}
                   onChangeFileUrls={props.onChangeFileUrls}
                 />
               ))}
             </S.WrapImage>
-            <S.CoverImage src="/novelWrite/cover_image.png" />
+            {/* <S.CoverImage src="/novelWrite/cover_image.png" /> */}
           </S.WrapCoverImage>
         </S.WrapperLavel>
         <S.WrapIntroduce>
           <S.Label>작품소개</S.Label>
-          <S.IntroduceInput
+          {/* <S.IntroduceInput
             type="text"
             placeholder="소개글을 작성해주세요"
             {...props.register("description")}
+          /> */}
+          <ToastUi
+            onChangeContents={props.onChangeContents}
+            editorRef={props.editorRef}
+            initialValue={props.productData?.fetchUseditem.contents}
           />
           <S.Error>{props.formState.errors.description?.message}</S.Error>
         </S.WrapIntroduce>

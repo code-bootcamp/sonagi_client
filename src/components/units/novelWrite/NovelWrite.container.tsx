@@ -1,10 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import NovelWritePresenter from "./NovelWrite.presenter";
 import * as yup from "yup";
 import { useMutation, useQuery } from "@apollo/client";
 import { CREATE_NOVEL, FETCH_NOVEL_CATEGORYS_ALL } from "./NovelWrite.queries";
+import { Editor } from "@toast-ui/react-editor";
 
 const schema = yup.object({
   title: yup.string().required("필수"),
@@ -16,15 +17,27 @@ export default function NovelWriteContainer() {
   const [isClickPre, setIsClickPre] = useState(false);
   const [isClickDay, setIsClickDay] = useState(true);
   const [genre, setGenre] = useState("");
+  const [name, setName] = useState("");
   const [isSelect, SetIsSelect] = useState(false);
 
   const [createNovel] = useMutation(CREATE_NOVEL);
-  const { data: categotyData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
-  console.log(categotyData);
-  const { register, handleSubmit, formState } = useForm({
+  const { data: categoryData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
+
+  const { register, handleSubmit, formState, setValue, trigger } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+
+  // toastUI
+
+  const editorRef = useRef<Editor>(null);
+  const onChangeContents = (value: string) => {
+    const htmlData = editorRef.current?.getInstance()?.getHTML();
+
+    setValue("description", htmlData);
+
+    trigger("description");
+  };
 
   // image
 
@@ -37,7 +50,7 @@ export default function NovelWriteContainer() {
   };
 
   const onClickSubmit = async (data: any) => {
-    console.log(fileUrls[0]);
+    // console.log(fileId[0]);
     try {
       const result = await createNovel({
         variables: {
@@ -46,7 +59,7 @@ export default function NovelWriteContainer() {
             description: data.description,
             tags: ["#태그 1"],
             categoryID: genre,
-            files: fileUrls,
+            fileURLs: fileUrls,
           },
         },
       });
@@ -69,6 +82,7 @@ export default function NovelWriteContainer() {
 
   const onClickGenre = (event) => {
     setGenre(event?.target.id);
+    setName(event.target.innerText);
     SetIsSelect((prev) => !prev);
   };
 
@@ -77,6 +91,8 @@ export default function NovelWriteContainer() {
       onClickCycleButton={onClickCycleButton}
       isClickPre={isClickPre}
       isClickDay={isClickDay}
+      // toastUI
+      onChangeContents={onChangeContents}
       // yup
       register={register}
       handleSubmit={handleSubmit}
@@ -88,10 +104,11 @@ export default function NovelWriteContainer() {
       onClickGenre={onClickGenre}
       isSelect={isSelect}
       genre={genre}
+      name={name}
       // images
       onChangeFileUrls={onChangeFileUrls}
       fileUrls={fileUrls}
-      categotyData={categotyData}
+      categoryData={categoryData}
     />
   );
 }
