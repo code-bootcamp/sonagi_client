@@ -14,6 +14,9 @@ export const CREATE_PAYMENT = gql`
         email
         phone
       }
+      product {
+        point
+      }
     }
   }
 `;
