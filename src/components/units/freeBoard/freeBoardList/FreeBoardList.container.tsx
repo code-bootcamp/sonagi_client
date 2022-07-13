@@ -1,10 +1,11 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import React from "react";
+import { withAuth } from "../../../../commons/hooks/withAuth";
 import FreeBoardListPresenter from "./FreeBoardList.presenter";
 import { FETCH_BOARDS_ALL } from "./FreeBoardList.queries";
 
-export default function FreeBoardListContainer() {
+function FreeBoardListContainer() {
   const router = useRouter();
 
   const { data } = useQuery(FETCH_BOARDS_ALL);
@@ -21,3 +22,5 @@ export default function FreeBoardListContainer() {
     />
   );
 }
+
+export default withAuth(FreeBoardListContainer);
