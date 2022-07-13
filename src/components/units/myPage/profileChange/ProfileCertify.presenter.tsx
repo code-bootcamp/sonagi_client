@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./ProfileCertify.styles";
-export default function ProfileCertifyPresenter() {
+export default function ProfileCertifyPresenter(props) {
   return (
     <S.Wrapper>
       <S.Div>
@@ -14,7 +14,11 @@ export default function ProfileCertifyPresenter() {
           </S.LabelWrapper>
           <S.WrapInput>
             <S.LabelInput type="password" />
-            <S.Button>확인</S.Button>
+            <S.Button
+              onClick={props.onClickMoveToPage("/myPage/profileModify")}
+            >
+              확인
+            </S.Button>
           </S.WrapInput>
         </S.WrapTitle>
       </S.WrapperPassword>
