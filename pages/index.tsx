@@ -5,6 +5,7 @@ export default function MainPage() {
   return (
     <div>
       <Head>
+        <title>소나기 &#58; 내 글이 작품이 되는 공간 </title>
         <meta property="og:title" content="소나기" />
         <meta
           property="og:description"
