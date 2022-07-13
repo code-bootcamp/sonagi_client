@@ -9,7 +9,7 @@ export default function LayoutNavigation() {
   const Menu = [
     { name: "연재작품", page: "/novel/list/publish" },
     { name: "완결작품", page: "/novel/list/end" },
-    { name: "베스트셀러", page: "/novel" },
+    { name: "베스트셀러", page: "/novel/list/best" },
     { name: "이벤트", page: "/event" },
     { name: "자유게시판", page: "/freeBoard" },
   ];
