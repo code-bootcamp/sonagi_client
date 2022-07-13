@@ -8,9 +8,10 @@ import { CREATE_NOVEL, FETCH_NOVEL_CATEGORYS_ALL } from "./NovelWrite.queries";
 import { Editor } from "@toast-ui/react-editor";
 
 const schema = yup.object({
-  title: yup.string().required("필수"),
-  // subtitle: yup.string().required("필수"),
-  description: yup.string().required("필수"),
+  title: yup.string().required("작품 제목을 입력해 주세요!"),
+  description: yup.string().required("작품 소개를 입력해 주세요!"),
+  categoryID: yup.string().required("장르를 선택해 주세요!"),
+  fileURLs: yup.array().required("표지 이미지를 등록해주세요!"),
 });
 
 export default function NovelWriteContainer() {
@@ -31,11 +32,10 @@ export default function NovelWriteContainer() {
   // toastUI
 
   const editorRef = useRef<Editor>(null);
-  const onChangeContents = (value: string) => {
+  const onChangeDescription = (value: string) => {
     const htmlData = editorRef.current?.getInstance()?.getHTML();
 
     setValue("description", htmlData);
-
     trigger("description");
   };
 
@@ -47,6 +47,26 @@ export default function NovelWriteContainer() {
     const newFileUrls = [...fileUrls];
     newFileUrls[index] = fileUrl;
     setFileUrls(newFileUrls);
+    // console.log(newFileUrls);
+
+    setValue("fileURLs", newFileUrls);
+    trigger("fileURLs");
+  };
+
+  // 장르 선택
+
+  const onClickSelectGenre = () => {
+    SetIsSelect((prev) => !prev);
+  };
+
+  const onClickGenre = (event) => {
+    setGenre(event?.target.id);
+    console.log(event?.target.id);
+    setName(event.target.innerText);
+    SetIsSelect((prev) => !prev);
+
+    setValue("categoryID", event?.target.id);
+    trigger("categoryID");
   };
 
   const onClickSubmit = async (data: any) => {
@@ -58,8 +78,8 @@ export default function NovelWriteContainer() {
             title: data.title,
             description: data.description,
             tags: ["#태그 1"],
-            categoryID: genre,
-            fileURLs: fileUrls,
+            categoryID: data.categoryID,
+            fileURLs: data.fileURLs,
           },
         },
       });
@@ -75,24 +95,14 @@ export default function NovelWriteContainer() {
     setIsClickDay((prev) => !prev);
   };
 
-  // 장르 선택
-  const onClickSelectGenre = () => {
-    SetIsSelect((prev) => !prev);
-  };
-
-  const onClickGenre = (event) => {
-    setGenre(event?.target.id);
-    setName(event.target.innerText);
-    SetIsSelect((prev) => !prev);
-  };
-
   return (
     <NovelWritePresenter
       onClickCycleButton={onClickCycleButton}
       isClickPre={isClickPre}
       isClickDay={isClickDay}
       // toastUI
-      onChangeContents={onChangeContents}
+      onChangeDescription={onChangeDescription}
+      editorRef={editorRef}
       // yup
       register={register}
       handleSubmit={handleSubmit}

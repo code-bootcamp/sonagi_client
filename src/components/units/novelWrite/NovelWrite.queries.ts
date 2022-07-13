@@ -11,6 +11,10 @@ export const CREATE_NOVEL = gql`
         id
         url
       }
+      novelCategory {
+        id
+        name
+      }
     }
   }
 `;

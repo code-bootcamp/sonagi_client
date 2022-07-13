@@ -6,7 +6,7 @@ export default function ToastUi(props) {
 
   return (
     <Editor
-      onChange={props.onChangeContents}
+      onChange={props.onChangeDescription}
       previewStyle="vertical"
       height="400px"
       initialEditType="markdown"
