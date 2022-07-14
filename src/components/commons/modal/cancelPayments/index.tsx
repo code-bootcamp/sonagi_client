@@ -84,7 +84,10 @@ export default function PaymentPage(props) {
     props.setIsModalVisible(false);
   };
 
-  console.log(props.data?.fetchPaymentsInUser[0].impUid);
+  const impUid = String(props.data?.impUid);
+  const merchantUid = String(props.data?.merchantUid);
+
+  console.log(impUid, merchantUid);
 
   const onClickCancelPayment = async () => {
     props.setIsModalVisible(false);
@@ -93,8 +96,8 @@ export default function PaymentPage(props) {
       const result = await cancelPayment({
         variables: {
           cancelPaymentInput: {
-            impUid: "imp_388869749623",
-            merchantUid: "nobody_1657777869580",
+            impUid,
+            merchantUid,
           },
         },
       });

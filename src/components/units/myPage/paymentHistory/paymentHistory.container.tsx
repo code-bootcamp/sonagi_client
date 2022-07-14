@@ -7,6 +7,7 @@ export default function PaymentHistoryContainer() {
   const { data } = useQuery(FETCH_PAYMENTS);
   const [isPoint, setIsPoint] = useState("LoadingPoint");
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [CancelData, setCancelData] = useState([]);
 
   const onClickFetchPoint = () => {
     setIsPoint("LoadingPoint");
@@ -14,6 +15,10 @@ export default function PaymentHistoryContainer() {
 
   const onClickCancelPayment = () => {
     setIsModalVisible(true);
+  };
+
+  const onClickCheck = (el) => () => {
+    setCancelData(el);
   };
 
   return (
@@ -24,6 +29,8 @@ export default function PaymentHistoryContainer() {
       onClickCancelPayment={onClickCancelPayment}
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
+      onClickCheck={onClickCheck}
+      CancelData={CancelData}
     />
   );
 }
