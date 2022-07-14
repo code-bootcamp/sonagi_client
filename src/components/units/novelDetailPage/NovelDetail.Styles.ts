@@ -98,6 +98,22 @@ export const NovelRemarks = styled.div`
   margin-top: 10px;
   width: 706px;
   height: 51px;
+  padding-bottom: 200px;
+`;
+
+export const TagsWrapper = styled.div`
+  display: flex;
+  border-bottom: 1px solid black;
+  padding: 8px 0;
+`;
+
+export const Tags = styled.div`
+  border-radius: 7px;
+  border: 1px solid gray;
+  padding: 5px;
+  background-color: #00bfff;
+  margin-right: 15px;
+  color: white;
 `;
 
 export const WriterFont = styled.div`

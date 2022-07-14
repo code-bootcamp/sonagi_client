@@ -1,23 +1,34 @@
 import Button01 from "../../commons/buttons/01";
 import Button02 from "../../commons/buttons/02";
 import * as S from "./NovelDetail.Styles";
-export default function NovelDetailPresenter() {
+import DOMPurify from "dompurify";
+
+export default function NovelDetailPresenter(props) {
   return (
     <div>
       <div>
         <S.FlexWrapper>
-          <S.NovelImage src="/novelDetail/Mask.png" />
+          <S.NovelImage
+            src={`https://storage.googleapis.com/code-camp-main-project/${props.detailData?.fetchNovelDetail.files[0].url}`}
+          />
+
           <S.ColumnWrapper>
             <S.Genre>
               <S.TopFont>장르</S.TopFont>
               {/* <S.SmallArrow src="/novelDetail/Polygon.png" /> */}
               <S.Arrow>{">"}</S.Arrow>
-              <S.TopFont>소설장르</S.TopFont>
+              <S.TopFont>
+                {props.detailData?.fetchNovelDetail.novelCategory.name}
+              </S.TopFont>
             </S.Genre>
-            <S.NovelTitle>kick off</S.NovelTitle>
+            <S.NovelTitle>
+              {props.detailData?.fetchNovelDetail.title}
+            </S.NovelTitle>
             <S.ProfileWrapper>
               <S.WriterImg src="/novelDetail/profile.jpg" />
-              <S.WriterFont>작가</S.WriterFont>
+              <S.WriterFont>
+                {props.detailData?.fetchNovelDetail.user.nickName}
+              </S.WriterFont>
               <S.Flexs>
                 <S.Divs>총 00화</S.Divs>
                 <S.Divs>|</S.Divs>
@@ -31,23 +42,53 @@ export default function NovelDetailPresenter() {
               <S.StarImg src="/novelDetail/star.png" />
               <S.StarImg src="/novelDetail/star.png" />
               <S.Score>5점</S.Score>
-              <S.Count>(0,000 명)</S.Count>
+              <S.Count>
+                {props.detailData?.fetchNovelDetail.viewCount} 명
+              </S.Count>
             </S.StarWrapper>
             <S.NovelRemarks>
-              소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다소설요약입니다
+              {typeof window !== "undefined" ? (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(
+                      props.detailData?.fetchNovelDetail.description
+                    ),
+                  }}
+                ></div>
+              ) : (
+                ""
+              )}
             </S.NovelRemarks>
             <S.Line />
+            <S.TagsWrapper>
+              {props.detailData?.fetchNovelDetail.novelTags
+                ?.filter((el) => el)
+                .map((el) => (
+                  <S.Tags key={el}># {el.name}</S.Tags>
+                ))}
+            </S.TagsWrapper>
           </S.ColumnWrapper>
         </S.FlexWrapper>
         <S.ButtonWrapper>
           <S.HeartWrapper>
             <S.HeartImg src="/novelDetail/HeartImg.png" />
-            <S.HeartCount>3,000</S.HeartCount>
+            <S.HeartCount>
+              {props.detailData?.fetchNovelDetail.likeCount}
+            </S.HeartCount>
           </S.HeartWrapper>
           <S.LookButtonWrapper>
             <Button02 title="첫화보기" />
             <Button01 title="이어보기" />
             <Button01 title="찜하기" />
+            <img
+              src="/comment/delete.png"
+              style={{ width: "30px", height: "30px" }}
+              onClick={props.onClickDelete}
+            />
+            <img
+              src="/comment/edit.png"
+              style={{ width: "30px", height: "30px" }}
+            />
           </S.LookButtonWrapper>
         </S.ButtonWrapper>
         <div>
@@ -76,7 +117,7 @@ export default function NovelDetailPresenter() {
         <S.TableLineWrapper>
           <S.Square />
           <S.TableSonWrapper>
-            <S.Title>소설제목</S.Title>
+            <S.Title>회차제목</S.Title>
             <S.Date>2022.07.05</S.Date>
           </S.TableSonWrapper>
           <S.VerticalLine />
@@ -87,7 +128,7 @@ export default function NovelDetailPresenter() {
         <S.TableLineWrapper>
           <S.Square />
           <S.TableSonWrapper>
-            <S.Title>소설제목</S.Title>
+            <S.Title>회차제목</S.Title>
             <S.Date>2022.07.05</S.Date>
           </S.TableSonWrapper>
           <S.VerticalLine />
@@ -98,7 +139,7 @@ export default function NovelDetailPresenter() {
         <S.TableLineWrapper>
           <S.Square />
           <S.TableSonWrapper>
-            <S.Title>소설제목</S.Title>
+            <S.Title>회차제목</S.Title>
             <S.Date>2022.07.05</S.Date>
           </S.TableSonWrapper>
           <S.VerticalLine />

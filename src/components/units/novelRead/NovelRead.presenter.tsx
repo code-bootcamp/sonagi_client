@@ -9,8 +9,11 @@ export default function NovelReadPresenter(props) {
           <S.ArrowLeft src="/novelRead/arrowleft.png" />
         </S.LeftWrapper>
         <S.TitleWrapper>
-          <S.Title>소설 제목</S.Title>
-          <S.SubTitle>0회 : 회차제목</S.SubTitle>
+          <S.Title>{props.novelData?.fetchNovelDetail.title}</S.Title>
+          <S.SubTitle>
+            {props.readData?.fetchOneNovelIndex.index} 화 :{" "}
+            {props.readData?.fetchOneNovelIndex.title}
+          </S.SubTitle>
         </S.TitleWrapper>
         <S.RightWrapper>
           <S.SettingImg src="/novelRead/heart.png" />
@@ -19,24 +22,7 @@ export default function NovelReadPresenter(props) {
         </S.RightWrapper>
       </S.HeadWrapper>
       <S.BodyWrapper onClick={props.onClickDisplay}>
-        이건 소설입니다
-        <br />
-        이건 소설입니다
-        <br />
-        이건 소설입니다
-        <br />
-        이건 소설입니다
-        <br />
-        이건 소설입니다
-        <br />
-        이건 소설입니다
-        <br />
-        이건 소설입니다
-        <br />
-        이건 소설입니다
-        <br />
-        이건 소설입니다
-        <br />
+        {props.readData?.fetchOneNovelIndex.contents}
       </S.BodyWrapper>
       <S.FooterWrapper setDisplay={props.setDisplay}>
         <S.LeftWrapper>
