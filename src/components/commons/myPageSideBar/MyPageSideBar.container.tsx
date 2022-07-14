@@ -1,38 +1,8 @@
-import { useRouter } from "next/router";
+import useMoveToPage from "../../../commons/hooks/UseMoveToPage";
 import MyPageSideBarPresenter from "./MyPageSideBar.presenter";
 
 export default function MyPageSideBarContainer() {
-  const router = useRouter();
+  const { onClickMoveToPage } = useMoveToPage();
 
-  const onClickMoveToMyPage = () => {
-    router.push("/myPage");
-    console.log("마이페이지");
-  };
-
-  const onClickMoveToRecentWatch = () => {
-    router.push("/myPage/recentWatch");
-    console.log("최근본상품");
-  };
-
-  const onClickMoveToMyNovel = () => {
-    router.push("/myPage/myNovel");
-  };
-
-  const onClickMoveToPaymentHistory = () => {
-    router.push("/myPage/paymentHistory");
-  };
-
-  const onClickMoveToPointCharge = () => {
-    router.push("/myPage/pointCharge");
-  };
-
-  return (
-    <MyPageSideBarPresenter
-      onClickMoveToRecentWatch={onClickMoveToRecentWatch}
-      onClickMoveToMyPage={onClickMoveToMyPage}
-      onClickMoveToMyNovel={onClickMoveToMyNovel}
-      onClickMoveToPaymentHistory={onClickMoveToPaymentHistory}
-      onClickMoveToPointCharge={onClickMoveToPointCharge}
-    />
-  );
+  return <MyPageSideBarPresenter onClickMoveToPage={onClickMoveToPage} />;
 }
