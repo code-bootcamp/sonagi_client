@@ -29,11 +29,16 @@ export default function NovelDetailContainer() {
     console.log(event.target);
   };
 
+  const onClickMoveToVolumeWrite = () => {
+    router.push(`/novel/${router.query._id}/volume/new`);
+  };
+
   return (
     <NovelDetailPresenter
       detailData={detailData}
       onClickDelete={onClickDelete}
       onClickMoveToRead={onClickMoveToRead}
+      onClickMoveToVolumeWrite={onClickMoveToVolumeWrite}
     />
   );
 }

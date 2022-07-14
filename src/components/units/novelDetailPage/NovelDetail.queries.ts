@@ -32,6 +32,9 @@ export const FETCH_NOVEL_DETAIL = gql`
         contents
         index
         createAt
+        updateAt
+        viewCount
+        star
       }
     }
   }

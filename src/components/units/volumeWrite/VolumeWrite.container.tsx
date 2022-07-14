@@ -38,6 +38,7 @@ export default function VolumeWriteContainer() {
         },
       });
       alert("등록 성공");
+      router.push(`/novel/${router.query._id}`);
     } catch (error) {
       alert(error.message);
     }
