@@ -69,6 +69,10 @@ export default function NovelWriteContainer() {
     trigger("categoryID");
   };
 
+  // 태그
+
+  const [tags, setTags] = useState<string[]>(["태그"]);
+
   const onClickSubmit = async (data: any) => {
     // console.log(fileId[0]);
     try {
@@ -77,7 +81,7 @@ export default function NovelWriteContainer() {
           createNovelInput: {
             title: data.title,
             description: data.description,
-            tags: ["#태그 1"],
+            tags,
             categoryID: data.categoryID,
             fileURLs: data.fileURLs,
           },
@@ -119,6 +123,9 @@ export default function NovelWriteContainer() {
       onChangeFileUrls={onChangeFileUrls}
       fileUrls={fileUrls}
       categoryData={categoryData}
+      // tags
+      tags={tags}
+      setTags={setTags}
     />
   );
 }
