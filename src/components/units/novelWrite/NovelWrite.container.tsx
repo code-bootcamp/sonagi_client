@@ -75,6 +75,7 @@ export default function NovelWriteContainer() {
 
   const [tags, setTags] = useState<string[]>(["태그"]);
 
+  // 등록
   const onClickSubmit = async (data: any) => {
     // console.log(fileId[0]);
     try {
