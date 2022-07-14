@@ -11,7 +11,7 @@ export default function NovelDetailContainer() {
     variables: { novelID: router.query._id },
   });
 
-  console.log(detailData);
+  // console.log(detailData);
 
   const onClickDelete = async () => {
     try {
@@ -29,11 +29,16 @@ export default function NovelDetailContainer() {
     console.log(event.target);
   };
 
+  const onClickMoveToVolumeWrite = () => {
+    router.push(`/novel/${router.query._id}/volume/new`);
+  };
+
   return (
     <NovelDetailPresenter
       detailData={detailData}
       onClickDelete={onClickDelete}
       onClickMoveToRead={onClickMoveToRead}
+      onClickMoveToVolumeWrite={onClickMoveToVolumeWrite}
     />
   );
 }

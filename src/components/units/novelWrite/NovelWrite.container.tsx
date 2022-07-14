@@ -36,7 +36,7 @@ export default function NovelWriteContainer() {
   const editorRef = useRef<Editor>(null);
   const onChangeDescription = (value: string) => {
     const htmlData = editorRef.current?.getInstance()?.getHTML();
-
+    console.log(htmlData);
     setValue("description", htmlData);
     trigger("description");
   };

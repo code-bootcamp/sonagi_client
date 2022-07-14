@@ -230,6 +230,11 @@ export const Look = styled.div`
 
 export const Date = styled.div`
   font-size: 0.625rem;
+  padding-right: 8px;
+`;
+
+export const WrapDate = styled.div`
+  display: flex;
 `;
 
 export const SumCharacter = styled.div`

@@ -2,6 +2,7 @@ import Button01 from "../../commons/buttons/01";
 import Button02 from "../../commons/buttons/02";
 import * as S from "./NovelDetail.Styles";
 import DOMPurify from "dompurify";
+import { getDateDay } from "../../../commons/libraries/utils";
 
 export default function NovelDetailPresenter(props) {
   return (
@@ -21,6 +22,12 @@ export default function NovelDetailPresenter(props) {
                 {props.detailData?.fetchNovelDetail.novelCategory.name}
               </S.TopFont>
             </S.Genre>
+            <div
+              style={{ color: "white", backgroundColor: "blue" }}
+              onClick={props.onClickMoveToVolumeWrite}
+            >
+              회차 쓰러가기
+            </div>
             <S.NovelTitle>
               {props.detailData?.fetchNovelDetail.title}
             </S.NovelTitle>
@@ -119,8 +126,13 @@ export default function NovelDetailPresenter(props) {
           <S.TableLineWrapper key={el.id}>
             <S.Square />
             <S.TableSonWrapper>
-              <S.Title>{el.title}</S.Title>
-              <S.Date>{el.createAt}</S.Date>
+              <S.Title>
+                {el.index}화: {el.title}
+              </S.Title>
+              <S.WrapDate>
+                <S.Date>{getDateDay(el.createAt)}</S.Date>
+                <S.Date>{el.viewCount}명</S.Date>
+              </S.WrapDate>
             </S.TableSonWrapper>
             <S.VerticalLine />
             <S.SumCharacter>약 {el.contents.length}자</S.SumCharacter>
