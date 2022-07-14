@@ -42,13 +42,13 @@ export default function NovelReadPresenter(props) {
         </S.LeftWrapper>
         <S.CenterWrapper>
           <S.FooterArrow src="/novelRead/footerArrowLeft.png" />
-          <S.Content>이전화</S.Content>
-          <S.Content>다음화</S.Content>
+          <S.Content onClick={props.onClickMoveToPrevPage}>이전화</S.Content>
+          <S.Content onClick={props.onClickMoveToNextPage}>다음화</S.Content>
           <S.FooterArrow src="/novelRead/footerArrowRight.png" />
         </S.CenterWrapper>
         <S.RightWrapper>
           <S.Comment src="/novelRead/list.png" />
-          <S.Content>목록</S.Content>
+          <S.Content onClick={props.onClickMoveToList}>목록</S.Content>
         </S.RightWrapper>
       </S.FooterWrapper>
     </S.Wrapper>

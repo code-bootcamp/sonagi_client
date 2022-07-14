@@ -28,6 +28,34 @@ export default function NovelReadContainer() {
   //   e.clipboardData.clearData("Text");
   // });
 
+  // 이전화 다음화
+  const indexPage = novelData?.fetchNovelDetail.novelIndexs
+    .map((el) => el.id)
+    .reverse();
+  const currentPage = readData?.fetchOneNovelIndex.index;
+  console.log(indexPage);
+  console.log(currentPage); // 5
+
+  const onClickMoveToList = () => {
+    router.push(`/novel/${router.query._id}`);
+  };
+
+  const onClickMoveToPrevPage = () => {
+    if (currentPage === 1) {
+      alert("처음 화 입니다");
+      return;
+    }
+    router.push(`/novel/${router.query._id}/${indexPage[currentPage - 2]}`);
+  };
+
+  const onClickMoveToNextPage = () => {
+    if (currentPage === indexPage.length) {
+      alert("마지막 화 입니다");
+      return;
+    }
+    router.push(`/novel/${router.query._id}/${indexPage[currentPage]}`);
+  };
+
   return (
     <NovelReadPresenter
       onClickMoveToMain={onClickMoveToMain}
@@ -35,6 +63,9 @@ export default function NovelReadContainer() {
       setDisplay={setDisplay}
       readData={readData}
       novelData={novelData}
+      onClickMoveToList={onClickMoveToList}
+      onClickMoveToPrevPage={onClickMoveToPrevPage}
+      onClickMoveToNextPage={onClickMoveToNextPage}
     />
   );
 }
