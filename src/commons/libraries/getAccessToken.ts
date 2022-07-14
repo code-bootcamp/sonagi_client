@@ -11,7 +11,7 @@ const RESTORE_ACCESS_TOKEN = gql`
 
 export async function getAccessToken() {
   try {
-    // 1. GraphQlClient import
+    // 1. GraphQlClient import.
     const graphQlClient = new GraphQLClient(
       "https://041e-61-43-54-3.jp.ngrok.io/graphql",
       { credentials: "include" }
