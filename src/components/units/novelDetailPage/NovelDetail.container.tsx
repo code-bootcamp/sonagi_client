@@ -11,6 +11,8 @@ export default function NovelDetailContainer() {
     variables: { novelID: router.query._id },
   });
 
+  console.log(detailData);
+
   const onClickDelete = async () => {
     try {
       const result = await deleteNovel({
@@ -22,10 +24,16 @@ export default function NovelDetailContainer() {
     }
   };
 
+  const onClickMoveToRead = (event) => {
+    router.push(`/novel/${router.query._id}/${event.currentTarget.id}`);
+    console.log(event.target);
+  };
+
   return (
     <NovelDetailPresenter
       detailData={detailData}
       onClickDelete={onClickDelete}
+      onClickMoveToRead={onClickMoveToRead}
     />
   );
 }

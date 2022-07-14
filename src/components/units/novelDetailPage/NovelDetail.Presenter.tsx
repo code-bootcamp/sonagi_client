@@ -113,8 +113,23 @@ export default function NovelDetailPresenter(props) {
             <S.Borrows>선택대여</S.Borrows>
           </S.MarginWrapper>
         </S.TableLineWrapper>
-        <S.TableDottedLine />
-        <S.TableLineWrapper>
+        {/* <S.TableDottedLine /> */}
+
+        {props.detailData?.fetchNovelDetail.novelIndexs.map((el) => (
+          <S.TableLineWrapper key={el.id}>
+            <S.Square />
+            <S.TableSonWrapper>
+              <S.Title>{el.title}</S.Title>
+              <S.Date>{el.createAt}</S.Date>
+            </S.TableSonWrapper>
+            <S.VerticalLine />
+            <S.SumCharacter>약 {el.contents.length}자</S.SumCharacter>
+            <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+              보기
+            </S.LookBtn>
+          </S.TableLineWrapper>
+        ))}
+        {/* <S.TableLineWrapper>
           <S.Square />
           <S.TableSonWrapper>
             <S.Title>회차제목</S.Title>
@@ -135,18 +150,7 @@ export default function NovelDetailPresenter(props) {
           <S.SumCharacter>약 000 천자</S.SumCharacter>
           <S.LookBtn>보기</S.LookBtn>
         </S.TableLineWrapper>
-        <S.TableInnerLine />
-        <S.TableLineWrapper>
-          <S.Square />
-          <S.TableSonWrapper>
-            <S.Title>회차제목</S.Title>
-            <S.Date>2022.07.05</S.Date>
-          </S.TableSonWrapper>
-          <S.VerticalLine />
-          <S.SumCharacter>약 000 천자</S.SumCharacter>
-          <S.LookBtn>보기</S.LookBtn>
-        </S.TableLineWrapper>
-        <S.TableInnerLine />
+        <S.TableInnerLine /> */}
         <S.Margin />
       </div>
     </div>
