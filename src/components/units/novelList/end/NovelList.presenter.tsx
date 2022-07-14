@@ -149,7 +149,15 @@ export default function NovelEndListPresenter(props: any) {
         <S.GridWrap>
           {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
-              <S.ItemPic src={"/novelList/62.png"} />
+              {/* <S.ItemPic src={"/novelList/62.png"} /> */}
+              <S.ItemPic
+                src={
+                  el.files.url
+                    ? `https://storage.googleapis.com/${el.files.url}`
+                    : "/novelList/62.png"
+                }
+              />
+
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
