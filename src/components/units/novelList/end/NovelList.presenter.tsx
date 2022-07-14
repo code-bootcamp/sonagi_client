@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import * as S from "./NovelList.styles";
 
 export default function NovelEndListPresenter(props: any) {
@@ -11,18 +12,22 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.sfEndItem.map((item: any) => (
-            <S.ItemWrap key={item.length}>
-              <S.ItemPic src={`/novelList/end/${item}.png`} />
+          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+            <S.ItemWrap key={el.id}>
+              <S.ItemPic src={"/novelList/13.png"} />
               <S.ItemInfo>
-                <S.ItemName>Kick off</S.ItemName>
+                <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
                 <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>작가명</S.WrtiterName>
+                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
               </S.ItemWriterWrap>
-              <S.Contents>소설 회차 부제목입니다~</S.Contents>
+              <S.Contents
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(el.description),
+                }}
+              ></S.Contents>
             </S.ItemWrap>
           ))}
         </S.GridWrap>
@@ -34,18 +39,22 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.romanceFantasyEndItem.map((item: any) => (
-            <S.ItemWrap key={item.length}>
-              <S.ItemPic src={`/novelList/end/${item}.png`} />
+          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+            <S.ItemWrap key={el.id}>
+              <S.ItemPic src={"/novelList/33.png"} />
               <S.ItemInfo>
-                <S.ItemName>Kick off</S.ItemName>
+                <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
                 <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>작가명</S.WrtiterName>
+                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
               </S.ItemWriterWrap>
-              <S.Contents>소설 회차 부제목입니다~</S.Contents>
+              <S.Contents
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(el.description),
+                }}
+              ></S.Contents>
             </S.ItemWrap>
           ))}
         </S.GridWrap>
@@ -57,18 +66,22 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.romancaEndItem.map((item: any) => (
-            <S.ItemWrap key={item.length}>
-              <S.ItemPic src={`/novelList/end/${item}.png`} />
+          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+            <S.ItemWrap key={el.id}>
+              <S.ItemPic src={"/novelList/32.png"} />
               <S.ItemInfo>
-                <S.ItemName>Kick off</S.ItemName>
+                <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
                 <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>작가명</S.WrtiterName>
+                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
               </S.ItemWriterWrap>
-              <S.Contents>소설 회차 부제목입니다~</S.Contents>
+              <S.Contents
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(el.description),
+                }}
+              ></S.Contents>
             </S.ItemWrap>
           ))}
         </S.GridWrap>
@@ -80,18 +93,22 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.FantasyEndItem.map((item: any) => (
-            <S.ItemWrap key={item.length}>
-              <S.ItemPic src={`/novelList/end/${item}.png`} />
+          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+            <S.ItemWrap key={el.id}>
+              <S.ItemPic src={"/novelList/45.png"} />
               <S.ItemInfo>
-                <S.ItemName>Kick off</S.ItemName>
+                <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
                 <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>작가명</S.WrtiterName>
+                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
               </S.ItemWriterWrap>
-              <S.Contents>소설 회차 부제목입니다~</S.Contents>
+              <S.Contents
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(el.description),
+                }}
+              ></S.Contents>
             </S.ItemWrap>
           ))}
         </S.GridWrap>
@@ -103,18 +120,22 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.teenageEndItem.map((item: any) => (
-            <S.ItemWrap key={item.length}>
-              <S.ItemPic src={`/novelList/end/${item}.png`} />
+          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+            <S.ItemWrap key={el.id}>
+              <S.ItemPic src={"/novelList/52.png"} />
               <S.ItemInfo>
-                <S.ItemName>Kick off</S.ItemName>
+                <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
                 <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>작가명</S.WrtiterName>
+                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
               </S.ItemWriterWrap>
-              <S.Contents>소설 회차 부제목입니다~</S.Contents>
+              <S.Contents
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(el.description),
+                }}
+              ></S.Contents>
             </S.ItemWrap>
           ))}
         </S.GridWrap>
@@ -126,18 +147,22 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.horrorEndItem.map((item: any) => (
-            <S.ItemWrap key={item.length}>
-              <S.ItemPic src={`/novelList/end/${item}.png`} />
+          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+            <S.ItemWrap key={el.id}>
+              <S.ItemPic src={"/novelList/62.png"} />
               <S.ItemInfo>
-                <S.ItemName>Kick off</S.ItemName>
+                <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
                 <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>작가명</S.WrtiterName>
+                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
               </S.ItemWriterWrap>
-              <S.Contents>소설 회차 부제목입니다~</S.Contents>
+              <S.Contents
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(el.description),
+                }}
+              ></S.Contents>
             </S.ItemWrap>
           ))}
         </S.GridWrap>
