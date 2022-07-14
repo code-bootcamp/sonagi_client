@@ -1,4 +1,6 @@
+import { useQuery } from "@apollo/client";
 import NovelPbListPresenter from "./NovelList.presenter";
+import { FETCH_NOVELS_PAGE } from "./NovelList.queries";
 
 export default function NovelPbListContainer() {
   const sfPbItem = [11, 12, 13, 14, 15];
@@ -8,6 +10,11 @@ export default function NovelPbListContainer() {
   const teenagePbItem = [51, 52, 53, 54, 55];
   const horrorPbItem = [61, 62, 63, 64, 65];
 
+  const { data } = useQuery(FETCH_NOVELS_PAGE, {
+    variables: { page: 1 },
+  });
+  console.log("소설데이터", data);
+
   return (
     <NovelPbListPresenter
       sfPbItem={sfPbItem}
@@ -16,6 +23,7 @@ export default function NovelPbListContainer() {
       FantasyPbItem={FantasyPbItem}
       teenagePbItem={teenagePbItem}
       horrorPbItem={horrorPbItem}
+      data={data}
     />
   );
 }
