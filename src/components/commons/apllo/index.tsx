@@ -33,7 +33,7 @@ export default function ApolloSetting(props: any) {
             operation.setContext({
               headers: {
                 ...operation.getContext().headers, // operation 정보들을 가져오기
-                Authorization: `Bearer ${newAccessToken}`, // accessToken만 바꿔치기
+                Authorization: `Bearer ${newAccessToken ?? ""}`, // accessToken만 바꿔치기
               },
             });
             return forward(operation);
@@ -46,7 +46,7 @@ export default function ApolloSetting(props: any) {
   const uploadLink = createUploadLink({
     uri: "https://041e-61-43-54-3.jp.ngrok.io/graphql/",
     headers: {
-      Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer ${accessToken ?? ""}`,
     },
     credentials: "include",
   });
