@@ -1,23 +1,40 @@
-import React, { useState } from "react";
-import Pagination from "react-js-pagination";
+import { MouseEvent, useState } from "react";
+import PaginationsUI from "./Paginations.presenter";
 
-export const Paging = () => {
-  const [page, setPage] = useState(1);
+export default function Paginations(props: any) {
+  const [startPage, setStartPage] = useState(1);
+  const [activedPage, setActivedPage] = useState(1);
+  const lastPage = props.count ? Math.ceil(props.count / 10) : 0;
 
-  const handlePageChange = (page) => {
-    setPage(page);
-    console.log(page);
+  const onClickPage = (event: MouseEvent<HTMLSpanElement>) => {
+    if (!(event.target instanceof Element)) return;
+    const activedPage = Number(event.target.id);
+    setActivedPage(activedPage);
+    props.refetch({ page: activedPage });
+  };
+
+  const onClickPrevPage = () => {
+    if (startPage <= 1) return;
+    setStartPage((prev) => prev - 10);
+    setActivedPage(startPage - 10);
+    props.refetch({ page: startPage - 10 });
+  };
+
+  const onClickNextPage = () => {
+    if (startPage + 10 > lastPage) return;
+    setStartPage((prev) => prev + 10);
+    setActivedPage(startPage + 10);
+    props.refetch({ page: startPage + 10 });
   };
 
   return (
-    <Pagination
-      activePage={page}
-      itemsCountPerPage={10}
-      totalItemsCount={450}
-      pageRangeDisplayed={5}
-      prevPageText={"‹"}
-      nextPageText={"›"}
-      onChange={handlePageChange}
+    <PaginationsUI
+      startPage={startPage}
+      lastPage={lastPage}
+      activedPage={activedPage}
+      onClickPage={onClickPage}
+      onClickPrevPage={onClickPrevPage}
+      onClickNextPage={onClickNextPage}
     />
   );
-};
+}

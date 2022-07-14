@@ -2,7 +2,7 @@ import React from "react";
 import Button01 from "../../../commons/buttons/01";
 import * as S from "./FreeBoardList.styles";
 import { getDate } from "./../../../../commons/libraries/utils";
-import { Paging } from "../../../commons/paginations/Paginations.container";
+import Paginations from "../../../commons/paginations/Paginations.container";
 export default function FreeBoardListPresenter(props: any) {
   return (
     <S.Wrapper>
@@ -33,10 +33,7 @@ export default function FreeBoardListPresenter(props: any) {
           </S.WrapInfo>
         </S.WrapperBoard>
       ))}
-      {/* <Pagination /> */}
-      <S.PageWrapper>
-        <Paging />
-      </S.PageWrapper>
+      <Paginations refetch={props.refetch} count={props.count} />
       <S.WrapButton>
         <Button01
           title="작성하기"
