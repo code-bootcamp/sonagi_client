@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { useMutation, useQuery } from "@apollo/client";
 import { CREATE_NOVEL, FETCH_NOVEL_CATEGORYS_ALL } from "./NovelWrite.queries";
 import { Editor } from "@toast-ui/react-editor";
+import { useRouter } from "next/router";
 
 const schema = yup.object({
   title: yup.string().required("작품 제목을 입력해 주세요!"),
@@ -15,6 +16,7 @@ const schema = yup.object({
 });
 
 export default function NovelWriteContainer() {
+  const router = useRouter();
   const [isClickPre, setIsClickPre] = useState(false);
   const [isClickDay, setIsClickDay] = useState(true);
   const [genre, setGenre] = useState("");
@@ -89,6 +91,7 @@ export default function NovelWriteContainer() {
       });
       console.log(result);
       alert("성공");
+      router.push(`/novel/${result.data?.createNovel.id}`);
     } catch (error) {
       alert(error.message);
     }
