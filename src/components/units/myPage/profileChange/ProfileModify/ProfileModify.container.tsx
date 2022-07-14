@@ -1,7 +1,11 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import ProfileModifyPresenter from "./ProfileModify.presenter";
-import { UPDATE_USER_PWD } from "./ProfileModify.queries";
+import {
+  FETCH_LOGIN_USER,
+  UPDATE_LOGIN_USER,
+  UPDATE_USER_PWD,
+} from "./ProfileModify.queries";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -16,10 +20,26 @@ const schema = yup.object({
     )
     .required("필수 입력 사항"),
   pwdCheck: yup.string().oneOf([yup.ref("pwd"), null]),
+  name: yup
+    .string()
+    .max(8, "이름은 8글자 이내 문자열입니다.")
+    .required("필수 입력 사항"),
+  email: yup
+    .string()
+    .email("이메일 형식이 적합하지 않습니다")
+    .required("필수 입력 사항"),
+  nickName: yup
+    .string()
+    .max(6, "닉네임은 6글자 이내 문자열입니다.")
+    .required("필수 입력 사항"),
 });
 
 export default function ProfileModifyContainer() {
   const [updateUserPwd] = useMutation(UPDATE_USER_PWD);
+  const [updateLoginUser] = useMutation(UPDATE_LOGIN_USER);
+
+  const { data } = useQuery(FETCH_LOGIN_USER);
+
   const [isPwd, setIsPwd] = useState(false);
   const [ChangePwd, setChangePwd] = useState(false);
   const [ChangeUser, setChangeUser] = useState(false);
@@ -37,6 +57,7 @@ export default function ProfileModifyContainer() {
 
   const onClickMoveChangeUser = () => {
     setChangeUser(true);
+    setIsPwd(false);
   };
 
   const onClickChangePwd = async (data: any) => {
@@ -55,6 +76,24 @@ export default function ProfileModifyContainer() {
     }
   };
 
+  const onClickChangeUser = async (data: any) => {
+    try {
+      const result = await updateLoginUser({
+        variables: {
+          name: data.name,
+          nickName: data.nickName,
+          email: data.email,
+        },
+      });
+      console.log(result);
+      alert("회원정보가 변경되었습니다");
+      setChangeUser(false);
+      reset();
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <ProfileModifyPresenter
       ChangePwd={ChangePwd}
@@ -62,12 +101,14 @@ export default function ProfileModifyContainer() {
       ChangeUser={ChangeUser}
       setChangeUser={setChangeUser}
       onClickChangePwd={onClickChangePwd}
+      onClickChangeUser={onClickChangeUser}
       onClickMoveChangePwd={onClickMoveChangePwd}
       onClickMoveChangeUser={onClickMoveChangeUser}
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}
       isPwd={isPwd}
+      data={data}
     />
   );
 }
