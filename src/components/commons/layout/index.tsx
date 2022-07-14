@@ -18,13 +18,25 @@ const Wrapper = styled.div`
   box-sizing: border-box;
 `;
 
-const HIDDEN_HEADER = ["/login", "/signup", "/novel/_id/novelRead"];
-const HIDDEN_NAVIGATION = ["/login", "/signup", "/novel/_id/novelRead"];
-const HIDDEN_FOOTER = ["/login", "/signup", "/novel/_id/novelRead"];
-
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
   console.log(router);
+
+  const HIDDEN_HEADER = [
+    "/login",
+    "/signup",
+    "/novel/" + router.query._id + "/" + router.query.volume_id,
+  ];
+  const HIDDEN_NAVIGATION = [
+    "/login",
+    "/signup",
+    "/novel/" + router.query._id + "/" + router.query.volume_id,
+  ];
+  const HIDDEN_FOOTER = [
+    "/login",
+    "/signup",
+    "/novel/" + router.query._id + "/" + router.query.volume_id,
+  ];
 
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenNavigation = HIDDEN_NAVIGATION.includes(router.asPath);
