@@ -85,11 +85,6 @@ export const ColumnWrap = styled.div`
 
 export const GridWrap = styled.div`
   width: 100%;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  padding: 0 10px;
-  margin: 0px 0 50px; */
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   flex-wrap: row;

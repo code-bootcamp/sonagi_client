@@ -7,16 +7,32 @@ export default function NovelBestListPresenter(props) {
       <S.GridWrap>
         {props.itemimg.map((item: any) => (
           <S.ItemWrap key={item.length}>
-            <S.ItemPic src={`/novelList/best/${item}.png`} />
-            <S.ItemInfo>
-              <S.ItemName>Kick off</S.ItemName>
-              <S.ItemNum>10화</S.ItemNum>
-            </S.ItemInfo>
-            <S.ItemWriterWrap>
-              <S.WriterIcon src="/novelList/writer-icon.png" />
-              <S.WrtiterName>작가명</S.WrtiterName>
-            </S.ItemWriterWrap>
-            <S.Contents>소설 회차 부제목입니다~</S.Contents>
+            <S.RowWrap>
+              <S.AwardIcon src="/novelList/best/award.svg" />
+              <S.AwardNum>1</S.AwardNum>
+              <S.AwardText>위</S.AwardText>
+            </S.RowWrap>
+            <S.Itembox>
+              <S.ItemPic src={`/novelList/best/${item}.png`} />
+              <S.TextWrap>
+                <S.RowWrap2>
+                  <S.ItemName>Kick off</S.ItemName>
+                  <S.ItemPickIcon src="/novelList/best/pick.svg" />
+                </S.RowWrap2>
+                <S.Contents>
+                  소설 요약입니다 소설 요약입니다 소설 요약입니다 소설
+                  요약입니다 소설 요약입니다 소설 요약입니다소설 요약입니다소설
+                  요약입니다
+                </S.Contents>
+                <S.ItemInfoWrap>
+                  <S.ItemStatus>연재</S.ItemStatus>
+                  <S.Line></S.Line>
+                  <S.Hits>조회수 00</S.Hits>
+                  <S.Line></S.Line>
+                  <S.WrtiterName>작가명</S.WrtiterName>
+                </S.ItemInfoWrap>
+              </S.TextWrap>
+            </S.Itembox>
           </S.ItemWrap>
         ))}
       </S.GridWrap>
