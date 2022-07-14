@@ -3,10 +3,14 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 1000px;
+  padding: 30px;
 `;
 
 export const Flex = styled.div`
   display: flex;
+  margin-left: 20px;
+  position: absolute;
+  top: 340px;
   @media ${breakPoints.mobile} {
     justify-content: flex-start;
   }
@@ -14,7 +18,7 @@ export const Flex = styled.div`
 
 export const RecentWatch = styled.div`
   font-size: 1.563rem;
-  margin: 50px 0px 40px 0px;
+  margin: 20px 0px 40px 0px;
   @media (max-width: 767px) {
     box-shadow: inset 0 -11px #bee3ff;
     line-height: 24px;
@@ -29,11 +33,12 @@ export const Column = styled.div`
 `;
 
 export const NovelPic = styled.img`
-  border-radius: 8px;
-  width: 160px;
-  height: 210px;
+  /* border-radius: 8px; */
+  width: 150px;
+  height: 200px;
+  margin-left: 55px;
   @media (max-width: 767px) {
-    border-radius: 8px;
+    /* border-radius: 8px; */
     width: 140px;
     height: 190px;
   }
@@ -73,3 +78,11 @@ export const MyPageFont = styled.div`
     display: none;
   }
 `;
+
+export const BookShelf = styled.img`
+  width: 100%;
+  height: 290px;
+  margin-top: 210px;
+`;
+
+export const Wrap = styled.div``;
