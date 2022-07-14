@@ -4,6 +4,7 @@
 // 넥스트에서는 html에 직접 접근하기 어렵기 때문에 next에서 제공하는 head태그를 import하기
 import { gql, useMutation } from "@apollo/client";
 import styled from "@emotion/styled";
+import { useState } from "react";
 import { breakPoints } from "../../../../commons/styles/media";
 
 const PayMentWrapper = styled.div`
@@ -53,8 +54,17 @@ const Title = styled.div`
   padding: 30px 0px 10px 0px;
 `;
 
-const Contents = styled.div`
-  padding-bottom: 10px;
+const SubTitle = styled.div`
+  padding-bottom: 20px;
+`;
+
+const Contents = styled.input`
+  width: 60%;
+  padding: 5px;
+  margin-bottom: 20px;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Overlay = styled.div`
@@ -74,12 +84,14 @@ export const CANCEL_PAYMENT = gql`
       id
       impUid
       amount
+      reason
     }
   }
 `;
 
 export default function PaymentPage(props) {
   const [cancelPayment] = useMutation(CANCEL_PAYMENT);
+  const [reason, setReason] = useState("");
   const handleCancel = () => {
     props.setIsModalVisible(false);
   };
@@ -87,9 +99,12 @@ export default function PaymentPage(props) {
   const impUid = String(props.CancelData?.impUid);
   const merchantUid = String(props.CancelData?.merchantUid);
 
-  console.log(impUid, merchantUid);
+  const onChangeReason = (event) => {
+    setReason(event.target.value);
+  };
 
   const onClickCancelPayment = async () => {
+    console.log(reason);
     props.setIsModalVisible(false);
 
     try {
@@ -98,6 +113,7 @@ export default function PaymentPage(props) {
           cancelPaymentInput: {
             impUid,
             merchantUid,
+            reason,
           },
         },
       });
@@ -114,7 +130,8 @@ export default function PaymentPage(props) {
       <PayMentWrapper>
         <CancelImg onClick={handleCancel} src="/modal/delete.png"></CancelImg>
         <Title>포인트를 환불하시겠습니까?</Title>
-        <Contents>환불 시 소나기의 유료컨텐츠 이용이 어렵습니다</Contents>
+        <SubTitle>환불 사유를 입력해주세요</SubTitle>
+        <Contents type="text" onChange={onChangeReason} />
         <MoneyButton onClick={onClickCancelPayment}>환불하기</MoneyButton>
       </PayMentWrapper>
     </>

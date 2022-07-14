@@ -22,10 +22,19 @@ export default function PaymentHistoryPresenter(props) {
         props.data?.fetchPaymentsInUser.map((el: any, index: any) => (
           <S.ListWrapper key={el.index}>
             <S.ListRow>
-              <S.CheckColumn
-                type="radio"
-                onClick={props.onClickCheck(el)}
-              ></S.CheckColumn>
+              {String(el.amount).includes("-") ? (
+                <S.CheckColumn
+                  type="radio"
+                  name="check"
+                  disabled
+                ></S.CheckColumn>
+              ) : (
+                <S.CheckColumn
+                  type="radio"
+                  name="check"
+                  onClick={props.onClickCheck(el)}
+                ></S.CheckColumn>
+              )}
               <S.IndexColumn>{getDate(el.createAt)}</S.IndexColumn>
               <S.TitleColumn>{el.impUid}</S.TitleColumn>
               {String(el.amount).includes("-") ? (
