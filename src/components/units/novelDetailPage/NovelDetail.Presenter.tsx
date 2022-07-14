@@ -106,13 +106,15 @@ export default function NovelDetailPresenter(props) {
           </S.TableTop>
         </div>
         <S.TableLineWrapper>
-          <S.Square />
-          <S.SelectAll>전체선택</S.SelectAll>
-          <S.SortButton>
-            <S.ArrowImg src="/novelDetail/Arrow 1.png" />
-            <S.ArrowImg src="/novelDetail/Arrow 2.png" />
-            <S.New>신간부터</S.New>
-          </S.SortButton>
+          <S.WrapFirst>
+            <S.Square type="checkbox" />
+            <S.SelectAll>전체선택</S.SelectAll>
+            <S.SortButton>
+              <S.ArrowImg src="/novelDetail/Arrow 1.png" />
+              <S.ArrowImg src="/novelDetail/Arrow 2.png" />
+              <S.New>신간부터</S.New>
+            </S.SortButton>
+          </S.WrapFirst>
           <S.MarginWrapper>
             <S.All>총 0화</S.All>
             <S.Sum>0원</S.Sum>
@@ -124,45 +126,25 @@ export default function NovelDetailPresenter(props) {
 
         {props.detailData?.fetchNovelDetail.novelIndexs.map((el) => (
           <S.TableLineWrapper key={el.id}>
-            <S.Square />
-            <S.TableSonWrapper>
-              <S.Title>
-                {el.index}화: {el.title}
-              </S.Title>
-              <S.WrapDate>
-                <S.Date>{getDateDay(el.createAt)}</S.Date>
-                <S.Date>{el.viewCount}명</S.Date>
-              </S.WrapDate>
-            </S.TableSonWrapper>
-            <S.VerticalLine />
-            <S.SumCharacter>약 {el.contents.length}자</S.SumCharacter>
+            <S.WrapFirst>
+              <S.Square type="checkbox" />
+              <S.TableSonWrapper>
+                <S.Title>
+                  {el.index}화: {el.title}
+                </S.Title>
+                <S.WrapDate>
+                  <S.Date>{getDateDay(el.createAt)}</S.Date>
+                  <S.Date>{el.viewCount}명</S.Date>
+                  <S.VerticalLine />
+                  <S.SumCharacter>약 {el.contents.length}자</S.SumCharacter>
+                </S.WrapDate>
+              </S.TableSonWrapper>
+            </S.WrapFirst>
             <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
               보기
             </S.LookBtn>
           </S.TableLineWrapper>
         ))}
-        {/* <S.TableLineWrapper>
-          <S.Square />
-          <S.TableSonWrapper>
-            <S.Title>회차제목</S.Title>
-            <S.Date>2022.07.05</S.Date>
-          </S.TableSonWrapper>
-          <S.VerticalLine />
-          <S.SumCharacter>약 000 천자</S.SumCharacter>
-          <S.LookBtn>보기</S.LookBtn>
-        </S.TableLineWrapper>
-        <S.TableInnerLine />
-        <S.TableLineWrapper>
-          <S.Square />
-          <S.TableSonWrapper>
-            <S.Title>회차제목</S.Title>
-            <S.Date>2022.07.05</S.Date>
-          </S.TableSonWrapper>
-          <S.VerticalLine />
-          <S.SumCharacter>약 000 천자</S.SumCharacter>
-          <S.LookBtn>보기</S.LookBtn>
-        </S.TableLineWrapper>
-        <S.TableInnerLine /> */}
         <S.Margin />
       </div>
     </div>

@@ -7,9 +7,8 @@ export const Genre = styled.div`
 
 export const SelectAll = styled.div`
   font-size: 0.75rem;
-  margin-top: 9px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 35px;
+  margin-right: 20px;
 `;
 
 export const Arrow = styled.div`
@@ -201,7 +200,6 @@ export const Sum = styled.div`
 `;
 
 export const MarginWrapper = styled.div`
-  margin-left: 700px;
   display: flex;
   align-items: center;
 `;
@@ -209,7 +207,6 @@ export const MarginWrapper = styled.div`
 export const VerticalLine = styled.div`
   border-right: 1px solid black;
   height: 12.5px;
-  margin-top: 22px;
   margin-left: 10px;
 `;
 
@@ -234,12 +231,13 @@ export const Date = styled.div`
 `;
 
 export const WrapDate = styled.div`
+  padding-top: 5px;
   display: flex;
+  align-items: center;
 `;
 
 export const SumCharacter = styled.div`
   font-size: 0.625rem;
-  margin-top: 22px;
   margin-left: 10px;
 `;
 
@@ -305,11 +303,10 @@ export const Get = styled.div`
   align-items: center;
 `;
 
-export const Square = styled.div`
+export const Square = styled.input`
   width: 17px;
   height: 17px;
   background-color: #d9d9d9;
-  margin-top: 10px;
 `;
 
 export const SortButton = styled.div`
@@ -319,7 +316,6 @@ export const SortButton = styled.div`
   width: 76px;
   height: 30px;
   border: 1px solid black;
-  margin: 5px 0px 0px 10px;
 `;
 
 export const TableButton = styled.div`
@@ -338,6 +334,8 @@ export const TableLineWrapper = styled.div`
   padding: 10px;
   margin-top: 10px;
   border-bottom: 1px solid #4f4f4f;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const TableDottedLine = styled.div`
@@ -346,9 +344,15 @@ export const TableDottedLine = styled.div`
 `;
 
 export const TableSonWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  padding-left: 35px;
+`;
+
+export const WrapFirst = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const Margin = styled.div`
@@ -392,5 +396,5 @@ export const LookBtn = styled.div`
   align-items: center;
   color: #484848;
   border: 1px solid #bdbdbd;
-  margin-left: 891px;
+  cursor: pointer;
 `;
