@@ -26,7 +26,7 @@ export default function LoginContainer() {
   const router = useRouter();
 
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
-
+  console.log(accessToken);
   const [loginUser] = useMutation(LOGIN_USER);
 
   const { register, handleSubmit, formState } = useForm({
@@ -54,7 +54,6 @@ export default function LoginContainer() {
       });
       setAccessToken(result.data?.Login);
       localStorage.setItem("refreshToken", result.data?.Login);
-      console.log(accessToken);
       alert("로그인 성공");
       window.location.replace("/");
     } catch (error) {

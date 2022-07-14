@@ -20,6 +20,7 @@ export async function getAccessToken() {
     const result = await graphQlClient.request(RESTORE_ACCESS_TOKEN);
     // 3. 재발급 받은 accessToken 을 newAccessToken에 저장하기
     const newAccessToken = result.restoreToken;
+    localStorage.setItem("refreshToken", newAccessToken);
     return newAccessToken;
   } catch (error) {
     console.log(error.message);
