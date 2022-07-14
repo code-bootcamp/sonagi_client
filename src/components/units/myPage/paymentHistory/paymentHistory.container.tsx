@@ -9,6 +9,8 @@ export default function PaymentHistoryContainer() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [CancelData, setCancelData] = useState([]);
 
+  console.log(data);
+
   const onClickFetchPoint = () => {
     setIsPoint("LoadingPoint");
   };

@@ -84,8 +84,8 @@ export default function PaymentPage(props) {
     props.setIsModalVisible(false);
   };
 
-  const impUid = String(props.data?.impUid);
-  const merchantUid = String(props.data?.merchantUid);
+  const impUid = String(props.CancelData?.impUid);
+  const merchantUid = String(props.CancelData?.merchantUid);
 
   console.log(impUid, merchantUid);
 
