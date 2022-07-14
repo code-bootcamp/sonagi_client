@@ -29,14 +29,33 @@ export const TopWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin: 3% 0%;
+  margin: 3% 0;
+`;
+
+export const ButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin: 3% 0;
+`;
+
+export const CancelButton = styled.div`
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  color: #828282;
+  cursor: pointer;
 `;
 
 export const ListTitleRow = styled.div`
   width: 100%;
   display: flex;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding: 15px 0 15px 5px;
   border-bottom: 1px solid #bdbdbd;
   font-style: normal;
   font-weight: 500;
@@ -50,6 +69,11 @@ export const ListTitleRow = styled.div`
   }
 `;
 
+export const Check = styled.div`
+  width: 5%;
+  text-align: center;
+`;
+
 export const NumberRow = styled.div`
   width: 20%;
   text-align: center;
@@ -61,7 +85,7 @@ export const TitleRow = styled.div`
 `;
 
 export const WriterRow = styled.div`
-  width: 20%;
+  width: 15%;
   text-align: center;
 `;
 
@@ -97,6 +121,11 @@ export const ListRow = styled.div`
   }
 `;
 
+export const CheckColumn = styled.input`
+  width: 5%;
+  text-align: center;
+`;
+
 export const IndexColumn = styled.div`
   width: 20%;
   text-align: center;
@@ -108,7 +137,7 @@ export const TitleColumn = styled.div`
 `;
 
 export const WriterColumn = styled.div`
-  width: 20%;
+  width: 15%;
   text-align: center;
   font-weight: 600;
 `;
