@@ -15,6 +15,10 @@ export const FETCH_NOVEL_DETAIL = gql`
   query fetchNovelDetail($novelID: String!) {
     fetchNovelDetail(novelID: $novelID) {
       title
+      novelIndexs {
+        id
+        index
+      }
     }
   }
 `;
