@@ -26,6 +26,13 @@ export const FETCH_NOVEL_DETAIL = gql`
         name
         url
       }
+      novelIndexs {
+        id
+        title
+        contents
+        index
+        createAt
+      }
     }
   }
 `;

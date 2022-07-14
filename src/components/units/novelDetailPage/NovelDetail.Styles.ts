@@ -332,6 +332,7 @@ export const TableLineWrapper = styled.div`
   display: flex;
   padding: 10px;
   margin-top: 10px;
+  border-bottom: 1px solid #4f4f4f;
 `;
 
 export const TableDottedLine = styled.div`
