@@ -29,7 +29,27 @@ export const TopWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin: 3% 0%;
+  margin: 3% 0;
+`;
+
+export const ButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin: 3% 0;
+`;
+
+export const CancelButton = styled.div`
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  color: #828282;
+  cursor: pointer;
 `;
 
 export const ListTitleRow = styled.div`

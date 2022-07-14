@@ -1,4 +1,5 @@
 import { getDate } from "../../../../commons/libraries/utils";
+import PaymentPage from "../../../commons/modal/cancelPayments";
 import * as S from "./paymentHistory.styles";
 export default function PaymentHistoryPresenter(props) {
   return (
@@ -29,6 +30,17 @@ export default function PaymentHistoryPresenter(props) {
             </S.ListRow>
           </S.ListWrapper>
         ))}
+      <S.ButtonWrapper>
+        <S.CancelButton onClick={props.onClickCancelPayment}>
+          포인트 환불
+        </S.CancelButton>
+        {props.isModalVisible && (
+          <PaymentPage
+            setIsModalVisible={props.setIsModalVisible}
+            data={props.data}
+          />
+        )}
+      </S.ButtonWrapper>
     </S.Wrapper>
   );
 }
