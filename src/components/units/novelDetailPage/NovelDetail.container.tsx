@@ -11,7 +11,7 @@ export default function NovelDetailContainer() {
     variables: { novelID: router.query._id },
   });
 
-  console.log(detailData);
+  // console.log(detailData);
 
   const onClickDelete = async () => {
     try {

@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import * as S from "./NovelRead.styles";
 
 export default function NovelReadPresenter(props) {
@@ -22,7 +23,17 @@ export default function NovelReadPresenter(props) {
         </S.RightWrapper>
       </S.HeadWrapper>
       <S.BodyWrapper onClick={props.onClickDisplay}>
-        {props.readData?.fetchOneNovelIndex.contents}
+        {typeof window !== "undefined" ? (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(
+                props.readData?.fetchOneNovelIndex.contents
+              ),
+            }}
+          ></div>
+        ) : (
+          ""
+        )}
       </S.BodyWrapper>
       <S.FooterWrapper setDisplay={props.setDisplay}>
         <S.LeftWrapper>

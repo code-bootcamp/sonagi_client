@@ -34,7 +34,7 @@ export const HeadWrapper = styled.div`
 `;
 
 export const BodyWrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   height: 100%;
   padding: 30px;
   display: flex;

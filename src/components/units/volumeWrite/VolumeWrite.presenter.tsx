@@ -1,6 +1,11 @@
+import dynamic from "next/dynamic";
 import React from "react";
 import Button01 from "../../commons/buttons/01";
 import * as S from "./VolumeWrite.styles";
+
+const ToastUi = dynamic(() => import("../../commons/toastUI"), {
+  ssr: false,
+});
 
 export default function VolumeWritePresenter(props: any) {
   return (
@@ -54,8 +59,14 @@ export default function VolumeWritePresenter(props: any) {
         </S.WrapperLavel>
         <S.WrapIntroduce>
           <S.Label>내용</S.Label>
-          <S.IntroduceInput type="text" {...props.register("contents")} />
+          {/* <S.IntroduceInput type="text" {...props.register("contents")} /> */}
+          <ToastUi
+            onChangeDescription={props.onChangeDescription}
+            editorRef={props.editorRef}
+            // initialValue={props.productData?.fetchUseditem.contents}
+          />
         </S.WrapIntroduce>
+        <S.Error>{props.formState.errors.contents?.message}</S.Error>
         <S.WrapperWriterSay>
           <S.Label>작가의 말</S.Label>
           <S.WriteSay type="text" />
