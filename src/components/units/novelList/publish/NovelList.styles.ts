@@ -171,7 +171,7 @@ export const ItemInfo = styled.div`
   margin: 10px 0px;
 `;
 export const ItemName = styled.div`
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-right: 25px;
 
