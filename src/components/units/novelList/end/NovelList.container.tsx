@@ -1,4 +1,6 @@
+import { useQuery } from "@apollo/client";
 import NovelEndListPresenter from "./NovelList.presenter";
+import { FETCH_NOVELS_PAGE } from "./NovelList.queries";
 
 export default function NovelEndListContainer() {
   const sfEndItem = [11, 12, 13, 14, 15];
@@ -8,6 +10,13 @@ export default function NovelEndListContainer() {
   const teenageEndItem = [51, 52, 53, 54, 55];
   const horrorEndItem = [61, 62, 63, 64, 65];
 
+  const { data } = useQuery(FETCH_NOVELS_PAGE, {
+    variables: {
+      page: 1,
+    },
+  });
+  console.log("소설", data);
+
   return (
     <NovelEndListPresenter
       sfEndItem={sfEndItem}
@@ -16,6 +25,7 @@ export default function NovelEndListContainer() {
       FantasyEndItem={FantasyEndItem}
       teenageEndItem={teenageEndItem}
       horrorEndItem={horrorEndItem}
+      data={data}
     />
   );
 }
