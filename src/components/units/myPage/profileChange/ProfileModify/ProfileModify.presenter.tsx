@@ -17,12 +17,12 @@ export default function ProfileModifyPresenter(props) {
                     type="password"
                     {...props.register("prevPwd")}
                   />
-                  {/* <S.Error>{props.formState.errors.prevPwd?.message}</S.Error> */}
+                  <S.Error>{props.formState.errors.prevPwd?.message}</S.Error>
                 </S.WrapTitle>
                 <S.WrapTitle>
                   <S.Label>변경할 비밀번호</S.Label>
                   <S.LabelInput type="password" {...props.register("pwd")} />
-                  {/* <S.Error>{props.formState.errors.pwd?.message}</S.Error> */}
+                  <S.Error>{props.formState.errors.pwd?.message}</S.Error>
                 </S.WrapTitle>
                 <S.WrapTitle>
                   <S.Label>변경할 비밀번호 확인</S.Label>
@@ -30,7 +30,10 @@ export default function ProfileModifyPresenter(props) {
                     type="password"
                     {...props.register("pwdCheck")}
                   />
-                  {/* <S.Error>{props.formState.errors.pwdCheck?.message}</S.Error> */}
+                  <S.Error>
+                    {props.formState.errors.pwdCheck &&
+                      "비밀번호가 일치하지 않습니다"}
+                  </S.Error>
                 </S.WrapTitle>
                 <S.WrapButton>
                   <S.Button isValid={props.formState.isValid}>
@@ -47,32 +50,6 @@ export default function ProfileModifyPresenter(props) {
           <S.Wrap>
             <S.ChangeButton>회원 정보 변경</S.ChangeButton>
           </S.Wrap>
-          {/* <S.Wrap>
-          <S.WrapperModify>
-            <S.WrapTitle>
-              <S.Label>닉네임</S.Label>
-              <S.LabelInput type="text" />
-            </S.WrapTitle>
-            <S.WrapTitle>
-              <S.Label>이메일 주소</S.Label>
-              <S.LabelInput type="text" />
-            </S.WrapTitle>
-            <S.WrapTitle>
-              <S.Label>연락처</S.Label>
-              <S.WrapNumber>
-                <S.NumberInput type="text" />
-                <S.NumberButton>인증번호 전송</S.NumberButton>
-              </S.WrapNumber>
-            </S.WrapTitle>
-            <S.WrapTitle>
-              <S.Label>비밀번호</S.Label>
-              <S.LabelInput type="text" />
-            </S.WrapTitle>
-            <S.WrapButton>
-              <S.Button>회원정보 수정</S.Button>
-            </S.WrapButton>
-          </S.WrapperModify>
-        </S.Wrap> */}
         </S.BoxWrapper>
       </S.Wrapper>
     </form>

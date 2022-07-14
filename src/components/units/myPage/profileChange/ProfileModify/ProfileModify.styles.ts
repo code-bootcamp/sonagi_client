@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Wrap = styled.div`
-  width: 100%;
+  width: 500px;
   height: 500px;
   border: 1px solid #bdbdbd;
   box-shadow: 0px 4px 4px 0px #f2f2f2;
@@ -32,13 +32,13 @@ export const SubTitle = styled.div`
 `;
 
 export const BoxWrapper = styled.div`
-  width: 100%;
   padding: 10px;
   display: flex;
   justify-content: center;
 `;
 
 export const WrapperModify = styled.div`
+  width: 500px;
   padding: 5% 15%;
   display: flex;
   flex-direction: column;

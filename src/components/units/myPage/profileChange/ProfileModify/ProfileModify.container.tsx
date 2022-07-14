@@ -24,7 +24,7 @@ export default function ProfileModifyContainer() {
   const [ChangePwd, setChangePwd] = useState(false);
   const [ChangeUser, setChangeUser] = useState(false);
 
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState, reset } = useForm({
     resolver: yupResolver(schema),
 
     mode: "onChange",
@@ -49,6 +49,7 @@ export default function ProfileModifyContainer() {
       console.log(result);
       alert("비밀번호가 변경되었습니다");
       setChangePwd(false);
+      reset();
     } catch (error) {
       alert(error.message);
     }
