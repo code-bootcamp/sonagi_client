@@ -40,6 +40,9 @@ export default function MyPageSideBarPresenter(props: any) {
           <S.Menu onClick={props.onClickMoveToPage("/myPage/profileChange")}>
             회원정보 변경
           </S.Menu>
+          <S.Menu onClick={props.onClickMoveToPage("/myPage/passwordChange")}>
+            비밀번호 변경
+          </S.Menu>
         </S.Column>
       </S.Flex>
     </S.Wrapper>
