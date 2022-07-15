@@ -9,5 +9,7 @@ export default function CommentListContainer() {
   const { data } = useQuery(FETCH_COMMENTS, {
     variables: { commentID: router.query._id },
   });
+
+  console.log("데이터", data);
   return <CommentListPresenter data={data} />;
 }

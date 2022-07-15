@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border-bottom: 1px solid black;
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
