@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
+  border-bottom: 1px solid black;
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
@@ -117,6 +118,7 @@ export const UpCount = styled.div`
 
 export const WrapIcon = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const EditIcon = styled.img`
@@ -141,4 +143,14 @@ export const DeleteIcon = styled.img`
     width: 18px;
     height: 18px;
   }
+`;
+
+export const AnswerIcon = styled.img`
+  width: 23px;
+  height: 23px;
+  margin-left: 20px;
+`;
+
+export const FooterWrapper = styled.div`
+  margin-left: 60px;
 `;

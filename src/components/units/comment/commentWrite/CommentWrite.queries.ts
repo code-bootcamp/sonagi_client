@@ -8,6 +8,9 @@ export const CREATE_COMMENT = gql`
     createComment(board: $board, createCommentInput: $createCommentInput) {
       id
       contents
+      user {
+        nickName
+      }
     }
   }
 `;
