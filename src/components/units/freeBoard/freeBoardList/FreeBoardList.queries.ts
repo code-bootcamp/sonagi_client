@@ -8,6 +8,9 @@ export const FETCH_BOARDS_ALL = gql`
       contents
       viewCount
       createAt
+      user {
+        nickName
+      }
     }
   }
 `;

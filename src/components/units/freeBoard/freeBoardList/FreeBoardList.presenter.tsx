@@ -29,8 +29,8 @@ export default function FreeBoardListPresenter(props: any) {
             <S.New>NEW</S.New>
           </S.Flex>
           <S.WrapInfo>
-            {/* <S.Writer>{el.user.nickName}</S.Writer> */}
-            <S.Writer>작성자</S.Writer>
+            <S.Writer>{el.user?.nickName}</S.Writer>
+            {/* <S.Writer>작성자</S.Writer> */}
             <S.Date>{getDate(el.createAt)}</S.Date>
             {/* <S.Date>{el.viewCount}</S.Date>
             <S.Date>{el.likeCount}</S.Date> */}
