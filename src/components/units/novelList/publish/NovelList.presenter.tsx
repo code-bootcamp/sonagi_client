@@ -12,7 +12,7 @@ export default function NovelPbListPresenter(props: any) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.ColumnWrap>
-        <S.GridWrap>
+        <S.GridWrap onClick={props.onClickMoveToDetail}>
           {props.data?.fetchNovelsPage?.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.title}>
               {/* <S.ItemPic

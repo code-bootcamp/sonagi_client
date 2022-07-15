@@ -14,7 +14,6 @@ export const Wrap = styled.div`
 
   @media (min-width: 768px) and (max-width: 991px) {
     width: 96%;
-    /* margin: 20px; */
     margin: 2%;
   }
 
@@ -95,6 +94,7 @@ export const GridWrap = styled.div`
   align-items: center;
   justify-content: flex-start;
   margin-top: 20px;
+  cursor: pointer;
 
   @media (min-width: 991px) and (max-width: 1200px) {
     display: grid;
@@ -153,31 +153,8 @@ export const ItemWrap = styled.div`
 
 export const ItemPic = styled.img`
   transition-duration: 1s;
-  width: 13.125rem;
-  height: 17.5rem;
-
-  @media (min-width: 991px) and (max-width: 1200px) {
-    transition-duration: 1s;
-    width: 12.1875rem;
-    height: 16.25rem;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
-    transition-duration: 1s;
-    width: 12.1875rem;
-    height: 16.25rem;
-  }
-
-  @media (min-width: 391px) and (max-width: 767px) {
-    transition-duration: 1s;
-    /* width: 14.0625rem;
-    height: 18.75rem; */
-  }
-
-  @media (max-width: 390px) {
-    width: 11.25rem;
-    height: 15rem;
-  }
+  width: 100%;
+  height: 280px;
 `;
 
 export const BlankImage = styled.img``;
@@ -205,7 +182,7 @@ export const ItemName = styled.div`
 `;
 export const ItemNum = styled.div`
   background-color: #eee;
-  padding: 5px;
+  padding: 2px;
 `;
 export const ItemWriterWrap = styled.div`
   width: 100%;
