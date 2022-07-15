@@ -18,7 +18,7 @@ export default function PaidPointsPresenter(props) {
             <S.WriterColumn>
               {el.point.toLocaleString("ko-KR")} 원
             </S.WriterColumn>
-            <S.AtColumn>{el.user.nickName}</S.AtColumn>
+            <S.AtColumn>{el.novelIndex.user.nickName}</S.AtColumn>
           </S.ListRow>
         </S.ListWrapper>
       ))}

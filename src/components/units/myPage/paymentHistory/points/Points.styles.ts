@@ -76,7 +76,8 @@ export const TitleColumn = styled.div`
 
 export const WriterColumn = styled.div`
   width: 20%;
-  text-align: center;
+  text-align: right;
+  padding-right: 6%;
   font-weight: 600;
 `;
 
