@@ -108,6 +108,16 @@ export const Contents = styled.div`
   height: 600px;
   background-color: #eee;
 `;
+
+export const InnerContents = styled.div`
+  padding: 30px;
+`;
+
+export const FreeBoardImage = styled.img`
+  width: 250px;
+  height: 330px;
+`;
+
 export const Button = styled.div`
   width: 160px;
   height: 60px;

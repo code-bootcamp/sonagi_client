@@ -1,10 +1,21 @@
 import { gql } from "@apollo/client";
 
-export const FETCH_BOARDS = gql`
-  query fetchBoards {
-    fetchBoards {
+export const FETCH_BOARD = gql`
+  query fetchBoard($boardID: String!) {
+    fetchBoard(boardID: $boardID) {
+      id
       title
       contents
+      createAt
+      user {
+        id
+        nickName
+      }
+      files {
+        id
+        name
+        url
+      }
     }
   }
 `;

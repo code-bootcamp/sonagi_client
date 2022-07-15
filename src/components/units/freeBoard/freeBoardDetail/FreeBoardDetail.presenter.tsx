@@ -1,4 +1,5 @@
 import React from "react";
+import { getDate } from "../../../../commons/libraries/utils";
 import Button01 from "../../../commons/buttons/01";
 import * as S from "./FreeBoardDetail.styles";
 export default function FreeBoardDetailPresenter(props: any) {
@@ -8,17 +9,21 @@ export default function FreeBoardDetailPresenter(props: any) {
         <S.MainTitle>자유게시판</S.MainTitle>
         <S.TitleLine></S.TitleLine>
       </S.RowWrap>
-      <S.Title>{props.data?.fetchBoards.title}</S.Title>
-
+      <S.Title>{props.data?.fetchBoard?.title}</S.Title>
       <S.WriterWrapper>
-        {/* <S.Writer>{props.data?.fetchBoards.writer}</S.Writer> */}
-        <S.Date>{props.data?.fetchBoards.contents}</S.Date>
+        <S.Writer>{props.data?.fetchBoard.user?.nickName}</S.Writer>
+        <S.Date>{getDate(props.data?.fetchBoard?.createAt)}</S.Date>
         {/* <S.Date>{props.data?.fetchBoards.createAt}</S.Date> */}
         {/* <S.Date>{props.data?.fetchBoards.viewCount}</S.Date> */}
         {/* <S.Date>{props.data?.fetchBoards.likeCount}</S.Date> */}
         <S.ReportIcon src="/freeBoard/report.png" />
       </S.WriterWrapper>
-      <S.Contents />
+      <S.Contents>
+        <S.InnerContents>{props.data?.fetchBoard.contents}</S.InnerContents>
+        <S.FreeBoardImage
+          src={`https://storage.googleapis.com/code-camp-main-project/${props.data?.fetchBoard.files[0].url}`}
+        />
+      </S.Contents>
       <S.ButtonWrapper>
         <Button01 title="목록으로" onClick={props.onClickMoveToBoardList} />
       </S.ButtonWrapper>
