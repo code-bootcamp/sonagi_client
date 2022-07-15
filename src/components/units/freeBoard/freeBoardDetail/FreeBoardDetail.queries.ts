@@ -8,7 +8,13 @@ export const FETCH_BOARD = gql`
       contents
       createAt
       user {
+        id
         nickName
+      }
+      files {
+        id
+        name
+        url
       }
     }
   }

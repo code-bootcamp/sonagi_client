@@ -9,7 +9,7 @@ export default function FreeBoardDetailContainer() {
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
-  console.log("데이터", data);
+  console.log(data);
   const onClickMoveToBoardList = () => {
     router.push("/freeBoard");
   };

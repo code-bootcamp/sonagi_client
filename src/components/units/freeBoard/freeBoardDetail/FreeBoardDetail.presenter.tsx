@@ -20,6 +20,9 @@ export default function FreeBoardDetailPresenter(props: any) {
       </S.WriterWrapper>
       <S.Contents>
         <S.InnerContents>{props.data?.fetchBoard.contents}</S.InnerContents>
+        <S.FreeBoardImage
+          src={`https://storage.googleapis.com/code-camp-main-project/${props.data?.fetchBoard.files[0].url}`}
+        />
       </S.Contents>
       <S.ButtonWrapper>
         <Button01 title="목록으로" onClick={props.onClickMoveToBoardList} />
