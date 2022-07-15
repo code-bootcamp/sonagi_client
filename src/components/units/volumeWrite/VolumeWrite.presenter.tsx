@@ -69,7 +69,7 @@ export default function VolumeWritePresenter(props: any) {
         <S.Error>{props.formState.errors.contents?.message}</S.Error>
         <S.WrapperWriterSay>
           <S.Label>작가의 말</S.Label>
-          <S.WriteSay type="text" />
+          <S.WriteSay {...props.register("authorText")} type="text" />
         </S.WrapperWriterSay>
         <S.WrapperRule>
           <S.WrapRule>

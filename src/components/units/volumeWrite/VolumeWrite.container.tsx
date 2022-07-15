@@ -41,10 +41,11 @@ export default function VolumeWriteContainer() {
     try {
       await createNovelIndex({
         variables: {
-          createNovelIndexInput: {
+          input: {
             title: data.title,
             contents: data.contents,
             novelID: router.query._id,
+            authorText: data.authorText,
           },
         },
       });
