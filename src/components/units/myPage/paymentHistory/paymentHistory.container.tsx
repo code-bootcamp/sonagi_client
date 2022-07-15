@@ -20,8 +20,9 @@ export default function PaymentHistoryContainer() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [CancelData, setCancelData] = useState([]);
 
-  console.log("결제한거", PaidData);
-  console.log("결제한거2", DonateData);
+  console.log("결제한거1", data);
+  console.log("결제한거2", PaidData);
+  console.log("결제한거3", DonateData);
 
   const onClickFetchPoint = () => {
     setIsPoint("LoadingPoint");
@@ -47,6 +48,8 @@ export default function PaymentHistoryContainer() {
     <PaymentHistoryPresenter
       isPoint={isPoint}
       data={data}
+      PaidData={PaidData}
+      DonateData={DonateData}
       onClickFetchPoint={onClickFetchPoint}
       onClickCancelPayment={onClickCancelPayment}
       onClickFetchPaidPoint={onClickFetchPaidPoint}

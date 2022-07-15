@@ -10,14 +10,20 @@ export const FETCH_PAYMENTS = gql`
         merchantUid
         amount
         createAt
+        user {
+          id
+          name
+          nickName
+        }
         product {
+          point
+          id
+          name
+          price
           point
         }
       }
       count
-      # user {
-      #   point
-      # }
     }
   }
 `;
@@ -29,14 +35,27 @@ export const FETCH_PAID_POINTS = gql`
       id
       point
       createAt
-      # status {
-      #   id
-      #   description
-      # }
-      # novel {
-      #   id
-      #   title
-      # }
+      status {
+        id
+        description
+      }
+      user {
+        id
+        name
+        nickName
+      }
+      novelIndex {
+        id
+        title
+        contents
+        user {
+          id
+          nickName
+          userClass {
+            id
+          }
+        }
+      }
     }
   }
 `;
@@ -51,10 +70,18 @@ export const FETCH_DONATE_POINTS = gql`
       novel {
         id
         title
+        user {
+          id
+          nickName
+          userClass {
+            id
+          }
+        }
       }
-      novelIndex {
+      user {
         id
-        title
+        name
+        nickName
       }
     }
   }

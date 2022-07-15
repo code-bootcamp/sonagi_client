@@ -1,5 +1,5 @@
-import { getDate } from "../../../../commons/libraries/utils";
-import * as S from "./paymentHistory.styles";
+import { getDate } from "../../../../../commons/libraries/utils";
+import * as S from "./Points.styles";
 
 export default function DonatePointsPresenter(props) {
   return (
