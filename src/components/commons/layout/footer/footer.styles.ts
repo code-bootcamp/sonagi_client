@@ -1,13 +1,25 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
+export const WrapperBox = styled.div`
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+`;
+
 export const Wrapper = styled.div`
-  width: 100%;
+  width: 80%;
   height: 200px;
   display: flex;
-  padding: 20px 100px;
-  background: #f7f7f7;
+  padding: 20px 70px;
   margin: 0 auto;
+
+  @media ${breakPoints.wideWeb} {
+    width: 1200px;
+  }
   @media ${breakPoints.mobile} {
     display: none;
   }
