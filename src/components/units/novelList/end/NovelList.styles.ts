@@ -124,10 +124,10 @@ export const GridWrap = styled.div`
 export const ItemWrap = styled.div`
   margin-bottom: 50px;
   width: 100%;
+  height: 55vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   padding-right: 20px;
 
   :last-child {

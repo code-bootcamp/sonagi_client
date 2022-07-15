@@ -1,8 +1,11 @@
 import { useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
 import NovelPbListPresenter from "./NovelList.presenter";
 import { FETCH_NOVELS_PAGE } from "./NovelList.queries";
 
 export default function NovelPbListContainer() {
+  const router = useRouter();
+
   const sfPbItem = [11, 12, 13, 14, 15];
   const romanceFantasyPbItem = [21, 22, 23, 24, 25];
   const romancaPbItem = [31, 32, 33, 34, 35];
@@ -15,6 +18,11 @@ export default function NovelPbListContainer() {
   });
   console.log("소설데이터", data);
 
+  const onClickMoveToDetail = (event: any) => {
+    router.push(`/novel/${router.query._id}`);
+    console.log(event.target);
+  };
+
   return (
     <NovelPbListPresenter
       sfPbItem={sfPbItem}
@@ -24,6 +32,7 @@ export default function NovelPbListContainer() {
       teenagePbItem={teenagePbItem}
       horrorPbItem={horrorPbItem}
       data={data}
+      onClickMoveToDetail={onClickMoveToDetail}
     />
   );
 }

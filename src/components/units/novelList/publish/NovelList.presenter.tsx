@@ -13,8 +13,12 @@ export default function NovelPbListPresenter(props: any) {
       <S.ColumnWrap>
         <S.GridWrap>
           {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
-            <S.ItemWrap key={el.id}>
-              <S.ItemPic src={"/novelList/13.png"} />
+            <S.ItemWrap key={el.title}>
+              <S.ItemPic
+                // src={`https://storage.googleapis.com/code-camp-main-project/${props.data?.fetchNovelsPage.files[0].url}`}
+                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+              />
+              {/* <S.ItemPic src={"/novelList/13.png"} /> */}
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>

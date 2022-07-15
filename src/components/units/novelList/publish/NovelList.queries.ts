@@ -8,6 +8,9 @@ export const FETCH_NOVELS_PAGE = gql`
       user {
         nickName
       }
+      files {
+        url
+      }
     }
   }
 `;
