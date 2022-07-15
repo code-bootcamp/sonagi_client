@@ -2,20 +2,20 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 100vw;
-  position: relative;
-  left: calc(-50vw + 50%);
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
 `;
 
 export const TopBox = styled.div`
-  width: 100%;
-  border-bottom: 1px solid #e0e0e0;
+  height: 40px;
+  padding: 10px 0px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: right;
+  border-bottom: 1px solid #e0e0e0;
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -23,41 +23,6 @@ export const TopBox = styled.div`
 `;
 
 export const BottomBox = styled.div`
-  width: 100%;
-  height: 85px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid #e0e0e0;
-
-  @media ${breakPoints.mobile} {
-    flex-direction: column;
-    height: 150px;
-    padding: 20px 2px;
-  }
-`;
-
-export const TopWrapper = styled.div`
-  width: 1200px;
-  height: 40px;
-  padding: 10px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
-
-  @media ${breakPoints.wideWeb} {
-    width: 1200px;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
-`;
-
-export const BottomWrapper = styled.div`
-  width: 1200px;
   height: 85px;
   padding: 2px;
   display: flex;
