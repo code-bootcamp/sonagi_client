@@ -1,3 +1,4 @@
+import AgreeTermsContainer from "../agreeTerms/agreeTerms.container";
 import * as S from "./signup.styles";
 
 export default function SignUpPresenter(props) {
@@ -30,9 +31,8 @@ export default function SignUpPresenter(props) {
               placeholder="이메일"
               {...props.register("email")}
             ></S.InputBox>
-            <S.InputButton>중복확인</S.InputButton>
-            <S.Error>{props.formState.errors.email?.message}</S.Error>
           </S.InputWrapper>
+          <S.Error>{props.formState.errors.email?.message}</S.Error>
           <S.InputWrapper>
             <S.InputBox
               type="text"
@@ -66,7 +66,7 @@ export default function SignUpPresenter(props) {
               onChange={props.onChangePhone}
             ></S.InputBox>
             <S.InputButton onClick={props.onClickSendPhone}>
-              휴대폰 인증
+              인증번호 전송
             </S.InputButton>
           </S.InputWrapper>
           <S.Error>{props.formState.errors.phone?.message}</S.Error>
@@ -76,28 +76,21 @@ export default function SignUpPresenter(props) {
               placeholder="인증번호 입력"
               onChange={props.onChangeToken}
             ></S.InputBox>
-            <S.InputText onClick={props.onClickAuthPhone}>
-              인증 완료
-            </S.InputText>
-            <S.CheckImg src="signup/check.png" />
+            {props.phoneCheck ? (
+              <>
+                <S.InputText>인증 완료</S.InputText>
+                <S.CheckImg src="signup/check.png" />
+              </>
+            ) : (
+              <S.InputButton onClick={props.onClickAuthPhone}>
+                인증 확인하기
+              </S.InputButton>
+            )}
           </S.InputWrapper>
-          <S.WrapCheck>
-            <S.CheckWrapper>
-              <S.CheckBox type="checkbox" />
-              <S.CheckTitle>이용약관 동의 (필수)</S.CheckTitle>
-              <S.Arrow src="/signup/arrowright.png" />
-            </S.CheckWrapper>
-            <S.CheckWrapper>
-              <S.CheckBox type="checkbox" />
-              <S.CheckTitle>개인정보 취급방침 동의 (필수)</S.CheckTitle>
-              <S.Arrow src="/signup/arrowright.png" />
-            </S.CheckWrapper>
-            <S.CheckWrapper>
-              <S.CheckBox type="checkbox" />
-              <S.CheckTitle>마게팅 정보 수신 동의 (선택)</S.CheckTitle>
-              <S.Arrow src="/signup/arrowright.png" />
-            </S.CheckWrapper>
-          </S.WrapCheck>
+          <AgreeTermsContainer
+            setAgree1={props.setAgree1}
+            setAgree2={props.setAgree2}
+          />
           <S.SignUpButton isValid={props.formState.isValid}>
             회원가입
           </S.SignUpButton>
