@@ -4,6 +4,7 @@ import { FETCH_LOGIN_USER, UPDATE_LOGIN_USER } from "./ProfileModify.queries";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
 
 const schema = yup.object({
   name: yup
@@ -22,6 +23,8 @@ const schema = yup.object({
 
 export default function ProfileModifyContainer() {
   const [updateLoginUser] = useMutation(UPDATE_LOGIN_USER);
+
+  const [isDelete, SetIsDelete] = useState(false);
 
   const { data } = useQuery(FETCH_LOGIN_USER);
 
@@ -50,13 +53,19 @@ export default function ProfileModifyContainer() {
     }
   };
 
+  const onClickDelete = () => {
+    SetIsDelete(true);
+  };
+
   return (
     <ProfileModifyPresenter
       onClickChangeUser={onClickChangeUser}
+      onClickDelete={onClickDelete}
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}
       data={data}
+      isDelete={isDelete}
     />
   );
 }
