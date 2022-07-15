@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import ProfileModifyPresenter from "./PasswordChange.presenter";
-import { UPDATE_USER_PWD } from "./PasswordChange.queries";
+import { COMPARE_PASSWORD, UPDATE_USER_PWD } from "./PasswordChange.queries";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -19,6 +19,7 @@ const schema = yup.object({
 
 export default function PasswordChangeContainer() {
   const [updateUserPwd] = useMutation(UPDATE_USER_PWD);
+  const [comparePassword] = useMutation(COMPARE_PASSWORD);
 
   const { register, handleSubmit, formState, reset } = useForm({
     resolver: yupResolver(schema),
@@ -28,14 +29,27 @@ export default function PasswordChangeContainer() {
 
   const onClickChangePwd = async (data: any) => {
     try {
-      const result = await updateUserPwd({
+      const result = await comparePassword({
         variables: {
-          pwd: data.pwd,
+          pwd: String(data.prevPwd),
         },
       });
-      console.log(result);
-      alert("비밀번호가 변경되었습니다");
-      reset();
+      if (result.data.comparePassword.isSuccess === true) {
+        try {
+          const result = await updateUserPwd({
+            variables: {
+              pwd: data.pwd,
+            },
+          });
+          console.log(result);
+          alert("비밀번호가 변경되었습니다");
+          reset();
+        } catch (error) {
+          alert(error.message);
+        }
+        reset();
+      } else alert("현재 비밀번호가 일치하지 않습니다");
+      return;
     } catch (error) {
       alert(error.message);
     }
