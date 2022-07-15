@@ -49,3 +49,46 @@ export const DELETE_NOVEL = gql`
     }
   }
 `;
+
+export const PAIDPOINT = gql`
+  mutation paidPoint($novelIndexID: String!) {
+    paidPoint(novelIndexID: $novelIndexID) {
+      id
+      point
+      createAt
+    }
+  }
+`;
+
+export const DONATEPOINT = gql`
+  mutation donatePoint($donateInput: DonatePaymentPointInput!) {
+    donatePoint(donateInput: $donateInput) {
+      id
+      point
+      createAt
+      status {
+        id
+        description
+      }
+    }
+  }
+`;
+
+export const CREATE_NOVEL_LIKE = gql`
+  mutation createNovelLike($novelID: String!) {
+    createNovelLike(novelID: $novelID) {
+      id
+      createAt
+    }
+  }
+`;
+
+export const DELETE_NOVEL_INDEX = gql`
+  mutation deleteNovelIndex($novelIndexID: String!) {
+    deleteNovelIndex(novelIndexID: $novelIndexID) {
+      id
+      msg
+      isSuccess
+    }
+  }
+`;
