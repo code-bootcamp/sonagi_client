@@ -27,21 +27,21 @@ export const UPDATE_NOVEL = gql`
   mutation updateNovel($updateNovelInput: UpdateNovelInput!) {
     updateNovel(updateNovelInput: $updateNovelInput) {
       id
-      title
-      description
-      createAt
-      files {
-        id
-        url
-      }
-      novelCategory {
-        id
-        name
-      }
-      novelTags {
-        id
-        name
-      }
+      # title
+      # description
+      # createAt
+      # files {
+      #   id
+      #   url
+      # }
+      # novelCategory {
+      #   id
+      #   name
+      # }
+      # novelTags {
+      #   id
+      #   name
+      # }
     }
   }
 `;

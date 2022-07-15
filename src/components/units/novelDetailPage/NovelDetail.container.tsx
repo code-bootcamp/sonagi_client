@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import NovelDetailPresenter from "./NovelDetail.Presenter";
 import {
+  CHANGE_PRIVATE_NOVEL_INDEX,
   CREATE_NOVEL_LIKE,
   DELETE_NOVEL,
   DELETE_NOVEL_INDEX,
@@ -14,17 +15,20 @@ import {
 export default function NovelDetailContainer() {
   const router = useRouter();
   const [donate, setDonate] = useState();
+  const [switchPrivate, setSwitchPrivate] = useState(false);
   const [deleteNovel] = useMutation(DELETE_NOVEL);
   const [deleteNovelIndex] = useMutation(DELETE_NOVEL_INDEX);
   const [paidPoint] = useMutation(PAIDPOINT);
   const [donatePoint] = useMutation(DONATEPOINT);
   const [createNovelLike] = useMutation(CREATE_NOVEL_LIKE);
+  const [changePrivateNovelIndex] = useMutation(CHANGE_PRIVATE_NOVEL_INDEX);
   const { data: detailData } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
   });
 
-  // console.log(detailData);
+  console.log(detailData);
 
+  // 소설 삭제
   const onClickDelete = async () => {
     try {
       const result = await deleteNovel({
@@ -36,15 +40,18 @@ export default function NovelDetailContainer() {
     }
   };
 
+  // 회차 읽기
   const onClickMoveToRead = (event) => {
     router.push(`/novel/${router.query._id}/${event.currentTarget.id}`);
     console.log(event.target);
   };
 
+  // 회차 쓰기
   const onClickMoveToVolumeWrite = () => {
     router.push(`/novel/${router.query._id}/volume/new`);
   };
 
+  // 결제하기
   const onClickPayment = async (event) => {
     console.log(event.target.id);
     try {
@@ -58,6 +65,7 @@ export default function NovelDetailContainer() {
     }
   };
 
+  // 후원하기
   const onChangeDonate = (event) => {
     setDonate(event.target.value);
     console.log(event.target.value);
@@ -80,6 +88,7 @@ export default function NovelDetailContainer() {
     }
   };
 
+  // 선호작 등록하기
   const onClickLike = async () => {
     try {
       const result = await createNovelLike({
@@ -94,6 +103,7 @@ export default function NovelDetailContainer() {
     }
   };
 
+  // 회차 삭제
   const onClickIndexDelete = async (event) => {
     try {
       const result = await deleteNovelIndex({
@@ -112,8 +122,23 @@ export default function NovelDetailContainer() {
     }
   };
 
-  const onClickUpdate = () => {
+  // 수정하기
+  const onClickEdit = () => {
     router.push(`/novel/${router.query._id}/edit`);
+  };
+
+  // 에피소드 비공개
+  const onClickPrivate = async (event) => {
+    try {
+      const result = await changePrivateNovelIndex({
+        variables: { novelIndexID: event.currentTarget.id },
+      });
+      console.log(result);
+      alert("비공개");
+      setSwitchPrivate(true);
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
@@ -127,7 +152,9 @@ export default function NovelDetailContainer() {
       onChangeDonate={onChangeDonate}
       onClickLike={onClickLike}
       onClickIndexDelete={onClickIndexDelete}
-      onClickUpdate={onClickUpdate}
+      onClickEdit={onClickEdit}
+      onClickPrivate={onClickPrivate}
+      switchPrivate={switchPrivate}
     />
   );
 }

@@ -139,7 +139,7 @@ export default function NovelWritePresenter(props: any) {
               {props.fileUrls.map((el, index) => (
                 <Uploads01
                   key={uuidv4()}
-                  fileUrls={el}
+                  fileUrl={el}
                   index={index}
                   // fileId={el}
                   onChangeFileUrls={props.onChangeFileUrls}

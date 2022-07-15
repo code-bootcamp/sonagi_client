@@ -78,8 +78,9 @@ export default function NovelWriteContainer(props) {
         ...props.editData?.fetchNovelDetail.files.map((el) => el.url),
       ]);
     }
-
-    setValue("fileURLs", fileUrls);
+    setValue("fileURLs", [
+      ...props.editData?.fetchNovelDetail.files.map((el) => el.url),
+    ]);
     trigger("fileURLs");
   }, [props.editData]);
 
@@ -99,11 +100,14 @@ export default function NovelWriteContainer(props) {
     trigger("categoryID");
   };
 
-  // useEffect(() => {
-  //   if(props.editData?.fetchNovelDetail.novelCategory){
-  //     setGenre([...props.editData?.fetchNovelDetail.novelCategory.id])
-  //   }
-  // })
+  useEffect(() => {
+    if (props.editData?.fetchNovelDetail.novelCategory) {
+      setGenre(props.editData?.fetchNovelDetail.novelCategory.id);
+    }
+    setName(props.editData?.fetchNovelDetail.novelCategory.name);
+    setValue("categoryID", props.editData?.fetchNovelDetail.novelCategory.id);
+    trigger("categoryID");
+  }, [props.editData]);
 
   // 태그
 
@@ -141,11 +145,11 @@ export default function NovelWriteContainer(props) {
   };
 
   // 수정
-  const onClickUpdata = async (data) => {
+  const onClickUpdate = async (data) => {
     try {
       const result = await updateNovel({
         variables: {
-          UpdateNovelInput: {
+          updateNovelInput: {
             title: data.title,
             description: data.description,
             tags,
@@ -196,7 +200,7 @@ export default function NovelWriteContainer(props) {
       tags={tags}
       setTags={setTags}
       // edit
-      onClickUpdata={onClickUpdata}
+      onClickUpdate={onClickUpdate}
       isEdit={props.isEdit}
       editData={props.editData}
     />

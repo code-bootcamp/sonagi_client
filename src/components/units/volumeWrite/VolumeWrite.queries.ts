@@ -1,12 +1,13 @@
 import { gql } from "@apollo/client";
 
 export const CREATE_NOVEL_INDEX = gql`
-  mutation createNovelIndex($createNovelIndexInput: CreateNovelIndexInput!) {
-    createNovelIndex(createNovelIndexInput: $createNovelIndexInput) {
+  mutation createNovelIndex($input: CreateNovelIndexInput!) {
+    createNovelIndex(input: $input) {
       id
       title
       contents
       index
+      authorText
       # createAt
       # novel {
       #   id

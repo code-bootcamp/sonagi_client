@@ -92,3 +92,13 @@ export const DELETE_NOVEL_INDEX = gql`
     }
   }
 `;
+
+export const CHANGE_PRIVATE_NOVEL_INDEX = gql`
+  mutation changePrivateNovelIndex($novelIndexID: String!) {
+    changePrivateNovelIndex(novelIndexID: $novelIndexID) {
+      id
+      msg
+      isSuccess
+    }
+  }
+`;

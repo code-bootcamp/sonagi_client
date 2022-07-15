@@ -96,8 +96,6 @@ export const NovelRemarks = styled.div`
   color: #757575;
   margin-top: 10px;
   width: 706px;
-  height: 51px;
-  padding-bottom: 200px;
 `;
 
 export const TagsWrapper = styled.div`

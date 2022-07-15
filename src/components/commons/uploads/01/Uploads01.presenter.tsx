@@ -4,10 +4,10 @@ import { IUploads01UIProps } from "./Uploads01.types";
 export default function Uploads01UI(props: IUploads01UIProps) {
   return (
     <S.UploadWrapper>
-      {props.fileUrls ? (
+      {props.fileUrl ? (
         <S.UploadImg
           onClick={props.onClickUpload}
-          src={`https://storage.googleapis.com/code-camp-main-project/${props?.fileUrls}`}
+          src={`https://storage.googleapis.com/code-camp-main-project/${props?.fileUrl}`}
           // src={props.imageUrl}
         />
       ) : (

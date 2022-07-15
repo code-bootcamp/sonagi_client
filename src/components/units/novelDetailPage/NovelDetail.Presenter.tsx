@@ -3,6 +3,7 @@ import Button02 from "../../commons/buttons/02";
 import * as S from "./NovelDetail.Styles";
 import DOMPurify from "dompurify";
 import { getDateDay } from "../../../commons/libraries/utils";
+import { Switch } from "antd";
 
 export default function NovelDetailPresenter(props) {
   return (
@@ -53,6 +54,7 @@ export default function NovelDetailPresenter(props) {
                 {props.detailData?.fetchNovelDetail.viewCount} 명
               </S.Count>
             </S.StarWrapper>
+
             <S.NovelRemarks>
               {typeof window !== "undefined" ? (
                 <div
@@ -66,6 +68,7 @@ export default function NovelDetailPresenter(props) {
                 ""
               )}
             </S.NovelRemarks>
+
             <S.Line />
             <S.TagsWrapper>
               {props.detailData?.fetchNovelDetail.novelTags
@@ -97,7 +100,7 @@ export default function NovelDetailPresenter(props) {
             <img
               src="/comment/edit.png"
               style={{ width: "30px", height: "30px" }}
-              onClick={props.onClickUpdate}
+              onClick={props.onClickEdit}
             />
           </S.LookButtonWrapper>
         </S.ButtonWrapper>
@@ -152,6 +155,13 @@ export default function NovelDetailPresenter(props) {
             <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
               보기
             </S.LookBtn>
+            <Switch
+              id={el.id}
+              checkedChildren="공개"
+              unCheckedChildren="비공개"
+              defaultChecked
+              onClick={props.onClickPrivate}
+            />
           </S.TableLineWrapper>
         ))}
         <S.Margin />
