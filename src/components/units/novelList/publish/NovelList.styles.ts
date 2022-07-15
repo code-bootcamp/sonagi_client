@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 
 export const Wrap = styled.div`
-  width: 100%;
+  width: 98%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 30px 10px;
+  margin: 30px 0px;
 
   @media (min-width: 991px) and (max-width: 1200px) {
     width: 98%;
@@ -14,11 +14,13 @@ export const Wrap = styled.div`
 
   @media (min-width: 768px) and (max-width: 991px) {
     width: 96%;
-    margin: 20px;
+    /* margin: 20px; */
+    margin: 2%;
   }
 
   @media (min-width: 391px) and (max-width: 767px) {
-    width: 90%;
+    width: 96%;
+    margin: 2%;
   }
 
   @media (max-width: 390px) {
@@ -51,7 +53,7 @@ export const RowWrap = styled.div`
   flex-direction: row;
   align-items: center;
   margin: 20px 0px 0px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 `;
 
 export const Category = styled.span`
@@ -82,6 +84,7 @@ export const ColumnWrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 70px;
 `;
 
 export const GridWrap = styled.div`
@@ -127,9 +130,11 @@ export const ItemWrap = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 0 10px;
 
   @media (min-width: 991px) and (max-width: 1200px) {
     width: 90%;
+    padding: 0 5px;
   }
 
   @media (min-width: 768px) and (max-width: 991px) {
@@ -174,6 +179,8 @@ export const ItemPic = styled.img`
     height: 15rem;
   }
 `;
+
+export const BlankImage = styled.img``;
 
 export const ItemInfo = styled.div`
   width: 100%;

@@ -2,6 +2,7 @@ import * as S from "./NovelList.styles";
 import DOMPurify from "dompurify";
 
 export default function NovelPbListPresenter(props: any) {
+  console.log(props.data);
   return (
     <S.Wrap>
       <S.Title>연재작품</S.Title>
@@ -12,13 +13,20 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage?.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.title}>
-              <S.ItemPic
+              {/* <S.ItemPic
                 // src={`https://storage.googleapis.com/code-camp-main-project/${props.data?.fetchNovelsPage.files[0].url}`}
                 src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-              />
-              {/* <S.ItemPic src={"/novelList/13.png"} /> */}
+              /> */}
+
+              {el.files[0] ? (
+                <S.ItemPic
+                  src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+                />
+              ) : (
+                <S.BlankImage src="/novelList/noImage.png" />
+              )}
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
@@ -43,9 +51,15 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
-              <S.ItemPic src={"/novelList/33.png"} />
+              {el.files[0] ? (
+                <S.ItemPic
+                  src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+                />
+              ) : (
+                <S.BlankImage src="/novelList/noImage.png" />
+              )}
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
@@ -70,9 +84,15 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
-              <S.ItemPic src={"/novelList/32.png"} />
+              {el.files[0] ? (
+                <S.ItemPic
+                  src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+                />
+              ) : (
+                <S.BlankImage src="/novelList/noImage.png" />
+              )}
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
@@ -97,9 +117,15 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
-              <S.ItemPic src={"/novelList/45.png"} />
+              {el.files[0] ? (
+                <S.ItemPic
+                  src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+                />
+              ) : (
+                <S.BlankImage src="/novelList/noImage.png" />
+              )}
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
@@ -124,9 +150,15 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
-              <S.ItemPic src={"/novelList/52.png"} />
+              {el.files[0] ? (
+                <S.ItemPic
+                  src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+                />
+              ) : (
+                <S.BlankImage src="/novelList/noImage.png" />
+              )}
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
@@ -151,9 +183,15 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
-              <S.ItemPic src={"/novelList/62.png"} />
+              {el.files[0] ? (
+                <S.ItemPic
+                  src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+                />
+              ) : (
+                <S.BlankImage src="/novelList/noImage.png" />
+              )}
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
                 <S.ItemNum>10화</S.ItemNum>
