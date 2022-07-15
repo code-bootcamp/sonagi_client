@@ -50,11 +50,12 @@ export const RowWrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 20px 0px;
+  margin: 20px 0px 0px;
+  padding-bottom: 20px;
 `;
 
 export const Category = styled.span`
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #484848;
   margin-right: 50px;
@@ -85,17 +86,12 @@ export const ColumnWrap = styled.div`
 
 export const GridWrap = styled.div`
   width: 100%;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  padding: 0 10px;
-  margin: 0px 0 50px; */
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   flex-wrap: row;
   align-items: center;
-  justify-content: center;
-  padding: 0px 20px;
+  justify-content: flex-start;
+  margin-top: 20px;
 
   @media (min-width: 991px) and (max-width: 1200px) {
     display: grid;
@@ -127,39 +123,55 @@ export const GridWrap = styled.div`
 `;
 
 export const ItemWrap = styled.div`
-  margin-bottom: 50px;
-  width: 100%;
+  width: 98%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-  padding-right: 20px;
-
-  :last-child {
-    padding-right: 0;
-  }
-`;
-
-export const ItemPic = styled.img`
-  width: 210px;
 
   @media (min-width: 991px) and (max-width: 1200px) {
-    transition-duration: 1s;
-    width: 98%;
+    width: 90%;
   }
 
   @media (min-width: 768px) and (max-width: 991px) {
-    transition-duration: 1s;
-    width: 96%;
+    width: 80%;
+    margin: 20px;
   }
 
   @media (min-width: 391px) and (max-width: 767px) {
-    transition-duration: 1s;
-    width: 92%;
+    width: 90%;
   }
 
   @media (max-width: 390px) {
     width: 90%;
+  }
+`;
+
+export const ItemPic = styled.img`
+  transition-duration: 1s;
+  width: 13.125rem;
+  height: 17.5rem;
+
+  @media (min-width: 991px) and (max-width: 1200px) {
+    transition-duration: 1s;
+    width: 12.1875rem;
+    height: 16.25rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    transition-duration: 1s;
+    width: 12.1875rem;
+    height: 16.25rem;
+  }
+
+  @media (min-width: 391px) and (max-width: 767px) {
+    transition-duration: 1s;
+    /* width: 14.0625rem;
+    height: 18.75rem; */
+  }
+
+  @media (max-width: 390px) {
+    width: 11.25rem;
+    height: 15rem;
   }
 `;
 
