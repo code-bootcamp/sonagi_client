@@ -3,7 +3,6 @@ import Button02 from "../../commons/buttons/02";
 import * as S from "./NovelDetail.Styles";
 import DOMPurify from "dompurify";
 import { getDateDay } from "../../../commons/libraries/utils";
-import { Switch } from "antd";
 
 export default function NovelDetailPresenter(props) {
   return (
@@ -155,13 +154,15 @@ export default function NovelDetailPresenter(props) {
             <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
               보기
             </S.LookBtn>
-            <Switch
+            <div
               id={el.id}
-              checkedChildren="공개"
-              unCheckedChildren="비공개"
-              defaultChecked
+              // checkedChildren="공개"
+              // unCheckedChildren="비공개"
+              // defaultChecked
               onClick={props.onClickPrivate}
-            />
+            >
+              공개
+            </div>
           </S.TableLineWrapper>
         ))}
         <S.Margin />

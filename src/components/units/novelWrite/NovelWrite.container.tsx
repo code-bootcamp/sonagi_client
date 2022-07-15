@@ -73,15 +73,17 @@ export default function NovelWriteContainer(props) {
 
   // image Edit
   useEffect(() => {
-    if (props.editData?.fetchNovelDetail.files[0]) {
-      setFileUrls([
-        ...props.editData?.fetchNovelDetail.files.map((el) => el.url),
-      ]);
+    const files = props.editData?.fetchNovelDetail.files;
+    if (files) {
+      const urls = files.map((v) => v.url);
+
+      if (files[0]) {
+        setFileUrls([...urls]);
+      }
+      setValue("fileURLs", [...urls]);
+
+      trigger("fileURLs");
     }
-    setValue("fileURLs", [
-      ...props.editData?.fetchNovelDetail.files.map((el) => el.url),
-    ]);
-    trigger("fileURLs");
   }, [props.editData]);
 
   // 장르 선택

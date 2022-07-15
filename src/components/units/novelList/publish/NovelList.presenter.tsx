@@ -12,9 +12,13 @@ export default function NovelPbListPresenter(props: any) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.ColumnWrap>
-        <S.GridWrap onClick={props.onClickMoveToDetail}>
+        <S.GridWrap>
           {props.data?.fetchNovelsPage?.novels.slice(0, 5).map((el: any) => (
-            <S.ItemWrap key={el.title}>
+            <S.ItemWrap
+              onClick={props.onClickMoveToDetail}
+              id={el.id}
+              key={el.title}
+            >
               {/* <S.ItemPic
                 // src={`https://storage.googleapis.com/code-camp-main-project/${props.data?.fetchNovelsPage.files[0].url}`}
                 src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}

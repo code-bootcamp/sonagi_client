@@ -12,7 +12,7 @@ export default function NovelPbListContainer() {
   console.log("소설데이터", data);
 
   const onClickMoveToDetail = (event: any) => {
-    router.push(`/novel/${router.query._id}`);
+    router.push(`/novel/${event.currentTarget.id}`);
     console.log(event.target);
   };
 
