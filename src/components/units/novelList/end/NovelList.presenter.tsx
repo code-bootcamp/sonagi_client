@@ -13,7 +13,7 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
               <S.ItemPic src={"/novelList/13.png"} />
               <S.ItemInfo>
@@ -40,7 +40,7 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
               <S.ItemPic src={"/novelList/33.png"} />
               <S.ItemInfo>
@@ -67,7 +67,7 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
               <S.ItemPic src={"/novelList/32.png"} />
               <S.ItemInfo>
@@ -94,7 +94,7 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
               <S.ItemPic src={"/novelList/45.png"} />
               <S.ItemInfo>
@@ -121,7 +121,7 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
               <S.ItemPic src={"/novelList/52.png"} />
               <S.ItemInfo>
@@ -148,7 +148,7 @@ export default function NovelEndListPresenter(props: any) {
       </S.RowWrap>
       <S.ColumnWrap>
         <S.GridWrap>
-          {props.data?.fetchNovelsPage.slice(0, 5).map((el: any) => (
+          {props.data?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
             <S.ItemWrap key={el.id}>
               {/* <S.ItemPic src={"/novelList/62.png"} /> */}
               <S.ItemPic
