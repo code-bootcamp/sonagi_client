@@ -1,3 +1,4 @@
+import AgreeTermsContainer from "../agreeTerms/agreeTerms.container";
 import * as S from "./signup.styles";
 
 export default function SignUpPresenter(props) {
@@ -75,7 +76,6 @@ export default function SignUpPresenter(props) {
               placeholder="인증번호 입력"
               onChange={props.onChangeToken}
             ></S.InputBox>
-
             {props.phoneCheck ? (
               <>
                 <S.InputText>인증 완료</S.InputText>
@@ -87,23 +87,10 @@ export default function SignUpPresenter(props) {
               </S.InputButton>
             )}
           </S.InputWrapper>
-          <S.WrapCheck>
-            <S.CheckWrapper>
-              <S.CheckBox type="checkbox" />
-              <S.CheckTitle>이용약관 동의 (필수)</S.CheckTitle>
-              <S.Arrow src="/signup/arrowright.png" />
-            </S.CheckWrapper>
-            <S.CheckWrapper>
-              <S.CheckBox type="checkbox" />
-              <S.CheckTitle>개인정보 취급방침 동의 (필수)</S.CheckTitle>
-              <S.Arrow src="/signup/arrowright.png" />
-            </S.CheckWrapper>
-            <S.CheckWrapper>
-              <S.CheckBox type="checkbox" />
-              <S.CheckTitle>마게팅 정보 수신 동의 (선택)</S.CheckTitle>
-              <S.Arrow src="/signup/arrowright.png" />
-            </S.CheckWrapper>
-          </S.WrapCheck>
+          <AgreeTermsContainer
+            setAgree1={props.setAgree1}
+            setAgree2={props.setAgree2}
+          />
           <S.SignUpButton isValid={props.formState.isValid}>
             회원가입
           </S.SignUpButton>

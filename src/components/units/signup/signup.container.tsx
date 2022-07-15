@@ -37,6 +37,8 @@ export default function SignUpContainer() {
   const [phone, setPhone] = useState("");
   const [token, setToken] = useState("");
   const [phoneCheck, setPhoneCheck] = useState(false);
+  const [Agree1, setAgree1] = useState(false);
+  const [Agree2, setAgree2] = useState(false);
 
   const [SendPhone] = useMutation(SEND_PHONE);
   const [AuthPhoneOK] = useMutation(AUTH_PHONE_OK);
@@ -91,9 +93,8 @@ export default function SignUpContainer() {
   };
 
   const onClickSignUp = (data: any) => {
-    console.log(data);
-
-    if (data.pwd === data.pwdCheck) {
+    console.log(Agree1, Agree2);
+    if (Agree1 && Agree2) {
       try {
         const result = createUser({
           variables: {
@@ -128,6 +129,8 @@ export default function SignUpContainer() {
       handleSubmit={handleSubmit}
       formState={formState}
       phoneCheck={phoneCheck}
+      setAgree1={setAgree1}
+      setAgree2={setAgree2}
     />
   );
 }

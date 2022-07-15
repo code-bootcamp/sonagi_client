@@ -148,45 +148,11 @@ export const InputCheckText = styled.div`
   color: #484848;
   text-align: center;
 `;
-export const WrapCheck = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding-top: 10px;
-`;
-export const CheckWrapper = styled.div`
-  width: 100%;
-  height: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1px 0px;
-`;
 
 export const CheckImg = styled.img`
   margin: 15px 5px 0px 0px;
   width: 8px;
   height: 8px;
-`;
-
-export const CheckBox = styled.input`
-  width: 3%;
-  border: none;
-`;
-
-export const CheckTitle = styled.div`
-  width: 90%;
-  font-size: 12px;
-  font-weight: 300;
-  text-align: left;
-  letter-spacing: 0.232836px;
-  color: #484848;
-`;
-
-export const Arrow = styled.img`
-  margin: 3px 0px 0px 10px;
-  width: 2%;
-  height: 10px;
 `;
 
 export const SignUpButton = styled.button`
