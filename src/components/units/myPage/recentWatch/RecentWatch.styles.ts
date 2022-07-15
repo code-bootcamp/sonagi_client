@@ -16,6 +16,16 @@ export const Flex = styled.div`
   }
 `;
 
+export const Flex2 = styled.div`
+  display: flex;
+  margin-left: 20px;
+  position: absolute;
+  top: 660px;
+  @media ${breakPoints.mobile} {
+    justify-content: flex-start;
+  }
+`;
+
 export const RecentWatch = styled.div`
   font-size: 1.563rem;
   margin: 20px 0px 40px 0px;
@@ -34,9 +44,11 @@ export const Column = styled.div`
 
 export const NovelPic = styled.img`
   /* border-radius: 8px; */
+  cursor: pointer;
   width: 150px;
   height: 200px;
   margin-left: 55px;
+
   @media (max-width: 767px) {
     /* border-radius: 8px; */
     width: 140px;
@@ -81,8 +93,14 @@ export const MyPageFont = styled.div`
 
 export const BookShelf = styled.img`
   width: 100%;
-  height: 290px;
+  /* height: 290px; */
   margin-top: 210px;
+`;
+
+export const BookShelf2 = styled.img`
+  width: 100%;
+  /* height: 290px; */
+  margin-top: 105px;
 `;
 
 export const Wrap = styled.div``;

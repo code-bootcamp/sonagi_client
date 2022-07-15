@@ -8,11 +8,11 @@ export default function FreeBoardDetailPresenter(props: any) {
         <S.MainTitle>자유게시판</S.MainTitle>
         <S.TitleLine></S.TitleLine>
       </S.RowWrap>
-      <S.Title>{props.data?.fetchBoards.title}</S.Title>
+      <S.Title>{props.data?.fetchBoards?.title}</S.Title>
 
       <S.WriterWrapper>
         {/* <S.Writer>{props.data?.fetchBoards.writer}</S.Writer> */}
-        <S.Date>{props.data?.fetchBoards.contents}</S.Date>
+        <S.Date>{props.data?.fetchBoards?.contents}</S.Date>
         {/* <S.Date>{props.data?.fetchBoards.createAt}</S.Date> */}
         {/* <S.Date>{props.data?.fetchBoards.viewCount}</S.Date> */}
         {/* <S.Date>{props.data?.fetchBoards.likeCount}</S.Date> */}

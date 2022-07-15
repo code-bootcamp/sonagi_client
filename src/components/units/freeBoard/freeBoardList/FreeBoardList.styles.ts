@@ -59,6 +59,7 @@ export const WrapperBoard = styled.div`
   border: 1px solid #bdbdbd;
   border-radius: 8px;
   margin: 20px 0px 20px 0px;
+  cursor: pointer;
 `;
 
 export const Title = styled.div`

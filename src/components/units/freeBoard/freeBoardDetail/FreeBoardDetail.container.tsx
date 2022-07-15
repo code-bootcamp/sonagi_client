@@ -5,12 +5,14 @@ import FreeBoardDetailPresenter from "./FreeBoardDetail.presenter";
 import { FETCH_BOARDS } from "./FreeBoardDetail.queries";
 
 export default function FreeBoardDetailContainer() {
-  const { data } = useQuery(FETCH_BOARDS);
   const router = useRouter();
+  const { data } = useQuery(FETCH_BOARDS, {
+    variables: {},
+  });
   const onClickMoveToBoardList = () => {
     router.push("/freeBoard");
   };
-  console.log("데이터", data);
+  console.log("상품디테일데이터", data);
   return (
     <FreeBoardDetailPresenter
       data={data}

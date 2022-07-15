@@ -19,7 +19,11 @@ export default function FreeBoardListPresenter(props: any) {
         </S.WrapInfo>
       </S.WrapperBoard> */}
       {props.data?.fetchBoardsAll.map((el: any) => (
-        <S.WrapperBoard key={el.id}>
+        <S.WrapperBoard
+          key={el.id}
+          onClick={props.onClickMoveToFreeBoardDetail(el)}
+          id={el.id}
+        >
           <S.Flex>
             <S.Title>{el.title}</S.Title>
             <S.New>NEW</S.New>
