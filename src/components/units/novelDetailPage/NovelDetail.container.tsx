@@ -97,7 +97,7 @@ export default function NovelDetailContainer() {
         },
       });
       console.log(result);
-      alert("선호작가!!");
+      alert("선호작 등록!!");
     } catch (error) {
       alert(error.message);
     }

@@ -1,12 +1,18 @@
 import NovelReadPresenter from "./NovelRead.presenter";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { useQuery } from "@apollo/client";
-import { FETCH_NOVEL_DETAIL, FETCH_ONE_NOVEL_INDEX } from "./NovelRead.queries";
+import { useMutation, useQuery } from "@apollo/client";
+import {
+  CREATE_BOOK_MARK,
+  FETCH_NOVEL_DETAIL,
+  FETCH_ONE_NOVEL_INDEX,
+} from "./NovelRead.queries";
 
 export default function NovelReadContainer() {
   const router = useRouter();
   const [setDisplay, setIsDisplay] = useState(false);
+  // 북마크
+  const [createBookmark] = useMutation(CREATE_BOOK_MARK);
   const { data: readData } = useQuery(FETCH_ONE_NOVEL_INDEX, {
     variables: { novelIndexID: router.query.volume_id },
   });
@@ -60,6 +66,20 @@ export default function NovelReadContainer() {
     router.push(`/novel/${router.query._id}/${indexPage[currentPage]}`);
   };
 
+  // 북마크
+  const onClickBookMark = async () => {
+    try {
+      await createBookmark({
+        variables: {
+          novelIndexID: router.query.volume_id,
+          page: 1,
+        },
+      });
+      alert("북마크 성공!");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
   return (
     <NovelReadPresenter
       onClickMoveToMain={onClickMoveToMain}
@@ -70,6 +90,8 @@ export default function NovelReadContainer() {
       onClickMoveToList={onClickMoveToList}
       onClickMoveToPrevPage={onClickMoveToPrevPage}
       onClickMoveToNextPage={onClickMoveToNextPage}
+      // 북마크
+      onClickBookMark={onClickBookMark}
     />
   );
 }

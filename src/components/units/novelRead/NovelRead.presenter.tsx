@@ -18,7 +18,10 @@ export default function NovelReadPresenter(props) {
         </S.TitleWrapper>
         <S.RightWrapper>
           <S.SettingImg src="/novelRead/heart.png" />
-          <S.SettingImg src="/novelRead/bookmark.png" />
+          <S.SettingImg
+            src="/novelRead/bookmark.png"
+            onClick={props.onClickBookMark}
+          />
           <S.SettingImg src="/novelRead/setting.png" />
         </S.RightWrapper>
       </S.HeadWrapper>

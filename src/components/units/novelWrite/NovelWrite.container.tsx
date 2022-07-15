@@ -75,7 +75,7 @@ export default function NovelWriteContainer(props) {
   useEffect(() => {
     const files = props.editData?.fetchNovelDetail.files;
     if (files) {
-      const urls = files.map((v) => v.url);
+      const urls = files.map((el) => el.url);
 
       if (files[0]) {
         setFileUrls([...urls]);
