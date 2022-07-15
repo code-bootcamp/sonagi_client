@@ -141,3 +141,24 @@ export const Button = styled.button`
     font-size: 0.713rem;
   }
 `;
+
+export const DeleteUser = styled.div`
+  width: 56px;
+  height: 22px;
+  background-color: white;
+  color: #2277d8;
+  font-size: 0.625rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  cursor: pointer;
+`;
+
+export const BottomWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-right: 20px;
+`;

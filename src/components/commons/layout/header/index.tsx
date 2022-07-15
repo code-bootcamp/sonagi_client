@@ -47,7 +47,7 @@ export default function LayoutHeader() {
       <S.TopBox>
         {accessToken ? (
           <>
-            <S.LoginUser>{data?.fetchLoginUser.nickName}</S.LoginUser>
+            <S.LoginUser>{data?.fetchLoginUser?.nickName}</S.LoginUser>
             <S.LoginUser2>님 환영합니다!</S.LoginUser2>
             <S.SignUpLoginButton onClick={onClickLogout}>
               로그아웃

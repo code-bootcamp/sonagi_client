@@ -1,8 +1,8 @@
 import { getDate } from "../../../../commons/libraries/utils";
 import PaymentPage from "../../../commons/modal/cancelPayments";
-import DonatePointsPresenter from "./donatePoints.presenter";
-import PaidPointsPresenter from "./paidPoints.presenter";
+import PaidPointsPresenter from "./points/paidPoints.presenter";
 import * as S from "./paymentHistory.styles";
+import DonatePointsPresenter from "./points/donatePoints.presenter";
 export default function PaymentHistoryPresenter(props) {
   return (
     <S.Wrapper>
