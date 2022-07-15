@@ -64,7 +64,7 @@ export const LogoImg = styled.img`
 export const WrapSubTitle = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
 `;
 export const SubTitle = styled.div`
   margin-bottom: 2px;
@@ -84,13 +84,13 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1vh 0;
+  padding: 1% 0;
 `;
 
 export const InputBox = styled.input`
   width: 100%;
   height: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border: none;
   border-bottom: 1px solid #cccccc;
   /* color: #cccccc; */
@@ -103,13 +103,12 @@ export const InputBox = styled.input`
 `;
 
 export const Error = styled.div`
-  color: black;
   font-size: 10px;
-  padding-top: 2px;
+  width: 100%;
 `;
 
 export const InputButton = styled.div`
-  width: 100px;
+  width: 120px;
   height: 34px;
   margin: 6px 0px 0px 10px;
   padding-top: 5px;
@@ -125,9 +124,9 @@ export const InputButton = styled.div`
 `;
 
 export const InputText = styled.div`
-  width: 80px;
+  width: 110px;
   height: 34px;
-  margin: 4px 0px 0px 14px;
+  margin: 4px 0px 0px 5px;
   padding-top: 5px;
   font-size: 12px;
   line-height: 22px;
@@ -136,11 +135,24 @@ export const InputText = styled.div`
   color: #2277d8;
   text-align: center;
 `;
+
+export const InputCheckText = styled.div`
+  width: 110px;
+  height: 34px;
+  margin: 4px 0px 0px 5px;
+  padding-top: 5px;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.232836px;
+  color: #484848;
+  text-align: center;
+`;
 export const WrapCheck = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
+  padding-top: 10px;
 `;
 export const CheckWrapper = styled.div`
   width: 100%;
@@ -152,7 +164,7 @@ export const CheckWrapper = styled.div`
 `;
 
 export const CheckImg = styled.img`
-  margin: 15px 3px 0px 0px;
+  margin: 15px 5px 0px 0px;
   width: 8px;
   height: 8px;
 `;
@@ -193,6 +205,7 @@ export const SignUpButton = styled.button`
 `;
 
 export const Corp = styled.div`
+  margin-bottom: 2px;
   font-weight: 400;
   font-size: 10px;
   line-height: 15px;

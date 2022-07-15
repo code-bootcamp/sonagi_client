@@ -36,6 +36,7 @@ export default function SignUpContainer() {
   const [createUser] = useMutation(CREATE_USER);
   const [phone, setPhone] = useState("");
   const [token, setToken] = useState("");
+  const [phoneCheck, setPhoneCheck] = useState(false);
 
   const [SendPhone] = useMutation(SEND_PHONE);
   const [AuthPhoneOK] = useMutation(AUTH_PHONE_OK);
@@ -59,6 +60,7 @@ export default function SignUpContainer() {
   };
 
   const onClickSendPhone = () => {
+    setPhoneCheck(false);
     try {
       SendPhone({
         variables: {
@@ -82,6 +84,7 @@ export default function SignUpContainer() {
         },
       });
       console.log(result);
+      setPhoneCheck(true);
     } catch (error) {
       console.log(error);
     }
@@ -124,6 +127,7 @@ export default function SignUpContainer() {
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}
+      phoneCheck={phoneCheck}
     />
   );
 }
