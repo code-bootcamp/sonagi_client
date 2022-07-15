@@ -22,11 +22,15 @@ export default function NovelReadContainer() {
     setIsDisplay((prev) => !prev);
   };
 
-  // window.addEventListener("copy", (e) => {
-  //   alert("보안 정책에 의해 복사를 허용하지 않습니다.");
-  //   e.preventDefault();
-  //   e.clipboardData.clearData("Text");
-  // });
+  // useEffect(
+  //   () =>
+  //     window.addEventListener("copy", (e) => {
+  //       alert("보안 정책에 의해 복사를 허용하지 않습니다.");
+  //       e.preventDefault();
+  //       // window.clipboardData.clearData("Text");
+  //     }),
+  //   [window.addEventListener]
+  // );
 
   // 이전화 다음화
   const indexPage = novelData?.fetchNovelDetail.novelIndexs

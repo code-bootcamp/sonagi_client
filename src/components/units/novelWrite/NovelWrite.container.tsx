@@ -1,10 +1,14 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import NovelWritePresenter from "./NovelWrite.presenter";
 import * as yup from "yup";
 import { useMutation, useQuery } from "@apollo/client";
-import { CREATE_NOVEL, FETCH_NOVEL_CATEGORYS_ALL } from "./NovelWrite.queries";
+import {
+  CREATE_NOVEL,
+  FETCH_NOVEL_CATEGORYS_ALL,
+  UPDATE_NOVEL,
+} from "./NovelWrite.queries";
 import { Editor } from "@toast-ui/react-editor";
 import { useRouter } from "next/router";
 
@@ -15,7 +19,9 @@ const schema = yup.object({
   fileURLs: yup.array().required("표지 이미지를 등록해주세요!"),
 });
 
-export default function NovelWriteContainer() {
+export default function NovelWriteContainer(props) {
+  console.log(props.editData);
+
   const router = useRouter();
   const [isClickPre, setIsClickPre] = useState(false);
   const [isClickDay, setIsClickDay] = useState(true);
@@ -24,6 +30,7 @@ export default function NovelWriteContainer() {
   const [isSelect, SetIsSelect] = useState(false);
 
   const [createNovel] = useMutation(CREATE_NOVEL);
+  const [updateNovel] = useMutation(UPDATE_NOVEL);
   const { data: categoryData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
 
   const { register, handleSubmit, formState, setValue, trigger } = useForm({
@@ -41,6 +48,15 @@ export default function NovelWriteContainer() {
     trigger("description");
   };
 
+  // toastUI edit
+  useEffect(() => {
+    const htmlString = props.editData?.fetchNovelDetail.description;
+    editorRef.current?.getInstance().setHTML(htmlString);
+
+    setValue("description", htmlString);
+    trigger("description");
+  }, [props?.editData]);
+
   // image
 
   const [fileUrls, setFileUrls] = useState([""]);
@@ -54,6 +70,18 @@ export default function NovelWriteContainer() {
     setValue("fileURLs", newFileUrls);
     trigger("fileURLs");
   };
+
+  // image Edit
+  useEffect(() => {
+    if (props.editData?.fetchNovelDetail.files[0]) {
+      setFileUrls([
+        ...props.editData?.fetchNovelDetail.files.map((el) => el.url),
+      ]);
+    }
+
+    setValue("fileURLs", fileUrls);
+    trigger("fileURLs");
+  }, [props.editData]);
 
   // 장르 선택
 
@@ -71,9 +99,23 @@ export default function NovelWriteContainer() {
     trigger("categoryID");
   };
 
+  // useEffect(() => {
+  //   if(props.editData?.fetchNovelDetail.novelCategory){
+  //     setGenre([...props.editData?.fetchNovelDetail.novelCategory.id])
+  //   }
+  // })
+
   // 태그
 
   const [tags, setTags] = useState<string[]>(["태그"]);
+
+  useEffect(() => {
+    if (props.editData?.fetchNovelDetail.novelTags.length) {
+      setTags([
+        ...props.editData?.fetchNovelDetail.novelTags.map((el) => el.name),
+      ]);
+    }
+  }, [props.editData]);
 
   // 등록
   const onClickSubmit = async (data: any) => {
@@ -93,6 +135,29 @@ export default function NovelWriteContainer() {
       console.log(result);
       alert("성공");
       router.push(`/novel/${result.data?.createNovel.id}`);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  // 수정
+  const onClickUpdata = async (data) => {
+    try {
+      const result = await updateNovel({
+        variables: {
+          UpdateNovelInput: {
+            title: data.title,
+            description: data.description,
+            tags,
+            categoryID: data.categoryID,
+            fileURLs: data.fileURLs,
+            id: router.query._id,
+          },
+        },
+      });
+      console.log(result);
+      alert("성공");
+      router.push(`/novel/${result.data?.updateNovel.id}`);
     } catch (error) {
       alert(error.message);
     }
@@ -130,6 +195,10 @@ export default function NovelWriteContainer() {
       // tags
       tags={tags}
       setTags={setTags}
+      // edit
+      onClickUpdata={onClickUpdata}
+      isEdit={props.isEdit}
+      editData={props.editData}
     />
   );
 }

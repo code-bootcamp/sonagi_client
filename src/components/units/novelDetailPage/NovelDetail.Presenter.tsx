@@ -74,10 +74,12 @@ export default function NovelDetailPresenter(props) {
                   <S.Tags key={el}># {el.name}</S.Tags>
                 ))}
             </S.TagsWrapper>
+            <div onClick={props.onClickDonate}>후원하기</div>
+            <input type="text" onChange={props.onChangeDonate} />
           </S.ColumnWrapper>
         </S.FlexWrapper>
         <S.ButtonWrapper>
-          <S.HeartWrapper>
+          <S.HeartWrapper onClick={props.onClickLike}>
             <S.HeartImg src="/novelDetail/HeartImg.png" />
             <S.HeartCount>
               {props.detailData?.fetchNovelDetail.likeCount}
@@ -95,6 +97,7 @@ export default function NovelDetailPresenter(props) {
             <img
               src="/comment/edit.png"
               style={{ width: "30px", height: "30px" }}
+              onClick={props.onClickUpdate}
             />
           </S.LookButtonWrapper>
         </S.ButtonWrapper>
@@ -140,6 +143,12 @@ export default function NovelDetailPresenter(props) {
                 </S.WrapDate>
               </S.TableSonWrapper>
             </S.WrapFirst>
+            <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
+              삭제
+            </S.LookBtn>
+            <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+              구매
+            </S.LookBtn>
             <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
               보기
             </S.LookBtn>

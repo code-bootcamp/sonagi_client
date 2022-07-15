@@ -14,11 +14,19 @@ const ToastUi = dynamic(() => import("../../commons/toastUI"), {
 
 export default function NovelWritePresenter(props: any) {
   return (
-    <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
+    <form
+      onSubmit={
+        props.isEdit
+          ? props.handleSubmit(props.onClickUpdate)
+          : props.handleSubmit(props.onClickSubmit)
+      }
+    >
       <S.Wrapper>
         <S.WrapHeader>
           <S.WrapTitleWarning>
-            <S.MainTitle>새 작품 쓰기</S.MainTitle>
+            <S.MainTitle>
+              {props.isEdit ? "작품 수정" : "새 작품 쓰기"}{" "}
+            </S.MainTitle>
             <S.WarningText>
               저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는 게시물은
               이용약관 및 관련 법률에 의하여 제재를 받을 수 있습니다.
@@ -35,6 +43,7 @@ export default function NovelWritePresenter(props: any) {
               type="text"
               placeholder="작품 제목"
               {...props.register("title")}
+              defaultValue={props.editData?.fetchNovelDetail.title}
             />
           </S.WrapTitle>
         </S.WrapperLavel>
@@ -153,7 +162,7 @@ export default function NovelWritePresenter(props: any) {
           <ToastUi
             onChangeDescription={props.onChangeDescription}
             editorRef={props.editorRef}
-            // initialValue={props.productData?.fetchUseditem.contents}
+            initialValue={props.editData?.fetchNovelDetail.description}
           />
           <S.Error>{props.formState.errors.description?.message}</S.Error>
         </S.WrapIntroduce>
@@ -166,7 +175,7 @@ export default function NovelWritePresenter(props: any) {
 
         <S.WrapSubmitButton>
           <Button02 title="취소" />
-          <Button01 title="저장" />
+          <Button01 title={props.isEdit ? "수정" : "등록"} />
         </S.WrapSubmitButton>
       </S.Wrapper>
     </form>

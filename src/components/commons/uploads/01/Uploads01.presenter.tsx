@@ -1,8 +1,7 @@
-import { memo } from "react";
 import * as S from "./Uploads01.styles";
 import { IUploads01UIProps } from "./Uploads01.types";
 
-function Uploads01UI(props: IUploads01UIProps) {
+export default function Uploads01UI(props: IUploads01UIProps) {
   return (
     <S.UploadWrapper>
       {props.fileUrls ? (
@@ -27,5 +26,3 @@ function Uploads01UI(props: IUploads01UIProps) {
     </S.UploadWrapper>
   );
 }
-
-export default memo(Uploads01UI);

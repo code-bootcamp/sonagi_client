@@ -39,9 +39,9 @@ export default function Uploads01(props: IUploads01Props) {
           files: [file],
         },
       });
-      console.log(result);
+      // console.log(result);
       // setFileUrl(result.data.uploadFile[0].url);
-      console.log(result.data.uploadFile[0].url);
+      // console.log(result.data.uploadFile[0].url);
       props.onChangeFileUrls(result.data.uploadFile[0].url, props.index);
     } catch (error) {
       alert(error.message);
