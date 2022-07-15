@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../../commons/styles/media";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 50px 0px;
+  padding: 2%;
 `;
 
 export const Wrap = styled.div`
@@ -30,6 +30,7 @@ export const Wrap = styled.div`
 
 export const MainTitle = styled.div`
   font-size: 1.125rem;
+  margin: 30px 0 10px 0;
 `;
 
 export const SubTitle = styled.div`
@@ -45,7 +46,7 @@ export const BoxWrapper = styled.div`
 `;
 
 export const WrapperModify = styled.div`
-  padding: 2% 15% 5%;
+  padding: 5% 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;

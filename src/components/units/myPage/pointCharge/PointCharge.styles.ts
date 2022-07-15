@@ -111,9 +111,9 @@ export const InnerTable = styled.div`
     border: 1px solid #2277d8;
   }
   background-color: ${(props: any) =>
-    props.el === props.value ? "#DCF0FF" : "default"};
+    props.el.price === props.value ? "#DCF0FF" : "default"};
   border: ${(props: any) =>
-    props.el === props.value ? "1px solid #2277d8" : "default"};
+    props.el.price === props.value ? "1px solid #2277d8" : "default"};
   display: flex;
   flex-direction: row;
   justify-content: space-between;

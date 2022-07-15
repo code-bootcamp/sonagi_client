@@ -1,27 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
-export const Background = styled.div`
-  background-image: linear-gradient(
-      rgba(254, 254, 254, 0.45),
-      rgba(254, 254, 254, 0.45)
-    ),
-    url(https://assets.website-files.com/626e03550d499953fac7baa7/6278b37c71aa3c9d1c56b3a9_Oval.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  /* width: 100%; */
-  /* /* width: 800px; */
-  width: 100%;
-  /* background-position: right 40% center; */
-  /* background-position: right 300%; */
-  background-color: rgba(255, 255, 255, 0.2);
-  background-blend-mode: lighten;
-  @media ${breakPoints.mobile} {
-    background-size: cover;
-  }
-`;
-
 export const Wrapper = styled.div`
   width: 100%;
   padding: 2%;
@@ -29,7 +8,8 @@ export const Wrapper = styled.div`
 
 export const MainTitle = styled.div`
   font-size: 1.125rem;
-  margin: 30px 30px 300px 0px;
+  margin: 30px 30px 50px 0px;
+
   @media ${breakPoints.mobile} {
     font-size: 1rem;
     margin-left: 30px;
@@ -44,7 +24,7 @@ export const WrapperPassword = styled.div`
 `;
 
 export const WrapTitle = styled.div`
-  width: 70%;
+  width: 60%;
   height: 300px;
   padding: 10px;
   display: flex;
@@ -57,8 +37,11 @@ export const WrapTitle = styled.div`
   border-radius: 10px;
   margin-bottom: 20px;
 
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
   @media ${breakPoints.mobile} {
-    margin-bottom: 120px;
+    width: 90%;
   }
 `;
 
@@ -68,7 +51,7 @@ export const Label = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.438rem;
+  font-size: 1.2rem;
   /* font-weight: 600; */
   @media ${breakPoints.mobile} {
     font-size: 1rem;
@@ -97,7 +80,7 @@ export const WrapInput = styled.div`
   justify-content: center;
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   margin-left: 20px;
   width: 100px;
   height: 50px;
@@ -108,6 +91,8 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: none;
+  font-size: 1rem;
 
   @media ${breakPoints.mobile} {
     width: 70px;
@@ -122,8 +107,4 @@ export const LabelWrapper = styled.div`
   margin-bottom: 30px;
 `;
 
-export const Div = styled.div`
-  width: 200px;
-  height: 50px;
-  margin-right: 200px;
-`;
+export const Div = styled.div``;
