@@ -80,7 +80,7 @@ export const WrapInput = styled.div`
   justify-content: center;
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   margin-left: 20px;
   width: 100px;
   height: 50px;
@@ -91,6 +91,8 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: none;
+  font-size: 1rem;
 
   @media ${breakPoints.mobile} {
     width: 70px;

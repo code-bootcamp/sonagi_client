@@ -1,6 +1,6 @@
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import ProfileModifyPresenter from "./PasswordChange.presenter";
-import { FETCH_LOGIN_USER, UPDATE_USER_PWD } from "./PasswordChange.queries";
+import { UPDATE_USER_PWD } from "./PasswordChange.queries";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -20,7 +20,6 @@ const schema = yup.object({
 export default function PasswordChangeContainer() {
   const [updateUserPwd] = useMutation(UPDATE_USER_PWD);
 
-  const { data } = useQuery(FETCH_LOGIN_USER);
   const { register, handleSubmit, formState, reset } = useForm({
     resolver: yupResolver(schema),
 
@@ -47,7 +46,6 @@ export default function PasswordChangeContainer() {
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}
-      data={data}
     />
   );
 }
