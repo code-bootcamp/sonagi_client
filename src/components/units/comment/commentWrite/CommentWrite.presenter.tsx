@@ -12,11 +12,12 @@ export default function CommentWritePresenter(props) {
           type="textArea"
           placeholder="댓글을 남겨주세요"
           onChange={props.onChangeContents}
+          defaultValue={props.el?.contents}
         />
         <S.Wraplength>
           <S.Length>30/100</S.Length>
           <S.CommentButton onClick={props.onClickRegisterComment}>
-            댓글 등록
+            {props.isEdit ? "댓글 수정" : "댓글 등록"}
           </S.CommentButton>
         </S.Wraplength>
       </S.WrapContents>

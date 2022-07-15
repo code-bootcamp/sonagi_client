@@ -5,7 +5,7 @@ import { FETCH_COMMENTS } from "../commentList/CommentList.queries";
 import CommentWritePresenter from "./CommentWrite.presenter";
 import { CREATE_COMMENT } from "./CommentWrite.queries";
 
-export default function CommentWriteContainer() {
+export default function CommentWriteContainer(props) {
   // 댓글등록
   const router = useRouter();
   const [contents, setContents] = useState("");
@@ -42,6 +42,8 @@ export default function CommentWriteContainer() {
     <CommentWritePresenter
       onClickRegisterComment={onClickRegisterComment}
       onChangeContents={onChangeContents}
+      isEdit={props.isEdit}
+      el={props.el}
     />
   );
 }

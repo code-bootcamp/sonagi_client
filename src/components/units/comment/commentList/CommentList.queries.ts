@@ -20,6 +20,35 @@ export const FETCH_COMMENTS = gql`
     fetchComments {
       id
       contents
+      createAt
+      user {
+        nickName
+      }
+    }
+  }
+`;
+
+export const FETCH_COMMENT = gql`
+  query fetchComment($commentID: String!) {
+    fetchComment(commentID: $commentID) {
+      id
+      contents
+      createAt
+      user {
+        nickName
+      }
+    }
+  }
+`;
+
+export const FETCH_COMMENTS_ALL = gql`
+  query fetchCommentsAll {
+    fetchCommentsAll {
+      id
+      contents
+      user {
+        nickName
+      }
     }
   }
 `;
