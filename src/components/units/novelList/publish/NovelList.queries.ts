@@ -4,6 +4,7 @@ export const FETCH_NOVELS_PAGE = gql`
   query fetchNovelsPage($page: Int!) {
     fetchNovelsPage(page: $page) {
       novels {
+        id
         title
         user {
           nickName
