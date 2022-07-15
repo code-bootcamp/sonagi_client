@@ -45,40 +45,44 @@ export default function LayoutHeader() {
   return (
     <S.Wrapper>
       <S.TopBox>
-        {accessToken ? (
-          <>
-            <S.LoginUser>{data?.fetchLoginUser.nickName}</S.LoginUser>
-            <S.LoginUser2>님 환영합니다!</S.LoginUser2>
-            <S.SignUpLoginButton onClick={onClickLogout}>
-              로그아웃
-            </S.SignUpLoginButton>
-          </>
-        ) : (
-          <>
-            <S.SignUpLoginButton onClick={onClickMoveToPage("/signup")}>
-              회원가입
-            </S.SignUpLoginButton>
-            <S.SignUpLoginButton onClick={onClickMoveToPage("/login")}>
-              로그인
-            </S.SignUpLoginButton>
-          </>
-        )}
+        <S.TopWrapper>
+          {accessToken ? (
+            <>
+              <S.LoginUser>{data?.fetchLoginUser.nickName}</S.LoginUser>
+              <S.LoginUser2>님 환영합니다!</S.LoginUser2>
+              <S.SignUpLoginButton onClick={onClickLogout}>
+                로그아웃
+              </S.SignUpLoginButton>
+            </>
+          ) : (
+            <>
+              <S.SignUpLoginButton onClick={onClickMoveToPage("/signup")}>
+                회원가입
+              </S.SignUpLoginButton>
+              <S.SignUpLoginButton onClick={onClickMoveToPage("/login")}>
+                로그인
+              </S.SignUpLoginButton>
+            </>
+          )}
+        </S.TopWrapper>
       </S.TopBox>
       <S.BottomBox>
-        <S.LogoImg onClick={onClickMoveToPage("/")} src="/header/logo.svg" />
-        <S.WrapSearch>
-          <S.SearchBox>
-            <S.SearchButton
-              onClick={onClickMoveToPage("/search")}
-              src="/header/search.png"
+        <S.BottomWrapper>
+          <S.LogoImg onClick={onClickMoveToPage("/")} src="/header/logo.svg" />
+          <S.WrapSearch>
+            <S.SearchBox>
+              <S.SearchButton
+                onClick={onClickMoveToPage("/search")}
+                src="/header/search.png"
+              />
+              <S.SearchInput />
+            </S.SearchBox>
+            <S.MyPageButton
+              onClick={onClickMoveToPage("/myPage")}
+              src="/header/mypage.png"
             />
-            <S.SearchInput />
-          </S.SearchBox>
-          <S.MyPageButton
-            onClick={onClickMoveToPage("/myPage")}
-            src="/header/mypage.png"
-          />
-        </S.WrapSearch>
+          </S.WrapSearch>
+        </S.BottomWrapper>
       </S.BottomBox>
     </S.Wrapper>
   );
