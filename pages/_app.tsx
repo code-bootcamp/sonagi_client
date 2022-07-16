@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import "antd/dist/antd.css";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
 import Layout from "../src/components/commons/layout";
