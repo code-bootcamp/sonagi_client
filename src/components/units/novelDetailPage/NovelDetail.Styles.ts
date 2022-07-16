@@ -12,7 +12,9 @@ export const SelectAll = styled.div`
 `;
 
 export const Arrow = styled.div`
+  font-size: 1.2rem;
   margin: 0px 10px 0px 10px;
+  font-weight: 600;
 `;
 
 export const DIV = styled.div`
@@ -64,7 +66,7 @@ export const TopFont = styled.div`
 
 export const NovelTitle = styled.div`
   font-size: 2.25rem;
-  margin: 30px 0px 10px 0px;
+  margin: 5px 0px 10px 0px;
   color: #484848;
 `;
 
@@ -86,6 +88,12 @@ export const StarWrapper = styled.div`
   margin: 15px 0px 10px 0px;
 `;
 
+export const WrapWriter = styled.div`
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+`;
+
 export const WriterImg = styled.img`
   width: 33px;
   height: 33px;
@@ -95,22 +103,21 @@ export const NovelRemarks = styled.div`
   font-size: 0.938rem;
   color: #757575;
   margin-top: 10px;
-  width: 706px;
 `;
 
 export const TagsWrapper = styled.div`
   display: flex;
-  border-bottom: 1px solid black;
-  padding: 8px 0;
+  padding: 15px 0 100px 0;
 `;
 
 export const Tags = styled.div`
-  border-radius: 7px;
+  border-radius: 4px;
   border: 1px solid gray;
   padding: 5px;
-  background-color: #00bfff;
+  background-color: #f3f4f5;
   margin-right: 15px;
-  color: white;
+  color: #767676;
+  font-weight: 600;
 `;
 
 export const WriterFont = styled.div`
@@ -165,10 +172,10 @@ export const HeartCount = styled.div`
 
 export const ProfileWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   /* margin: 10px 250px 0px 0px; */
-  margin-right: 600px;
 `;
 
 export const Line = styled.div`
@@ -251,6 +258,10 @@ export const HeartWrapper = styled.div`
   width: 126px;
   height: 40px;
   margin: 0px 50px 0px 75px;
+  border-radius: 8px;
+  :hover {
+    background-color: #e5e8eb;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -395,4 +406,12 @@ export const LookBtn = styled.div`
   color: #484848;
   border: 1px solid #bdbdbd;
   cursor: pointer;
+`;
+
+export const FooterLabel = styled.div`
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  font-weight: 500;
+  color: #58667a;
+  border-bottom: 2px solid #d9d9d9;
 `;

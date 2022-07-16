@@ -22,24 +22,31 @@ export default function NovelDetailPresenter(props) {
                 {props.detailData?.fetchNovelDetail.novelCategory.name}
               </S.TopFont>
             </S.Genre>
-            <div
-              style={{ color: "white", backgroundColor: "blue" }}
-              onClick={props.onClickMoveToVolumeWrite}
-            >
-              회차 쓰러가기
-            </div>
+
             <S.NovelTitle>
               {props.detailData?.fetchNovelDetail.title}
             </S.NovelTitle>
             <S.ProfileWrapper>
-              <S.WriterImg src="/novelDetail/profile.jpg" />
-              <S.WriterFont>
-                {props.detailData?.fetchNovelDetail.user.nickName}
-              </S.WriterFont>
+              <S.WrapWriter>
+                <S.WriterImg src="/novelDetail/profile.jpg" />
+                <S.WriterFont>
+                  {props.detailData?.fetchNovelDetail.user.nickName}
+                </S.WriterFont>
+              </S.WrapWriter>
               <S.Flexs>
-                <S.Divs>총 00화</S.Divs>
+                <S.Divs>
+                  총{" "}
+                  {String(
+                    props.detailData?.fetchNovelDetail.novelIndexs.length
+                  ).padStart(2, "0")}
+                  화
+                </S.Divs>
                 <S.Divs>|</S.Divs>
-                <S.Divs>연재중</S.Divs>
+                <S.Divs>
+                  {props.detailData?.fetchNovelDetail.novelIndexs[0].isFinish
+                    ? "완결"
+                    : "연재중"}
+                </S.Divs>
               </S.Flexs>
             </S.ProfileWrapper>
             <S.StarWrapper>
@@ -54,29 +61,9 @@ export default function NovelDetailPresenter(props) {
               </S.Count>
             </S.StarWrapper>
 
-            <S.NovelRemarks>
-              {typeof window !== "undefined" ? (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(
-                      props.detailData?.fetchNovelDetail.description
-                    ),
-                  }}
-                ></div>
-              ) : (
-                ""
-              )}
-            </S.NovelRemarks>
-
             <S.Line />
-            <S.TagsWrapper>
-              {props.detailData?.fetchNovelDetail.novelTags
-                ?.filter((el) => el)
-                .map((el) => (
-                  <S.Tags key={el}># {el.name}</S.Tags>
-                ))}
-            </S.TagsWrapper>
-            <div onClick={props.onClickDonate}>후원하기</div>
+
+            <div>후원할 금액</div>
             <input type="text" onChange={props.onChangeDonate} />
           </S.ColumnWrapper>
         </S.FlexWrapper>
@@ -89,18 +76,8 @@ export default function NovelDetailPresenter(props) {
           </S.HeartWrapper>
           <S.LookButtonWrapper>
             <Button02 title="첫화보기" />
-            <Button01 title="이어보기" />
-            <Button01 title="찜하기" />
-            <img
-              src="/comment/delete.png"
-              style={{ width: "30px", height: "30px" }}
-              onClick={props.onClickDelete}
-            />
-            <img
-              src="/comment/edit.png"
-              style={{ width: "30px", height: "30px" }}
-              onClick={props.onClickEdit}
-            />
+            {/* <Button01 title="이어보기" /> */}
+            <Button01 onClick={props.onClickDonate} title="후원하기" />
           </S.LookButtonWrapper>
         </S.ButtonWrapper>
         <div>
@@ -166,6 +143,47 @@ export default function NovelDetailPresenter(props) {
           </S.TableLineWrapper>
         ))}
         <S.Margin />
+        <S.FooterLabel>소설 키워드</S.FooterLabel>
+        <S.TagsWrapper>
+          {props.detailData?.fetchNovelDetail.novelTags
+            ?.filter((el) => el)
+            .map((el) => (
+              <S.Tags key={el}># {el.name}</S.Tags>
+            ))}
+        </S.TagsWrapper>
+        <S.FooterLabel>작품 소개</S.FooterLabel>
+
+        <S.NovelRemarks>
+          {typeof window !== "undefined" ? (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(
+                  props.detailData?.fetchNovelDetail.description
+                ),
+              }}
+            ></div>
+          ) : (
+            ""
+          )}
+        </S.NovelRemarks>
+
+        <div
+          style={{ color: "white", backgroundColor: "blue" }}
+          onClick={props.onClickMoveToVolumeWrite}
+        >
+          회차 쓰러가기
+        </div>
+
+        <img
+          src="/comment/delete.png"
+          style={{ width: "30px", height: "30px" }}
+          onClick={props.onClickDelete}
+        />
+        <img
+          src="/comment/edit.png"
+          style={{ width: "30px", height: "30px" }}
+          onClick={props.onClickEdit}
+        />
       </div>
     </div>
   );

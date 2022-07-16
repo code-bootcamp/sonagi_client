@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const FETCH_ONE_NOVEL_INDEX = gql`
-  query fetchOneNovelIndex($novelIndexID: String!) {
-    fetchOneNovelIndex(novelIndexID: $novelIndexID) {
+export const FETCH_EPISODE_DETAIL = gql`
+  query fetchEpisodeDetail($novelIndexID: String!) {
+    fetchEpisodeDetail(novelIndexID: $novelIndexID) {
       id
       title
       contents
