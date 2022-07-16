@@ -89,7 +89,11 @@ export default function NovelDetailPresenter(props) {
         </div>
         <S.TableLineWrapper>
           <S.WrapFirst>
-            <S.Square type="checkbox" />
+            <S.Square
+              // onChange={props.onClickCheckAll}
+              // checked={props.checkList.length === props.dataList?.length}
+              type="checkbox"
+            />
             <S.SelectAll>전체선택</S.SelectAll>
             <S.SortButton>
               <S.ArrowImg src="/novelDetail/Arrow 1.png" />
@@ -109,7 +113,12 @@ export default function NovelDetailPresenter(props) {
         {props.detailData?.fetchNovelDetail.novelIndexs.map((el) => (
           <S.TableLineWrapper key={el.id}>
             <S.WrapFirst>
-              <S.Square type="checkbox" />
+              <S.Square
+                // id={props.detailData?.fetchNovelDetail.novelIndexs.index}
+                type="checkbox"
+                // onChange={() => props.onCheckedItem(props.list)}
+                // checked={props.isChecked(props.list)}
+              />
               <S.TableSonWrapper>
                 <S.Title>
                   {el.index}화: {el.title}

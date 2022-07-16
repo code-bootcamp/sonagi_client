@@ -141,6 +141,33 @@ export default function NovelDetailContainer() {
     }
   };
 
+  // // 체크박스
+  // const [checkList, setCheckList] = useState([]);
+  // const dataList = detailData?.fetchNovelDetail.novelIndexs;
+
+  // const onClickCheckAll = () => {
+  //   if (checkList.length !== dataList.length) {
+  //     setCheckList(dataList);
+  //   } else {
+  //     setCheckList([]);
+  //   }
+  // };
+
+  // const onCheckedItem = (list) => {
+  //   // 모든 원소가 조건에 맞으면 true (checkLis에 값이 없음)
+  //   if (checkList.every((cur) => cur.id !== list.id)) {
+  //     setCheckList([...checkList, list]);
+  //   } else {
+  //     // 체크된것만 제외하고 배열에 담는다.
+  //     const result = checkList.filter((cur) => cur.id !== list.id);
+  //     setCheckList(result);
+  //   }
+  // };
+
+  // const isChecked = (list) => {
+  //   return checkList.some((cur) => cur.id === list.id);
+  // };
+
   return (
     <NovelDetailPresenter
       detailData={detailData}
@@ -155,6 +182,12 @@ export default function NovelDetailContainer() {
       onClickEdit={onClickEdit}
       onClickPrivate={onClickPrivate}
       switchPrivate={switchPrivate}
+      // 체크박스
+      // onClickCheckAll={onClickCheckAll}
+      // onCheckedItem={onCheckedItem}
+      // isChecked={isChecked}
+      // dataList={dataList}
+      // checkList={checkList}
     />
   );
 }
