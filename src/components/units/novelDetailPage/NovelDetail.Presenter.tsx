@@ -3,6 +3,7 @@ import Button02 from "../../commons/buttons/02";
 import * as S from "./NovelDetail.Styles";
 import DOMPurify from "dompurify";
 import { getDateDay } from "../../../commons/libraries/utils";
+import DetailCommentWriteContainer from "../novelDetailComment/commentWrite/CommentWrite.container";
 
 export default function NovelDetailPresenter(props) {
   return (
@@ -175,6 +176,10 @@ export default function NovelDetailPresenter(props) {
             ""
           )}
         </S.NovelRemarks>
+
+        <S.FooterLabel>리뷰</S.FooterLabel>
+        <DetailCommentWriteContainer />
+        {/* <DetailCommentListContainer /> */}
 
         <div
           style={{ color: "white", backgroundColor: "blue" }}

@@ -147,7 +147,8 @@ export const WrapperWriterSay = styled.div`
   padding: 25px 0;
 `;
 
-export const WriteSay = styled.input`
+export const WriteSay = styled.textarea`
+  padding: 20px;
   width: 100%;
   height: 200px;
   margin-top: 40px;
