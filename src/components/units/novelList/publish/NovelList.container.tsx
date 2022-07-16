@@ -16,15 +16,10 @@ export default function NovelPbListContainer() {
     console.log(event.target);
   };
 
-  // const onClickMoveToNovelDetail = () => {
-  //   router.push(`/novel/${router.query._id}`);
-  // };
-
   return (
     <NovelPbListPresenter
       data={data}
       onClickMoveToDetail={onClickMoveToDetail}
-      // onClickMoveToNovelDetail={onClickMoveToNovelDetail}
     />
   );
 }
