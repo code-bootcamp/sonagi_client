@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrap = styled.div`
-  width: 98%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@ export const Wrap = styled.div`
 
   @media (min-width: 991px) and (max-width: 1200px) {
     width: 98%;
-    margin: 30px;
+    margin: 1%;
   }
 
   @media (min-width: 768px) and (max-width: 991px) {
@@ -33,17 +33,8 @@ export const Title = styled.label`
   color: #4d4d4d;
   padding-bottom: 30px;
 
-  @media (min-width: 768px) and (max-width: 991px) {
-    width: 96%;
-    margin: 20px;
-  }
-
-  @media (min-width: 391px) and (max-width: 767px) {
-    width: 90%;
-  }
-
   @media (max-width: 390px) {
-    width: 90%;
+    font-size: 1.5rem;
   }
 `;
 
@@ -52,7 +43,6 @@ export const RowWrap = styled.div`
   flex-direction: row;
   align-items: center;
   margin: 20px 0px 0px;
-  /* padding-bottom: 20px; */
 `;
 
 export const Category = styled.span`
@@ -91,37 +81,29 @@ export const GridWrap = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   flex-wrap: row;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
   margin-top: 20px;
   cursor: pointer;
 
   @media (min-width: 991px) and (max-width: 1200px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-items: center;
-    justify-content: center;
   }
 
   @media (min-width: 768px) and (max-width: 991px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    justify-content: center;
   }
 
   @media (min-width: 391px) and (max-width: 767px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
   }
 
   @media (max-width: 390px) {
     display: grid;
     grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
   }
 `;
 
@@ -130,6 +112,7 @@ export const ItemWrap = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 0 10px;
 
   @media (min-width: 991px) and (max-width: 1200px) {
