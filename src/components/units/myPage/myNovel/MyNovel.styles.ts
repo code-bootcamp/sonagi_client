@@ -3,13 +3,6 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const MyNovel = styled.div`
   font-size: 1.125rem;
-
-  @media ${breakPoints.mobile} {
-    box-shadow: inset 0 -14px #bee3ff;
-    line-height: 24px;
-    width: 113px;
-    font-size: 1.3rem;
-  }
 `;
 
 export const Img = styled.img`
@@ -21,6 +14,7 @@ export const TopWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin: 3% 0;
 `;
 
@@ -34,26 +28,18 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 2%;
-
-  @media ${breakPoints.mobile} {
-    padding: 0 10px;
-  }
 `;
 
 export const Title = styled.div`
   font-size: 1.4rem;
   font-weight: 500;
-
-  @media ${breakPoints.mobile} {
-    font-size: 0.8rem;
-  }
 `;
 
 export const Genre = styled.div`
   font-size: 1.2rem;
 
   @media ${breakPoints.mobile} {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 `;
 
@@ -63,7 +49,7 @@ export const Time = styled.div`
   padding-left: 15px;
 
   @media ${breakPoints.mobile} {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 `;
 
@@ -86,15 +72,20 @@ export const InnerFlex = styled.div`
   justify-content: space-between;
   padding: 0 20px;
 
-  @media ${breakPoints.mobile} {
+  @media (max-width: 1000px) {
     flex-direction: column;
-    margin: 0 0 0 5px;
+    align-items: flex-start;
   }
 `;
 
 export const Column = styled.div`
+  padding-left: 10px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1000px) {
+    padding-bottom: 10px;
+  }
 `;
 
 export const Button1 = styled.div`
@@ -106,6 +97,27 @@ export const Button1 = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 80px;
+    height: 30px;
+    font-size: 0.7rem;
+    margin-right: 10px;
+  }
+`;
+
+export const WriteButton = styled.div`
+  width: 110px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #2277d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  border: 1px solid #2277d8;
   border-radius: 8px;
   cursor: pointer;
 
@@ -135,9 +147,6 @@ export const BoxWrapper = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-
-  @media ${breakPoints.mobile} {
-  }
 `;
 
 export const ImgWrapper = styled.div``;
