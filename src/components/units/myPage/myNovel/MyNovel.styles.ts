@@ -2,9 +2,8 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const MyNovel = styled.div`
-  margin-top: 65px;
-  font-size: 1.5rem;
-  color: #141414;
+  font-size: 1.125rem;
+
   @media ${breakPoints.mobile} {
     box-shadow: inset 0 -14px #bee3ff;
     line-height: 24px;
@@ -14,7 +13,15 @@ export const MyNovel = styled.div`
 `;
 
 export const Img = styled.img`
+  width: 250px;
   border-radius: 8px 0 0 8px;
+`;
+
+export const TopWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 3% 0;
 `;
 
 export const Bottom = styled.div`
@@ -22,17 +29,20 @@ export const Bottom = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
   width: 100%;
+  display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
+  align-items: center;
+  padding: 2%;
+
   @media ${breakPoints.mobile} {
     padding: 0 10px;
   }
 `;
 
 export const Title = styled.div`
-  font-size: 1.125rem;
+  font-size: 1.4rem;
+  font-weight: 500;
 
   @media ${breakPoints.mobile} {
     font-size: 0.8rem;
@@ -40,7 +50,7 @@ export const Title = styled.div`
 `;
 
 export const Genre = styled.div`
-  font-size: 1rem;
+  font-size: 1.2rem;
 
   @media ${breakPoints.mobile} {
     font-size: 0.7rem;
@@ -48,9 +58,9 @@ export const Genre = styled.div`
 `;
 
 export const Time = styled.div`
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #cccccc;
-  margin-left: 15px;
+  padding-left: 15px;
 
   @media ${breakPoints.mobile} {
     font-size: 0.7rem;
@@ -60,15 +70,12 @@ export const Time = styled.div`
 export const GenreFlex = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 15px;
+  padding-top: 15px;
 `;
 
 export const BoxFlex = styled.div`
   display: flex;
-  align-self: flex-end;
-  /* padding-top: 20px; */
   @media ${breakPoints.mobile} {
-    margin-right: 10px;
   }
 `;
 
@@ -77,7 +84,7 @@ export const InnerFlex = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 20px;
+  padding: 0 20px;
 
   @media ${breakPoints.mobile} {
     flex-direction: column;
@@ -88,42 +95,25 @@ export const InnerFlex = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
 `;
 
 export const Button1 = styled.div`
-  width: 117px;
+  width: 110px;
   height: 40px;
   background-color: #2277d8;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 20px;
+  margin: 0 10px;
   border-radius: 8px;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     width: 80px;
     height: 30px;
     font-size: 0.7rem;
     margin-right: 10px;
-  }
-`;
-
-export const Button2 = styled.div`
-  width: 91px;
-  height: 40px;
-  background-color: #2277d8;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-
-  @media ${breakPoints.mobile} {
-    width: 60px;
-    height: 30px;
-    font-size: 0.7rem;
   }
 `;
 
@@ -139,9 +129,10 @@ export const ImageWrapper = styled.div`
 
 export const BoxWrapper = styled.div`
   width: 100%;
-  margin-top: 40px;
   border: 1px solid #bdbdbd;
-  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
 
