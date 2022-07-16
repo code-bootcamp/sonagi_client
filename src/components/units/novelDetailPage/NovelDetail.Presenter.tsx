@@ -43,7 +43,7 @@ export default function NovelDetailPresenter(props) {
                 </S.Divs>
                 <S.Divs>|</S.Divs>
                 <S.Divs>
-                  {props.detailData?.fetchNovelDetail.novelIndexs.isFinish
+                  {props.detailData?.fetchNovelDetail.novelIndexs[0].isFinish
                     ? "완결"
                     : "연재중"}
                 </S.Divs>

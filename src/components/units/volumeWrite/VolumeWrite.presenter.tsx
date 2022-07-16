@@ -73,11 +73,11 @@ export default function VolumeWritePresenter(props: any) {
         </S.WrapperWriterSay>
         <S.WrapperRule>
           <S.WrapRule>
-            <S.CheckButtonFoot src="/novelWrite/check_box_fill.png" />
+            <S.CheckButtonFoot onClick={props.onClickFinish} type="checkbox" />
             <S.RuleText>완결 (작품페이지에 완결로 노출됩니다.)</S.RuleText>
           </S.WrapRule>
           <S.WrapRule>
-            <S.CheckButtonFoot src="/novelWrite/check_box_blank.png" />
+            <S.CheckButtonFoot type="checkbox" />
             <S.WrapRuleText>
               <S.RuleText>운영원칙에 동의합니다</S.RuleText>
               <S.MoveRule> 운영원칙보기</S.MoveRule>

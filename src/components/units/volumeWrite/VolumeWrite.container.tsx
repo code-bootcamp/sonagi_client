@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import useMoveToPage from "../../../commons/hooks/UseMoveToPage";
 import * as yup from "yup";
 import VolumeWritePresenter from "./VolumeWrite.presenter";
@@ -36,6 +36,12 @@ export default function VolumeWriteContainer() {
     trigger("contents");
   };
 
+  // 완결
+  const [finish, setFinish] = useState(false);
+  const onClickFinish = () => {
+    setFinish((prev) => !prev);
+  };
+
   // 등록
   const onClickSubmit = async (data: any) => {
     try {
@@ -46,6 +52,7 @@ export default function VolumeWriteContainer() {
             contents: data.contents,
             novelID: router.query._id,
             authorText: data.authorText,
+            isFinish: finish,
           },
         },
       });
@@ -67,6 +74,7 @@ export default function VolumeWriteContainer() {
       // toastUI
       onChangeDescription={onChangeDescription}
       editorRef={editorRef}
+      onClickFinish={onClickFinish}
     />
   );
 }

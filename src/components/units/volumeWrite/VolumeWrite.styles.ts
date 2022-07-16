@@ -185,7 +185,7 @@ export const MoveRule = styled.div`
   }
 `;
 
-export const CheckButtonFoot = styled.img`
+export const CheckButtonFoot = styled.input`
   margin: 10px 10px 10px 0;
 `;
 

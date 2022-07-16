@@ -12,8 +12,8 @@ export default function NovelReadPresenter(props) {
         <S.TitleWrapper>
           <S.Title>{props.novelData?.fetchNovelDetail.title}</S.Title>
           <S.SubTitle>
-            {props.readData?.fetchOneNovelIndex.index} 화 :{" "}
-            {props.readData?.fetchOneNovelIndex.title}
+            {props.readData?.fetchEpisodeDetail.index} 화 :{" "}
+            {props.readData?.fetchEpisodeDetail.title}
           </S.SubTitle>
         </S.TitleWrapper>
         <S.RightWrapper>
@@ -30,7 +30,7 @@ export default function NovelReadPresenter(props) {
           <div
             dangerouslySetInnerHTML={{
               __html: DOMPurify.sanitize(
-                props.readData?.fetchOneNovelIndex.contents
+                props.readData?.fetchEpisodeDetail.contents
               ),
             }}
           ></div>
@@ -49,6 +49,9 @@ export default function NovelReadPresenter(props) {
           <S.Content onClick={props.onClickMoveToNextPage}>다음화</S.Content>
           <S.FooterArrow src="/novelRead/footerArrowRight.png" />
         </S.CenterWrapper>
+        <S.Content size={props.size} onClick={props.onClickSizeUp}>
+          sizeUp
+        </S.Content>
         <S.RightWrapper>
           <S.Comment src="/novelRead/list.png" />
           <S.Content onClick={props.onClickMoveToList}>목록</S.Content>
