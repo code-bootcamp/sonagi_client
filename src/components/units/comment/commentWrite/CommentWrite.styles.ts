@@ -28,6 +28,7 @@ export const CommentTitle = styled.div`
   font-size: 1.25rem;
   color: #484848;
   margin-left: 10px;
+  font-weight: bold;
 
   @media ${breakPoints.mobile} {
     font-size: 1.2rem;
@@ -37,15 +38,16 @@ export const CommentTitle = styled.div`
 export const WrapContents = styled.div`
   display: flex;
   flex-direction: column;
-  height: 160px;
+  /* height: 161px; */
 `;
 
 export const ContentsInput = styled.input`
   width: 100%;
-  height: 70px;
+  height: 120px;
   padding-left: 20px;
   font-size: 1rem;
-  border: 1px solid black;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px 8px 0px 0px;
   border-bottom: none;
 
   &:focus {
@@ -53,7 +55,8 @@ export const ContentsInput = styled.input`
   }
 
   &::placeholder {
-    font-size: 1rem;
+    font-size: 0.7rem;
+    color: #bdbdbd;
   }
 
   @media ${breakPoints.mobile} {
@@ -64,8 +67,9 @@ export const ContentsInput = styled.input`
 export const Wraplength = styled.div`
   display: flex;
   width: 100%;
-  border: 1px solid black;
-  height: 50px;
+  border: 1px solid #bdbdbd;
+  height: 55px;
+  border-radius: 0px 0px 8px 8px;
 `;
 
 export const Length = styled.div`
@@ -87,6 +91,7 @@ export const CommentButton = styled.div`
   width: 10%;
   background-color: #2277d8;
   color: white;
+  border-radius: 4px;
   cursor: pointer;
 
   @media ${breakPoints.mobile} {

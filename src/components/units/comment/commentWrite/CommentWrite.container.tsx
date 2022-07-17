@@ -44,6 +44,7 @@ export default function CommentWriteContainer(props) {
       onChangeContents={onChangeContents}
       isEdit={props.isEdit}
       el={props.el}
+      contents={contents}
     />
   );
 }
