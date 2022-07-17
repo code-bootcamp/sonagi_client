@@ -4,6 +4,7 @@ import * as S from "./NovelDetail.Styles";
 import DOMPurify from "dompurify";
 import { getDateDay } from "../../../commons/libraries/utils";
 import DetailCommentWriteContainer from "../novelDetailComment/commentWrite/CommentWrite.container";
+import DetailCommentListContainer from "../novelDetailComment/commentList/CommentList.container";
 
 export default function NovelDetailPresenter(props) {
   return (
@@ -179,7 +180,7 @@ export default function NovelDetailPresenter(props) {
 
         <S.FooterLabel>리뷰</S.FooterLabel>
         <DetailCommentWriteContainer />
-        {/* <DetailCommentListContainer /> */}
+        <DetailCommentListContainer />
 
         <div
           style={{ color: "white", backgroundColor: "blue" }}

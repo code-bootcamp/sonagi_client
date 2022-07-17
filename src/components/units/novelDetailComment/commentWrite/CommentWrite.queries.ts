@@ -14,3 +14,12 @@ export const CREATE_NOVEL_REVIEW = gql`
     }
   }
 `;
+
+export const UPDATE_NOVEL_REVIEW = gql`
+  mutation updateNovelReview($updateNovelReviewInput: UpdateNovelReviewInput!) {
+    updateNovelReview(updateNovelReviewInput: $updateNovelReviewInput) {
+      id
+      contents
+    }
+  }
+`;
