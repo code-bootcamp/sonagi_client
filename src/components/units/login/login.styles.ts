@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
 export const LoginWrapper = styled.div`
   width: 35vw;
   height: 100vh;
-  padding: 120px 80px 30px 80px;
+  padding: 80px 80px 20px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,7 @@ export const LoginWrapper = styled.div`
   @media (max-width: 767px) {
     max-width: 767px;
     width: 100vw;
-    padding: 120px 30px 30px 30px;
+    padding: 80px 30px 20px 30px;
   }
 `;
 
@@ -86,7 +86,9 @@ export const InputBox = styled.input`
 `;
 
 export const Error = styled.div`
-  color: red;
+  font-size: 10px;
+  width: 100%;
+  padding-bottom: 10px;
 `;
 
 export const LoginButton = styled.button`
