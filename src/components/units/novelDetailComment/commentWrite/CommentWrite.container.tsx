@@ -1,9 +1,9 @@
 import { useMutation } from "@apollo/client";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { FETCH_NOVEL_REVIEW_ALL } from "../commentList/CommentList.queries";
+import { FETCH_NOVEL_REVIEW_PAGE } from "../commentList/CommentList.queries";
 import DetailCommentWritePresenter from "./CommentWrite.presenter";
 import {
   CREATE_NOVEL_REVIEW,
@@ -49,8 +49,8 @@ export default function DetailCommentWriteContainer(props) {
           },
           refetchQueries: [
             {
-              query: FETCH_NOVEL_REVIEW_ALL,
-              variables: { novel: router.query._id },
+              query: FETCH_NOVEL_REVIEW_PAGE,
+              variables: { novelID: router.query._id },
             },
           ],
         });
@@ -63,6 +63,14 @@ export default function DetailCommentWriteContainer(props) {
       }
     }
   };
+
+  useEffect(() => {
+    if (props.el?.star) {
+      setStar(props.el?.star);
+    }
+    setValue("star", props.el?.star);
+    trigger("star");
+  }, [props.el]);
 
   const onClickUpdateComment = async (data) => {
     if (data.contents) {

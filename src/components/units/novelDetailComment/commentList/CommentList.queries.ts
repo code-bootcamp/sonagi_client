@@ -1,19 +1,22 @@
 import { gql } from "@apollo/client";
 
-export const FETCH_NOVEL_REVIEW_ALL = gql`
-  query fetchNovelReviewAll($novel: String!) {
-    fetchNovelReviewAll(novel: $novel) {
-      id
-      contents
-      likeCount
-      dislikeCount
-      star
-      createAt
-      updateAt
-      user {
+export const FETCH_NOVEL_REVIEW_PAGE = gql`
+  query fetchNovelReviewPage($novelID: String!, $page: Int = 1) {
+    fetchNovelReviewPage(novelID: $novelID, page: $page) {
+      novelRivews {
         id
-        nickName
+        contents
+        likeCount
+        dislikeCount
+        star
+        createAt
+        updateAt
+        user {
+          id
+          nickName
+        }
       }
+      count
     }
   }
 `;
