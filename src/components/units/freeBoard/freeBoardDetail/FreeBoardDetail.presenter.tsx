@@ -26,6 +26,8 @@ export default function FreeBoardDetailPresenter(props: any) {
       </S.Contents>
       <S.ButtonWrapper>
         <Button01 title="목록으로" onClick={props.onClickMoveToBoardList} />
+        <Button01 title="수정하기" onClick={props.onClickMoveToEdit} />
+        <Button01 title="삭제하기" onClick={props.onClickDelete} />
       </S.ButtonWrapper>
     </S.Wrapper>
     //   <S.Wrapper>

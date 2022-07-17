@@ -122,3 +122,24 @@ export const ButtonWrapper = styled.div`
 export const Margin = styled.div`
   margin-left: 40px;
 `;
+
+export const Button = styled.div`
+  background-color: #2277d8;
+  color: #ffffff;
+  width: 160px;
+  height: 60px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 35px;
+
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 45px;
+    font-size: 0.9rem;
+    margin-bottom: 35px;
+  }
+`;

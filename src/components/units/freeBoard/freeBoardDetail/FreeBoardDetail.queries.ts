@@ -14,3 +14,11 @@ export const FETCH_BOARD = gql`
     }
   }
 `;
+
+export const DELETE_BOARD = gql`
+  mutation deleteBoard($BoardID: String!) {
+    deleteBoard(BoardID: $BoardID) {
+      id
+    }
+  }
+`;
