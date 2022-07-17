@@ -6,7 +6,6 @@ import CommentWritePresenter from "./CommentWrite.presenter";
 import { CREATE_COMMENT, UPDATE_COMMENT } from "./CommentWrite.queries";
 
 export default function CommentWriteContainer(props) {
-  // 댓글등록
   const router = useRouter();
   const [contents, setContents] = useState("");
   const onChangeContents = (event: any) => {
@@ -72,6 +71,28 @@ export default function CommentWriteContainer(props) {
     }
   };
 
+  // 대댓글등록
+  const createAnswer = async () => {
+    if (contents) {
+      await createComment({
+        variables: {
+          createCommentInput: {
+            contents,
+            parent: props.el?.id,
+          },
+          board: String(router.query._id),
+        },
+        refetchQueries: [
+          {
+            query: FETCH_COMMENTS,
+            // variables: { board: String(router.query._id) },
+          },
+        ],
+      });
+      alert("답변을 등록했습니다.");
+    }
+  };
+
   return (
     <CommentWritePresenter
       onClickRegisterComment={onClickRegisterComment}
@@ -80,6 +101,7 @@ export default function CommentWriteContainer(props) {
       el={props.el}
       contents={contents}
       onClickUpdateComment={onClickUpdateComment}
+      createAnswer={createAnswer}
     />
   );
 }
