@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
 import CommentWriteContainer from "../commentWrite/CommentWrite.container";
-import { DELETE_COMMENT } from "./CommentList.queries";
+import { DELETE_COMMENT, FETCH_COMMENTS } from "./CommentList.queries";
 import * as S from "./CommentList.styles";
 
 export default function CommentListPresenterItem(props) {
@@ -15,19 +15,18 @@ export default function CommentListPresenterItem(props) {
     setIsEdit(true);
   };
 
-  const onClickDelete = async (event) => {
-    console.log("이벤트", event);
+  const onClickDelete = async () => {
     try {
       await deleteComment({
         variables: {
           CommentID: props.el?.id,
         },
 
-        // refetchQueries: [
-        //   {
-        //     query: FETCH_COMMENTS_ALL,
-        //   },
-        // ],
+        refetchQueries: [
+          {
+            query: FETCH_COMMENTS,
+          },
+        ],
       });
       alert("질문이 삭제되었습니다");
     } catch (error) {
@@ -48,7 +47,7 @@ export default function CommentListPresenterItem(props) {
             <S.WrapCommentInfo>
               {/* <S.Comment>너무 재미있아요!!! 최고최고</S.Comment> */}
               <S.Comment>{props.el?.contents}</S.Comment>
-              <S.Comment>{props.el?.comments?.contents}</S.Comment>
+              {/* <S.Comment>{props.el?.comments?.contents}</S.Comment> */}
 
               <S.WrapUserInfo>
                 {/* <S.Name>Name</S.Name> */}

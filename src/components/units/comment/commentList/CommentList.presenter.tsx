@@ -5,7 +5,7 @@ import CommentListPresenterItem from "./CommentList.presenterItem";
 export default function CommentListPresenter(props) {
   return (
     <InfiniteScroll pageStart={0} loadMore={props.onLoadMore} hasMore={true}>
-      {props.data?.fetchComments.map((el) => (
+      {props.data?.fetchComments?.map((el) => (
         <CommentListPresenterItem key={el.id} el={el} />
       ))}
     </InfiniteScroll>
