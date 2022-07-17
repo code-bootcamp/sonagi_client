@@ -16,7 +16,7 @@ export const CheckWrapper = styled.div`
 `;
 
 export const CheckBox = styled.input`
-  width: 3%;
+  width: 11px;
   border: none;
 `;
 

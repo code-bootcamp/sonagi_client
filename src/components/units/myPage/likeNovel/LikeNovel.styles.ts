@@ -1,14 +1,12 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
-export const MyNovel = styled.div`
-  font-size: 1.125rem;
-`;
-
-export const Img = styled.img`
-  width: 250px;
-  height: 158px;
-  border-radius: 8px 0 0 8px;
+export const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
 `;
 
 export const TopWrapper = styled.div`
@@ -19,16 +17,14 @@ export const TopWrapper = styled.div`
   margin: 3% 0;
 `;
 
-export const Bottom = styled.div`
-  font-size: 0.875rem;
+export const LikeNovel = styled.div`
+  font-size: 1.125rem;
 `;
 
-export const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2%;
+export const Img = styled.img`
+  width: 250px;
+  height: 158px;
+  border-radius: 8px 0 0 8px;
 `;
 
 export const Title = styled.div`
@@ -142,7 +138,6 @@ export const ImageWrapper = styled.div`
 
 export const BoxWrapper = styled.div`
   width: 100%;
-  height: 160px;
   border: 1px solid #bdbdbd;
   box-shadow: 0px 4px 4px 0px #f2f2f2;
   border-radius: 10px;

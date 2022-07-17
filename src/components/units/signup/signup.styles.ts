@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   position: relative;
   left: calc(-50vw + 50%);
 
-  @media (min-width: 767px) and (max-width: 991px) {
+  @media (min-width: 767px) and (max-width: 1040px) {
     min-width: 767px;
     max-width: 991px;
     justify-content: center;
@@ -31,7 +31,7 @@ export const LoginWrapper = styled.div`
   justify-content: center;
   /* justify-content: space-between; */
 
-  @media (min-width: 767px) and (max-width: 991px) {
+  @media (min-width: 767px) and (max-width: 1040px) {
     min-width: 767px;
     max-width: 991px;
     padding: 80px 30px 30px 30px;
@@ -49,11 +49,7 @@ export const PhoneImg = styled.img`
   height: 100vh;
   object-fit: cover;
 
-  @media (min-width: 767px) and (max-width: 991px) {
-    display: none;
-  }
-
-  @media (max-width: 767px) {
+  @media (max-width: 1040px) {
     display: none;
   }
 `;

@@ -19,7 +19,7 @@ export default function LoginPresenter(props) {
             placeholder="비밀번호 입력"
             {...props.register("pwd")}
           ></S.InputBox>
-          <S.Error>{props.formState.errors.password?.message}</S.Error>
+          <S.Error>{props.formState.errors.pwd?.message}</S.Error>
           <S.LoginButton>로그인</S.LoginButton>
           <S.SubBox>
             <S.CheckImg src="/login/check.png" />

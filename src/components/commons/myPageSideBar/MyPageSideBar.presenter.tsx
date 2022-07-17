@@ -12,7 +12,12 @@ export default function MyPageSideBarPresenter(props: any) {
           <S.Menu onClick={props.onClickMoveToPage("/myPage/recentWatch")}>
             최근 본 작품
           </S.Menu>
-          <S.Menu>찜한 작품</S.Menu>
+          <S.Menu onClick={props.onClickMoveToPage("/myPage/likeNovel")}>
+            찜한 작품
+          </S.Menu>
+          <S.Menu onClick={props.onClickMoveToPage("/myPage/donateNovel")}>
+            후원 작품
+          </S.Menu>
           <S.Menu onClick={props.onClickMoveToPage("/myPage/myNovel")}>
             나의 작품
           </S.Menu>
@@ -36,7 +41,9 @@ export default function MyPageSideBarPresenter(props: any) {
         <S.Vector src="../myPageSideBar/Vector.png" />
         <S.Column>
           <S.Title>개인</S.Title>
-          <S.Menu>1:1 문의</S.Menu>
+          <S.Menu onClick={props.onClickMoveToPage("/myPage/inquireList")}>
+            1:1 문의
+          </S.Menu>
           <S.Menu onClick={props.onClickMoveToPage("/myPage/profileChange")}>
             회원정보 변경
           </S.Menu>
