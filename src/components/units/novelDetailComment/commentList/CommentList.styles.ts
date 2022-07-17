@@ -111,6 +111,12 @@ export const WrapUp = styled.div`
   border: 2px solid #d9d9d9;
 `;
 
+export const More = styled.div`
+  width: 100%;
+  height: 50px;
+  text-align: center;
+`;
+
 export const UpIcon = styled.img`
   width: 17px;
   height: 17px;

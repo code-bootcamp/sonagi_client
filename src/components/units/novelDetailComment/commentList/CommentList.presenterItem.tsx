@@ -6,7 +6,7 @@ import { getDateDay } from "../../../../commons/libraries/utils";
 import DetailCommentWriteContainer from "../commentWrite/CommentWrite.container";
 import {
   DELETE_NOVEL_REVIEW,
-  FETCH_NOVEL_REVIEW_ALL,
+  FETCH_NOVEL_REVIEW_PAGE,
 } from "./CommentList.queries";
 import * as S from "./CommentList.styles";
 
@@ -20,16 +20,16 @@ export default function DetailCommentListPresenterItem(props) {
   };
 
   const onClickDelete = async (event) => {
-    // console.log("이벤트", event);
+    console.log("이벤트", event.currentTarget.id);
     try {
       await deleteNovelReview({
         variables: {
-          ReviewID: props.el?.id,
+          ReviewID: event.currentTarget.id,
         },
 
         refetchQueries: [
           {
-            query: FETCH_NOVEL_REVIEW_ALL,
+            query: FETCH_NOVEL_REVIEW_PAGE,
             variables: { novel: router.query._id },
           },
         ],
@@ -50,7 +50,7 @@ export default function DetailCommentListPresenterItem(props) {
           <S.WrapInfo>
             <S.WrapCommentInfo>
               <S.WrapUserInfo>
-                <S.Star value={props.el?.star} />
+                <S.Star value={props.el?.star} disabled />
                 <S.Name>{props.el?.user?.nickName}</S.Name>
                 <S.WrapDate>
                   <S.Date>{getDateDay(props.el?.createAt)}</S.Date>
@@ -64,6 +64,7 @@ export default function DetailCommentListPresenterItem(props) {
               <S.WrapIcon>
                 <S.EditIcon src="/comment/create.png" onClick={onClickUpdate} />
                 <S.DeleteIcon
+                  id={props.el?.id}
                   src="/comment/Trash.png"
                   onClick={onClickDelete}
                 />
