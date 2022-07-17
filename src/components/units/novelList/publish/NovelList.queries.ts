@@ -6,6 +6,7 @@ export const FETCH_NOVELS_PAGE = gql`
       novels {
         id
         title
+        description
         user {
           nickName
         }

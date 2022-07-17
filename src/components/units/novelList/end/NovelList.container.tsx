@@ -1,14 +1,10 @@
 import { useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
 import NovelEndListPresenter from "./NovelList.presenter";
 import { FETCH_NOVELS_PAGE } from "./NovelList.queries";
 
 export default function NovelEndListContainer() {
-  const sfEndItem = [11, 12, 13, 14, 15];
-  const romanceFantasyEndItem = [21, 22, 23, 24, 25];
-  const romancaEndItem = [31, 32, 33, 34, 35];
-  const FantasyEndItem = [41, 42, 43, 44, 45];
-  const teenageEndItem = [51, 52, 53, 54, 55];
-  const horrorEndItem = [61, 62, 63, 64, 65];
+  const router = useRouter();
 
   const { data } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -17,15 +13,15 @@ export default function NovelEndListContainer() {
   });
   console.log("소설", data);
 
+  const onClickMoveToDetail = (event: any) => {
+    router.push(`/novel/${event.currentTarget.id}`);
+    console.log(event.target);
+  };
+
   return (
     <NovelEndListPresenter
-      sfEndItem={sfEndItem}
-      romanceFantasyEndItem={romanceFantasyEndItem}
-      romancaEndItem={romancaEndItem}
-      FantasyEndItem={FantasyEndItem}
-      teenageEndItem={teenageEndItem}
-      horrorEndItem={horrorEndItem}
       data={data}
+      onClickMoveToDetail={onClickMoveToDetail}
     />
   );
 }

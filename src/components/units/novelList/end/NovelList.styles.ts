@@ -1,48 +1,22 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrap = styled.div`
-  width: 100%;
+  width: 98%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 30px 10px;
-
-  @media (min-width: 991px) and (max-width: 1200px) {
-    width: 98%;
-    margin: 30px;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
-    width: 96%;
-    margin: 20px;
-  }
-
-  @media (min-width: 391px) and (max-width: 767px) {
-    width: 90%;
-  }
-
-  @media (max-width: 390px) {
-    width: 90%;
-  }
 `;
 
 export const Title = styled.label`
   font-size: 1.875rem;
   font-weight: 700;
   color: #4d4d4d;
-  padding-bottom: 30px;
-
-  @media (min-width: 768px) and (max-width: 991px) {
-    width: 96%;
-    margin: 20px;
-  }
-
-  @media (min-width: 391px) and (max-width: 767px) {
-    width: 90%;
-  }
+  margin-top: 30px;
+  padding-bottom: 50px;
 
   @media (max-width: 390px) {
-    width: 90%;
   }
 `;
 
@@ -50,7 +24,6 @@ export const RowWrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 20px 0px;
 `;
 
 export const Category = styled.span`
@@ -68,6 +41,14 @@ export const Category = styled.span`
   :hover {
     background-size: 100% 100%;
   }
+
+  @media (min-width: 391px) and (max-width: 767px) {
+    font-size: 1.25em;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 1.25em;
+  }
 `;
 
 export const Arrow = styled.img`
@@ -75,114 +56,81 @@ export const Arrow = styled.img`
   height: 13px;
 `;
 
-export const ColumnWrap = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const GridWrap = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  flex-wrap: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 5px;
+  justify-content: flex-start;
 
-  @media (min-width: 991px) and (max-width: 1200px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-items: center;
-    justify-content: center;
+  @media ${breakPoints.tablet} {
+    margin: 0px 10px;
   }
 
-  @media (min-width: 768px) and (max-width: 991px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media (min-width: 391px) and (max-width: 767px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media (max-width: 390px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
+  @media ${breakPoints.mobile} {
+    margin: 0px 10px;
   }
 `;
 
 export const ItemWrap = styled.div`
-  margin-bottom: 50px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-right: 20px;
+  border: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 20%;
+  margin: 20px 0 10px 0;
+  padding: 0 3px;
+  overflow: hidden;
 
-  :last-child {
-    padding-right: 0;
+  @media (min-width: 768px) and (max-width: 990px) {
+    transition-duration: 1s;
+    flex-basis: 25%;
+  }
+
+  @media (min-width: 391px) and (max-width: 767px) {
+    transition-duration: 1s;
+    flex-basis: 33.3333%;
+  }
+
+  @media (max-width: 390px) {
+    transition-duration: 1s;
+    flex-basis: 49%;
   }
 `;
 
 export const ItemPic = styled.img`
-  width: 210px;
-
-  @media (min-width: 991px) and (max-width: 1200px) {
-    transition-duration: 1s;
-    width: 98%;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
-    transition-duration: 1s;
-    width: 96%;
-  }
-
-  @media (min-width: 391px) and (max-width: 767px) {
-    transition-duration: 1s;
-    width: 92%;
-  }
-
-  @media (max-width: 390px) {
-    width: 90%;
-  }
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  vertical-align: middle;
 `;
 
 export const ItemInfo = styled.div`
-  width: 100%;
+  width: 98%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  margin: 10px 0px;
+  margin: 20px 0px;
 `;
-export const ItemName = styled.div`
+export const ItemName = styled.h4`
+  width: 70%;
   font-size: 1.15rem;
-
   font-weight: 700;
-  margin-right: 25px;
+  margin: 0;
 
   @media (min-width: 391px) and (max-width: 767px) {
     font-size: 1.125rem;
-    margin-right: 10px;
   }
 
   @media (max-width: 390px) {
     font-size: 1.25rem;
   }
 `;
-export const ItemNum = styled.div`
+export const ItemNum = styled.p`
   background-color: #eee;
+  font-size: 0.875em;
   padding: 5px;
+  margin: 0;
 `;
 export const ItemWriterWrap = styled.div`
   width: 100%;
@@ -190,9 +138,9 @@ export const ItemWriterWrap = styled.div`
   flex-direction: row;
 `;
 export const WriterIcon = styled.img`
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
 `;
 export const WrtiterName = styled.div`
   font-size: 1rem;
@@ -207,13 +155,21 @@ export const WrtiterName = styled.div`
 `;
 export const Contents = styled.div`
   width: 100%;
-  font-size: 0.875rem;
+  font-size: 0.94rem;
+  color: #00000078;
 
   @media (min-width: 391px) and (max-width: 767px) {
-    font-size: 0.875rem;
+    font-size: 0.88rem;
   }
 
   @media (max-width: 390px) {
     display: none;
   }
+`;
+
+export const Line = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  margin: 40px 0 80px;
 `;
