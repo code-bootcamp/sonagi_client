@@ -17,7 +17,9 @@ export default function PointChargePresenter(props) {
       <S.TopFlex>
         <S.MySonagiPoint>내 소나기 포인트</S.MySonagiPoint>
         <S.Flex>
-          <S.TitleAmount>0</S.TitleAmount>
+          <S.TitleAmount>
+            {props.loginData?.fetchLoginUser.point.toLocaleString("ko-KR")}
+          </S.TitleAmount>
           <S.AmountWon>원</S.AmountWon>
         </S.Flex>
       </S.TopFlex>

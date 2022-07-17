@@ -19,7 +19,10 @@ export default function MyPagePresenter(props: any) {
           </S.Name>
           <S.Email>{props.data?.fetchLoginUser.email}</S.Email>
           <S.Flex>
-            <S.Point>포인트 {props.data?.fetchLoginUser?.point}원</S.Point>
+            <S.Point>
+              포인트 {props.data?.fetchLoginUser?.point.toLocaleString("ko-KR")}
+              원
+            </S.Point>
           </S.Flex>
         </S.InnerLeftBox>
         <S.InnerRightBox>
@@ -28,7 +31,9 @@ export default function MyPagePresenter(props: any) {
               <S.Icon src="myPage/won.svg" />
               <S.Title>소나기 포인트</S.Title>
               <S.Div>
-                <S.Middle>{props.data?.fetchLoginUser?.point}</S.Middle>
+                <S.Middle>
+                  {props.data?.fetchLoginUser?.point.toLocaleString("ko-KR")}
+                </S.Middle>
                 <S.Middle>원</S.Middle>
               </S.Div>
               <S.MainBottom onClick={props.onClickMoveToPaymentHistory}>

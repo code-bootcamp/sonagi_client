@@ -32,3 +32,14 @@ export const FETCH_PRODUCTS_ALL = gql`
     }
   }
 `;
+
+export const FETCH_LOGIN_USER = gql`
+  query fetchLoginUser {
+    fetchLoginUser {
+      id
+      nickName
+      email
+      point
+    }
+  }
+`;

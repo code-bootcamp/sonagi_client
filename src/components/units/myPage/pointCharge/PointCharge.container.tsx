@@ -1,8 +1,11 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useState } from "react";
-import { FETCH_LOGIN_USER } from "../../../commons/layout/header";
 import PointChargePresenter from "./PointCharge.presenter";
-import { CREATE_PAYMENT, FETCH_PRODUCTS_ALL } from "./PointCharge.queries";
+import {
+  CREATE_PAYMENT,
+  FETCH_LOGIN_USER,
+  FETCH_PRODUCTS_ALL,
+} from "./PointCharge.queries";
 
 declare const window: typeof globalThis & {
   IMP: any;
@@ -10,6 +13,7 @@ declare const window: typeof globalThis & {
 
 export default function PointChargeContainer() {
   const { data: loginData } = useQuery(FETCH_LOGIN_USER);
+  console.log(loginData);
   const { data: pointData } = useQuery(FETCH_PRODUCTS_ALL);
   const [createPayment] = useMutation(CREATE_PAYMENT);
 
@@ -69,6 +73,7 @@ export default function PointChargeContainer() {
   return (
     <PointChargePresenter
       pointData={pointData}
+      loginData={loginData}
       onClickPoint={onClickPoint}
       value={value}
       requestPay={requestPay}
