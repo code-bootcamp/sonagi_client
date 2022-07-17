@@ -101,7 +101,7 @@ export const Length = styled.div`
   }
 `;
 
-export const CommentButton = styled.div`
+export const CommentButton = styled.button`
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -113,6 +113,7 @@ export const CommentButton = styled.div`
   color: white;
   cursor: pointer;
   align-self: flex-end;
+  border: none;
 
   @media ${breakPoints.mobile} {
     font-size: 0.8rem;

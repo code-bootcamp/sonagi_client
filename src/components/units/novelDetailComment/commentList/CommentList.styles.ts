@@ -1,14 +1,13 @@
 import styled from "@emotion/styled";
+import { Rate } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px;
 
   @media ${breakPoints.mobile} {
-    padding: 0 20px;
   }
 `;
 
@@ -45,6 +44,8 @@ export const WrapInfo = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  height: 100px;
+  border-bottom: 2px solid #d9d9d9;
 `;
 
 export const ProfileIcon = styled.img`
@@ -53,10 +54,7 @@ export const ProfileIcon = styled.img`
 `;
 
 export const WrapCommentInfo = styled.div`
-  width: 90%;
   display: flex;
-  flex-direction: column;
-  margin-left: 25px;
 `;
 
 export const Comment = styled.div`
@@ -69,34 +67,54 @@ export const Comment = styled.div`
 `;
 
 export const WrapUserInfo = styled.div`
-  padding-top: 5px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const Star = styled(Rate)`
+  font-size: 15px;
+  color: #2277d8;
+`;
+
+export const WrapComment = styled.div`
+  padding-left: 30px;
 `;
 
 export const Name = styled.div`
-  color: #808080;
-  font-size: 1.063rem;
+  /* color: #808080; */
+  font-weight: 600;
+  font-size: 1.2rem;
 
   @media ${breakPoints.mobile} {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 `;
+
+export const WrapDate = styled.div``;
 
 export const Date = styled.div`
   color: #808080;
   font-size: 1.063rem;
-  margin-left: 10px;
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
   }
+`;
+
+export const WrapUp = styled.div`
+  width: 70px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d9d9d9;
 `;
 
 export const UpIcon = styled.img`
   width: 17px;
   height: 17px;
-  margin-left: 10px;
+
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
@@ -115,9 +133,16 @@ export const UpCount = styled.div`
   }
 `;
 
+export const WrapIconUP = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+`;
+
 export const WrapIcon = styled.div`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 `;
 
 export const EditIcon = styled.img`

@@ -1,39 +1,43 @@
 import { useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
 // import { useRouter } from "next/router";
 import { useState } from "react";
-import { getDate } from "../../../../commons/libraries/utils";
+import { getDateDay } from "../../../../commons/libraries/utils";
 import DetailCommentWriteContainer from "../commentWrite/CommentWrite.container";
-import { DELETE_COMMENT } from "./CommentList.queries";
+import {
+  DELETE_NOVEL_REVIEW,
+  FETCH_NOVEL_REVIEW_ALL,
+} from "./CommentList.queries";
 import * as S from "./CommentList.styles";
 
 export default function DetailCommentListPresenterItem(props) {
   const [isEdit, setIsEdit] = useState(false);
-  const [deleteComment] = useMutation(DELETE_COMMENT);
-  // const router = useRouter();
+  const [deleteNovelReview] = useMutation(DELETE_NOVEL_REVIEW);
+  const router = useRouter();
 
   const onClickUpdate = () => {
-    setIsEdit(true);
+    setIsEdit((prev) => !prev);
   };
 
   const onClickDelete = async (event) => {
-    console.log("이벤트", event);
+    // console.log("이벤트", event);
     try {
-      await deleteComment({
+      await deleteNovelReview({
         variables: {
-          CommentID: props.el?.id,
+          ReviewID: props.el?.id,
         },
 
-        // refetchQueries: [
-        //   {
-        //     query: FETCH_COMMENTS_ALL,
-        //   },
-        // ],
+        refetchQueries: [
+          {
+            query: FETCH_NOVEL_REVIEW_ALL,
+            variables: { novel: router.query._id },
+          },
+        ],
       });
-      alert("질문이 삭제되었습니다");
+      alert("리뷰가 삭제되었습니다");
     } catch (error) {
       alert(error.message);
     }
-    console.log("댓글삭제", event);
   };
 
   return (
@@ -44,28 +48,32 @@ export default function DetailCommentListPresenterItem(props) {
             {/* <S.BestComment>Best</S.BestComment> */}
           </S.WrapBestIcon>
           <S.WrapInfo>
-            <S.ProfileIcon src="/comment/profile_icon.png" />
             <S.WrapCommentInfo>
-              {/* <S.Comment>너무 재미있아요!!! 최고최고</S.Comment> */}
-              <S.Comment>{props.el?.contents}</S.Comment>
-              <S.Comment>{props.el?.comments?.contents}</S.Comment>
-
               <S.WrapUserInfo>
-                {/* <S.Name>Name</S.Name> */}
+                <S.Star value={props.el?.star} />
                 <S.Name>{props.el?.user?.nickName}</S.Name>
-
-                {/* <S.Date>2022.07.04</S.Date> */}
-                <S.Date>{getDate(props.el?.createAt)}</S.Date>
-
-                <S.UpIcon src="/comment/thumb_up.png" />
-                <S.UpCount>325</S.UpCount>
+                <S.WrapDate>
+                  <S.Date>{getDateDay(props.el?.createAt)}</S.Date>
+                </S.WrapDate>
               </S.WrapUserInfo>
+              <S.WrapComment>
+                <S.Comment>{props.el?.contents}</S.Comment>
+              </S.WrapComment>
             </S.WrapCommentInfo>
-            <S.WrapIcon>
-              <S.EditIcon src="/comment/create.png" onClick={onClickUpdate} />
-              <S.DeleteIcon src="/comment/Trash.png" onClick={onClickDelete} />
-              <S.AnswerIcon src="/comment/insert_comment.png" />
-            </S.WrapIcon>
+            <S.WrapIconUP>
+              <S.WrapIcon>
+                <S.EditIcon src="/comment/create.png" onClick={onClickUpdate} />
+                <S.DeleteIcon
+                  src="/comment/Trash.png"
+                  onClick={onClickDelete}
+                />
+                <S.AnswerIcon src="/comment/insert_comment.png" />
+              </S.WrapIcon>
+              <S.WrapUp>
+                <S.UpIcon src="/comment/thumb_up.png" />
+                <S.UpCount>{props.el?.likeCount}</S.UpCount>
+              </S.WrapUp>
+            </S.WrapIconUP>
           </S.WrapInfo>
         </S.WrapperUserInfo>
       </S.Wrapper>
