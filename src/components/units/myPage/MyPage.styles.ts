@@ -13,16 +13,6 @@ export const ChargeButton = styled.div`
   cursor: pointer;
 `;
 
-export const ChargeHistory = styled.div`
-  cursor: pointer;
-  @media (min-width: 768px) and (max-width: 991px) {
-    display: none;
-  }
-  @media (min-width: 767px) {
-    display: none;
-  }
-`;
-
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
@@ -31,29 +21,29 @@ export const Wrapper = styled.div`
   align-items: center;
   margin: 0 auto;
   margin-bottom: 80px;
+
   @media ${breakPoints.tablet} {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   @media ${breakPoints.mobile} {
-    margin: 80px 0px 90px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 96%;
+    margin: 0 auto;
   }
 `;
 
 export const DIV = styled.div`
-  /* margin-left: 750px; */
-  /* margin-left: 128%; */
-  /* margin-left: 700px; */
   margin-top: 30px;
   margin-bottom: 30px;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-
-  /* background-color: blue; */
-  @media ${breakPoints.tablet} {
-  }
+  flex-direction: row;
+  justify-content: right;
+  margin-right: 50px;
   @media ${breakPoints.mobile} {
     display: none;
   }
@@ -67,21 +57,20 @@ export const CashCharge = styled.div`
 `;
 
 export const LargeBox = styled.div`
-  width: 100%;
+  width: 96%;
+  margin: 0 2%;
   display: flex;
-  @media ${breakPoints.tablet} {
-    width: 80%;
-  }
+
   @media ${breakPoints.mobile} {
     display: flex;
     flex-direction: column;
-    width: 450px;
+    align-items: center;
+    width: 100%;
   }
 `;
 
 export const InnerLeftBox = styled.div`
   border-radius: 8px 0px 0px 8px;
-  /* width: 280px; */
   width: 40%;
   height: 400px;
   background-color: #ebf6ff;
@@ -89,27 +78,37 @@ export const InnerLeftBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   @media ${breakPoints.tablet} {
-    width: 40%;
+    width: 96%;
+    background-color: #fff;
   }
 
   @media ${breakPoints.mobile} {
-    background-color: white;
-    margin-left: 30px;
+    width: 96%;
+    background-color: #fff;
   }
 `;
 
 export const InnerRightBox = styled.div`
   border-radius: 0px 8px 8px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 62%;
   height: 400px;
   background-color: #f2f2f2;
+
   @media ${breakPoints.tablet} {
-    width: 70%;
+    flex-direction: column;
+
+    width: 96%;
+    height: 5vh;
+    height: auto;
   }
   @media ${breakPoints.mobile} {
-    margin-right: 100px;
-    background-color: white;
+    width: 96%;
+    height: 200px;
   }
 `;
 
@@ -197,10 +196,6 @@ export const MainFlex = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
-  @media (min-width: 768px) and (max-width: 1500px) {
-    margin-top: 130px;
-  }
 `;
 
 export const Title = styled.div`
@@ -220,7 +215,7 @@ export const MainBottom = styled.div`
   @media (min-width: 768px) and (max-width: 991px) {
   }
   @media (max-width: 767px) {
-    display: none;
+    /* display: none; */
   }
 `;
 

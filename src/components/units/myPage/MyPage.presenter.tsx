@@ -48,9 +48,6 @@ export default function MyPagePresenter(props: any) {
               <S.MainBottom>문의 내역 &gt;&gt;</S.MainBottom>
             </S.Column>
           </S.MainFlex>
-          <S.ChargeHistory onClick={props.onClickMoveToPaymentCharge}>
-            충전 내역
-          </S.ChargeHistory>
         </S.InnerRightBox>
       </S.LargeBox>
     </S.Wrapper>
