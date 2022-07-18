@@ -47,19 +47,23 @@ export default function CommentWriteContainer(props) {
 
   // 수정
   const [updateComment] = useMutation(UPDATE_COMMENT);
-  const onClickUpdateComment = async (event) => {
+  const onClickUpdateComment = () => {
     try {
-      const result = await updateComment({
+      if (!contents) {
+        alert("내용이 수정되지 않았습니다");
+        return;
+      }
+      const result = updateComment({
         variables: {
           updateCommentInput: {
             contents,
             id: props.el?.id,
           },
         },
+
         refetchQueries: [
           {
             query: FETCH_COMMENTS,
-            // variables: { board: String(router.query._id) },
           },
         ],
       });
@@ -102,6 +106,8 @@ export default function CommentWriteContainer(props) {
       contents={contents}
       onClickUpdateComment={onClickUpdateComment}
       createAnswer={createAnswer}
+      isAnswer={props.isAnswer}
+      isAnswerEdit={props.isAnswerEdit}
     />
   );
 }
