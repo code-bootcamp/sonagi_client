@@ -1,4 +1,5 @@
 import HamburgerPage from "../../../commons/hamburger";
+import Paginations from "../../../commons/paginations/Paginations.container";
 import * as S from "./DonateNovel.styles";
 
 export default function DonateNovelPresenter(props) {
@@ -43,6 +44,7 @@ export default function DonateNovelPresenter(props) {
           </S.BoxWrapper>
         ))}
       </S.GridWrap>
+      <Paginations refetch={props.refetch} count={props.count} />
     </S.Wrapper>
   );
 }

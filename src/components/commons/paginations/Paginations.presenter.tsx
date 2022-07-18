@@ -1,24 +1,22 @@
-import { Page } from "./Paginations.styles";
+import * as S from "./Paginations.styles";
 export default function PaginationsUI(props: any) {
   return (
     <div>
-      <Page onClick={props.onClickPrevPage}>{`<`}</Page>
-      {/* 숫자 1부터 10까지 클릭하는것 나타나게 map함수 이용 */}
-      {/* 인덱스는 0부터 시작함 */}
+      <S.Arrow onClick={props.onClickPrevPage} src="../notice/leftArrow.svg" />
       {new Array(5).fill(1).map(
         (_, index) =>
           props.startPage + index <= props.lastPage && (
-            <Page
+            <S.Page
               key={props.startPage + index}
               onClick={props.onClickPage}
               id={String(props.startPage + index)}
               isActive={props.startPage + index === props.activedPage}
             >
               {props.startPage + index}
-            </Page>
+            </S.Page>
           )
       )}
-      <Page onClick={props.onClickNextPage}>{`>`}</Page>
+      <S.Arrow onClick={props.onClickNextPage} src="../notice/rightArrow.svg" />
     </div>
   );
 }
