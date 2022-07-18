@@ -12,36 +12,34 @@ export default function NovelPbListPresenter(props: any) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.data?.fetchNovelCyclesPageLastOrder?.novels
-          .slice(0, 5)
-          .map((el: any) => (
-            <S.ItemWrap
-              onClick={props.onClickMoveToDetail}
-              id={el.id}
-              key={el.title}
-            >
-              <S.ItemPic
-                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-              />
-              <S.ItemInfo>
-                <S.ItemName>{el.title}</S.ItemName>
-                {el.cycle === 0 ? (
-                  <S.Cycle>자유연재</S.Cycle>
-                ) : (
-                  <S.Cycle>요일연재</S.Cycle>
-                )}
-              </S.ItemInfo>
-              <S.ItemWriterWrap>
-                <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
-              </S.ItemWriterWrap>
-              <S.Contents
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(el.description),
-                }}
-              ></S.Contents>
-            </S.ItemWrap>
-          ))}
+        {props.Romance?.fetchNovelsPage?.novels.slice(0, 5).map((el: any) => (
+          <S.ItemWrap
+            onClick={props.onClickMoveToDetail}
+            id={el.id}
+            key={el.title}
+          >
+            <S.ItemPic
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+            />
+            <S.ItemInfo>
+              <S.ItemName>{el.title}</S.ItemName>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>{el.cycle.split("|")}</S.Cycle>
+              )}
+            </S.ItemInfo>
+            <S.ItemWriterWrap>
+              <S.WriterIcon src="/novelList/writer-icon.png" />
+              <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+            </S.ItemWriterWrap>
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(el.description),
+              }}
+            ></S.Contents>
+          </S.ItemWrap>
+        ))}
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 로맨스판타지 */}
@@ -50,7 +48,7 @@ export default function NovelPbListPresenter(props: any) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.data?.fetchNovelCyclesPageLastOrder.novels
+        {props.RomanceFantasy?.fetchNovelsPage.novels
           .slice(0, 5)
           .map((el: any) => (
             <S.ItemWrap key={el.id}>
@@ -84,33 +82,31 @@ export default function NovelPbListPresenter(props: any) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.data?.fetchNovelCyclesPageLastOrder.novels
-          .slice(0, 5)
-          .map((el: any) => (
-            <S.ItemWrap key={el.id}>
-              <S.ItemPic
-                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-              />
-              <S.ItemInfo>
-                <S.ItemName>{el.title}</S.ItemName>
-                {el.cycle === 0 ? (
-                  <S.Cycle>자유연재</S.Cycle>
-                ) : (
-                  <S.Cycle>요일연재</S.Cycle>
-                )}
-              </S.ItemInfo>
+        {props.Fantasy?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
+          <S.ItemWrap key={el.id}>
+            <S.ItemPic
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+            />
+            <S.ItemInfo>
+              <S.ItemName>{el.title}</S.ItemName>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>요일연재</S.Cycle>
+              )}
+            </S.ItemInfo>
 
-              <S.ItemWriterWrap>
-                <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
-              </S.ItemWriterWrap>
-              <S.Contents
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(el.description),
-                }}
-              ></S.Contents>
-            </S.ItemWrap>
-          ))}
+            <S.ItemWriterWrap>
+              <S.WriterIcon src="/novelList/writer-icon.png" />
+              <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+            </S.ItemWriterWrap>
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(el.description),
+              }}
+            ></S.Contents>
+          </S.ItemWrap>
+        ))}
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 무협 */}
@@ -119,32 +115,30 @@ export default function NovelPbListPresenter(props: any) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.data?.fetchNovelCyclesPageLastOrder.novels
-          .slice(0, 5)
-          .map((el: any) => (
-            <S.ItemWrap key={el.id}>
-              <S.ItemPic
-                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-              />
-              <S.ItemInfo>
-                <S.ItemName>{el.title}</S.ItemName>
-                {el.cycle === 0 ? (
-                  <S.Cycle>자유연재</S.Cycle>
-                ) : (
-                  <S.Cycle>요일연재</S.Cycle>
-                )}
-              </S.ItemInfo>
-              <S.ItemWriterWrap>
-                <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
-              </S.ItemWriterWrap>
-              <S.Contents
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(el.description),
-                }}
-              ></S.Contents>
-            </S.ItemWrap>
-          ))}
+        {props.Asia?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
+          <S.ItemWrap key={el.id}>
+            <S.ItemPic
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+            />
+            <S.ItemInfo>
+              <S.ItemName>{el.title}</S.ItemName>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>요일연재</S.Cycle>
+              )}
+            </S.ItemInfo>
+            <S.ItemWriterWrap>
+              <S.WriterIcon src="/novelList/writer-icon.png" />
+              <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+            </S.ItemWriterWrap>
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(el.description),
+              }}
+            ></S.Contents>
+          </S.ItemWrap>
+        ))}
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 학원 */}
@@ -153,67 +147,62 @@ export default function NovelPbListPresenter(props: any) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.data?.fetchNovelCyclesPageLastOrder.novels
-          .slice(0, 5)
-          .map((el: any) => (
-            <S.ItemWrap key={el.id}>
-              <S.ItemPic
-                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-              />
-              <S.ItemInfo>
-                <S.ItemName>{el.title}</S.ItemName>
-                {el.cycle === 0 ? (
-                  <S.Cycle>자유연재</S.Cycle>
-                ) : (
-                  <S.Cycle>요일연재</S.Cycle>
-                )}
-              </S.ItemInfo>
-              <S.ItemWriterWrap>
-                <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
-              </S.ItemWriterWrap>
-              <S.Contents
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(el.description),
-                }}
-              ></S.Contents>
-            </S.ItemWrap>
-          ))}
+        {props.School?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
+          <S.ItemWrap key={el.id}>
+            <S.ItemPic
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+            />
+            <S.ItemInfo>
+              <S.ItemName>{el.title}</S.ItemName>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>요일연재</S.Cycle>
+              )}
+            </S.ItemInfo>
+            <S.ItemWriterWrap>
+              <S.WriterIcon src="/novelList/writer-icon.png" />
+              <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+            </S.ItemWriterWrap>
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(el.description),
+              }}
+            ></S.Contents>
+          </S.ItemWrap>
+        ))}
       </S.GridWrap>
       <S.Line></S.Line>
-
       {/* 공포/미스터리 */}
       <S.RowWrap>
         <S.Category>공포/미스터리</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.data?.fetchNovelCyclesPageLastOrder.novels
-          .slice(0, 5)
-          .map((el: any) => (
-            <S.ItemWrap key={el.id}>
-              <S.ItemPic
-                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-              />
-              <S.ItemInfo>
-                <S.ItemName>{el.title}</S.ItemName>
-                {el.cycle === 0 ? (
-                  <S.Cycle>자유연재</S.Cycle>
-                ) : (
-                  <S.Cycle>요일연재</S.Cycle>
-                )}
-              </S.ItemInfo>
-              <S.ItemWriterWrap>
-                <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
-              </S.ItemWriterWrap>
-              <S.Contents
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(el.description),
-                }}
-              ></S.Contents>
-            </S.ItemWrap>
-          ))}
+        {props.Horror?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
+          <S.ItemWrap key={el.id}>
+            <S.ItemPic
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+            />
+            <S.ItemInfo>
+              <S.ItemName>{el.title}</S.ItemName>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>요일연재</S.Cycle>
+              )}
+            </S.ItemInfo>
+            <S.ItemWriterWrap>
+              <S.WriterIcon src="/novelList/writer-icon.png" />
+              <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+            </S.ItemWriterWrap>
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(el.description),
+              }}
+            ></S.Contents>
+          </S.ItemWrap>
+        ))}
       </S.GridWrap>
     </S.Wrap>
   );

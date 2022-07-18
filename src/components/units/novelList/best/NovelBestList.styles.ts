@@ -97,7 +97,7 @@ export const AwardText = styled.div`
 export const Itembox = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 20px 10px;
+  padding: 20px 30px;
 
   @media (min-width: 391px) and (max-width: 767px) {
     flex-direction: column;
@@ -112,11 +112,7 @@ export const Itembox = styled.div`
   }
 `;
 export const ItemPic = styled.img`
-  width: 100%;
-  min-width: 12vw;
-  min-height: 15vw;
-  max-width: 14vw;
-  max-height: 17vw;
+  width: 30%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 8px;
@@ -146,6 +142,7 @@ export const RowWrap2 = styled.div`
 `;
 
 export const ItemName = styled.div`
+  width: 80%;
   font-size: 1.25rem;
   font-weight: 700;
   margin-right: 10px;
@@ -165,7 +162,7 @@ export const BookmarkX = styled.img`
 `;
 
 export const HeartImg = styled.div`
-  width: 23px;
+  width: 24px;
   height: 21px;
   background-image: ${(props: any) =>
     props.HeartList?.includes(props.el)
