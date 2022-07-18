@@ -61,6 +61,7 @@ export const GridWrap = styled.div`
   flex-wrap: wrap;
   margin: 0 5px;
   justify-content: flex-start;
+  cursor: pointer;
 
   @media ${breakPoints.tablet} {
     margin: 0px 10px;

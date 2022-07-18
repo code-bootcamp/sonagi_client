@@ -1,22 +1,54 @@
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import NovelBestListPresenter from "./NovelBestList.presenter";
-import { FETCH_PB_BEST_NOVELS_PAGE } from "./NovelBestList.queries";
+import {
+  CREATE_NOVEL_LIKE,
+  FETCH_NOVEL_LIKE,
+  FETCH_PB_BEST_NOVELS_PAGE,
+} from "./NovelBestList.queries";
 
 export default function NovelBestListContainer() {
   const router = useRouter();
 
+  const [createNovelLike] = useMutation(CREATE_NOVEL_LIKE);
+  const { data: LikeNovel } = useQuery(FETCH_NOVEL_LIKE);
+  console.log(LikeNovel);
+
+  const HeartList = LikeNovel?.fetchNovelLikeInUser.map((el) => el.novel.id);
+  console.log(HeartList);
+
+  const onClickLike = (el) => async () => {
+    try {
+      const result = await createNovelLike({
+        variables: {
+          novelID: el.id,
+        },
+      });
+      console.log(el.id);
+      console.log(result);
+      window.location.replace("/novel/list/best");
+      alert("선호작 등록!!");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
   const { data } = useQuery(FETCH_PB_BEST_NOVELS_PAGE, {
     variables: {
       page: 1,
     },
   });
-  console.log("소설", data);
 
   const onClickMoveToDetail = (event: any) => {
     router.push(`/novel/${event.currentTarget.id}`);
     console.log(event.target);
   };
 
-  return <NovelBestListPresenter data={data} onClick={onClickMoveToDetail} />;
+  return (
+    <NovelBestListPresenter
+      data={data}
+      onClickLike={onClickLike}
+      onClick={onClickMoveToDetail}
+      HeartList={HeartList}
+    />
+  );
 }
