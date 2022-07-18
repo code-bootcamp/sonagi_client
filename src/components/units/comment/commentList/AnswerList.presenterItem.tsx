@@ -14,9 +14,9 @@ export default function AnswerListUIITEM(props) {
 
   const onClickDeleteAnswer = async () => {
     try {
-      await deleteComment({
+      const result = await deleteComment({
         variables: {
-          CommentID: props.el?._id,
+          CommentID: props.answerEl?._id,
         },
         refetchQueries: [
           {
@@ -24,6 +24,7 @@ export default function AnswerListUIITEM(props) {
           },
         ],
       });
+      console.log("대댓글삭제", result);
       alert("대댓글이 삭제되었습니다");
     } catch (error) {
       alert(error.message);

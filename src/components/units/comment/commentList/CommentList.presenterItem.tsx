@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
 import CommentWriteContainer from "../commentWrite/CommentWrite.container";
+import AnswerListPresenter from "./AnswerList.presenter";
 import { DELETE_COMMENT, FETCH_COMMENTS } from "./CommentList.queries";
 import * as S from "./CommentList.styles";
 
@@ -95,6 +96,7 @@ export default function CommentListPresenterItem(props) {
             el={props.el}
           />
         )}
+        <AnswerListPresenter el={props.el} />
       </S.FooterWrapper>
     </>
   );

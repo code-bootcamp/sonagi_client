@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 1000px;
@@ -11,9 +10,7 @@ export const Flex = styled.div`
   margin-left: 20px;
   position: absolute;
   top: 340px;
-  @media ${breakPoints.mobile} {
-    justify-content: flex-start;
-  }
+  width: 100%;
 `;
 
 export const Flex2 = styled.div`
@@ -21,19 +18,11 @@ export const Flex2 = styled.div`
   margin-left: 20px;
   position: absolute;
   top: 660px;
-  @media ${breakPoints.mobile} {
-    justify-content: flex-start;
-  }
 `;
 
 export const RecentWatch = styled.div`
   font-size: 1.563rem;
   margin: 20px 0px 40px 0px;
-  @media (max-width: 767px) {
-    box-shadow: inset 0 -11px #bee3ff;
-    line-height: 24px;
-    width: 136px;
-  }
 `;
 
 export const Column = styled.div`
@@ -48,12 +37,7 @@ export const NovelPic = styled.img`
   width: 150px;
   height: 200px;
   margin-left: 55px;
-
-  @media (max-width: 767px) {
-    /* border-radius: 8px; */
-    width: 140px;
-    height: 190px;
-  }
+  background-size: co;
 `;
 
 export const NovelTitle = styled.div`
@@ -103,4 +87,17 @@ export const BookShelf2 = styled.img`
   margin-top: 105px;
 `;
 
-export const Wrap = styled.div``;
+export const Info = styled.div``;
+
+export const Title = styled.div`
+  font-size: 16px;
+  margin-left: 70px;
+`;
+
+export const Box = styled.div``;
+
+export const BoxWrap = styled.div``;
+
+export const Image = styled.div``;
+
+export const BannerBg = styled.div``;

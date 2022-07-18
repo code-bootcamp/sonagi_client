@@ -1,26 +1,38 @@
 import * as S from "./RecentWatch.styles";
-export default function RecentWatchPresenter() {
+export default function RecentWatchPresenter(props) {
   return (
     <S.Wrapper>
       <S.RecentWatch>최근 본 작품</S.RecentWatch>
-      <S.Wrap>
-        <S.Flex>
-          <S.NovelPic src="../recentWatch/21.png" />
-          <S.NovelPic src="../recentWatch/22.png" />
-          <S.NovelPic src="../recentWatch/23.png" />
-          <S.NovelPic src="../recentWatch/24.png" />
-        </S.Flex>
-        <S.BookShelf src="/recentWatch/shelf.png" />
-      </S.Wrap>
-      <S.Wrap>
-        <S.Flex2>
-          <S.NovelPic src="../recentWatch/31.png" />
-          <S.NovelPic src="../recentWatch/32.png" />
-          <S.NovelPic src="../recentWatch/33.png" />
-          <S.NovelPic src="../recentWatch/34.png" />
-        </S.Flex2>
-        <S.BookShelf2 src="/recentWatch/shelf.png" />
-      </S.Wrap>
+      <S.Flex>
+        {props.basketItems?.slice(0, 5).map((el) => (
+          <S.BoxWrap
+            key={el.id}
+            id={el.id}
+            onClick={props.onClickMoveToNovelDetail}
+          >
+            <S.NovelPic
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+            />
+            {/* <S.Title>{el.title}</S.Title> */}
+          </S.BoxWrap>
+        ))}
+      </S.Flex>
+      <S.BookShelf src="/recentWatch/shelf.png" />
+      <S.Flex>
+        {props.basketItems?.map((el) => (
+          <S.BoxWrap
+            key={el.id}
+            id={el.id}
+            onClick={props.onClickMoveToNovelDetail}
+          >
+            <S.NovelPic
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+            />
+            {/* <S.Title>{el.title}</S.Title> */}
+          </S.BoxWrap>
+        ))}
+      </S.Flex>
+      <S.BookShelf src="/recentWatch/shelf.png" />
     </S.Wrapper>
   );
 }
