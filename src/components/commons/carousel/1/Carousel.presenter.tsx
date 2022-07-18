@@ -14,13 +14,11 @@ export default function CarouselPresenter(props) {
     centerPadding: "0px",
   };
 
-  const Img1 = [1, 2, 3, 4, 5, 6, 7];
-
   return (
     <S.Wrapper>
       <S.Title>인기 소설</S.Title>
       <S.MySlide {...settings}>
-        {props.LikeData?.fetchNovelCyclesPageLikeOrder.novels.map((el: any) => (
+        {props.LikeData?.fetchNovelsPage.novels.map((el: any) => (
           <S.BookImg
             id={el.id}
             onClick={props.onClickNovelDetail(el)}
@@ -31,7 +29,7 @@ export default function CarouselPresenter(props) {
       </S.MySlide>
       <S.Title>최신 작품</S.Title>
       <S.MySlide {...settings}>
-        {props.LastData?.fetchNovelCyclesPageLastOrder.novels.map((el: any) => (
+        {props.LastData?.fetchNovelsPage.novels.map((el: any) => (
           <S.BookImg
             id={el.id}
             onClick={props.onClickNovelDetail(el)}
@@ -42,11 +40,12 @@ export default function CarouselPresenter(props) {
       </S.MySlide>
       <S.Title>오늘 연재 소설</S.Title>
       <S.MySlide {...settings}>
-        {Img1?.map((item: any) => (
+        {props.TodayData?.fetchNovelsPage.novels.map((el: any) => (
           <S.BookImg
-            key={item.length}
-            src={`/mainpage/bookimg/${item}.webp`}
-            // onMouseEnter={props.onClickDetail(item)}
+            id={el.id}
+            onClick={props.onClickNovelDetail(el)}
+            key={el.id}
+            src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0].url}`}
           />
         ))}
       </S.MySlide>
