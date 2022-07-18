@@ -6,6 +6,16 @@ export const Wrapper = styled.div`
   padding: 2%;
 `;
 
+export const HamburgerWrapper = styled.div`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+  }
+`;
+
 export const Input = styled.input``;
 
 export const MyPoint = styled.div`

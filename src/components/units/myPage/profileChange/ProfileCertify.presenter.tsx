@@ -1,8 +1,12 @@
 import React from "react";
+import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./ProfileCertify.styles";
 export default function ProfileCertifyPresenter(props) {
   return (
     <S.Wrapper>
+      <S.HamburgerWrapper>
+        <HamburgerPage />
+      </S.HamburgerWrapper>
       <form onSubmit={props.handleSubmit(props.onClickChangePassword)}>
         <S.Div>
           <S.MainTitle>회원정보 변경</S.MainTitle>

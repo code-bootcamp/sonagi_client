@@ -1,10 +1,14 @@
 import React from "react";
+import HamburgerPage from "../../../../commons/hamburger";
 import DeleteUserContainer from "./deleteUser/DeleteUser.container";
 import * as S from "./ProfileModify.styles";
 
 export default function ProfileModifyPresenter(props) {
   return (
     <S.Wrapper>
+      <S.HamburgerWrapper>
+        <HamburgerPage />
+      </S.HamburgerWrapper>
       <form onSubmit={props.handleSubmit(props.onClickChangeUser)}>
         <S.MainTitle>회원정보 변경</S.MainTitle>
         <S.SubTitle>변경하실 내용을 입력해주세요.</S.SubTitle>

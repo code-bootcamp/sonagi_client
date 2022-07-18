@@ -23,7 +23,7 @@ export const LikeNovel = styled.div`
 
 export const Img = styled.img`
   width: 250px;
-  height: 158px;
+  height: 220px;
   border-radius: 8px 0 0 8px;
 `;
 

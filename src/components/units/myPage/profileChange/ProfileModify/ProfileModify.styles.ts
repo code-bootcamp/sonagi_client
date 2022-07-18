@@ -8,6 +8,16 @@ export const Wrapper = styled.div`
   padding: 50px 0px;
 `;
 
+export const HamburgerWrapper = styled.div`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+  }
+`;
+
 export const Wrap = styled.div`
   width: 60%;
   height: 500px;

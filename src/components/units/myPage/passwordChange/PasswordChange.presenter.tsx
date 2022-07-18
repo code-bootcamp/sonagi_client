@@ -1,9 +1,13 @@
 import React from "react";
+import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./PasswordChange.styles";
 
 export default function PasswordChangePresenter(props) {
   return (
     <S.Wrapper>
+      <S.HamburgerWrapper>
+        <HamburgerPage />
+      </S.HamburgerWrapper>
       <form onSubmit={props.handleSubmit(props.onClickChangePwd)}>
         <S.MainTitle>비밀번호 변경</S.MainTitle>
         <S.SubTitle>

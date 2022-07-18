@@ -1,4 +1,5 @@
 import Head from "next/head";
+import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./PointCharge.styles";
 export default function PointChargePresenter(props) {
   return (
@@ -14,6 +15,9 @@ export default function PointChargePresenter(props) {
           src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
         ></script>
       </Head>
+      <S.HamburgerWrapper>
+        <HamburgerPage />
+      </S.HamburgerWrapper>
       <S.TopFlex>
         <S.MySonagiPoint>내 소나기 포인트</S.MySonagiPoint>
         <S.Flex>

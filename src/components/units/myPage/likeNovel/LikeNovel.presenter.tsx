@@ -1,3 +1,4 @@
+import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./LikeNovel.styles";
 
 export default function LikeNovelPresenter(props) {
@@ -5,6 +6,7 @@ export default function LikeNovelPresenter(props) {
     <S.Wrapper>
       <S.TopWrapper>
         <S.LikeNovel>찜한 작품</S.LikeNovel>
+        <HamburgerPage />
       </S.TopWrapper>
       {props.data?.fetchNovelLikeInUser.map((el) => (
         <S.BoxWrapper key={el.id}>
