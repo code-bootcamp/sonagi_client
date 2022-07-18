@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrap = styled.div`
   width: 96%;
@@ -14,20 +15,48 @@ export const Title = styled.label`
   padding-bottom: 30px;
 `;
 export const GridWrap = styled.div`
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 5px;
+  justify-content: flex-start;
+  cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    margin: 0px 10px;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin: 0px 10px;
+  }
 `;
 export const ItemWrap = styled.div`
-  width: 46%;
-  margin: 2%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 48%;
+  margin: 2% 1%;
+  padding: 0 3px;
+  overflow: hidden;
+
   border: 1px solid #bdbdbd;
   border-radius: 30px;
 
+  @media (min-width: 768px) and (max-width: 990px) {
+    transition-duration: 1s;
+    flex-basis: 46%;
+    margin: 2%;
+  }
+
   @media (min-width: 391px) and (max-width: 767px) {
+    transition-duration: 1s;
+    flex-basis: 33.3333%;
+  }
+
+  @media (max-width: 390px) {
+    transition-duration: 1s;
+    flex-basis: 49%;
+  }
+
+  /* @media (min-width: 391px) and (max-width: 767px) {
     width: 96%;
     margin: 2%;
   }
@@ -35,7 +64,7 @@ export const ItemWrap = styled.div`
   @media (max-width: 390px) {
     width: 96%;
     margin: 2%;
-  }
+  } */
 `;
 export const RowWrap = styled.div`
   display: flex;
@@ -68,7 +97,7 @@ export const AwardText = styled.div`
 export const Itembox = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 20px 30px;
+  padding: 20px 10px;
 
   @media (min-width: 391px) and (max-width: 767px) {
     flex-direction: column;
@@ -83,15 +112,19 @@ export const Itembox = styled.div`
   }
 `;
 export const ItemPic = styled.img`
-  width: 32.655%;
+  width: 100%;
+  min-width: 12vw;
+  min-height: 15vw;
+  max-width: 14vw;
+  max-height: 17vw;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 8px;
   vertical-align: middle;
 `;
 export const TextWrap = styled.div`
-  padding: 0px 20px;
-  margin-left: 20px;
+  padding: 0px 10px;
+  margin-left: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -100,6 +133,7 @@ export const RowWrap2 = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
   margin-bottom: 39px;
 
   @media (min-width: 391px) and (max-width: 767px) {
@@ -112,19 +146,31 @@ export const RowWrap2 = styled.div`
 `;
 
 export const ItemName = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-right: 20px;
+  margin-right: 10px;
 
   @media (min-width: 391px) and (max-width: 767px) {
-    font-size: 1.5rem;
     margin-right: 50px;
   }
 
   @media (max-width: 390px) {
-    font-size: 1.5rem;
     margin: 0 20px;
   }
+`;
+
+export const BookmarkX = styled.img`
+  width: 18px;
+  height: 18px;
+`;
+
+export const HeartImg = styled.div`
+  width: 23px;
+  height: 21px;
+  background-image: ${(props: any) =>
+    props.HeartList?.includes(props.el)
+      ? "url(/novelList/best/heart1.png)"
+      : "url(/novelList/best/heart2.png)"};
 `;
 
 export const ItemPickIcon = styled.img`
@@ -134,6 +180,11 @@ export const ItemPickIcon = styled.img`
 export const Contents = styled.div`
   font-size: 0.88rem;
   color: #808080;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 
   @media (min-width: 391px) and (max-width: 767px) {
     display: none;

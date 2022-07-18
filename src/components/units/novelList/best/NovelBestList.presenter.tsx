@@ -26,7 +26,11 @@ export default function NovelBestListPresenter(props: any) {
                 <S.TextWrap>
                   <S.RowWrap2>
                     <S.ItemName>{el.title}</S.ItemName>
-                    <S.ItemPickIcon src="/novelList/best/pick.svg" />
+                    <S.HeartImg
+                      el={el.id}
+                      HeartList={props.HeartList}
+                      onClick={props.onClickLike(el)}
+                    />
                   </S.RowWrap2>
                   <S.Contents
                     dangerouslySetInnerHTML={{
@@ -34,9 +38,9 @@ export default function NovelBestListPresenter(props: any) {
                     }}
                   ></S.Contents>
                   <S.ItemInfoWrap>
-                    <S.ItemStatus>{el.likeCount}</S.ItemStatus>
+                    <S.ItemStatus>좋아요 {el.likeCount}</S.ItemStatus>
                     <S.Line></S.Line>
-                    <S.Hits>{el.viewCount}</S.Hits>
+                    <S.Hits>조회수 {el.viewCount}</S.Hits>
                     <S.Line></S.Line>
                     <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
                   </S.ItemInfoWrap>

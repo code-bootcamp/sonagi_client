@@ -23,3 +23,22 @@ export const FETCH_PB_BEST_NOVELS_PAGE = gql`
     }
   }
 `;
+export const CREATE_NOVEL_LIKE = gql`
+  mutation createNovelLike($novelID: String!) {
+    createNovelLike(novelID: $novelID) {
+      id
+      createAt
+    }
+  }
+`;
+
+export const FETCH_NOVEL_LIKE = gql`
+  query fetchNovelLikeInUser {
+    fetchNovelLikeInUser {
+      id
+      novel {
+        id
+      }
+    }
+  }
+`;
