@@ -10,6 +10,7 @@ import {
   DELETE_NOVEL_INDEX,
   DONATEPOINT,
   FETCH_NOVEL_DETAIL,
+  FETCH_PAID_POINTS,
   PAIDPOINT,
 } from "./NovelDetail.queries";
 
@@ -26,6 +27,11 @@ export default function NovelDetailContainer() {
   const { data: detailData } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
   });
+  const { data: PaidData } = useQuery(FETCH_PAID_POINTS, {
+    variables: { page: 1 },
+  });
+
+  console.log("결제", PaidData);
 
   console.log(detailData);
 
