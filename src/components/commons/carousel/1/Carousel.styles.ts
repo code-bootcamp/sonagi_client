@@ -19,7 +19,7 @@ export const MySlide = styled(Slider)`
 export const BookImg = styled.img`
   width: 12.5vw;
   height: 250px;
-
+  cursor: pointer;
   padding: 0px 10px;
 
   @media (min-width: 767px) and (max-width: 991px) {
