@@ -1,8 +1,8 @@
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import React from "react";
 import CommentListPresenter from "./CommentList.presenter";
-import { FETCH_COMMENTS } from "./CommentList.queries";
+import { CREATE_COMMENT, FETCH_COMMENTS } from "./CommentList.queries";
 
 export default function CommentListContainer() {
   const router = useRouter();
@@ -13,5 +13,22 @@ export default function CommentListContainer() {
   //   variables: { boardID: router.query._id },
   // });
   console.log("댓글리스트data", data);
-  return <CommentListPresenter data={data} />;
+
+  const [createComment] = useMutation(CREATE_COMMENT);
+  const onClickLikeComment = async () => {
+    const result = await createComment({
+      variables: {
+        board: String(router.query._id),
+      },
+      refetchQueries: [
+        {
+          query: FETCH_COMMENTS,
+        },
+      ],
+    });
+    console.log("result", result);
+  };
+  return (
+    <CommentListPresenter data={data} onClickLikeComment={onClickLikeComment} />
+  );
 }

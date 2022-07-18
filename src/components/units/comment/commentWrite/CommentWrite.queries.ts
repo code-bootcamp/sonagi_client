@@ -47,3 +47,12 @@ export const UPDATE_COMMENT = gql`
     }
   }
 `;
+
+export const FETCH_COMMENTS = gql`
+  query fetchComments {
+    fetchComments {
+      id
+      contents
+    }
+  }
+`;

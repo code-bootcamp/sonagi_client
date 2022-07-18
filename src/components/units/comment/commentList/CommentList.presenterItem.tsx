@@ -8,11 +8,16 @@ import * as S from "./CommentList.styles";
 
 export default function CommentListPresenterItem(props) {
   const [isEdit, setIsEdit] = useState(false);
+  const [isAnswer, setIsAnswer] = useState(false);
   const [deleteComment] = useMutation(DELETE_COMMENT);
   // const router = useRouter();
 
   const onClickUpdate = () => {
     setIsEdit(true);
+  };
+
+  const onClickAnswer = () => {
+    setIsAnswer(true);
   };
 
   const onClickDelete = async () => {
@@ -56,14 +61,21 @@ export default function CommentListPresenterItem(props) {
                 {/* <S.Date>2022.07.04</S.Date> */}
                 <S.Date>{getDate(props.el?.createAt)}</S.Date>
 
-                <S.UpIcon src="/comment/thumb_up.png" />
-                <S.UpCount>325</S.UpCount>
+                <S.UpIcon
+                  src="/comment/thumb_up.png"
+                  onClick={props.onClickLikeComment}
+                />
+                {/* <S.UpCount>325</S.UpCount> */}
+                <S.UpCount>{props.data?.fetchComments.likeCount}</S.UpCount>
               </S.WrapUserInfo>
             </S.WrapCommentInfo>
             <S.WrapIcon>
               <S.EditIcon src="/comment/create.png" onClick={onClickUpdate} />
               <S.DeleteIcon src="/comment/Trash.png" onClick={onClickDelete} />
-              <S.AnswerIcon src="/comment/insert_comment.png" />
+              <S.AnswerIcon
+                src="/comment/insert_comment.png"
+                onClick={onClickAnswer}
+              />
             </S.WrapIcon>
           </S.WrapInfo>
         </S.WrapperUserInfo>
@@ -73,6 +85,13 @@ export default function CommentListPresenterItem(props) {
           <CommentWriteContainer
             isEdit={true}
             setIsEdit={setIsEdit}
+            el={props.el}
+          />
+        )}
+        {isAnswer && (
+          <CommentWriteContainer
+            isAnswer={true}
+            setIsAnswer={setIsAnswer}
             el={props.el}
           />
         )}

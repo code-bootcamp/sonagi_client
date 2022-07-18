@@ -148,6 +148,7 @@ export const AnswerIcon = styled.img`
   width: 23px;
   height: 23px;
   margin-left: 20px;
+  cursor: pointer;
 `;
 
 export const FooterWrapper = styled.div`

@@ -23,6 +23,7 @@ export const FETCH_COMMENTS = gql`
       id
       contents
       createAt
+      likeCount
       user {
         nickName
       }
@@ -67,6 +68,17 @@ export const FETCH_BOARD = gql`
           nickName
         }
       }
+    }
+  }
+`;
+
+export const CREATE_COMMENT = gql`
+  mutation createComment(
+    $board: String!
+    $createCommentInput: CreateCommentInput!
+  ) {
+    createComment(board: $board, createCommentInput: $createCommentInput) {
+      likeCount
     }
   }
 `;
