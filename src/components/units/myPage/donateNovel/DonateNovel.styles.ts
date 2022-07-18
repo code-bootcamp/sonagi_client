@@ -32,7 +32,7 @@ export const GridWrap = styled.div`
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 `;
 
