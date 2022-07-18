@@ -13,6 +13,7 @@ const ToastUi = dynamic(() => import("../../commons/toastUI"), {
 });
 
 export default function NovelWritePresenter(props: any) {
+  console.log(props.isDay);
   return (
     <form
       onSubmit={
@@ -131,33 +132,45 @@ export default function NovelWritePresenter(props: any) {
               <S.WrapCheck>
                 <S.WrapChange>
                   <S.CheckButton
-                    onClick={props.onClickCycleButton}
-                    src={
-                      props.isClickPre
-                        ? "/novelWrite/check_box_fill.png"
-                        : "/novelWrite/check_box_blank.png"
-                    }
+                    type="radio"
+                    name="click"
+                    onClick={props.onClickPreButton}
                   />
                   <S.CycleLabel>자유연재</S.CycleLabel>
                   <S.CheckButton
-                    onClick={props.onClickCycleButton}
-                    src={
-                      props.isClickDay
-                        ? "/novelWrite/check_box_fill.png"
-                        : "/novelWrite/check_box_blank.png"
-                    }
+                    onClick={props.onClickDayButton}
+                    type="radio"
+                    name="click"
                   />
                   <S.CycleLabel>요일연재</S.CycleLabel>
                 </S.WrapChange>
-                <S.WrapCycleButton>
-                  <S.CycleButton>월</S.CycleButton>
-                  <S.CycleButton>화</S.CycleButton>
-                  <S.CycleButton>수</S.CycleButton>
-                  <S.CycleButton>목</S.CycleButton>
-                  <S.CycleButton>금</S.CycleButton>
-                  <S.CycleButton>토</S.CycleButton>
-                  <S.CycleButton>일</S.CycleButton>
-                </S.WrapCycleButton>
+                {props.isClickPre ? (
+                  <S.WrapCycleButton isClickDay={props.isClickDay}>
+                    {props.Day.map((el: any) => (
+                      <S.CycleButton2
+                        onClick={props.onClickDayDiv(el)}
+                        key={el.length}
+                        el={el}
+                        isDay={props.isDay}
+                      >
+                        {el}
+                      </S.CycleButton2>
+                    ))}
+                  </S.WrapCycleButton>
+                ) : (
+                  <S.WrapCycleButton isClickDay={props.isClickDay}>
+                    {props.Day.map((el: any) => (
+                      <S.CycleButton1
+                        onClick={props.onClickDayDiv(el)}
+                        key={el.length}
+                        el={el}
+                        isDay={props.isDay}
+                      >
+                        {el}
+                      </S.CycleButton1>
+                    ))}
+                  </S.WrapCycleButton>
+                )}
               </S.WrapCheck>
             </S.WrapCycle>
           </S.WrapGenreCycle>

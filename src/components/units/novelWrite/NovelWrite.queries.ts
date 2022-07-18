@@ -19,6 +19,7 @@ export const CREATE_NOVEL = gql`
         id
         name
       }
+      cycle
     }
   }
 `;

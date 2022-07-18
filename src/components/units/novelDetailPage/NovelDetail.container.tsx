@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { message } from "antd";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import NovelDetailPresenter from "./NovelDetail.Presenter";
@@ -82,7 +83,8 @@ export default function NovelDetailContainer() {
         },
       });
       console.log(result);
-      alert("후원 감사합니데이~~!");
+      // alert("후원 감사합니데이~~!");
+      message.info("후원감사합니다");
     } catch (error) {
       alert(error.message);
     }
@@ -95,6 +97,13 @@ export default function NovelDetailContainer() {
         variables: {
           novelID: router.query._id,
         },
+
+        refetchQueries: [
+          {
+            query: FETCH_NOVEL_DETAIL,
+            variables: { novelID: router.query._id },
+          },
+        ],
       });
       console.log(result);
       alert("선호작 등록!!");
