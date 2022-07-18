@@ -1,8 +1,10 @@
+import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./RecentWatch.styles";
 export default function RecentWatchPresenter(props) {
   return (
     <S.Wrapper>
       <S.RecentWatch>최근 본 작품</S.RecentWatch>
+      <HamburgerPage />
       <S.Flex>
         {props.basketItems?.slice(0, 5).map((el) => (
           <S.BoxWrap
