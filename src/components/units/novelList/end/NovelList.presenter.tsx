@@ -16,7 +16,7 @@ export default function NovelEndListPresenter(props: any) {
           .slice(0, 5)
           .map((el: any) => (
             <S.ItemWrap
-              onClick={props.onClickMoveToDetail}
+              onClick={props.onClickMoveToDetail(el)}
               id={el.id}
               key={el.title}
             >
@@ -50,7 +50,7 @@ export default function NovelEndListPresenter(props: any) {
           .slice(0, 5)
           .map((el: any) => (
             <S.ItemWrap
-              onClick={props.onClickMoveToDetail}
+              onClick={props.onClickMoveToDetail(el)}
               id={el.id}
               key={el.title}
             >
@@ -84,7 +84,7 @@ export default function NovelEndListPresenter(props: any) {
           .slice(0, 5)
           .map((el: any) => (
             <S.ItemWrap
-              onClick={props.onClickMoveToDetail}
+              onClick={props.onClickMoveToDetail(el)}
               id={el.id}
               key={el.title}
             >
@@ -118,7 +118,7 @@ export default function NovelEndListPresenter(props: any) {
           .slice(0, 5)
           .map((el: any) => (
             <S.ItemWrap
-              onClick={props.onClickMoveToDetail}
+              onClick={props.onClickMoveToDetail(el)}
               id={el.id}
               key={el.title}
             >
@@ -152,7 +152,7 @@ export default function NovelEndListPresenter(props: any) {
           .slice(0, 5)
           .map((el: any) => (
             <S.ItemWrap
-              onClick={props.onClickMoveToDetail}
+              onClick={props.onClickMoveToDetail(el)}
               id={el.id}
               key={el.title}
             >
@@ -186,7 +186,7 @@ export default function NovelEndListPresenter(props: any) {
           .slice(0, 5)
           .map((el: any) => (
             <S.ItemWrap
-              onClick={props.onClickMoveToDetail}
+              onClick={props.onClickMoveToDetail(el)}
               id={el.id}
               key={el.title}
             >

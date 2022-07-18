@@ -13,9 +13,23 @@ export default function NovelEndListContainer() {
   });
   console.log("소설", data);
 
-  const onClickMoveToDetail = (event: any) => {
+  const onClickMoveToDetail = (el) => (event) => {
     router.push(`/novel/${event.currentTarget.id}`);
-    console.log(event.target);
+    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
+    let isExists = false;
+    baskets.forEach((basketEL) => {
+      if (el.id === basketEL.id) isExists = true;
+    });
+    if (isExists) {
+      return;
+    }
+    const newEl = { ...el };
+    delete newEl.__typename;
+    baskets.push(newEl);
+    if (baskets.length > 9) {
+      baskets.shift();
+    }
+    localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
   return (
