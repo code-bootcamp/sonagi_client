@@ -7,7 +7,7 @@ export const MyNovel = styled.div`
 
 export const Img = styled.img`
   width: 250px;
-  height: 158px;
+  height: 218px;
   border-radius: 8px 0 0 8px;
 `;
 
@@ -142,7 +142,7 @@ export const ImageWrapper = styled.div`
 
 export const BoxWrapper = styled.div`
   width: 100%;
-  height: 160px;
+  height: 220px;
   border: 1px solid #bdbdbd;
   box-shadow: 0px 4px 4px 0px #f2f2f2;
   border-radius: 10px;
