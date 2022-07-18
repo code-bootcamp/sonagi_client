@@ -76,17 +76,47 @@ export default function NovelWritePresenter(props: any) {
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[1].id}
                       >
-                        무협
+                        미스터리/공포
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[2].id}
                       >
-                        로맨스
+                        무협
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[3].id}
+                      >
+                        학원
+                      </S.List>
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categoryData?.fetchNovelCategorysAll[4].id}
+                      >
+                        로맨스
+                      </S.List>
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categoryData?.fetchNovelCategorysAll[5].id}
+                      >
+                        로맨스 판타지
+                      </S.List>
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categoryData?.fetchNovelCategorysAll[6].id}
+                      >
+                        스포츠
+                      </S.List>
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categoryData?.fetchNovelCategorysAll[7].id}
+                      >
+                        게임
+                      </S.List>
+                      <S.List
+                        onClick={props.onClickGenre}
+                        id={props.categoryData?.fetchNovelCategorysAll[8].id}
                       >
                         판타지
                       </S.List>

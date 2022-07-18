@@ -135,6 +135,7 @@ export default function NovelWriteContainer(props) {
             tags,
             categoryID: data.categoryID,
             fileURLs: data.fileURLs,
+            cycles: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
           },
         },
       });

@@ -132,6 +132,13 @@ export const ItemNum = styled.p`
   padding: 5px;
   margin: 0;
 `;
+
+export const Cycle = styled.p`
+  font-size: 0.75em;
+  margin: 0;
+  padding: 4px;
+  background-color: aliceblue;
+`;
 export const ItemWriterWrap = styled.div`
   width: 100%;
   display: flex;

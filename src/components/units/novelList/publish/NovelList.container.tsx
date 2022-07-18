@@ -1,12 +1,12 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import NovelPbListPresenter from "./NovelList.presenter";
-import { FETCH_NOVELS_PAGE } from "./NovelList.queries";
+import { FETCH_PB_NOVELS_PAGE } from "./NovelList.queries";
 
 export default function NovelPbListContainer() {
   const router = useRouter();
 
-  const { data } = useQuery(FETCH_NOVELS_PAGE, {
+  const { data } = useQuery(FETCH_PB_NOVELS_PAGE, {
     variables: { page: 1 },
   });
   console.log("소설데이터", data);
