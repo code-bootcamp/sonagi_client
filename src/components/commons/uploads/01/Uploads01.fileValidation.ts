@@ -12,7 +12,11 @@ export const checkFileValidation = (file?: File) => {
     return false;
   }
   // 이미지 확장자가 png, jpeg 가 아니면 경고띄워주고 리턴시켜버리기
-  if (!file.type.includes("png") && !file.type.includes("jpeg")) {
+  if (
+    !file.type.includes("png") &&
+    !file.type.includes("jpeg") &&
+    !file.type.includes("webp")
+  ) {
     alert("jpeg 파일 또는 png 파일만 업로드 가능합니다.");
     return false;
   }

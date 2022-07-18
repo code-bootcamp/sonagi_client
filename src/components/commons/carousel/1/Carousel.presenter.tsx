@@ -38,7 +38,7 @@ export default function CarouselPresenter() {
           />
         ))}
       </S.MySlide>
-      <S.Title>기다리면 무료</S.Title>
+      <S.Title>오늘 연재 소설</S.Title>
       <S.MySlide {...settings}>
         {Img1?.map((item: any) => (
           <S.BookImg

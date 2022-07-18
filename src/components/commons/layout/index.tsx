@@ -25,16 +25,19 @@ export default function Layout(props: ILayoutProps) {
   const HIDDEN_HEADER = [
     "/login",
     "/signup",
+    "/socialLogin",
     "/novel/" + router.query._id + "/" + router.query.volume_id,
   ];
   const HIDDEN_NAVIGATION = [
     "/login",
     "/signup",
+    "/socialLogin",
     "/novel/" + router.query._id + "/" + router.query.volume_id,
   ];
   const HIDDEN_FOOTER = [
     "/login",
     "/signup",
+    "/socialLogin",
     "/novel/" + router.query._id + "/" + router.query.volume_id,
   ];
 
