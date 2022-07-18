@@ -1,12 +1,12 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import NovelEndListPresenter from "./NovelList.presenter";
-import { FETCH_NOVELS_PAGE } from "./NovelList.queries";
+import { FETCH_FIN_NOVELS_PAGE } from "./NovelList.queries";
 
 export default function NovelEndListContainer() {
   const router = useRouter();
 
-  const { data } = useQuery(FETCH_NOVELS_PAGE, {
+  const { data } = useQuery(FETCH_FIN_NOVELS_PAGE, {
     variables: {
       page: 1,
     },
