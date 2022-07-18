@@ -17,15 +17,17 @@ export default function CommentWritePresenter(props) {
         />
         <S.Wraplength>
           <S.Length>{props.contents.length}/100</S.Length>
-          <S.CommentButton
-            onClick={
-              props.isEdit
-                ? props.onClickUpdateComment
-                : props.onClickRegisterComment
-            }
-          >
-            {props.isEdit ? "댓글 수정" : "댓글 등록"}
-          </S.CommentButton>
+
+          {props.isEdit && (
+            <S.CommentButton onClick={props.onClickUpdateComment}>
+              댓글 수정
+            </S.CommentButton>
+          )}
+          {!props.isEdit && !props.isAnswer && !props.isAnswerEdit && (
+            <S.CommentButton onClick={props.onClickRegisterComment}>
+              댓글 등록
+            </S.CommentButton>
+          )}
         </S.Wraplength>
       </S.WrapContents>
     </S.Wrapper>

@@ -16,7 +16,7 @@ export default function AnswerListUIITEM(props) {
     try {
       const result = await deleteComment({
         variables: {
-          CommentID: props.el?._id,
+          CommentID: props.answerEl?._id,
         },
         refetchQueries: [
           {
