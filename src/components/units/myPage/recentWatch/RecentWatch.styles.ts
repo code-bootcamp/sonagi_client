@@ -6,11 +6,13 @@ export const Wrapper = styled.div`
 `;
 
 export const Flex = styled.div`
-  display: flex;
+  /* display: flex;
   margin-left: 20px;
   position: absolute;
   top: 340px;
-  width: 100%;
+  width: 100%; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
 
 export const Flex2 = styled.div`
@@ -37,7 +39,32 @@ export const NovelPic = styled.img`
   width: 150px;
   height: 200px;
   margin-left: 55px;
-  background-size: co;
+  position: absolute;
+  top: 330px;
+  :hover {
+    transform: scale(1.13);
+    transition: transform 1s;
+    filter: brightness(70%);
+  }
+`;
+
+export const NovelPics = styled.img`
+  /* border-radius: 8px; */
+  cursor: pointer;
+  width: 150px;
+  height: 200px;
+  margin-left: 55px;
+  position: absolute;
+  top: 730px;
+  :hover {
+    transform: scale(1.13);
+    transition: transform 1s;
+    filter: brightness(70%);
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 2px #e6e6e6;
+    -moz-box-shadow: 1px 1px 2px #e6e6e6;
+    box-shadow: 1px 1px 2px #e6e6e6;
+  }
 `;
 
 export const NovelTitle = styled.div`
@@ -78,7 +105,13 @@ export const MyPageFont = styled.div`
 export const BookShelf = styled.img`
   width: 100%;
   /* height: 290px; */
-  margin-top: 210px;
+  margin-top: 205px;
+`;
+
+export const BookShelfs = styled.img`
+  width: 100%;
+  /* height: 290px; */
+  margin-top: 180px;
 `;
 
 export const BookShelf2 = styled.img`
@@ -94,10 +127,10 @@ export const Title = styled.div`
   margin-left: 70px;
 `;
 
-export const Box = styled.div``;
+export const Wrap = styled.div`
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+`;
 
 export const BoxWrap = styled.div``;
-
-export const Image = styled.div``;
-
-export const BannerBg = styled.div``;

@@ -1,8 +1,15 @@
 import { useMutation } from "@apollo/client";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import FreeBoardWritePresenter from "./FreeBoardWrite.presenter";
 import { CREATE_BOARD, UPDATE_BOARD } from "./FreeBoardWrite.queries";
+import * as yup from "yup";
+
+const schema = yup.object({
+  fileURLs: yup.array().required("게시판 이미지를 등록해주세요."),
+});
 
 export default function FreeBoardWriteContainer(props: any) {
   const router = useRouter();
@@ -18,14 +25,29 @@ export default function FreeBoardWriteContainer(props: any) {
     setContents(event.target.value);
   };
 
+  const { setValue, trigger } = useForm({
+    resolver: yupResolver(schema),
+    mode: "onChange",
+  });
+
+  const [fileUrls, setFileUrls] = useState([""]);
+  const onChangeFileUrls = (fileUrl: string, index: number) => {
+    const newFileUrls = [...fileUrls];
+    newFileUrls[index] = fileUrl;
+    setFileUrls(newFileUrls);
+    setValue("fileURLs", newFileUrls);
+    trigger("fileURLs");
+  };
+
   // 등록
-  const onClickSubmit = async () => {
+  const onClickSubmit = async (data) => {
     try {
       const result = await createBoard({
         variables: {
           createBoardInput: {
             title,
             contents,
+            fileURLs: fileUrls,
           },
         },
       });
@@ -73,6 +95,8 @@ export default function FreeBoardWriteContainer(props: any) {
       isEdit={props.isEdit}
       data={props.data}
       onClickUpdate={onClickUpdate}
+      onChangeFileUrls={onChangeFileUrls}
+      fileUrls={fileUrls}
     />
   );
 }

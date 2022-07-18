@@ -1,8 +1,8 @@
 import React from "react";
 import Button01 from "../../../commons/buttons/01";
 import Button02 from "../../../commons/buttons/02";
-// import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
-// import { v4 as uuidv4 } from "uuid";
+import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
+import { v4 as uuidv4 } from "uuid";
 
 import * as S from "./FreeBoardWrite.styles";
 export default function FreeBoardWritePresenter(props: any) {
@@ -28,15 +28,14 @@ export default function FreeBoardWritePresenter(props: any) {
       ></S.InputContents>
       <S.SubTitle>사진첨부</S.SubTitle>
       <S.UploadBox>
-        {/* {props.fileUrls.map((el, index) => (
+        {props.fileUrls.map((el, index) => (
           <Uploads01
             key={uuidv4()}
-            fileUrls={el}
+            fileUrl={el}
             index={index}
-            // fileId={el}
             onChangeFileUrls={props.onChangeFileUrls}
           />
-        ))} */}
+        ))}
       </S.UploadBox>
       <S.ButtonWrapper>
         <Button02 title="취소" />

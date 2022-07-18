@@ -26,7 +26,7 @@ export default function NovelEndListContainer() {
     const newEl = { ...el };
     delete newEl.__typename;
     baskets.push(newEl);
-    if (baskets.length > 9) {
+    if (baskets.length > 8) {
       baskets.shift();
     }
     localStorage.setItem("baskets", JSON.stringify(baskets));

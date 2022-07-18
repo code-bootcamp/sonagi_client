@@ -2,24 +2,34 @@ import { useMutation } from "@apollo/client";
 // import { useRouter } from "next/router";
 import { useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
+import NestedCommentListContainer from "../../nestedComment/list/NestedCommentList.container";
+import NestedCommentWrite from "../../nestedComment/write/NestedCommentWrite.container";
 import CommentWriteContainer from "../commentWrite/CommentWrite.container";
-import AnswerListPresenter from "./AnswerList.presenter";
 import { DELETE_COMMENT, FETCH_COMMENTS } from "./CommentList.queries";
 import * as S from "./CommentList.styles";
 
 export default function CommentListPresenterItem(props) {
   const [isEdit, setIsEdit] = useState(false);
-  const [isAnswer, setIsAnswer] = useState(false);
+  // const [isAnswer, setIsAnswer] = useState(false);
   const [deleteComment] = useMutation(DELETE_COMMENT);
+  const [isNested, setIsNested] = useState(false);
+  const [mention, setMention] = useState("");
+
+  const onWriteMention = (nickname) => () => {
+    const at = "@";
+    const space = " ";
+    setMention(at.concat(nickname).concat(space));
+    setIsNested(true);
+  };
   // const router = useRouter();
 
   const onClickUpdate = () => {
     setIsEdit(true);
   };
 
-  const onClickAnswer = () => {
-    setIsAnswer(true);
-  };
+  // const onClickAnswer = () => {
+  //   setIsAnswer(true);
+  // };
 
   const onClickDelete = async () => {
     try {
@@ -73,9 +83,13 @@ export default function CommentListPresenterItem(props) {
             <S.WrapIcon>
               <S.EditIcon src="/comment/create.png" onClick={onClickUpdate} />
               <S.DeleteIcon src="/comment/Trash.png" onClick={onClickDelete} />
-              <S.AnswerIcon
+              {/* <S.AnswerIcon
                 src="/comment/insert_comment.png"
                 onClick={onClickAnswer}
+              /> */}
+              <S.AnswerIcon
+                src="/comment/insert_comment.png"
+                onClick={onWriteMention}
               />
             </S.WrapIcon>
           </S.WrapInfo>
@@ -89,14 +103,18 @@ export default function CommentListPresenterItem(props) {
             el={props.el}
           />
         )}
-        {isAnswer && (
-          <CommentWriteContainer
-            isAnswer={true}
-            setIsAnswer={setIsAnswer}
+        {isNested && (
+          <NestedCommentWrite
+            // isAnswer={true}
+            // setIsAnswer={setIsAnswer}
+            isNested={true}
             el={props.el}
+            mention={mention}
+            setIsNested={setIsNested}
           />
         )}
-        <AnswerListPresenter el={props.el} />
+        <NestedCommentListContainer el={props.el.id} />
+        {/* <AnswerListPresenter el={props.el} /> */}
       </S.FooterWrapper>
     </>
   );

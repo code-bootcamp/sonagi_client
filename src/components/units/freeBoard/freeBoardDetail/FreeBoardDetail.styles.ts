@@ -135,3 +135,8 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+export const FreeBoardImg = styled.img`
+  width: 250px;
+  height: 330px;
+`;

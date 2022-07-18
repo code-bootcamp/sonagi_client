@@ -1,11 +1,10 @@
-import React from "react";
-import * as S from "./CommentWrite.styles";
-export default function CommentWritePresenter(props) {
+import * as S from "./NestedCommentWrite.styles";
+export default function NestedCommentWritePresenter(props) {
   return (
     <S.Wrapper>
       <S.WrapTitle>
         <S.CommentIcon src="/comment/insert_comment.png" />
-        <S.CommentTitle>댓글</S.CommentTitle>
+        <S.CommentTitle>대댓글</S.CommentTitle>
       </S.WrapTitle>
       <S.WrapContents>
         <S.ContentsInput
@@ -18,14 +17,8 @@ export default function CommentWritePresenter(props) {
         <S.Wraplength>
           <S.Length>{props.contents.length}/100</S.Length>
 
-          <S.CommentButton
-            onClick={
-              props.isEdit
-                ? props.onClickUpdateComment
-                : props.onClickRegisterComment
-            }
-          >
-            {props.isEdit ? "수정하기" : "등록하기"}
+          <S.CommentButton onClick={props.WriteNestedComment}>
+            대댓글 등록
           </S.CommentButton>
         </S.Wraplength>
       </S.WrapContents>
