@@ -1,14 +1,14 @@
 import DOMPurify from "dompurify";
 import * as S from "./NovelBestList.styles";
 
-export default function NovelBestListPresenter(props) {
+export default function NovelBestListPresenter(props: any) {
   return (
     <S.Wrap>
       <S.Title>베스트셀러</S.Title>
       <S.GridWrap>
         {props.data?.fetchNovelCyclesPageLikeOrder?.novels
           .slice(0, 10)
-          .map((el: any) => (
+          .map((el: any, index: number) => (
             <S.ItemWrap
               onClick={props.onClickMoveToDetail}
               id={el.id}
@@ -16,7 +16,7 @@ export default function NovelBestListPresenter(props) {
             >
               <S.RowWrap>
                 <S.AwardIcon src="/novelList/best/award.svg" />
-                <S.AwardNum>1</S.AwardNum>
+                <S.AwardNum>{index + 1}</S.AwardNum>
                 <S.AwardText>위</S.AwardText>
               </S.RowWrap>
               <S.Itembox>

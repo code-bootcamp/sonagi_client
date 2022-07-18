@@ -1,29 +1,11 @@
 import styled from "@emotion/styled";
 
 export const Wrap = styled.div`
-  width: 100%;
+  width: 96%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 30px 10px;
-
-  @media (min-width: 991px) and (max-width: 1200px) {
-    width: 96%;
-    margin: 2%;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
-    width: 96%;
-    margin: 2%;
-  }
-
-  @media (min-width: 391px) and (max-width: 767px) {
-    width: 96%;
-  }
-
-  @media (max-width: 390px) {
-    width: 96%;
-  }
+  margin: 4.05% 2%;
 `;
 export const Title = styled.label`
   font-size: 1.875rem;
@@ -45,18 +27,8 @@ export const ItemWrap = styled.div`
   border: 1px solid #bdbdbd;
   border-radius: 30px;
 
-  @media (min-width: 991px) and (max-width: 1200px) {
-    width: 98%;
-    padding: 10px;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
-    width: 98%;
-    padding: 10px;
-  }
-
   @media (min-width: 391px) and (max-width: 767px) {
-    width: 46%;
+    width: 96%;
     margin: 2%;
   }
 
@@ -86,11 +58,11 @@ export const AwardIcon = styled.img`
   height: 40px;
 `;
 export const AwardNum = styled.div`
-  font-size: 1.63em;
+  font-size: 1.63rem;
   color: #2277d8;
 `;
 export const AwardText = styled.div`
-  font-size: 1.13em;
+  font-size: 1.13rem;
 `;
 
 export const Itembox = styled.div`
@@ -111,8 +83,11 @@ export const Itembox = styled.div`
   }
 `;
 export const ItemPic = styled.img`
-  width: 180px;
-  height: 240px;
+  width: 32.655%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  vertical-align: middle;
 `;
 export const TextWrap = styled.div`
   padding: 0px 20px;
@@ -137,16 +112,17 @@ export const RowWrap2 = styled.div`
 `;
 
 export const ItemName = styled.div`
-  font-size: 2em;
-  margin-right: 44px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-right: 20px;
 
   @media (min-width: 391px) and (max-width: 767px) {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin-right: 50px;
   }
 
   @media (max-width: 390px) {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin: 0 20px;
   }
 `;
@@ -156,7 +132,7 @@ export const ItemPickIcon = styled.img`
   height: 20px;
 `;
 export const Contents = styled.div`
-  font-size: 0.88em;
+  font-size: 0.88rem;
   color: #808080;
 
   @media (min-width: 391px) and (max-width: 767px) {
@@ -172,11 +148,11 @@ export const ItemInfoWrap = styled.div`
   flex-direction: row;
   margin-top: 20px;
   align-items: center;
-  font-size: 0.88em;
+  font-size: 0.88rem;
   color: #808080;
 
   @media (min-width: 391px) and (max-width: 767px) {
-    flex-direction: column;
+    display: none;
   }
 
   @media (min-width: 391px) and (max-width: 767px) {
