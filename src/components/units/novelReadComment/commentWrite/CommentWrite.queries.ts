@@ -3,9 +3,8 @@ import { gql } from "@apollo/client";
 export const CREATE_EPISODE_REVIEW = gql`
   mutation createEpisodeReview(
     $createEpisodeReviewInput: CreateNovelIndexReviewInput!
-    $novel: String!
   ) {
-    createNovelReview(createReviewInput: $createReviewInput, novel: $novel) {
+    createEpisodeReview(createEpisodeReviewInput: $createEpisodeReviewInput) {
       id
       contents
       star
@@ -15,9 +14,11 @@ export const CREATE_EPISODE_REVIEW = gql`
   }
 `;
 
-export const UPDATE_NOVEL_REVIEW = gql`
-  mutation updateNovelReview($updateNovelReviewInput: UpdateNovelReviewInput!) {
-    updateNovelReview(updateNovelReviewInput: $updateNovelReviewInput) {
+export const UPDATE_EPISODE_REVIEW = gql`
+  mutation updateEpisodeReview(
+    $updateEpisodeReviewInput: UpdateNovelIndexReviewInput!
+  ) {
+    updateEpisodeReview(updateEpisodeReviewInput: $updateEpisodeReviewInput) {
       id
       contents
     }

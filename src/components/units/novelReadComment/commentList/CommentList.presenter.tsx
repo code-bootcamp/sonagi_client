@@ -1,40 +1,68 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { CaretDownOutlined } from "@ant-design/icons";
 
 import ReadCommentListPresenterItem from "./CommentList.presenterItem";
+import ReadCommentWriteContainer from "../commentWrite/CommentWrite.container";
+import InfiniteScroll from "react-infinite-scroller";
 
-const WrapMore = styled.div`
+const HeadWrapper = styled.div`
   width: 100%;
-  height: 50px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
-  border: 2px solid #d9d9d9;
-  margin: 20px 0 50px 0;
+  background-color: #f1f4f5;
+  height: 8%;
 `;
 
-const More = styled.div`
-  color: #2277d8;
+const FooterWrapper = styled.div`
+  width: 100%;
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f4f5;
+`;
+
+const Scroll = styled.div`
+  height: 84%;
+  overflow: auto;
+  margin: 0px auto;
+`;
+
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  left: calc(-50vw + 50%);
 `;
 
 export default function ReadCommentListPresenter(props) {
   return (
-    <>
-      {props.data?.fetchNovelReviewPage.novelRivews.map((el) => (
-        <ReadCommentListPresenterItem key={el.id} el={el} />
-      ))}
-      {props.data?.fetchNovelReviewPage.count > 10 ? (
-        <WrapMore onClick={props.onClickFetchMore}>
-          <More>10</More>개 더보기
-          <CaretDownOutlined
-            style={{ fontSize: "2rem", color: "#2277d8", margin: "0 5px" }}
-          />
-        </WrapMore>
+    <Wrapper>
+      {props.isGoComment ? (
+        <ReadCommentWriteContainer setIsGoCommnet={props.setIsGoCommnet} />
       ) : (
-        <></>
+        <>
+          <HeadWrapper onClick={props.onClickGoRead}>읽으러 가기</HeadWrapper>
+          <Scroll>
+            <InfiniteScroll
+              pageStart={0}
+              loadMore={props.onClickFetchMore}
+              hasMore={true || false}
+              useWindow={false}
+            >
+              {props.data?.fetchEpisodeReviewPage.episodeReviews.map((el) => (
+                <ReadCommentListPresenterItem key={el.id} el={el} />
+              ))}
+            </InfiniteScroll>
+          </Scroll>
+          <FooterWrapper onClick={props.onClickGoComment}>
+            댓글 쓰러 가기
+          </FooterWrapper>
+        </>
       )}
-    </>
+    </Wrapper>
   );
 }

@@ -5,6 +5,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import {
   CREATE_BOOK_MARK,
   FETCH_EPISODE_DETAIL,
+  FETCH_EPISODE_REVIEW_PAGE,
   FETCH_NOVEL_DETAIL,
 } from "./NovelRead.queries";
 
@@ -19,6 +20,10 @@ export default function NovelReadContainer() {
   console.log(readData);
   const { data: novelData } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
+  });
+
+  const { data: commentData } = useQuery(FETCH_EPISODE_REVIEW_PAGE, {
+    variables: { episodeID: router.query.volume_id, page: 1 },
   });
 
   const onClickMoveToMain = () => {
@@ -99,6 +104,12 @@ export default function NovelReadContainer() {
     }
     setSize((prev) => prev - 1);
   };
+
+  // 댓글로 가기
+  const [commentClick, setCommentClick] = useState(false);
+  const onClickComment = () => {
+    setCommentClick(true);
+  };
   return (
     <NovelReadPresenter
       onClickMoveToMain={onClickMoveToMain}
@@ -116,6 +127,11 @@ export default function NovelReadContainer() {
       onClickSizeUp={onClickSizeUp}
       size={size}
       setSize={setSize}
+      // 댓글로 가기
+      commentClick={commentClick}
+      setCommentClick={setCommentClick}
+      onClickComment={onClickComment}
+      commentData={commentData}
     />
   );
 }

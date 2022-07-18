@@ -3,16 +3,16 @@ import { useRouter } from "next/router";
 // import { useRouter } from "next/router";
 import { useState } from "react";
 import { getDateDay } from "../../../../commons/libraries/utils";
-import DetailCommentWriteContainer from "../commentWrite/CommentWrite.container";
+import ReadCommentWriteContainer from "../commentWrite/CommentWrite.container";
 import {
-  DELETE_NOVEL_REVIEW,
-  FETCH_NOVEL_REVIEW_PAGE,
+  DELETE_EPISODE_REVIEW,
+  FETCH_EPISODE_REVIEW_PAGE,
 } from "./CommentList.queries";
 import * as S from "./CommentList.styles";
 
 export default function ReadCommentListPresenterItem(props) {
   const [isEdit, setIsEdit] = useState(false);
-  const [deleteNovelReview] = useMutation(DELETE_NOVEL_REVIEW);
+  const [deleteEpisodeReview] = useMutation(DELETE_EPISODE_REVIEW);
   const router = useRouter();
 
   const onClickUpdate = () => {
@@ -22,15 +22,15 @@ export default function ReadCommentListPresenterItem(props) {
   const onClickDelete = async (event) => {
     console.log("이벤트", event.currentTarget.id);
     try {
-      await deleteNovelReview({
+      await deleteEpisodeReview({
         variables: {
           ReviewID: event.currentTarget.id,
         },
 
         refetchQueries: [
           {
-            query: FETCH_NOVEL_REVIEW_PAGE,
-            variables: { novel: router.query._id },
+            query: FETCH_EPISODE_REVIEW_PAGE,
+            variables: { episodeID: router.query.volume_id, page: 1 },
           },
         ],
       });
@@ -50,7 +50,7 @@ export default function ReadCommentListPresenterItem(props) {
           <S.WrapInfo>
             <S.WrapCommentInfo>
               <S.WrapUserInfo>
-                <S.Star value={props.el?.star} disabled />
+                {/* <S.Star value={props.el?.star} disabled /> */}
                 <S.Name>{props.el?.user?.nickName}</S.Name>
                 <S.WrapDate>
                   <S.Date>{getDateDay(props.el?.createAt)}</S.Date>
@@ -80,7 +80,7 @@ export default function ReadCommentListPresenterItem(props) {
       </S.Wrapper>
       <S.FooterWrapper>
         {isEdit && (
-          <DetailCommentWriteContainer
+          <ReadCommentWriteContainer
             isEdit={true}
             setIsEdit={setIsEdit}
             el={props.el}

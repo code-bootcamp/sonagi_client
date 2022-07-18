@@ -28,7 +28,7 @@ export const HeadWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #e0e0e0;
+  background-color: #f1f4f5;
   height: 8%;
   display: ${(props) => (props.setDisplay ? "default" : "none")};
 `;
@@ -66,7 +66,7 @@ export const FooterWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #e0e0e0;
+  background-color: #f1f4f5;
   display: ${(props) => (props.setDisplay ? "default" : "none")};
 `;
 

@@ -1,63 +1,44 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import ReadCommentListPresenter from "./CommentList.presenter";
 
-import { FETCH_NOVEL_REVIEW_PAGE } from "./CommentList.queries";
+import { FETCH_EPISODE_REVIEW_PAGE } from "./CommentList.queries";
 
-export default function ReadCommentListContainer() {
+export default function ReadCommentListContainer(props) {
   const router = useRouter();
 
-  const { data, fetchMore, refetch } = useQuery(FETCH_NOVEL_REVIEW_PAGE, {
-    variables: { novelID: router.query._id },
+  const { data, fetchMore, refetch } = useQuery(FETCH_EPISODE_REVIEW_PAGE, {
+    variables: { episodeID: router.query.volume_id, page: 1 },
   });
-
-  // const onClickFetchMore = () => {
-  //   setPage((prev) => prev + 1);
-  //   refetch();
-  // };
-
-  // const onClickFetchMore = () => {
-  //   if (!data) return;
-  //   fetchMore({
-  //     variables: {
-  //       page: setPage((prev) => prev + 1),
-  //     },
-  //     updateQuery: (prev, { fetchMoreResult }) => {
-  //       if (!fetchMoreResult)
-  //         return {
-  //           prev,
-  //         };
-  //       return {
-  //         page: [prev, fetchMoreResult],
-  //       };
-  //     },
-  //   });
-  //   // refetch();
-  // };
 
   const onClickFetchMore = () => {
     if (!data) return;
     fetchMore({
       variables: {
-        page: Math.ceil(data.fetchNovelReviewPage.novelRivews.length / 10) + 1,
+        page:
+          Math.ceil(data.fetchEpisodeReviewPage.episodeReviews.length / 10) + 1,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        console.log("하하", fetchMoreResult?.fetchNovelReviewPage.novelRivews);
-        if (fetchMoreResult?.fetchNovelReviewPage.novelRivews.length === 0) {
-          alert("리뷰가 더이상 없습니다");
-          return prev.fetchNovelReviewPage;
+        console.log(
+          "하하",
+          fetchMoreResult?.fetchEpisodeReviewPage.episodeReviews
+        );
+        if (
+          fetchMoreResult?.fetchEpisodeReviewPage.episodeReviews.length === 0
+        ) {
+          return prev.fetchEpisodeReviewPage;
         }
         // console.log("패치", fetchMoreResult);
-        console.log(prev.fetchNovelReviewPage.novelRivews);
-        console.log(fetchMoreResult.fetchNovelReviewPage.novelRivews);
+        console.log(prev.fetchEpisodeReviewPage.episodeReviews);
+        console.log(fetchMoreResult.fetchEpisodeReviewPage.episodeReviews);
         return {
-          fetchNovelReviewPage: {
-            novelRivews: [
-              ...prev.fetchNovelReviewPage.novelRivews,
-              ...fetchMoreResult.fetchNovelReviewPage.novelRivews,
+          fetchEpisodeReviewPage: {
+            episodeReviews: [
+              ...prev.fetchEpisodeReviewPage.episodeReviews,
+              ...fetchMoreResult.fetchEpisodeReviewPage.episodeReviews,
             ],
-            count: fetchMoreResult.fetchNovelReviewPage.count,
+            count: fetchMoreResult.fetchEpisodeReviewPage.count,
           },
         };
       },
@@ -66,11 +47,28 @@ export default function ReadCommentListContainer() {
   };
 
   console.log("데이터", data);
+
+  // 댓글 등록으로
+  const [isGoComment, setIsGoCommnet] = useState(false);
+  const onClickGoComment = () => {
+    setIsGoCommnet((prev) => !prev);
+  };
+
+  // 읽으러가기
+  const onClickGoRead = () => {
+    props.setCommentClick(false);
+  };
   return (
     <ReadCommentListPresenter
       data={data}
       onClickFetchMore={onClickFetchMore}
       refetch={refetch}
+      // 댓글로
+      onClickGoComment={onClickGoComment}
+      isGoComment={isGoComment}
+      setIsGoCommnet={setIsGoCommnet}
+      // 읽으러
+      onClickGoRead={onClickGoRead}
     />
   );
 }

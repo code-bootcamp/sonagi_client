@@ -3,9 +3,10 @@ import { Rate } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 
   @media ${breakPoints.mobile} {
   }
@@ -70,6 +71,7 @@ export const WrapUserInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
 `;
 
 export const Star = styled(Rate)`
@@ -79,6 +81,7 @@ export const Star = styled(Rate)`
 
 export const WrapComment = styled.div`
   padding-left: 30px;
+  align-self: center;
 `;
 
 export const Name = styled.div`

@@ -49,7 +49,6 @@ export const DELETE_NOVEL = gql`
     deleteNovel(novelID: $novelID) {
       id
       msg
-      isSuccess
     }
   }
 `;

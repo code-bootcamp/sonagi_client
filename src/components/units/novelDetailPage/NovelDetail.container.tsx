@@ -42,6 +42,7 @@ export default function NovelDetailContainer() {
         variables: { novelID: router.query._id },
       });
       alert(result.data.deleteNovel.msg);
+      router.push("/novel/list/publish");
     } catch (error) {
       alert(error.message);
     }
@@ -73,6 +74,7 @@ export default function NovelDetailContainer() {
   };
 
   // 후원하기
+
   const onChangeDonate = (event) => {
     setDonate(event.target.value);
     console.log(event.target.value);
