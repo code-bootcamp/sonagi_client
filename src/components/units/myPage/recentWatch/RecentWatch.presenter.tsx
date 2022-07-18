@@ -1,10 +1,8 @@
-import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./RecentWatch.styles";
 export default function RecentWatchPresenter() {
   return (
     <S.Wrapper>
       <S.RecentWatch>최근 본 작품</S.RecentWatch>
-      <HamburgerPage />
       <S.Wrap>
         <S.Flex>
           <S.NovelPic src="../recentWatch/21.png" />
