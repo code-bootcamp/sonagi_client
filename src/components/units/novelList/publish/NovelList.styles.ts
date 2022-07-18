@@ -109,7 +109,7 @@ export const ItemInfo = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin: 20px 0px;
 `;
 export const ItemName = styled.h4`
@@ -164,6 +164,12 @@ export const Contents = styled.div`
   width: 100%;
   font-size: 0.94rem;
   color: #00000078;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  margin-top: 10px;
 
   @media (min-width: 391px) and (max-width: 767px) {
     font-size: 0.88rem;
