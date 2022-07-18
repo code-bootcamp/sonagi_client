@@ -1,5 +1,5 @@
 import React from "react";
-import Hambuger from "../../../../commons/hambuger";
+import HamburgerPage from "../../../../commons/hamburger";
 import * as S from "./InquireList.styles";
 
 export default function InquireListPresenter() {
@@ -7,7 +7,7 @@ export default function InquireListPresenter() {
     <S.Wrapper>
       <S.WrapHambuger>
         <S.MainTitle>1 : 1 문의</S.MainTitle>
-        <Hambuger />
+        <HamburgerPage />
       </S.WrapHambuger>
       <S.WrapperList>
         <S.WrapInfo>

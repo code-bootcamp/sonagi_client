@@ -1,7 +1,11 @@
+import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./MyNovel.styles";
 export default function MyNovelPresenter(props) {
   return (
     <S.Wrapper>
+      <S.HamburgerWrapper>
+        <HamburgerPage />
+      </S.HamburgerWrapper>
       <S.TopWrapper>
         <S.MyNovel>나의 작품</S.MyNovel>
         <S.WriteButton onClick={props.onClickMoveToPage(`/novel/new`)}>

@@ -8,9 +8,14 @@ import {
 
 export default function CarouselContainer() {
   const router = useRouter();
-  const { data: LastData } = useQuery(FETCH_NOVEL_CYCLES_LAST_ORDER);
+  const randomPage = Math.floor(Math.random() * 2) + 1;
+
+  const { data: LastData } = useQuery(FETCH_NOVEL_CYCLES_LAST_ORDER, {
+    variables: { page: randomPage },
+  });
   const { data: LikeData } = useQuery(FETCH_NOVEL_CYCLES_LIKE_ORDER);
-  console.log(LikeData);
+
+  console.log(randomPage, LikeData);
 
   const onClickNovelDetail = (el) => () => {
     router.push(`/novel/${el.id}`);

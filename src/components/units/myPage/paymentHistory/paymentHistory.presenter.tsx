@@ -3,9 +3,13 @@ import PaymentPage from "../../../commons/modal/cancelPayments";
 import PaidPointsPresenter from "./points/paidPoints.presenter";
 import * as S from "./paymentHistory.styles";
 import DonatePointsPresenter from "./points/donatePoints.presenter";
+import HamburgerPage from "../../../commons/hamburger";
 export default function PaymentHistoryPresenter(props) {
   return (
     <S.Wrapper>
+      <S.HamburgerWrapper>
+        <HamburgerPage />
+      </S.HamburgerWrapper>
       <S.TopWrapper>
         <S.Top onClick={props.onClickFetchPoint}>충전내역</S.Top>
         <S.Top onClick={props.onClickFetchPaidPoint}>결제내역</S.Top>

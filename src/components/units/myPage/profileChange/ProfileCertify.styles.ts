@@ -6,6 +6,16 @@ export const Wrapper = styled.div`
   padding: 2%;
 `;
 
+export const HamburgerWrapper = styled.div`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+  }
+`;
+
 export const MainTitle = styled.div`
   font-size: 1.125rem;
   margin: 30px 30px 50px 0px;
