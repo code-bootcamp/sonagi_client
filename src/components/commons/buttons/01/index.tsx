@@ -12,6 +12,7 @@ const Button = styled.button`
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
+  margin-left: 35px;
 
   @media ${breakPoints.mobile} {
     width: 100px;

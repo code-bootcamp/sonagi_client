@@ -9,7 +9,9 @@ export default function CommentListContainer() {
   const { data } = useQuery(FETCH_COMMENTS, {
     variables: { commentID: router.query._id },
   });
-
-  console.log("데이터", data);
+  // const { data } = useQuery(FETCH_BOARD, {
+  //   variables: { boardID: router.query._id },
+  // });
+  console.log("댓글리스트data", data);
   return <CommentListPresenter data={data} />;
 }

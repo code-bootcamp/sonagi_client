@@ -133,5 +133,5 @@ export const Button = styled.div`
 
 export const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: right;
+  justify-content: center;
 `;

@@ -11,7 +11,9 @@ export const UPDATE_COMMENT = gql`
 
 export const DELETE_COMMENT = gql`
   mutation deleteComment($CommentID: String!) {
-    deleteComment(CommentID: $CommentID)
+    deleteComment(CommentID: $CommentID) {
+      id
+    }
   }
 `;
 
@@ -48,6 +50,22 @@ export const FETCH_COMMENTS_ALL = gql`
       contents
       user {
         nickName
+      }
+    }
+  }
+`;
+
+export const FETCH_BOARD = gql`
+  query fetchBoard($boardID: String!) {
+    fetchBoard(boardID: $boardID) {
+      comments {
+        id
+        contents
+        createAt
+        user {
+          id
+          nickName
+        }
       }
     }
   }

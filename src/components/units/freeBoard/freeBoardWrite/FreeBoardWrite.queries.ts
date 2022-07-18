@@ -10,10 +10,19 @@ export const CREATE_BOARD = gql`
         id
         nickName
       }
-      files {
+    }
+  }
+`;
+
+export const UPDATE_BOARD = gql`
+  mutation updateBoard($updateBoardInput: UpdateBoardInput!) {
+    updateBoard(updateBoardInput: $updateBoardInput) {
+      id
+      title
+      contents
+      user {
         id
-        name
-        url
+        nickName
       }
     }
   }

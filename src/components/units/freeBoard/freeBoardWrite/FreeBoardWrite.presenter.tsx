@@ -11,17 +11,20 @@ export default function FreeBoardWritePresenter(props: any) {
       <S.RowWrap>
         <S.MainTitle>자유게시판</S.MainTitle>
         <S.TitleLine></S.TitleLine>
-        <S.SubTitle>글쓰기</S.SubTitle>
+
+        <S.SubTitle>{props.isEdit ? "수정하기" : "글쓰기"}</S.SubTitle>
       </S.RowWrap>
       <S.SubTitle>제목</S.SubTitle>
       <S.InputTitle
         placeholder="제목을 입력해주세요"
         onChange={props.onChangeTitle}
+        defaultValue={props.data?.fetchBoard.title}
       ></S.InputTitle>
       <S.SubTitle>내용</S.SubTitle>
       <S.InputContents
         placeholder="내용을 입력하세요"
         onChange={props.onChangeContents}
+        defaultValue={props.data?.fetchBoard.contents}
       ></S.InputContents>
       <S.SubTitle>사진첨부</S.SubTitle>
       <S.UploadBox>
@@ -38,7 +41,10 @@ export default function FreeBoardWritePresenter(props: any) {
       <S.ButtonWrapper>
         <Button02 title="취소" />
         <S.Margin>
-          <Button01 title="등록" onClick={props.onClickSubmit} />
+          <Button01
+            title={props.isEdit ? "수정" : "등록"}
+            onClick={props.isEdit ? props.onClickUpdate : props.onClickSubmit}
+          />
         </S.Margin>
       </S.ButtonWrapper>
     </S.Wrapper>

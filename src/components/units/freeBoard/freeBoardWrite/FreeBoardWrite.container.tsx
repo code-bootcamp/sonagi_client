@@ -2,9 +2,9 @@ import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import FreeBoardWritePresenter from "./FreeBoardWrite.presenter";
-import { CREATE_BOARD } from "./FreeBoardWrite.queries";
+import { CREATE_BOARD, UPDATE_BOARD } from "./FreeBoardWrite.queries";
 
-export default function FreeBoardWriteContainer() {
+export default function FreeBoardWriteContainer(props: any) {
   const router = useRouter();
   const [createBoard] = useMutation(CREATE_BOARD);
 
@@ -18,6 +18,7 @@ export default function FreeBoardWriteContainer() {
     setContents(event.target.value);
   };
 
+  // 등록
   const onClickSubmit = async () => {
     try {
       const result = await createBoard({
@@ -38,11 +39,40 @@ export default function FreeBoardWriteContainer() {
     }
   };
 
+  // 수정
+  const [updateBoard] = useMutation(UPDATE_BOARD);
+  const onClickUpdate = async (data) => {
+    try {
+      console.log("상품업데이트data찍은콘솔", data);
+      if (!title && !contents) {
+        alert("수정된 내용이 없습니다.");
+        return;
+      }
+      const result = await updateBoard({
+        variables: {
+          updateBoardInput: {
+            title,
+            contents,
+            id: router.query._id,
+          },
+        },
+      });
+      console.log(result);
+      alert("게시글을 수정합니다");
+      router.push(`/freeBoard/${result.data?.updateBoard.id}`);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <FreeBoardWritePresenter
       onChangeTitle={onChangeTitle}
       onChangeContents={onChangeContents}
       onClickSubmit={onClickSubmit}
+      isEdit={props.isEdit}
+      data={props.data}
+      onClickUpdate={onClickUpdate}
     />
   );
 }
