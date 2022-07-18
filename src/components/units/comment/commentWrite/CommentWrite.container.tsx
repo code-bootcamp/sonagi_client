@@ -76,28 +76,26 @@ export default function CommentWriteContainer(props) {
   };
 
   // 대댓글등록
-  const createAnswer = async () => {
-    if (contents) {
-      await createComment({
-        variables: {
-          createCommentInput: {
-            contents,
-            parent: props.el?.id,
-          },
-          board: String(router.query._id),
-        },
-        refetchQueries: [
-          {
-            query: FETCH_COMMENTS,
-            // variables: { board: String(router.query._id) },
-          },
-        ],
-      });
-      alert("답변을 등록했습니다.");
-    }
-  };
-
-  // 대댓글수정
+  // const createAnswer = async () => {
+  //   if (contents) {
+  //     await createComment({
+  //       variables: {
+  //         createCommentInput: {
+  //           contents,
+  //           parent: props.el?.id,
+  //         },
+  //         board: String(router.query._id),
+  //       },
+  //       refetchQueries: [
+  //         {
+  //           query: FETCH_COMMENTS,
+  //           // variables: { board: String(router.query._id) },
+  //         },
+  //       ],
+  //     });
+  //     alert("답변을 등록했습니다.");
+  //   }
+  // };
 
   return (
     <CommentWritePresenter
@@ -107,7 +105,6 @@ export default function CommentWriteContainer(props) {
       el={props.el}
       contents={contents}
       onClickUpdateComment={onClickUpdateComment}
-      createAnswer={createAnswer}
       isAnswer={props.isAnswer}
       isAnswerEdit={props.isAnswerEdit}
     />
