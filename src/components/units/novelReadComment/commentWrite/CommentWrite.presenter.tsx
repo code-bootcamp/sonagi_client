@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./CommentWrite.styles";
-export default function DetailCommentWritePresenter(props) {
+export default function ReadCommentWritePresenter(props) {
   return (
     <form
       onSubmit={

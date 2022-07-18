@@ -103,6 +103,7 @@ export const NovelRemarks = styled.div`
   font-size: 0.938rem;
   color: #757575;
   margin-top: 10px;
+  margin-bottom: 100px;
 `;
 
 export const TagsWrapper = styled.div`
@@ -190,6 +191,7 @@ export const ArrowImg = styled.img`
 
 export const New = styled.div`
   font-size: 0.75rem;
+  margin-left: 5px;
 `;
 
 export const All = styled.div`

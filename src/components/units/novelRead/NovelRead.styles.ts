@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   position: relative;
   left: calc(-50vw + 50%);
@@ -23,13 +23,13 @@ export const Wrapper = styled.div`
 
 export const HeadWrapper = styled.div`
   width: 100%;
-  height: 8%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 20px;
   background-color: #e0e0e0;
+  height: 8%;
   display: ${(props) => (props.setDisplay ? "default" : "none")};
 `;
 
@@ -40,6 +40,7 @@ export const BodyWrapper = styled.div`
   display: flex;
   flex-direction: row;
   background-color: #ffd2dd;
+  font-size: ${(props) => props.fontsize}rem;
 
   @media (min-width: 767px) and (max-width: 991px) {
     min-width: 767px;

@@ -23,8 +23,7 @@ export default function NovelWriteContainer(props) {
   console.log(props.editData);
 
   const router = useRouter();
-  const [isClickPre, setIsClickPre] = useState(false);
-  const [isClickDay, setIsClickDay] = useState(true);
+
   const [genre, setGenre] = useState("");
   const [name, setName] = useState("");
   const [isSelect, SetIsSelect] = useState(false);
@@ -135,11 +134,11 @@ export default function NovelWriteContainer(props) {
             tags,
             categoryID: data.categoryID,
             fileURLs: data.fileURLs,
-            cycles: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+            cycles: isDay,
           },
         },
       });
-      console.log(result);
+      console.log("하하하", result);
       alert("성공");
       router.push(`/novel/${result.data?.createNovel.id}`);
     } catch (error) {
@@ -170,14 +169,34 @@ export default function NovelWriteContainer(props) {
     }
   };
 
-  const onClickCycleButton = () => {
-    setIsClickPre((prev) => !prev);
-    setIsClickDay((prev) => !prev);
+  const [isClickPre, setIsClickPre] = useState(false);
+  const [isClickDay, setIsClickDay] = useState(false);
+  const [isDay, setIsDay] = useState([""]);
+
+  const onClickPreButton = () => {
+    setIsClickPre(true);
+    setIsClickDay(false);
+    setIsDay([""]);
   };
+
+  const onClickDayButton = () => {
+    setIsClickPre(false);
+    setIsClickDay(true);
+  };
+
+  const onClickDayDiv = (el) => () => {
+    setIsDay(el);
+  };
+
+  const Day = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
   return (
     <NovelWritePresenter
-      onClickCycleButton={onClickCycleButton}
+      Day={Day}
+      onClickPreButton={onClickPreButton}
+      onClickDayButton={onClickDayButton}
+      onClickDayDiv={onClickDayDiv}
+      isDay={isDay}
       isClickPre={isClickPre}
       isClickDay={isClickDay}
       // toastUI

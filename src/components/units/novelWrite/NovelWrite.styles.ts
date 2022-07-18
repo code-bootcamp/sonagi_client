@@ -140,8 +140,9 @@ export const WrapSelect = styled.div`
 export const WrapGenreSelect = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 5px;
 `;
 
 export const WrapGenreList = styled.div`
@@ -175,7 +176,6 @@ export const List = styled.li`
 export const SelectButton = styled.img`
   width: 24px;
   height: 24px;
-  background-color: #2277d8;
 
   @media ${breakPoints.mobile} {
     width: 20px;
@@ -204,13 +204,14 @@ export const WrapCheck = styled.div`
 export const WrapChange = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   @media ${breakPoints.mobile} {
     padding-bottom: 20px;
   }
 `;
 
-export const CheckButton = styled.img`
+export const CheckButton = styled.input`
   margin: 0 15px;
 `;
 
@@ -221,13 +222,66 @@ export const CycleLabel = styled.div`
 export const WrapCycleButton = styled.div`
   margin-left: 25px;
   display: flex;
+  background-color: ${(props) => (props.isClickDay ? "none" : "gray")};
 
   @media ${breakPoints.mobile} {
     margin: 0;
   }
 `;
 
-export const CycleButton = styled.div`
+export const CycleButton1 = styled.div`
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid #b1b1b1;
+  cursor: pointer;
+  background-color: ${(props) =>
+    props.isDay === props.el ? " #2277d8" : "none"};
+  color: ${(props) => (props.isDay === props.el ? " white" : "none")}; ;
+`;
+
+export const CycleButton2 = styled.div`
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid #b1b1b1;
+`;
+
+export const CycleButton3 = styled.div`
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid #b1b1b1;
+`;
+
+export const CycleButton4 = styled.div`
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid #b1b1b1;
+`;
+
+export const CycleButton5 = styled.div`
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid #b1b1b1;
+`;
+
+export const CycleButton6 = styled.div`
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid #b1b1b1;
+`;
+
+export const CycleButton7 = styled.div`
   width: 30px;
   height: 30px;
   text-align: center;
