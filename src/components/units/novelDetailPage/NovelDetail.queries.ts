@@ -10,6 +10,7 @@ export const FETCH_NOVEL_DETAIL = gql`
       viewCount
       createAt
       updateAt
+      cycle
       user {
         name
         nickName
@@ -48,7 +49,6 @@ export const DELETE_NOVEL = gql`
     deleteNovel(novelID: $novelID) {
       id
       msg
-      isSuccess
     }
   }
 `;
@@ -100,6 +100,20 @@ export const CHANGE_PRIVATE_NOVEL_INDEX = gql`
   mutation changePrivateNovelIndex($novelIndexID: String!) {
     changePrivateNovelIndex(novelIndexID: $novelIndexID) {
       id
+    }
+  }
+`;
+
+export const FETCH_PAID_POINTS = gql`
+  query fetchPaidPoints($page: Int!) {
+    fetchPaidPoints(page: $page) {
+      id
+      point
+      createAt
+      # status {
+      #   id
+      #   description
+      # }
     }
   }
 `;

@@ -32,3 +32,11 @@ export const CREATE_BOOK_MARK = gql`
     }
   }
 `;
+
+export const FETCH_EPISODE_REVIEW_PAGE = gql`
+  query fetchEpisodeReviewPage($episodeID: String!, $page: Int!) {
+    fetchEpisodeReviewPage(episodeID: $episodeID, page: $page) {
+      count
+    }
+  }
+`;

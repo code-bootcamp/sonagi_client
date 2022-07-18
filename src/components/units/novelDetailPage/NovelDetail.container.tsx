@@ -10,6 +10,7 @@ import {
   DELETE_NOVEL_INDEX,
   DONATEPOINT,
   FETCH_NOVEL_DETAIL,
+  FETCH_PAID_POINTS,
   PAIDPOINT,
 } from "./NovelDetail.queries";
 
@@ -26,6 +27,11 @@ export default function NovelDetailContainer() {
   const { data: detailData } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
   });
+  const { data: PaidData } = useQuery(FETCH_PAID_POINTS, {
+    variables: { page: 1 },
+  });
+
+  console.log("결제", PaidData);
 
   console.log(detailData);
 
@@ -36,6 +42,7 @@ export default function NovelDetailContainer() {
         variables: { novelID: router.query._id },
       });
       alert(result.data.deleteNovel.msg);
+      router.push("/novel/list/publish");
     } catch (error) {
       alert(error.message);
     }
@@ -67,6 +74,7 @@ export default function NovelDetailContainer() {
   };
 
   // 후원하기
+
   const onChangeDonate = (event) => {
     setDonate(event.target.value);
     console.log(event.target.value);

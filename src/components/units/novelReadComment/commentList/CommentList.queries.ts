@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client";
 
-export const FETCH_NOVEL_REVIEW_PAGE = gql`
-  query fetchNovelReviewPage($novelID: String!, $page: Int = 1) {
-    fetchNovelReviewPage(novelID: $novelID, page: $page) {
-      novelRivews {
+export const FETCH_EPISODE_REVIEW_PAGE = gql`
+  query fetchEpisodeReviewPage($episodeID: String!, $page: Int!) {
+    fetchEpisodeReviewPage(episodeID: $episodeID, page: $page) {
+      episodeReviews {
         id
         contents
         likeCount
@@ -21,8 +21,11 @@ export const FETCH_NOVEL_REVIEW_PAGE = gql`
   }
 `;
 
-export const DELETE_NOVEL_REVIEW = gql`
-  mutation deleteNovelReview($ReviewID: String!) {
-    deleteNovelReview(ReviewID: $ReviewID)
+export const DELETE_EPISODE_REVIEW = gql`
+  mutation deleteEpisodeReview($ReviewID: String!) {
+    deleteEpisodeReview(ReviewID: $ReviewID) {
+      id
+      msg
+    }
   }
 `;
