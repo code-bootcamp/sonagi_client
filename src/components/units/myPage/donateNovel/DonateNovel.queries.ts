@@ -1,31 +1,32 @@
 import { gql } from "@apollo/client";
 
-export const FETCH_NOVEL_DONATE = gql`
-  query fetchNovelDonateInUser {
-    fetchNovelDonateInUser {
+export const FETCH_DONATE = gql`
+  query fetchDonatePoints($page: Int!) {
+    fetchDonatePoints(page: $page) {
       id
+      point
       createAt
+      novel {
+        id
+        title
+        user {
+          id
+          nickName
+          userClass {
+            id
+          }
+        }
+        files {
+          id
+          name
+          path
+          url
+        }
+      }
       user {
         id
         name
         nickName
-      }
-      novel {
-        id
-        title
-        description
-        likeCount
-        viewCount
-        createAt
-        user {
-          id
-          name
-          nickName
-        }
-        novelCategory {
-          id
-          name
-        }
       }
     }
   }

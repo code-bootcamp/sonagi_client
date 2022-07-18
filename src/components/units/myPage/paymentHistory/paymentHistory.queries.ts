@@ -77,6 +77,12 @@ export const FETCH_DONATE_POINTS = gql`
             id
           }
         }
+        files {
+          id
+          name
+          path
+          url
+        }
       }
       user {
         id
