@@ -22,7 +22,7 @@ export default function MyNovelPresenter(props) {
               </S.Title>
               <S.GenreFlex>
                 <S.Genre>{el.novelCategory.name}</S.Genre>
-                <S.Time>조회수 {el.viewCount}</S.Time>
+                <S.Time>좋아요 {el.lickCount}회</S.Time>
               </S.GenreFlex>
             </S.Column>
             <S.BoxFlex>

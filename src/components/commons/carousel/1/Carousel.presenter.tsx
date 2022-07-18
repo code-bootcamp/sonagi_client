@@ -1,5 +1,5 @@
 import * as S from "./Carousel.styles";
-export default function CarouselPresenter() {
+export default function CarouselPresenter(props) {
   const settings = {
     centerMode: true,
     infinite: true,
@@ -20,21 +20,23 @@ export default function CarouselPresenter() {
     <S.Wrapper>
       <S.Title>인기 소설</S.Title>
       <S.MySlide {...settings}>
-        {Img1?.map((item: any) => (
+        {props.LikeData?.fetchNovelCyclesPageLikeOrder.novels.map((el: any) => (
           <S.BookImg
-            key={item.length}
-            src={`/mainpage/bookimg/${item}.webp`}
-            // onMouseEnter={props.onClickDetail(item)}
+            id={el.id}
+            onClick={props.onClickNovelDetail(el)}
+            key={el.id}
+            src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0].url}`}
           />
         ))}
       </S.MySlide>
       <S.Title>최신 작품</S.Title>
       <S.MySlide {...settings}>
-        {Img1?.map((item: any) => (
+        {props.LastData?.fetchNovelCyclesPageLastOrder.novels.map((el: any) => (
           <S.BookImg
-            key={item.length}
-            src={`/mainpage/bookimg/${item}.webp`}
-            // onMouseEnter={props.onClickDetail(item)}
+            id={el.id}
+            onClick={props.onClickNovelDetail(el)}
+            key={el.id}
+            src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0].url}`}
           />
         ))}
       </S.MySlide>
