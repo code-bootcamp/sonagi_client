@@ -93,108 +93,113 @@ export const Tag = styled.div`
   }
 `;
 
-// 소설 목록 wrap
-export const ItemRowWrap = styled.div`
-  width: 100%;
-  padding: 2%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+export const GridWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 5px;
+  justify-content: flex-start;
 
   @media ${breakPoints.tablet} {
-    width: 96%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    margin: 0px 10px;
   }
 
   @media ${breakPoints.mobile} {
-    width: 96%;
-    display: flex;
-    flex-flow: row wrap;
+    margin: 0px 10px;
   }
 `;
 
-// 소설 낱개
 export const ItemWrap = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 7%;
-  cursor: pointer;
+  border: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 20%;
+  margin: 20px 0 10px 0;
+  padding: 0 3px;
+  overflow: hidden;
 
-  @media ${breakPoints.tablet} {
-    width: 90%;
+  @media (min-width: 768px) and (max-width: 990px) {
+    transition-duration: 1s;
+    flex-basis: 25%;
   }
 
-  @media ${breakPoints.mobile} {
-    width: 96%;
-    display: flex;
-    flex-flow: row wrap;
+  @media (min-width: 391px) and (max-width: 767px) {
+    transition-duration: 1s;
+    flex-basis: 33.3333%;
+  }
+
+  @media (max-width: 390px) {
+    transition-duration: 1s;
+    flex-basis: 49%;
   }
 `;
 
 export const ItemPic = styled.img`
-  width: 180px;
-  height: 240px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  vertical-align: middle;
 `;
 
 export const ItemInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0px 15px;
-`;
-
-export const RowWrap = styled.div`
+  width: 98%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin: 20px 0px;
 `;
-
-export const ItemName = styled.div`
-  font-size: 1.5em;
+export const ItemName = styled.h4`
+  width: 70%;
+  font-size: 1.15rem;
   font-weight: 700;
+  margin: 0;
 
-  @media ${breakPoints.mobile} {
-    padding: 2px;
-    font-size: 1.25em;
+  @media (min-width: 391px) and (max-width: 767px) {
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 1.25rem;
   }
 `;
-
-export const ItemPlus = styled.div`
-  width: 30%;
+export const ItemNum = styled.p`
   background-color: #eee;
+  font-size: 0.875em;
   padding: 5px;
-  margin-left: 13px;
-  font-size: 1em;
-  text-align: center;
-
-  @media ${breakPoints.tablet} {
-    padding: 2px;
-    font-size: 0.8em;
-  }
-  @media ${breakPoints.mobile} {
-    padding: 2px;
-    font-size: 0.8em;
-  }
+  margin: 0;
 `;
-
+export const ItemWriterWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+`;
 export const WriterIcon = styled.img`
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
 `;
+export const WrtiterName = styled.div`
+  font-size: 1rem;
 
-export const Writer = styled.div`
-  font-size: 1em;
+  @media (min-width: 391px) and (max-width: 767px) {
+    font-size: 0.875rem;
+  }
 
-  @media ${breakPoints.mobile} {
-    font-size: 0.8em;
+  @media (max-width: 390px) {
+    font-size: 0.875rem;
   }
 `;
-
 export const Contents = styled.div`
-  width: 150px;
-  margin-top: 20px;
-  color: #808080;
-  font-size: 0.8em;
+  width: 100%;
+  font-size: 0.94rem;
+  color: #00000078;
+
+  @media (min-width: 391px) and (max-width: 767px) {
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 390px) {
+    display: none;
+  }
 `;
