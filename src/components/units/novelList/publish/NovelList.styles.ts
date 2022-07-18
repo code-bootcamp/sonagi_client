@@ -105,6 +105,18 @@ export const ItemPic = styled.img`
   vertical-align: middle;
 `;
 
+export const Wrap2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const Wrap3 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-end;
+`;
+
 export const ItemInfo = styled.div`
   width: 98%;
   display: flex;

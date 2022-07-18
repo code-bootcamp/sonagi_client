@@ -21,23 +21,27 @@ export default function NovelPbListPresenter(props: any) {
             <S.ItemPic
               src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
             />
-            <S.ItemInfo>
-              <S.ItemName>{el.title}</S.ItemName>
-              {el.cycle === 0 ? (
-                <S.Cycle>자유연재</S.Cycle>
-              ) : (
-                <S.Cycle>{el.cycle.split("|")}</S.Cycle>
-              )}
-            </S.ItemInfo>
-            <S.ItemWriterWrap>
-              <S.WriterIcon src="/novelList/writer-icon.png" />
-              <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
-            </S.ItemWriterWrap>
-            <S.Contents
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(el.description),
-              }}
-            ></S.Contents>
+            <S.Wrap2>
+              <S.ItemInfo>
+                <S.ItemName>{el.title}</S.ItemName>
+                {el.cycle === 0 ? (
+                  <S.Cycle>자유연재</S.Cycle>
+                ) : (
+                  <S.Cycle>{el.cycle.split("|")}</S.Cycle>
+                )}
+              </S.ItemInfo>
+              <S.Wrap3>
+                <S.ItemWriterWrap>
+                  <S.WriterIcon src="/novelList/writer-icon.png" />
+                  <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+                </S.ItemWriterWrap>
+                <S.Contents
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(el.description),
+                  }}
+                ></S.Contents>
+              </S.Wrap3>
+            </S.Wrap2>
           </S.ItemWrap>
         ))}
       </S.GridWrap>
@@ -55,23 +59,27 @@ export default function NovelPbListPresenter(props: any) {
               <S.ItemPic
                 src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
               />
-              <S.ItemInfo>
-                <S.ItemName>{el.title}</S.ItemName>
-                {el.cycle === 0 ? (
-                  <S.Cycle>자유연재</S.Cycle>
-                ) : (
-                  <S.Cycle>요일연재</S.Cycle>
-                )}
-              </S.ItemInfo>
-              <S.ItemWriterWrap>
-                <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
-              </S.ItemWriterWrap>
-              <S.Contents
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(el.description),
-                }}
-              ></S.Contents>
+              <S.Wrap2>
+                <S.ItemInfo>
+                  <S.ItemName>{el.title}</S.ItemName>
+                  {el.cycle === 0 ? (
+                    <S.Cycle>자유연재</S.Cycle>
+                  ) : (
+                    <S.Cycle>요일연재</S.Cycle>
+                  )}
+                </S.ItemInfo>
+                <S.Wrap3>
+                  <S.ItemWriterWrap>
+                    <S.WriterIcon src="/novelList/writer-icon.png" />
+                    <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+                  </S.ItemWriterWrap>
+                  <S.Contents
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(el.description),
+                    }}
+                  ></S.Contents>
+                </S.Wrap3>
+              </S.Wrap2>
             </S.ItemWrap>
           ))}
       </S.GridWrap>
