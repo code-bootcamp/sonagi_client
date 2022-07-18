@@ -83,9 +83,21 @@ export default function NovelReadContainer() {
   };
 
   // 사이즈업
-  const [size, setSize] = useState();
+  const [size, setSize] = useState(1);
   const onClickSizeUp = () => {
+    if (size > 5) {
+      alert("최대 사이즈 입니다.");
+      return;
+    }
     setSize((prev) => prev + 1);
+  };
+
+  const onClickSizeDown = () => {
+    if (size === 1) {
+      alert("최소 사이즈 입니다");
+      return;
+    }
+    setSize((prev) => prev - 1);
   };
   return (
     <NovelReadPresenter
@@ -99,9 +111,11 @@ export default function NovelReadContainer() {
       onClickMoveToNextPage={onClickMoveToNextPage}
       // 북마크
       onClickBookMark={onClickBookMark}
-      // 사이즈 업
+      // 사이즈 업,다운
+      onClickSizeDown={onClickSizeDown}
       onClickSizeUp={onClickSizeUp}
       size={size}
+      setSize={setSize}
     />
   );
 }

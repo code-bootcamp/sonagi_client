@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import { CaretDownOutlined } from "@ant-design/icons";
 
-import DetailCommentListPresenterItem from "./CommentList.presenterItem";
+import ReadCommentListPresenterItem from "./CommentList.presenterItem";
 
 const WrapMore = styled.div`
   width: 100%;
@@ -19,19 +19,21 @@ const More = styled.div`
   color: #2277d8;
 `;
 
-export default function DetailCommentListPresenter(props) {
+export default function ReadCommentListPresenter(props) {
   return (
     <>
       {props.data?.fetchNovelReviewPage.novelRivews.map((el) => (
-        <DetailCommentListPresenterItem key={el.id} el={el} />
+        <ReadCommentListPresenterItem key={el.id} el={el} />
       ))}
-      {props.data?.fetchNovelReviewPage.count > 10 && (
+      {props.data?.fetchNovelReviewPage.count > 10 ? (
         <WrapMore onClick={props.onClickFetchMore}>
           <More>10</More>개 더보기
           <CaretDownOutlined
             style={{ fontSize: "2rem", color: "#2277d8", margin: "0 5px" }}
           />
         </WrapMore>
+      ) : (
+        <></>
       )}
     </>
   );

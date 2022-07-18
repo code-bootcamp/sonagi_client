@@ -100,7 +100,9 @@ export default function NovelDetailPresenter(props) {
             <S.SortButton>
               <S.ArrowImg src="/novelDetail/Arrow 1.png" />
               <S.ArrowImg src="/novelDetail/Arrow 2.png" />
-              <S.New>신간부터</S.New>
+              <S.New onClick={props.onClickFirst}>
+                {props.isFirst ? "1권 부터" : "신간부터"}
+              </S.New>
             </S.SortButton>
           </S.WrapFirst>
           <S.MarginWrapper>
@@ -111,48 +113,99 @@ export default function NovelDetailPresenter(props) {
           </S.MarginWrapper>
         </S.TableLineWrapper>
         {/* <S.TableDottedLine /> */}
-
-        {props.detailData?.fetchNovelDetail.novelIndexs.map((el) => (
-          <S.TableLineWrapper key={el.id}>
-            <S.WrapFirst>
-              <S.Square
-                // id={props.detailData?.fetchNovelDetail.novelIndexs.index}
-                type="checkbox"
-                // onChange={() => props.onCheckedItem(props.list)}
-                // checked={props.isChecked(props.list)}
-              />
-              <S.TableSonWrapper>
-                <S.Title>
-                  {el.index}화: {el.title}
-                </S.Title>
-                <S.WrapDate>
-                  <S.Date>{getDateDay(el.createAt)}</S.Date>
-                  <S.Date>{el.viewCount}명</S.Date>
-                  <S.VerticalLine />
-                  <S.SumCharacter>약 {el.contents.length}자</S.SumCharacter>
-                </S.WrapDate>
-              </S.TableSonWrapper>
-            </S.WrapFirst>
-            <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
-              삭제
-            </S.LookBtn>
-            <S.LookBtn id={el.id} onClick={props.onClickPayment}>
-              구매
-            </S.LookBtn>
-            <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
-              보기
-            </S.LookBtn>
-            <div
-              id={el.id}
-              // checkedChildren="공개"
-              // unCheckedChildren="비공개"
-              // defaultChecked
-              onClick={props.onClickPrivate}
-            >
-              공개
-            </div>
-          </S.TableLineWrapper>
-        ))}
+        {props.isFirst ? (
+          <>
+            {props.detailData?.fetchNovelDetail.novelIndexs
+              .map((el) => (
+                <S.TableLineWrapper key={el.id}>
+                  <S.WrapFirst>
+                    <S.Square
+                      // id={props.detailData?.fetchNovelDetail.novelIndexs.index}
+                      type="checkbox"
+                      // onChange={() => props.onCheckedItem(props.list)}
+                      // checked={props.isChecked(props.list)}
+                    />
+                    <S.TableSonWrapper>
+                      <S.Title>
+                        {el.index}화: {el.title}
+                      </S.Title>
+                      <S.WrapDate>
+                        <S.Date>{getDateDay(el.createAt)}</S.Date>
+                        <S.Date>{el.viewCount}명</S.Date>
+                        <S.VerticalLine />
+                        <S.SumCharacter>
+                          약 {el.contents.length}자
+                        </S.SumCharacter>
+                      </S.WrapDate>
+                    </S.TableSonWrapper>
+                  </S.WrapFirst>
+                  <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
+                    삭제
+                  </S.LookBtn>
+                  <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+                    구매
+                  </S.LookBtn>
+                  <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                    보기
+                  </S.LookBtn>
+                  <div
+                    id={el.id}
+                    // checkedChildren="공개"
+                    // unCheckedChildren="비공개"
+                    // defaultChecked
+                    onClick={props.onClickPrivate}
+                  >
+                    공개
+                  </div>
+                </S.TableLineWrapper>
+              ))
+              .reverse()}
+          </>
+        ) : (
+          <>
+            {props.detailData?.fetchNovelDetail.novelIndexs.map((el) => (
+              <S.TableLineWrapper key={el.id}>
+                <S.WrapFirst>
+                  <S.Square
+                    // id={props.detailData?.fetchNovelDetail.novelIndexs.index}
+                    type="checkbox"
+                    // onChange={() => props.onCheckedItem(props.list)}
+                    // checked={props.isChecked(props.list)}
+                  />
+                  <S.TableSonWrapper>
+                    <S.Title>
+                      {el.index}화: {el.title}
+                    </S.Title>
+                    <S.WrapDate>
+                      <S.Date>{getDateDay(el.createAt)}</S.Date>
+                      <S.Date>{el.viewCount}명</S.Date>
+                      <S.VerticalLine />
+                      <S.SumCharacter>약 {el.contents.length}자</S.SumCharacter>
+                    </S.WrapDate>
+                  </S.TableSonWrapper>
+                </S.WrapFirst>
+                <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
+                  삭제
+                </S.LookBtn>
+                <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+                  구매
+                </S.LookBtn>
+                <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                  보기
+                </S.LookBtn>
+                <div
+                  id={el.id}
+                  // checkedChildren="공개"
+                  // unCheckedChildren="비공개"
+                  // defaultChecked
+                  onClick={props.onClickPrivate}
+                >
+                  공개
+                </div>
+              </S.TableLineWrapper>
+            ))}
+          </>
+        )}
         <S.Margin />
         <S.FooterLabel>소설 키워드</S.FooterLabel>
         <S.TagsWrapper>

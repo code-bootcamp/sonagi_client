@@ -4,19 +4,19 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FETCH_NOVEL_REVIEW_PAGE } from "../commentList/CommentList.queries";
-import DetailCommentWritePresenter from "./CommentWrite.presenter";
 import {
   CREATE_NOVEL_REVIEW,
   UPDATE_NOVEL_REVIEW,
 } from "./CommentWrite.queries";
 import * as yup from "yup";
+import ReadCommentWritePresenter from "./CommentWrite.presenter";
 
 const schema = yup.object({
   contents: yup.string().required("리뷰를 입력해주세요."),
   star: yup.number().required("별점을 입력해주세요."),
 });
 
-export default function DetailCommentWriteContainer(props) {
+export default function ReadCommentWriteContainer(props) {
   // 댓글등록
   const router = useRouter();
   const [click, setClick] = useState(false);
@@ -95,7 +95,7 @@ export default function DetailCommentWriteContainer(props) {
   };
 
   return (
-    <DetailCommentWritePresenter
+    <ReadCommentWritePresenter
       onClickComment={onClickComment}
       onClickUpdateComment={onClickUpdateComment}
       setStar={setStar}

@@ -1,11 +1,11 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import React from "react";
-import DetailCommentListPresenter from "./CommentList.presenter";
+import ReadCommentListPresenter from "./CommentList.presenter";
 
 import { FETCH_NOVEL_REVIEW_PAGE } from "./CommentList.queries";
 
-export default function DetailCommentListContainer() {
+export default function ReadCommentListContainer() {
   const router = useRouter();
 
   const { data, fetchMore, refetch } = useQuery(FETCH_NOVEL_REVIEW_PAGE, {
@@ -43,7 +43,7 @@ export default function DetailCommentListContainer() {
         page: Math.ceil(data.fetchNovelReviewPage.novelRivews.length / 10) + 1,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        // console.log("하하", fetchMoreResult?.fetchNovelReviewPage.novelRivews);
+        console.log("하하", fetchMoreResult?.fetchNovelReviewPage.novelRivews);
         if (fetchMoreResult?.fetchNovelReviewPage.novelRivews.length === 0) {
           alert("리뷰가 더이상 없습니다");
           return prev.fetchNovelReviewPage;
@@ -65,9 +65,9 @@ export default function DetailCommentListContainer() {
     // refetch();
   };
 
-  // console.log("데이터", data);
+  console.log("데이터", data);
   return (
-    <DetailCommentListPresenter
+    <ReadCommentListPresenter
       data={data}
       onClickFetchMore={onClickFetchMore}
       refetch={refetch}

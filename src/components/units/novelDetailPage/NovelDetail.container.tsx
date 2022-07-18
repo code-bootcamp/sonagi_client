@@ -141,6 +141,12 @@ export default function NovelDetailContainer() {
     }
   };
 
+  // 1권 부터
+  const [isFirst, setIsFirst] = useState(false);
+  const onClickFirst = () => {
+    setIsFirst((prev) => !prev);
+  };
+
   // // 체크박스
   // const [checkList, setCheckList] = useState([]);
   // const dataList = detailData?.fetchNovelDetail.novelIndexs;
@@ -182,6 +188,8 @@ export default function NovelDetailContainer() {
       onClickEdit={onClickEdit}
       onClickPrivate={onClickPrivate}
       switchPrivate={switchPrivate}
+      onClickFirst={onClickFirst}
+      isFirst={isFirst}
       // 체크박스
       // onClickCheckAll={onClickCheckAll}
       // onCheckedItem={onCheckedItem}

@@ -25,7 +25,8 @@ export default function NovelReadPresenter(props) {
           <S.SettingImg src="/novelRead/setting.png" />
         </S.RightWrapper>
       </S.HeadWrapper>
-      <S.BodyWrapper onClick={props.onClickDisplay}>
+
+      <S.BodyWrapper fontsize={props.size} onClick={props.onClickDisplay}>
         {typeof window !== "undefined" ? (
           <div
             dangerouslySetInnerHTML={{
@@ -49,9 +50,9 @@ export default function NovelReadPresenter(props) {
           <S.Content onClick={props.onClickMoveToNextPage}>다음화</S.Content>
           <S.FooterArrow src="/novelRead/footerArrowRight.png" />
         </S.CenterWrapper>
-        <S.Content size={props.size} onClick={props.onClickSizeUp}>
-          sizeUp
-        </S.Content>
+        <S.Content onClick={props.onClickSizeDown}>sizeDown</S.Content>
+        <S.Content onClick={props.onClickSizeUp}>sizeUp</S.Content>
+
         <S.RightWrapper>
           <S.Comment src="/novelRead/list.png" />
           <S.Content onClick={props.onClickMoveToList}>목록</S.Content>
