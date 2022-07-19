@@ -1,11 +1,19 @@
 import { ChangeEvent } from "react";
+import {
+  FieldValues,
+  FormState,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
 
 export interface ISignupContainerProps {}
 
 export interface ISignupPresenterProps {
-  formState: any;
-  handleSubmit: any;
-  register: any;
+  setAgree1: any;
+  phoneCheck: any;
+  formState: FormState<FieldValues>;
+  register: UseFormRegister<FieldValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
   onClickSignUp: () => void;
   onClickMoveToMain: () => void;
   onClickSendPhone: () => void;
