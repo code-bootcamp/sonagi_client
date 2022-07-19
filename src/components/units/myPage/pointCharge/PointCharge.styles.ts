@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { IPointChargeStylesProps } from "./PointCharge.types";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -120,7 +121,7 @@ export const InnerTable = styled.div`
     background-color: #dcf0ff;
     border: 1px solid #2277d8;
   }
-  background-color: ${(props: any) =>
+  background-color: ${(props: IPointChargeStylesProps) =>
     props.el.price === props.value ? "#DCF0FF" : "default"};
   border: ${(props: any) =>
     props.el.price === props.value ? "1px solid #2277d8" : "default"};

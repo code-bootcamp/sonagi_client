@@ -31,11 +31,8 @@ export default function PointChargeContainer() {
 
     IMP.request_pay(
       {
-        // param
         pg: "html5_inicis",
         pay_method: "card",
-        // merchant_uid: "ORD20180131-0000011",
-        // merchant_uid(상품 아이디) : 중복되면 안되기 때문에, 주석처리 해주면 자동으로 생성됨!
         name: "포인트 충전",
         amount: value,
         buyer_email: loginData?.fetchLoginUser.email,
