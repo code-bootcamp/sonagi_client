@@ -16,7 +16,9 @@ export default function RecentWatchPresenter(props) {
               <S.NovelPic
                 src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
               />
-              {/* <S.Title>{el.title}</S.Title> */}
+              <S.TitleWrap>
+                <S.Title>{el.title}</S.Title>
+              </S.TitleWrap>
             </S.BoxWrap>
           ))}
         </S.Flex>
@@ -33,6 +35,7 @@ export default function RecentWatchPresenter(props) {
               <S.NovelPics
                 src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
               />
+
               {/* <S.Title>{el.title}</S.Title> */}
             </S.BoxWrap>
           ))}

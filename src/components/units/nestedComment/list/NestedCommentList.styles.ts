@@ -57,6 +57,7 @@ export const WrapCommentInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 25px;
+  background-color: blue;
 `;
 
 export const Comment = styled.div`

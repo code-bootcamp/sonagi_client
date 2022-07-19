@@ -1,9 +1,12 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { FETCH_COMMENTS } from "../commentList/CommentList.queries";
 import CommentWritePresenter from "./CommentWrite.presenter";
-import { CREATE_COMMENT, UPDATE_COMMENT } from "./CommentWrite.queries";
+import {
+  CREATE_COMMENT,
+  FETCH_COMMENTS_FROM_BOARD,
+  UPDATE_COMMENT,
+} from "./CommentWrite.queries";
 
 export default function CommentWriteContainer(props) {
   const router = useRouter();
@@ -22,21 +25,15 @@ export default function CommentWriteContainer(props) {
             createCommentInput: {
               contents,
             },
-            board: String(router.query._id),
+            boardID: String(router.query._id),
           },
 
           refetchQueries: [
             {
-              query: FETCH_COMMENTS,
-              // variables: { board: String(router.query._id) },
+              query: FETCH_COMMENTS_FROM_BOARD,
+              variables: { boardID: String(router.query._id) },
             },
           ],
-          // refetchQueries: [
-          //   {
-          //     query: FETCH_BOARD,
-          //     variables: { boardID: String(router.query._id) },
-          //   },
-          // ],
         });
         alert("질문을 등록했습니다!!.");
       } catch (error) {
@@ -63,7 +60,8 @@ export default function CommentWriteContainer(props) {
 
         refetchQueries: [
           {
-            query: FETCH_COMMENTS,
+            query: FETCH_COMMENTS_FROM_BOARD,
+            variables: { boardID: String(router.query._id) },
           },
         ],
       });
@@ -74,28 +72,6 @@ export default function CommentWriteContainer(props) {
       alert(error.message);
     }
   };
-
-  // 대댓글등록
-  // const createAnswer = async () => {
-  //   if (contents) {
-  //     await createComment({
-  //       variables: {
-  //         createCommentInput: {
-  //           contents,
-  //           parent: props.el?.id,
-  //         },
-  //         board: String(router.query._id),
-  //       },
-  //       refetchQueries: [
-  //         {
-  //           query: FETCH_COMMENTS,
-  //           // variables: { board: String(router.query._id) },
-  //         },
-  //       ],
-  //     });
-  //     alert("답변을 등록했습니다.");
-  //   }
-  // };
 
   return (
     <CommentWritePresenter

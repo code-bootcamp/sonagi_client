@@ -2,7 +2,10 @@ import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import NestedCommentWritePresenter from "./NestedCommentWrite.presenter";
-import { CREATE_COMMENT, FETCH_COMMENTS } from "./NestedCommentWrite.queries";
+import {
+  CREATE_NESTED_COMMENT,
+  FETCH_COMMENTS_FROM_BOARD,
+} from "./NestedCommentWrite.queries";
 
 export default function NestedCommentWrite(props) {
   const router = useRouter();
@@ -11,24 +14,26 @@ export default function NestedCommentWrite(props) {
     setContents(event.target.value);
   };
 
-  const [createNestedComment] = useMutation(CREATE_COMMENT);
-  const WriteNestedComment = async (data) => {
+  const [createNestedComment] = useMutation(CREATE_NESTED_COMMENT);
+  const WriteNestedComment = async (event) => {
     try {
       const result = await createNestedComment({
         variables: {
           createCommentInput: {
             contents,
-            parent: props.el?.id,
+            parent: event.currentTarget?.id,
           },
-          board: String(router.query._id),
+          boardID: String(router.query._id),
+
+          refetchQueries: [
+            {
+              query: FETCH_COMMENTS_FROM_BOARD,
+              variables: { boardID: String(router.query._id) },
+            },
+          ],
         },
-        refetchQueries: [
-          {
-            query: FETCH_COMMENTS,
-          },
-        ],
       });
-      console.log("대댓글", result);
+      console.log("대댓글write", result);
     } catch (error) {
       alert(error.message);
     }
