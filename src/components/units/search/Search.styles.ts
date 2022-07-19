@@ -20,25 +20,25 @@ export const SearchInputWrap = styled.div`
     width: 90%;
   }
 `;
-export const SearchInput = styled.input`
-  border: none;
-  border-bottom: 1px solid #bdbdbd;
-  width: 636px;
-  height: 35px;
-  background-image: url("../search/search.svg");
-  background-repeat: no-repeat;
-  background-position: 10px;
-  padding: 25px 60px;
+// export const SearchbarInput = styled.input`
+//   border: none;
+//   border-bottom: 1px solid #bdbdbd;
+//   width: 636px;
+//   height: 35px;
+//   background-image: url("../search/search.svg");
+//   background-repeat: no-repeat;
+//   background-position: 10px;
+//   padding: 25px 60px;
 
-  &:focus {
-    outline: none;
-  }
+//   &:focus {
+//     outline: none;
+//   }
 
-  @media ${breakPoints.mobile} {
-    transition-duration: 1s;
-    width: 90%;
-  }
-`;
+//   @media ${breakPoints.mobile} {
+//     transition-duration: 1s;
+//     width: 90%;
+//   }
+// `;
 
 // 태그 wrap
 export const TagWrap = styled.div`

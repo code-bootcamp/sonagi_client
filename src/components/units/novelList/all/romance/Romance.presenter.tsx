@@ -36,7 +36,7 @@ export default function RomancePresenter(props) {
           </S.ItemWrap>
         ))}
       </S.GridWrap>
-      <S.MoreBtn onClick={props.loadFunc}>더보기</S.MoreBtn>
+      {/* <S.MoreBtn onClick={props.loadFunc}>더보기</S.MoreBtn> */}
       <S.Line></S.Line>
       {/* 완결작 */}
       <S.RowWrap>

@@ -6,7 +6,7 @@ export default function NovelBestListPresenter(props: any) {
     <S.Wrap>
       <S.Title>베스트셀러</S.Title>
       <S.GridWrap>
-        {props.data?.fetchNovelCyclesPageLikeOrder?.novels
+        {props.data?.fetchNovelsPage?.novels
           .slice(0, 10)
           .map((el: any, index: number) => (
             <S.ItemWrap

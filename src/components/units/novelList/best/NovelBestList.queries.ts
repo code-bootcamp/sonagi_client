@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const FETCH_PB_BEST_NOVELS_PAGE = gql`
-  query fetchNovelCyclesPageLikeOrder($page: Int!) {
-    fetchNovelCyclesPageLikeOrder(page: $page) {
+export const FETCH_NOVELS_PAGE = gql`
+  query fetchNovelsPage($fetchNovelInput: FetchNovelInput!) {
+    fetchNovelsPage(fetchNovelInput: $fetchNovelInput) {
       novels {
         id
         title
@@ -10,14 +10,20 @@ export const FETCH_PB_BEST_NOVELS_PAGE = gql`
         likeCount
         viewCount
         cycle
-        user {
-          nickName
-        }
         novelCategory {
+          id
           name
         }
         files {
+          id
+          name
+          path
           url
+        }
+        user {
+          id
+          name
+          nickName
         }
       }
     }
