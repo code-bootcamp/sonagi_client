@@ -2,8 +2,9 @@ import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import DOMPurify from "dompurify";
 import ReadCommentListContainer from "../novelReadComment/commentList/CommentList.container";
 import * as S from "./NovelRead.styles";
+import { INovelReadPresenterProps } from "./NovelRead.types";
 
-export default function NovelReadPresenter(props) {
+export default function NovelReadPresenter(props: INovelReadPresenterProps) {
   return (
     <>
       {props.commentClick ? (

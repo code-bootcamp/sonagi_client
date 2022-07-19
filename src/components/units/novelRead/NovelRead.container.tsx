@@ -8,6 +8,7 @@ import {
   FETCH_NOVEL_DETAIL,
   TOGGLE_BOOK_MARK,
 } from "./NovelRead.queries";
+import { Iel } from "./NovelRead.types";
 
 export default function NovelReadContainer() {
   const router = useRouter();
@@ -35,7 +36,7 @@ export default function NovelReadContainer() {
 
   // 이전화 다음화
   const indexPage = novelData?.fetchNovelDetail.novelIndexs
-    .map((el) => el.id)
+    .map((el: Iel) => el.id)
     .reverse();
   const currentPage = readData?.fetchEpisodeDetail.index;
   // console.log(indexPage);
@@ -72,7 +73,7 @@ export default function NovelReadContainer() {
       });
       console.log("북마크", result);
       alert("북마크 성공!");
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };
@@ -102,9 +103,9 @@ export default function NovelReadContainer() {
   };
 
   // 우클릭 방지
-  // const onClickRight = (e: MouseEvent) => {
-  //   e.preventDefault();
-  // };
+  const onClickRight = (event: MouseEvent) => {
+    event.preventDefault();
+  };
 
   // // 세팅
   // const [setting, setSetting] = useState(false);
@@ -134,7 +135,7 @@ export default function NovelReadContainer() {
       onClickComment={onClickComment}
       commentData={commentData}
       // 우클릭 방지
-      // onClickRight={onClickRight}
+      onClickRight={onClickRight}
       // 세팅으로
       // onClickSetting={onClickSetting}
       // setting={setting}

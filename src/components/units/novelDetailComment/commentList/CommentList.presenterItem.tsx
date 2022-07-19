@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 // import { useRouter } from "next/router";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import { getDateDay } from "../../../../commons/libraries/utils";
 import DetailCommentWriteContainer from "../commentWrite/CommentWrite.container";
 import {
@@ -9,8 +9,11 @@ import {
   FETCH_NOVEL_REVIEW_PAGE,
 } from "./CommentList.queries";
 import * as S from "./CommentList.styles";
+import { IDetailCommentListPresenterItemProps } from "./CommentList.types";
 
-export default function DetailCommentListPresenterItem(props) {
+export default function DetailCommentListPresenterItem(
+  props: IDetailCommentListPresenterItemProps
+) {
   const [isEdit, setIsEdit] = useState(false);
   const [deleteNovelReview] = useMutation(DELETE_NOVEL_REVIEW);
   const router = useRouter();
@@ -19,7 +22,7 @@ export default function DetailCommentListPresenterItem(props) {
     setIsEdit((prev) => !prev);
   };
 
-  const onClickDelete = async (event) => {
+  const onClickDelete = async (event: MouseEvent<HTMLImageElement>) => {
     console.log("이벤트", event.currentTarget.id);
     try {
       await deleteNovelReview({
@@ -35,10 +38,12 @@ export default function DetailCommentListPresenterItem(props) {
         ],
       });
       alert("리뷰가 삭제되었습니다");
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };
+
+  console.log("1", props.el);
 
   return (
     <>
