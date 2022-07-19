@@ -1,7 +1,10 @@
 import AgreeTermsContainer from "../agreeTerms/agreeTerms.container";
 import * as S from "./SocialLogin.styles";
+import { ISocialLoginPresenterProps } from "./SocialLogin.types";
 
-export default function SocialLoginPresenter(props) {
+export default function SocialLoginPresenter(
+  props: ISocialLoginPresenterProps
+) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickSignUp)}>
       <S.Wrapper>
@@ -52,9 +55,7 @@ export default function SocialLoginPresenter(props) {
             setAgree1={props.setAgree1}
             setAgree2={props.setAgree2}
           />
-          <S.SignUpButton isValid={props.formState.isValid}>
-            회원가입
-          </S.SignUpButton>
+          <S.SignUpButton>회원가입</S.SignUpButton>
           <S.Corp>ⓒ SONAGI Corp.</S.Corp>
         </S.LoginWrapper>
       </S.Wrapper>
