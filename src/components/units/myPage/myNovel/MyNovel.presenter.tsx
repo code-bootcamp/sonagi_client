@@ -1,6 +1,7 @@
 import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./MyNovel.styles";
-export default function MyNovelPresenter(props) {
+import { IMyNovelPresenterProps } from "./MyNovel.types";
+export default function MyNovelPresenter(props: IMyNovelPresenterProps) {
   return (
     <S.Wrapper>
       <S.HamburgerWrapper>
@@ -12,7 +13,7 @@ export default function MyNovelPresenter(props) {
           새 작품 쓰기
         </S.WriteButton>
       </S.TopWrapper>
-      {props.data?.fetchMyNovels.novels.map((el) => (
+      {props.data?.fetchMyNovels.novels.map((el: any) => (
         <S.BoxWrapper key={el.id}>
           <S.ImageWrapper>
             <S.Img
