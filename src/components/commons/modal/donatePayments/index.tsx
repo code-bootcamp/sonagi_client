@@ -98,27 +98,26 @@ export const DONATE_POINT = gql`
   }
 `;
 
-export default function PaymentPage(props) {
+export default function DonatePage(props) {
   const [donatePoint] = useMutation(DONATE_POINT);
-  const [point, setPoint] = useState("");
+  const [point, setPoint] = useState();
   const handleCancel = () => {
-    props.setIsModalVisible(false);
+    props.onClickDonate(false);
   };
 
   const onChangeDonate = (event) => {
-    setPoint(event.target.value);
+    setPoint(event?.target.value);
   };
 
   const onClickDonate = async () => {
     console.log(point);
-    props.setIsModalVisible(false);
+    props.onClickDonate(false);
 
     try {
       const result = await donatePoint({
         variables: {
           donateInput: {
             novelID: props.novelID,
-            // 디테일 페이지에서 novelID 변수에 저장한다음 props로 여기로 내려
             point: Number(point),
           },
         },

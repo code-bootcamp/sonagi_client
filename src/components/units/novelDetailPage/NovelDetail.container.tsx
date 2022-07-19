@@ -1,28 +1,25 @@
 import { useMutation, useQuery } from "@apollo/client";
-import { message } from "antd";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import NovelDetailPresenter from "./NovelDetail.Presenter";
 import {
   CHANGE_PRIVATE_NOVEL_INDEX,
-  CREATE_NOVEL_LIKE,
   DELETE_NOVEL,
   DELETE_NOVEL_INDEX,
-  DONATEPOINT,
   FETCH_NOVEL_DETAIL,
   FETCH_PAID_POINTS,
   PAIDPOINT,
+  SWITCH_NOVEL_LIKE,
 } from "./NovelDetail.queries";
 
 export default function NovelDetailContainer() {
   const router = useRouter();
-  const [donate, setDonate] = useState();
+
   const [switchPrivate, setSwitchPrivate] = useState(false);
   const [deleteNovel] = useMutation(DELETE_NOVEL);
   const [deleteNovelIndex] = useMutation(DELETE_NOVEL_INDEX);
   const [paidPoint] = useMutation(PAIDPOINT);
-  const [donatePoint] = useMutation(DONATEPOINT);
-  const [createNovelLike] = useMutation(CREATE_NOVEL_LIKE);
+  const [switchNovelLike] = useMutation(SWITCH_NOVEL_LIKE);
   const [changePrivateNovelIndex] = useMutation(CHANGE_PRIVATE_NOVEL_INDEX);
   const { data: detailData } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
@@ -33,7 +30,7 @@ export default function NovelDetailContainer() {
 
   console.log("결제", PaidData);
 
-  console.log(detailData);
+  console.log("디테일", detailData);
 
   // 소설 삭제
   const onClickDelete = async () => {
@@ -74,34 +71,20 @@ export default function NovelDetailContainer() {
   };
 
   // 후원하기
+  const [isDonate, setIsDonate] = useState(false);
 
-  const onChangeDonate = (event) => {
-    setDonate(event.target.value);
-    console.log(event.target.value);
-  };
-
+  const novelID = router.query._id;
   const onClickDonate = async () => {
-    try {
-      const result = await donatePoint({
-        variables: {
-          donateInput: {
-            novelID: router.query._id,
-            point: Number(donate),
-          },
-        },
-      });
-      console.log(result);
-      // alert("후원 감사합니데이~~!");
-      message.info("후원감사합니다");
-    } catch (error) {
-      alert(error.message);
-    }
+    setIsDonate((prev) => !prev);
   };
 
   // 선호작 등록하기
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const onClickLike = async () => {
+    setIsSubmitting(true);
     try {
-      const result = await createNovelLike({
+      const result = await switchNovelLike({
         variables: {
           novelID: router.query._id,
         },
@@ -113,8 +96,10 @@ export default function NovelDetailContainer() {
           },
         ],
       });
-      console.log(result);
-      alert("선호작 등록!!");
+
+      console.log("선호작", result);
+      alert(result.data?.switchNovelLike.msg);
+      setIsSubmitting(false);
     } catch (error) {
       alert(error.message);
     }
@@ -164,6 +149,13 @@ export default function NovelDetailContainer() {
     setIsFirst((prev) => !prev);
   };
 
+  // 첫화 보기
+  const oneIndex = detailData?.fetchNovelDetail.novelIndexs?.length;
+  const viewOne = detailData?.fetchNovelDetail.novelIndexs[oneIndex - 1]?.id;
+  const onClickFirstView = () => {
+    router.push(`/novel/${router.query._id}/${viewOne}`);
+  };
+
   // // 체크박스
   // const [checkList, setCheckList] = useState([]);
   // const dataList = detailData?.fetchNovelDetail.novelIndexs;
@@ -193,13 +185,13 @@ export default function NovelDetailContainer() {
 
   return (
     <NovelDetailPresenter
+      novelID={novelID}
       detailData={detailData}
       onClickDelete={onClickDelete}
       onClickMoveToRead={onClickMoveToRead}
       onClickMoveToVolumeWrite={onClickMoveToVolumeWrite}
       onClickPayment={onClickPayment}
       onClickDonate={onClickDonate}
-      onChangeDonate={onChangeDonate}
       onClickLike={onClickLike}
       onClickIndexDelete={onClickIndexDelete}
       onClickEdit={onClickEdit}
@@ -207,6 +199,10 @@ export default function NovelDetailContainer() {
       switchPrivate={switchPrivate}
       onClickFirst={onClickFirst}
       isFirst={isFirst}
+      isDonate={isDonate}
+      isSubmitting={isSubmitting}
+      // 첫화 보기
+      onClickFirstView={onClickFirstView}
       // 체크박스
       // onClickCheckAll={onClickCheckAll}
       // onCheckedItem={onCheckedItem}

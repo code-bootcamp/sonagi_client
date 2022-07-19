@@ -23,12 +23,11 @@ export const FETCH_NOVEL_DETAIL = gql`
   }
 `;
 
-export const CREATE_BOOK_MARK = gql`
-  mutation createBookmark($novelIndexID: String!, $page: Float!) {
-    createBookmark(novelIndexID: $novelIndexID, page: $page) {
+export const TOGGLE_BOOK_MARK = gql`
+  mutation toggleBookmark($createBookmarkInput: CreateBookmarkDto!) {
+    toggleBookmark(createBookmarkInput: $createBookmarkInput) {
+      msg
       id
-      page
-      createAt
     }
   }
 `;
