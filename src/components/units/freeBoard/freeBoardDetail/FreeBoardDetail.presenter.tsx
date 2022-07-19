@@ -2,7 +2,10 @@ import React from "react";
 import { getDate } from "../../../../commons/libraries/utils";
 import Button01 from "../../../commons/buttons/01";
 import * as S from "./FreeBoardDetail.styles";
-export default function FreeBoardDetailPresenter(props: any) {
+import { IFreeBoardDetailPresenterProps } from "./FreeBoardDetail.types";
+export default function FreeBoardDetailPresenter(
+  props: IFreeBoardDetailPresenterProps
+) {
   return (
     <S.Wrapper>
       <S.RowWrap>

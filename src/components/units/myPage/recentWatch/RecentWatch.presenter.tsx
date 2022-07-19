@@ -1,6 +1,10 @@
+import { Key } from "react";
 import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./RecentWatch.styles";
-export default function RecentWatchPresenter(props) {
+import { IRecentWatchPresenterProps } from "./RecentWatch.types";
+export default function RecentWatchPresenter(
+  props: IRecentWatchPresenterProps
+) {
   return (
     <S.Wrapper>
       <S.RecentWatch>최근 본 작품</S.RecentWatch>
@@ -16,9 +20,10 @@ export default function RecentWatchPresenter(props) {
               <S.NovelPic
                 src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
               />
-              <S.TitleWrap>
+              {/* <S.TitleWrap>
                 <S.Title>{el.title}</S.Title>
-              </S.TitleWrap>
+                <S.NovelCategory>{el.novelCategory?.name}</S.NovelCategory>
+              </S.TitleWrap> */}
             </S.BoxWrap>
           ))}
         </S.Flex>
@@ -26,19 +31,24 @@ export default function RecentWatchPresenter(props) {
       </S.Wrap>
       <S.Wrap>
         <S.Flex>
-          {props.basketItems?.slice(5, 7).map((el) => (
-            <S.BoxWrap
-              key={el.id}
-              id={el.id}
-              onClick={props.onClickMoveToNovelDetail}
-            >
-              <S.NovelPics
-                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-              />
-
-              {/* <S.Title>{el.title}</S.Title> */}
-            </S.BoxWrap>
-          ))}
+          {props.basketItems
+            ?.slice(5, 9)
+            .map(
+              (el: { id: Key | null | undefined; files: { url: any }[] }) => (
+                <S.BoxWrap
+                  key={el.id}
+                  id={el.id}
+                  onClick={props.onClickMoveToNovelDetail}
+                >
+                  <S.NovelPics
+                    src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+                  />
+                  {/* <S.TitleWrap>
+                    <S.Title>{el.title}</S.Title>
+                  </S.TitleWrap> */}
+                </S.BoxWrap>
+              )
+            )}
         </S.Flex>
         <S.BookShelfs src="/recentWatch/shelf.png" />
       </S.Wrap>

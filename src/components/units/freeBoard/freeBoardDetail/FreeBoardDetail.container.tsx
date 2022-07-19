@@ -19,7 +19,7 @@ export default function FreeBoardDetailContainer() {
       alert("게시글이 삭제되었습니다.");
       router.push("/freeBoard");
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 

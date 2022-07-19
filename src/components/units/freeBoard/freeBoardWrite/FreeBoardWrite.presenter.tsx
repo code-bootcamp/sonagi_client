@@ -5,7 +5,10 @@ import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import { v4 as uuidv4 } from "uuid";
 
 import * as S from "./FreeBoardWrite.styles";
-export default function FreeBoardWritePresenter(props: any) {
+import { IFreeBoardWritePresenterProps } from "./FreeBoardWrite.types";
+export default function FreeBoardWritePresenter(
+  props: IFreeBoardWritePresenterProps
+) {
   return (
     <S.Wrapper>
       <S.RowWrap>
@@ -28,7 +31,7 @@ export default function FreeBoardWritePresenter(props: any) {
       ></S.InputContents>
       <S.SubTitle>사진첨부</S.SubTitle>
       <S.UploadBox>
-        {props.fileUrls.map((el, index) => (
+        {props.fileUrls.map((el: string, index: number) => (
           <Uploads01
             key={uuidv4()}
             fileUrl={el}
