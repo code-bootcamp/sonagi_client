@@ -3,6 +3,7 @@ import React from "react";
 import { CaretDownOutlined } from "@ant-design/icons";
 
 import DetailCommentListPresenterItem from "./CommentList.presenterItem";
+import { IDetailCommentListPresenterProps, Iel } from "./CommentList.types";
 
 const WrapMore = styled.div`
   width: 100%;
@@ -19,10 +20,12 @@ const More = styled.div`
   color: #2277d8;
 `;
 
-export default function DetailCommentListPresenter(props) {
+export default function DetailCommentListPresenter(
+  props: IDetailCommentListPresenterProps
+) {
   return (
     <>
-      {props.data?.fetchNovelReviewPage.novelRivews.map((el) => (
+      {props.data?.fetchNovelReviewPage.novelRivews.map((el: Iel) => (
         <DetailCommentListPresenterItem key={el.id} el={el} />
       ))}
       {props.data?.fetchNovelReviewPage.count > 10 && (
