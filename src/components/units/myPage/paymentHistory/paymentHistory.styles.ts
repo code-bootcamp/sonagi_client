@@ -125,7 +125,6 @@ export const ListRow = styled.div`
   font-weight: 400;
   font-size: 1rem;
   text-align: center;
-  /* background-color: gray; */
   @media ${breakPoints.mobile} {
     font-size: 0.813rem;
   }
