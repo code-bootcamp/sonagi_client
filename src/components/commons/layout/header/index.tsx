@@ -1,7 +1,9 @@
 import { gql, useMutation, useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
+import { useState } from "react";
 import { useRecoilState } from "recoil";
 import useMoveToPage from "../../../../commons/hooks/UseMoveToPage";
-import { accessTokenState } from "../../../../commons/store";
+import { accessTokenState, searchKeyword } from "../../../../commons/store";
 import * as S from "./header.styles";
 
 const LOGOUT_USER = gql`
@@ -25,6 +27,11 @@ export const FETCH_LOGIN_USER = gql`
 `;
 
 export default function LayoutHeader() {
+  const router = useRouter();
+  const [skeyword, setSkeyword] = useRecoilState(searchKeyword);
+
+  const [inputblank, setinputblank] = useState("");
+
   const [Logout] = useMutation(LOGOUT_USER);
   const { data } = useQuery(FETCH_LOGIN_USER);
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
@@ -41,6 +48,18 @@ export default function LayoutHeader() {
     setAccessToken("");
     window.location.replace("/");
   };
+
+  function onChangeSearchbar(event: any) {
+    setinputblank(event.target.value);
+  }
+
+  const onClickSearchPage = () => {
+    router.push("/search");
+    setSkeyword(inputblank);
+    setinputblank("");
+  };
+
+  console.log(skeyword);
 
   return (
     <S.Wrapper>
@@ -69,10 +88,10 @@ export default function LayoutHeader() {
         <S.WrapSearch>
           <S.SearchBox>
             <S.SearchButton
-              onClick={onClickMoveToPage("/search")}
+              onClick={onClickSearchPage}
               src="/header/search.png"
             />
-            <S.SearchInput />
+            <S.SearchInput onChange={onChangeSearchbar} value={inputblank} />
           </S.SearchBox>
           <S.MyPageButton
             onClick={onClickMoveToPage("/myPage")}

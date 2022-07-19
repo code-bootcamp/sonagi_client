@@ -20,25 +20,25 @@ export const SearchInputWrap = styled.div`
     width: 90%;
   }
 `;
-// export const SearchbarInput = styled.input`
-//   border: none;
-//   border-bottom: 1px solid #bdbdbd;
-//   width: 636px;
-//   height: 35px;
-//   background-image: url("../search/search.svg");
-//   background-repeat: no-repeat;
-//   background-position: 10px;
-//   padding: 25px 60px;
+export const SearchbarInput = styled.input`
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  width: 636px;
+  height: 35px;
+  background-image: url("../search/search.svg");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding: 25px 60px;
 
-//   &:focus {
-//     outline: none;
-//   }
+  &:focus {
+    outline: none;
+  }
 
-//   @media ${breakPoints.mobile} {
-//     transition-duration: 1s;
-//     width: 90%;
-//   }
-// `;
+  @media ${breakPoints.mobile} {
+    transition-duration: 1s;
+    width: 90%;
+  }
+`;
 
 // 태그 wrap
 export const TagWrap = styled.div`
@@ -113,52 +113,12 @@ export const ItemRowWrap = styled.div`
   }
 `;
 
-// // 소설 낱개
-// export const ItemWrap = styled.div`
-//   width: 100%;
-//   display: flex;
-//   flex-direction: row;
-//   margin-bottom: 7%;
-//   cursor: pointer;
-
-//   @media ${breakPoints.tablet} {
-//     width: 90%;
-//   }
-
-//   @media ${breakPoints.mobile} {
-//     width: 96%;
-//     display: flex;
-//     flex-flow: row wrap;
-//   }
-// `;
-
-// export const ItemPic = styled.img`
-//   width: 180px;
-//   height: 240px;
-// `;
-
-// export const ItemInfo = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   margin: 0px 15px;
-// `;
-
 export const RowWrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 10px;
 `;
-
-// export const ItemName = styled.div`
-//   font-size: 1.5em;
-//   font-weight: 700;
-
-//   @media ${breakPoints.mobile} {
-//     padding: 2px;
-//     font-size: 1.25em;
-//   }
-// `;
 
 export const ItemPlus = styled.div`
   width: 30%;
@@ -178,12 +138,6 @@ export const ItemPlus = styled.div`
   }
 `;
 
-// export const WriterIcon = styled.img`
-//   width: 30px;
-//   height: 30px;
-//   margin-right: 10px;
-// `;
-
 export const Writer = styled.div`
   font-size: 1em;
 
@@ -191,13 +145,6 @@ export const Writer = styled.div`
     font-size: 0.8em;
   }
 `;
-
-// export const Contents = styled.div`
-//   width: 150px;
-//   margin-top: 20px;
-//   color: #808080;
-//   font-size: 0.8em;
-// `;
 
 export const GridWrap = styled.div`
   display: flex;
@@ -246,13 +193,16 @@ export const ItemPic = styled.img`
   border-radius: 8px;
   vertical-align: middle;
 `;
+export const TextToken = styled.span`
+  color: ${(props: any) => (props.isMatched ? "#2277D8" : "#484848")};
+`;
 
 export const ItemInfo = styled.div`
   width: 98%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin: 20px 0px;
 `;
 export const ItemName = styled.h4`
@@ -270,10 +220,17 @@ export const ItemName = styled.h4`
   }
 `;
 export const ItemNum = styled.p`
-  background-color: #eee;
+  /* background-color: #eee;
   font-size: 0.875em;
   padding: 5px;
+  margin: 0; */
+`;
+
+export const Cycle = styled.p`
+  font-size: 0.75em;
   margin: 0;
+  padding: 4px;
+  background-color: aliceblue;
 `;
 export const ItemWriterWrap = styled.div`
   width: 100%;
@@ -300,6 +257,12 @@ export const Contents = styled.div`
   width: 100%;
   font-size: 0.94rem;
   color: #00000078;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  margin-top: 10px;
 
   @media (min-width: 391px) and (max-width: 767px) {
     font-size: 0.88rem;
