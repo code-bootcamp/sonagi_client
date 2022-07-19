@@ -10,7 +10,7 @@ export default function RecentWatchContainer() {
     setBasketItmes(items);
   }, []);
 
-  function onClickMoveToNovelDetail(event) {
+  function onClickMoveToNovelDetail(event: { currentTarget: { id: any } }) {
     router.push(`/novel/${event.currentTarget.id}`);
   }
 

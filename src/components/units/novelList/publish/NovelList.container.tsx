@@ -108,34 +108,125 @@ export default function NovelPbListContainer() {
     const newEl = { ...el };
     delete newEl.__typename;
     baskets.push(newEl);
-    if (baskets.length > 8) {
+    if (baskets.length > 10) {
       baskets.shift();
     }
     localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
-  const onClickMoveToRomancePage = () => {
+  const onClickMoveToRomancePage = (el) => (event) => {
     router.push("/novel/list/all/romance");
+    console.log(event.target);
+    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
+    let isExists = false;
+    baskets.forEach((basketEL) => {
+      if (el.id === basketEL.id) isExists = true;
+    });
+    if (isExists) {
+      return;
+    }
+    const newEl = { ...el };
+    delete newEl.__typename;
+    baskets.push(newEl);
+    if (baskets.length > 10) {
+      baskets.shift();
+    }
+    localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
-  const onClickMoveToRomanceFantasyPage = () => {
+  const onClickMoveToRomanceFantasyPage = (el) => (event) => {
     router.push("/novel/list/all/romanceFantasy");
+    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
+    let isExists = false;
+    baskets.forEach((basketEL) => {
+      if (el.id === basketEL.id) isExists = true;
+    });
+    if (isExists) {
+      return;
+    }
+    const newEl = { ...el };
+    delete newEl.__typename;
+    baskets.push(newEl);
+    if (baskets.length > 10) {
+      baskets.shift();
+    }
+    localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
-  const onClickMoveToFantasyPage = () => {
+  const onClickMoveToFantasyPage = (el) => (event) => {
     router.push("/novel/list/all/fantasy");
+    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
+    let isExists = false;
+    baskets.forEach((basketEL) => {
+      if (el.id === basketEL.id) isExists = true;
+    });
+    if (isExists) {
+      return;
+    }
+    const newEl = { ...el };
+    delete newEl.__typename;
+    baskets.push(newEl);
+    if (baskets.length > 10) {
+      baskets.shift();
+    }
+    localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
-  const onClickMoveToAsiaPage = () => {
+  const onClickMoveToAsiaPage = (el) => (event) => {
     router.push("/novel/list/all/asia");
+    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
+    let isExists = false;
+    baskets.forEach((basketEL) => {
+      if (el.id === basketEL.id) isExists = true;
+    });
+    if (isExists) {
+      return;
+    }
+    const newEl = { ...el };
+    delete newEl.__typename;
+    baskets.push(newEl);
+    if (baskets.length > 10) {
+      baskets.shift();
+    }
+    localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
-  const onClickMoveToSchoolPage = () => {
+  const onClickMoveToSchoolPage = (el) => (event) => {
     router.push("/novel/list/all/school");
+    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
+    let isExists = false;
+    baskets.forEach((basketEL) => {
+      if (el.id === basketEL.id) isExists = true;
+    });
+    if (isExists) {
+      return;
+    }
+    const newEl = { ...el };
+    delete newEl.__typename;
+    baskets.push(newEl);
+    if (baskets.length > 10) {
+      baskets.shift();
+    }
+    localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
-  const onClickMoveToHorrorPage = () => {
+  const onClickMoveToHorrorPage = (el) => (event) => {
     router.push("/novel/list/all/horror");
+    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
+    let isExists = false;
+    baskets.forEach((basketEL) => {
+      if (el.id === basketEL.id) isExists = true;
+    });
+    if (isExists) {
+      return;
+    }
+    const newEl = { ...el };
+    delete newEl.__typename;
+    baskets.push(newEl);
+    if (baskets.length > 10) {
+      baskets.shift();
+    }
+    localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
   return (

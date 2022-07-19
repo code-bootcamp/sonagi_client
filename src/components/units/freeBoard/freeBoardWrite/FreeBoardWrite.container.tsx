@@ -6,22 +6,29 @@ import { useForm } from "react-hook-form";
 import FreeBoardWritePresenter from "./FreeBoardWrite.presenter";
 import { CREATE_BOARD, UPDATE_BOARD } from "./FreeBoardWrite.queries";
 import * as yup from "yup";
+import { IFreeBoardWriteContainer } from "./FreeBoardWrite.types";
 
 const schema = yup.object({
   fileURLs: yup.array().required("게시판 이미지를 등록해주세요."),
 });
 
-export default function FreeBoardWriteContainer(props: any) {
+export default function FreeBoardWriteContainer(
+  props: IFreeBoardWriteContainer
+) {
   const router = useRouter();
   const [createBoard] = useMutation(CREATE_BOARD);
 
   const [title, setTitle] = useState("");
-  const onChangeTitle = (event: any) => {
+  const onChangeTitle = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setTitle(event.target.value);
   };
 
   const [contents, setContents] = useState("");
-  const onChangeContents = (event: any) => {
+  const onChangeContents = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setContents(event.target.value);
   };
 
@@ -40,7 +47,7 @@ export default function FreeBoardWriteContainer(props: any) {
   };
 
   // 등록
-  const onClickSubmit = async (data) => {
+  const onClickSubmit = async (data: any) => {
     try {
       const result = await createBoard({
         variables: {
@@ -56,14 +63,13 @@ export default function FreeBoardWriteContainer(props: any) {
       alert("게시글이 등록되었습니다");
       router.push(`/freeBoard/${result.data?.createBoard.id}`);
     } catch (error) {
-      console.log(error.message);
-      alert(error.message);
+      alert(error);
     }
   };
 
   // 수정
   const [updateBoard] = useMutation(UPDATE_BOARD);
-  const onClickUpdate = async (data) => {
+  const onClickUpdate = async (data: any) => {
     try {
       console.log("상품업데이트data찍은콘솔", data);
       if (!title && !contents) {
@@ -83,7 +89,7 @@ export default function FreeBoardWriteContainer(props: any) {
       alert("게시글을 수정합니다");
       router.push(`/freeBoard/${result.data?.updateBoard.id}`);
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 
