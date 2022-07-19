@@ -43,7 +43,7 @@ export default function NovelPbListPresenter(props: any) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 로맨스판타지 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToRomanceFantasyPage}>
         <S.Category>로맨스판타지</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
