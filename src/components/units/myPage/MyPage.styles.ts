@@ -78,7 +78,7 @@ export const CashCharge = styled.div`
 `;
 
 export const LargeBox = styled.div`
-  width: 85%;
+  width: 90%;
   margin: 0 2%;
   display: flex;
 
@@ -92,7 +92,7 @@ export const LargeBox = styled.div`
 
 export const InnerLeftBox = styled.div`
   border-radius: 8px 0px 0px 8px;
-  width: 40%;
+  width: 38%;
   height: 400px;
   background-color: #ebf6ff;
   display: flex;
@@ -115,7 +115,7 @@ export const InnerRightBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 62%;
+  width: 64%;
   height: 400px;
   background-color: #f2f2f2;
 
@@ -186,10 +186,10 @@ export const Email = styled.div`
 
 export const Point = styled.div`
   font-size: 0.938rem;
-  margin-left: 10px;
 `;
 
 export const Column = styled.div`
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,6 +216,7 @@ export const MainFlex = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  padding: 0 10px;
 `;
 
 export const Title = styled.div`
@@ -244,8 +245,13 @@ export const Middle = styled.div`
   font-weight: 500;
   color: #2277d8;
   margin: 18px 0px 27px 0px;
+
   @media ${breakPoints.tablet} {
     font-size: 1.125rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 1rem;
   }
 `;
 
@@ -422,6 +428,8 @@ export const Overlay = styled.div`
 
 export const Div = styled.div`
   display: flex;
+  width: 30%;
+  justify-content: center;
 `;
 
 export const DIVS = styled.div`
