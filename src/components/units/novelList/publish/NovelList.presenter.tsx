@@ -154,7 +154,7 @@ export default function NovelPbListPresenter(props: any) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 학원 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToSchoolPage}>
         <S.Category>학원</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
