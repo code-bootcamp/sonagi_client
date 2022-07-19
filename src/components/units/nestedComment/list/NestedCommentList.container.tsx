@@ -3,14 +3,17 @@ import { useRouter } from "next/router";
 import { DELETE_COMMENT } from "../../comment/commentList/CommentList.queries";
 import { FETCH_COMMENTS } from "../write/NestedCommentWrite.queries";
 import NestedCommentListPresenter from "./NestedCommentList.presenter";
-import { FETCH_NESTED_COMMENTS } from "./NestedCommentList.queries";
+import { FETCH_BOARD } from "./NestedCommentList.queries";
 
 export default function NestedCommentListContainer(props) {
   const router = useRouter();
-  const { data } = useQuery(FETCH_NESTED_COMMENTS, {
+  // const { data } = useQuery(FETCH_NESTED_COMMENTS, {
+  //   variables: { boardID: router.query._id },
+  // });
+  const { data } = useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
-  console.log("fetchNestedComment", data);
+  console.log("대댓글데이터를조회해보자", data);
 
   // 삭제
   const [deleteComment] = useMutation(DELETE_COMMENT);
@@ -33,8 +36,17 @@ export default function NestedCommentListContainer(props) {
   };
 
   return (
+    // <>
+    //   {data?.fetchCommentsFromBoard.map((el) => (
+    //     <NestedCommentListPresenter
+    //       key={el.id}
+    //       el={el}
+    //       DeleteNestedComment={DeleteNestedComment}
+    //     />
+    //   ))}
+    // </>
     <>
-      {data?.fetchCommentsFromBoard.map((el) => (
+      {data?.fetchBoard?.children?.map((el) => (
         <NestedCommentListPresenter
           key={el.id}
           el={el}

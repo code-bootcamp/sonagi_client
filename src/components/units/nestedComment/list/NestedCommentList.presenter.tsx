@@ -12,14 +12,14 @@ export default function NestedCommentListPresenter(props) {
             <S.WrapCommentInfo>
               {/* <S.Comment>너무 재미있아요!!! 최고최고</S.Comment> */}
               {/* <S.Comment>{props.el?.contents}</S.Comment> */}
-              <S.Comment>{props.el?.children?.contents}</S.Comment>
+              <S.Comment>{props.el?.contents}</S.Comment>
 
               <S.WrapUserInfo>
                 {/* <S.Name>Name</S.Name> */}
-                {/* <S.Name>{props.el?.user?.nickName}</S.Name> */}
+                <S.Name>{props.el?.user?.nickName}</S.Name>
 
                 {/* <S.Date>2022.07.04</S.Date> */}
-                {/* <S.Date>{props.el?.createAt}</S.Date> */}
+                <S.Date>{props.el?.createAt}</S.Date>
 
                 <S.UpIcon
                   src="/comment/thumb_up.png"

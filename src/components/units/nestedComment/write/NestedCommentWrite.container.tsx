@@ -21,7 +21,7 @@ export default function NestedCommentWrite(props) {
         variables: {
           createCommentInput: {
             contents,
-            parent: event.currentTarget?.id,
+            parent: props.el?.id,
           },
           boardID: String(router.query._id),
 

@@ -67,6 +67,10 @@ export const FETCH_BOARD = gql`
           id
           nickName
         }
+        children {
+          id
+          contents
+        }
       }
     }
   }
