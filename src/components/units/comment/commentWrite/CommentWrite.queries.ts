@@ -17,14 +17,19 @@ export const CREATE_COMMENT = gql`
 `;
 
 export const FETCH_BOARD = gql`
-  query fetchBoard($boardID: String) {
+  query fetchBoard($boardID: String!) {
     fetchBoard(boardID: $boardID) {
       comments {
         id
         contents
         createAt
         user {
+          id
           nickName
+        }
+        children {
+          id
+          contents
         }
       }
     }

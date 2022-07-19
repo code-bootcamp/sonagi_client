@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import CommentWritePresenter from "./CommentWrite.presenter";
 import {
   CREATE_COMMENT,
-  FETCH_COMMENTS_FROM_BOARD,
+  FETCH_BOARD,
   UPDATE_COMMENT,
 } from "./CommentWrite.queries";
 
@@ -30,7 +30,7 @@ export default function CommentWriteContainer(props) {
 
           refetchQueries: [
             {
-              query: FETCH_COMMENTS_FROM_BOARD,
+              query: FETCH_BOARD,
               variables: { boardID: String(router.query._id) },
             },
           ],
@@ -60,7 +60,7 @@ export default function CommentWriteContainer(props) {
 
         refetchQueries: [
           {
-            query: FETCH_COMMENTS_FROM_BOARD,
+            query: FETCH_BOARD,
             variables: { boardID: String(router.query._id) },
           },
         ],
