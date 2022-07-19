@@ -118,6 +118,10 @@ export default function NovelPbListContainer() {
     router.push("/novel/list/all/romanceFantasy");
   };
 
+  const onClickMoveToFantasyPage = () => {
+    router.push("/novel/list/all/fantasy");
+  };
+
   return (
     <NovelPbListPresenter
       Romance={Romance}
@@ -129,6 +133,7 @@ export default function NovelPbListContainer() {
       onClickMoveToDetail={onClickMoveToDetail}
       onClickMoveToRomancePage={onClickMoveToRomancePage}
       onClickMoveToRomanceFantasyPage={onClickMoveToRomanceFantasyPage}
+      onClickMoveToFantasyPage={onClickMoveToFantasyPage}
     />
   );
 }
