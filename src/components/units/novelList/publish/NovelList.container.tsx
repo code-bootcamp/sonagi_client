@@ -13,12 +13,12 @@ export default function NovelPbListContainer() {
         type: "CATEGORY",
         target: "8920f3ff-6ba9-4a01-8c2f-842a4adc19e0",
         order: "LAST",
-        isFinish: false,
+        isFinish: "FALSE",
         page: 1,
       },
     },
   });
-  console.log("소설데이터", Romance);
+  console.log("로맨스", Romance);
 
   // 로맨스 판타지
   const { data: RomanceFantasy } = useQuery(FETCH_NOVELS_PAGE, {
@@ -27,12 +27,16 @@ export default function NovelPbListContainer() {
         type: "CATEGORY",
         target: "a5d5edfa-43f2-4931-978e-2c7a69f2161e",
         order: "LAST",
-        isFinish: false,
+        isFinish: "FALSE",
         page: 1,
+      },
+      searchInput: {
+        type: "TITLE",
+        keyword: "",
       },
     },
   });
-  console.log("소설데이터", RomanceFantasy);
+  console.log("로맨스판타지", RomanceFantasy);
 
   // 판타지
   const { data: Fantasy } = useQuery(FETCH_NOVELS_PAGE, {
@@ -41,7 +45,7 @@ export default function NovelPbListContainer() {
         type: "CATEGORY",
         target: "e781d053-1749-400b-a5e7-1ece9bd3a3ca",
         order: "LAST",
-        isFinish: false,
+        isFinish: "FALSE",
         page: 1,
       },
     },
@@ -55,7 +59,7 @@ export default function NovelPbListContainer() {
         type: "CATEGORY",
         target: "49dd41d2-cd7b-4d2d-806b-d72c077e2d70",
         order: "LAST",
-        isFinish: false,
+        isFinish: "FALSE",
         page: 1,
       },
     },
@@ -69,7 +73,7 @@ export default function NovelPbListContainer() {
         type: "CATEGORY",
         target: "74ca7d6a-f00d-43cb-8554-f0426a29cefb",
         order: "LAST",
-        isFinish: false,
+        isFinish: "FALSE",
         page: 1,
       },
     },
@@ -83,7 +87,7 @@ export default function NovelPbListContainer() {
         type: "CATEGORY",
         target: "27a6ad7b-d039-42b1-b5d4-c766faf9cac8",
         order: "LAST",
-        isFinish: false,
+        isFinish: "FALSE",
         page: 1,
       },
     },

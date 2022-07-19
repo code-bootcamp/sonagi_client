@@ -4,7 +4,7 @@ import NovelBestListPresenter from "./NovelBestList.presenter";
 import {
   CREATE_NOVEL_LIKE,
   FETCH_NOVEL_LIKE,
-  FETCH_PB_BEST_NOVELS_PAGE,
+  FETCH_NOVELS_PAGE,
 } from "./NovelBestList.queries";
 
 export default function NovelBestListContainer() {
@@ -32,9 +32,15 @@ export default function NovelBestListContainer() {
       alert(error.message);
     }
   };
-  const { data } = useQuery(FETCH_PB_BEST_NOVELS_PAGE, {
+  const { data } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
-      page: 1,
+      fetchNovelInput: {
+        type: "ALL",
+        target: "",
+        order: "LIKE",
+        isFinish: "ALL",
+        page: 1,
+      },
     },
   });
 

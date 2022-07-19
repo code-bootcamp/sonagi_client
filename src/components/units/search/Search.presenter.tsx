@@ -1,5 +1,6 @@
 import * as S from "./Search.styles";
-import SearchbarContainer from "./Search.container";
+import SearchbarContainer from "../../commons/search/Searchbar.container";
+import DOMPurify from "dompurify";
 
 export default function SearchPresenter(props: any) {
   return (
@@ -15,72 +16,32 @@ export default function SearchPresenter(props: any) {
         <S.Tag>#스릴러</S.Tag>
         <S.Tag>#미스테리</S.Tag>
       </S.TagWrap>
-      <S.ItemRowWrap>
-        <S.ItemWrap>
-          <S.ItemPic src="../novelList/52.png" />
-          <S.ItemInfo>
-            <S.RowWrap>
-              <S.ItemName>Kick off</S.ItemName>
-              <S.ItemPlus>10화</S.ItemPlus>
-            </S.RowWrap>
-            <S.RowWrap>
-              <S.WriterIcon src="../novelList/writer-icon.png" />
-              <S.Writer>작가명</S.Writer>
-            </S.RowWrap>
-            <S.Contents>
-              소설요약입니다 블라블라 어쩌구저쩌구 아이고하기싫어
-            </S.Contents>
-          </S.ItemInfo>
-        </S.ItemWrap>
-        <S.ItemWrap>
-          <S.ItemPic src="../novelList/53.png" />
-          <S.ItemInfo>
-            <S.RowWrap>
-              <S.ItemName>Kick off</S.ItemName>
-              <S.ItemPlus>10화</S.ItemPlus>
-            </S.RowWrap>
-            <S.RowWrap>
-              <S.WriterIcon src="../novelList/writer-icon.png" />
-              <S.Writer>작가명</S.Writer>
-            </S.RowWrap>
-            <S.Contents>
-              소설요약입니다 블라블라 어쩌구저쩌구 아이고하기싫어
-            </S.Contents>
-          </S.ItemInfo>
-        </S.ItemWrap>
-        <S.ItemWrap>
-          <S.ItemPic src="../novelList/54.png" />
-          <S.ItemInfo>
-            <S.RowWrap>
-              <S.ItemName>Kick off</S.ItemName>
-              <S.ItemPlus>10화</S.ItemPlus>
-            </S.RowWrap>
-            <S.RowWrap>
-              <S.WriterIcon src="../novelList/writer-icon.png" />
-              <S.Writer>작가명</S.Writer>
-            </S.RowWrap>
-            <S.Contents>
-              소설요약입니다 블라블라 어쩌구저쩌구 아이고하기싫어
-            </S.Contents>
-          </S.ItemInfo>
-        </S.ItemWrap>
-        <S.ItemWrap>
-          <S.ItemPic src="../novelList/55.png" />
-          <S.ItemInfo>
-            <S.RowWrap>
-              <S.ItemName>Kick off</S.ItemName>
-              <S.ItemPlus>10화</S.ItemPlus>
-            </S.RowWrap>
-            <S.RowWrap>
-              <S.WriterIcon src="../novelList/writer-icon.png" />
-              <S.Writer>작가명</S.Writer>
-            </S.RowWrap>
-            <S.Contents>
-              소설요약입니다 블라블라 어쩌구저쩌구 아이고하기싫어
-            </S.Contents>
-          </S.ItemInfo>
-        </S.ItemWrap>
-      </S.ItemRowWrap>
+      <S.GridWrap>
+        {props.Romance?.fetchNovelsPage?.novels.slice(0, 5).map((el: any) => (
+          <S.ItemWrap
+            onClick={props.onClickMoveToDetail(el)}
+            id={el.id}
+            key={el.title}
+          >
+            <S.ItemPic
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+            />
+            <S.ItemInfo>
+              <S.ItemName>{el.title}</S.ItemName>
+              <S.ItemNum>10화</S.ItemNum>
+            </S.ItemInfo>
+            <S.ItemWriterWrap>
+              <S.WriterIcon src="/novelList/writer-icon.png" />
+              <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+            </S.ItemWriterWrap>
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(el.description),
+              }}
+            ></S.Contents>
+          </S.ItemWrap>
+        ))}
+      </S.GridWrap>
     </S.Wrap>
   );
 }
