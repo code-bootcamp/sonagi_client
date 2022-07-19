@@ -14,7 +14,7 @@ export default function CarouselContainer() {
         type: "ALL",
         target: "",
         order: "LAST",
-        isFinish: false,
+        isFinish: "FALSE",
         page: LastRandomPage,
       },
     },
@@ -26,7 +26,7 @@ export default function CarouselContainer() {
         type: "ALL",
         target: "",
         order: "LIKE",
-        isFinish: false,
+        isFinish: "ALL",
         page: 1,
       },
     },
@@ -42,13 +42,11 @@ export default function CarouselContainer() {
         type: "CYCLE",
         target: String(Today),
         order: "LIKE",
-        isFinish: false,
+        isFinish: "FALSE",
         page: TodayRandomPage,
       },
     },
   });
-
-  console.log("ㅇㅇ", TodayData);
 
   const onClickNovelDetail = (el) => () => {
     router.push(`/novel/${el.id}`);

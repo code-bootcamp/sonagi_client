@@ -18,21 +18,18 @@ export default function CarouselPresenter(props) {
         breakpoint: 1100,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 5,
         },
       },
       {
         breakpoint: 900,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 4,
         },
       },
       {
-        breakpoint: 720,
+        breakpoint: 620,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
         },
       },
     ],

@@ -1,19 +1,17 @@
 import * as S from "./MyPage.styles";
 import React from "react";
+import HamburgerPage from "../../commons/hamburger";
 // import { useForm } from "react-hook-form";
 
 export default function MyPagePresenter(props: any) {
   return (
     <S.Wrapper>
-      <S.DIV>
-        <S.ChargeButton onClick={props.onClickMoveToPointCharge}>
-          포인트 충전
-        </S.ChargeButton>
-      </S.DIV>
+      <S.HamburgerWrapper>
+        <HamburgerPage />
+      </S.HamburgerWrapper>
       <S.LargeBox>
         <S.InnerLeftBox>
           <img src="myPage/avatar.png" />
-          <S.ChangeButton>변경</S.ChangeButton>
           <S.Name>
             <span>{props.data?.fetchLoginUser?.nickName}</span>님
           </S.Name>
