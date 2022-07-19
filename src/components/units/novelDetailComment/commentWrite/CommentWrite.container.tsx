@@ -10,13 +10,16 @@ import {
   UPDATE_NOVEL_REVIEW,
 } from "./CommentWrite.queries";
 import * as yup from "yup";
+import { Idata, IDetailCommentWriteContainerProps } from "./CommentWrite.types";
 
 const schema = yup.object({
   contents: yup.string().required("리뷰를 입력해주세요."),
   star: yup.number().required("별점을 입력해주세요."),
 });
 
-export default function DetailCommentWriteContainer(props) {
+export default function DetailCommentWriteContainer(
+  props: IDetailCommentWriteContainerProps
+) {
   // 댓글등록
   const router = useRouter();
   const [click, setClick] = useState(false);
@@ -30,14 +33,14 @@ export default function DetailCommentWriteContainer(props) {
       mode: "onChange",
     });
 
-  const onChagneStar = (value) => {
+  const onChagneStar = (value: number) => {
     setStar(value);
     setClick(true);
     setValue("star", value);
     trigger("star");
   };
 
-  const onClickComment = async (data) => {
+  const onClickComment = async (data: Idata) => {
     if (data.contents) {
       try {
         const result = await createNovelReview({
@@ -59,7 +62,7 @@ export default function DetailCommentWriteContainer(props) {
         setStar(0);
         alert("리뷰를 등록했습니다.");
         console.log("질문등록", result);
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     }
@@ -73,7 +76,9 @@ export default function DetailCommentWriteContainer(props) {
     trigger("star");
   }, [props.el]);
 
-  const onClickUpdateComment = async (data) => {
+  const onClickUpdateComment = async (data: Idata) => {
+    console.log("el", props.el);
+
     if (data.contents) {
       try {
         const result = await updateNovelReview({
@@ -88,7 +93,7 @@ export default function DetailCommentWriteContainer(props) {
         console.log(result);
         alert("수정 완료");
         props.setIsEdit((prev) => !prev);
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     }
@@ -97,11 +102,11 @@ export default function DetailCommentWriteContainer(props) {
   return (
     <DetailCommentWritePresenter
       onClickComment={onClickComment}
+      handleSubmit={handleSubmit}
       onClickUpdateComment={onClickUpdateComment}
       setStar={setStar}
       star={star}
       register={register}
-      handleSubmit={handleSubmit}
       formState={formState}
       onChagneStar={onChagneStar}
       isEdit={props.isEdit}

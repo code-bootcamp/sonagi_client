@@ -7,7 +7,6 @@ export const FETCH_NOVEL_REVIEW_PAGE = gql`
         id
         contents
         likeCount
-        dislikeCount
         star
         createAt
         updateAt
