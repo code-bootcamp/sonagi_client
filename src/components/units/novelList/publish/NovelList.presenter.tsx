@@ -43,7 +43,7 @@ export default function NovelPbListPresenter(props: any) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 로맨스판타지 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToRomanceFantasyPage}>
         <S.Category>로맨스판타지</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
@@ -81,7 +81,7 @@ export default function NovelPbListPresenter(props: any) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 판타지 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToFantasyPage}>
         <S.Category>판타지</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
@@ -118,7 +118,7 @@ export default function NovelPbListPresenter(props: any) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 무협 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToAsiaPage}>
         <S.Category>무협</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
@@ -154,7 +154,7 @@ export default function NovelPbListPresenter(props: any) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 학원 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToSchoolPage}>
         <S.Category>학원</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
@@ -190,7 +190,7 @@ export default function NovelPbListPresenter(props: any) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 공포/미스터리 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToHorrorPage}>
         <S.Category>공포/미스터리</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>

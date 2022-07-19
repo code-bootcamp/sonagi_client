@@ -114,6 +114,26 @@ export default function NovelPbListContainer() {
     router.push("/novel/list/all/romance");
   };
 
+  const onClickMoveToRomanceFantasyPage = () => {
+    router.push("/novel/list/all/romanceFantasy");
+  };
+
+  const onClickMoveToFantasyPage = () => {
+    router.push("/novel/list/all/fantasy");
+  };
+
+  const onClickMoveToAsiaPage = () => {
+    router.push("/novel/list/all/asia");
+  };
+
+  const onClickMoveToSchoolPage = () => {
+    router.push("/novel/list/all/school");
+  };
+
+  const onClickMoveToHorrorPage = () => {
+    router.push("/novel/list/all/horror");
+  };
+
   return (
     <NovelPbListPresenter
       Romance={Romance}
@@ -124,6 +144,11 @@ export default function NovelPbListContainer() {
       Horror={Horror}
       onClickMoveToDetail={onClickMoveToDetail}
       onClickMoveToRomancePage={onClickMoveToRomancePage}
+      onClickMoveToRomanceFantasyPage={onClickMoveToRomanceFantasyPage}
+      onClickMoveToFantasyPage={onClickMoveToFantasyPage}
+      onClickMoveToAsiaPage={onClickMoveToAsiaPage}
+      onClickMoveToSchoolPage={onClickMoveToSchoolPage}
+      onClickMoveToHorrorPage={onClickMoveToHorrorPage}
     />
   );
 }
