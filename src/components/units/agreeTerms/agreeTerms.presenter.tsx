@@ -1,9 +1,10 @@
 import * as S from "./agreeTerms.styles";
+import { IAgreeTermsPresenterProps } from "./agreeTerms.types";
 import Terms1 from "./Terms/Terms1.presenter";
 import Terms2 from "./Terms/Terms2.presenter";
 import Terms3 from "./Terms/Terms3.presenter";
 
-export default function AgreeTermsPresenter(props) {
+export default function AgreeTermsPresenter(props: IAgreeTermsPresenterProps) {
   return (
     <S.WrapCheck>
       <S.CheckWrapper>
