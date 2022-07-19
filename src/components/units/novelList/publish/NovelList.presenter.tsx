@@ -118,7 +118,7 @@ export default function NovelPbListPresenter(props: any) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 무협 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToAsiaPage}>
         <S.Category>무협</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>

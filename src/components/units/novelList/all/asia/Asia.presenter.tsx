@@ -1,17 +1,17 @@
 import DOMPurify from "dompurify";
-import * as S from "./Fantasy.styles";
+import * as S from "./Asia.styles";
 
-export default function FantasyPresenter(props: any) {
+export default function AsiaPresenter(props: any) {
   return (
     <S.Wrap>
-      <S.Title>판타지</S.Title>
+      <S.Title>무협</S.Title>
       {/* 연재중 */}
       <S.RowWrap>
         <S.Category>연재작품</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.PbFantasy?.fetchNovelsPage?.novels.map((el: any) => (
+        {props.PbAsia?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
             onClick={props.onClickMoveToDetail}
             id={el.id}
@@ -43,7 +43,7 @@ export default function FantasyPresenter(props: any) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.FinFantasy?.fetchNovelsPage?.novels.map((el: any) => (
+        {props.PbAsia?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
             onClick={props.onClickMoveToDetail}
             id={el.id}

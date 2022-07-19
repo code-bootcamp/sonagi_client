@@ -7,22 +7,15 @@ export const FETCH_NOVELS_PAGE = gql`
         id
         title
         description
-        likeCount
-        viewCount
         cycle
         novelCategory {
           id
           name
         }
         files {
-          id
-          name
-          path
           url
         }
         user {
-          id
-          name
           nickName
         }
       }
