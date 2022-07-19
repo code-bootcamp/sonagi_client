@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 import CarouselContainer from "../../commons/carousel/1/Carousel.container";
 import MainPageQuestionContainer from "../../commons/mainPageQuestion/mainPageQuestion.container";
 
-export default function MainPagePresenter(props: any) {
+export default function MainPagePresenter() {
   return (
     <S.Wrapper>
       <LayoutBanner />

@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../../../commons/styles/media";
+import { IDeleteUserStylesProps } from "./DeleteUser.types";
 
 export const Wrap = styled.div`
   width: 60%;
-  height: ${(props: any) => (props.setCheck ? "570px" : "500px")};
+  height: ${(props: IDeleteUserStylesProps) =>
+    props.setCheck ? "570px" : "500px"};
 
   border: 1px solid #bdbdbd;
   box-shadow: 0px 4px 4px 0px #f2f2f2;

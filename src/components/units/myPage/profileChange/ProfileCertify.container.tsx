@@ -36,7 +36,7 @@ export default function ProfileCertifyContainer() {
       } else alert("비밀번호가 일치하지 않습니다");
       return;
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 

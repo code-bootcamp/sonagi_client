@@ -57,7 +57,7 @@ export default function LoginContainer() {
       alert("로그인 성공");
       window.location.replace("/");
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 

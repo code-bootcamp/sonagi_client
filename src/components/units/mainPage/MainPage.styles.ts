@@ -6,15 +6,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* @media ${breakPoints.tablet} {
-    min-width: 767px;
-    max-width: 991px;
-  }
-
-  @media ${breakPoints.mobile} {
-    max-width: 767px;
-  } */
 `;
 
 export const TitleWrapper = styled.div`
@@ -23,11 +14,6 @@ export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  /* @media (min-width: 767px) and (max-width: 991px) {
-    min-width: 767px;
-    max-width: 991px;
-  } */
 `;
 
 export const PhoneWrapper = styled.div`
@@ -38,11 +24,6 @@ export const PhoneWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: -10px;
-
-  /* @media (min-width: 767px) and (max-width: 991px) {
-    min-width: 767px;
-    max-width: 991px;
-  } */
 `;
 
 export const Title = styled.div`

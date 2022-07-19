@@ -1,7 +1,10 @@
 import Head from "next/head";
 import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./PointCharge.styles";
-export default function PointChargePresenter(props) {
+import { IPointChargePresenterProps } from "./PointCharge.types";
+export default function PointChargePresenter(
+  props: IPointChargePresenterProps
+) {
   return (
     <S.Wrapper>
       <Head>

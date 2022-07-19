@@ -1,6 +1,7 @@
 import * as S from "./login.styles";
+import { ILoginPresenterProps } from "./login.types";
 
-export default function LoginPresenter(props) {
+export default function LoginPresenter(props: ILoginPresenterProps) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickLogin)}>
       <S.Wrapper>

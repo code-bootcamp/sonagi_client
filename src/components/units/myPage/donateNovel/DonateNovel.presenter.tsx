@@ -1,7 +1,10 @@
 import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./DonateNovel.styles";
+import { IDonateNovelPresenterProps } from "./DonateNovel.types";
 
-export default function DonateNovelPresenter(props) {
+export default function DonateNovelPresenter(
+  props: IDonateNovelPresenterProps
+) {
   return (
     <S.Wrapper>
       <S.HamburgerWrapper>
@@ -16,7 +19,7 @@ export default function DonateNovelPresenter(props) {
         </S.DonateListButton>
       </S.TopWrapper>
       <S.GridWrap>
-        {props.data?.fetchDonatePoints.slice(0, 10).map((el) => (
+        {props.data?.fetchDonatePoints.slice(0, 10).map((el: any) => (
           <S.BoxWrapper key={el.id}>
             <S.ImageWrapper>
               <S.Img

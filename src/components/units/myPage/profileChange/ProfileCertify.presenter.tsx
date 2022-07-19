@@ -1,7 +1,10 @@
 import React from "react";
 import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./ProfileCertify.styles";
-export default function ProfileCertifyPresenter(props) {
+import { IProfileCertifyPresenter } from "./ProfileCertify.types";
+export default function ProfileCertifyPresenter(
+  props: IProfileCertifyPresenter
+) {
   return (
     <S.Wrapper>
       <S.HamburgerWrapper>

@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@apollo/client";
 import { AUTH_PHONE_OK, CREATE_USER, SEND_PHONE } from "./signup.queries";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 const schema = yup.object({
   name: yup
@@ -53,11 +53,11 @@ export default function SignUpContainer() {
     router.push("/");
   };
 
-  const onChangePhone = (event: any) => {
+  const onChangePhone = (event: ChangeEvent<HTMLInputElement>) => {
     setPhone(event.target.value);
   };
 
-  const onChangeToken = (event: any) => {
+  const onChangeToken = (event: ChangeEvent<HTMLInputElement>) => {
     setToken(event.target.value);
   };
 

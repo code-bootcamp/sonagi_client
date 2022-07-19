@@ -1,6 +1,7 @@
 import * as S from "./DeleteUser.styles";
+import { IDeleteUserPresenterProps } from "./DeleteUser.types";
 
-export default function DeleteUserPresenter(props) {
+export default function DeleteUserPresenter(props: IDeleteUserPresenterProps) {
   return (
     <S.Wrap setCheck={props.setCheck}>
       <S.Label>회원 탈퇴</S.Label>

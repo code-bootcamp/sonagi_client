@@ -89,7 +89,6 @@ export const InputBox = styled.input`
   margin-bottom: 5px;
   border: none;
   border-bottom: 1px solid #cccccc;
-  /* color: #cccccc; */
   &::placeholder {
     color: #cccccc;
   }

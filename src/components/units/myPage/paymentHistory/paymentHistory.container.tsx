@@ -40,7 +40,7 @@ export default function PaymentHistoryContainer() {
     setIsModalVisible(true);
   };
 
-  const onClickCheck = (el) => () => {
+  const onClickCheck = (el: any) => () => {
     setCancelData(el);
   };
 

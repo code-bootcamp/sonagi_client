@@ -4,7 +4,10 @@ import PaidPointsPresenter from "./points/paidPoints.presenter";
 import * as S from "./paymentHistory.styles";
 import DonatePointsPresenter from "./points/donatePoints.presenter";
 import HamburgerPage from "../../../commons/hamburger";
-export default function PaymentHistoryPresenter(props) {
+import { IPaymentHistoryPresenterProps } from "./paymentHistory.types";
+export default function PaymentHistoryPresenter(
+  props: IPaymentHistoryPresenterProps
+) {
   return (
     <S.Wrapper>
       <S.HamburgerWrapper>

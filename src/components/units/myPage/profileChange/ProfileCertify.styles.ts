@@ -62,7 +62,6 @@ export const Label = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  /* font-weight: 600; */
   @media ${breakPoints.mobile} {
     font-size: 1rem;
   }

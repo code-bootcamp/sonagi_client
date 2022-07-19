@@ -2,7 +2,7 @@ import SocialLoginPresenter from "./SocialLogin.presenter";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { AUTH_PHONE_OK, CREATE_USER, SEND_PHONE } from "./SocialLogin.queries";
@@ -33,11 +33,11 @@ export default function SocialLoginContainer() {
     mode: "onChange",
   });
 
-  const onChangePhone = (event: any) => {
+  const onChangePhone = (event: ChangeEvent<HTMLInputElement>) => {
     setPhone(event.target.value);
   };
 
-  const onChangeToken = (event: any) => {
+  const onChangeToken = (event: ChangeEvent<HTMLInputElement>) => {
     setToken(event.target.value);
   };
 

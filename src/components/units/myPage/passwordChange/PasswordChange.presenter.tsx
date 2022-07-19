@@ -1,8 +1,11 @@
 import React from "react";
 import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./PasswordChange.styles";
+import { IPasswordChangePresenterProps } from "./PasswordChange.types";
 
-export default function PasswordChangePresenter(props) {
+export default function PasswordChangePresenter(
+  props: IPasswordChangePresenterProps
+) {
   return (
     <S.Wrapper>
       <S.HamburgerWrapper>
