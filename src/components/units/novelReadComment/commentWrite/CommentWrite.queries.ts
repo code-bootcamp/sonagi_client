@@ -19,7 +19,6 @@ export const UPDATE_EPISODE_REVIEW = gql`
     $updateEpisodeReviewInput: UpdateNovelIndexReviewInput!
   ) {
     updateEpisodeReview(updateEpisodeReviewInput: $updateEpisodeReviewInput) {
-      id
       contents
     }
   }

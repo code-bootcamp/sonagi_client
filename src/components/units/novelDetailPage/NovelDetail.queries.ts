@@ -77,15 +77,6 @@ export const DONATEPOINT = gql`
   }
 `;
 
-export const CREATE_NOVEL_LIKE = gql`
-  mutation createNovelLike($novelID: String!) {
-    createNovelLike(novelID: $novelID) {
-      id
-      createAt
-    }
-  }
-`;
-
 export const DELETE_NOVEL_INDEX = gql`
   mutation deleteNovelIndex($novelIndexID: String!) {
     deleteNovelIndex(novelIndexID: $novelIndexID) {
@@ -114,6 +105,16 @@ export const FETCH_PAID_POINTS = gql`
       #   id
       #   description
       # }
+    }
+  }
+`;
+
+export const SWITCH_NOVEL_LIKE = gql`
+  mutation switchNovelLike($novelID: String!) {
+    switchNovelLike(novelID: $novelID) {
+      id
+      msg
+      isSuccess
     }
   }
 `;

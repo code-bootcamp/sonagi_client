@@ -5,6 +5,7 @@ import DOMPurify from "dompurify";
 import { getDateDay } from "../../../commons/libraries/utils";
 import DetailCommentWriteContainer from "../novelDetailComment/commentWrite/CommentWrite.container";
 import DetailCommentListContainer from "../novelDetailComment/commentList/CommentList.container";
+import DonatePage from "../../commons/modal/donatePayments";
 
 export default function NovelDetailPresenter(props) {
   return (
@@ -64,22 +65,28 @@ export default function NovelDetailPresenter(props) {
             </S.StarWrapper>
 
             <S.Line />
-
-            <div>후원할 금액</div>
-            <input type="text" onChange={props.onChangeDonate} />
           </S.ColumnWrapper>
         </S.FlexWrapper>
         <S.ButtonWrapper>
-          <S.HeartWrapper onClick={props.onClickLike}>
+          <S.HeartWrapper
+            disabled={props.isSubmitting === true}
+            onClick={props.onClickLike}
+          >
             <S.HeartImg src="/novelDetail/HeartImg.png" />
             <S.HeartCount>
               {props.detailData?.fetchNovelDetail.likeCount}
             </S.HeartCount>
           </S.HeartWrapper>
           <S.LookButtonWrapper>
-            <Button02 title="첫화보기" />
+            <Button02 title="첫화보기" onClick={props.onClickFirstView} />
             {/* <Button01 title="이어보기" /> */}
             <Button01 onClick={props.onClickDonate} title="후원하기" />
+            {props.isDonate && (
+              <DonatePage
+                onClickDonate={props.onClickDonate}
+                novelID={props.novelID}
+              />
+            )}
           </S.LookButtonWrapper>
         </S.ButtonWrapper>
         <div>

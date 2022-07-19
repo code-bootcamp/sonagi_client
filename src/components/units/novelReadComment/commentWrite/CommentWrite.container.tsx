@@ -60,8 +60,8 @@ export default function ReadCommentWriteContainer(props) {
       try {
         const result = await updateEpisodeReview({
           variables: {
-            updateNovelReviewInput: {
-              episodeID: props.el.id,
+            updateEpisodeReviewInput: {
+              id: props.el.id,
               contents: data.contents,
               star: 1,
             },

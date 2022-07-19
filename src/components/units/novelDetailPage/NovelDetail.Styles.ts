@@ -252,7 +252,7 @@ export const LineImg = styled.img`
   height: 25px;
 `;
 
-export const HeartWrapper = styled.div`
+export const HeartWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;

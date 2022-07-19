@@ -3,21 +3,20 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import {
-  CREATE_BOOK_MARK,
   FETCH_EPISODE_DETAIL,
   FETCH_EPISODE_REVIEW_PAGE,
   FETCH_NOVEL_DETAIL,
+  TOGGLE_BOOK_MARK,
 } from "./NovelRead.queries";
 
 export default function NovelReadContainer() {
   const router = useRouter();
   const [setDisplay, setIsDisplay] = useState(false);
   // 북마크
-  const [createBookmark] = useMutation(CREATE_BOOK_MARK);
+  const [toggleBookmark] = useMutation(TOGGLE_BOOK_MARK);
   const { data: readData } = useQuery(FETCH_EPISODE_DETAIL, {
     variables: { novelIndexID: router.query.volume_id },
   });
-  console.log(readData);
   const { data: novelData } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
   });
@@ -33,16 +32,6 @@ export default function NovelReadContainer() {
   const onClickDisplay = () => {
     setIsDisplay((prev) => !prev);
   };
-
-  // useEffect(
-  //   () =>
-  //     window.addEventListener("copy", (e) => {
-  //       alert("보안 정책에 의해 복사를 허용하지 않습니다.");
-  //       e.preventDefault();
-  //       // window.clipboardData.clearData("Text");
-  //     }),
-  //   [window.addEventListener]
-  // );
 
   // 이전화 다음화
   const indexPage = novelData?.fetchNovelDetail.novelIndexs
@@ -75,12 +64,13 @@ export default function NovelReadContainer() {
   // 북마크
   const onClickBookMark = async () => {
     try {
-      await createBookmark({
+      const result = await toggleBookmark({
         variables: {
           novelIndexID: router.query.volume_id,
           page: 1,
         },
       });
+      console.log("북마크", result);
       alert("북마크 성공!");
     } catch (error) {
       alert(error.message);
