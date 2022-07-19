@@ -112,9 +112,15 @@ export default function NovelReadContainer() {
   };
 
   // 우클릭 방지
-  const onClickRight = (e: MouseEvent) => {
-    e.preventDefault();
-  };
+  // const onClickRight = (e: MouseEvent) => {
+  //   e.preventDefault();
+  // };
+
+  // // 세팅
+  // const [setting, setSetting] = useState(false);
+  // const onClickSetting = () => {
+  //   setSetting((prev) => !prev);
+  // };
   return (
     <NovelReadPresenter
       onClickMoveToMain={onClickMoveToMain}
@@ -137,7 +143,11 @@ export default function NovelReadContainer() {
       setCommentClick={setCommentClick}
       onClickComment={onClickComment}
       commentData={commentData}
-      onClickRight={onClickRight}
+      // 우클릭 방지
+      // onClickRight={onClickRight}
+      // 세팅으로
+      // onClickSetting={onClickSetting}
+      // setting={setting}
     />
   );
 }
