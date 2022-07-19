@@ -1,5 +1,4 @@
 import Button01 from "../../commons/buttons/01";
-import Button02 from "../../commons/buttons/02";
 import * as S from "./NovelDetail.Styles";
 import DOMPurify from "dompurify";
 import { getDateDay } from "../../../commons/libraries/utils";
@@ -7,6 +6,7 @@ import DetailCommentWriteContainer from "../novelDetailComment/commentWrite/Comm
 import DetailCommentListContainer from "../novelDetailComment/commentList/CommentList.container";
 import DonatePage from "../../commons/modal/donatePayments";
 import { INovelDetailPresenterProps } from "./NovelDetail.types";
+import Button04 from "../../commons/buttons/04";
 
 export default function NovelDetailPresenter(
   props: INovelDetailPresenterProps
@@ -21,25 +21,47 @@ export default function NovelDetailPresenter(
 
           <S.ColumnWrapper>
             <S.Genre>
-              <S.TopFont>장르</S.TopFont>
-              {/* <S.SmallArrow src="/novelDetail/Polygon.png" /> */}
-              <S.Arrow>{">"}</S.Arrow>
-              <S.TopFont>
-                {props.detailData?.fetchNovelDetail.novelCategory.name}
-              </S.TopFont>
+              <S.LeftWrapper>
+                <S.TopFont>장르</S.TopFont>
+                {/* <S.SmallArrow src="/novelDetail/Polygon.png" /> */}
+                <S.Arrow>{">"}</S.Arrow>
+                <S.TopFont>
+                  {props.detailData?.fetchNovelDetail.novelCategory.name}
+                </S.TopFont>
+              </S.LeftWrapper>
+              <S.HeartWrapper
+                disabled={props.isSubmitting === true}
+                onClick={props.onClickLike}
+              >
+                <S.HeartImg src="/novelDetail/HeartImg.png" />
+                <S.HeartCount>
+                  {props.detailData?.fetchNovelDetail.likeCount}
+                </S.HeartCount>
+              </S.HeartWrapper>
             </S.Genre>
-
             <S.NovelTitle>
               {props.detailData?.fetchNovelDetail.title}
             </S.NovelTitle>
+            <S.StarWrapper>
+              <S.StarImg src="/novelDetail/star.png" />
+              <S.StarImg src="/novelDetail/star.png" />
+              <S.StarImg src="/novelDetail/star.png" />
+              <S.StarImg src="/novelDetail/star.png" />
+              <S.StarImg src="/novelDetail/star.png" />
+              <S.Score>5점</S.Score>
+              <S.Count>
+                {props.detailData?.fetchNovelDetail.viewCount} 명
+              </S.Count>
+            </S.StarWrapper>
             <S.ProfileWrapper>
-              <S.WrapWriter>
-                <S.WriterImg src="/novelDetail/profile.jpg" />
-                <S.WriterFont>
-                  {props.detailData?.fetchNovelDetail.user.nickName}
-                </S.WriterFont>
-              </S.WrapWriter>
               <S.Flexs>
+                <S.WrapWriter>
+                  <S.WriterImg src="/novelDetail/profile.jpg" />
+                  <S.WriterFont>
+                    {props.detailData?.fetchNovelDetail.user.nickName}
+                  </S.WriterFont>
+                </S.WrapWriter>
+                <S.Divs>|</S.Divs>
                 <S.Divs>
                   총{" "}
                   {String(
@@ -55,43 +77,20 @@ export default function NovelDetailPresenter(
                 </S.Divs>
               </S.Flexs>
             </S.ProfileWrapper>
-            <S.StarWrapper>
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.Score>5점</S.Score>
-              <S.Count>
-                {props.detailData?.fetchNovelDetail.viewCount} 명
-              </S.Count>
-            </S.StarWrapper>
-
             <S.Line />
+            <S.LookButtonWrapper>
+              <Button04 title="첫화보기" onClick={props.onClickFirstView} />
+              {/* <Button01 title="이어보기" /> */}
+              <Button01 onClick={props.onClickDonate} title="후원하기" />
+              {props.isDonate && (
+                <DonatePage
+                  onClickDonate={props.onClickDonate}
+                  novelID={props.novelID}
+                />
+              )}
+            </S.LookButtonWrapper>
           </S.ColumnWrapper>
         </S.FlexWrapper>
-        <S.ButtonWrapper>
-          <S.HeartWrapper
-            disabled={props.isSubmitting === true}
-            onClick={props.onClickLike}
-          >
-            <S.HeartImg src="/novelDetail/HeartImg.png" />
-            <S.HeartCount>
-              {props.detailData?.fetchNovelDetail.likeCount}
-            </S.HeartCount>
-          </S.HeartWrapper>
-          <S.LookButtonWrapper>
-            <Button02 title="첫화보기" onClick={props.onClickFirstView} />
-            {/* <Button01 title="이어보기" /> */}
-            <Button01 onClick={props.onClickDonate} title="후원하기" />
-            {props.isDonate && (
-              <DonatePage
-                onClickDonate={props.onClickDonate}
-                novelID={props.novelID}
-              />
-            )}
-          </S.LookButtonWrapper>
-        </S.ButtonWrapper>
         <div>
           <S.TableLine />
           <S.TableTop>

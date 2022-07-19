@@ -1,6 +1,12 @@
 import styled from "@emotion/styled";
 
 export const Genre = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const LeftWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -12,9 +18,10 @@ export const SelectAll = styled.div`
 `;
 
 export const Arrow = styled.div`
-  font-size: 1.2rem;
-  margin: 0px 10px 0px 10px;
-  font-weight: 600;
+  font-size: 1rem;
+  color: #848484;
+  margin: 0px 10px 1px 10px;
+  font-weight: 400;
 `;
 
 export const DIV = styled.div`
@@ -50,9 +57,8 @@ export const Buttons = styled.div`
 `;
 
 export const LookButtonWrapper = styled.div`
-  width: 100%;
+  padding-top: 20px;
   display: flex;
-  justify-content: space-evenly;
 `;
 
 export const Count = styled.div`
@@ -66,13 +72,15 @@ export const TopFont = styled.div`
 
 export const NovelTitle = styled.div`
   font-size: 2.25rem;
-  margin: 5px 0px 10px 0px;
-  color: #484848;
+  font-weight: 500;
+  padding: 5px 0px 10px 0px;
+  margin-left: -2px;
 `;
 
 export const StarImg = styled.img`
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
+  margin-right: 1px;
 `;
 
 export const Score = styled.div`
@@ -85,13 +93,12 @@ export const Score = styled.div`
 export const StarWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 15px 0px 10px 0px;
+  margin: 5px 0px 20px 0px;
 `;
 
 export const WrapWriter = styled.div`
   display: flex;
   align-items: center;
-  padding-bottom: 10px;
 `;
 
 export const WriterImg = styled.img`
@@ -128,8 +135,8 @@ export const WriterFont = styled.div`
 `;
 
 export const NovelImage = styled.img`
-  width: 250px;
-  height: 330px;
+  width: 230px;
+  height: 310px;
 `;
 
 export const SmallArrow = styled.img`
@@ -145,16 +152,19 @@ export const TopWrapper = styled.div`
 export const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 70px;
+  padding-left: 70px;
 `;
 
 export const FlexWrapper = styled.div`
   display: flex;
-  margin-top: 60px;
+  justify-content: center;
+  padding: 60px 0px;
 `;
 
 export const Divs = styled.div`
   font-size: 1rem;
+  display: flex;
+  align-items: center;
   margin: 0px 5px 0px 5px;
   color: #484848;
 `;
@@ -182,7 +192,7 @@ export const ProfileWrapper = styled.div`
 export const Line = styled.div`
   border-bottom: 1px solid #d9d9d9;
   width: 820px;
-  margin-top: 30px;
+  margin: 30px 0 3px 0;
 `;
 
 export const ArrowImg = styled.img`
@@ -259,8 +269,9 @@ export const HeartWrapper = styled.button`
   border: 1px solid #bdbdbd;
   width: 126px;
   height: 40px;
-  margin: 0px 50px 0px 75px;
   border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
   :hover {
     background-color: #e5e8eb;
   }
