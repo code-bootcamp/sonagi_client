@@ -6,8 +6,11 @@ import { getDateDay } from "../../../commons/libraries/utils";
 import DetailCommentWriteContainer from "../novelDetailComment/commentWrite/CommentWrite.container";
 import DetailCommentListContainer from "../novelDetailComment/commentList/CommentList.container";
 import DonatePage from "../../commons/modal/donatePayments";
+import { INovelDetailPresenterProps } from "./NovelDetail.types";
 
-export default function NovelDetailPresenter(props) {
+export default function NovelDetailPresenter(
+  props: INovelDetailPresenterProps
+) {
   return (
     <div>
       <div>
@@ -123,7 +126,7 @@ export default function NovelDetailPresenter(props) {
         {props.isFirst ? (
           <>
             {props.detailData?.fetchNovelDetail.novelIndexs
-              .map((el) => (
+              .map((el: any) => (
                 <S.TableLineWrapper key={el.id}>
                   <S.WrapFirst>
                     <S.Square
@@ -170,7 +173,7 @@ export default function NovelDetailPresenter(props) {
           </>
         ) : (
           <>
-            {props.detailData?.fetchNovelDetail.novelIndexs.map((el) => (
+            {props.detailData?.fetchNovelDetail.novelIndexs.map((el: any) => (
               <S.TableLineWrapper key={el.id}>
                 <S.WrapFirst>
                   <S.Square
@@ -217,8 +220,8 @@ export default function NovelDetailPresenter(props) {
         <S.FooterLabel>소설 키워드</S.FooterLabel>
         <S.TagsWrapper>
           {props.detailData?.fetchNovelDetail.novelTags
-            ?.filter((el) => el)
-            .map((el) => (
+            ?.filter((el: any) => el)
+            .map((el: any) => (
               <S.Tags key={el}># {el.name}</S.Tags>
             ))}
         </S.TagsWrapper>

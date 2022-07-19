@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { MouseEvent, useState } from "react";
 import NovelDetailPresenter from "./NovelDetail.Presenter";
 import {
   CHANGE_PRIVATE_NOVEL_INDEX,
@@ -41,12 +41,12 @@ export default function NovelDetailContainer() {
       alert(result.data.deleteNovel.msg);
       router.push("/novel/list/publish");
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 
   // 회차 읽기
-  const onClickMoveToRead = (event) => {
+  const onClickMoveToRead = (event: MouseEvent<HTMLDivElement>) => {
     router.push(`/novel/${router.query._id}/${event.currentTarget.id}`);
     console.log(event.target);
   };
@@ -57,8 +57,7 @@ export default function NovelDetailContainer() {
   };
 
   // 결제하기
-  const onClickPayment = async (event) => {
-    console.log(event.target.id);
+  const onClickPayment = async (event: MouseEvent<HTMLDivElement>) => {
     try {
       await paidPoint({
         variables: { novelIndexID: event.currentTarget.id },
@@ -66,7 +65,7 @@ export default function NovelDetailContainer() {
 
       alert("결제 성공");
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 
@@ -101,12 +100,12 @@ export default function NovelDetailContainer() {
       alert(result.data?.switchNovelLike.msg);
       setIsSubmitting(false);
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 
   // 회차 삭제
-  const onClickIndexDelete = async (event) => {
+  const onClickIndexDelete = async (event: MouseEvent<HTMLDivElement>) => {
     try {
       const result = await deleteNovelIndex({
         variables: { novelIndexID: event.currentTarget.id },
@@ -120,7 +119,7 @@ export default function NovelDetailContainer() {
       console.log(result);
       alert(result.data?.deleteNovelIndex.msg);
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 
@@ -130,7 +129,7 @@ export default function NovelDetailContainer() {
   };
 
   // 에피소드 비공개
-  const onClickPrivate = async (event) => {
+  const onClickPrivate = async (event: MouseEvent<HTMLDivElement>) => {
     try {
       const result = await changePrivateNovelIndex({
         variables: { novelIndexID: event.currentTarget.id },
@@ -139,7 +138,7 @@ export default function NovelDetailContainer() {
       alert("비공개");
       setSwitchPrivate(true);
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 

@@ -2,12 +2,15 @@ import dynamic from "next/dynamic";
 import React from "react";
 import Button01 from "../../commons/buttons/01";
 import * as S from "./VolumeWrite.styles";
+import { IVolumeWritePresenterProps } from "./VolumeWrite.types";
 
 const ToastUi = dynamic(() => import("../../commons/toastUI"), {
   ssr: false,
 });
 
-export default function VolumeWritePresenter(props: any) {
+export default function VolumeWritePresenter(
+  props: IVolumeWritePresenterProps
+) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
       <S.Wrapper>
