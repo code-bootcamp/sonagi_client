@@ -5,6 +5,7 @@
 import { gql, useMutation } from "@apollo/client";
 import styled from "@emotion/styled";
 import { useState } from "react";
+import { message } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
 
 const PayMentWrapper = styled.div`
@@ -59,7 +60,7 @@ const SubTitle = styled.div`
 `;
 
 const Contents = styled.input`
-  width: 60%;
+  width: 50%;
   padding: 5px;
   margin-bottom: 20px;
   border: 1px solid #2277d2;
@@ -83,47 +84,48 @@ const Overlay = styled.div`
   background-color: #cccccc;
 `;
 
-export const CANCEL_PAYMENT = gql`
-  mutation cancelPayment($cancelPaymentInput: CancelPaymentInput!) {
-    cancelPayment(cancelPaymentInput: $cancelPaymentInput) {
+export const DONATE_POINT = gql`
+  mutation donatePoint($donateInput: DonatePaymentPointInput!) {
+    donatePoint(donateInput: $donateInput) {
       id
-      impUid
-      amount
-      reason
+      point
+      createAt
+      status {
+        id
+        description
+      }
     }
   }
 `;
 
 export default function PaymentPage(props) {
-  const [cancelPayment] = useMutation(CANCEL_PAYMENT);
-  const [reason, setReason] = useState("");
+  const [donatePoint] = useMutation(DONATE_POINT);
+  const [point, setPoint] = useState("");
   const handleCancel = () => {
     props.setIsModalVisible(false);
   };
 
-  const impUid = String(props.CancelData?.impUid);
-  const merchantUid = String(props.CancelData?.merchantUid);
-
-  const onChangeReason = (event) => {
-    setReason(event.target.value);
+  const onChangeDonate = (event) => {
+    setPoint(event.target.value);
   };
 
-  const onClickCancelPayment = async () => {
-    console.log(reason);
+  const onClickDonate = async () => {
+    console.log(point);
     props.setIsModalVisible(false);
 
     try {
-      const result = await cancelPayment({
+      const result = await donatePoint({
         variables: {
-          cancelPaymentInput: {
-            impUid,
-            merchantUid,
-            reason,
+          donateInput: {
+            novelID: props.novelID,
+            // 디테일 페이지에서 novelID 변수에 저장한다음 props로 여기로 내려
+            point: Number(point),
           },
         },
       });
       console.log(result);
-      alert("환불이 완료되었습니다");
+      // alert("후원 감사합니데이~~!");
+      message.info("후원감사합니다");
     } catch (error) {
       alert(error.message);
     }
@@ -134,10 +136,10 @@ export default function PaymentPage(props) {
       <Overlay onClick={handleCancel} />
       <PayMentWrapper>
         <CancelImg onClick={handleCancel} src="/modal/delete.png"></CancelImg>
-        <Title>포인트를 환불하시겠습니까?</Title>
-        <SubTitle>환불 사유를 입력해주세요</SubTitle>
-        <Contents type="text" onChange={onChangeReason} />
-        <MoneyButton onClick={onClickCancelPayment}>환불하기</MoneyButton>
+        <Title>작가와 소설을 후원하시겠습니까?</Title>
+        <SubTitle>후원 금액을 입력해주세요</SubTitle>
+        <Contents type="text" onChange={onChangeDonate} />
+        <MoneyButton onClick={onClickDonate}>후원하기</MoneyButton>
       </PayMentWrapper>
     </>
   );

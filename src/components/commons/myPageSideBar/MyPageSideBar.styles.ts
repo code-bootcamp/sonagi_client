@@ -3,6 +3,7 @@ import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   margin-right: 2.6%;
+  padding-bottom: 50px;
 
   @media ${breakPoints.mobile} {
     display: none;

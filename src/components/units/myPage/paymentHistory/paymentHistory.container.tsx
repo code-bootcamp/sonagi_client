@@ -20,6 +20,7 @@ export default function PaymentHistoryContainer() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [CancelData, setCancelData] = useState([]);
 
+  console.log(data);
   console.log("결제한거2", PaidData);
   console.log("결제한거3", DonateData);
 

@@ -18,7 +18,6 @@ function MyPageContainer() {
     <MyPagePresenter
       onClickMoveToPointCharge={onClickMoveToPointCharge}
       data={data}
-      // handleCancel={handleCancel}
     />
   );
 }

@@ -239,6 +239,7 @@ export const FooterFlex = styled.div`
     margin-left: 45%;
   }
   @media ${breakPoints.mobile} {
+    margin-left: 30%;
     margin-right: 10px;
   }
 `;

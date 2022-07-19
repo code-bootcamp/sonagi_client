@@ -7,6 +7,8 @@ export default function LikeNovelContainer() {
   const { data } = useQuery(FETCH_NOVEL_LIKE);
   const { onClickMoveToPage } = useMoveToPage();
 
+  console.log(data);
+
   return (
     <LikeNovelPresenter data={data} onClickMoveToPage={onClickMoveToPage} />
   );

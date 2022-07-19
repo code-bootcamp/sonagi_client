@@ -2,15 +2,24 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const ChargeButton = styled.div`
-  width: 102px;
-  height: 47px;
+  width: 110px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #2277d8;
+  border: 1px solid #2277d8;
+  border-radius: 8px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #808080;
-  border-radius: 8px;
-  color: #828282;
-  cursor: pointer;
+  margin: 0 10px;
+
+  @media ${breakPoints.mobile} {
+    width: 80px;
+    height: 30px;
+    font-size: 0.7rem;
+    margin-right: 10px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -21,6 +30,7 @@ export const Wrapper = styled.div`
   align-items: center;
   margin: 0 auto;
   margin-bottom: 80px;
+  padding: 10px 0;
 
   @media ${breakPoints.tablet} {
     display: flex;
@@ -36,6 +46,16 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const HamburgerWrapper = styled.div`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+  }
+`;
+
 export const DIV = styled.div`
   margin-top: 30px;
   margin-bottom: 30px;
@@ -44,6 +64,7 @@ export const DIV = styled.div`
   flex-direction: row;
   justify-content: right;
   margin-right: 50px;
+
   @media ${breakPoints.mobile} {
     display: none;
   }
@@ -57,7 +78,7 @@ export const CashCharge = styled.div`
 `;
 
 export const LargeBox = styled.div`
-  width: 96%;
+  width: 85%;
   margin: 0 2%;
   display: flex;
 
@@ -81,12 +102,11 @@ export const InnerLeftBox = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 96%;
-    background-color: #fff;
+    background-color: #ebf6ff;
   }
 
   @media ${breakPoints.mobile} {
     width: 96%;
-    background-color: #fff;
   }
 `;
 
@@ -101,11 +121,11 @@ export const InnerRightBox = styled.div`
 
   @media ${breakPoints.tablet} {
     flex-direction: column;
-
     width: 96%;
     height: 5vh;
     height: auto;
   }
+
   @media ${breakPoints.mobile} {
     width: 96%;
     height: 200px;
@@ -139,7 +159,7 @@ export const Flex = styled.div`
 
 export const Name = styled.div`
   font-size: 1rem;
-  margin: 10px 0px;
+  margin: 15px 0px;
 
   span {
     font-size: 1.25em;
