@@ -2,8 +2,11 @@ import React from "react";
 import HamburgerPage from "../../../../commons/hamburger";
 import DeleteUserContainer from "./deleteUser/DeleteUser.container";
 import * as S from "./ProfileModify.styles";
+import { IProfileModifyPresenterProps } from "./ProfileModify.types";
 
-export default function ProfileModifyPresenter(props) {
+export default function ProfileModifyPresenter(
+  props: IProfileModifyPresenterProps
+) {
   return (
     <S.Wrapper>
       <S.HamburgerWrapper>
