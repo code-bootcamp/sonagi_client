@@ -1,24 +1,26 @@
 import { useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
 // import { useRouter } from "next/router";
 import { useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
 import NestedCommentListContainer from "../../nestedComment/list/NestedCommentList.container";
 import NestedCommentWrite from "../../nestedComment/write/NestedCommentWrite.container";
 import CommentWriteContainer from "../commentWrite/CommentWrite.container";
-import { DELETE_COMMENT, FETCH_COMMENTS } from "./CommentList.queries";
+import {
+  DELETE_COMMENT,
+  FETCH_COMMENTS_FROM_BOARD,
+} from "./CommentList.queries";
 import * as S from "./CommentList.styles";
 
 export default function CommentListPresenterItem(props) {
+  const router = useRouter();
   const [isEdit, setIsEdit] = useState(false);
   // const [isAnswer, setIsAnswer] = useState(false);
   const [deleteComment] = useMutation(DELETE_COMMENT);
   const [isNested, setIsNested] = useState(false);
-  const [mention, setMention] = useState("");
+  // const [mention, setMention] = useState("");
 
-  const onWriteMention = (nickname) => () => {
-    const at = "@";
-    const space = " ";
-    setMention(at.concat(nickname).concat(space));
+  const onWriteMention = () => {
     setIsNested(true);
   };
   // const router = useRouter();
@@ -40,7 +42,10 @@ export default function CommentListPresenterItem(props) {
 
         refetchQueries: [
           {
-            query: FETCH_COMMENTS,
+            query: FETCH_COMMENTS_FROM_BOARD,
+            variables: {
+              boardID: router.query._id,
+            },
           },
         ],
       });
@@ -81,13 +86,22 @@ export default function CommentListPresenterItem(props) {
               </S.WrapUserInfo>
             </S.WrapCommentInfo>
             <S.WrapIcon>
-              <S.EditIcon src="/comment/create.png" onClick={onClickUpdate} />
-              <S.DeleteIcon src="/comment/Trash.png" onClick={onClickDelete} />
+              <S.EditIcon
+                title="수정하기"
+                src="/comment/create.png"
+                onClick={onClickUpdate}
+              />
+              <S.DeleteIcon
+                title="삭제하기"
+                src="/comment/Trash.png"
+                onClick={onClickDelete}
+              />
               {/* <S.AnswerIcon
                 src="/comment/insert_comment.png"
                 onClick={onClickAnswer}
               /> */}
               <S.AnswerIcon
+                title="대댓글 달기"
                 src="/comment/insert_comment.png"
                 onClick={onWriteMention}
               />
@@ -105,11 +119,8 @@ export default function CommentListPresenterItem(props) {
         )}
         {isNested && (
           <NestedCommentWrite
-            // isAnswer={true}
-            // setIsAnswer={setIsAnswer}
             isNested={true}
             el={props.el}
-            mention={mention}
             setIsNested={setIsNested}
           />
         )}

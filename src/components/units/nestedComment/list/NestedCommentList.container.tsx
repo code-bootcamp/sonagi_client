@@ -1,13 +1,18 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
 import { DELETE_COMMENT } from "../../comment/commentList/CommentList.queries";
-import {
-  FETCH_COMMENT,
-  FETCH_COMMENTS,
-} from "../write/NestedCommentWrite.queries";
+import { FETCH_COMMENTS } from "../write/NestedCommentWrite.queries";
 import NestedCommentListPresenter from "./NestedCommentList.presenter";
+import { FETCH_NESTED_COMMENTS } from "./NestedCommentList.queries";
 
 export default function NestedCommentListContainer(props) {
-  const { data } = useQuery(FETCH_COMMENT);
+  const router = useRouter();
+  const { data } = useQuery(FETCH_NESTED_COMMENTS, {
+    variables: { boardID: router.query._id },
+  });
+  console.log("fetchNestedComment", data);
+
+  // 삭제
   const [deleteComment] = useMutation(DELETE_COMMENT);
   const DeleteNestedComment = async () => {
     try {
@@ -29,7 +34,7 @@ export default function NestedCommentListContainer(props) {
 
   return (
     <>
-      {data?.fetchComment.map((el) => (
+      {data?.fetchCommentsFromBoard.map((el) => (
         <NestedCommentListPresenter
           key={el.id}
           el={el}

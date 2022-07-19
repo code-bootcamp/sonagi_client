@@ -5,7 +5,7 @@ export default function CommentWritePresenter(props) {
     <S.Wrapper>
       <S.WrapTitle>
         <S.CommentIcon src="/comment/insert_comment.png" />
-        <S.CommentTitle>댓글</S.CommentTitle>
+        <S.CommentTitle>{props.isEdit ? "댓글 수정" : "댓글"}</S.CommentTitle>
       </S.WrapTitle>
       <S.WrapContents>
         <S.ContentsInput
