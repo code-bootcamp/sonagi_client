@@ -159,3 +159,15 @@ export const BoxWrapper = styled.div`
 export const ImgWrapper = styled.div`
   height: 100%;
 `;
+
+export const Arrow = styled.img`
+  width: 35px;
+  height: 35px;
+  margin: 0px 30px;
+  cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 30px;
+    height: 30px;
+  }
+`;
