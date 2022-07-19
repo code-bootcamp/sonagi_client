@@ -45,13 +45,13 @@ export default function PasswordChangeContainer() {
           alert("비밀번호가 변경되었습니다");
           reset();
         } catch (error) {
-          alert(error.message);
+          alert(error);
         }
         reset();
       } else alert("현재 비밀번호가 일치하지 않습니다");
       return;
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
   return (
