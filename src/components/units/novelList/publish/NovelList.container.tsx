@@ -110,6 +110,10 @@ export default function NovelPbListContainer() {
     localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
+  const onClickMoveToRomancePage = () => {
+    router.push("/novel/list/all/romance");
+  };
+
   return (
     <NovelPbListPresenter
       Romance={Romance}
@@ -119,6 +123,7 @@ export default function NovelPbListContainer() {
       School={School}
       Horror={Horror}
       onClickMoveToDetail={onClickMoveToDetail}
+      onClickMoveToRomancePage={onClickMoveToRomancePage}
     />
   );
 }
