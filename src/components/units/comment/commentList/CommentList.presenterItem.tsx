@@ -3,13 +3,9 @@ import { useRouter } from "next/router";
 // import { useRouter } from "next/router";
 import { useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
-import NestedCommentListContainer from "../../nestedComment/list/NestedCommentList.container";
 import NestedCommentWrite from "../../nestedComment/write/NestedCommentWrite.container";
 import CommentWriteContainer from "../commentWrite/CommentWrite.container";
-import {
-  DELETE_COMMENT,
-  FETCH_COMMENTS_FROM_BOARD,
-} from "./CommentList.queries";
+import { DELETE_COMMENT, FETCH_BOARD } from "./CommentList.queries";
 import * as S from "./CommentList.styles";
 
 export default function CommentListPresenterItem(props) {
@@ -42,7 +38,7 @@ export default function CommentListPresenterItem(props) {
 
         refetchQueries: [
           {
-            query: FETCH_COMMENTS_FROM_BOARD,
+            query: FETCH_BOARD,
             variables: {
               boardID: router.query._id,
             },
@@ -124,7 +120,7 @@ export default function CommentListPresenterItem(props) {
             setIsNested={setIsNested}
           />
         )}
-        <NestedCommentListContainer el={props.el.id} />
+        {/* <NestedCommentListContainer el={props.el.children.id} /> */}
         {/* <AnswerListPresenter el={props.el} /> */}
       </S.FooterWrapper>
     </>
