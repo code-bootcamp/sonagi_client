@@ -1,17 +1,17 @@
 import DOMPurify from "dompurify";
-import * as S from "./Asia.styles";
+import * as S from "./Horror.styles";
 
-export default function AsiaPresenter(props: any) {
+export default function HorrorPresenter(props: any) {
   return (
     <S.Wrap>
-      <S.Title>무협</S.Title>
+      <S.Title>공포/미스터리</S.Title>
       {/* 연재중 */}
       <S.RowWrap>
         <S.Category>연재작품</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.PbAsia?.fetchNovelsPage?.novels.map((el: any) => (
+        {props.PbHorror?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
             onClick={props.onClickMoveToDetail}
             id={el.id}
@@ -43,7 +43,7 @@ export default function AsiaPresenter(props: any) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.FinAsia?.fetchNovelsPage?.novels.map((el: any) => (
+        {props.FinHorror?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
             onClick={props.onClickMoveToDetail}
             id={el.id}
