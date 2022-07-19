@@ -6,7 +6,6 @@ import { ChangeEvent, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { AUTH_PHONE_OK, CREATE_USER, SEND_PHONE } from "./SocialLogin.queries";
-import { ISocialLoginContainerProps } from "./SocialLogin.types";
 
 const schema = yup.object({
   nickName: yup
@@ -15,9 +14,7 @@ const schema = yup.object({
     .required("필수 입력 사항"),
 });
 
-export default function SocialLoginContainer(
-  props: ISocialLoginContainerProps
-) {
+export default function SocialLoginContainer() {
   const router = useRouter();
 
   const [createUser] = useMutation(CREATE_USER);

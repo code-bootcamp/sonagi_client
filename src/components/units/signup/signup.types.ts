@@ -10,11 +10,12 @@ export interface ISignupContainerProps {}
 
 export interface ISignupPresenterProps {
   setAgree1: any;
+  setAgree2: any;
   phoneCheck: any;
   formState: FormState<FieldValues>;
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
-  onClickSignUp: () => void;
+  onClickSignUp: any;
   onClickMoveToMain: () => void;
   onClickSendPhone: () => void;
   onClickAuthPhone: () => void;

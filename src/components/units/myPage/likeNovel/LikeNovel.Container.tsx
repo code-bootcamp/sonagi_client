@@ -4,7 +4,7 @@ import LikeNovelPresenter from "./LikeNovel.presenter";
 import { DELETE_NOVEL_LIKE, FETCH_NOVEL_LIKE } from "./LikeNovel.queries";
 import { ILikeNovelContainerProps } from "./LikeNovel.types";
 
-export default function LikeNovelContainer(props: ILikeNovelContainerProps) {
+export default function LikeNovelContainer() {
   const { data } = useQuery(FETCH_NOVEL_LIKE);
 
   console.log(data);
