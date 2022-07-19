@@ -1,3 +1,4 @@
+import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import DOMPurify from "dompurify";
 import ReadCommentListContainer from "../novelReadComment/commentList/CommentList.container";
 import * as S from "./NovelRead.styles";
@@ -67,10 +68,22 @@ export default function NovelReadPresenter(props) {
               </S.Content>
               <S.FooterArrow src="/novelRead/footerArrowRight.png" />
             </S.CenterWrapper>
-            <S.Content onClick={props.onClickSizeDown}>sizeDown</S.Content>
-            <S.Content onClick={props.onClickSizeUp}>sizeUp</S.Content>
-
             <S.RightWrapper>
+              <S.WrapFont>
+                <S.Content>FontSize</S.Content>
+                <PlusOutlined
+                  style={{
+                    fontSize: "20px",
+                    paddingRight: "10px",
+                    paddingLeft: "10px",
+                  }}
+                  onClick={props.onClickSizeUp}
+                />
+                <MinusOutlined
+                  style={{ fontSize: "20px", paddingRight: "30px" }}
+                  onClick={props.onClickSizeDown}
+                />
+              </S.WrapFont>
               <S.Comment src="/novelRead/list.png" />
               <S.Content onClick={props.onClickMoveToList}>목록</S.Content>
             </S.RightWrapper>
