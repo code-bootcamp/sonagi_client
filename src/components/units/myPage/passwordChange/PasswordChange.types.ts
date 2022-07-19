@@ -6,7 +6,7 @@ import {
 } from "react-hook-form";
 
 export interface IPasswordChangePresenterProps {
-  onClickChangePwd: () => void;
+  onClickChangePwd: any;
   formState: FormState<FieldValues>;
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
