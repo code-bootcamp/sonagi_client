@@ -7,12 +7,13 @@ import { v4 as uuidv4 } from "uuid";
 
 import dynamic from "next/dynamic";
 import Tags from "../../commons/tags";
+import { INovelWritePresenterProps } from "./NovelWrite.types";
 
 const ToastUi = dynamic(() => import("../../commons/toastUI"), {
   ssr: false,
 });
 
-export default function NovelWritePresenter(props: any) {
+export default function NovelWritePresenter(props: INovelWritePresenterProps) {
   console.log(props.isDay);
   return (
     <form

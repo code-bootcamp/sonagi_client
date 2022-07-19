@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import { INovelWriteStyles } from "./NovelWrite.types";
 
 export const Error = styled.div`
   padding-top: 20px;
@@ -128,7 +129,7 @@ export const WrapSelect = styled.div`
   margin-left: 60px;
   border: 1px solid #b1b1b1;
   width: 230px;
-  height: ${(props: any) => (props.isSelect ? "100%" : "35px")};
+  height: ${(props: INovelWriteStyles) => (props.isSelect ? "100%" : "35px")};
 
   @media ${breakPoints.mobile} {
     margin: 0;
@@ -222,7 +223,8 @@ export const CycleLabel = styled.div`
 export const WrapCycleButton = styled.div`
   margin-left: 25px;
   display: flex;
-  background-color: ${(props) => (props.isClickDay ? "none" : "gray")};
+  background-color: ${(props: INovelWriteStyles) =>
+    props.isClickDay ? "none" : "gray"};
 
   @media ${breakPoints.mobile} {
     margin: 0;
@@ -236,7 +238,7 @@ export const CycleButton1 = styled.div`
   font-size: 1rem;
   border: 1px solid #b1b1b1;
   cursor: pointer;
-  background-color: ${(props) =>
+  background-color: ${(props: INovelWriteStyles) =>
     props.isDay === props.el ? " #2277d8" : "none"};
   color: ${(props) => (props.isDay === props.el ? " white" : "none")}; ;
 `;

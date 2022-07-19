@@ -11,6 +11,7 @@ import {
 } from "./NovelWrite.queries";
 import { Editor } from "@toast-ui/react-editor";
 import { useRouter } from "next/router";
+import { INovelWriteContainerProps, IonClickUpdate } from "./NovelWrite.types";
 
 const schema = yup.object({
   title: yup.string().required("작품 제목을 입력해 주세요!"),
@@ -19,7 +20,7 @@ const schema = yup.object({
   fileURLs: yup.array().required("표지 이미지를 등록해주세요!"),
 });
 
-export default function NovelWriteContainer(props) {
+export default function NovelWriteContainer(props: INovelWriteContainerProps) {
   console.log(props.editData);
 
   const router = useRouter();
@@ -51,9 +52,6 @@ export default function NovelWriteContainer(props) {
   useEffect(() => {
     const htmlString = props.editData?.fetchNovelDetail.description;
     editorRef.current?.getInstance().setHTML(htmlString);
-
-    setValue("description", htmlString);
-    trigger("description");
   }, [props?.editData]);
 
   // image
@@ -74,7 +72,7 @@ export default function NovelWriteContainer(props) {
   useEffect(() => {
     const files = props.editData?.fetchNovelDetail.files;
     if (files) {
-      const urls = files.map((el) => el.url);
+      const urls = files.map((el: any) => el.url);
 
       if (files[0]) {
         setFileUrls([...urls]);
@@ -91,7 +89,7 @@ export default function NovelWriteContainer(props) {
     SetIsSelect((prev) => !prev);
   };
 
-  const onClickGenre = (event) => {
+  const onClickGenre = (event: any) => {
     setGenre(event?.target.id);
     console.log(event?.target.id);
     setName(event.target.innerText);
@@ -117,7 +115,7 @@ export default function NovelWriteContainer(props) {
   useEffect(() => {
     if (props.editData?.fetchNovelDetail.novelTags.length) {
       setTags([
-        ...props.editData?.fetchNovelDetail.novelTags.map((el) => el.name),
+        ...props.editData?.fetchNovelDetail.novelTags.map((el: any) => el.name),
       ]);
     }
   }, [props.editData]);
@@ -142,12 +140,12 @@ export default function NovelWriteContainer(props) {
       alert("성공");
       router.push(`/novel/${result.data?.createNovel.id}`);
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 
   // 수정
-  const onClickUpdate = async (data) => {
+  const onClickUpdate = async (data: IonClickUpdate) => {
     try {
       const result = await updateNovel({
         variables: {
@@ -165,7 +163,7 @@ export default function NovelWriteContainer(props) {
       alert("성공");
       router.push(`/novel/${result.data?.updateNovel.id}`);
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 
@@ -184,7 +182,7 @@ export default function NovelWriteContainer(props) {
     setIsClickDay(true);
   };
 
-  const onClickDayDiv = (el) => () => {
+  const onClickDayDiv = (el: any) => () => {
     setIsDay(el);
   };
 
