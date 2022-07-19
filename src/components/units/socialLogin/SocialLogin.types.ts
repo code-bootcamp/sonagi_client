@@ -1,4 +1,3 @@
-import { ChangeEvent } from "react";
 import {
   FieldValues,
   FormState,
@@ -16,10 +15,10 @@ export interface ISocialLoginPresenterProps {
   formState: FormState<FieldValues>;
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
-  onClickSignUp: () => void;
+  onClickSignUp: any;
   onClickMoveToMain: () => void;
   onClickSendPhone: () => void;
   onClickAuthPhone: () => void;
-  onChangePhone: (event: ChangeEvent<HTMLInputElement>) => void;
-  onChangeToken: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangePhone: any;
+  onChangeToken: any;
 }

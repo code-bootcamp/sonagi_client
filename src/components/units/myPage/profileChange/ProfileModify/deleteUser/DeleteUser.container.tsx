@@ -18,7 +18,7 @@ export default function DeleteUserContainer() {
       alert("회원 탈퇴가 완료되었습니다");
       window.location.replace("/");
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 
