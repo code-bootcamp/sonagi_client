@@ -19,3 +19,8 @@ export const visitedPageState = atom({
   key: "visitedPageState",
   default: "/",
 });
+
+export const searchKeyword = atom({
+  key: "searchKeyword",
+  default: "",
+});
