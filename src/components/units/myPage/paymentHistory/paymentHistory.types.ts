@@ -12,3 +12,11 @@ export interface IPaymentHistoryPresenterProps {
   onClickCancelPayment: () => void;
   onClickCheck: any;
 }
+
+export interface IDonatePointsPresenterProps {
+  DonateData: any;
+}
+
+export interface IPaidPointsPresenterProps {
+  PaidData: any;
+}

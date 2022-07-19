@@ -1,7 +1,10 @@
 import { getDate } from "../../../../../commons/libraries/utils";
+import { IDonatePointsPresenterProps } from "../paymentHistory.types";
 import * as S from "./Points.styles";
 
-export default function DonatePointsPresenter(props) {
+export default function DonatePointsPresenter(
+  props: IDonatePointsPresenterProps
+) {
   return (
     <>
       <S.ListTitleRow>

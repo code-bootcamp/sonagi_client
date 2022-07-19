@@ -1,7 +1,8 @@
 import { getDate } from "../../../../../commons/libraries/utils";
+import { IPaidPointsPresenterProps } from "../paymentHistory.types";
 import * as S from "./Points.styles";
 
-export default function PaidPointsPresenter(props) {
+export default function PaidPointsPresenter(props: IPaidPointsPresenterProps) {
   return (
     <>
       <S.ListTitleRow>
