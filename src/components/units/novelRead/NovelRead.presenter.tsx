@@ -11,7 +11,7 @@ export default function NovelReadPresenter(props) {
           commentClick={props.commentClick}
         />
       ) : (
-        <S.Wrapper>
+        <S.Wrapper onContextMenu={props.onClickRight}>
           <S.HeadWrapper setDisplay={props.setDisplay}>
             <S.LeftWrapper>
               <S.LogoImg

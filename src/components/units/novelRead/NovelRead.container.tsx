@@ -110,6 +110,11 @@ export default function NovelReadContainer() {
   const onClickComment = () => {
     setCommentClick(true);
   };
+
+  // 우클릭 방지
+  const onClickRight = (e: MouseEvent) => {
+    e.preventDefault();
+  };
   return (
     <NovelReadPresenter
       onClickMoveToMain={onClickMoveToMain}
@@ -132,6 +137,7 @@ export default function NovelReadContainer() {
       setCommentClick={setCommentClick}
       onClickComment={onClickComment}
       commentData={commentData}
+      onClickRight={onClickRight}
     />
   );
 }
