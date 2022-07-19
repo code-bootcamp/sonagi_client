@@ -48,7 +48,7 @@ export default function CarouselContainer() {
     },
   });
 
-  console.log(TodayData);
+  console.log("ㅇㅇ", TodayData);
 
   const onClickNovelDetail = (el) => () => {
     router.push(`/novel/${el.id}`);

@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -22,9 +25,13 @@ export const BookImg = styled.img`
   cursor: pointer;
   padding: 0px 10px;
 
-  @media (min-width: 767px) and (max-width: 991px) {
+  @media ${breakPoints.tablet} {
     width: 100%;
-    height: 170px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 220px;
   }
 `;
 
