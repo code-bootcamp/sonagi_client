@@ -1,7 +1,8 @@
 import { useState } from "react";
 import AgreeTermsPresenter from "./agreeTerms.presenter";
+import { IAgreeTermsContainerProps } from "./agreeTerms.types";
 
-export default function AgreeTermsContainer(props) {
+export default function AgreeTermsContainer(props: IAgreeTermsContainerProps) {
   const [CheckBox, setCheckBox] = useState("");
 
   const onClickCheck1 = () => {
