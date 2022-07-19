@@ -1,7 +1,8 @@
 import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./LikeNovel.styles";
+import { ILikeNovelPresenterProps } from "./LikeNovel.types";
 
-export default function LikeNovelPresenter(props) {
+export default function LikeNovelPresenter(props: ILikeNovelPresenterProps) {
   return (
     <S.Wrapper>
       <S.TopWrapper>
@@ -12,7 +13,7 @@ export default function LikeNovelPresenter(props) {
         {props.data?.fetchNovelLikeInUser
           .slice(0)
           .reverse()
-          .map((el) => (
+          .map((el: any) => (
             <S.BoxWrapper key={el.id}>
               <S.ImageWrapper>
                 <S.Img
