@@ -1,7 +1,8 @@
 import AgreeTermsContainer from "../agreeTerms/agreeTerms.container";
 import * as S from "./signup.styles";
+import { ISignupPresenterProps } from "./signup.types";
 
-export default function SignUpPresenter(props) {
+export default function SignUpPresenter(props: ISignupPresenterProps) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickSignUp)}>
       <S.Wrapper>
@@ -89,11 +90,9 @@ export default function SignUpPresenter(props) {
           </S.InputWrapper>
           <AgreeTermsContainer
             setAgree1={props.setAgree1}
-            setAgree2={props.setAgree2}
+            setAgree2={props.setAgree1}
           />
-          <S.SignUpButton isValid={props.formState.isValid}>
-            회원가입
-          </S.SignUpButton>
+          <S.SignUpButton>회원가입</S.SignUpButton>
           <S.Corp>ⓒ SONAGI Corp.</S.Corp>
         </S.LoginWrapper>
       </S.Wrapper>
