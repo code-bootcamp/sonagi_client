@@ -25,37 +25,40 @@ export default function PaymentHistoryPresenter(props) {
         </S.ListTitleRow>
       )}
       {props.isPoint === "LoadingPoint" &&
-        props.data?.fetchPaymentsInUser.payments.map((el: any, index: any) => (
-          <S.ListWrapper key={el.index}>
-            <S.ListRow>
-              {String(el.amount).includes("-") ? (
-                <S.CheckColumn
-                  type="radio"
-                  name="check"
-                  disabled
-                ></S.CheckColumn>
-              ) : (
-                <S.CheckColumn
-                  type="radio"
-                  name="check"
-                  onClick={props.onClickCheck(el)}
-                ></S.CheckColumn>
-              )}
-              <S.IndexColumn>{getDate(el.createAt)}</S.IndexColumn>
-              <S.TitleColumn>{el.impUid}</S.TitleColumn>
-              {String(el.amount).includes("-") ? (
-                <S.WriterColumn>
-                  {el.amount.toLocaleString("ko-KR")}
-                </S.WriterColumn>
-              ) : (
-                <S.WriterColumn>
-                  +{el.amount.toLocaleString("ko-KR")}
-                </S.WriterColumn>
-              )}
-              <S.AtColumn></S.AtColumn>
-            </S.ListRow>
-          </S.ListWrapper>
-        ))}
+        props.data?.fetchPaymentsInUser.payments
+          .slice(0)
+          .reverse()
+          .map((el: any, index: any) => (
+            <S.ListWrapper key={el.index}>
+              <S.ListRow>
+                {String(el.amount).includes("-") ? (
+                  <S.CheckColumn
+                    type="radio"
+                    name="check"
+                    disabled
+                  ></S.CheckColumn>
+                ) : (
+                  <S.CheckColumn
+                    type="radio"
+                    name="check"
+                    onClick={props.onClickCheck(el)}
+                  ></S.CheckColumn>
+                )}
+                <S.IndexColumn>{getDate(el.createAt)}</S.IndexColumn>
+                <S.TitleColumn>{el.impUid}</S.TitleColumn>
+                {String(el.amount).includes("-") ? (
+                  <S.WriterColumn>
+                    {el.amount.toLocaleString("ko-KR")}
+                  </S.WriterColumn>
+                ) : (
+                  <S.WriterColumn>
+                    +{el.amount.toLocaleString("ko-KR")}
+                  </S.WriterColumn>
+                )}
+                <S.AtColumn></S.AtColumn>
+              </S.ListRow>
+            </S.ListWrapper>
+          ))}
       {props.isPoint === "LoadingPoint" && (
         <S.ButtonWrapper>
           <S.CancelButton onClick={props.onClickCancelPayment}>

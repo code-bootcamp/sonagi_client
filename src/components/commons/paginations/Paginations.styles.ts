@@ -5,6 +5,7 @@ export const Arrow = styled.img`
   width: 35px;
   height: 35px;
   margin: 0px 30px;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     width: 30px;
