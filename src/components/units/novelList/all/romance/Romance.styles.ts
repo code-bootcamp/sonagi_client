@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../commons/styles/media";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrap = styled.div`
   width: 98%;
@@ -61,7 +61,6 @@ export const GridWrap = styled.div`
   flex-wrap: wrap;
   margin: 0 5px;
   justify-content: flex-start;
-  cursor: pointer;
 
   @media ${breakPoints.tablet} {
     margin: 0px 10px;
@@ -110,7 +109,7 @@ export const ItemInfo = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin: 20px 0px;
 `;
 export const ItemName = styled.h4`
@@ -132,13 +131,6 @@ export const ItemNum = styled.p`
   font-size: 0.875em;
   padding: 5px;
   margin: 0;
-`;
-
-export const Cycle = styled.p`
-  font-size: 0.75em;
-  margin: 0;
-  padding: 4px;
-  background-color: aliceblue;
 `;
 export const ItemWriterWrap = styled.div`
   width: 100%;
@@ -185,5 +177,15 @@ export const Line = styled.div`
   width: 100%;
   height: 1px;
   background-color: #eee;
-  margin: 50px 0 70px;
+  margin: 40px 0 80px;
+`;
+
+export const MoreBtn = styled.div`
+  width: 100px;
+  height: 50px;
+  background-color: tomato;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
 `;

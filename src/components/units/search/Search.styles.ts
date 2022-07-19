@@ -93,6 +93,112 @@ export const Tag = styled.div`
   }
 `;
 
+// 소설 목록 wrap
+export const ItemRowWrap = styled.div`
+  width: 100%;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media ${breakPoints.tablet} {
+    width: 96%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 96%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+`;
+
+// // 소설 낱개
+// export const ItemWrap = styled.div`
+//   width: 100%;
+//   display: flex;
+//   flex-direction: row;
+//   margin-bottom: 7%;
+//   cursor: pointer;
+
+//   @media ${breakPoints.tablet} {
+//     width: 90%;
+//   }
+
+//   @media ${breakPoints.mobile} {
+//     width: 96%;
+//     display: flex;
+//     flex-flow: row wrap;
+//   }
+// `;
+
+// export const ItemPic = styled.img`
+//   width: 180px;
+//   height: 240px;
+// `;
+
+// export const ItemInfo = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   margin: 0px 15px;
+// `;
+
+export const RowWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+`;
+
+// export const ItemName = styled.div`
+//   font-size: 1.5em;
+//   font-weight: 700;
+
+//   @media ${breakPoints.mobile} {
+//     padding: 2px;
+//     font-size: 1.25em;
+//   }
+// `;
+
+export const ItemPlus = styled.div`
+  width: 30%;
+  background-color: #eee;
+  padding: 5px;
+  margin-left: 13px;
+  font-size: 1em;
+  text-align: center;
+
+  @media ${breakPoints.tablet} {
+    padding: 2px;
+    font-size: 0.8em;
+  }
+  @media ${breakPoints.mobile} {
+    padding: 2px;
+    font-size: 0.8em;
+  }
+`;
+
+// export const WriterIcon = styled.img`
+//   width: 30px;
+//   height: 30px;
+//   margin-right: 10px;
+// `;
+
+export const Writer = styled.div`
+  font-size: 1em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8em;
+  }
+`;
+
+// export const Contents = styled.div`
+//   width: 150px;
+//   margin-top: 20px;
+//   color: #808080;
+//   font-size: 0.8em;
+// `;
+
 export const GridWrap = styled.div`
   display: flex;
   flex-wrap: wrap;

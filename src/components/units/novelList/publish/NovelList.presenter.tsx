@@ -7,14 +7,14 @@ export default function NovelPbListPresenter(props: any) {
     <S.Wrap>
       <S.Title>연재작품</S.Title>
       {/* 로맨스 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToRomancePage}>
         <S.Category>로맨스</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
         {props.Romance?.fetchNovelsPage?.novels.slice(0, 5).map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >
@@ -51,7 +51,11 @@ export default function NovelPbListPresenter(props: any) {
         {props.RomanceFantasy?.fetchNovelsPage.novels
           .slice(0, 5)
           .map((el: any) => (
-            <S.ItemWrap key={el.id}>
+            <S.ItemWrap
+              onClick={props.onClickMoveToDetail(el)}
+              id={el.id}
+              key={el.title}
+            >
               <S.ItemPic
                 src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
               />
@@ -83,7 +87,11 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.GridWrap>
         {props.Fantasy?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
-          <S.ItemWrap key={el.id}>
+          <S.ItemWrap
+            onClick={props.onClickMoveToDetail(el)}
+            id={el.id}
+            key={el.title}
+          >
             <S.ItemPic
               src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
             />
@@ -116,7 +124,11 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.GridWrap>
         {props.Asia?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
-          <S.ItemWrap key={el.id}>
+          <S.ItemWrap
+            onClick={props.onClickMoveToDetail(el)}
+            id={el.id}
+            key={el.title}
+          >
             <S.ItemPic
               src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
             />
@@ -148,7 +160,11 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.GridWrap>
         {props.School?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
-          <S.ItemWrap key={el.id}>
+          <S.ItemWrap
+            onClick={props.onClickMoveToDetail(el)}
+            id={el.id}
+            key={el.title}
+          >
             <S.ItemPic
               src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
             />
@@ -180,7 +196,11 @@ export default function NovelPbListPresenter(props: any) {
       </S.RowWrap>
       <S.GridWrap>
         {props.Horror?.fetchNovelsPage.novels.slice(0, 5).map((el: any) => (
-          <S.ItemWrap key={el.id}>
+          <S.ItemWrap
+            onClick={props.onClickMoveToDetail(el)}
+            id={el.id}
+            key={el.title}
+          >
             <S.ItemPic
               src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
             />
