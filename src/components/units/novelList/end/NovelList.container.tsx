@@ -1,7 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { MouseEvent } from "react";
 import NovelEndListPresenter from "./NovelList.presenter";
 import { FETCH_NOVELS_PAGE } from "./NovelList.queries";
+import { Iel } from "./NovelList.types";
 
 export default function NovelEndListContainer() {
   const router = useRouter();
@@ -18,7 +20,6 @@ export default function NovelEndListContainer() {
       },
     },
   });
-  console.log("소설데이터", Romance);
 
   // 로맨스 판타지
   const { data: RomanceFantasy } = useQuery(FETCH_NOVELS_PAGE, {
@@ -32,7 +33,6 @@ export default function NovelEndListContainer() {
       },
     },
   });
-  console.log("소설데이터", RomanceFantasy);
 
   // 판타지
   const { data: Fantasy } = useQuery(FETCH_NOVELS_PAGE, {
@@ -46,7 +46,6 @@ export default function NovelEndListContainer() {
       },
     },
   });
-  console.log("소설데이터", Fantasy);
 
   // 무협
   const { data: Asia } = useQuery(FETCH_NOVELS_PAGE, {
@@ -60,7 +59,6 @@ export default function NovelEndListContainer() {
       },
     },
   });
-  console.log("소설데이터", Asia);
 
   // 학원
   const { data: School } = useQuery(FETCH_NOVELS_PAGE, {
@@ -74,7 +72,6 @@ export default function NovelEndListContainer() {
       },
     },
   });
-  console.log("소설데이터", School);
 
   // 공포
   const { data: Horror } = useQuery(FETCH_NOVELS_PAGE, {
@@ -88,26 +85,26 @@ export default function NovelEndListContainer() {
       },
     },
   });
-  console.log("소설데이터", Horror);
 
-  const onClickMoveToDetail = (el) => (event) => {
-    router.push(`/novel/${event.currentTarget.id}`);
-    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
-    let isExists = false;
-    baskets.forEach((basketEL) => {
-      if (el.id === basketEL.id) isExists = true;
-    });
-    if (isExists) {
-      return;
-    }
-    const newEl = { ...el };
-    delete newEl.__typename;
-    baskets.push(newEl);
-    if (baskets.length > 10) {
-      baskets.shift();
-    }
-    localStorage.setItem("baskets", JSON.stringify(baskets));
-  };
+  const onClickMoveToDetail =
+    (el: Iel) => (event: MouseEvent<HTMLDivElement>) => {
+      router.push(`/novel/${event.currentTarget.id}`);
+      const baskets = JSON.parse(localStorage.getItem("baskets") || "") || [];
+      let isExists = false;
+      baskets.forEach((basketEL: Iel) => {
+        if (el.id === basketEL.id) isExists = true;
+      });
+      if (isExists) {
+        return;
+      }
+      const newEl = { ...el };
+      delete newEl.__typename;
+      baskets.push(newEl);
+      if (baskets.length > 10) {
+        baskets.shift();
+      }
+      localStorage.setItem("baskets", JSON.stringify(baskets));
+    };
 
   const onClickMoveToRomancePage = () => {
     router.push("/novel/list/all/romance");

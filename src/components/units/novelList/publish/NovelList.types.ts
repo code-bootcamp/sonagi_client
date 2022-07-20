@@ -29,6 +29,31 @@ export interface INovelPbListUIProps {
       novels: Array<Iel>;
     };
   };
+  RomanceFantasy: {
+    fetchNovelsPage: {
+      novels: Array<Iel>;
+    };
+  };
+  Fantasy: {
+    fetchNovelsPage: {
+      novels: Array<Iel>;
+    };
+  };
+  Asia: {
+    fetchNovelsPage: {
+      novels: Array<Iel>;
+    };
+  };
+  School: {
+    fetchNovelsPage: {
+      novels: Array<Iel>;
+    };
+  };
+  Horror: {
+    fetchNovelsPage: {
+      novels: Array<Iel>;
+    };
+  };
   data?: any;
   onClickMoveToDetail: (el: Iel) => (event: MouseEvent<HTMLDivElement>) => void;
   refetch(
@@ -40,4 +65,10 @@ export interface INovelPbListUIProps {
   onClickMoveToAsiaPage: () => void;
   onClickMoveToSchoolPage: () => void;
   onClickMoveToHorrorPage: () => void;
+  keyword: string;
+  onChangeKeyword: (value: string) => void;
+}
+
+export interface ITextTokenProps {
+  isMatched: boolean;
 }

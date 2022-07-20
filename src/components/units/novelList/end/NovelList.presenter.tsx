@@ -1,7 +1,8 @@
 import DOMPurify from "dompurify";
 import * as S from "./NovelList.styles";
+import { INovelEndListUIProps } from "./NovelList.types";
 
-export default function NovelEndListPresenter(props: any) {
+export default function NovelEndListPresenter(props: INovelEndListUIProps) {
   console.log(props.data);
   return (
     <S.Wrap>

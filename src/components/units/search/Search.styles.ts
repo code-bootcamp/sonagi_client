@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import { ITextTokenProps } from "../novelList/publish/NovelList.types";
 
 export const Wrap = styled.div`
   width: 100%;
@@ -196,7 +197,8 @@ export const ItemPic = styled.img`
   vertical-align: middle;
 `;
 export const TextToken = styled.span`
-  color: ${(props: any) => (props.isMatched ? "#2277D8" : "#484848")};
+  color: ${(props: ITextTokenProps) =>
+    props.isMatched ? "#2277D8" : "#484848"};
 `;
 
 export const ItemInfo = styled.div`
@@ -209,6 +211,7 @@ export const ItemInfo = styled.div`
 `;
 export const ItemName = styled.h4`
   width: 70%;
+  height: 7vh;
   font-size: 1.15rem;
   font-weight: 700;
   margin: 0;

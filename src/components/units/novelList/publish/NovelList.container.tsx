@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { MouseEvent } from "react";
 import NovelPbListPresenter from "./NovelList.presenter";
 import { FETCH_NOVELS_PAGE } from "./NovelList.queries";
-import { Iel } from "./NovelPbList.types";
+import { Iel } from "./NovelList.types";
 
 export default function NovelPbListContainer() {
   const router = useRouter();
