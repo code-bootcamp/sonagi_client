@@ -60,7 +60,6 @@ export const GridWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 5px;
-  justify-content: flex-start;
   cursor: pointer;
 
   @media ${breakPoints.tablet} {
@@ -115,6 +114,7 @@ export const ItemInfo = styled.div`
 `;
 export const ItemName = styled.h4`
   width: 70%;
+  height: 7vh;
   font-size: 1.15rem;
   font-weight: 700;
   margin: 0;
@@ -142,6 +142,7 @@ export const Cycle = styled.p`
 `;
 export const ItemWriterWrap = styled.div`
   width: 100%;
+  height: 5%;
   display: flex;
   flex-direction: row;
 `;

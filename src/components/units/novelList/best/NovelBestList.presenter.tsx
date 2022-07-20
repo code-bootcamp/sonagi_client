@@ -1,7 +1,8 @@
 import DOMPurify from "dompurify";
 import * as S from "./NovelBestList.styles";
+import { INovelBestListUIProps } from "./NovelBestList.types";
 
-export default function NovelBestListPresenter(props: any) {
+export default function NovelBestListPresenter(props: INovelBestListUIProps) {
   return (
     <S.Wrap>
       <S.Title>베스트셀러</S.Title>
@@ -9,11 +10,7 @@ export default function NovelBestListPresenter(props: any) {
         {props.data?.fetchNovelsPage?.novels
           .slice(0, 10)
           .map((el: any, index: number) => (
-            <S.ItemWrap
-              onClick={props.onClickMoveToDetail}
-              id={el.id}
-              key={el.title}
-            >
+            <S.ItemWrap key={el.title}>
               <S.RowWrap>
                 <S.AwardIcon src="/novelList/best/award.svg" />
                 <S.AwardNum>{index + 1}</S.AwardNum>
@@ -21,11 +18,20 @@ export default function NovelBestListPresenter(props: any) {
               </S.RowWrap>
               <S.Itembox>
                 <S.ItemPic
+                  onClick={props.onClickMoveToDetail(el)}
+                  id={el.id}
+                  key={el.title}
                   src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
                 />
                 <S.TextWrap>
                   <S.RowWrap2>
-                    <S.ItemName>{el.title}</S.ItemName>
+                    <S.ItemName
+                      onClick={props.onClickMoveToDetail(el)}
+                      id={el.id}
+                      key={el.title}
+                    >
+                      {el.title}
+                    </S.ItemName>
                     <S.HeartImg
                       el={el.id}
                       HeartList={props.HeartList}

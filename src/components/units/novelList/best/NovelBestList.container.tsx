@@ -23,16 +23,21 @@ export default function NovelBestListContainer() {
         variables: {
           novelID: el.id,
         },
+        refetchQueries: [
+          {
+            query: FETCH_NOVEL_LIKE,
+          },
+        ],
       });
+      refetch();
       console.log(el.id);
       console.log(result);
-      window.location.replace("/novel/list/best");
       alert("선호작 등록!!");
     } catch (error) {
       alert(error.message);
     }
   };
-  const { data } = useQuery(FETCH_NOVELS_PAGE, {
+  const { data, refetch } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
       fetchNovelInput: {
         type: "ALL",
@@ -46,7 +51,6 @@ export default function NovelBestListContainer() {
 
   const onClickMoveToDetail = (el) => (event: any) => {
     router.push(`/novel/${event.currentTarget.id}`);
-    console.log(event.target);
     const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
     let isExists = false;
     baskets.forEach((basketEL) => {
@@ -68,7 +72,7 @@ export default function NovelBestListContainer() {
     <NovelBestListPresenter
       data={data}
       onClickLike={onClickLike}
-      onClick={onClickMoveToDetail}
+      onClickMoveToDetail={onClickMoveToDetail}
       HeartList={HeartList}
     />
   );

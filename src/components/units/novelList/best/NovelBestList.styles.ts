@@ -228,13 +228,12 @@ export const Line = styled.div`
   width: 1px;
   height: 13px;
   background-color: #bdbdbd;
-  margin: 0px 20px;
+  margin: 5px 20px;
   @media (min-width: 768px) and (max-width: 990px) {
     display: none;
   }
 
   @media (min-width: 391px) and (max-width: 767px) {
-    /* display: none; */
     margin: 5px 10px;
   }
 

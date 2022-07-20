@@ -1,6 +1,6 @@
 import * as S from "./NovelList.styles";
 import DOMPurify from "dompurify";
-import { INovelPbListUIProps } from "./NovelPbList.types";
+import { INovelPbListUIProps } from "./NovelList.types";
 
 export default function NovelPbListPresenter(props: INovelPbListUIProps) {
   console.log(props.data);
