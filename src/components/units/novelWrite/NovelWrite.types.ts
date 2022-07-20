@@ -41,7 +41,7 @@ export interface INovelWritePresenterProps {
   editData?: any;
 }
 
-export interface IonClickUpdate {
+export interface Idata {
   title: string;
   description: string;
   categoryID: string;

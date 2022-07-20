@@ -4,8 +4,11 @@ import React, { useState } from "react";
 import ReadCommentListPresenter from "./CommentList.presenter";
 
 import { FETCH_EPISODE_REVIEW_PAGE } from "./CommentList.queries";
+import { IReadCommentListContainerProps } from "./CommentList.types";
 
-export default function ReadCommentListContainer(props) {
+export default function ReadCommentListContainer(
+  props: IReadCommentListContainerProps
+) {
   const router = useRouter();
 
   const { data, fetchMore, refetch } = useQuery(FETCH_EPISODE_REVIEW_PAGE, {
