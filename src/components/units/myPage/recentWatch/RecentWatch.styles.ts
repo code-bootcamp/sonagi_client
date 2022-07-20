@@ -43,7 +43,7 @@ export const NovelPic = styled.img`
   margin-left: 45px;
   position: absolute;
   top: 10px;
-  z-index: 2;
+  z-index: 3;
 
   /* top: 5px; */
   /* position: absolute;
@@ -83,7 +83,7 @@ export const NovelPics = styled.img`
   margin-left: 45px;
   position: absolute;
   top: 306px;
-  z-index: 2;
+  z-index: 3;
   /* position: absolute;
   top: 100; */
   transition: all 0.6s ease 0.2s;
@@ -156,7 +156,7 @@ export const BookShelf = styled.img`
   position: absolute;
   width: 960px;
   top: 195px;
-  z-index: 1;
+  z-index: 2;
   @media ${breakPoints.tablet} {
     /* width: 100%; */
     width: 658px;
@@ -176,7 +176,7 @@ export const BookShelfs = styled.img`
   position: absolute;
   top: 492px;
   width: 960px;
-  z-index: 1;
+  z-index: 2;
 
   @media ${breakPoints.tablet} {
     width: 658px;
@@ -281,7 +281,20 @@ export const TitleWrap = styled.div`
   opacity: 0;
   :hover {
     opacity: 1;
-    z-index: 1;
+    /* z-index: 1; */
     cursor: pointer;
+  }
+`;
+
+export const HamburgerWrapper = styled.div`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    width: 100%;
+    z-index: 4;
+    position: relative;
+    left: 540px;
+    bottom: 80px;
   }
 `;

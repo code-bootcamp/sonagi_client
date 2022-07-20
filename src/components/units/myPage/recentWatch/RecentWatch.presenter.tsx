@@ -8,7 +8,9 @@ export default function RecentWatchPresenter(
   return (
     <S.Wrapper>
       <S.RecentWatch>최근 본 작품</S.RecentWatch>
-      <HamburgerPage />
+      <S.HamburgerWrapper>
+        <HamburgerPage />
+      </S.HamburgerWrapper>
       <S.Wrap>
         <S.Flex>
           {props.basketItems?.slice(0, 4).map((el) => (

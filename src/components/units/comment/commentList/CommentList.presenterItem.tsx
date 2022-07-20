@@ -142,7 +142,7 @@ export default function CommentListPresenterItem(
         )}
         {isNestedExist && (
           <>
-            <NestedCommentListContainer />
+            <NestedCommentListContainer el={undefined} />
           </>
         )}
         {/* <NestedCommentListContainer /> */}

@@ -18,5 +18,12 @@ export default function CommentListContainer() {
   // });
   console.log("댓글리스트data", data);
 
-  return <CommentListPresenter data={data} />;
+  return (
+    <CommentListPresenter
+      data={data}
+      onLoadMore={function (page: number): void {
+        throw new Error("Function not implemented.");
+      }}
+    />
+  );
 }

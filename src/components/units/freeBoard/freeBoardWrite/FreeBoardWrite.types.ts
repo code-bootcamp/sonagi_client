@@ -7,6 +7,7 @@ export interface IFreeBoardWriteContainer {
 }
 
 export interface IFreeBoardWritePresenterProps {
+  onClickMoveToList: any;
   fileUrls: any;
   onChangeFileUrls: (fileUrl: string, index: number) => void;
   onClickUpdate: any;

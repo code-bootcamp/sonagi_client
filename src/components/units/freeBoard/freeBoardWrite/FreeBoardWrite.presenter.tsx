@@ -41,7 +41,7 @@ export default function FreeBoardWritePresenter(
         ))}
       </S.UploadBox>
       <S.ButtonWrapper>
-        <Button02 title="취소" />
+        <Button02 title="취소" onClick={props.onClickMoveToList} />
         <S.Margin>
           <Button01
             title={props.isEdit ? "수정" : "등록"}
