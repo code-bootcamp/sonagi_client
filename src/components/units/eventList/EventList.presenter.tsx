@@ -15,9 +15,9 @@ export default function EventListPresenter(props) {
           <S.ListTitle>{el.title}</S.ListTitle>
           <S.ListDate>기간 : 2022.7.20 ~ 2022.10.10</S.ListDate>
           <S.ListImgDiv>
-            {/* <S.ListImg
-              src={`https://storage.googleapis.com/code-camp-main-project/${el.novel.files[0].url}`}
-            /> */}
+            <S.ListImg
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0].url}`}
+            />
           </S.ListImgDiv>
         </S.ListWrapper>
       ))}

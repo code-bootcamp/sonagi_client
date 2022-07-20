@@ -169,6 +169,10 @@ export const WriteSay = styled.textarea`
   width: 100%;
   height: 200px;
   margin-top: 40px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const WrapperRule = styled.div`
