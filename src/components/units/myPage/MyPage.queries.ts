@@ -10,3 +10,15 @@ export const FETCH_LOGIN_USER = gql`
     }
   }
 `;
+
+export const FETCH_NOVEL_LIKE = gql`
+  query fetchNovelLikeInUser {
+    fetchNovelLikeInUser {
+      id
+      createAt
+      novel {
+        id
+      }
+    }
+  }
+`;
