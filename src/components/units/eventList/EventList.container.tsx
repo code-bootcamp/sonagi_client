@@ -1,12 +1,11 @@
-import { useRouter } from "next/router";
+import { useQuery } from "@apollo/client";
 import EventListPresenter from "./EventList.presenter";
+import { FETCH_EVENTS } from "./EventList.queries";
 
 export default function EventListContainer() {
-  const router = useRouter();
+  const { data } = useQuery(FETCH_EVENTS);
 
-  const onClickDetail = () => {
-    router.push("/event/_id");
-  };
+  console.log(data);
 
-  return <EventListPresenter onClickDetail={onClickDetail} />;
+  return <EventListPresenter data={data} />;
 }

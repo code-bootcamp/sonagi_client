@@ -3,6 +3,7 @@ import Slider from "react-slick";
 
 export const SliderWrapper = styled.div`
   width: 100%;
+  cursor: pointer;
   /* height: 500px; */
   /* background-color: gray; */
 
