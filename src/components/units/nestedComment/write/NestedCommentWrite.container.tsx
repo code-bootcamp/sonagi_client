@@ -6,8 +6,9 @@ import {
   CREATE_NESTED_COMMENT,
   FETCH_COMMENTS_FROM_BOARD,
 } from "./NestedCommentWrite.queries";
+import { INestedCommentWriteProps } from "./NestedCommentWrite.types";
 
-export default function NestedCommentWrite(props) {
+export default function NestedCommentWrite(props: INestedCommentWriteProps) {
   const router = useRouter();
   const [contents, setContents] = useState("");
   const onChangeContents = (event: any) => {
@@ -15,13 +16,13 @@ export default function NestedCommentWrite(props) {
   };
 
   const [createNestedComment] = useMutation(CREATE_NESTED_COMMENT);
-  const WriteNestedComment = async (event) => {
+  const WriteNestedComment = async () => {
     try {
       const result = await createNestedComment({
         variables: {
           createCommentInput: {
             contents,
-            parent: props.el?.id,
+            parentID: props.el?.id,
           },
           boardID: String(router.query._id),
 
@@ -45,6 +46,7 @@ export default function NestedCommentWrite(props) {
       onChangeContents={onChangeContents}
       WriteNestedComment={WriteNestedComment}
       contents={contents}
+      el={undefined}
     />
   );
 }

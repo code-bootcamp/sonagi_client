@@ -7,8 +7,11 @@ import {
   FETCH_BOARD,
   UPDATE_COMMENT,
 } from "./CommentWrite.queries";
+import { ICommentWriteContainerProps } from "./CommentWrite.types";
 
-export default function CommentWriteContainer(props) {
+export default function CommentWriteContainer(
+  props: ICommentWriteContainerProps
+) {
   const router = useRouter();
   const [contents, setContents] = useState("");
   const onChangeContents = (event: any) => {
@@ -69,7 +72,7 @@ export default function CommentWriteContainer(props) {
       props.setIsEdit?.(false);
       alert("댓글을 수정합니다");
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
   };
 

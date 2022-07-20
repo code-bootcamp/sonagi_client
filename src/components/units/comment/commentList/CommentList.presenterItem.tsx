@@ -1,19 +1,24 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 // import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
+import NestedCommentListContainer from "../../nestedComment/list/NestedCommentList.container";
 import NestedCommentWrite from "../../nestedComment/write/NestedCommentWrite.container";
 import CommentWriteContainer from "../commentWrite/CommentWrite.container";
 import { DELETE_COMMENT, FETCH_BOARD } from "./CommentList.queries";
 import * as S from "./CommentList.styles";
+import { ICommentListPresenterItemProps } from "./CommentList.types";
 
-export default function CommentListPresenterItem(props) {
+export default function CommentListPresenterItem(
+  props: ICommentListPresenterItemProps
+) {
   const router = useRouter();
   const [isEdit, setIsEdit] = useState(false);
   // const [isAnswer, setIsAnswer] = useState(false);
   const [deleteComment] = useMutation(DELETE_COMMENT);
   const [isNested, setIsNested] = useState(false);
+  const [isNestedExist, setIsNestedExist] = useState(false);
   // const [mention, setMention] = useState("");
 
   const onWriteMention = () => {
@@ -47,10 +52,21 @@ export default function CommentListPresenterItem(props) {
       });
       alert("질문이 삭제되었습니다");
     } catch (error) {
-      alert(error.message);
+      alert(error);
     }
     console.log("댓글삭제", event);
   };
+
+  useEffect(() => {
+    const active = () => {
+      if (props.data?.fetchBoard?.comments[0].length === 1) {
+        setIsNestedExist(true);
+      } else {
+        setIsNestedExist(false);
+      }
+    };
+    active();
+  }, []);
 
   return (
     <>
@@ -111,15 +127,26 @@ export default function CommentListPresenterItem(props) {
             isEdit={true}
             setIsEdit={setIsEdit}
             el={props.el}
+            isAnswerEdit={undefined}
+            isAnswer={undefined}
           />
         )}
         {isNested && (
-          <NestedCommentWrite
-            isNested={true}
-            el={props.el}
-            setIsNested={setIsNested}
-          />
+          <>
+            <NestedCommentWrite
+              isNested={true}
+              el={props.el}
+              setIsNested={setIsNested}
+            />
+          </>
         )}
+        {isNestedExist && (
+          <>
+            <NestedCommentListContainer />
+          </>
+        )}
+        {/* <NestedCommentListContainer /> */}
+
         {/* <NestedCommentListContainer el={props.el.children.id} /> */}
         {/* <AnswerListPresenter el={props.el} /> */}
       </S.FooterWrapper>

@@ -1,6 +1,9 @@
 import React from "react";
 import * as S from "./CommentWrite.styles";
-export default function CommentWritePresenter(props) {
+import { ICommentWritePresenterProps } from "./CommentWrite.types";
+export default function CommentWritePresenter(
+  props: ICommentWritePresenterProps
+) {
   return (
     <S.Wrapper>
       <S.WrapTitle>
