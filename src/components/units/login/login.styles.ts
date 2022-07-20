@@ -76,7 +76,6 @@ export const InputBox = styled.input`
   margin-bottom: 10px;
   border: none;
   border-bottom: 1px solid #cccccc;
-  color: #cccccc;
   &::placeholder {
     color: #cccccc;
   }

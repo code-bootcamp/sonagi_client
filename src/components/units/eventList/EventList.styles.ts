@@ -58,7 +58,7 @@ export const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 `;
 
 export const ListTitle = styled.div`
@@ -85,12 +85,12 @@ export const ListDate = styled.div`
 `;
 
 export const ListImgDiv = styled.div`
-  height: 350px;
   border: 1px solid #bdbdbd;
   box-shadow: 0px 4px 4px 0px #f2f2f2;
   border-radius: 10px;
 `;
 
 export const ListImg = styled.img`
-  height: 350px;
+  width: 100%;
+  border-radius: 10px;
 `;
