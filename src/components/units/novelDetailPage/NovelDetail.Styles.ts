@@ -354,8 +354,7 @@ export const TableButton = styled.div`
 
 export const TableLineWrapper = styled.div`
   display: flex;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 15px 10px;
   border-bottom: 1px solid #4f4f4f;
   justify-content: space-between;
   align-items: center;
@@ -364,6 +363,10 @@ export const TableLineWrapper = styled.div`
 export const TableDottedLine = styled.div`
   border-bottom: 1px dotted black;
   padding: 10px;
+`;
+
+export const LookWrapper = styled.div`
+  display: flex;
 `;
 
 export const TableSonWrapper = styled.div`

@@ -66,6 +66,7 @@ export const ContentsInput = styled.textarea`
   border: 1px solid #d1d5d9;
   border-radius: 5px;
   padding: 20px;
+  resize: none;
 
   &:focus {
     outline: none;
