@@ -4,6 +4,7 @@ import React from "react";
 import ReadCommentListPresenterItem from "./CommentList.presenterItem";
 import ReadCommentWriteContainer from "../commentWrite/CommentWrite.container";
 import InfiniteScroll from "react-infinite-scroller";
+import { Iel, IReadCommentListPresenterProps } from "./CommentList.types";
 
 const HeadWrapper = styled.div`
   width: 100%;
@@ -38,7 +39,9 @@ const Wrapper = styled.div`
   left: calc(-50vw + 50%);
 `;
 
-export default function ReadCommentListPresenter(props) {
+export default function ReadCommentListPresenter(
+  props: IReadCommentListPresenterProps
+) {
   return (
     <Wrapper>
       {props.isGoComment ? (
@@ -53,9 +56,11 @@ export default function ReadCommentListPresenter(props) {
               hasMore={true || false}
               useWindow={false}
             >
-              {props.data?.fetchEpisodeReviewPage.episodeReviews.map((el) => (
-                <ReadCommentListPresenterItem key={el.id} el={el} />
-              ))}
+              {props.data?.fetchEpisodeReviewPage.episodeReviews.map(
+                (el: Iel) => (
+                  <ReadCommentListPresenterItem key={el.id} el={el} />
+                )
+              )}
             </InfiniteScroll>
           </Scroll>
           <FooterWrapper onClick={props.onClickGoComment}>

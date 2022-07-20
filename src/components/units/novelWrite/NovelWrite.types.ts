@@ -46,6 +46,8 @@ export interface IonClickUpdate {
   description: string;
   categoryID: string;
   fileURLs: string[];
+  id: string;
+  cycles: string[];
 }
 
 export interface INovelWriteStyles {

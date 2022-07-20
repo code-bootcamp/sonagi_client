@@ -7,7 +7,7 @@ export const FETCH_EPISODE_REVIEW_PAGE = gql`
         id
         contents
         likeCount
-        dislikeCount
+
         star
         createAt
         updateAt
