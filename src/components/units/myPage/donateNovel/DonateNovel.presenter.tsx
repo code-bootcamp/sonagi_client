@@ -1,4 +1,5 @@
 import HamburgerPage from "../../../commons/hamburger";
+import DonatePage from "../../../commons/modal/donatePayments";
 import * as S from "./DonateNovel.styles";
 import { IDonateNovelPresenterProps } from "./DonateNovel.types";
 
@@ -40,7 +41,14 @@ export default function DonateNovelPresenter(
                 >
                   상세보기
                 </S.Button1>
-                <S.Button1>후원하기</S.Button1>
+                <S.Button1 onClick={props.onClickDonate}>후원하기</S.Button1>
+                {props.isDonate && (
+                  <DonatePage
+                    novelID={el.novel.id}
+                    onClickDonate={props.onClickDonate}
+                    setIsDonate={props.setIsDonate}
+                  />
+                )}
               </S.BoxFlex>
             </S.InnerFlex>
           </S.BoxWrapper>

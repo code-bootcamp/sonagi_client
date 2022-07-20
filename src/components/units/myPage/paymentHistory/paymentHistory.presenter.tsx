@@ -24,7 +24,7 @@ export default function PaymentHistoryPresenter(
           <S.NumberRow>충전일</S.NumberRow>
           <S.TitleRow>결제 ID</S.TitleRow>
           <S.WriterRow>충전내역</S.WriterRow>
-          <S.AtRow>충전 후 잔액</S.AtRow>
+          <S.AtRow>충전 닉네임</S.AtRow>
         </S.ListTitleRow>
       )}
       {props.isPoint === "LoadingPoint" &&
@@ -58,7 +58,7 @@ export default function PaymentHistoryPresenter(
                     +{el.amount.toLocaleString("ko-KR")}
                   </S.WriterColumn>
                 )}
-                <S.AtColumn></S.AtColumn>
+                <S.AtColumn>{el.user.nickName}</S.AtColumn>
               </S.ListRow>
             </S.ListWrapper>
           ))}

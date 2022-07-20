@@ -34,21 +34,31 @@ export default function MyPagePresenter(props: any) {
                 </S.Middle>
                 <S.Middle>원</S.Middle>
               </S.Div>
-              <S.MainBottom onClick={props.onClickMoveToPaymentHistory}>
+              <S.MainBottom
+                onClick={props.onClickMoveToPage("/myPage/paymentHistory")}
+              >
                 충전 내역 &gt;&gt;
               </S.MainBottom>
             </S.Column>
             <S.Column>
               <S.Icon src="myPage/love.svg" />
               <S.Title>찜한 작품</S.Title>
-              <S.Middle>0권</S.Middle>
-              <S.MainBottom>찜한 내역 &gt;&gt;</S.MainBottom>
+              <S.Middle>{props.LikeCount}권</S.Middle>
+              <S.MainBottom
+                onClick={props.onClickMoveToPage("/myPage/likeNovel")}
+              >
+                찜한 내역 &gt;&gt;
+              </S.MainBottom>
             </S.Column>
             <S.Column>
               <S.Icon src="myPage/chat.svg" />
               <S.Title>1:1 문의</S.Title>
               <S.Middle>0건</S.Middle>
-              <S.MainBottom>문의 내역 &gt;&gt;</S.MainBottom>
+              <S.MainBottom
+                onClick={props.onClickMoveToPage("/myPage/inquireList")}
+              >
+                문의 내역 &gt;&gt;
+              </S.MainBottom>
             </S.Column>
           </S.MainFlex>
         </S.InnerRightBox>

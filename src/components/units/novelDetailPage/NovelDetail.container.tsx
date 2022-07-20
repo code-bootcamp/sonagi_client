@@ -197,6 +197,7 @@ export default function NovelDetailContainer() {
       onClickFirst={onClickFirst}
       isFirst={isFirst}
       isDonate={isDonate}
+      setIsDonate={setIsDonate}
       isSubmitting={isSubmitting}
       // 첫화 보기
       onClickFirstView={onClickFirstView}

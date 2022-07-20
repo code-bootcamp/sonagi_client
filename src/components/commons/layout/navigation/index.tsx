@@ -40,18 +40,6 @@ export default function LayoutNavigation() {
             {el.name}
           </S.ListTitle>
         ))}
-        {/* <S.ListTitle onClick={onClickMoveToPage("/novel/list/publish")}>
-          연재작품
-        </S.ListTitle>
-        <S.ListTitle onClick={onClickMoveToPage("/novel/list/end")}>
-          완결작품
-        </S.ListTitle>
-        <S.ListTitle>베스트셀러</S.ListTitle>
-        <S.ListTitle onClick={onClickMoveToPage("/event")}>이벤트</S.ListTitle>
-        <S.ListTitle onClick={onClickMoveToPage("/freeBoard")}>
-          자유게시판
-        </S.ListTitle>
-        <S.ListTitle>작품올리기</S.ListTitle> */}
       </S.Wrapper>
     </>
   );

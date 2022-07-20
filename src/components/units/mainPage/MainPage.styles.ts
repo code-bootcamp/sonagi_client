@@ -46,6 +46,10 @@ export const PhoneImg = styled.img`
   width: 400px;
   height: 407px;
   margin-top: 30px;
+
+  @media ${breakPoints.mobile} {
+    width: 380px;
+  }
 `;
 
 export const PhoneSubImg = styled.img`

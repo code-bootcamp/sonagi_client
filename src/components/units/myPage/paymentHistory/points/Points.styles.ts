@@ -79,6 +79,10 @@ export const WriterColumn = styled.div`
   text-align: right;
   padding-right: 6%;
   font-weight: 600;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.7rem;
+  }
 `;
 
 export const AtColumn = styled.div`

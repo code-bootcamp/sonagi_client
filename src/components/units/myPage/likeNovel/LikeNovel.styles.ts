@@ -41,6 +41,11 @@ export const Title = styled.div`
   margin-bottom: 10px;
   font-size: 1.4rem;
   font-weight: 500;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
 `;
 
 export const Genre = styled.div`
@@ -58,6 +63,7 @@ export const Time = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.9rem;
+    padding-left: 0px;
   }
 `;
 
@@ -65,10 +71,18 @@ export const GenreFlex = styled.div`
   display: flex;
   align-items: center;
   padding: 15px 0px;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 10px 0px;
+  }
 `;
 
 export const BoxFlex = styled.div`
   display: flex;
+
   @media ${breakPoints.mobile} {
   }
 `;
@@ -81,7 +95,7 @@ export const InnerFlex = styled.div`
   justify-content: space-between;
   padding: 20px;
 
-  @media (max-width: 1000px) {
+  @media ${breakPoints.mobile} {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -91,7 +105,7 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 1000px) {
+  @media ${breakPoints.mobile} {
     padding-bottom: 10px;
   }
 `;
@@ -107,6 +121,12 @@ export const Button1 = styled.div`
   margin-right: 8px;
   border-radius: 8px;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 62px;
+    height: 35px;
+    font-size: 0.7rem;
+  }
 `;
 
 export const WriteButton = styled.div`

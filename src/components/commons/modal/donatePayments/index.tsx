@@ -80,7 +80,7 @@ const Overlay = styled.div`
   z-index: 30;
   left: 0;
   top: 0;
-  opacity: 40%;
+  opacity: 20%;
   background-color: #cccccc;
 `;
 
@@ -101,8 +101,9 @@ export const DONATE_POINT = gql`
 export default function DonatePage(props) {
   const [donatePoint] = useMutation(DONATE_POINT);
   const [point, setPoint] = useState();
+
   const handleCancel = () => {
-    props.onClickDonate(false);
+    props.setIsDonate(false);
   };
 
   const onChangeDonate = (event) => {
@@ -111,7 +112,6 @@ export default function DonatePage(props) {
 
   const onClickDonate = async () => {
     console.log(point);
-    props.onClickDonate(false);
 
     try {
       const result = await donatePoint({

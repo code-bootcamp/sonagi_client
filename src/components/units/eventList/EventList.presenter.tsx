@@ -10,21 +10,17 @@ export default function EventListPresenter(props) {
         </S.EventTitleWrap>
         <S.EventIcon src="../event/event.png" />
       </S.RowWrap>
-      <S.ListWrapper>
-        <S.ListTitle>이벤트 제목</S.ListTitle>
-        <S.ListDate>기간 : 2022.6.20 ~ 2022.7.10</S.ListDate>
-        <S.ListImg onClick={props.onClickDetail}></S.ListImg>
-      </S.ListWrapper>
-      <S.ListWrapper>
-        <S.ListTitle>이벤트 제목</S.ListTitle>
-        <S.ListDate>기간 : 2022.6.20 ~ 2022.7.10</S.ListDate>
-        <S.ListImg onClick={props.onClickDetail}></S.ListImg>
-      </S.ListWrapper>
-      <S.ListWrapper>
-        <S.ListTitle>이벤트 제목</S.ListTitle>
-        <S.ListDate>기간 : 2022.6.20 ~ 2022.7.10</S.ListDate>
-        <S.ListImg onClick={props.onClickDetail}></S.ListImg>
-      </S.ListWrapper>
+      {props.data?.fetchEventsAll.map((el) => (
+        <S.ListWrapper key={el.id}>
+          <S.ListTitle>{el.title}</S.ListTitle>
+          <S.ListDate>기간 : 2022.7.20 ~ 2022.10.10</S.ListDate>
+          <S.ListImgDiv>
+            {/* <S.ListImg
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.novel.files[0].url}`}
+            /> */}
+          </S.ListImgDiv>
+        </S.ListWrapper>
+      ))}
     </S.Wrapper>
   );
 }

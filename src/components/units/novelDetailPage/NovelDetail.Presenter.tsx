@@ -99,8 +99,8 @@ export default function NovelDetailPresenter(
                 <Button01 onClick={props.onClickDonate} title="후원하기" />
                 {props.isDonate && (
                   <DonatePage
-                    onClickDonate={props.onClickDonate}
                     novelID={props.novelID}
+                    setIsDonate={props.setIsDonate}
                   />
                 )}
               </S.LookButtonWrapper2>
