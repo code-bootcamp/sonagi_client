@@ -6,6 +6,11 @@ export const CREATE_EVENT = gql`
       id
       title
       contents
+      isEvent
+      files {
+        id
+        url
+      }
     }
   }
 `;

@@ -34,11 +34,11 @@ export const ListTitle = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 1.2rem;
-    margin-right: 20px;
+    margin: 0 10px;
   }
 
   @media ${breakPoints.mobile} {
     font-size: 0.77rem;
-    margin-right: 10px;
+    margin: 0 5px;
   }
 `;

@@ -23,7 +23,8 @@ const PayMentWrapper = styled.div`
   z-index: 50;
 
   @media ${breakPoints.mobile} {
-    margin-right: 2%;
+    margin: 0 auto;
+    width: 350px;
   }
 `;
 
@@ -44,6 +45,11 @@ const CancelImg = styled.img`
   width: 20px;
   margin-left: 400px;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    margin: 0 auto;
+    margin-left: 280px;
+  }
 `;
 
 const Title = styled.div`

@@ -107,6 +107,7 @@ export const InnerLeftBox = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 96%;
+    height: 300px;
   }
 `;
 
@@ -215,7 +216,7 @@ export const MainFlex = styled.div`
   height: 400px;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 0 10px;
 `;
 

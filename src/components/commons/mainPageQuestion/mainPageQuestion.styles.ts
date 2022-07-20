@@ -47,6 +47,13 @@ export const QuestionBox = styled.div`
   @media (max-width: 767px) {
     max-width: 767px;
   }
+
+  @media ${breakPoints.mobile} {
+    height: ${(props: any) =>
+      props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
+        ? "410px"
+        : "60px"};
+  }
 `;
 
 export const QuestionContents = styled.div`

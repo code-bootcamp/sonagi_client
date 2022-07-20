@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
   @media ${breakPoints.mobile} {
     display: none;
   }
+
+  @media ${breakPoints.tablet} {
+    margin-left: 10px;
+  }
 `;
 
 export const MyPage = styled.div`

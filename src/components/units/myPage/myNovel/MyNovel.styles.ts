@@ -9,6 +9,10 @@ export const Img = styled.img`
   width: 250px;
   height: 248px;
   border-radius: 8px 0 0 8px;
+
+  @media ${breakPoints.mobile} {
+    width: 170px;
+  }
 `;
 
 export const TopWrapper = styled.div`
@@ -61,6 +65,7 @@ export const Time = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.9rem;
+    padding-left: 0px;
   }
 `;
 
@@ -68,6 +73,13 @@ export const GenreFlex = styled.div`
   display: flex;
   align-items: center;
   padding-top: 15px;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 10px 0px;
+  }
 `;
 
 export const BoxFlex = styled.div`
@@ -86,6 +98,10 @@ export const InnerFlex = styled.div`
   @media (max-width: 1000px) {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 0 5px;
   }
 `;
 
@@ -112,10 +128,9 @@ export const Button1 = styled.div`
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
-    width: 80px;
-    height: 30px;
+    width: 70px;
+    height: 35px;
     font-size: 0.7rem;
-    margin-right: 10px;
   }
 `;
 
