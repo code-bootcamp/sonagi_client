@@ -36,6 +36,19 @@ export default function VolumeWriteContainer() {
     trigger("contents");
   };
 
+  // 공지
+  const [isNotice, setIsNotice] = useState(false);
+  const [isEpisode, setIsEpisode] = useState(true);
+  const onClickNotice = () => {
+    setIsNotice(true);
+    setIsEpisode(false);
+  };
+
+  const onClickEpisode = () => {
+    setIsNotice(false);
+    setIsEpisode(true);
+  };
+
   // 완결
   const [finish, setFinish] = useState(false);
   const onClickFinish = () => {
@@ -53,6 +66,7 @@ export default function VolumeWriteContainer() {
             novelID: router.query._id,
             authorText: data.authorText,
             isFinish: finish,
+            isNotice,
           },
         },
       });
@@ -75,6 +89,11 @@ export default function VolumeWriteContainer() {
       onChangeDescription={onChangeDescription}
       editorRef={editorRef}
       onClickFinish={onClickFinish}
+      // 공지
+      onClickNotice={onClickNotice}
+      onClickEpisode={onClickEpisode}
+      isNotice={isNotice}
+      isEpisode={isEpisode}
     />
   );
 }
