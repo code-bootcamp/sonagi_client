@@ -11,7 +11,7 @@ import {
 } from "./NovelWrite.queries";
 import { Editor } from "@toast-ui/react-editor";
 import { useRouter } from "next/router";
-import { INovelWriteContainerProps, IonClickUpdate } from "./NovelWrite.types";
+import { Idata, INovelWriteContainerProps } from "./NovelWrite.types";
 
 const schema = yup.object({
   title: yup.string().required("작품 제목을 입력해 주세요!"),
@@ -121,7 +121,7 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
   }, [props.editData]);
 
   // 등록
-  const onClickSubmit = async (data: any) => {
+  const onClickSubmit = async (data: Idata) => {
     // console.log(fileId[0]);
     try {
       const result = await createNovel({
@@ -145,7 +145,7 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
   };
 
   // 수정
-  const onClickUpdate = async (data: IonClickUpdate) => {
+  const onClickUpdate = async (data: Idata) => {
     try {
       const result = await updateNovel({
         variables: {
@@ -156,6 +156,7 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
             categoryID: data.categoryID,
             fileURLs: data.fileURLs,
             id: router.query._id,
+            cycles: isDay,
           },
         },
       });

@@ -8,7 +8,7 @@ export interface Iel {
 export interface INovelReadPresenterProps {
   onClickMoveToMain: () => void;
   onClickDisplay: () => void;
-  setDisplay: boolean;
+  setDisplay: any;
   readData?: any;
   novelData?: any;
   onClickMoveToList: () => void;
@@ -23,5 +23,10 @@ export interface INovelReadPresenterProps {
   setCommentClick: Dispatch<SetStateAction<boolean>>;
   onClickComment: () => void;
   commentData?: any;
-  onClickRight: (event: MouseEvent) => void;
+  onClickRight: any;
+}
+
+export interface INovelReadStyles {
+  setDisplay?: Dispatch<SetStateAction<boolean>>;
+  fontsize?: number;
 }

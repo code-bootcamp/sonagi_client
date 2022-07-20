@@ -1,7 +1,10 @@
 import React from "react";
 import * as S from "./CommentWrite.styles";
+import { IReadCommentWritePresenterProps } from "./CommentWrite.types";
 
-export default function ReadCommentWritePresenter(props) {
+export default function ReadCommentWritePresenter(
+  props: IReadCommentWritePresenterProps
+) {
   return (
     <form
       onSubmit={

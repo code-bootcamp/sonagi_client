@@ -10,12 +10,15 @@ import {
 import * as yup from "yup";
 import ReadCommentWritePresenter from "./CommentWrite.presenter";
 import { FETCH_EPISODE_REVIEW_PAGE } from "../commentList/CommentList.queries";
+import { Idata, IReadCommentWriteContainerProps } from "./CommentWrite.types";
 
 const schema = yup.object({
   contents: yup.string().required("리뷰를 입력해주세요."),
 });
 
-export default function ReadCommentWriteContainer(props) {
+export default function ReadCommentWriteContainer(
+  props: IReadCommentWriteContainerProps
+) {
   // 댓글등록
   const router = useRouter();
   const [click, setClick] = useState(false);
@@ -27,7 +30,7 @@ export default function ReadCommentWriteContainer(props) {
     mode: "onChange",
   });
 
-  const onClickComment = async (data) => {
+  const onClickComment = async (data: Idata) => {
     if (data.contents) {
       try {
         const result = await createEpisodeReview({
@@ -49,16 +52,16 @@ export default function ReadCommentWriteContainer(props) {
         reset();
         alert("댓글을 등록했습니다.");
         console.log("질문등록", result);
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     }
   };
 
-  const onClickUpdateComment = async (data) => {
+  const onClickUpdateComment = async (data: Idata) => {
     if (data.contents) {
       try {
-        const result = await updateEpisodeReview({
+        await updateEpisodeReview({
           variables: {
             updateEpisodeReviewInput: {
               id: props.el.id,
@@ -73,10 +76,9 @@ export default function ReadCommentWriteContainer(props) {
             },
           ],
         });
-        console.log(result);
         alert("수정 완료");
-        props.setIsEdit((prev) => !prev);
-      } catch (error) {
+        props.setIsEdit((prev: boolean) => !prev);
+      } catch (error: any) {
         alert(error.message);
       }
     }

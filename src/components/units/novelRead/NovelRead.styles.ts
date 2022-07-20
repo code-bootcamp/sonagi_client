@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import { INovelReadStyles } from "./NovelRead.types";
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -36,7 +37,8 @@ export const HeadWrapper = styled.div`
   padding: 20px;
   background-color: #f1f4f5;
   height: 8%;
-  display: ${(props) => (props.setDisplay ? "default" : "none")};
+  display: ${(props: INovelReadStyles) =>
+    props.setDisplay ? "default" : "none"};
 `;
 
 export const BodyWrapper = styled.pre`
@@ -46,7 +48,7 @@ export const BodyWrapper = styled.pre`
   display: flex;
   flex-direction: row;
   /* background-color: #ffd2dd; */
-  font-size: ${(props) => props.fontsize}rem;
+  font-size: ${(props: INovelReadStyles) => props.fontsize}rem;
   white-space: pre-wrap;
   word-break: break-all;
   overflow: auto;
@@ -76,7 +78,8 @@ export const FooterWrapper = styled.div`
   align-items: center;
   padding: 20px;
   background-color: #f1f4f5;
-  display: ${(props) => (props.setDisplay ? "default" : "none")};
+  display: ${(props: INovelReadStyles) =>
+    props.setDisplay ? "default" : "none"};
 
   @media ${breakPoints.tablet} {
     padding: 20px;

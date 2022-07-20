@@ -151,8 +151,6 @@ export default function NovelWritePresenter(props: INovelWritePresenterProps) {
                       <S.CycleButton2
                         onClick={props.onClickDayDiv(el)}
                         key={el.length}
-                        el={el}
-                        isDay={props.isDay}
                       >
                         {el}
                       </S.CycleButton2>
