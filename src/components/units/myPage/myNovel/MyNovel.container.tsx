@@ -9,6 +9,7 @@ export default function MyNovelContainer() {
   const { onClickMoveToPage } = useMoveToPage();
   const { data } = useQuery(FETCH_MY_NOVELS);
 
+  console.log(data);
   const onClickMyNovel = () => {
     setMyNovel(true);
   };
