@@ -20,8 +20,8 @@ export const WrapBestIcon = styled.div`
 export const WrapperUserInfo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90%;
-  margin-left: 100px;
+  width: 98%;
+  margin-left: 30px;
 `;
 
 export const BestComment = styled.div`
@@ -77,7 +77,8 @@ export const WrapUserInfo = styled.div`
 `;
 
 export const Name = styled.div`
-  color: #808080;
+  color: #2277d8;
+  font-weight: 800;
   font-size: 1.063rem;
 
   @media ${breakPoints.mobile} {

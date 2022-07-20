@@ -48,23 +48,12 @@ export default function CommentListPresenterItem(
           },
         ],
       });
-      alert("질문이 삭제되었습니다");
+      alert("댓글이 삭제되었습니다");
     } catch (error) {
       alert(error);
     }
     console.log("댓글삭제", event);
   };
-
-  // useEffect(() => {
-  //   const active = () => {
-  //     if (props.data?.fetchBoard?.comments[0].children[0].id !== "") {
-  //       setIsNestedExist(true);
-  //     } else {
-  //       setIsNestedExist(false);
-  //     }
-  //   };
-  //   active();
-  // }, []);
 
   const [isNestedExist, setIsNestedExist] = useState(false);
   useEffect(() => {
@@ -72,6 +61,7 @@ export default function CommentListPresenterItem(
       setIsNestedExist(true);
     }
   }, [props.data]);
+
   return (
     <>
       <S.Wrapper>

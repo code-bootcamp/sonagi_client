@@ -1,6 +1,8 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
+import NestedCommentWritePresenter from "../write/NestedCommentWrite.presenter";
 import { FETCH_BOARD } from "./NestedCommentList.queries";
 import * as S from "./NestedCommentList.styles";
 import { INestedCommentListPresenterProps } from "./NestedCommentList.types";
@@ -15,6 +17,11 @@ export default function NestedCommentListPresenter(
     "대댓글데이터를조회해보자",
     data?.fetchBoard?.comments[0]?.children[0]?.contents
   );
+
+  const [isEdit, setIsEdit] = useState(false);
+  const onClickUpdateNestedReply = () => {
+    setIsEdit(true);
+  };
 
   return (
     <>
@@ -49,7 +56,10 @@ export default function NestedCommentListPresenter(
               </S.WrapUserInfo>
             </S.WrapCommentInfo>
             <S.WrapIcon>
-              <S.EditIcon src="/comment/create.png" />
+              <S.EditIcon
+                src="/comment/create.png"
+                onClick={onClickUpdateNestedReply}
+              />
               <S.DeleteIcon
                 src="/comment/Trash.png"
                 onClick={props.DeleteNestedComment}
@@ -60,7 +70,9 @@ export default function NestedCommentListPresenter(
         </S.WrapperUserInfo>
       </S.Wrapper>
       <S.FooterWrapper>
-        {/* <AnswerListPresenter el={props.el} /> */}
+        {isEdit && (
+          <NestedCommentWritePresenter isEdit={true} setIsEdit={setIsEdit} />
+        )}
       </S.FooterWrapper>
     </>
   );

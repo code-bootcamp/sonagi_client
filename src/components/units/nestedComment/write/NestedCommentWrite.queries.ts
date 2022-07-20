@@ -36,6 +36,8 @@ export const FETCH_COMMENT = gql`
     fetchComment(commentID: $commentID) {
       children {
         id
+        contents
+        createAt
       }
     }
   }
@@ -73,6 +75,7 @@ export const FETCH_BOARD = gql`
         children {
           id
           contents
+          createAt
         }
       }
     }
