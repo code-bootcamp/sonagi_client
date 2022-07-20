@@ -147,10 +147,12 @@ export const Writer = styled.div`
 `;
 
 export const GridWrap = styled.div`
+  width: 96%;
+
   display: flex;
   flex-wrap: wrap;
   margin: 0 5px;
-  justify-content: flex-start;
+  justify-content: center;
 
   @media ${breakPoints.tablet} {
     margin: 0px 10px;
