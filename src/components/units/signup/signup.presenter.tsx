@@ -90,7 +90,7 @@ export default function SignUpPresenter(props: ISignupPresenterProps) {
           </S.InputWrapper>
           <AgreeTermsContainer
             setAgree1={props.setAgree1}
-            setAgree2={props.setAgree1}
+            setAgree2={props.setAgree2}
           />
           <S.SignUpButton>회원가입</S.SignUpButton>
           <S.Corp>ⓒ SONAGI Corp.</S.Corp>
