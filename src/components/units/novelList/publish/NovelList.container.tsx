@@ -96,8 +96,7 @@ export default function NovelPbListContainer() {
 
   const onClickMoveToDetail = (el) => (event: any) => {
     router.push(`/novel/${event.currentTarget.id}`);
-    console.log(event.target);
-    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
+    const baskets = JSON.parse(localStorage.getItem("baskets") || "") || [];
     let isExists = false;
     baskets.forEach((basketEL) => {
       if (el.id === basketEL.id) isExists = true;

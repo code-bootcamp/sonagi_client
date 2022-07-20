@@ -48,23 +48,15 @@ export const ItemWrap = styled.div`
 
   @media (min-width: 391px) and (max-width: 767px) {
     transition-duration: 1s;
-    flex-basis: 33.3333%;
+    flex-basis: 96%;
+    margin: 2%;
   }
 
   @media (max-width: 390px) {
     transition-duration: 1s;
-    flex-basis: 49%;
-  }
-
-  /* @media (min-width: 391px) and (max-width: 767px) {
-    width: 96%;
+    flex-basis: 96%;
     margin: 2%;
   }
-
-  @media (max-width: 390px) {
-    width: 96%;
-    margin: 2%;
-  } */
 `;
 export const RowWrap = styled.div`
   display: flex;
@@ -100,9 +92,7 @@ export const Itembox = styled.div`
   padding: 20px 30px;
 
   @media (min-width: 391px) and (max-width: 767px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
   }
 
   @media (max-width: 390px) {
@@ -117,8 +107,17 @@ export const ItemPic = styled.img`
   object-fit: cover;
   border-radius: 8px;
   vertical-align: middle;
+
+  @media (min-width: 768px) and (max-width: 990px) {
+    width: 40%;
+  }
+
+  @media (max-width: 390px) {
+    width: 96%;
+  }
 `;
 export const TextWrap = styled.div`
+  width: 98%;
   padding: 0px 10px;
   margin-left: 5px;
   display: flex;
@@ -137,6 +136,7 @@ export const RowWrap2 = styled.div`
   }
 
   @media (max-width: 390px) {
+    flex-direction: column;
     margin-bottom: 0px;
   }
 `;
@@ -152,22 +152,25 @@ export const ItemName = styled.div`
   }
 
   @media (max-width: 390px) {
-    margin: 0 20px;
+    font-size: 2em;
+    margin: 10px 20px 0;
+    text-align: center;
   }
 `;
 
-export const BookmarkX = styled.img`
-  width: 18px;
-  height: 18px;
-`;
-
 export const HeartImg = styled.div`
-  width: 24px;
+  width: 20%;
   height: 21px;
   background-image: ${(props: any) =>
     props.HeartList?.includes(props.el)
-      ? "url(/novelList/best/heart1.png)"
-      : "url(/novelList/best/heart2.png)"};
+      ? "url(/novelList/best/heart2.png)"
+      : "url(/novelList/best/heart1.png)"};
+  background-repeat: no-repeat;
+
+  @media (max-width: 390px) {
+    width: 100%;
+    background-position: center;
+  }
 `;
 
 export const ItemPickIcon = styled.img`
@@ -183,7 +186,15 @@ export const Contents = styled.div`
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 
-  @media (min-width: 391px) and (max-width: 767px) {
+  @media (min-width: 768px) and (max-width: 961px) {
+    display: none;
+  }
+
+  @media (min-width: 601px) and (max-width: 767px) {
+    margin-top: 15px;
+  }
+
+  @media (min-width: 391px) and (max-width: 600px) {
     display: none;
   }
 
@@ -195,20 +206,21 @@ export const ItemInfoWrap = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 20px;
-  align-items: center;
+  /* align-items: center; */
   font-size: 0.88rem;
   color: #808080;
 
-  @media (min-width: 391px) and (max-width: 767px) {
-    display: none;
+  @media (min-width: 768px) and (max-width: 990px) {
+    flex-direction: column;
   }
 
   @media (min-width: 391px) and (max-width: 767px) {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   @media (max-width: 390px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 export const ItemStatus = styled.div``;
@@ -217,9 +229,13 @@ export const Line = styled.div`
   height: 13px;
   background-color: #bdbdbd;
   margin: 0px 20px;
+  @media (min-width: 768px) and (max-width: 990px) {
+    display: none;
+  }
 
   @media (min-width: 391px) and (max-width: 767px) {
-    display: none;
+    /* display: none; */
+    margin: 5px 10px;
   }
 
   @media (max-width: 390px) {

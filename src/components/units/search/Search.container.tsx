@@ -3,13 +3,10 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import SearchPresenter from "./Search.presenter";
 import { FETCH_NOVELS_PAGE } from "./Search.queries";
-// import { useRecoilState } from "recoil";
-// import { searchKeyword } from "../../../commons/store";
 
 export default function SearchContainer() {
   const router = useRouter();
   const [keyword, setKeyword] = useState("");
-  // const [skeyword, setSkeyword] = useRecoilState(searchKeyword);
 
   const { data, refetch } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -31,7 +28,7 @@ export default function SearchContainer() {
   const onClickMoveToDetail = (el: any) => (event: any) => {
     router.push(`/novel/${event.currentTarget.id}`);
     console.log(event.target);
-    const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
+    const baskets = JSON.parse(localStorage.getItem("baskets") || "") || [];
     let isExists = false;
     baskets.forEach((basketEL) => {
       if (el.id === basketEL.id) isExists = true;
@@ -59,7 +56,6 @@ export default function SearchContainer() {
       onClickMoveToDetail={onClickMoveToDetail}
       refetch={refetch}
       onChangeKeyword={onChangeKeyword}
-      // skeyword={skeyword}
     />
   );
 }

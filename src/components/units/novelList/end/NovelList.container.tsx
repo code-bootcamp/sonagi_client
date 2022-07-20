@@ -109,6 +109,30 @@ export default function NovelEndListContainer() {
     localStorage.setItem("baskets", JSON.stringify(baskets));
   };
 
+  const onClickMoveToRomancePage = () => {
+    router.push("/novel/list/all/romance");
+  };
+
+  const onClickMoveToRomanceFantasyPage = () => {
+    router.push("/novel/list/all/romanceFantasy");
+  };
+
+  const onClickMoveToFantasyPage = () => {
+    router.push("/novel/list/all/fantasy");
+  };
+
+  const onClickMoveToAsiaPage = () => {
+    router.push("/novel/list/all/asia");
+  };
+
+  const onClickMoveToSchoolPage = () => {
+    router.push("/novel/list/all/school");
+  };
+
+  const onClickMoveToHorrorPage = () => {
+    router.push("/novel/list/all/horror");
+  };
+
   return (
     <NovelEndListPresenter
       Romance={Romance}
@@ -118,6 +142,12 @@ export default function NovelEndListContainer() {
       School={School}
       Horror={Horror}
       onClickMoveToDetail={onClickMoveToDetail}
+      onClickMoveToRomancePage={onClickMoveToRomancePage}
+      onClickMoveToRomanceFantasyPage={onClickMoveToRomanceFantasyPage}
+      onClickMoveToFantasyPage={onClickMoveToFantasyPage}
+      onClickMoveToAsiaPage={onClickMoveToAsiaPage}
+      onClickMoveToSchoolPage={onClickMoveToSchoolPage}
+      onClickMoveToHorrorPage={onClickMoveToHorrorPage}
     />
   );
 }

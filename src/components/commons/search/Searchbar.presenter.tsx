@@ -1,8 +1,9 @@
 import * as S from "./Searchbar.styles";
 import { useRecoilState } from "recoil";
 import { searchKeyword } from "../../../commons/store";
+import { ISearchbarsUIProps } from "./Searchbar.types";
 
-export default function SearchbarPresenter(props) {
+export default function SearchbarPresenter(props: ISearchbarsUIProps) {
   const [skeyword] = useRecoilState(searchKeyword);
 
   return (

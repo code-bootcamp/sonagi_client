@@ -1,7 +1,8 @@
 import * as S from "./NovelList.styles";
 import DOMPurify from "dompurify";
+import { INovelPbListUIProps } from "./NovelPbList.types";
 
-export default function NovelPbListPresenter(props: any) {
+export default function NovelPbListPresenter(props: INovelPbListUIProps) {
   console.log(props.data);
   return (
     <S.Wrap>
@@ -26,7 +27,7 @@ export default function NovelPbListPresenter(props: any) {
               {el.cycle === 0 ? (
                 <S.Cycle>자유연재</S.Cycle>
               ) : (
-                <S.Cycle>{el.cycle.split("|")}</S.Cycle>
+                <S.Cycle>요일연재</S.Cycle>
               )}
             </S.ItemInfo>
             <S.ItemWriterWrap>
