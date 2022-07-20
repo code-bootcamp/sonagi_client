@@ -119,12 +119,12 @@ export const TagsWrapper = styled.div`
 `;
 
 export const Tags = styled.div`
-  border-radius: 4px;
-  border: 1px solid gray;
+  border-radius: 8px;
+  border: 1px solid #2277d2;
   padding: 5px;
-  background-color: #f3f4f5;
+  background-color: #ffffff;
   margin-right: 15px;
-  color: #767676;
+  color: #2277d2;
   font-weight: 600;
 `;
 
@@ -306,10 +306,11 @@ export const TableLine = styled.div`
 
 export const TableTop = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 export const Borrow = styled.div`
-  width: 560px;
+  width: 50%;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -318,7 +319,7 @@ export const Borrow = styled.div`
 `;
 
 export const Get = styled.div`
-  width: 560px;
+  width: 50%;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -353,8 +354,7 @@ export const TableButton = styled.div`
 
 export const TableLineWrapper = styled.div`
   display: flex;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 15px 10px;
   border-bottom: 1px solid #4f4f4f;
   justify-content: space-between;
   align-items: center;
@@ -363,6 +363,10 @@ export const TableLineWrapper = styled.div`
 export const TableDottedLine = styled.div`
   border-bottom: 1px dotted black;
   padding: 10px;
+`;
+
+export const LookWrapper = styled.div`
+  display: flex;
 `;
 
 export const TableSonWrapper = styled.div`

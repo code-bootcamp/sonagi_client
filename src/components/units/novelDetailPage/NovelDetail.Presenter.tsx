@@ -148,24 +148,26 @@ export default function NovelDetailPresenter(
                       </S.WrapDate>
                     </S.TableSonWrapper>
                   </S.WrapFirst>
-                  <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
-                    삭제
-                  </S.LookBtn>
-                  <S.LookBtn id={el.id} onClick={props.onClickPayment}>
-                    구매
-                  </S.LookBtn>
-                  <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
-                    보기
-                  </S.LookBtn>
-                  <div
-                    id={el.id}
-                    // checkedChildren="공개"
-                    // unCheckedChildren="비공개"
-                    // defaultChecked
-                    onClick={props.onClickPrivate}
-                  >
-                    공개
-                  </div>
+                  <S.LookWrapper>
+                    <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
+                      삭제
+                    </S.LookBtn>
+                    <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+                      구매
+                    </S.LookBtn>
+                    <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                      보기
+                    </S.LookBtn>
+                    <div
+                      id={el.id}
+                      // checkedChildren="공개"
+                      // unCheckedChildren="비공개"
+                      // defaultChecked
+                      onClick={props.onClickPrivate}
+                    >
+                      공개
+                    </div>
+                  </S.LookWrapper>
                 </S.TableLineWrapper>
               ))
               .reverse()}

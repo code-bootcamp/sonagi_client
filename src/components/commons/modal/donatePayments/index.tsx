@@ -13,8 +13,8 @@ const PayMentWrapper = styled.div`
   border-radius: 20px;
   position: absolute;
   background-color: #ffffff;
-  margin-right: 22%;
-  top: 300px;
+  top: 100px;
+  left: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;

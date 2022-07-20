@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 0;
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
@@ -17,7 +17,7 @@ export const WrapTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 40px;
+  padding: 20px 0 40px 0;
   justify-content: center;
 `;
 
@@ -57,17 +57,16 @@ export const Star = styled.div`
 export const WrapContents = styled.div`
   display: flex;
   flex-direction: column;
-  height: 160px;
 `;
 
 export const ContentsInput = styled.textarea`
   width: 100%;
-  height: 170px;
-  padding-left: 20px;
+  height: 120px;
   font-size: 1rem;
-  border: 3px solid #d1d5d9;
+  border: 1px solid #d1d5d9;
   border-radius: 5px;
   padding: 20px;
+  resize: none;
 
   &:focus {
     outline: none;
@@ -107,7 +106,7 @@ export const CommentButton = styled.button`
   justify-content: center;
   align-items: center;
   width: 10%;
-  height: 70px;
+  height: 45px;
   border-radius: 5px;
   background-color: #2277d8;
   color: white;
