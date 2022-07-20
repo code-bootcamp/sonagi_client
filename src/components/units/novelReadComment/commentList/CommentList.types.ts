@@ -42,5 +42,17 @@ export interface Iel {
 }
 
 export interface IReadCommentListPresenterItemProps {
-  el: any;
+  el: {
+    id?: string;
+    contents?: string;
+    likeCount?: number;
+    star?: number;
+    createAt?: string;
+    updateAt?: string;
+    user?: {
+      id?: string;
+      nickname?: string;
+    };
+    count?: number;
+  };
 }
