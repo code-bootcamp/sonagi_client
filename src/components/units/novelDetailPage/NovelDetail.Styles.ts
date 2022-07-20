@@ -202,6 +202,7 @@ export const Line = styled.div`
   border-bottom: 1px solid #d9d9d9;
   width: 820px;
   margin: 30px 0 3px 0;
+  cursor: pointer;
 `;
 
 export const ArrowImg = styled.img`

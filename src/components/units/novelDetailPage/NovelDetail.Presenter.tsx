@@ -8,7 +8,7 @@ import DonatePage from "../../commons/modal/donatePayments";
 import { INovelDetailPresenterProps } from "./NovelDetail.types";
 import Button04 from "../../commons/buttons/04";
 import Button02 from "../../commons/buttons/02";
-
+const myImg = /^.*[.(jpg | svg | png | jpeg | gif  | webp)]$/g;
 export default function NovelDetailPresenter(
   props: INovelDetailPresenterProps
 ) {
@@ -17,7 +17,13 @@ export default function NovelDetailPresenter(
       <div>
         <S.FlexWrapper>
           <S.NovelImage
-            src={`https://storage.googleapis.com/code-camp-main-project/${props.detailData?.fetchNovelDetail.files[0].url}`}
+            src={
+              new RegExp(myImg, "i").test(
+                props.detailData?.fetchNovelDetail.files[0].url
+              )
+                ? `https://storage.googleapis.com/code-camp-main-project/${props.detailData?.fetchNovelDetail.files[0].url}`
+                : "/novelList/noImage.png"
+            }
           />
 
           <S.ColumnWrapper>
@@ -27,7 +33,7 @@ export default function NovelDetailPresenter(
                 {/* <S.SmallArrow src="/novelDetail/Polygon.png" /> */}
                 <S.Arrow>{">"}</S.Arrow>
                 <S.TopFont>
-                  {props.detailData?.fetchNovelDetail.novelCategory.name}
+                  {props.detailData?.fetchNovelDetail.novelCategory.name || ""}
                 </S.TopFont>
               </S.LeftWrapper>
               <S.HeartWrapper
@@ -126,7 +132,7 @@ export default function NovelDetailPresenter(
               <S.ArrowImg src="/novelDetail/Arrow 1.png" />
               <S.ArrowImg src="/novelDetail/Arrow 2.png" />
               <S.New onClick={props.onClickFirst}>
-                {props.isFirst ? "1권 부터" : "신간부터"}
+                {props.isFirst ? "신간부터" : "1권 부터"}
               </S.New>
             </S.SortButton>
           </S.WrapFirst>
@@ -165,24 +171,45 @@ export default function NovelDetailPresenter(
                     </S.TableSonWrapper>
                   </S.WrapFirst>
                   <S.LookWrapper>
-                    <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
-                      삭제
-                    </S.LookBtn>
-                    <S.LookBtn id={el.id} onClick={props.onClickPayment}>
-                      구매
-                    </S.LookBtn>
-                    <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
-                      보기
-                    </S.LookBtn>
-                    <S.LookContent
-                      id={el.id}
-                      // checkedChildren="공개"
-                      // unCheckedChildren="비공개"
-                      // defaultChecked
-                      onClick={props.onClickPrivate}
-                    >
-                      공개
-                    </S.LookContent>
+                    {props.detailData?.fetchNovelDetail.user.id ===
+                    props.LoginData?.fetchLoginUser.id ? (
+                      <>
+                        <S.LookBtn
+                          id={el.id}
+                          onClick={props.onClickIndexDelete}
+                        >
+                          삭제
+                        </S.LookBtn>
+                        <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                          보기
+                        </S.LookBtn>
+                      </>
+                    ) : (
+                      ""
+                    )}
+                    {el.isBuy || Number(el.index) < 4 ? (
+                      <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                        보기
+                      </S.LookBtn>
+                    ) : (
+                      <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+                        구매
+                      </S.LookBtn>
+                    )}
+                    {props.detailData?.fetchNovelDetail.user.id ===
+                    props.LoginData?.fetchLoginUser.id ? (
+                      <S.LookContent
+                        id={el.id}
+                        // checkedChildren="공개"
+                        // unCheckedChildren="비공개"
+                        // defaultChecked
+                        onClick={props.onClickPrivate}
+                      >
+                        공개
+                      </S.LookContent>
+                    ) : (
+                      ""
+                    )}
                   </S.LookWrapper>
                 </S.TableLineWrapper>
               ))
@@ -212,24 +239,42 @@ export default function NovelDetailPresenter(
                   </S.TableSonWrapper>
                 </S.WrapFirst>
                 <S.LookWrapper>
-                  <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
-                    삭제
-                  </S.LookBtn>
-                  <S.LookBtn id={el.id} onClick={props.onClickPayment}>
-                    구매
-                  </S.LookBtn>
-                  <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
-                    보기
-                  </S.LookBtn>
-                  <S.LookContent
-                    id={el.id}
-                    // checkedChildren="공개"
-                    // unCheckedChildren="비공개"
-                    // defaultChecked
-                    onClick={props.onClickPrivate}
-                  >
-                    공개
-                  </S.LookContent>
+                  {props.detailData?.fetchNovelDetail.user.id ===
+                  props.LoginData?.fetchLoginUser.id ? (
+                    <>
+                      <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
+                        삭제
+                      </S.LookBtn>
+                      <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                        보기
+                      </S.LookBtn>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                  {el.isBuy || Number(el.index) < 4 ? (
+                    <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                      보기
+                    </S.LookBtn>
+                  ) : (
+                    <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+                      구매
+                    </S.LookBtn>
+                  )}
+                  {props.detailData?.fetchNovelDetail.user.id ===
+                  props.LoginData?.fetchLoginUser.id ? (
+                    <S.LookContent
+                      id={el.id}
+                      // checkedChildren="공개"
+                      // unCheckedChildren="비공개"
+                      // defaultChecked
+                      onClick={props.onClickPrivate}
+                    >
+                      공개
+                    </S.LookContent>
+                  ) : (
+                    ""
+                  )}
                 </S.LookWrapper>
               </S.TableLineWrapper>
             ))}

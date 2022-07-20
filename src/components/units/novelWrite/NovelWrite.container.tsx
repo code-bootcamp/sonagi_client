@@ -170,12 +170,12 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
 
   const [isClickPre, setIsClickPre] = useState(false);
   const [isClickDay, setIsClickDay] = useState(false);
-  const [isDay, setIsDay] = useState([""]);
+  const [isDay, setIsDay] = useState(["FREE"]);
 
   const onClickPreButton = () => {
     setIsClickPre(true);
     setIsClickDay(false);
-    setIsDay([""]);
+    setIsDay(["FREE"]);
   };
 
   const onClickDayButton = () => {

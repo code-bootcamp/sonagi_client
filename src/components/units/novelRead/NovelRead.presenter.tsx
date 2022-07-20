@@ -33,7 +33,7 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
               <S.SettingImg
                 onClick={props.onClickLike}
                 src={
-                  props.Heartlist?.includes(props.NovelId)
+                  props.Heart
                     ? "/novelDetail/heart.png"
                     : "/novelRead/heart.png"
                 }
