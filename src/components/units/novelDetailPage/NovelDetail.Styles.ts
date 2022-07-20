@@ -125,7 +125,7 @@ export const Tags = styled.div`
   background-color: #ffffff;
   margin-right: 15px;
   color: #2277d2;
-  font-weight: 600;
+  font-weight: 400;
 `;
 
 export const WriterFont = styled.div`
@@ -367,6 +367,12 @@ export const TableDottedLine = styled.div`
 
 export const LookWrapper = styled.div`
   display: flex;
+  align-items: center;
+`;
+
+export const LookContent = styled.div`
+  padding-left: 45px;
+  padding-right: 2px;
 `;
 
 export const TableSonWrapper = styled.div`
@@ -423,6 +429,7 @@ export const LookBtn = styled.div`
   color: #484848;
   border: 1px solid #bdbdbd;
   cursor: pointer;
+  margin: 0 15px;
 `;
 
 export const FooterLabel = styled.div`

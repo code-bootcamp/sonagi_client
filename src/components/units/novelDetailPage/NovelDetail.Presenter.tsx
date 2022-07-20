@@ -158,7 +158,7 @@ export default function NovelDetailPresenter(
                     <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
                       보기
                     </S.LookBtn>
-                    <div
+                    <S.LookContent
                       id={el.id}
                       // checkedChildren="공개"
                       // unCheckedChildren="비공개"
@@ -166,7 +166,7 @@ export default function NovelDetailPresenter(
                       onClick={props.onClickPrivate}
                     >
                       공개
-                    </div>
+                    </S.LookContent>
                   </S.LookWrapper>
                 </S.TableLineWrapper>
               ))
@@ -195,24 +195,26 @@ export default function NovelDetailPresenter(
                     </S.WrapDate>
                   </S.TableSonWrapper>
                 </S.WrapFirst>
-                <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
-                  삭제
-                </S.LookBtn>
-                <S.LookBtn id={el.id} onClick={props.onClickPayment}>
-                  구매
-                </S.LookBtn>
-                <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
-                  보기
-                </S.LookBtn>
-                <div
-                  id={el.id}
-                  // checkedChildren="공개"
-                  // unCheckedChildren="비공개"
-                  // defaultChecked
-                  onClick={props.onClickPrivate}
-                >
-                  공개
-                </div>
+                <S.LookWrapper>
+                  <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
+                    삭제
+                  </S.LookBtn>
+                  <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+                    구매
+                  </S.LookBtn>
+                  <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                    보기
+                  </S.LookBtn>
+                  <S.LookContent
+                    id={el.id}
+                    // checkedChildren="공개"
+                    // unCheckedChildren="비공개"
+                    // defaultChecked
+                    onClick={props.onClickPrivate}
+                  >
+                    공개
+                  </S.LookContent>
+                </S.LookWrapper>
               </S.TableLineWrapper>
             ))}
           </>
