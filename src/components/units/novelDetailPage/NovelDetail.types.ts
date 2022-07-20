@@ -1,6 +1,7 @@
 import { MouseEvent } from "react";
 
 export interface INovelDetailPresenterProps {
+  LoginData: any;
   novelID: any;
   detailData?: any;
   onClickDelete: () => void;

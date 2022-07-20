@@ -45,7 +45,7 @@ export const WrapInfo = styled.div`
   justify-content: space-between;
   padding: 10px;
   height: 100px;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 1.5px solid #d9d9d9;
 `;
 
 export const ProfileIcon = styled.img`
@@ -59,7 +59,7 @@ export const WrapCommentInfo = styled.div`
 
 export const Comment = styled.div`
   color: #484848;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
 
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;
@@ -83,8 +83,9 @@ export const WrapComment = styled.div`
 
 export const Name = styled.div`
   /* color: #808080; */
-  font-weight: 600;
-  font-size: 1.2rem;
+  padding-top: 3px;
+  font-weight: 500;
+  font-size: 1.1rem;
 
   @media ${breakPoints.mobile} {
     font-size: 0.8rem;
@@ -95,7 +96,7 @@ export const WrapDate = styled.div``;
 
 export const Date = styled.div`
   color: #808080;
-  font-size: 1.063rem;
+  font-size: 0.83rem;
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
@@ -146,8 +147,8 @@ export const WrapIcon = styled.div`
 `;
 
 export const EditIcon = styled.img`
-  width: 23px;
-  height: 23px;
+  width: 21px;
+  height: 21px;
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
@@ -158,9 +159,9 @@ export const EditIcon = styled.img`
 
 export const DeleteIcon = styled.img`
   padding-top: 2px;
-  margin-left: 20px;
-  width: 21px;
-  height: 22px;
+  margin-left: 15px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
@@ -175,6 +176,4 @@ export const AnswerIcon = styled.img`
   margin-left: 20px;
 `;
 
-export const FooterWrapper = styled.div`
-  margin-left: 60px;
-`;
+export const FooterWrapper = styled.div``;

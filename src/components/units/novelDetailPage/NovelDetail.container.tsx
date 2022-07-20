@@ -6,8 +6,8 @@ import {
   CHANGE_PRIVATE_NOVEL_INDEX,
   DELETE_NOVEL,
   DELETE_NOVEL_INDEX,
+  FETCH_LOGIN_USER,
   FETCH_NOVEL_DETAIL,
-  FETCH_PAID_POINTS,
   PAIDPOINT,
   SWITCH_NOVEL_LIKE,
 } from "./NovelDetail.queries";
@@ -24,13 +24,10 @@ export default function NovelDetailContainer() {
   const { data: detailData } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
   });
-  const { data: PaidData } = useQuery(FETCH_PAID_POINTS, {
-    variables: { page: 1 },
-  });
+  const { data: LoginData } = useQuery(FETCH_LOGIN_USER);
 
-  console.log("결제", PaidData);
-
-  console.log("디테일", detailData);
+  console.log("디테일", detailData?.fetchNovelDetail.user.id);
+  console.log("로그인", LoginData?.fetchLoginUser.id);
 
   // 소설 삭제
   const onClickDelete = async () => {
@@ -186,6 +183,7 @@ export default function NovelDetailContainer() {
     <NovelDetailPresenter
       novelID={novelID}
       detailData={detailData}
+      LoginData={LoginData}
       onClickDelete={onClickDelete}
       onClickMoveToRead={onClickMoveToRead}
       onClickMoveToVolumeWrite={onClickMoveToVolumeWrite}

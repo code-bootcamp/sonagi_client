@@ -12,6 +12,7 @@ export const FETCH_NOVEL_DETAIL = gql`
       updateAt
       cycle
       user {
+        id
         name
         nickName
       }
@@ -115,6 +116,18 @@ export const SWITCH_NOVEL_LIKE = gql`
       id
       msg
       isSuccess
+    }
+  }
+`;
+
+export const FETCH_LOGIN_USER = gql`
+  query fetchLoginUser {
+    fetchLoginUser {
+      id
+      name
+      nickName
+      email
+      phone
     }
   }
 `;

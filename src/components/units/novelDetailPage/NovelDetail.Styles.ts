@@ -58,7 +58,16 @@ export const Buttons = styled.div`
 
 export const LookButtonWrapper = styled.div`
   padding-top: 20px;
+  width: 530px;
   display: flex;
+  justify-content: space-between;
+`;
+
+export const LookButtonWrapper2 = styled.div`
+  padding-top: 20px;
+  width: 340px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Count = styled.div`
@@ -437,5 +446,5 @@ export const FooterLabel = styled.div`
   padding-bottom: 10px;
   font-weight: 500;
   color: #58667a;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 1.5px solid #d9d9d9;
 `;

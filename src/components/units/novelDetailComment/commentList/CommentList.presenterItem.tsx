@@ -2,7 +2,7 @@ import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 // import { useRouter } from "next/router";
 import { MouseEvent, useState } from "react";
-import { getDateDay } from "../../../../commons/libraries/utils";
+import { getDate } from "../../../../commons/libraries/utils";
 import DetailCommentWriteContainer from "../commentWrite/CommentWrite.container";
 import {
   DELETE_NOVEL_REVIEW,
@@ -58,7 +58,7 @@ export default function DetailCommentListPresenterItem(
                 <S.Star value={props.el?.star} disabled />
                 <S.Name>{props.el?.user?.nickName}</S.Name>
                 <S.WrapDate>
-                  <S.Date>{getDateDay(props.el?.createAt)}</S.Date>
+                  <S.Date>{getDate(props.el?.createAt)}</S.Date>
                 </S.WrapDate>
               </S.WrapUserInfo>
               <S.WrapComment>
@@ -73,12 +73,12 @@ export default function DetailCommentListPresenterItem(
                   src="/comment/Trash.png"
                   onClick={onClickDelete}
                 />
-                <S.AnswerIcon src="/comment/insert_comment.png" />
+                {/* <S.AnswerIcon src="/comment/insert_comment.png" /> */}
               </S.WrapIcon>
-              <S.WrapUp>
+              {/* <S.WrapUp>
                 <S.UpIcon src="/comment/thumb_up.png" />
                 <S.UpCount>{props.el?.likeCount}</S.UpCount>
-              </S.WrapUp>
+              </S.WrapUp> */}
             </S.WrapIconUP>
           </S.WrapInfo>
         </S.WrapperUserInfo>
