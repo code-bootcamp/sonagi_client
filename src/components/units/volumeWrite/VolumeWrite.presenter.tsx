@@ -36,8 +36,18 @@ export default function VolumeWritePresenter(
           <S.WrapSellect>
             <S.Label>분류</S.Label>
             <S.WrapNotice>
-              <S.SelectButton>회차</S.SelectButton>
-              <S.SelectButton>공지</S.SelectButton>
+              <S.SelectButton
+                onClick={props.onClickEpisode}
+                isEpisode={props.isEpisode}
+              >
+                회차
+              </S.SelectButton>
+              <S.SelectButtonNotice
+                onClick={props.onClickNotice}
+                isNotice={props.isNotice}
+              >
+                공지
+              </S.SelectButtonNotice>
             </S.WrapNotice>
             {/* <S.WrapCheckButton>
             <S.CheckButton src="/novelWrite/check_box_fill.png" />
@@ -88,11 +98,6 @@ export default function VolumeWritePresenter(
           </S.WrapRule>
         </S.WrapperRule>
         <S.WrapSubmitButton>
-          {/* <S.ClickButton onClick={props.onClickMoveToPage("/")}>
-          취소
-        </S.ClickButton>
-        <S.ClickButton>임시저장</S.ClickButton>
-        <S.ClickButton>저장</S.ClickButton> */}
           <Button01 title="취소" onClick={props.onClickMoveToPage("/")} />
           <Button01 title="임시저장" />
           <Button01 title="저장" />

@@ -15,4 +15,13 @@ export interface IVolumeWritePresenterProps {
   onChangeDescription: (value: string) => void;
   editorRef?: any;
   onClickFinish: () => void;
+  onClickNotice: () => void;
+  onClickEpisode: () => void;
+  isNotice: boolean;
+  isEpisode: boolean;
+}
+
+export interface IVolumeWriteStyles {
+  isEpisode?: boolean;
+  isNotice?: boolean;
 }

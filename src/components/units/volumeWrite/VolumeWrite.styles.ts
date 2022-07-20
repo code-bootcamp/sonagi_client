@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import { IVolumeWriteStyles } from "./VolumeWrite.types";
 
 export const Error = styled.div`
   padding-top: 20px;
@@ -91,8 +92,24 @@ export const SelectButton = styled.div`
   justify-content: center;
   width: 80px;
   height: 40px;
-  border: 1px solid black;
+  margin-right: 3px;
+  border: ${(props: IVolumeWriteStyles) => (props.isEpisode ? "3px" : "1px")}
+    solid ${(props) => (props.isEpisode ? "#2277d8" : "black")};
+  @media ${breakPoints.mobile} {
+    width: 70px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+`;
 
+export const SelectButtonNotice = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 40px;
+  border: ${(props: IVolumeWriteStyles) => (props.isNotice ? "3px" : "1px")}
+    solid ${(props) => (props.isNotice ? "#2277d8" : "black")};
   @media ${breakPoints.mobile} {
     width: 70px;
     height: 30px;
