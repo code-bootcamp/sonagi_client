@@ -1,5 +1,8 @@
 import * as S from "./NestedCommentWrite.styles";
-export default function NestedCommentWritePresenter(props) {
+import { INestedCommentWritePresenterProps } from "./NestedCommentWrite.types";
+export default function NestedCommentWritePresenter(
+  props: INestedCommentWritePresenterProps
+) {
   return (
     <S.Wrapper>
       <S.WrapTitle>

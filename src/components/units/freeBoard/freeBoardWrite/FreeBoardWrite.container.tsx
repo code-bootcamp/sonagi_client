@@ -93,6 +93,11 @@ export default function FreeBoardWriteContainer(
     }
   };
 
+  // 취소
+  const onClickMoveToList = () => {
+    router.push("/freeBoard");
+  };
+
   return (
     <FreeBoardWritePresenter
       onChangeTitle={onChangeTitle}
@@ -103,6 +108,7 @@ export default function FreeBoardWriteContainer(
       onClickUpdate={onClickUpdate}
       onChangeFileUrls={onChangeFileUrls}
       fileUrls={fileUrls}
+      onClickMoveToList={onClickMoveToList}
     />
   );
 }

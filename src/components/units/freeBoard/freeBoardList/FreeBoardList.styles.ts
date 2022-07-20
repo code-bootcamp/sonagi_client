@@ -54,7 +54,7 @@ export const ClickButton = styled.div`
 
 export const WrapperBoard = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 45px 0 45px 45px;
   border: 1px solid #bdbdbd;
   border-radius: 8px;
@@ -83,8 +83,10 @@ export const WrapInfo = styled.div`
 
 export const Writer = styled.div`
   font-size: 1.25rem;
+  font-weight: 800;
   color: #2277d8;
-  margin-right: 30px;
+  margin-right: 27px;
+  margin-left: 11px;
 
   @media ${breakPoints.mobile} {
     font-size: 1rem;
@@ -94,7 +96,8 @@ export const Writer = styled.div`
 export const Date = styled.div`
   font-size: 1.2rem;
   color: #7e7e7e;
-  margin-left: 10px;
+  margin-left: 680px;
+  margin-top: 20px;
 
   @media ${breakPoints.mobile} {
     font-size: 1.1rem;
@@ -104,6 +107,7 @@ export const Date = styled.div`
 export const Flex = styled.div`
   display: flex;
   align-items: center;
+  margin-left: 15px;
 `;
 
 export const New = styled.div`
@@ -117,7 +121,7 @@ export const New = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 50px;
+  margin-left: 30px;
 `;
 
 export const PagingBox = styled.div`
@@ -218,4 +222,15 @@ export const PageWrapper = styled.div`
     height: 30px;
     color: #337ab7;
   }
+`;
+
+export const AvatarImg = styled.img`
+  width: 90px;
+  height: 90px;
+  margin-right: 15px;
+`;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

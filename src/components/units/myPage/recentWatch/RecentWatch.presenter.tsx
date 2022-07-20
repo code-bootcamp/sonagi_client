@@ -8,7 +8,9 @@ export default function RecentWatchPresenter(
   return (
     <S.Wrapper>
       <S.RecentWatch>최근 본 작품</S.RecentWatch>
-      <HamburgerPage />
+      <S.HamburgerWrapper>
+        <HamburgerPage />
+      </S.HamburgerWrapper>
       <S.Wrap>
         <S.Flex>
           {props.basketItems?.slice(0, 4).map((el) => (
@@ -27,15 +29,17 @@ export default function RecentWatchPresenter(
             </S.BoxWrap>
           ))}
         </S.Flex>
-        <S.BookShelf src="/recentWatch/shelf.png" />
+        <div>
+          <S.BookShelf src="/recentWatch/shelf.png" />
+        </div>
       </S.Wrap>
-      <S.Wrap>
+      <S.Wraps>
         <S.Flex>
           {props.basketItems
             ?.slice(5, 9)
             .map(
               (el: { id: Key | null | undefined; files: { url: any }[] }) => (
-                <S.BoxWrap
+                <S.BoxWraps
                   key={el.id}
                   id={el.id}
                   onClick={props.onClickMoveToNovelDetail}
@@ -46,12 +50,12 @@ export default function RecentWatchPresenter(
                   {/* <S.TitleWrap>
                     <S.Title>{el.title}</S.Title>
                   </S.TitleWrap> */}
-                </S.BoxWrap>
+                </S.BoxWraps>
               )
             )}
         </S.Flex>
         <S.BookShelfs src="/recentWatch/shelf.png" />
-      </S.Wrap>
+      </S.Wraps>
     </S.Wrapper>
   );
 }

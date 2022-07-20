@@ -1,19 +1,22 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { DELETE_COMMENT } from "../../comment/commentList/CommentList.queries";
-import { FETCH_COMMENTS } from "../write/NestedCommentWrite.queries";
 import NestedCommentListPresenter from "./NestedCommentList.presenter";
 import { FETCH_BOARD } from "./NestedCommentList.queries";
+import { INestedCommentListContainerProps } from "./NestedCommentList.types";
 
-export default function NestedCommentListContainer(props) {
+export default function NestedCommentListContainer(
+  props: INestedCommentListContainerProps
+) {
   const router = useRouter();
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
-  console.log(
-    "대댓글데이터를조회해보자",
-    data?.fetchBoard.comments[0].children[0].contents
-  );
+  // console.log(
+  //   "대댓글데이터를조회해보자",
+  //   data?.fetchBoard.comments[0].children[0].contents
+  // );
+  console.log("대댓글데이터를조회해보자11", data?.fetchBoard.comments);
 
   // 삭제
   const [deleteComment] = useMutation(DELETE_COMMENT);
@@ -21,15 +24,16 @@ export default function NestedCommentListContainer(props) {
     try {
       await deleteComment({
         variables: {
-          CommentID: props.el?.id,
+          CommentID: String(props.el?.id),
         },
         refetchQueries: [
           {
-            query: FETCH_COMMENTS,
+            query: FETCH_BOARD,
+            variables: { boardID: router.query._id },
           },
         ],
       });
-      alert("질문이 삭제되었습니다.");
+      alert("대댓글이 삭제되었습니다.");
     } catch (error) {
       alert(error.message);
     }
@@ -45,12 +49,15 @@ export default function NestedCommentListContainer(props) {
     //     />
     //   ))}
     // </>
+    // data?.fetchBoard.comments[0].children[0].contents
+
     <>
-      {data?.fetchBoard?.comments?.children?.map((el) => (
+      {data?.fetchBoard?.comments.map((el: { id: any }) => (
         <NestedCommentListPresenter
           key={el.id}
           el={el}
           DeleteNestedComment={DeleteNestedComment}
+          onClickLikeComment={undefined}
         />
       ))}
     </>

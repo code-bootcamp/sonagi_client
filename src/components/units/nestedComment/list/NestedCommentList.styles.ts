@@ -20,7 +20,8 @@ export const WrapBestIcon = styled.div`
 export const WrapperUserInfo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
+  margin-left: 100px;
 `;
 
 export const BestComment = styled.div`

@@ -41,14 +41,17 @@ export const NovelPic = styled.img`
   width: 150px;
   height: 200px;
   margin-left: 45px;
-  position: relative;
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+
   /* top: 5px; */
   /* position: absolute;
   top: 100; */
   transition: all 0.6s ease 0.2s;
   /* transform: rotateY(-180deg); */
   :hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: transform 1s;
     filter: brightness(75%);
     background: #fff;
@@ -57,17 +60,17 @@ export const NovelPic = styled.img`
     box-shadow: 1px 1px 2px #e6e6e6;
   }
   @media ${breakPoints.tablet} {
-    width: 90px;
-    height: 140px;
-    position: relative;
-    top: 20px;
-    margin-left: 55px;
+    width: 115px;
+    height: 150px;
+    position: absolute;
+    top: -2px;
+    margin-left: 58px;
   }
   @media ${breakPoints.mobile} {
     width: 95px;
     height: 130px;
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: 19px;
     margin-left: 70px;
   }
 `;
@@ -78,14 +81,15 @@ export const NovelPics = styled.img`
   width: 150px;
   height: 200px;
   margin-left: 45px;
-  position: relative;
-  top: 120px;
+  position: absolute;
+  top: 306px;
+  z-index: 3;
   /* position: absolute;
   top: 100; */
   transition: all 0.6s ease 0.2s;
   /* transform: rotateY(-180deg); */
   :hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: transform 1s;
     filter: brightness(70%);
     background: #fff;
@@ -94,18 +98,18 @@ export const NovelPics = styled.img`
     box-shadow: 1px 1px 2px #e6e6e6;
   }
   @media ${breakPoints.tablet} {
-    width: 90px;
-    height: 140px;
-    position: relative;
-    top: -50px;
-    margin-left: 55px;
+    width: 115px;
+    height: 150px;
+    position: absolute;
+    top: 230px;
+    margin-left: 58px;
   }
 
   @media ${breakPoints.mobile} {
     width: 95px;
     height: 130px;
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: 253px;
     margin-left: 70px;
   }
 `;
@@ -151,37 +155,39 @@ export const BookShelf = styled.img`
   /* margin-top: 55px; */
   position: absolute;
   width: 960px;
-  top: 500px;
+  top: 195px;
+  z-index: 2;
   @media ${breakPoints.tablet} {
     /* width: 100%; */
-    width: 590px;
-
-    position: relative;
-    top: 20px;
+    width: 658px;
+    position: absolute;
+    top: 140px;
     left: 20px;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: 140px;
     left: 30px;
   }
 `;
 
 export const BookShelfs = styled.img`
-  position: relative;
-  top: 120px;
+  position: absolute;
+  top: 492px;
   width: 960px;
+  z-index: 2;
+
   @media ${breakPoints.tablet} {
-    width: 590px;
-    position: relative;
-    top: -50px;
+    width: 658px;
+    position: absolute;
+    top: 373px;
     left: 20px;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: 373px;
     left: 30px;
   }
 `;
@@ -230,8 +236,26 @@ export const Wrap = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
   @media ${breakPoints.tablet} {
-    width: 80%;
+    position: relative;
+    width: 90%;
+  }
+  @media ${breakPoints.mobile} {
+    position: relative;
+
+    width: 100%;
+  }
+`;
+
+export const Wraps = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 700px;
+  @media ${breakPoints.tablet} {
+    width: 90%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -239,6 +263,10 @@ export const Wrap = styled.div`
 `;
 
 export const BoxWrap = styled.div`
+  width: 100%;
+`;
+
+export const BoxWraps = styled.div`
   width: 100%;
 `;
 
@@ -253,7 +281,20 @@ export const TitleWrap = styled.div`
   opacity: 0;
   :hover {
     opacity: 1;
-    z-index: 1;
+    /* z-index: 1; */
     cursor: pointer;
+  }
+`;
+
+export const HamburgerWrapper = styled.div`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    width: 100%;
+    z-index: 4;
+    position: relative;
+    left: 540px;
+    bottom: 80px;
   }
 `;
