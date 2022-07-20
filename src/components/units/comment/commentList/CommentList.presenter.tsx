@@ -17,7 +17,7 @@ export default function CommentListPresenter(
         <CommentListPresenterItem
           key={el.id}
           el={el}
-          data={undefined}
+          data={props.data}
           onClickLikeComment={undefined}
         />
       ))}

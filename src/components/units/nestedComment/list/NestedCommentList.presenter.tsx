@@ -13,8 +13,9 @@ export default function NestedCommentListPresenter(
   });
   console.log(
     "대댓글데이터를조회해보자",
-    data?.fetchBoard.comments[0].children[0].contents
+    data?.fetchBoard?.comments[0]?.children[0]?.contents
   );
+
   return (
     <>
       <S.Wrapper>
@@ -30,14 +31,14 @@ export default function NestedCommentListPresenter(
               {/* <S.Comment>
                 {data.fetchBoard.comments[0].children[0].contents}
               </S.Comment> */}
-              <S.Comment>{props.el?.children[0]?.contents}</S.Comment>
+              <S.Comment>{props.answerEL?.contents}</S.Comment>
 
               <S.WrapUserInfo>
                 {/* <S.Name>Name</S.Name> */}
-                <S.Name>{props.el?.children[0]?.user?.nickName}</S.Name>
+                <S.Name>{props.answerEL?.user?.nickName}</S.Name>
 
                 {/* <S.Date>2022.07.04</S.Date> */}
-                <S.Date>{getDate(props.el?.children[0]?.createAt)}</S.Date>
+                <S.Date>{getDate(props.answerEL?.createAt)}</S.Date>
 
                 <S.UpIcon
                   src="/comment/thumb_up.png"

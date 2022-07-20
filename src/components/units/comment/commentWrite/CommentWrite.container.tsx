@@ -38,7 +38,7 @@ export default function CommentWriteContainer(
             },
           ],
         });
-        alert("질문을 등록했습니다!!.");
+        alert("댓글을 등록했습니다.");
       } catch (error) {
         alert(error.message);
       }
@@ -50,7 +50,7 @@ export default function CommentWriteContainer(
   const onClickUpdateComment = () => {
     try {
       if (!contents) {
-        alert("내용이 수정되지 않았습니다");
+        alert("내용이 수정되지 않았습니다.");
         return;
       }
       const result = updateComment({
@@ -70,7 +70,7 @@ export default function CommentWriteContainer(
       });
       console.log("질문수정", result);
       props.setIsEdit?.(false);
-      alert("댓글을 수정합니다");
+      alert("댓글을 수정합니다.");
     } catch (error) {
       alert(error);
     }

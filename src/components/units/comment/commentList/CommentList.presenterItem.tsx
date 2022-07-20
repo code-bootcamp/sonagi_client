@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-// import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+// import { useRouter } from "next/router";
 import { getDate } from "../../../../commons/libraries/utils";
 import NestedCommentListContainer from "../../nestedComment/list/NestedCommentList.container";
 import NestedCommentWrite from "../../nestedComment/write/NestedCommentWrite.container";
@@ -18,10 +18,10 @@ export default function CommentListPresenterItem(
   // const [isAnswer, setIsAnswer] = useState(false);
   const [deleteComment] = useMutation(DELETE_COMMENT);
   const [isNested, setIsNested] = useState(false);
-  const [isNestedExist, setIsNestedExist] = useState(false);
+
   // const [mention, setMention] = useState("");
 
-  const onWriteMention = () => {
+  const onWriteAnswer = () => {
     setIsNested(true);
   };
   // const router = useRouter();
@@ -44,9 +44,7 @@ export default function CommentListPresenterItem(
         refetchQueries: [
           {
             query: FETCH_BOARD,
-            variables: {
-              boardID: router.query._id,
-            },
+            variables: { boardID: String(router.query._id) },
           },
         ],
       });
@@ -57,17 +55,23 @@ export default function CommentListPresenterItem(
     console.log("댓글삭제", event);
   };
 
-  useEffect(() => {
-    const active = () => {
-      if (props.data?.fetchBoard?.comments[0].length === 1) {
-        setIsNestedExist(true);
-      } else {
-        setIsNestedExist(false);
-      }
-    };
-    active();
-  }, []);
+  // useEffect(() => {
+  //   const active = () => {
+  //     if (props.data?.fetchBoard?.comments[0].children[0].id !== "") {
+  //       setIsNestedExist(true);
+  //     } else {
+  //       setIsNestedExist(false);
+  //     }
+  //   };
+  //   active();
+  // }, []);
 
+  const [isNestedExist, setIsNestedExist] = useState(false);
+  useEffect(() => {
+    if (props.data?.fetchBoard.comments[0].children[0]?.id !== "") {
+      setIsNestedExist(true);
+    }
+  }, [props.data]);
   return (
     <>
       <S.Wrapper>
@@ -94,7 +98,7 @@ export default function CommentListPresenterItem(
                   onClick={props.onClickLikeComment}
                 />
                 {/* <S.UpCount>325</S.UpCount> */}
-                <S.UpCount>{props.data?.fetchComments.likeCount}</S.UpCount>
+                {/* <S.UpCount>{props.data?.fetchComments.likeCount}</S.UpCount> */}
               </S.WrapUserInfo>
             </S.WrapCommentInfo>
             <S.WrapIcon>
@@ -115,7 +119,7 @@ export default function CommentListPresenterItem(
               <S.AnswerIcon
                 title="대댓글 달기"
                 src="/comment/insert_comment.png"
-                onClick={onWriteMention}
+                onClick={onWriteAnswer}
               />
             </S.WrapIcon>
           </S.WrapInfo>
@@ -140,12 +144,11 @@ export default function CommentListPresenterItem(
             />
           </>
         )}
-        {isNestedExist && (
+        {isNestedExist && <NestedCommentListContainer />}
+        {/* {isNestedExist && (
           <>
             <NestedCommentListContainer el={undefined} />
           </>
-        )}
-        {/* <NestedCommentListContainer /> */}
 
         {/* <NestedCommentListContainer el={props.el.children.id} /> */}
         {/* <AnswerListPresenter el={props.el} /> */}
