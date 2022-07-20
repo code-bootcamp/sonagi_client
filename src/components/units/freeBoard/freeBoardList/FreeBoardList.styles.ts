@@ -59,6 +59,7 @@ export const WrapperBoard = styled.div`
   border: 1px solid #bdbdbd;
   border-radius: 8px;
   margin: 20px 0px 20px 0px;
+  width: 100%;
   cursor: pointer;
 `;
 
@@ -68,14 +69,12 @@ export const Title = styled.div`
   margin-left: 20px;
   color: #484848;
 
-  @media ${breakPoints.mobile} {
+  /* @media ${breakPoints.mobile} {
     font-size: 1.3rem;
-  }
+  } */
 `;
 
 export const WrapInfo = styled.div`
-  display: flex;
-  align-items: center;
   padding-top: 5px;
   margin-left: 20px;
   margin-top: 10px;
@@ -96,18 +95,34 @@ export const Writer = styled.div`
 export const Date = styled.div`
   font-size: 1.2rem;
   color: #7e7e7e;
-  margin-left: 680px;
-  margin-top: 20px;
+  margin-left: 57%;
+  margin-top: 30px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 1.1rem;
+    width: 100%;
+    margin-left: 42%;
+    margin-top: 30px;
+  }
 
   @media ${breakPoints.mobile} {
     font-size: 1.1rem;
+    width: 80%;
+    margin-left: 12%;
+    margin-top: 30px;
   }
+`;
+
+export const DateWrapper = styled.div`
+  width: 50%;
+  margin-right: 1%;
 `;
 
 export const Flex = styled.div`
   display: flex;
   align-items: center;
   margin-left: 15px;
+  width
 `;
 
 export const New = styled.div`
@@ -228,9 +243,27 @@ export const AvatarImg = styled.img`
   width: 90px;
   height: 90px;
   margin-right: 15px;
+  /* @media ${breakPoints.tablet} {
+    width: 11%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 80px;
+    height: 80px;
+  } */
 `;
 
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
+  width: 60%;
+`;
+
+export const MobileColumn = styled.div`
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 100%; */
+    font-size: 1rem;
+  }
 `;

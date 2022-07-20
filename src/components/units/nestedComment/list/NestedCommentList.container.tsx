@@ -12,6 +12,7 @@ export default function NestedCommentListContainer(
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
+
   // console.log(
   //   "대댓글데이터를조회해보자",
   //   data?.fetchBoard.comments[0].children[0].contents
@@ -24,7 +25,7 @@ export default function NestedCommentListContainer(
     try {
       await deleteComment({
         variables: {
-          CommentID: String(props.el?.id),
+          CommentID: data?.fetchBoard.comments[0].children[0].id,
         },
         refetchQueries: [
           {
@@ -52,14 +53,17 @@ export default function NestedCommentListContainer(
     // data?.fetchBoard.comments[0].children[0].contents
 
     <>
-      {data?.fetchBoard?.comments.map((el: { id: any }) => (
-        <NestedCommentListPresenter
-          key={el.id}
-          el={el}
-          DeleteNestedComment={DeleteNestedComment}
-          onClickLikeComment={undefined}
-        />
-      ))}
+      {data?.fetchBoard.comments.map((el) =>
+        el.children.map((answerEL) => (
+          <NestedCommentListPresenter
+            key={answerEL.id}
+            el={props.el}
+            answerEL={answerEL}
+            DeleteNestedComment={DeleteNestedComment}
+            onClickLikeComment={undefined}
+          />
+        ))
+      )}
     </>
   );
 }

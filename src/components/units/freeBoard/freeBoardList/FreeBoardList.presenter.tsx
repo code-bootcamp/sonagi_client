@@ -10,15 +10,7 @@ export default function FreeBoardListPresenter(props: IFreeBoardListPresenter) {
       <S.WrapTitle>
         <S.MainTitle>자유게시판</S.MainTitle>
       </S.WrapTitle>
-      {/* <S.WrapperBoard>
-        <S.Title>글 제목 글 제목 글 제목 글 제목 글 제목</S.Title>
-        <S.WrapInfo>
-          <S.Writer>작성자</S.Writer>
-          <S.Date>2022.07.04</S.Date>
-          <S.Date>조회 12</S.Date>
-          <S.Date>추천 0</S.Date>
-        </S.WrapInfo>
-      </S.WrapperBoard> */}
+
       {props.data?.fetchBoardsAll.map(
         (el: {
           id: React.Key | null | undefined;
@@ -53,12 +45,12 @@ export default function FreeBoardListPresenter(props: IFreeBoardListPresenter) {
               </S.Flex>
               <S.WrapInfo>
                 <S.Writer>{el.user?.nickName}</S.Writer>
-                {/* <S.Writer>작성자</S.Writer> */}
-                {/* <S.Date>{el.viewCount}</S.Date>
-            <S.Date>{el.likeCount}</S.Date> */}
+                {/* <div>{el.viewCount}</div> */}
               </S.WrapInfo>
             </S.Column>
-            <S.Date>{getDate(el.createAt)}</S.Date>
+            <S.DateWrapper>
+              <S.Date>{getDate(el.createAt)}</S.Date>
+            </S.DateWrapper>
           </S.WrapperBoard>
         )
       )}

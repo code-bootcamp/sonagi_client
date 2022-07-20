@@ -75,7 +75,8 @@ export const WrapUserInfo = styled.div`
 `;
 
 export const Name = styled.div`
-  color: #808080;
+  color: #2277d8;
+  font-weight: 800;
   font-size: 1.063rem;
 
   @media ${breakPoints.mobile} {

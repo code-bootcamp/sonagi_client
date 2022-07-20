@@ -58,3 +58,23 @@ export const FETCH_COMMENTS_FROM_BOARD = gql`
     }
   }
 `;
+
+export const FETCH_BOARD = gql`
+  query fetchBoard($boardID: String!) {
+    fetchBoard(boardID: $boardID) {
+      comments {
+        id
+        contents
+        createAt
+        user {
+          id
+          nickName
+        }
+        children {
+          id
+          contents
+        }
+      }
+    }
+  }
+`;

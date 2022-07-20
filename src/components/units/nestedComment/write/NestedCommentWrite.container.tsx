@@ -34,7 +34,7 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
           ],
         },
       });
-      alert("대댓글을 등록합니다");
+      alert("대댓글을 등록합니다.");
       console.log("대댓글write", result);
     } catch (error) {
       alert(error.message);
