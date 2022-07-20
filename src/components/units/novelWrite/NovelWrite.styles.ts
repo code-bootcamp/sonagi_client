@@ -3,9 +3,8 @@ import { breakPoints } from "../../../commons/styles/media";
 import { INovelWriteStyles } from "./NovelWrite.types";
 
 export const Error = styled.div`
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 20px;
-  color: red;
 `;
 
 export const Wrapper = styled.div`
@@ -66,14 +65,22 @@ export const WrapTitle = styled.div`
   align-items: center;
 `;
 
+export const TitleLabelTitle = styled.div`
+  font-size: 1.5rem;
+  font-weight: 500;
+`;
+
 export const TitleLabel = styled.input`
   ::placeholder {
-    color: black;
+    font-weight: 300;
+    font-size: 1.2rem;
   }
-  width: 100%;
-  font-size: 1.5rem;
-  font-weight: bold;
+
+  width: 90%;
+  font-size: 1.2rem;
+  font-weight: 400;
   border: none;
+  padding-left: 15px;
   :focus {
     outline: none;
   }
@@ -85,7 +92,7 @@ export const TitleLabel = styled.input`
 
 export const Label = styled.div`
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 500;
   @media ${breakPoints.mobile} {
     font-size: 1.2rem;
     margin-bottom: 20px;
@@ -110,6 +117,7 @@ export const InputTitle = styled.input`
 export const WrapGenreCycle = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 export const WrapGenre = styled.div`
@@ -127,6 +135,7 @@ export const WrapSelect = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 60px;
+  margin-top: 3px;
   border: 1px solid #b1b1b1;
   width: 230px;
   height: ${(props: INovelWriteStyles) => (props.isSelect ? "100%" : "35px")};

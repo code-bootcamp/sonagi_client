@@ -21,13 +21,17 @@ export default function NovelDetailContainer() {
   const [paidPoint] = useMutation(PAIDPOINT);
   const [switchNovelLike] = useMutation(SWITCH_NOVEL_LIKE);
   const [changePrivateNovelIndex] = useMutation(CHANGE_PRIVATE_NOVEL_INDEX);
-  const { data: detailData } = useQuery(FETCH_NOVEL_DETAIL, {
-    variables: { novelID: router.query._id },
-  });
   const { data: LoginData } = useQuery(FETCH_LOGIN_USER);
 
-  console.log("디테일", detailData?.fetchNovelDetail.user.id);
-  console.log("로그인", LoginData?.fetchLoginUser.id);
+  const { data: detailData } = useQuery(FETCH_NOVEL_DETAIL, {
+    variables: {
+      novelID: router.query._id,
+      userEmail: LoginData?.fetchLoginUser.email,
+    },
+  });
+
+  // console.log("디테일", detailData);
+  // console.log("로그인", LoginData?.fetchLoginUser.id);
 
   // 소설 삭제
   const onClickDelete = async () => {
@@ -45,7 +49,6 @@ export default function NovelDetailContainer() {
   // 회차 읽기
   const onClickMoveToRead = (event: MouseEvent<HTMLDivElement>) => {
     router.push(`/novel/${router.query._id}/${event.currentTarget.id}`);
-    console.log(event.target);
   };
 
   // 회차 쓰기
@@ -58,6 +61,15 @@ export default function NovelDetailContainer() {
     try {
       await paidPoint({
         variables: { novelIndexID: event.currentTarget.id },
+        refetchQueries: [
+          {
+            query: FETCH_NOVEL_DETAIL,
+            variables: {
+              novelID: router.query._id,
+              userEmail: LoginData?.fetchLoginUser.email,
+            },
+          },
+        ],
       });
 
       alert("결제 성공");
@@ -93,7 +105,7 @@ export default function NovelDetailContainer() {
         ],
       });
 
-      console.log("선호작", result);
+      // console.log("선호작", result);
       alert(result.data?.switchNovelLike.msg);
       setIsSubmitting(false);
     } catch (error) {
@@ -113,7 +125,7 @@ export default function NovelDetailContainer() {
           },
         ],
       });
-      console.log(result);
+      // console.log(result);
       alert(result.data?.deleteNovelIndex.msg);
     } catch (error) {
       alert(error);
@@ -128,10 +140,10 @@ export default function NovelDetailContainer() {
   // 에피소드 비공개
   const onClickPrivate = async (event: MouseEvent<HTMLDivElement>) => {
     try {
-      const result = await changePrivateNovelIndex({
+      await changePrivateNovelIndex({
         variables: { novelIndexID: event.currentTarget.id },
       });
-      console.log(result);
+      // console.log(result);
       alert("비공개");
       setSwitchPrivate(true);
     } catch (error) {
@@ -140,7 +152,7 @@ export default function NovelDetailContainer() {
   };
 
   // 1권 부터
-  const [isFirst, setIsFirst] = useState(false);
+  const [isFirst, setIsFirst] = useState(true);
   const onClickFirst = () => {
     setIsFirst((prev) => !prev);
   };

@@ -41,9 +41,10 @@ export default function NovelWritePresenter(props: INovelWritePresenterProps) {
         </S.WrapHeader>
         <S.WrapperLavel>
           <S.WrapTitle>
+            <S.Label>제목</S.Label>
             <S.TitleLabel
               type="text"
-              placeholder="작품 제목"
+              placeholder="작품 제목을 입력해주세요"
               {...props.register("title")}
               defaultValue={props.editData?.fetchNovelDetail.title}
             />

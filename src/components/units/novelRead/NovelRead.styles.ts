@@ -53,7 +53,7 @@ export const BodyWrapper = styled.pre`
   white-space: pre-wrap;
   word-break: break-all;
   overflow: auto;
-
+  margin: 0;
   @media (min-width: 767px) and (max-width: 991px) {
     min-width: 767px;
     max-width: 991px;
