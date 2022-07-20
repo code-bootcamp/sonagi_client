@@ -306,10 +306,11 @@ export const TableLine = styled.div`
 
 export const TableTop = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 export const Borrow = styled.div`
-  width: 560px;
+  width: 50%;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -318,7 +319,7 @@ export const Borrow = styled.div`
 `;
 
 export const Get = styled.div`
-  width: 560px;
+  width: 50%;
   height: 40px;
   display: flex;
   justify-content: center;
