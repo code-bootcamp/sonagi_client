@@ -58,7 +58,16 @@ export const Buttons = styled.div`
 
 export const LookButtonWrapper = styled.div`
   padding-top: 20px;
+  width: 530px;
   display: flex;
+  justify-content: space-between;
+`;
+
+export const LookButtonWrapper2 = styled.div`
+  padding-top: 20px;
+  width: 340px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Count = styled.div`
@@ -125,7 +134,7 @@ export const Tags = styled.div`
   background-color: #ffffff;
   margin-right: 15px;
   color: #2277d2;
-  font-weight: 600;
+  font-weight: 400;
 `;
 
 export const WriterFont = styled.div`
@@ -367,6 +376,12 @@ export const TableDottedLine = styled.div`
 
 export const LookWrapper = styled.div`
   display: flex;
+  align-items: center;
+`;
+
+export const LookContent = styled.div`
+  padding-left: 45px;
+  padding-right: 2px;
 `;
 
 export const TableSonWrapper = styled.div`
@@ -423,6 +438,7 @@ export const LookBtn = styled.div`
   color: #484848;
   border: 1px solid #bdbdbd;
   cursor: pointer;
+  margin: 0 15px;
 `;
 
 export const FooterLabel = styled.div`
@@ -430,5 +446,5 @@ export const FooterLabel = styled.div`
   padding-bottom: 10px;
   font-weight: 500;
   color: #58667a;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 1.5px solid #d9d9d9;
 `;

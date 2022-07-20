@@ -6,13 +6,12 @@ const Button = styled.button`
   color: #ffffff;
   width: 160px;
   height: 60px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.25rem;
   border: none;
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
-  margin-left: 35px;
 
   @media ${breakPoints.mobile} {
     width: 100px;

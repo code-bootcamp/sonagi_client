@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 const Button = styled.button`
-  background-color: #828282;
+  background-color: #c8c8c8;
   color: #ffffff;
   width: 160px;
   height: 60px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.25rem;
   border: none;
   border-radius: 8px;

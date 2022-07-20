@@ -7,6 +7,7 @@ import DetailCommentListContainer from "../novelDetailComment/commentList/Commen
 import DonatePage from "../../commons/modal/donatePayments";
 import { INovelDetailPresenterProps } from "./NovelDetail.types";
 import Button04 from "../../commons/buttons/04";
+import Button02 from "../../commons/buttons/02";
 
 export default function NovelDetailPresenter(
   props: INovelDetailPresenterProps
@@ -78,17 +79,32 @@ export default function NovelDetailPresenter(
               </S.Flexs>
             </S.ProfileWrapper>
             <S.Line />
-            <S.LookButtonWrapper>
-              <Button04 title="첫화보기" onClick={props.onClickFirstView} />
-              {/* <Button01 title="이어보기" /> */}
-              <Button01 onClick={props.onClickDonate} title="후원하기" />
-              {props.isDonate && (
-                <DonatePage
-                  onClickDonate={props.onClickDonate}
-                  novelID={props.novelID}
+            {props.detailData?.fetchNovelDetail.user.id ===
+            props.LoginData?.fetchLoginUser.id ? (
+              <S.LookButtonWrapper>
+                <Button02
+                  title="삭제하기"
+                  onClick={props.onClickDelete}
+                ></Button02>
+                <Button04 title="수정하기" onClick={props.onClickEdit} />
+                <Button01
+                  title="회차작성"
+                  onClick={props.onClickMoveToVolumeWrite}
                 />
-              )}
-            </S.LookButtonWrapper>
+              </S.LookButtonWrapper>
+            ) : (
+              <S.LookButtonWrapper2>
+                <Button04 title="첫화보기" onClick={props.onClickFirstView} />
+                {/* <Button01 title="이어보기" /> */}
+                <Button01 onClick={props.onClickDonate} title="후원하기" />
+                {props.isDonate && (
+                  <DonatePage
+                    onClickDonate={props.onClickDonate}
+                    novelID={props.novelID}
+                  />
+                )}
+              </S.LookButtonWrapper2>
+            )}
           </S.ColumnWrapper>
         </S.FlexWrapper>
         <div>
@@ -158,7 +174,7 @@ export default function NovelDetailPresenter(
                     <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
                       보기
                     </S.LookBtn>
-                    <div
+                    <S.LookContent
                       id={el.id}
                       // checkedChildren="공개"
                       // unCheckedChildren="비공개"
@@ -166,7 +182,7 @@ export default function NovelDetailPresenter(
                       onClick={props.onClickPrivate}
                     >
                       공개
-                    </div>
+                    </S.LookContent>
                   </S.LookWrapper>
                 </S.TableLineWrapper>
               ))
@@ -195,24 +211,26 @@ export default function NovelDetailPresenter(
                     </S.WrapDate>
                   </S.TableSonWrapper>
                 </S.WrapFirst>
-                <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
-                  삭제
-                </S.LookBtn>
-                <S.LookBtn id={el.id} onClick={props.onClickPayment}>
-                  구매
-                </S.LookBtn>
-                <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
-                  보기
-                </S.LookBtn>
-                <div
-                  id={el.id}
-                  // checkedChildren="공개"
-                  // unCheckedChildren="비공개"
-                  // defaultChecked
-                  onClick={props.onClickPrivate}
-                >
-                  공개
-                </div>
+                <S.LookWrapper>
+                  <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
+                    삭제
+                  </S.LookBtn>
+                  <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+                    구매
+                  </S.LookBtn>
+                  <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                    보기
+                  </S.LookBtn>
+                  <S.LookContent
+                    id={el.id}
+                    // checkedChildren="공개"
+                    // unCheckedChildren="비공개"
+                    // defaultChecked
+                    onClick={props.onClickPrivate}
+                  >
+                    공개
+                  </S.LookContent>
+                </S.LookWrapper>
               </S.TableLineWrapper>
             ))}
           </>
@@ -241,28 +259,9 @@ export default function NovelDetailPresenter(
             ""
           )}
         </S.NovelRemarks>
-
         <S.FooterLabel>리뷰</S.FooterLabel>
         <DetailCommentWriteContainer />
         <DetailCommentListContainer />
-
-        <div
-          style={{ color: "white", backgroundColor: "blue" }}
-          onClick={props.onClickMoveToVolumeWrite}
-        >
-          회차 쓰러가기
-        </div>
-
-        <img
-          src="/comment/delete.png"
-          style={{ width: "30px", height: "30px" }}
-          onClick={props.onClickDelete}
-        />
-        <img
-          src="/comment/edit.png"
-          style={{ width: "30px", height: "30px" }}
-          onClick={props.onClickEdit}
-        />
       </div>
     </div>
   );
