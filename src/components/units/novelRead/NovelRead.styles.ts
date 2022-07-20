@@ -45,6 +45,7 @@ export const BodyWrapper = styled.pre`
   padding: 30px;
   display: flex;
   flex-direction: row;
+  font-family: RIDIbatang, serif;
   /* background-color: #ffd2dd; */
   font-size: ${(props) => props.fontsize}rem;
   white-space: pre-wrap;

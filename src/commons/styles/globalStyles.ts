@@ -21,4 +21,9 @@ export const globalStyles = css`
   * {
     box-sizing: border-box;
   }
+
+  @font-face {
+    font-family: "RIDIbatang";
+    src: url("/fonts/RIDIBAtang.otf");
+  }
 `;

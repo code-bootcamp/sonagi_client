@@ -38,7 +38,6 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
               <S.SettingImg src="/novelRead/setting.png" />
             </S.RightWrapper>
           </S.HeadWrapper>
-
           <S.BodyWrapper fontsize={props.size} onClick={props.onClickDisplay}>
             {typeof window !== "undefined" ? (
               <div
