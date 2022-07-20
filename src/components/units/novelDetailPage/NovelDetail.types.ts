@@ -1,6 +1,7 @@
 import { MouseEvent } from "react";
 
 export interface INovelDetailPresenterProps {
+  setIsDonate: any;
   LoginData: any;
   novelID: any;
   detailData?: any;
