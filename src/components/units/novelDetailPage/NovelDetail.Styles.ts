@@ -1,11 +1,33 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
+
+export const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 150px;
+`;
+
+export const WrapImage = styled.div`
+  width: 250px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    align-self: center;
+  }
+`;
 
 export const Genre = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column-reverse;
+  }
 `;
+
 export const LeftWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -65,9 +87,54 @@ export const LookButtonWrapper = styled.div`
 
 export const LookButtonWrapper2 = styled.div`
   padding-top: 20px;
-  width: 340px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+
+  @media ${breakPoints.mobile} {
+    /* padding-top: 56px; */
+    width: 100%;
+    justify-content: center;
+  }
+`;
+
+export const Button4 = styled.button`
+  background-color: #ffffff;
+  color: #2277d8;
+  width: 160px;
+  height: 60px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  border: 1px solid #2277d8;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 60px;
+
+  @media ${breakPoints.mobile} {
+    width: 160px;
+    height: 60px;
+    font-size: 1.25rem;
+    margin-right: 60px;
+  }
+`;
+
+export const Button1 = styled.button`
+  background-color: #2277d8;
+  color: #ffffff;
+  width: 160px;
+  height: 60px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 160px;
+    height: 60px;
+    font-size: 1.25rem;
+  }
 `;
 
 export const Count = styled.div`
@@ -125,10 +192,25 @@ export const NovelRemarks = styled.div`
 export const TagsWrapper = styled.div`
   display: flex;
   padding: 15px 0 100px 0;
+
+  @media (min-width: 500px) and (max-width: 767px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+  }
+
+  @media (min-width: 350px) and (max-width: 499px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 8fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+  }
 `;
 
 export const Tags = styled.div`
   border-radius: 8px;
+  width: 80px;
   border: 1px solid #2277d2;
   padding: 5px;
   background-color: #ffffff;
@@ -144,8 +226,18 @@ export const WriterFont = styled.div`
 `;
 
 export const NovelImage = styled.img`
-  width: 230px;
-  height: 310px;
+  width: 250px;
+
+  /* aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  vertical-align: middle; */
+
+  @media ${breakPoints.mobile} {
+    width: 60%;
+    margin-bottom: 50px;
+    align-self: center;
+  }
 `;
 
 export const SmallArrow = styled.img`
@@ -159,15 +251,29 @@ export const TopWrapper = styled.div`
 `;
 
 export const ColumnWrapper = styled.div`
+  width: 80%;
   display: flex;
   flex-direction: column;
   padding-left: 70px;
+
+  @media ${breakPoints.mobile} {
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+  }
 `;
 
 export const FlexWrapper = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
-  padding: 60px 0px;
+  padding: 60px 0;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 30px;
+  }
 `;
 
 export const Divs = styled.div`
@@ -200,7 +306,7 @@ export const ProfileWrapper = styled.div`
 
 export const Line = styled.div`
   border-bottom: 1px solid #d9d9d9;
-  width: 820px;
+  width: 100%;
   margin: 30px 0 3px 0;
   cursor: pointer;
 `;
@@ -285,6 +391,11 @@ export const HeartWrapper = styled.button`
   :hover {
     background-color: #e5e8eb;
   }
+
+  @media ${breakPoints.mobile} {
+    align-self: center;
+    margin-bottom: 30px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -307,6 +418,15 @@ export const MiddelButton = styled.div`
   background-color: #2277d8;
   color: white;
   margin-right: 25px;
+`;
+
+export const WrapBody = styled.div`
+  width: 100%;
+
+  @media ${breakPoints.mobile} {
+    width: 96%;
+    margin: 0 2%;
+  }
 `;
 
 export const TableLine = styled.div`
@@ -440,6 +560,14 @@ export const LookBtn = styled.div`
   border: 1px solid #bdbdbd;
   cursor: pointer;
   margin: 0 15px;
+`;
+
+export const WrapFooter = styled.div`
+  width: 100%;
+
+  @media ${breakPoints.mobile} {
+    padding: 0 20px;
+  }
 `;
 
 export const FooterLabel = styled.div`
