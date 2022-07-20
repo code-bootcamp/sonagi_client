@@ -30,7 +30,14 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
               </S.SubTitle>
             </S.TitleWrapper>
             <S.RightWrapper>
-              <S.SettingImg src="/novelRead/heart.png" />
+              <S.SettingImg
+                onClick={props.onClickLike}
+                src={
+                  props.Heartlist?.includes(props.NovelId)
+                    ? "/novelDetail/heart.png"
+                    : "/novelRead/heart.png"
+                }
+              />
               <S.SettingImg
                 src="/novelRead/bookmark.png"
                 onClick={props.onClickBookMark}

@@ -39,3 +39,24 @@ export const FETCH_EPISODE_REVIEW_PAGE = gql`
     }
   }
 `;
+
+export const SWITCH_NOVEL_LIKE = gql`
+  mutation switchNovelLike($novelID: String!) {
+    switchNovelLike(novelID: $novelID) {
+      id
+      msg
+      isSuccess
+    }
+  }
+`;
+
+export const FETCH_NOVEL_LIKE_IN_USER = gql`
+  query fetchNovelLikeInUser {
+    fetchNovelLikeInUser {
+      id
+      novel {
+        id
+      }
+    }
+  }
+`;

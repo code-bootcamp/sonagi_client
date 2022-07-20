@@ -6,6 +6,8 @@ import {
   FETCH_EPISODE_DETAIL,
   FETCH_EPISODE_REVIEW_PAGE,
   FETCH_NOVEL_DETAIL,
+  FETCH_NOVEL_LIKE_IN_USER,
+  SWITCH_NOVEL_LIKE,
   TOGGLE_BOOK_MARK,
 } from "./NovelRead.queries";
 import { Iel } from "./NovelRead.types";
@@ -15,16 +17,18 @@ export default function NovelReadContainer() {
   const [setDisplay, setIsDisplay] = useState(false);
   // 북마크
   const [toggleBookmark] = useMutation(TOGGLE_BOOK_MARK);
+  // 찜하기
+  const [switchNovelLike] = useMutation(SWITCH_NOVEL_LIKE);
   const { data: readData } = useQuery(FETCH_EPISODE_DETAIL, {
     variables: { novelIndexID: router.query.volume_id },
   });
   const { data: novelData } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
   });
-
   const { data: commentData } = useQuery(FETCH_EPISODE_REVIEW_PAGE, {
     variables: { episodeID: router.query.volume_id, page: 1 },
   });
+  const { data: likeData } = useQuery(FETCH_NOVEL_LIKE_IN_USER);
 
   const onClickMoveToMain = () => {
     router.push("/");
@@ -75,6 +79,30 @@ export default function NovelReadContainer() {
       alert("북마크 성공!");
     } catch (error: any) {
       alert(error.message);
+    }
+  };
+
+  // 선호작 등록하기
+
+  const HeartList = likeData?.fetchNovelLikeInUser.map((el) => el.novel.id);
+  const NovelId = router.query._id;
+  console.log(NovelId);
+
+  const onClickLike = async () => {
+    try {
+      const result = await switchNovelLike({
+        variables: {
+          novelID: router.query._id,
+        },
+        refetchQueries: [
+          {
+            query: FETCH_NOVEL_LIKE_IN_USER,
+          },
+        ],
+      });
+      alert(result.data?.switchNovelLike.msg);
+    } catch (error) {
+      alert(error);
     }
   };
 
@@ -136,6 +164,10 @@ export default function NovelReadContainer() {
       commentData={commentData}
       // 우클릭 방지
       onClickRight={onClickRight}
+      // 선호작
+      onClickLike={onClickLike}
+      HeartList={HeartList}
+      NovelId={NovelId}
       // 세팅으로
       // onClickSetting={onClickSetting}
       // setting={setting}
