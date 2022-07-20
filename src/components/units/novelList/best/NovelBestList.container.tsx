@@ -29,7 +29,6 @@ export default function NovelBestListContainer() {
           },
         ],
       });
-      refetch();
       console.log(el.id);
       console.log(result);
       alert("선호작 등록!!");
@@ -37,7 +36,7 @@ export default function NovelBestListContainer() {
       alert(error.message);
     }
   };
-  const { data, refetch } = useQuery(FETCH_NOVELS_PAGE, {
+  const { data } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
       fetchNovelInput: {
         type: "ALL",

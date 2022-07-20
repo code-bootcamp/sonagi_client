@@ -18,10 +18,14 @@ export default function LikeNovelContainer() {
         variables: {
           novelLikeID: String(el.id),
         },
+        refetchQueries: [
+          {
+            query: FETCH_NOVEL_LIKE,
+          },
+        ],
       });
       console.log(result);
       alert("찜 취소 완료");
-      window.location.replace("/myPage/likeNovel");
     } catch (error) {
       console.log(error);
     }
