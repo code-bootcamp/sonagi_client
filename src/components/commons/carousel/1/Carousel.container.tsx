@@ -48,6 +48,8 @@ export default function CarouselContainer() {
     },
   });
 
+  console.log(TodayData);
+
   const onClickNovelDetail = (el) => () => {
     router.push(`/novel/${el.id}`);
   };

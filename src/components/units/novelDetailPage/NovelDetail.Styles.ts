@@ -119,12 +119,12 @@ export const TagsWrapper = styled.div`
 `;
 
 export const Tags = styled.div`
-  border-radius: 4px;
-  border: 1px solid gray;
+  border-radius: 8px;
+  border: 1px solid #2277d2;
   padding: 5px;
-  background-color: #f3f4f5;
+  background-color: #ffffff;
   margin-right: 15px;
-  color: #767676;
+  color: #2277d2;
   font-weight: 600;
 `;
 
