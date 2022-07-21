@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    padding: 100px 0px 100px 0;
+  }
 `;
 
 export const Title = styled.div`
