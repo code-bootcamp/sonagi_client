@@ -41,8 +41,8 @@ export const BestComment = styled.div`
 `;
 
 export const WrapInfo = styled.div`
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   padding: 10px;
   height: 100px;
   border-bottom: 1.5px solid #d9d9d9;
@@ -54,31 +54,43 @@ export const ProfileIcon = styled.img`
 `;
 
 export const WrapCommentInfo = styled.div`
+  width: 100%;
   display: flex;
 `;
 
 export const Comment = styled.div`
+  width: 100%;
   color: #484848;
   font-size: 1.1rem;
+  word-break: break-all;
 
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;
+    margin-right: 4px;
   }
 `;
 
 export const WrapUserInfo = styled.div`
+  width: 140px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `;
 
 export const Star = styled(Rate)`
-  font-size: 15px;
+  font-size: 0.9rem;
   color: #2277d8;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.6rem;
+  }
 `;
 
 export const WrapComment = styled.div`
+  width: 70%;
   padding-left: 30px;
+  overflow: hidden;
+  word-wrap: break-word;
 `;
 
 export const Name = styled.div`
@@ -137,12 +149,13 @@ export const UpCount = styled.div`
 export const WrapIconUP = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-between;
 `;
 
 export const WrapIcon = styled.div`
+  height: 100%;
   display: flex;
+  align-items: flex-end;
 `;
 
 export const EditIcon = styled.div`
@@ -160,9 +173,9 @@ export const EditIcon = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 60px;
+    width: 50px;
     height: 30px;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 `;
 
@@ -183,9 +196,9 @@ export const DeleteIcon = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 60px;
+    width: 50px;
     height: 30px;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 `;
 

@@ -31,7 +31,7 @@ export default function NovelDetailContainer() {
     },
   });
 
-  console.log("디테일", detailData);
+  // console.log("디테일", detailData);
   // console.log("로그인", LoginData?.fetchLoginUser.id);
 
   // 소설 삭제

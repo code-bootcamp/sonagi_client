@@ -8,13 +8,12 @@ import { useState } from "react";
 import { message } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
 
+const Wrapper = styled.div``;
+
 const PayMentWrapper = styled.div`
   width: 464px;
   border-radius: 20px;
-  position: absolute;
   background-color: #ffffff;
-  top: 100px;
-  left: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,9 +21,17 @@ const PayMentWrapper = styled.div`
   padding: 20px;
   border: 1px solid #cccccc;
   z-index: 50;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
   @media ${breakPoints.mobile} {
-    margin-right: 2%;
+    width: 350px;
   }
 `;
 
@@ -39,24 +46,36 @@ const MoneyButton = styled.div`
   margin-bottom: 25px;
   border-radius: 10px;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 55%;
+  }
 `;
 
 const CancelImg = styled.img`
   width: 20px;
-  margin-left: 400px;
+  align-self: flex-end;
   cursor: pointer;
 `;
 
 const Title = styled.div`
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 29px;
   text-align: center;
   padding: 30px 0px 10px 0px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 const SubTitle = styled.div`
   padding-bottom: 20px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 const Contents = styled.input`
@@ -70,6 +89,10 @@ const Contents = styled.input`
 
   &:focus {
     outline: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 70%;
   }
 `;
 
@@ -125,21 +148,22 @@ export default function DonatePage(props) {
       console.log(result);
       // alert("후원 감사합니데이~~!");
       message.info("후원감사합니다");
+      props.setIsDonate(false);
     } catch (error) {
       alert(error.message);
     }
   };
 
   return (
-    <>
+    <Wrapper>
       <Overlay onClick={handleCancel} />
       <PayMentWrapper>
-        <CancelImg onClick={handleCancel} src="/modal/delete.png"></CancelImg>
+        <CancelImg onClick={handleCancel} src="/modal/delete.png" />
         <Title>작가와 소설을 후원하시겠습니까?</Title>
         <SubTitle>후원 금액을 입력해주세요</SubTitle>
         <Contents type="text" onChange={onChangeDonate} />
         <MoneyButton onClick={onClickDonate}>후원하기</MoneyButton>
       </PayMentWrapper>
-    </>
+    </Wrapper>
   );
 }

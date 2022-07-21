@@ -8,6 +8,7 @@ export const FETCH_NOVEL_DETAIL = gql`
       description
       likeCount
       viewCount
+      isFinish
       createAt
       updateAt
       cycle
