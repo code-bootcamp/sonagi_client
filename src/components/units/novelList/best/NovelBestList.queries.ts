@@ -48,3 +48,11 @@ export const FETCH_NOVEL_LIKE = gql`
     }
   }
 `;
+
+export const DELETE_NOVEL_LIKE = gql`
+  mutation deleteNovelLike($novelLikeID: String!) {
+    deleteNovelLike(novelLikeID: $novelLikeID) {
+      id
+    }
+  }
+`;

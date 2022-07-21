@@ -11,6 +11,7 @@ export default function NovelBestListContainer() {
   const router = useRouter();
 
   const [createNovelLike] = useMutation(CREATE_NOVEL_LIKE);
+  // const [deleteNovelLike] = useMutation(DELETE_NOVEL_LIKE);
   const { data: LikeNovel } = useQuery(FETCH_NOVEL_LIKE);
   const { data } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -60,6 +61,36 @@ export default function NovelBestListContainer() {
     }
   };
 
+  // const onClickDeleteLike = (el) => async () => {
+  //   console.log(el);
+  //   try {
+  //     const result = await deleteNovelLike({
+  //       variables: {
+  //         novelLikeID: el.id,
+  //       },
+  //       // refetchQueries: [
+  //       //   {
+  //       //     query: FETCH_NOVELS_PAGE,
+  //       //     variables: {
+  //       //       fetchNovelInput: {
+  //       //         type: "ALL",
+  //       //         target: "",
+  //       //         order: "LIKE",
+  //       //         isFinish: "ALL",
+  //       //         page: 1,
+  //       //       },
+  //       //     },
+  //       //   },
+  //       // ],
+  //     });
+  //     console.log(el.id);
+  //     console.log(result);
+  //     alert("선호작 취소!");
+  //   } catch (error) {
+  //     alert((error as Error).message);
+  //   }
+  // };
+
   const onClickMoveToDetail = (el) => (event: any) => {
     router.push(`/novel/${event.currentTarget.id}`);
     const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
@@ -83,6 +114,7 @@ export default function NovelBestListContainer() {
     <NovelBestListPresenter
       data={data}
       onClickLike={onClickLike}
+      // onClickDeleteLike={onClickDeleteLike}
       onClickMoveToDetail={onClickMoveToDetail}
       HeartList={HeartList}
     />

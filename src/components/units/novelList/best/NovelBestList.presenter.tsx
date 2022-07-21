@@ -35,8 +35,14 @@ export default function NovelBestListPresenter(props: INovelBestListUIProps) {
                     <S.HeartImg
                       el={el.id}
                       HeartList={props.HeartList}
+                      // onClick={
+                      //   props.HeartList
+                      //     ? props.onClickDeleteLike(el)
+                      //     : props.onClickLike(el)
+                      // }
                       onClick={props.onClickLike(el)}
                     />
+                    {/* {console.log(el)} */}
                   </S.RowWrap2>
                   <S.Contents
                     dangerouslySetInnerHTML={{
