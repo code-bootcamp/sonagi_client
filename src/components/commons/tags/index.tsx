@@ -117,7 +117,7 @@ export default function Tags(props) {
         <Inputs
           ref={inputRef}
           type="text"
-          size="small"
+          size="middle"
           className="tag-input"
           value={inputValue}
           onChange={handleInputChange}
@@ -130,11 +130,13 @@ export default function Tags(props) {
           className="site-tag-plus"
           onClick={showInput}
           style={{
-            backgroundColor: "gray",
+            backgroundColor: "#ffffff",
             borderRadius: 10,
-            color: "white",
+            border: "1px solid #2277d2",
+            color: "#2277d2",
             padding: "6px 13px",
             margin: "0 10px",
+            cursor: "pointer",
           }}
         >
           <PlusOutlined /> 태그
