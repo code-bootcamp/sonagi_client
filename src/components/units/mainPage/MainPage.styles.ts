@@ -59,6 +59,12 @@ export const PhoneSubImg = styled.img`
   margin-top: 480px;
   margin-left: -390px;
 
+  &:hover {
+    width: 140px;
+    height: 140px;
+    transition: 0.5s;
+  }
+
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;
   }
@@ -74,6 +80,12 @@ export const PhoneSubImg2 = styled.img`
   position: absolute;
   margin-top: 480px;
   margin-left: 390px;
+
+  &:hover {
+    width: 140px;
+    height: 140px;
+    transition: 0.5s;
+  }
 
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;
@@ -91,6 +103,12 @@ export const PhoneSubImg3 = styled.img`
   margin-top: 300px;
   margin-left: -320px;
 
+  &:hover {
+    width: 140px;
+    height: 140px;
+    transition: 0.5s;
+  }
+
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;
   }
@@ -106,6 +124,12 @@ export const PhoneSubImg4 = styled.img`
   position: absolute;
   margin-top: 300px;
   margin-left: 320px;
+
+  &:hover {
+    width: 140px;
+    height: 140px;
+    transition: 0.5s;
+  }
 
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;

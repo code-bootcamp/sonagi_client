@@ -1,3 +1,4 @@
+import { MouseEventHandler } from "react";
 import {
   FieldValues,
   FormState,
@@ -6,6 +7,7 @@ import {
 } from "react-hook-form";
 
 export interface IVolumeWritePresenterProps {
+  onClickRule: MouseEventHandler<HTMLInputElement> | undefined;
   onClickMoveToPage: any;
   onClickSubmit: any;
   formState: FormState<FieldValues>;

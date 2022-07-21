@@ -21,10 +21,15 @@ export const MySlide = styled(Slider)`
 `;
 
 export const BookImg = styled.img`
-  width: 12.5vw;
   height: 250px;
   cursor: pointer;
   padding: 0px 10px;
+
+  &:hover {
+    padding: 0 5px;
+    height: 260px;
+    transition: 0.5s;
+  }
 
   @media ${breakPoints.tablet} {
     width: 100%;
@@ -32,7 +37,12 @@ export const BookImg = styled.img`
 
   @media ${breakPoints.mobile} {
     width: 100%;
-    height: 220px;
+    height: 270px;
+
+    &:hover {
+      height: 280px;
+      transition: 0.5s;
+    }
   }
 `;
 

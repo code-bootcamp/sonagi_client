@@ -73,11 +73,13 @@ export default function VolumeWritePresenter(
         <S.WrapIntroduce>
           <S.Label>내용</S.Label>
           {/* <S.IntroduceInput type="text" {...props.register("contents")} /> */}
-          <ToastUi
-            onChangeDescription={props.onChangeDescription}
-            editorRef={props.editorRef}
-            // initialValue={props.productData?.fetchUseditem.contents}
-          />
+          <S.UiWrapper>
+            <ToastUi
+              onChangeDescription={props.onChangeDescription}
+              editorRef={props.editorRef}
+              // initialValue={props.productData?.fetchUseditem.contents}
+            />
+          </S.UiWrapper>
         </S.WrapIntroduce>
         <S.Error>{props.formState.errors.contents?.message}</S.Error>
         <S.WrapperWriterSay>
@@ -90,10 +92,10 @@ export default function VolumeWritePresenter(
             <S.RuleText>완결 (작품페이지에 완결로 노출됩니다.)</S.RuleText>
           </S.WrapRule>
           <S.WrapRule>
-            <S.CheckButtonFoot type="checkbox" />
+            <S.CheckButtonFoot type="checkbox" onClick={props.onClickRule} />
             <S.WrapRuleText>
               <S.RuleText>운영원칙에 동의합니다</S.RuleText>
-              <S.MoveRule> 운영원칙보기</S.MoveRule>
+              <S.MoveRule>운영원칙보기</S.MoveRule>
             </S.WrapRuleText>
           </S.WrapRule>
         </S.WrapperRule>
