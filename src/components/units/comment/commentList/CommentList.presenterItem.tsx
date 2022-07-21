@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 // import { useRouter } from "next/router";
 import { getDate } from "../../../../commons/libraries/utils";
 import NestedCommentListContainer from "../../nestedComment/list/NestedCommentList.container";
@@ -51,12 +51,12 @@ export default function CommentListPresenterItem(
     console.log("댓글삭제", event);
   };
 
-  const [isNestedExist, setIsNestedExist] = useState(false);
-  useEffect(() => {
-    if (props.CommentData?.fetchBoard.comments[0].children[0]?.id !== "") {
-      setIsNestedExist(true);
-    }
-  }, [props.CommentData]);
+  // const [isNestedExist, setIsNestedExist] = useState(false);
+  // useEffect(() => {
+  //   if (props.CommentData?.fetchBoard.comments[0].children[0]?.id !== "") {
+  //     setIsNestedExist(true);
+  //   }
+  // }, [props.CommentData]);
 
   return (
     <>
@@ -137,7 +137,11 @@ export default function CommentListPresenterItem(
             />
           </>
         )}
-        {isNestedExist && <NestedCommentListContainer />}
+        {/* {isNestedExist && <NestedCommentListContainer />} */}
+        <NestedCommentListContainer
+          el={props.el}
+          CommentData={props.CommentData}
+        />
         {/* {isNestedExist && (
           <>
             <NestedCommentListContainer el={undefined} />

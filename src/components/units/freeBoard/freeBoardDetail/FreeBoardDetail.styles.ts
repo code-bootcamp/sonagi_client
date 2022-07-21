@@ -73,11 +73,13 @@ export const WriterDefault = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 1.5em;
+  font-size: 1.7em;
+  margin-top: 10px;
   font-weight: 700;
   /* padding: 64px 0px 24px; */
   @media ${breakPoints.tablet} {
-    font-size: 1.14em;
+    font-size: 1.6em;
+    margin-top: 10px;
   }
 
   @media ${breakPoints.mobile} {
@@ -102,9 +104,11 @@ export const Date = styled.div`
   font-size: 1rem;
   text-align: center;
   color: #808080;
+  width: 100%;
 
   @media ${breakPoints.tablet} {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    width: 120%;
   }
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;
@@ -136,6 +140,12 @@ export const Contents = styled.div`
 
 export const InnerContents = styled.div`
   margin-top: 20px;
+  width: 60%;
+  font-size: 1.4rem;
+  @media ${breakPoints.tablet} {
+    font-size: 18px;
+    margin-top: 10px;
+  }
   @media ${breakPoints.mobile} {
     font-size: 18px;
     margin-top: 10px;

@@ -37,6 +37,7 @@ export default function NestedCommentListContainer(
     }
   };
 
+  console.log("this is p el", props.el);
   return (
     // <>
     //   {data?.fetchCommentsFromBoard.map((el) => (
@@ -49,18 +50,31 @@ export default function NestedCommentListContainer(
     // </>
     // data?.fetchBoard.comments[0].children[0].contents
 
+    // 이전
     <>
-      {data?.fetchBoard.comments.map((el) =>
-        el.children.map((answerEL: { id: Key | null | undefined }) => (
-          <NestedCommentListPresenter
-            key={answerEL.id}
-            el={props.el}
-            answerEL={answerEL}
-            DeleteNestedComment={DeleteNestedComment}
-            onClickLikeComment={undefined}
-          />
-        ))
-      )}
+      {props.el.children.map((answerEL: { id: Key | null | undefined }) => (
+        <NestedCommentListPresenter
+          key={answerEL.id}
+          answerEL={answerEL}
+          DeleteNestedComment={DeleteNestedComment}
+          onClickLikeComment={undefined}
+          el={props.el}
+        />
+      ))}
     </>
   );
 }
+
+// <>
+// {data?.fetchBoard.comments.map((el) =>
+//   el.children.map((answerEL: { id: Key | null | undefined }) => (
+//     <NestedCommentListPresenter
+//       key={answerEL.id}
+//       el={props.el}
+//       answerEL={answerEL}
+//       DeleteNestedComment={DeleteNestedComment}
+//       onClickLikeComment={undefined}
+//     />
+//   ))
+// )}
+// </>

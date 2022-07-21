@@ -14,6 +14,9 @@ export default function CommentListContainer() {
   const { data: CommentData } = useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
+  const { data: NestedData } = useQuery(FETCH_BOARD, {
+    variables: { boardID: router.query._id },
+  });
   // const { data } = useQuery(FETCH_COMMENTS_FROM_BOARD, {
   //   variables: { boardID: router.query._id },
   // });
@@ -22,6 +25,7 @@ export default function CommentListContainer() {
   return (
     <CommentListPresenter
       CommentData={CommentData}
+      NestedData={NestedData}
       UserData={UserData}
       onLoadMore={function (page: number): void {
         throw new Error("Function not implemented.");
