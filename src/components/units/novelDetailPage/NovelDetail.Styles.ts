@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Rate } from "antd";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
@@ -168,8 +169,13 @@ export const Score = styled.div`
 
 export const StarWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin: 5px 0px 20px 0px;
+`;
+
+export const Star = styled(Rate)`
+  font-size: 20px;
+  color: #2277d8;
 `;
 
 export const WrapWriter = styled.div`

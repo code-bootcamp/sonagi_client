@@ -10,10 +10,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 const PayMentWrapper = styled.div`
   width: 464px;
   border-radius: 20px;
-  position: absolute;
   background-color: #ffffff;
-  margin-right: 22%;
-  top: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,9 +18,16 @@ const PayMentWrapper = styled.div`
   padding: 20px;
   border: 1px solid #cccccc;
   z-index: 50;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
   @media ${breakPoints.mobile} {
-    margin: 0 auto;
     width: 350px;
   }
 `;
@@ -39,17 +43,16 @@ const MoneyButton = styled.div`
   margin-bottom: 25px;
   border-radius: 10px;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 55%;
+  }
 `;
 
 const CancelImg = styled.img`
   width: 20px;
-  margin-left: 400px;
+  align-self: flex-end;
   cursor: pointer;
-
-  @media ${breakPoints.mobile} {
-    margin: 0 auto;
-    margin-left: 280px;
-  }
 `;
 
 const Title = styled.div`
@@ -58,10 +61,18 @@ const Title = styled.div`
   line-height: 29px;
   text-align: center;
   padding: 30px 0px 10px 0px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 const SubTitle = styled.div`
   padding-bottom: 20px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 const Contents = styled.input`
@@ -75,6 +86,10 @@ const Contents = styled.input`
 
   &:focus {
     outline: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 70%;
   }
 `;
 

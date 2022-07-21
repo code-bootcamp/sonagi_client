@@ -57,12 +57,14 @@ export default function NovelDetailPresenter(
               {props.detailData?.fetchNovelDetail.title}
             </S.NovelTitle>
             <S.StarWrapper>
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.StarImg src="/novelDetail/star.png" />
-              <S.Score>{props.detailData?.fetchNovelDetail.star}점</S.Score>
+              <S.Star
+                allowHalf
+                value={props.detailData?.fetchNovelDetail.star}
+                disabled
+              />
+              <S.Score>
+                {Number(props.detailData?.fetchNovelDetail.star).toFixed(2)}점
+              </S.Score>
               <S.Count>
                 {props.detailData?.fetchNovelDetail.viewCount} 명
               </S.Count>
@@ -85,7 +87,7 @@ export default function NovelDetailPresenter(
                 </S.Divs>
                 <S.Divs>|</S.Divs>
                 <S.Divs>
-                  {props.detailData?.fetchNovelDetail.novelIndexs[0]?.isFinish
+                  {props.detailData?.fetchNovelDetail.isFinish
                     ? "완결"
                     : "연재중"}
                 </S.Divs>
@@ -162,14 +164,19 @@ export default function NovelDetailPresenter(
                       />
                       <S.TableSonWrapper>
                         <S.Title>
-                          {el.index}화: {el.title}
+                          {el?.isNotice ? "[공지]: " : `${el.index}화: `}
+                          {el.title}
                         </S.Title>
                         <S.WrapDate>
                           <S.Date>{getDateDay(el.createAt)}</S.Date>
                           <S.Date>{el.viewCount}명</S.Date>
                           <S.VerticalLine />
                           <S.SumCharacter>
-                            약 {el.contents.length}자
+                            약{" "}
+                            {el.contents
+                              ?.replace(/<[^>]*>?/g, "")
+                              .length.toLocaleString("ko-KR")}
+                            자
                           </S.SumCharacter>
                         </S.WrapDate>
                       </S.TableSonWrapper>
@@ -235,14 +242,19 @@ export default function NovelDetailPresenter(
                     />
                     <S.TableSonWrapper>
                       <S.Title>
-                        {el.index}화: {el.title}
+                        {el?.isNotice ? "[공지]: " : `${el.index}화: `}
+                        {el.title}
                       </S.Title>
                       <S.WrapDate>
                         <S.Date>{getDateDay(el.createAt)}</S.Date>
                         <S.Date>{el.viewCount}명</S.Date>
                         <S.VerticalLine />
                         <S.SumCharacter>
-                          약 {el.contents.length}자
+                          약{" "}
+                          {el.contents
+                            ?.replace(/<[^>]*>?/g, "")
+                            .length.toLocaleString("ko-KR")}
+                          자
                         </S.SumCharacter>
                       </S.WrapDate>
                     </S.TableSonWrapper>
