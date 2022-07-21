@@ -86,12 +86,12 @@ export const LookButtonWrapper = styled.div`
 `;
 
 export const LookButtonWrapper2 = styled.div`
-  padding-top: 20px;
+  padding-top: 40px;
   display: flex;
   justify-content: flex-start;
 
   @media ${breakPoints.mobile} {
-    /* padding-top: 56px; */
+    padding-top: 20px;
     width: 100%;
     justify-content: center;
   }
@@ -191,26 +191,18 @@ export const NovelRemarks = styled.div`
 
 export const TagsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   padding: 15px 0 100px 0;
-
-  @media (min-width: 500px) and (max-width: 767px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 10px;
-  }
-
-  @media (min-width: 350px) and (max-width: 499px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 8fr;
-    grid-template-rows: 1fr;
-    gap: 10px;
-  }
+  width: 100%;
 `;
 
 export const Tags = styled.div`
+  margin: 10px 0;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 8px;
-  width: 80px;
   border: 1px solid #2277d2;
   padding: 5px;
   background-color: #ffffff;
@@ -318,6 +310,7 @@ export const ArrowImg = styled.img`
 export const New = styled.div`
   font-size: 0.75rem;
   margin-left: 5px;
+  cursor: pointer;
 `;
 
 export const All = styled.div`
@@ -460,6 +453,7 @@ export const Square = styled.input`
   width: 17px;
   height: 17px;
   background-color: #d9d9d9;
+  cursor: pointer;
 `;
 
 export const SortButton = styled.div`
@@ -547,7 +541,8 @@ export const Borrows = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 17px;
+  margin-left: 30px;
+  margin-right: 16px;
 `;
 
 export const LookBtn = styled.div`

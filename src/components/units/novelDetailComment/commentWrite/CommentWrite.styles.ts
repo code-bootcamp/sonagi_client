@@ -117,6 +117,6 @@ export const CommentButton = styled.button`
 
   @media ${breakPoints.mobile} {
     font-size: 0.8rem;
-    width: 20%;
+    width: 25%;
   }
 `;

@@ -1,6 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import React, { MouseEvent, useState } from "react";
+import { FETCH_NOVEL_LIKE_IN_USER } from "../novelRead/NovelRead.queries";
 import NovelDetailPresenter from "./NovelDetail.Presenter";
 import {
   CHANGE_PRIVATE_NOVEL_INDEX,
@@ -30,7 +31,7 @@ export default function NovelDetailContainer() {
     },
   });
 
-  // console.log("디테일", detailData);
+  console.log("디테일", detailData);
   // console.log("로그인", LoginData?.fetchLoginUser.id);
 
   // 소설 삭제
@@ -87,6 +88,11 @@ export default function NovelDetailContainer() {
   };
 
   // 선호작 등록하기
+  const { data: likeData, refetch } = useQuery(FETCH_NOVEL_LIKE_IN_USER);
+  const HeartList = likeData?.fetchNovelLikeInUser.map((el) => el.novel.id);
+  const NovelId = router.query._id;
+  const Heart = HeartList?.includes(NovelId);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onClickLike = async () => {
@@ -104,7 +110,7 @@ export default function NovelDetailContainer() {
           },
         ],
       });
-
+      refetch();
       // console.log("선호작", result);
       alert(result.data?.switchNovelLike.msg);
       setIsSubmitting(false);
@@ -211,6 +217,8 @@ export default function NovelDetailContainer() {
       isDonate={isDonate}
       setIsDonate={setIsDonate}
       isSubmitting={isSubmitting}
+      // 찜하기
+      Heart={Heart}
       // 첫화 보기
       onClickFirstView={onClickFirstView}
       // 체크박스
