@@ -2,10 +2,9 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  /* height: 580px; */
   width: 100%;
   background: #bee3ff;
-  padding: 50px 0px;
+  padding: 100px 0px 220px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +12,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.div`
   font-weight: 500;
-  font-size: 45px;
+  font-size: 2.8rem;
   text-align: center;
   color: #484848;
 `;
@@ -24,84 +23,130 @@ export const TitleWrapper = styled.div`
 
 export const Subtitle = styled.div`
   font-weight: 300;
-  font-size: 25px;
+  font-size: 1.5rem;
   text-align: center;
   color: #808080;
 `;
 
-export const QuestionTitle = styled.div`
-  font-weight: 700;
-  font-size: 35px;
-  text-align: center;
-  color: #484848;
-  margin: 10px 0px 50px 0px;
+export const BoxWrapper = styled.div`
+  display: flex;
+  margin: 30px 0;
+  justify-content: space-between;
 `;
 
-export const QuestionBox = styled.div`
-  width: 90%;
-  height: ${(props: any) =>
-    props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
-      ? "260px"
-      : "60px"};
+export const Box = styled.div`
+  background: #fff;
+  box-shadow: 10px 10px 40px rgb(0 0 0 / 10%);
+  border-radius: 16px;
+  padding: 32px;
+  width: 327px;
+  height: 327px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 25px;
-  padding: 10px 20px 10px 20px;
-  background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(204, 204, 204, 0.25);
-  border-radius: 20px;
-  background-image: ${(props: any) =>
-    props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
-      ? "url(/mainpage/arrowUp.png)"
-      : "url(/mainpage/arrow.png)"};
-  background-repeat: no-repeat;
-  background-position: top 25px right 20px;
-  cursor: pointer;
+  margin: 0 10px;
 
-  @media (min-width: 767px) and (max-width: 991px) {
-    width: 90%;
-  }
-
-  @media (max-width: 767px) {
-    max-width: 767px;
+  @media (max-width: 723px) {
+    width: 50%;
   }
 
   @media ${breakPoints.mobile} {
-    height: ${(props: any) =>
-      props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
-        ? "410px"
-        : "60px"};
+    width: 220px;
+    height: 270px;
+    padding: 30px 20px;
   }
 `;
 
-export const QuestionContents = styled.div`
-  padding-bottom: 10px;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 41px;
-  color: #484848;
-  border-bottom: ${(props: any) =>
-    props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
-      ? "1px solid #bdbdbd"
-      : "none"};
+export const BoxT = styled.div`
+  font-size: 1.25rem;
+`;
 
-  @media (min-width: 767px) and (max-width: 991px) {
-    width: 100%;
-  }
+export const BoxTitle = styled.div`
+  font-size: 1.25rem;
+  line-height: 75px;
+  padding-right: 5px;
 
   @media ${breakPoints.mobile} {
     font-size: 1rem;
+    padding: 10px 5px;
+    line-height: 30px;
   }
 `;
 
-export const AnswerContents = styled.div`
-  margin: 10px 0px 0px 5px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 29px;
-  color: #555555;
+export const BoxWrap = styled.div`
+  display: flex;
+`;
 
-  @media (min-width: 767px) and (max-width: 991px) {
-    width: 100%;
+export const BoxContents = styled.div`
+  font-weight: 800;
+  font-size: 2.5rem;
+  padding-right: 5px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5rem;
+    padding: 0;
   }
+`;
+
+export const Con = styled.div`
+  width: 65px;
+  height: 35px;
+  background-image: url("/mainpage/textcon.png");
+  background-repeat: no-repeat;
+  background-size: 65px 35px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+  padding-top: 2px;
+  margin-left: 137px;
+  margin-bottom: -17px;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+`;
+
+export const ContentWrap = styled.div`
+  padding: 15px 0 10px 0;
+`;
+
+export const SubT = styled.div`
+  font-size: 1rem;
+  color: #848484;
+  font-weight: 350;
+`;
+
+export const Pay = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 327px;
+  justify-content: center;
+  margin: 0 10px;
+
+  @media (max-width: 1150px) {
+    display: none;
+  }
+`;
+
+export const PayBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+`;
+
+export const PayImg = styled.img`
+  width: 65px;
+`;
+
+export const PayContent = styled.div`
+  font-size: 1rem;
+  padding-left: 10px;
+`;
+
+export const Line = styled.div`
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+  margin: 20px 0;
 `;

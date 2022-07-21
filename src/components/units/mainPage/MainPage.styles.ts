@@ -141,3 +141,39 @@ export const PhoneSubImg4 = styled.img`
     display: none;
   }
 `;
+
+export const VideoWrapper = styled.div`
+  width: 100%;
+  height: 450px;
+  padding: 100px 0px;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const VideoDiv = styled.div`
+  position: absolute;
+  top: 490%;
+  left: 20%;
+  max-width: 499px;
+  display: block;
+  box-shadow: 10px 10px 40px rgb(0 0 0 / 10%);
+`;
+
+export const VideoTitle = styled.div`
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding-bottom: 10px;
+`;
+
+export const VideoContentWrap = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding-left: 700px;
+`;
+
+export const VideoContent = styled.div`
+  font-size: 1.3rem;
+  font-weight: 300;
+`;
