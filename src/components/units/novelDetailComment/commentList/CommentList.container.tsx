@@ -49,8 +49,8 @@ export default function DetailCommentListContainer() {
           return prev.fetchNovelReviewPage;
         }
         // console.log("패치", fetchMoreResult);
-        console.log(prev.fetchNovelReviewPage.novelRivews);
-        console.log(fetchMoreResult.fetchNovelReviewPage.novelRivews);
+        // console.log(prev.fetchNovelReviewPage.novelRivews);
+        // console.log("123", fetchMoreResult.fetchNovelReviewPage.novelRivews);
         return {
           fetchNovelReviewPage: {
             novelRivews: [

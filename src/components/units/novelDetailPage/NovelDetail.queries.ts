@@ -11,6 +11,7 @@ export const FETCH_NOVEL_DETAIL = gql`
       createAt
       updateAt
       cycle
+      star
       user {
         id
         name

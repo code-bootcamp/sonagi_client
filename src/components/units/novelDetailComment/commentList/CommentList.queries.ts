@@ -22,6 +22,21 @@ export const FETCH_NOVEL_REVIEW_PAGE = gql`
 
 export const DELETE_NOVEL_REVIEW = gql`
   mutation deleteNovelReview($ReviewID: String!) {
-    deleteNovelReview(ReviewID: $ReviewID)
+    deleteNovelReview(ReviewID: $ReviewID) {
+      id
+      msg
+    }
+  }
+`;
+
+export const FETCH_LOGIN_USER = gql`
+  query fetchLoginUser {
+    fetchLoginUser {
+      id
+      name
+      nickName
+      email
+      phone
+    }
   }
 `;

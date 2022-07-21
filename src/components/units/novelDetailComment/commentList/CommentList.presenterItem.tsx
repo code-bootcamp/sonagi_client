@@ -1,11 +1,13 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 // import { useRouter } from "next/router";
 import { MouseEvent, useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
+
 import DetailCommentWriteContainer from "../commentWrite/CommentWrite.container";
 import {
   DELETE_NOVEL_REVIEW,
+  FETCH_LOGIN_USER,
   FETCH_NOVEL_REVIEW_PAGE,
 } from "./CommentList.queries";
 import * as S from "./CommentList.styles";
@@ -16,6 +18,7 @@ export default function DetailCommentListPresenterItem(
 ) {
   const [isEdit, setIsEdit] = useState(false);
   const [deleteNovelReview] = useMutation(DELETE_NOVEL_REVIEW);
+  const { data: Logindata } = useQuery(FETCH_LOGIN_USER);
   const router = useRouter();
 
   const onClickUpdate = () => {
@@ -23,17 +26,15 @@ export default function DetailCommentListPresenterItem(
   };
 
   const onClickDelete = async (event: MouseEvent<HTMLImageElement>) => {
-    console.log("이벤트", event.currentTarget.id);
     try {
       await deleteNovelReview({
         variables: {
           ReviewID: event.currentTarget.id,
         },
-
         refetchQueries: [
           {
             query: FETCH_NOVEL_REVIEW_PAGE,
-            variables: { novel: router.query._id },
+            variables: { novelID: router.query._id },
           },
         ],
       });
@@ -43,7 +44,7 @@ export default function DetailCommentListPresenterItem(
     }
   };
 
-  console.log("1", props.el);
+  const MyId = props.el?.user.id.includes(Logindata?.fetchLoginUser.id);
 
   return (
     <>
@@ -67,12 +68,14 @@ export default function DetailCommentListPresenterItem(
             </S.WrapCommentInfo>
             <S.WrapIconUP>
               <S.WrapIcon>
-                <S.EditIcon src="/comment/create.png" onClick={onClickUpdate} />
-                <S.DeleteIcon
-                  id={props.el?.id}
-                  src="/comment/Trash.png"
-                  onClick={onClickDelete}
-                />
+                {MyId && (
+                  <>
+                    <S.EditIcon onClick={onClickUpdate}>수정하기</S.EditIcon>
+                    <S.DeleteIcon id={props.el?.id} onClick={onClickDelete}>
+                      삭제하기
+                    </S.DeleteIcon>
+                  </>
+                )}
                 {/* <S.AnswerIcon src="/comment/insert_comment.png" /> */}
               </S.WrapIcon>
               {/* <S.WrapUp>

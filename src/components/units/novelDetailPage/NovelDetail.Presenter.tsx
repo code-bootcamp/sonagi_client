@@ -41,7 +41,13 @@ export default function NovelDetailPresenter(
                 disabled={props.isSubmitting === true}
                 onClick={props.onClickLike}
               >
-                <S.HeartImg src="/novelDetail/HeartImg.png" />
+                <S.HeartImg
+                  src={
+                    props.Heart
+                      ? "/novelDetail/heart.png"
+                      : "/novelRead/heart.png"
+                  }
+                />
                 <S.HeartCount>
                   {props.detailData?.fetchNovelDetail.likeCount}
                 </S.HeartCount>
@@ -56,7 +62,7 @@ export default function NovelDetailPresenter(
               <S.StarImg src="/novelDetail/star.png" />
               <S.StarImg src="/novelDetail/star.png" />
               <S.StarImg src="/novelDetail/star.png" />
-              <S.Score>5점</S.Score>
+              <S.Score>{props.detailData?.fetchNovelDetail.star}점</S.Score>
               <S.Count>
                 {props.detailData?.fetchNovelDetail.viewCount} 명
               </S.Count>
@@ -117,10 +123,6 @@ export default function NovelDetailPresenter(
         <S.WrapBody>
           <div>
             <S.TableLine />
-            <S.TableTop>
-              <S.Borrow>대여하기</S.Borrow>
-              <S.Get>소장하기</S.Get>
-            </S.TableTop>
           </div>
           <S.TableLineWrapper>
             <S.WrapFirst>
@@ -141,7 +143,7 @@ export default function NovelDetailPresenter(
             <S.MarginWrapper>
               <S.All>총 0화</S.All>
               <S.Sum>0원</S.Sum>
-              <S.Cart>카트</S.Cart>
+              {/* <S.Cart>카트</S.Cart> */}
               <S.Borrows>선택대여</S.Borrows>
             </S.MarginWrapper>
           </S.TableLineWrapper>
@@ -301,6 +303,7 @@ export default function NovelDetailPresenter(
                 <S.Tags key={el}># {el.name}</S.Tags>
               ))}
           </S.TagsWrapper>
+
           <S.FooterLabel>작품 소개</S.FooterLabel>
 
           <S.NovelRemarks>

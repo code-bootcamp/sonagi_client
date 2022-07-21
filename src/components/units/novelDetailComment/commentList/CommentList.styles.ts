@@ -137,36 +137,55 @@ export const UpCount = styled.div`
 export const WrapIconUP = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
 `;
 
 export const WrapIcon = styled.div`
   display: flex;
-  /* align-items: center; */
 `;
 
-export const EditIcon = styled.img`
-  width: 21px;
-  height: 21px;
+export const EditIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 35px;
   cursor: pointer;
+  color: white;
+  background-color: #5bafe5;
+  border-radius: 4px;
+  :hover {
+    background-color: #2277d8;
+  }
 
   @media ${breakPoints.mobile} {
-    width: 18px;
-    height: 18px;
+    width: 60px;
+    height: 30px;
+    font-size: 0.8rem;
   }
 `;
 
-export const DeleteIcon = styled.img`
-  padding-top: 2px;
+export const DeleteIcon = styled.div`
   margin-left: 15px;
-  width: 20px;
-  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 35px;
   cursor: pointer;
+  color: white;
+  background-color: #5bafe5;
+  border-radius: 4px;
+
+  :hover {
+    background-color: #2277d8;
+  }
 
   @media ${breakPoints.mobile} {
-    width: 18px;
-    height: 18px;
+    width: 60px;
+    height: 30px;
+    font-size: 0.8rem;
   }
 `;
 

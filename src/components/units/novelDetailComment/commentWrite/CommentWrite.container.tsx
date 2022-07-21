@@ -89,6 +89,14 @@ export default function DetailCommentWriteContainer(
               star: data.star,
             },
           },
+          refetchQueries: [
+            {
+              query: FETCH_NOVEL_REVIEW_PAGE,
+              variables: {
+                novelID: router.query._id,
+              },
+            },
+          ],
         });
         console.log(result);
         alert("수정 완료");
