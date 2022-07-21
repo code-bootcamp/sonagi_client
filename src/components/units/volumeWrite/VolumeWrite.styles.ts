@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  @media ${breakPoints.mobile} {
+    padding: 0 10px;
+  }
 `;
 
 export const WrapHeader = styled.div`
