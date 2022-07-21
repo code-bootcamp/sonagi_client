@@ -1,17 +1,17 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import NovelBestListPresenter from "./NovelBestList.presenter";
 import {
-  CREATE_NOVEL_LIKE,
   FETCH_NOVEL_LIKE,
   FETCH_NOVELS_PAGE,
+  SWITCH_NOVEL_LIKE,
 } from "./NovelBestList.queries";
 
 export default function NovelBestListContainer() {
   const router = useRouter();
 
-  const [createNovelLike] = useMutation(CREATE_NOVEL_LIKE);
-  // const [deleteNovelLike] = useMutation(DELETE_NOVEL_LIKE);
+  const [switchNovelLikes] = useMutation(SWITCH_NOVEL_LIKE);
   const { data: LikeNovel } = useQuery(FETCH_NOVEL_LIKE);
   const { data } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -31,7 +31,7 @@ export default function NovelBestListContainer() {
 
   const onClickLike = (el) => async () => {
     try {
-      const result = await createNovelLike({
+      const result = await switchNovelLikes({
         variables: {
           novelID: el.id,
         },
@@ -55,41 +55,13 @@ export default function NovelBestListContainer() {
       });
       console.log(el.id);
       console.log(result);
-      alert("선호작 등록!!");
+      if (HeartList.includes(el.id)) {
+        Modal.success({ content: "선호작 취소" });
+      } else Modal.success({ content: "선호작 등록!" });
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: (error as Error).message });
     }
   };
-
-  // const onClickDeleteLike = (el) => async () => {
-  //   console.log(el);
-  //   try {
-  //     const result = await deleteNovelLike({
-  //       variables: {
-  //         novelLikeID: el.id,
-  //       },
-  //       // refetchQueries: [
-  //       //   {
-  //       //     query: FETCH_NOVELS_PAGE,
-  //       //     variables: {
-  //       //       fetchNovelInput: {
-  //       //         type: "ALL",
-  //       //         target: "",
-  //       //         order: "LIKE",
-  //       //         isFinish: "ALL",
-  //       //         page: 1,
-  //       //       },
-  //       //     },
-  //       //   },
-  //       // ],
-  //     });
-  //     console.log(el.id);
-  //     console.log(result);
-  //     alert("선호작 취소!");
-  //   } catch (error) {
-  //     alert((error as Error).message);
-  //   }
-  // };
 
   const onClickMoveToDetail = (el) => (event: any) => {
     router.push(`/novel/${event.currentTarget.id}`);
@@ -114,7 +86,6 @@ export default function NovelBestListContainer() {
     <NovelBestListPresenter
       data={data}
       onClickLike={onClickLike}
-      // onClickDeleteLike={onClickDeleteLike}
       onClickMoveToDetail={onClickMoveToDetail}
       HeartList={HeartList}
     />

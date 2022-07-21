@@ -36,11 +36,12 @@ export default function NovelBestListPresenter(props: INovelBestListUIProps) {
                       el={el.id}
                       HeartList={props.HeartList}
                       // onClick={
-                      //   props.HeartList
+                      //   props.HeartList.includes(el.id)
                       //     ? props.onClickDeleteLike(el)
                       //     : props.onClickLike(el)
                       // }
                       onClick={props.onClickLike(el)}
+                      // onClick={props.onClickDeleteLike(el)}
                     />
                     {/* {console.log(el)} */}
                   </S.RowWrap2>

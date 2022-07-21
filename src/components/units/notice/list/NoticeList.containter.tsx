@@ -9,10 +9,19 @@ export default function NoticeListContainer() {
 
   console.log(data);
 
+  const onClickNoticedetail = () => {
+    router.push("/notice/_id");
+  };
+
   const onClickNoticeNew = () => {
     router.push("/notice/new");
   };
+
   return (
-    <NoticeListPresenter data={data} onClickNoticeNew={onClickNoticeNew} />
+    <NoticeListPresenter
+      data={data}
+      onClickNoticedetail={onClickNoticedetail}
+      onClickNoticeNew={onClickNoticeNew}
+    />
   );
 }
