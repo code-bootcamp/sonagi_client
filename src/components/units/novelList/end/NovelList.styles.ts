@@ -15,9 +15,6 @@ export const Title = styled.label`
   color: #4d4d4d;
   margin-top: 30px;
   padding-bottom: 50px;
-
-  @media (max-width: 390px) {
-  }
 `;
 
 export const RowWrap = styled.div`
@@ -120,7 +117,9 @@ export const ItemName = styled.h4`
   margin: 0;
 
   @media (min-width: 391px) and (max-width: 767px) {
+    width: 96%;
     font-size: 1.125rem;
+    height: 5vh;
   }
 
   @media (max-width: 390px) {
@@ -139,6 +138,13 @@ export const Cycle = styled.p`
   margin: 0;
   padding: 4px;
   background-color: aliceblue;
+  @media (min-width: 391px) and (max-width: 767px) {
+    display: none;
+  }
+
+  @media (max-width: 390px) {
+    display: none;
+  }
 `;
 export const ItemWriterWrap = styled.div`
   width: 100%;
