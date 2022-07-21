@@ -3,8 +3,8 @@ import { breakPoints } from "../../../commons/styles/media";
 import { INovelWriteStyles } from "./NovelWrite.types";
 
 export const Error = styled.div`
-  padding-top: 10px;
-  padding-bottom: 20px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 20px; */
 `;
 
 export const Wrapper = styled.div`
@@ -41,7 +41,7 @@ export const MainTitle = styled.div`
 `;
 
 export const WrapperLavel = styled.div`
-  padding: 25px 0;
+  padding: 30px 0;
   border-bottom: 1px solid #b1b1b1;
 `;
 
@@ -76,31 +76,42 @@ export const TitleLabel = styled.input`
     font-size: 1.2rem;
   }
 
-  width: 90%;
+  width: 80%;
   font-size: 1.2rem;
   font-weight: 400;
   border: none;
-  padding-left: 15px;
+  padding-left: 65px;
   :focus {
     outline: none;
   }
 
   @media ${breakPoints.mobile} {
     font-size: 1.2rem;
+    padding-left: 10px;
+    padding-bottom: 20px;
   }
 `;
 
 export const Label = styled.div`
   font-size: 1.5rem;
   font-weight: 500;
+  padding-right: 40px;
   @media ${breakPoints.mobile} {
     font-size: 1.2rem;
     margin-bottom: 20px;
   }
 `;
 
+export const Label2 = styled.div`
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 30px;
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+`;
 export const WrapImage = styled.div`
-  padding-left: 70px;
   display: flex;
 
   @media ${breakPoints.mobile} {
@@ -122,7 +133,7 @@ export const WrapGenreCycle = styled.div`
 
 export const WrapGenre = styled.div`
   display: flex;
-  /* padding-bottom: 30px; */
+  padding-bottom: 30px;
 
   @media ${breakPoints.mobile} {
     flex-direction: column;
@@ -134,7 +145,7 @@ export const WrapSelect = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 60px;
+  margin-left: 66px;
   margin-top: 3px;
   border: 1px solid #b1b1b1;
   width: 230px;
@@ -163,7 +174,8 @@ export const WrapGenreList = styled.div`
 `;
 
 export const GenreLabel = styled.div`
-  font-size: 1.125rem;
+  font-size: 1rem;
+  font-weight: 400;
 
   @media ${breakPoints.mobile} {
     font-size: 0.9rem;
@@ -178,6 +190,7 @@ export const List = styled.li`
   color: #828282;
   text-align: center;
   border-bottom: 1px solid #eee;
+  cursor: pointer;
 
   &:last-child {
     border-bottom: none;
@@ -198,6 +211,7 @@ export const List = styled.li`
 export const SelectButton = styled.img`
   width: 24px;
   height: 24px;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     width: 20px;
@@ -220,6 +234,7 @@ export const WrapCheck = styled.div`
 
   @media ${breakPoints.mobile} {
     flex-direction: column;
+    margin-left: -10px;
   }
 `;
 
@@ -243,9 +258,7 @@ export const CycleLabel = styled.div`
 
 export const WrapCycleButton = styled.div`
   margin-left: 25px;
-  display: flex;
-  background-color: ${(props: INovelWriteStyles) =>
-    props.isClickDay ? "none" : "gray"};
+  display: ${(props) => (props.isClickDay ? "flex" : "none")};
 
   @media ${breakPoints.mobile} {
     margin: 0;
@@ -348,10 +361,21 @@ export const IntroduceInput = styled.input`
   }
 `;
 
-export const WrapSubmitButton = styled.div`
+export const ButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
   padding: 70px 0;
+`;
+
+export const WrapSubmitButton = styled.div`
+  width: 50%;
   display: flex;
   justify-content: space-evenly;
+
+  @media ${breakPoints.mobile} {
+    width: 80%;
+  }
 `;
 
 export const WrapTags = styled.div`

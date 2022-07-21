@@ -8,6 +8,7 @@ import { CREATE_NOVEL_INDEX, FETCH_NOVEL_DETAIL } from "./VolumeWrite.queries";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Editor } from "@toast-ui/react-editor";
+import { Modal } from "antd";
 
 const schema = yup.object({
   title: yup.string().required("필수"),
@@ -18,6 +19,7 @@ export default function VolumeWriteContainer() {
   const { onClickMoveToPage } = useMoveToPage();
   const router = useRouter();
   const [createNovelIndex] = useMutation(CREATE_NOVEL_INDEX);
+  const [isRule, setIsRule] = useState(false);
   const { data } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
   });
@@ -57,30 +59,38 @@ export default function VolumeWriteContainer() {
 
   // 등록
   const onClickSubmit = async (data: any) => {
-    try {
-      await createNovelIndex({
-        variables: {
-          input: {
-            title: data.title,
-            contents: data.contents,
-            novelID: router.query._id,
-            authorText: data.authorText,
-            isFinish: finish,
-            isNotice,
+    if (isRule === false) {
+      Modal.warning({ content: "운영원칙에 동의해주세요" });
+    } else
+      try {
+        await createNovelIndex({
+          variables: {
+            input: {
+              title: data.title,
+              contents: data.contents,
+              novelID: router.query._id,
+              authorText: data.authorText,
+              isFinish: finish,
+              isNotice,
+            },
           },
-        },
-      });
-      alert("등록 성공");
-      router.push(`/novel/${router.query._id}`);
-    } catch (error) {
-      alert(error);
-    }
+        });
+        alert("등록 성공");
+        router.push(`/novel/${router.query._id}`);
+      } catch (error) {
+        alert(error);
+      }
+  };
+
+  const onClickRule = () => {
+    setIsRule(true);
   };
 
   return (
     <VolumeWritePresenter
       onClickMoveToPage={onClickMoveToPage}
       onClickSubmit={onClickSubmit}
+      onClickRule={onClickRule}
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}

@@ -16,6 +16,10 @@ export const TitleWrapper = styled.div`
   justify-content: center;
 `;
 
+export const SubTitleWrapper = styled.div`
+  padding: 10px 0;
+`;
+
 export const PhoneWrapper = styled.div`
   width: 100%;
   padding: 50px 0px 0px 0px;
@@ -27,19 +31,17 @@ export const PhoneWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-weight: 700;
+  font-weight: 500;
   font-size: 45px;
   text-align: center;
   color: #484848;
-  margin-bottom: 10px;
 `;
 
 export const Subtitle = styled.div`
-  font-weight: 400;
+  font-weight: 300;
   font-size: 25px;
   text-align: center;
   color: #808080;
-  margin-top: 10px;
 `;
 
 export const PhoneImg = styled.img`
@@ -59,6 +61,12 @@ export const PhoneSubImg = styled.img`
   margin-top: 480px;
   margin-left: -390px;
 
+  &:hover {
+    width: 140px;
+    height: 140px;
+    transition: 0.5s;
+  }
+
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;
   }
@@ -74,6 +82,12 @@ export const PhoneSubImg2 = styled.img`
   position: absolute;
   margin-top: 480px;
   margin-left: 390px;
+
+  &:hover {
+    width: 140px;
+    height: 140px;
+    transition: 0.5s;
+  }
 
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;
@@ -91,6 +105,12 @@ export const PhoneSubImg3 = styled.img`
   margin-top: 300px;
   margin-left: -320px;
 
+  &:hover {
+    width: 140px;
+    height: 140px;
+    transition: 0.5s;
+  }
+
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;
   }
@@ -106,6 +126,12 @@ export const PhoneSubImg4 = styled.img`
   position: absolute;
   margin-top: 300px;
   margin-left: 320px;
+
+  &:hover {
+    width: 140px;
+    height: 140px;
+    transition: 0.5s;
+  }
 
   @media (min-width: 767px) and (max-width: 991px) {
     display: none;

@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  @media ${breakPoints.mobile} {
+    padding: 0 10px;
+  }
 `;
 
 export const WrapHeader = styled.div`
@@ -69,11 +73,15 @@ export const TitleLabel = styled.div`
 
 export const Label = styled.div`
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 500;
 
   @media ${breakPoints.mobile} {
     font-size: 1.2rem;
   }
+`;
+
+export const UiWrapper = styled.div`
+  padding: 30px 0;
 `;
 
 export const WrapSellect = styled.div`
@@ -93,7 +101,8 @@ export const SelectButton = styled.div`
   width: 80px;
   height: 40px;
   margin-right: 3px;
-  border: ${(props: IVolumeWriteStyles) => (props.isEpisode ? "3px" : "1px")}
+  cursor: pointer;
+  border: ${(props: IVolumeWriteStyles) => (props.isEpisode ? "2px" : "1px")}
     solid ${(props) => (props.isEpisode ? "#2277d8" : "black")};
   @media ${breakPoints.mobile} {
     width: 70px;
@@ -108,6 +117,7 @@ export const SelectButtonNotice = styled.div`
   justify-content: center;
   width: 80px;
   height: 40px;
+  cursor: pointer;
   border: ${(props: IVolumeWriteStyles) => (props.isNotice ? "3px" : "1px")}
     solid ${(props) => (props.isNotice ? "#2277d8" : "black")};
   @media ${breakPoints.mobile} {
@@ -134,12 +144,17 @@ export const SelectButtonNotice = styled.div`
 
 export const NoticeLabel = styled.input`
   ::placeholder {
-    color: black;
+    color: #484848;
   }
+  margin-left: -2px;
   width: 100%;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 500;
   border: none;
+
+  &:focus {
+    outline: none;
+  }
 
   @media ${breakPoints.mobile} {
     font-size: 1.2rem;
@@ -169,6 +184,8 @@ export const WriteSay = styled.textarea`
   width: 100%;
   height: 200px;
   margin-top: 40px;
+  resize: none;
+  border: 1px solid #b1b1b1;
 
   &:focus {
     outline: none;
@@ -178,6 +195,7 @@ export const WriteSay = styled.textarea`
 export const WrapperRule = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 `;
 
 export const WrapRule = styled.div`

@@ -50,7 +50,6 @@ export default function NovelWritePresenter(props: INovelWritePresenterProps) {
             />
           </S.WrapTitle>
         </S.WrapperLavel>
-        <S.Error>{props.formState.errors.title?.message}</S.Error>
 
         <S.WrapperLavel>
           <S.WrapGenreCycle>
@@ -128,7 +127,6 @@ export default function NovelWritePresenter(props: INovelWritePresenterProps) {
                 </S.WrapGenreList>
               </S.WrapSelect>
             </S.WrapGenre>
-            <S.Error>{props.formState.errors.categoryID?.message}</S.Error>
             <S.WrapCycle>
               <S.Label>연재 주기</S.Label>
               <S.WrapCheck>
@@ -196,7 +194,7 @@ export default function NovelWritePresenter(props: INovelWritePresenterProps) {
         <S.Error>{props.formState.errors.fileURLs?.message}</S.Error>
 
         <S.WrapIntroduce>
-          <S.Label>작품소개</S.Label>
+          <S.Label2>작품소개</S.Label2>
           {/* <S.IntroduceInput
             type="text"
             placeholder="소개글을 작성해주세요"
@@ -215,11 +213,12 @@ export default function NovelWritePresenter(props: INovelWritePresenterProps) {
             <Tags tags={props.tags} setTags={props.setTags} />
           </S.WrapTags>
         </S.WrapperLavel>
-
-        <S.WrapSubmitButton>
-          <Button02 title="취소" />
-          <Button01 title={props.isEdit ? "수정" : "등록"} />
-        </S.WrapSubmitButton>
+        <S.ButtonWrapper>
+          <S.WrapSubmitButton>
+            <Button02 title="취소" />
+            <Button01 title={props.isEdit ? "수정" : "등록"} />
+          </S.WrapSubmitButton>
+        </S.ButtonWrapper>
       </S.Wrapper>
     </form>
   );
