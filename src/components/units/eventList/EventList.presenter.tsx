@@ -1,6 +1,6 @@
 import * as S from "./EventList.styles";
 
-export default function EventListPresenter(props) {
+export default function EventListPresenter(props: any) {
   return (
     <S.Wrapper>
       <S.RowWrap>
@@ -10,7 +10,7 @@ export default function EventListPresenter(props) {
         </S.EventTitleWrap>
         <S.EventIcon src="../event/event.png" />
       </S.RowWrap>
-      {props.data?.fetchEventsAll.map((el) => (
+      {props.data?.fetchEventsAll.map((el: any) => (
         <S.ListWrapper key={el.id}>
           <S.ListTitle>{el.title}</S.ListTitle>
           <S.ListDate>기간 : 2022.7.20 ~ 2022.10.10</S.ListDate>

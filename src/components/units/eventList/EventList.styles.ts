@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 100%;
+  width: 98%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  margin: 30px 10px;
 `;
 
 export const RowWrap = styled.div`
@@ -22,10 +22,10 @@ export const EventTitleWrap = styled.div`
 `;
 
 export const MainTitle = styled.div`
-  font-size: 1.875em;
+  font-size: 1.875rem;
   font-weight: 700;
-  color: #484848;
-  margin-top: 20px;
+  color: #4d4d4d;
+  margin-top: 30px;
 
   @media ${breakPoints.mobile} {
     font-size: 1.5em;

@@ -2,9 +2,24 @@ import * as S from "./banner.styles";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useMoveToPage from "../../../../commons/hooks/UseMoveToPage";
+import { gql, useQuery } from "@apollo/client";
+
+const FETCH_EVENTS = gql`
+  query fetchEventsAll {
+    fetchEventsAll {
+      id
+      files {
+        id
+        url
+      }
+    }
+  }
+`;
 
 export default function LayoutBanner() {
   const { onClickMoveToPage } = useMoveToPage();
+
+  const { data } = useQuery(FETCH_EVENTS);
 
   const settings = {
     infinite: true,
@@ -13,7 +28,7 @@ export default function LayoutBanner() {
     slidesToScroll: 1,
     draggable: true,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
   };
 
@@ -21,10 +36,12 @@ export default function LayoutBanner() {
     <>
       <S.SliderWrapper onClick={onClickMoveToPage("/event")}>
         <S.MySlide {...settings}>
-          <S.CarouselImg src="/banner/carousel1.png" />
-          <S.CarouselImg src="/banner/carousel2.png" />
-          <S.CarouselImg src="/banner/carousel3.png" />
-          <S.CarouselImg src="/banner/carousel4.png" />
+          {data?.fetchEventsAll.map((el: any) => (
+            <S.CarouselImg
+              key={el.id}
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0].url}`}
+            />
+          ))}
         </S.MySlide>
       </S.SliderWrapper>
     </>
