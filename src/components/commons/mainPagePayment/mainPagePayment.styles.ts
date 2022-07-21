@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media ${breakPoints.mobile} {
-    padding: 100px 0px 100px 0;
+  @media (max-width: 960px) {
+    padding: 100px 0 50px 0;
   }
 `;
 
