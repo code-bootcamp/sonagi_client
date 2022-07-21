@@ -18,7 +18,7 @@ const Button = styled.button`
     width: 100px;
     height: 45px;
     font-size: 0.9rem;
-    margin-bottom: 35px;
+    /* margin-bottom: 35px; */
   }
 `;
 export default function Button01(props: any) {

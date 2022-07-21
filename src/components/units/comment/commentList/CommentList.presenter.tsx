@@ -13,11 +13,12 @@ export default function CommentListPresenter(
     //   ))}
     // </InfiniteScroll>
     <InfiniteScroll pageStart={0} hasMore={true}>
-      {props.data?.fetchBoard?.comments.map((el: { id: any }) => (
+      {props.CommentData?.fetchBoard?.comments.map((el: { id: any }) => (
         <CommentListPresenterItem
           key={el.id}
           el={el}
-          data={props.data}
+          CommentData={props.CommentData}
+          UserData={props.UserData}
           onClickLikeComment={undefined}
         />
       ))}

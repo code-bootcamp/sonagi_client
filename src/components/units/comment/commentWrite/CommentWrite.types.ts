@@ -9,6 +9,9 @@ export interface ICommentWriteContainerProps {
 }
 
 export interface ICommentWritePresenterProps {
+  handleSubmit(
+    onClickUpdateComment: MouseEventHandler<HTMLDivElement> | undefined
+  ): import("react").FormEventHandler<HTMLFormElement> | undefined;
   onClickRegisterComment: MouseEventHandler<HTMLDivElement> | undefined;
   onClickUpdateComment: MouseEventHandler<HTMLDivElement> | undefined;
   contents: any;

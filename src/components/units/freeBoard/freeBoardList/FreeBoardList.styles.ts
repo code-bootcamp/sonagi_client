@@ -32,7 +32,7 @@ export const MainTitle = styled.div`
 `;
 
 export const WrapButton = styled.div`
-  padding-top: 40px;
+  margin-top: 40px;
   display: flex;
   justify-content: flex-end;
 

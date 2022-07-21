@@ -3,7 +3,10 @@ import { useRouter } from "next/router";
 import React from "react";
 import { withAuth } from "../../../../commons/hooks/withAuth";
 import FreeBoardListPresenter from "./FreeBoardList.presenter";
-import { FETCH_BOARDS_ALL } from "./FreeBoardList.queries";
+import {
+  FETCH_BOARDS_ALL,
+  // FETCH_BOARD_ALL_COUNT,
+} from "./FreeBoardList.queries";
 
 function FreeBoardListContainer() {
   const router = useRouter();
@@ -13,6 +16,7 @@ function FreeBoardListContainer() {
   // const { data: dataBoardsCount, refetch: refetchBoardsCount } = useQuery(
   //   FETCH_BOARD_ALL_COUNT
   // );
+  // console.log("dataBoardsCount", dataBoardsCount);
 
   const onClickMoveToFreeBoardWrite = () => {
     router.push("/freeBoard/new");
@@ -33,6 +37,7 @@ function FreeBoardListContainer() {
       onClickMoveToFreeBoardDetail={onClickMoveToFreeBoardDetail}
       count={undefined}
       refetch={undefined}
+      // dataBoardsCount={dataBoardsCount}
     />
   );
 }

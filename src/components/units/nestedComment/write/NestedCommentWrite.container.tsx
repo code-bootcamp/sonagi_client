@@ -4,12 +4,14 @@ import { useState } from "react";
 import NestedCommentWritePresenter from "./NestedCommentWrite.presenter";
 import {
   CREATE_NESTED_COMMENT,
-  FETCH_COMMENT,
+  FETCH_BOARD,
 } from "./NestedCommentWrite.queries";
 import { INestedCommentWriteProps } from "./NestedCommentWrite.types";
 
 export default function NestedCommentWrite(props: INestedCommentWriteProps) {
   const router = useRouter();
+  // const { data } = useQuery(FETCH_BOARD);
+  // console.log("대댓글리페치왜안될까......", data);
   const [contents, setContents] = useState("");
   const onChangeContents = (event: any) => {
     setContents(event.target.value);
@@ -17,10 +19,8 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
 
   const [createNestedComment] = useMutation(CREATE_NESTED_COMMENT);
 
-  // const [isRegistered, setIsRegistered] = useState(true);
   // 대댓글 등록
   const WriteNestedComment = async () => {
-    // setIsRegistered(false);
     try {
       const result = await createNestedComment({
         variables: {
@@ -32,8 +32,8 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
 
           refetchQueries: [
             {
-              query: FETCH_COMMENT,
-              variables: { commentID: router.query._id },
+              query: FETCH_BOARD,
+              variables: { boardID: String(router.query._id) },
             },
           ],
         },

@@ -2,14 +2,19 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import React from "react";
 import FreeBoardDetailPresenter from "./FreeBoardDetail.presenter";
-import { DELETE_BOARD, FETCH_BOARD } from "./FreeBoardDetail.queries";
+import {
+  DELETE_BOARD,
+  FETCH_BOARD,
+  FETCH_LOGIN_USER,
+} from "./FreeBoardDetail.queries";
 
 export default function FreeBoardDetailContainer() {
   const router = useRouter();
-  const { data } = useQuery(FETCH_BOARD, {
+  const { data: UserData } = useQuery(FETCH_LOGIN_USER);
+  const { data: BoardData } = useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
-  console.log("페치데이터", data);
+  console.log("페치데이터", BoardData);
   const [deleteBoard] = useMutation(DELETE_BOARD);
   const onClickDelete = () => {
     try {
@@ -33,10 +38,12 @@ export default function FreeBoardDetailContainer() {
 
   return (
     <FreeBoardDetailPresenter
-      data={data}
+      // data={data}
       onClickMoveToBoardList={onClickMoveToBoardList}
       onClickDelete={onClickDelete}
       onClickMoveToEdit={onClickMoveToEdit}
+      UserData={UserData}
+      BoardData={BoardData}
     />
   );
 }

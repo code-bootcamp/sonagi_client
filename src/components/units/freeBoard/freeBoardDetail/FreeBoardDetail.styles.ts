@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     transition-duration: 1s;
-    width: 96%;
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -48,6 +48,7 @@ export const WriterWrapper = styled.div`
   align-items: center;
   padding-bottom: 30px;
   border-bottom: 1px solid #bdbdbd;
+  width: 100%;
 `;
 
 export const Writer = styled.div`
@@ -59,7 +60,8 @@ export const Writer = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1.5em;
-    margin-left: 30%;
+    width: 100%;
+    margin-left: 70%;
     margin-top: 10%;
   }
 `;
@@ -74,6 +76,9 @@ export const Title = styled.div`
   font-size: 1.5em;
   font-weight: 700;
   /* padding: 64px 0px 24px; */
+  @media ${breakPoints.tablet} {
+    font-size: 1.14em;
+  }
 
   @media ${breakPoints.mobile} {
     font-size: 1.25em;
@@ -97,8 +102,6 @@ export const Date = styled.div`
   font-size: 1rem;
   text-align: center;
   color: #808080;
-  /* margin-right: 66%; */
-  /* width: 100%; */
 
   @media ${breakPoints.tablet} {
     font-size: 0.95rem;
@@ -159,24 +162,43 @@ export const Button = styled.div`
 
 export const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-top: 30px;
 `;
 
 export const FreeBoardImg = styled.img`
-  width: 340px;
-  height: 390px;
+  width: 100%;
+  height: 100%;
   border: 1px solid #bdbdbd;
+  object-fit: fill;
+
   @media ${breakPoints.tablet} {
     position: relative;
-    height: 270px;
-    width: 30%;
+    height: 100%;
+    width: 100%;
   }
   @media ${breakPoints.mobile} {
     display: none;
   }
 
   /* margin-right: 100px; */
+`;
+
+export const ImgWrap = styled.div`
+  width: 340px;
+  height: 390px;
+  overflow: hidden;
+  margin: 0 auto;
+  @media ${breakPoints.tablet} {
+    width: 20%;
+    position: relative;
+    width: 230px;
+    height: 272px;
+    left: 5%;
+  }
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -220,13 +242,16 @@ export const BottomWrapper = styled.div`
   height: 120px;
   background-color: #f6f6f6;
   @media ${breakPoints.tablet} {
-    width: 129%;
+    width: 139.2%;
+    /* top: 550px; */
+    position: relative;
   }
 `;
 
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
+  width: 15%;
   @media ${breakPoints.tablet} {
     width: 30%;
   }
@@ -234,11 +259,22 @@ export const Column = styled.div`
 
 export const Columns = styled.div`
   display: flex;
+  width: 55%;
   flex-direction: column;
+  align-items: flex-start;
+  /* align-items: center; */
   margin-top: 3px;
   margin-left: 70px;
   @media ${breakPoints.tablet} {
-    width: 50%;
+    width: 80%;
+    margin-left: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    margin-left: 30%;
   }
 `;
 
@@ -249,6 +285,9 @@ export const Row = styled.div`
 
 export const Flex = styled.div`
   display: flex;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const FlexWrap = styled.div`
@@ -295,9 +334,9 @@ export const WriterWrap = styled.div`
 `;
 
 export const DateWrapper = styled.div`
-  width: 38%;
+  /* width: 100%; */
   @media ${breakPoints.tablet} {
-    width: 100%;
+    /* width: 100%; */
   }
   @media ${breakPoints.mobile} {
     width: 46%;

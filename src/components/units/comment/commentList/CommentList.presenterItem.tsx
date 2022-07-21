@@ -22,17 +22,13 @@ export default function CommentListPresenterItem(
   // const [mention, setMention] = useState("");
 
   const onWriteAnswer = () => {
-    setIsNested(true);
+    setIsNested((prev) => !prev);
   };
   // const router = useRouter();
 
   const onClickUpdate = () => {
     setIsEdit(true);
   };
-
-  // const onClickAnswer = () => {
-  //   setIsAnswer(true);
-  // };
 
   const onClickDelete = async () => {
     try {
@@ -57,10 +53,10 @@ export default function CommentListPresenterItem(
 
   const [isNestedExist, setIsNestedExist] = useState(false);
   useEffect(() => {
-    if (props.data?.fetchBoard.comments[0].children[0]?.id !== "") {
+    if (props.CommentData?.fetchBoard.comments[0].children[0]?.id !== "") {
       setIsNestedExist(true);
     }
-  }, [props.data]);
+  }, [props.CommentData]);
 
   return (
     <>
@@ -70,7 +66,7 @@ export default function CommentListPresenterItem(
             {/* <S.BestComment>Best</S.BestComment> */}
           </S.WrapBestIcon>
           <S.WrapInfo>
-            <S.ProfileIcon src="/comment/comment.png" />
+            <S.ProfileIcon src="/comment/avatar.png" />
             <S.WrapCommentInfo>
               {/* <S.Comment>너무 재미있아요!!! 최고최고</S.Comment> */}
               <S.Comment>{props.el?.contents}</S.Comment>
@@ -91,27 +87,34 @@ export default function CommentListPresenterItem(
                 {/* <S.UpCount>{props.data?.fetchComments.likeCount}</S.UpCount> */}
               </S.WrapUserInfo>
             </S.WrapCommentInfo>
-            <S.WrapIcon>
-              <S.EditIcon
-                title="수정하기"
-                src="/comment/create.png"
-                onClick={onClickUpdate}
-              />
-              <S.DeleteIcon
-                title="삭제하기"
-                src="/comment/Trash.png"
-                onClick={onClickDelete}
-              />
-              {/* <S.AnswerIcon
-                src="/comment/insert_comment.png"
-                onClick={onClickAnswer}
-              /> */}
-              <S.AnswerIcon
-                title="대댓글 달기"
-                src="/comment/insert_comment.png"
-                onClick={onWriteAnswer}
-              />
-            </S.WrapIcon>
+            {props.el.user.id === props.UserData?.fetchLoginUser.id ? (
+              <S.WrapIcon>
+                <S.EditIcon
+                  title="수정하기"
+                  src="/comment/create.png"
+                  onClick={onClickUpdate}
+                />
+                <S.DeleteIcon
+                  title="삭제하기"
+                  src="/comment/Trash.png"
+                  onClick={onClickDelete}
+                />
+
+                <S.AnswerIcon
+                  title="대댓글 달기"
+                  src="/comment/insert_comment.png"
+                  onClick={onWriteAnswer}
+                />
+              </S.WrapIcon>
+            ) : (
+              <S.WrapIcon>
+                <S.AnswerIcon
+                  title="대댓글 달기"
+                  src="/comment/insert_comment.png"
+                  onClick={onWriteAnswer}
+                />
+              </S.WrapIcon>
+            )}
           </S.WrapInfo>
         </S.WrapperUserInfo>
       </S.Wrapper>

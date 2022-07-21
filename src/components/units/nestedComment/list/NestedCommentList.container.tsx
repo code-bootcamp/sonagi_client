@@ -14,7 +14,7 @@ export default function NestedCommentListContainer(
     variables: { boardID: router.query._id },
   });
 
-  console.log("대댓글데이터를조회해보자11", data?.fetchBoard.comments);
+  console.log("%%대댓글데이터를조회해보자%%", data?.fetchBoard.comments);
 
   // 삭제
   const [deleteComment] = useMutation(DELETE_COMMENT);
