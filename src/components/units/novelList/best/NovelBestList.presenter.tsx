@@ -49,9 +49,15 @@ export default function NovelBestListPresenter(props: INovelBestListUIProps) {
                     }}
                   ></S.Contents>
                   <S.ItemInfoWrap>
-                    <S.ItemStatus>좋아요 {el.likeCount}</S.ItemStatus>
+                    <S.IconRowWrap>
+                      <S.PickIcon src="/novelList/best/love.svg" />
+                      <S.ItemStatus>좋아요 {el.likeCount}</S.ItemStatus>
+                    </S.IconRowWrap>
                     <S.Line></S.Line>
-                    <S.Hits>조회수 {el.viewCount}</S.Hits>
+                    <S.IconRowWrap>
+                      <S.EyeIcon src="/novelList/best/eye.svg" />
+                      <S.Hits>조회수 {el.viewCount}</S.Hits>
+                    </S.IconRowWrap>
                     <S.Line></S.Line>
                     <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
                   </S.ItemInfoWrap>
