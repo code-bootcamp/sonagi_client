@@ -52,17 +52,26 @@ export const WriterWrapper = styled.div`
 
 export const Writer = styled.div`
   font-size: 1.125em;
-  margin-right: 20px;
+  color: #2277d8;
+  font-weight: 800;
+  margin-left: 20px;
+  margin-top: 10px;
 
   @media ${breakPoints.mobile} {
     font-size: 1em;
   }
 `;
 
+export const WriterDefault = styled.div`
+  font-size: 1.125em;
+  color: #bdbdbd;
+  margin: 10px 0px 0px 2px;
+`;
+
 export const Title = styled.div`
   font-size: 1.5em;
-  font-weight: 500;
-  padding: 64px 0px 24px;
+  font-weight: 700;
+  /* padding: 64px 0px 24px; */
 
   @media ${breakPoints.mobile} {
     font-size: 1.25em;
@@ -86,10 +95,15 @@ export const Date = styled.div`
   font-size: 1rem;
   text-align: center;
   color: #808080;
-  margin-right: 10px;
+  margin-right: 210px;
 
+  @media ${breakPoints.tablet} {
+    font-size: 0.95rem;
+    width: 110%;
+  }
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;
+    width: 40%;
   }
 `;
 export const ReportIcon = styled.img`
@@ -104,18 +118,29 @@ export const ReportIcon = styled.img`
   }
 `;
 export const Contents = styled.div`
-  margin: 30px 0px 80px 0px;
-  height: 600px;
-  background-color: #eee;
+  /* margin: 30px 0px 80px 0px; */
+  width: 100%;
+  height: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  /* border: 5px solid #eee; */
 `;
 
 export const InnerContents = styled.div`
-  padding: 30px;
+  margin-top: 20px;
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+    margin-top: 10px;
+  }
 `;
 
 export const FreeBoardImage = styled.img`
-  width: 250px;
-  height: 330px;
+  width: 22%;
+  height: 400px;
 `;
 
 export const Button = styled.div`
@@ -134,9 +159,135 @@ export const Button = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 `;
 
 export const FreeBoardImg = styled.img`
-  width: 250px;
-  height: 330px;
+  width: 300px;
+  height: 390px;
+  /* border: 3px solid #bdbdbd; */
+  @media ${breakPoints.tablet} {
+    position: relative;
+    height: 270px;
+    width: 30%;
+  }
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+
+  /* margin-right: 100px; */
+`;
+
+export const ImageWrapper = styled.div`
+  background-color: red;
+  width: 20%;
+  height: 400px;
+`;
+
+export const Avatar = styled.img`
+  width: 90px;
+  height: 90px;
+`;
+
+export const TopWrapper = styled.div`
+  border: 5px solid teal;
+  /* width: 70%; */
+  height: 200px;
+  display: flex;
+  align-items: center;
+`;
+
+export const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const LeftWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const BottomWrapper = styled.div`
+  width: 100%;
+  margin-top: 20px;
+  height: 120px;
+  background-color: #f6f6f6;
+  @media ${breakPoints.tablet} {
+    width: 129%;
+  }
+`;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media ${breakPoints.tablet} {
+    width: 30%;
+  }
+`;
+
+export const Columns = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 3px;
+  margin-left: 70px;
+  @media ${breakPoints.tablet} {
+    width: 50%;
+  }
+`;
+
+export const Row = styled.div`
+  display: flex;
+  background-color: blue;
+`;
+
+export const Flex = styled.div`
+  display: flex;
+`;
+
+export const FlexWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Flexs = styled.div`
+  display: flex;
+  width: 100%;
+  height: 250px;
+  padding: 80px;
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
+
+  /* background-color: #eee; */
+`;
+
+export const ContentsWrap = styled.div`
+  width: 190%;
+  height: 120px;
+  /* border: 2px solid black; */
+`;
+
+export const TitleWrap = styled.div`
+  width: 190%;
+  height: 120px;
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  /* border: 2px solid black; */
+`;
+
+export const WriterWrap = styled.div`
+  display: flex;
+`;
+
+export const DateWrapper = styled.div`
+  @media ${breakPoints.tablet} {
+    width: 75%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 124%;
+  }
 `;

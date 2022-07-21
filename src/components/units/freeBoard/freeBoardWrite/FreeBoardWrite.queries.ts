@@ -10,6 +10,10 @@ export const CREATE_BOARD = gql`
         id
         nickName
       }
+      files {
+        id
+        url
+      }
     }
   }
 `;

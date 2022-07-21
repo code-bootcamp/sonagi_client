@@ -70,7 +70,7 @@ export default function CommentListPresenterItem(
             {/* <S.BestComment>Best</S.BestComment> */}
           </S.WrapBestIcon>
           <S.WrapInfo>
-            <S.ProfileIcon src="/comment/profile_icon.png" />
+            <S.ProfileIcon src="/comment/comment.png" />
             <S.WrapCommentInfo>
               {/* <S.Comment>너무 재미있아요!!! 최고최고</S.Comment> */}
               <S.Comment>{props.el?.contents}</S.Comment>

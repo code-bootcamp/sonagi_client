@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { Key } from "react";
 import { DELETE_COMMENT } from "../../comment/commentList/CommentList.queries";
 import NestedCommentListPresenter from "./NestedCommentList.presenter";
 import { FETCH_BOARD } from "./NestedCommentList.queries";
@@ -32,7 +33,7 @@ export default function NestedCommentListContainer(
       });
       alert("대댓글이 삭제되었습니다.");
     } catch (error) {
-      alert(error.message);
+      // alert(error.message);
     }
   };
 
@@ -50,7 +51,7 @@ export default function NestedCommentListContainer(
 
     <>
       {data?.fetchBoard.comments.map((el) =>
-        el.children.map((answerEL) => (
+        el.children.map((answerEL: { id: Key | null | undefined }) => (
           <NestedCommentListPresenter
             key={answerEL.id}
             el={props.el}
