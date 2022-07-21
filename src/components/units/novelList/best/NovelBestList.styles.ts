@@ -6,7 +6,6 @@ export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* margin: 4.05% 2%; */
   margin: 30px 10px;
 `;
 export const Title = styled.label`
@@ -68,14 +67,8 @@ export const RowWrap = styled.div`
   align-items: center;
   padding: 20px 10px 10px 30px;
 
-  @media (min-width: 391px) and (max-width: 767px) {
-    align-items: center;
-    justify-content: center;
-  }
-
   @media (max-width: 390px) {
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
   }
 `;
 
@@ -84,14 +77,10 @@ export const AwardWrap = styled.div`
   flex-direction: row;
   align-items: center;
 
-  @media (min-width: 391px) and (max-width: 767px) {
-    align-items: center;
-    justify-content: center;
-  }
-
   @media (max-width: 390px) {
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
   }
 `;
 export const AwardIcon = styled.img`
@@ -122,14 +111,21 @@ export const Itembox = styled.div`
   flex-direction: row;
   padding: 20px 30px;
 
+  @media (min-width: 768px) and (max-width: 1060px) {
+    transition-duration: 1s;
+    padding: 20px 10px 20px 30px;
+  }
+
   @media (min-width: 391px) and (max-width: 767px) {
     flex-direction: row;
+    /* width: 96%; */
   }
 
   @media (max-width: 390px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5px 30px 20px;
   }
 `;
 export const ItemPic = styled.img`
@@ -140,7 +136,8 @@ export const ItemPic = styled.img`
   vertical-align: middle;
 
   @media (min-width: 768px) and (max-width: 990px) {
-    width: 40%;
+    width: 50%;
+    height: 10%;
   }
 
   @media (max-width: 390px) {
@@ -150,10 +147,10 @@ export const ItemPic = styled.img`
 export const TextWrap = styled.div`
   width: 98%;
   padding: 0px 10px;
-  margin-left: 5px;
+  margin-left: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 `;
 export const RowWrap2 = styled.div`
   display: flex;
@@ -173,7 +170,7 @@ export const RowWrap2 = styled.div`
 `;
 
 export const ItemName = styled.div`
-  width: 80%;
+  width: 96%;
   font-size: 1.25rem;
   font-weight: 700;
   margin-right: 10px;
@@ -190,7 +187,7 @@ export const ItemName = styled.div`
 `;
 
 export const HeartImg = styled.div`
-  width: 30%;
+  width: 22px;
   height: 21px;
   background-image: ${(props: any) =>
     props.HeartList?.includes(props.el)
@@ -218,7 +215,7 @@ export const Contents = styled.div`
   text-overflow: ellipsis;
 
   @media (min-width: 768px) and (max-width: 961px) {
-    display: none;
+    margin-top: 0px;
   }
 
   @media (min-width: 601px) and (max-width: 767px) {
@@ -226,7 +223,7 @@ export const Contents = styled.div`
   }
 
   @media (min-width: 391px) and (max-width: 600px) {
-    display: none;
+    margin-top: 10px;
   }
 
   @media (max-width: 390px) {
@@ -234,10 +231,10 @@ export const Contents = styled.div`
   }
 `;
 export const ItemInfoWrap = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   margin-top: 20px;
-  /* align-items: center; */
   font-size: 0.88rem;
   color: #808080;
 
@@ -245,8 +242,13 @@ export const ItemInfoWrap = styled.div`
     flex-direction: column;
   }
 
-  @media (min-width: 391px) and (max-width: 767px) {
+  @media (min-width: 540px) and (max-width: 767px) {
     flex-direction: row;
+  }
+
+  @media (min-width: 391px) and (max-width: 539px) {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   @media (max-width: 390px) {
@@ -254,17 +256,43 @@ export const ItemInfoWrap = styled.div`
     align-items: center;
   }
 `;
-export const ItemStatus = styled.div``;
+
+export const IconRowWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+export const PickIcon = styled.img`
+  width: 15px;
+  height: 15px;
+`;
+export const EyeIcon = styled.img`
+  width: 18px;
+  height: 18px;
+`;
+export const ItemStatus = styled.span`
+  margin-left: 10px;
+`;
 export const Line = styled.div`
   width: 1px;
   height: 13px;
   background-color: #bdbdbd;
-  margin: 5px 20px;
+  margin: 5px 12px;
+
+  @media (min-width: 991px) and (max-width: 1060px) {
+    transition-duration: 1s;
+    margin: 5px 10px;
+  }
+
   @media (min-width: 768px) and (max-width: 990px) {
     display: none;
   }
 
-  @media (min-width: 391px) and (max-width: 767px) {
+  @media (min-width: 540px) and (max-width: 767px) {
+    margin: 5px 10px;
+  }
+
+  @media (min-width: 391px) and (max-width: 539px) {
     margin: 5px 10px;
   }
 
@@ -272,5 +300,7 @@ export const Line = styled.div`
     display: none;
   }
 `;
-export const Hits = styled.div``;
+export const Hits = styled.span`
+  margin-left: 10px;
+`;
 export const WrtiterName = styled.div``;
