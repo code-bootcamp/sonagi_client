@@ -38,6 +38,11 @@ export const SelectAll = styled.div`
   font-size: 0.75rem;
   margin-left: 35px;
   margin-right: 20px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.6rem;
+    margin: 0 10px 0 10px;
+  }
 `;
 
 export const Arrow = styled.div`
@@ -53,6 +58,10 @@ export const DIV = styled.div`
 
 export const Flexs = styled.div`
   display: flex;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+  }
 `;
 
 export const LookFirstBtn = styled.div`
@@ -81,9 +90,15 @@ export const Buttons = styled.div`
 
 export const LookButtonWrapper = styled.div`
   padding-top: 20px;
-  width: 530px;
+  width: 90%;
   display: flex;
-  justify-content: space-between;
+
+  @media ${breakPoints.mobile} {
+    padding-top: 20px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const LookButtonWrapper2 = styled.div`
@@ -95,6 +110,45 @@ export const LookButtonWrapper2 = styled.div`
     padding-top: 20px;
     width: 100%;
     justify-content: center;
+  }
+`;
+export const Button2 = styled.button`
+  background-color: #c8c8c8;
+  color: #ffffff;
+  width: 160px;
+  height: 60px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 160px;
+    height: 50px;
+    font-size: 1rem;
+  }
+`;
+
+export const Button5 = styled.button`
+  background-color: #ffffff;
+  color: #2277d8;
+  width: 160px;
+  height: 60px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  border: 1px solid #2277d8;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 60px;
+
+  @media ${breakPoints.mobile} {
+    width: 160px;
+    height: 50px;
+    font-size: 1rem;
+    margin: 20px 0;
   }
 `;
 
@@ -113,9 +167,8 @@ export const Button4 = styled.button`
 
   @media ${breakPoints.mobile} {
     width: 160px;
-    height: 60px;
-    font-size: 1.25rem;
-    margin-right: 60px;
+    height: 50px;
+    font-size: 1rem;
   }
 `;
 
@@ -133,25 +186,38 @@ export const Button1 = styled.button`
 
   @media ${breakPoints.mobile} {
     width: 160px;
-    height: 60px;
-    font-size: 1.25rem;
+    height: 50px;
+    font-size: 1rem;
   }
 `;
 
 export const Count = styled.div`
   font-size: 0.75rem;
   color: #808080;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const TopFont = styled.div`
   font-size: 0.938rem;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const NovelTitle = styled.div`
   font-size: 2.25rem;
-  font-weight: 500;
+  font-weight: 700;
   padding: 5px 0px 10px 0px;
   margin-left: -2px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.7rem;
+    text-align: center;
+  }
 `;
 
 export const StarImg = styled.img`
@@ -165,6 +231,10 @@ export const Score = styled.div`
   margin-left: 10px;
   color: #484848;
   margin-right: 10px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const StarWrapper = styled.div`
@@ -174,13 +244,25 @@ export const StarWrapper = styled.div`
 `;
 
 export const Star = styled(Rate)`
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #2277d8;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1rem;
+  }
 `;
 
 export const WrapWriter = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const WrapDiv = styled.div`
+  display: flex;
+
+  @media ${breakPoints.mobile} {
+    padding-top: 15px;
+  }
 `;
 
 export const WriterImg = styled.img`
@@ -233,7 +315,7 @@ export const NovelImage = styled.img`
 
   @media ${breakPoints.mobile} {
     width: 60%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     align-self: center;
   }
 `;
@@ -274,6 +356,18 @@ export const FlexWrapper = styled.div`
   }
 `;
 
+export const Divsl = styled.div`
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  margin: 0px 5px 0px 5px;
+  color: #484848;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+`;
+
 export const Divs = styled.div`
   font-size: 1rem;
   display: flex;
@@ -311,12 +405,20 @@ export const Line = styled.div`
 
 export const ArrowImg = styled.img`
   height: 11px;
+
+  @media ${breakPoints.mobile} {
+    height: 10px;
+  }
 `;
 
 export const New = styled.div`
   font-size: 0.75rem;
   margin-left: 5px;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.5rem;
+  }
 `;
 
 export const All = styled.div`
@@ -469,6 +571,11 @@ export const SortButton = styled.div`
   width: 76px;
   height: 30px;
   border: 1px solid black;
+
+  @media ${breakPoints.mobile} {
+    width: 65px;
+    height: 27px;
+  }
 `;
 
 export const TableButton = styled.div`
@@ -480,6 +587,11 @@ export const TableButton = styled.div`
   align-items: center;
   font-size: 0.938rem;
   margin-left: 10px;
+`;
+
+export const WrapEpisode = styled.div`
+  display: flex;
+  flex-direction: ${(props) => (props.isFirst ? "column-reverse" : "column")};
 `;
 
 export const TableLineWrapper = styled.div`
@@ -548,7 +660,19 @@ export const Borrows = styled.div`
   justify-content: center;
   align-items: center;
   margin-left: 30px;
-  margin-right: 16px;
+  margin-right: 15px;
+
+  @media ${breakPoints.mobile} {
+    margin-left: 10px;
+    font-size: 0.8rem;
+    width: 65px;
+    height: 33px;
+  }
+`;
+
+export const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const LookBtn = styled.div`
