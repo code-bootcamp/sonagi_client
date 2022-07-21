@@ -17,6 +17,7 @@ export const RowWrap = styled.div`
 export const NoticeTitleWrap = styled.div`
   display: flex;
   flex-direction: column;
+  width: 80%;
 `;
 export const Title = styled.label`
   font-size: 1.875em;
@@ -40,9 +41,10 @@ export const Subtitle = styled.div`
   }
 `;
 export const NoticeIcon = styled.img`
-  width: 188px;
-  height: 201px;
+  /* width: 188px;
+  height: 201px; */
 
+  width: 20%;
   @media ${breakPoints.mobile} {
     height: 150px;
   }
@@ -72,7 +74,7 @@ export const NoticeWrap = styled.div`
   margin-bottom: 20px;
   cursor: pointer;
 `;
-export const NoticeImg = styled.div`
+export const NoticeImg = styled.img`
   width: 20%;
   height: 135px;
   background-color: #eee;

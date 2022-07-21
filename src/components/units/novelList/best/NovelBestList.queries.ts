@@ -56,3 +56,13 @@ export const DELETE_NOVEL_LIKE = gql`
     }
   }
 `;
+
+export const SWITCH_NOVEL_LIKE = gql`
+  mutation switchNovelLike($novelID: String!) {
+    switchNovelLike(novelID: $novelID) {
+      id
+      msg
+      isSuccess
+    }
+  }
+`;

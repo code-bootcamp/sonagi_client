@@ -9,6 +9,9 @@ export const FETCH_NOTICES = gql`
       isTop
       createAt
       files {
+        id
+        name
+        path
         url
       }
     }

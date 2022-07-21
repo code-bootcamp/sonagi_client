@@ -36,7 +36,7 @@ export default function NoticeWriteContainer() {
       });
       Modal.success({ content: "등록 완료" });
       console.log(result);
-      router.push(`/markets/${result.data.createUseditem._id}`);
+      router.push("/notice");
     } catch (error) {
       console.log(error);
       Modal.error({ content: (error as Error).message });
@@ -59,7 +59,7 @@ export default function NoticeWriteContainer() {
   };
 
   const onClickList = () => {
-    router.push("/event");
+    router.push("/notice");
   };
 
   return (
