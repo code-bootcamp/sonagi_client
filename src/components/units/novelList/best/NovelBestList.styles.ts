@@ -6,13 +6,15 @@ export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 4.05% 2%;
+  /* margin: 4.05% 2%; */
+  margin: 30px 10px;
 `;
 export const Title = styled.label`
   font-size: 1.875rem;
   font-weight: 700;
   color: #4d4d4d;
-  padding-bottom: 30px;
+  margin-top: 30px;
+  padding-bottom: 50px;
 `;
 export const GridWrap = styled.div`
   display: flex;
@@ -59,10 +61,28 @@ export const ItemWrap = styled.div`
   }
 `;
 export const RowWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px 10px 30px;
+
+  @media (min-width: 391px) and (max-width: 767px) {
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 390px) {
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const AwardWrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 20px 30px 10px;
 
   @media (min-width: 391px) and (max-width: 767px) {
     align-items: center;
@@ -75,8 +95,9 @@ export const RowWrap = styled.div`
   }
 `;
 export const AwardIcon = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
 `;
 export const AwardNum = styled.div`
   font-size: 1.63rem;
@@ -85,7 +106,17 @@ export const AwardNum = styled.div`
 export const AwardText = styled.div`
   font-size: 1.13rem;
 `;
-
+export const PickedWrap = styled.div`
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+export const PickedTitle = styled.div`
+  font-size: 0.7rem;
+  color: #808080;
+`;
 export const Itembox = styled.div`
   display: flex;
   flex-direction: row;
@@ -159,14 +190,14 @@ export const ItemName = styled.div`
 `;
 
 export const HeartImg = styled.div`
-  width: 20%;
+  width: 30%;
   height: 21px;
   background-image: ${(props: any) =>
     props.HeartList?.includes(props.el)
       ? "url(/novelList/best/heart2.png)"
       : "url(/novelList/best/heart1.png)"};
   background-repeat: no-repeat;
-
+  vertical-align: middle;
   @media (max-width: 390px) {
     width: 100%;
     background-position: center;

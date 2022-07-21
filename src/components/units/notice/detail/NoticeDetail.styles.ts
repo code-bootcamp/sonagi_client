@@ -89,7 +89,7 @@ export const contents = styled.div`
   width: 100%;
   background-color: #eee;
   height: 70vh;
-  padding: 80px;
+  padding: 50px;
   border: none;
 
   @media ${breakPoints.tablet} {

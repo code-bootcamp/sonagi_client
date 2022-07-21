@@ -12,9 +12,19 @@ export default function NovelBestListPresenter(props: INovelBestListUIProps) {
           .map((el: any, index: number) => (
             <S.ItemWrap key={el.title}>
               <S.RowWrap>
-                <S.AwardIcon src="/novelList/best/award.svg" />
-                <S.AwardNum>{index + 1}</S.AwardNum>
-                <S.AwardText>위</S.AwardText>
+                <S.AwardWrap>
+                  <S.AwardIcon src="/novelList/best/award.svg" />
+                  <S.AwardNum>{index + 1}</S.AwardNum>
+                  <S.AwardText>위</S.AwardText>
+                </S.AwardWrap>
+                <S.PickedWrap>
+                  <S.PickedTitle>찜하기</S.PickedTitle>
+                  <S.HeartImg
+                    el={el.id}
+                    HeartList={props.HeartList}
+                    onClick={props.onClickLike(el)}
+                  />
+                </S.PickedWrap>
               </S.RowWrap>
               <S.Itembox>
                 <S.ItemPic
@@ -32,18 +42,6 @@ export default function NovelBestListPresenter(props: INovelBestListUIProps) {
                     >
                       {el.title}
                     </S.ItemName>
-                    <S.HeartImg
-                      el={el.id}
-                      HeartList={props.HeartList}
-                      // onClick={
-                      //   props.HeartList.includes(el.id)
-                      //     ? props.onClickDeleteLike(el)
-                      //     : props.onClickLike(el)
-                      // }
-                      onClick={props.onClickLike(el)}
-                      // onClick={props.onClickDeleteLike(el)}
-                    />
-                    {/* {console.log(el)} */}
                   </S.RowWrap2>
                   <S.Contents
                     dangerouslySetInnerHTML={{
