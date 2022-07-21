@@ -12,6 +12,17 @@ export default function NovelBestListContainer() {
 
   const [createNovelLike] = useMutation(CREATE_NOVEL_LIKE);
   const { data: LikeNovel } = useQuery(FETCH_NOVEL_LIKE);
+  const { data } = useQuery(FETCH_NOVELS_PAGE, {
+    variables: {
+      fetchNovelInput: {
+        type: "ALL",
+        target: "",
+        order: "LIKE",
+        isFinish: "ALL",
+        page: 1,
+      },
+    },
+  });
   console.log(LikeNovel);
 
   const HeartList = LikeNovel?.fetchNovelLikeInUser.map((el) => el.novel.id);
@@ -25,6 +36,18 @@ export default function NovelBestListContainer() {
         },
         refetchQueries: [
           {
+            query: FETCH_NOVELS_PAGE,
+            variables: {
+              fetchNovelInput: {
+                type: "ALL",
+                target: "",
+                order: "LIKE",
+                isFinish: "ALL",
+                page: 1,
+              },
+            },
+          },
+          {
             query: FETCH_NOVEL_LIKE,
           },
         ],
@@ -36,17 +59,6 @@ export default function NovelBestListContainer() {
       alert(error.message);
     }
   };
-  const { data } = useQuery(FETCH_NOVELS_PAGE, {
-    variables: {
-      fetchNovelInput: {
-        type: "ALL",
-        target: "",
-        order: "LIKE",
-        isFinish: "ALL",
-        page: 1,
-      },
-    },
-  });
 
   const onClickMoveToDetail = (el) => (event: any) => {
     router.push(`/novel/${event.currentTarget.id}`);

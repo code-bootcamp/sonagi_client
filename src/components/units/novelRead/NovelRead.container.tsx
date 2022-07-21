@@ -86,7 +86,7 @@ export default function NovelReadContainer() {
 
   const HeartList = likeData?.fetchNovelLikeInUser.map((el) => el.novel.id);
   const NovelId = router.query._id;
-  console.log(NovelId);
+  const Heart = HeartList?.includes(NovelId);
 
   const onClickLike = async () => {
     try {
@@ -168,6 +168,7 @@ export default function NovelReadContainer() {
       onClickLike={onClickLike}
       HeartList={HeartList}
       NovelId={NovelId}
+      Heart={Heart}
       // 세팅으로
       // onClickSetting={onClickSetting}
       // setting={setting}

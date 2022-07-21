@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const FETCH_NOVEL_DETAIL = gql`
-  query fetchNovelDetail($novelID: String!) {
-    fetchNovelDetail(novelID: $novelID) {
+  query fetchNovelDetail($novelID: String!, $userEmail: String) {
+    fetchNovelDetail(novelID: $novelID, userEmail: $userEmail) {
       id
       title
       description
@@ -40,6 +40,7 @@ export const FETCH_NOVEL_DETAIL = gql`
         isFinish
         isNotice
         isPrivate
+        isBuy
       }
     }
   }
