@@ -58,7 +58,9 @@ export const Writer = styled.div`
   margin-top: 10px;
 
   @media ${breakPoints.mobile} {
-    font-size: 1em;
+    font-size: 1.5em;
+    margin-left: 30%;
+    margin-top: 10%;
   }
 `;
 
@@ -133,7 +135,7 @@ export const Contents = styled.div`
 export const InnerContents = styled.div`
   margin-top: 20px;
   @media ${breakPoints.mobile} {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 10px;
   }
 `;
@@ -163,9 +165,9 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const FreeBoardImg = styled.img`
-  width: 300px;
+  width: 340px;
   height: 390px;
-  /* border: 3px solid #bdbdbd; */
+  border: 1px solid #bdbdbd;
   @media ${breakPoints.tablet} {
     position: relative;
     height: 270px;
@@ -187,6 +189,10 @@ export const ImageWrapper = styled.div`
 export const Avatar = styled.img`
   width: 90px;
   height: 90px;
+  @media ${breakPoints.mobile} {
+    width: 160px;
+    height: 160px;
+  }
 `;
 
 export const TopWrapper = styled.div`
@@ -259,6 +265,9 @@ export const Flexs = styled.div`
   @media ${breakPoints.tablet} {
     width: 80%;
   }
+  @media ${breakPoints.mobile} {
+    padding: 30px;
+  }
 
   /* background-color: #eee; */
 `;
@@ -288,6 +297,6 @@ export const DateWrapper = styled.div`
     width: 75%;
   }
   @media ${breakPoints.mobile} {
-    width: 124%;
+    width: 100%;
   }
 `;
