@@ -16,8 +16,8 @@ export const QuestionWrapper = styled.div`
 `;
 
 export const QuestionTitle = styled.div`
-  font-weight: 700;
-  font-size: 35px;
+  font-weight: 500;
+  font-size: 2.5rem;
   text-align: center;
   color: #484848;
   margin: 10px 0px 50px 0px;

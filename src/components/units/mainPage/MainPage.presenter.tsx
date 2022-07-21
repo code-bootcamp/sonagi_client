@@ -6,7 +6,7 @@ import MainPageQuestionContainer from "../../commons/mainPageQuestion/mainPageQu
 import MainPagePaymentContainer from "../../commons/mainPagePayment/mainPagePayment.container";
 import ReactPlayer from "react-player";
 
-export default function MainPagePresenter() {
+export default function MainPagePresenter(props) {
   return (
     <S.Wrapper>
       <LayoutBanner />

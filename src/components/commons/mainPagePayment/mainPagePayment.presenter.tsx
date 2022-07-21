@@ -20,7 +20,7 @@ export default function MainPagePaymentPresenter(props) {
           <S.ContentWrap>
             <S.BoxWrap>
               <S.BoxTitle>회원</S.BoxTitle>
-              <S.BoxContents>49,000</S.BoxContents>
+              <S.BoxContents {...props.animatedItem} />
               <S.BoxTitle>명</S.BoxTitle>
             </S.BoxWrap>
             <S.BoxWrap>
@@ -28,8 +28,7 @@ export default function MainPagePaymentPresenter(props) {
             </S.BoxWrap>
             <S.BoxWrap>
               <S.BoxTitle>유료회원</S.BoxTitle>
-              <S.BoxContents>{props.CountUp}</S.BoxContents>
-              <S.BoxContents>23,000</S.BoxContents>
+              <S.BoxContents {...props.animatedItem2} />
               <S.BoxTitle>명</S.BoxTitle>
             </S.BoxWrap>
           </S.ContentWrap>
@@ -40,16 +39,15 @@ export default function MainPagePaymentPresenter(props) {
           <S.ContentWrap>
             <S.BoxWrap>
               <S.BoxTitle>포인트</S.BoxTitle>
-              <S.BoxContents>50,000</S.BoxContents>
+              <S.BoxContents {...props.animatedItem3} />
               <S.BoxTitle>P</S.BoxTitle>
             </S.BoxWrap>
             <S.BoxWrap>
-              <S.Con>5 %</S.Con>
+              <S.Con2>5 %</S.Con2>
             </S.BoxWrap>
             <S.BoxWrap>
               <S.BoxTitle>금액</S.BoxTitle>
-              <S.BoxContents>{props.CountUp}</S.BoxContents>
-              <S.BoxContents>45,000</S.BoxContents>
+              <S.BoxContents {...props.animatedItem4} />
               <S.BoxTitle>원</S.BoxTitle>
             </S.BoxWrap>
           </S.ContentWrap>
