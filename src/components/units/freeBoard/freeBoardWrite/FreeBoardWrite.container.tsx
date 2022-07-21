@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import FreeBoardWritePresenter from "./FreeBoardWrite.presenter";
 import { CREATE_BOARD, UPDATE_BOARD } from "./FreeBoardWrite.queries";
@@ -92,6 +92,21 @@ export default function FreeBoardWriteContainer(
       alert(error);
     }
   };
+
+  // 이미지
+  useEffect(() => {
+    const files = props.data?.fetchBoard.files;
+    if (files) {
+      const urls = files.map((el: any) => el.url);
+
+      if (files[0]) {
+        setFileUrls([...urls]);
+      }
+      setValue("fileURLs", [...urls]);
+
+      trigger("fileURLs");
+    }
+  }, [props.data]);
 
   // 취소
   const onClickMoveToList = () => {

@@ -11,6 +11,10 @@ export const FETCH_BOARD = gql`
         id
         nickName
       }
+      files {
+        id
+        url
+      }
     }
   }
 `;

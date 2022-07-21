@@ -10,49 +10,53 @@ export default function FreeBoardDetailPresenter(
     <S.Wrapper>
       <S.RowWrap>
         <S.MainTitle>자유게시판</S.MainTitle>
-        <S.TitleLine></S.TitleLine>
+        {/* <S.TitleLine></S.TitleLine> */}
       </S.RowWrap>
-      <S.Title>{props.data?.fetchBoard?.title}</S.Title>
       <S.WriterWrapper>
-        <S.Writer>{props.data?.fetchBoard.user?.nickName}</S.Writer>
-        <S.Date>{getDate(props.data?.fetchBoard?.createAt)}</S.Date>
-        {/* <S.Date>{props.data?.fetchBoards.createAt}</S.Date> */}
-        {/* <S.Date>{props.data?.fetchBoards.viewCount}</S.Date> */}
-        {/* <S.Date>{props.data?.fetchBoards.likeCount}</S.Date> */}
-        <S.ReportIcon src="/freeBoard/report.png" />
+        {/* <S.ReportIcon src="/freeBoard/report.png" /> */}
       </S.WriterWrapper>
-      <S.Contents>
-        <S.InnerContents>{props.data?.fetchBoard.contents}</S.InnerContents>
-        {/* <S.FreeBoardImage
-          src={`https://storage.googleapis.com/code-camp-main-project/${props.data?.fetchBoard.files[0].url}`}
-        /> */}
-        {/* <S.FreeBoardImg
-          src={`https://storage.googleapis.com/code-camp-main-project/${props.data?.fetchBoard.files[0].url}`}
-        /> */}
-      </S.Contents>
-      <S.ButtonWrapper>
-        <Button01 title="목록으로" onClick={props.onClickMoveToBoardList} />
-        <Button01 title="수정하기" onClick={props.onClickMoveToEdit} />
-        <Button01 title="삭제하기" onClick={props.onClickDelete} />
-      </S.ButtonWrapper>
+      <S.Flex>
+        <S.Contents>
+          <S.Flexs>
+            <S.Column>
+              <S.Avatar src="/freeBoard/avatar.png" />
+              <S.Writer>{props.data?.fetchBoard.user?.nickName}</S.Writer>
+            </S.Column>
+            <S.Columns>
+              <S.DateWrapper>
+                <S.Date>{getDate(props.data?.fetchBoard?.createAt)}</S.Date>
+              </S.DateWrapper>
+              <S.TitleWrap>
+                <S.Title>{props.data?.fetchBoard?.title}</S.Title>
+              </S.TitleWrap>
+              <S.ContentsWrap>
+                <S.InnerContents>
+                  {props.data?.fetchBoard.contents}
+                </S.InnerContents>
+              </S.ContentsWrap>
+            </S.Columns>
+          </S.Flexs>
+
+          <S.BottomWrapper>
+            <S.ButtonWrapper>
+              <Button01
+                title="목록으로"
+                onClick={props.onClickMoveToBoardList}
+              />
+              <Button01 title="수정하기" onClick={props.onClickMoveToEdit} />
+              <Button01 title="삭제하기" onClick={props.onClickDelete} />
+            </S.ButtonWrapper>
+          </S.BottomWrapper>
+        </S.Contents>
+
+        <S.FreeBoardImg
+          src={
+            props.data?.fetchBoard.files[0]?.url
+              ? `https://storage.googleapis.com/code-camp-main-project/${props.data?.fetchBoard.files[0].url}`
+              : "/freeBoard/freeboard.png"
+          }
+        />
+      </S.Flex>
     </S.Wrapper>
-    //   <S.Wrapper>
-    //   <S.RowWrap>
-    //     <S.MainTitle>자유게시판</S.MainTitle>
-    //     <S.TitleLine></S.TitleLine>
-    //   </S.RowWrap>
-    //   <S.Title>작성 제목</S.Title>
-    //   <S.WriterWrapper>
-    //     <S.Writer>작성자</S.Writer>
-    //     <S.Date>2022.08.04</S.Date>
-    //     <S.Date>조회 60</S.Date>
-    //     <S.Date>추천 10</S.Date>
-    //     <S.ReportIcon src="/freeBoard/report.png" />
-    //   </S.WriterWrapper>
-    //   <S.Contents />
-    //   <S.ButtonWrapper>
-    //     <Button01 title="목록으로" />
-    //   </S.ButtonWrapper>
-    // </S.Wrapper>
   );
 }

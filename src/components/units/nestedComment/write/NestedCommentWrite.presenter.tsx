@@ -18,7 +18,7 @@ export default function NestedCommentWritePresenter(
           maxLength={100}
         />
         <S.Wraplength>
-          <S.Length>{props.contents.length}/100</S.Length>
+          <S.Length>{props.contents?.length}/100</S.Length>
 
           <S.CommentButton onClick={props.WriteNestedComment}>
             대댓글 등록

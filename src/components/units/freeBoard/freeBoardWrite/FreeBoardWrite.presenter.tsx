@@ -1,5 +1,4 @@
 import React from "react";
-import Button01 from "../../../commons/buttons/01";
 import Button02 from "../../../commons/buttons/02";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import { v4 as uuidv4 } from "uuid";
@@ -43,7 +42,7 @@ export default function FreeBoardWritePresenter(
       <S.ButtonWrapper>
         <Button02 title="취소" onClick={props.onClickMoveToList} />
         <S.Margin>
-          <Button01
+          <Button02
             title={props.isEdit ? "수정" : "등록"}
             onClick={props.isEdit ? props.onClickUpdate : props.onClickSubmit}
           />
