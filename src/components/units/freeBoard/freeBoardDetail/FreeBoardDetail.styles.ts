@@ -97,15 +97,14 @@ export const Date = styled.div`
   font-size: 1rem;
   text-align: center;
   color: #808080;
-  margin-right: 210px;
+  /* margin-right: 66%; */
+  /* width: 100%; */
 
   @media ${breakPoints.tablet} {
     font-size: 0.95rem;
-    width: 110%;
   }
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;
-    width: 40%;
   }
 `;
 export const ReportIcon = styled.img`
@@ -275,11 +274,14 @@ export const Flexs = styled.div`
 export const ContentsWrap = styled.div`
   width: 190%;
   height: 120px;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
   /* border: 2px solid black; */
 `;
 
 export const TitleWrap = styled.div`
-  width: 190%;
+  width: 100%;
   height: 120px;
   @media ${breakPoints.mobile} {
     font-size: 20px;
@@ -293,10 +295,11 @@ export const WriterWrap = styled.div`
 `;
 
 export const DateWrapper = styled.div`
+  width: 38%;
   @media ${breakPoints.tablet} {
-    width: 75%;
+    width: 100%;
   }
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 46%;
   }
 `;
