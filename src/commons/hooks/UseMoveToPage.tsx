@@ -11,5 +11,6 @@ export default function useMoveToPage() {
     setVisitedPage(path);
     router.push(path);
   };
+
   return { visitedPage, onClickMoveToPage };
 }
