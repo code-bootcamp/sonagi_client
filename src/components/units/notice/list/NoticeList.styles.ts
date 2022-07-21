@@ -160,7 +160,7 @@ export const NoticeTag = styled.div`
   }
 `;
 export const CreatAt = styled.span`
-  font-size: 1em;
+  font-size: 1.25em;
   color: #808080;
   font-weight: 300;
 

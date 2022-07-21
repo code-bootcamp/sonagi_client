@@ -176,10 +176,22 @@ export const List = styled.li`
   background-color: white;
   list-style: none;
   color: #828282;
-  border: 1px solid gray;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
   &:hover {
     font-weight: 700;
-    font-size: 17px;
+    /* background-color: #2277d8;
+    color: #fff; */
+    color: #2277d8;
+  }
+
+  @media ${breakPoints.tablet} {
+    text-align: center;
   }
 `;
 

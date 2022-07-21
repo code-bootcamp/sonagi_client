@@ -15,7 +15,7 @@ export default function NoticeDetailPresenter(props: any) {
           </S.NoticeName>
           <S.WriterWrap>
             <S.WriterName>관리자</S.WriterName>
-            <S.WriteAt>2022.00.00</S.WriteAt>
+            <S.WriteAt>2022.07.24</S.WriteAt>
           </S.WriterWrap>
           <S.Line></S.Line>
           <S.contents>
@@ -44,8 +44,12 @@ export default function NoticeDetailPresenter(props: any) {
             <br />
             <br /> 소나기 드림.
           </S.contents>
-          <S.BtnWrap onClick={props.onClickMoveToList}>
-            <Button01 title="목록으로" />
+          <S.BtnWrap>
+            <Button01 onClick={props.onClickMoveToList} title="목록으로" />
+            <Button01
+              onClickNoticeDelete={props.onClickNoticeDelete}
+              title="삭제하기"
+            />
           </S.BtnWrap>
         </S.NoticeDetail>
       </S.NoticeDetailWrap>
