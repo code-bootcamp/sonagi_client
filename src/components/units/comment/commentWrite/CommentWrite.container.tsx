@@ -18,6 +18,11 @@ export default function CommentWriteContainer(
     setContents(event.target.value);
   };
 
+  // const { register, handleSubmit, formState, reset } = useForm({
+  //   resolver: yupResolver(schema),
+  //   mode: "onChange",
+  // });
+
   // 등록
   const [createComment] = useMutation(CREATE_COMMENT);
   const onClickRegisterComment = async () => {
@@ -38,6 +43,7 @@ export default function CommentWriteContainer(
             },
           ],
         });
+
         alert("댓글을 등록했습니다.");
       } catch (error) {
         alert(error.message);
@@ -86,6 +92,9 @@ export default function CommentWriteContainer(
       onClickUpdateComment={onClickUpdateComment}
       isAnswer={props.isAnswer}
       isAnswerEdit={props.isAnswerEdit}
+      // register={register}
+      // handleSubmit={handleSubmit}
+      // formState={formState}
     />
   );
 }

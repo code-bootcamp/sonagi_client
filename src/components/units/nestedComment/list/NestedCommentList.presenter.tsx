@@ -13,25 +13,29 @@ export default function NestedCommentListPresenter(
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
-  console.log(
-    "대댓글데이터를조회해보자",
-    data?.fetchBoard?.comments[0]?.children[0]?.contents
-  );
+  // console.log(
+  //   "대댓글데이터를조회해보자",
+  //   data?.fetchBoard?.comments[0]?.children[0]?.contents
+  // );
+  console.log("대댓글데이터를조회해보자", data);
 
   const [isEdit, setIsEdit] = useState(false);
   const onClickUpdateNestedReply = () => {
     setIsEdit(true);
   };
 
+  console.log("this is a el", props.answerEL);
+
   return (
     <>
       <S.Wrapper>
+        <div>↪</div>
         <S.WrapperUserInfo>
           <S.WrapBestIcon>
             {/* <S.BestComment>Best</S.BestComment> */}
           </S.WrapBestIcon>
           <S.WrapInfo>
-            <S.ProfileIcon src="/comment/nestedComment.png" />
+            <S.ProfileIcon src="/comment/avatar.png" />
             <S.WrapCommentInfo>
               {/* <S.Comment>너무 재미있아요!!! 최고최고</S.Comment> */}
               {/* <S.Comment>{props.el?.contents}</S.Comment> */}
@@ -42,10 +46,10 @@ export default function NestedCommentListPresenter(
 
               <S.WrapUserInfo>
                 {/* <S.Name>Name</S.Name> */}
-                <S.Name>{props.answerEL?.user?.nickName}</S.Name>
+                <S.Name>{props.el?.user?.nickName}</S.Name>
 
                 {/* <S.Date>2022.07.04</S.Date> */}
-                <S.Date>{getDate(props.answerEL?.createAt)}</S.Date>
+                <S.Date>{getDate(props.el?.createAt)}</S.Date>
 
                 <S.UpIcon
                   src="/comment/thumb_up.png"
@@ -64,7 +68,7 @@ export default function NestedCommentListPresenter(
                 src="/comment/Trash.png"
                 onClick={props.DeleteNestedComment}
               />
-              <S.AnswerIcon src="/comment/insert_comment.png" />
+              {/* <S.AnswerIcon src="/comment/insert_comment.png" /> */}
             </S.WrapIcon>
           </S.WrapInfo>
         </S.WrapperUserInfo>

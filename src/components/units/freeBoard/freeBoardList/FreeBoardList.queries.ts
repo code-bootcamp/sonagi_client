@@ -17,8 +17,6 @@ export const FETCH_BOARDS_ALL = gql`
 
 export const FETCH_BOARD_ALL_COUNT = gql`
   query fetchBoardAllCount {
-    fetchBoardAllCount {
-      data
-    }
+    fetchBoardAllCount
   }
 `;

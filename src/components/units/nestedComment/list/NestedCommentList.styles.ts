@@ -4,7 +4,8 @@ import { breakPoints } from "../../../../commons/styles/media";
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  align-items: center;
   padding: 20px;
 
   @media ${breakPoints.mobile} {

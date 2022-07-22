@@ -3,11 +3,18 @@ import Button01 from "../../../commons/buttons/01";
 import * as S from "./FreeBoardList.styles";
 import { getDate } from "./../../../../commons/libraries/utils";
 import { IFreeBoardListPresenter } from "./FreeBoardList.types";
+// import Paginations from "../../../commons/paginations/Paginations.container";
 export default function FreeBoardListPresenter(props: IFreeBoardListPresenter) {
   return (
     <S.Wrapper>
       <S.WrapTitle>
         <S.MainTitle>자유게시판</S.MainTitle>
+        <S.WrapButton>
+          <Button01
+            title="작성하기"
+            onClick={props.onClickMoveToFreeBoardWrite}
+          />
+        </S.WrapButton>
       </S.WrapTitle>
 
       {props.data?.fetchBoardsAll.map(
@@ -53,13 +60,13 @@ export default function FreeBoardListPresenter(props: IFreeBoardListPresenter) {
           </S.WrapperBoard>
         )
       )}
-      {/* <Paginations refetch={props.refetch} count={props.count} /> */}
-      <S.WrapButton>
+      {/* <Paginations refetch={props.refetch} count={props.dataBoardsCount} /> */}
+      {/* <S.WrapButton>
         <Button01
           title="작성하기"
           onClick={props.onClickMoveToFreeBoardWrite}
         />
-      </S.WrapButton>
+      </S.WrapButton> */}
     </S.Wrapper>
   );
 }

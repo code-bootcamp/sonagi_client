@@ -1,5 +1,6 @@
 import React from "react";
-import InfiniteScroll from "react-infinite-scroller";
+// import NestedCommentListContainer from "../../nestedComment/list/NestedCommentList.container";
+// import InfiniteScroll from "react-infinite-scroller";
 import CommentListPresenterItem from "./CommentList.presenterItem";
 import { ICommentListPresenterProps } from "./CommentList.types";
 // import * as S from "./CommentList.styles";
@@ -12,15 +13,41 @@ export default function CommentListPresenter(
     //     <CommentListPresenterItem key={el.id} el={el} />
     //   ))}
     // </InfiniteScroll>
-    <InfiniteScroll pageStart={0} hasMore={true}>
-      {props.data?.fetchBoard?.comments.map((el: { id: any }) => (
-        <CommentListPresenterItem
-          key={el.id}
-          el={el}
-          data={props.data}
-          onClickLikeComment={undefined}
-        />
-      ))}
-    </InfiniteScroll>
+
+    // 이전부분
+    <>
+      {props.CommentData?.fetchBoard?.comments.map(
+        (el: { id: React.Key | null | undefined }) => (
+          <>
+            <CommentListPresenterItem
+              key={el.id}
+              el={el}
+              CommentData={props.CommentData}
+              UserData={props.UserData}
+              onClickLikeComment={undefined}
+              data={undefined}
+            />
+            {/* <NestedCommentListContainer /> */}
+          </>
+        )
+      )}
+    </>
+    // ---
+    // <>
+    //   {props.CommentData?.fetchBoard?.comments.map((el) =>
+    //     el.children.map((answerEL) => (
+    //       <>
+    //         <CommentListPresenterItem
+    //           key={el.id}
+    //           el={el}
+    //           CommentData={props.CommentData}
+    //           UserData={props.UserData}
+    //           onClickLikeComment={undefined}
+    //         />
+    //         {/* <NestedCommentListContainer answerEL={answerEL} /> */}
+    //       </>
+    //     ))
+    //   )}
+    // </>
   );
 }

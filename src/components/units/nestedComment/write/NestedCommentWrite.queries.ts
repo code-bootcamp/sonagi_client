@@ -81,3 +81,17 @@ export const FETCH_BOARD = gql`
     }
   }
 `;
+
+export const FETCH_COMMENTS_ALL = gql`
+  query fetchCommentsAll {
+    fetchCommentsAll {
+      id
+      contents
+      children {
+        id
+        contents
+        createAt
+      }
+    }
+  }
+`;

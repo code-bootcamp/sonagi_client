@@ -55,12 +55,21 @@ export const ContentsInput = styled.input`
   }
 
   &::placeholder {
-    font-size: 0.7rem;
+    font-size: 0.95rem;
     color: #bdbdbd;
+  }
+  @media ${breakPoints.tablet} {
+    &::placeholder {
+      font-size: 0.85rem;
+      color: #bdbdbd;
+    }
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 0.95rem;
+    &::placeholder {
+      font-size: 0.55rem;
+      color: #bdbdbd;
+    }
   }
 `;
 

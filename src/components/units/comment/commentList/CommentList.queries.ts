@@ -99,3 +99,15 @@ export const FETCH_COMMENTS_FROM_BOARD = gql`
     }
   }
 `;
+
+export const FETCH_LOGIN_USER = gql`
+  query fetchLoginUser {
+    fetchLoginUser {
+      id
+      name
+      nickName
+      email
+      phone
+    }
+  }
+`;

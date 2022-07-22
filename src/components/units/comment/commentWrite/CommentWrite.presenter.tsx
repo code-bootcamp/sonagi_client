@@ -5,6 +5,13 @@ export default function CommentWritePresenter(
   props: ICommentWritePresenterProps
 ) {
   return (
+    // <form
+    //   onSubmit={
+    //     props.isEdit
+    //       ? props.handleSubmit(props.onClickUpdateComment)
+    //       : props.handleSubmit(props.onClickRegisterComment)
+    //   }
+    // >
     <S.Wrapper>
       <S.WrapTitle>
         <S.CommentIcon src="/comment/insert_comment.png" />
@@ -33,5 +40,6 @@ export default function CommentWritePresenter(
         </S.Wraplength>
       </S.WrapContents>
     </S.Wrapper>
+    // </form>
   );
 }

@@ -2,13 +2,18 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 100%;
+  width: 97%;
+  margin-left: 16px;
+  margin-bottom: 13px;
   display: flex;
   flex-direction: column;
   padding: 20px;
+  background-color: #f6f6f6;
+  border-radius: 8px;
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
+    margin-top: 15px;
   }
 `;
 
@@ -58,6 +63,9 @@ export const WrapCommentInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 25px;
+  @media ${breakPoints.mobile} {
+    margin-top: 8px;
+  }
 `;
 
 export const Comment = styled.div`
