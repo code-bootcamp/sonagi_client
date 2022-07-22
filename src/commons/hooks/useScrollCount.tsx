@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback } from "react";
 
-const useScrollCount = (end, start, duration) => {
+const useScrollCount = (end: number, start: number, duration: number) => {
   const element = useRef();
   const observer = useRef(null);
   const stepTime = Math.abs(Math.floor(duration / (end - start)));
@@ -29,7 +29,7 @@ const useScrollCount = (end, start, duration) => {
       observer.current.observe(element.current);
     }
 
-    return () => observer && observer.disconnect();
+    return () => observer;
   }, [onScroll]);
 
   return {

@@ -1,12 +1,11 @@
 import { gql } from "@apollo/client";
 
 export const FETCH_QUESTION = gql`
-  query fetchQuestionAll {
-    fetchQuestionAll {
+  query fetchQuestion($questionID: String!) {
+    fetchQuestion(questionID: $questionID) {
       id
       title
       contents
-      createAt
       answer {
         id
         title

@@ -24,6 +24,15 @@ export const MainTitle = styled.div`
   padding-bottom: 25px;
 `;
 
+export const AnswerTitle = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2277d2;
+`;
+
 export const WrapperInquire = styled.div`
   padding: 20px 40px;
   display: flex;
@@ -33,6 +42,7 @@ export const WrapperInquire = styled.div`
   height: 500;
   border: 1px solid #bdbdbd;
   border-radius: 8px;
+  margin-bottom: 30px;
 `;
 
 export const WrapTitle = styled.div`
@@ -46,9 +56,8 @@ export const Label = styled.div`
   padding-bottom: 15px;
 `;
 
-export const LabelInput = styled.input`
+export const LabelInput = styled.div`
   width: 100%;
-  height: 30px;
   background-color: #f6f6f6;
   border: none;
   border-radius: 8px;
@@ -62,7 +71,7 @@ export const Error = styled.div`
   font-size: 0.8rem;
 `;
 
-export const ContentsInput = styled.textarea`
+export const ContentsInput = styled.div`
   width: 100%;
   height: 200px;
   background-color: #f6f6f6;
