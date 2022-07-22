@@ -50,8 +50,8 @@ export const WrapInfo = styled.div`
 `;
 
 export const ProfileIcon = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 `;
 
 export const WrapCommentInfo = styled.div`

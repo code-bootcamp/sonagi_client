@@ -44,6 +44,9 @@ export default function MyPageSideBarPresenter(props: any) {
           <S.Menu onClick={props.onClickMoveToPage("/myPage/inquire/")}>
             1:1 문의
           </S.Menu>
+          <S.Menu onClick={props.onClickMoveToPage("/myPage/myBoardList")}>
+            내가 쓴 게시글
+          </S.Menu>
           <S.Menu onClick={props.onClickMoveToPage("/myPage/profileChange")}>
             회원정보 변경
           </S.Menu>

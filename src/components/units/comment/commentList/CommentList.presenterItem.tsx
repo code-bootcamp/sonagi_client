@@ -141,6 +141,7 @@ export default function CommentListPresenterItem(
         <NestedCommentListContainer
           el={props.el}
           CommentData={props.CommentData}
+          isEdit={false}
         />
         {/* {isNestedExist && (
           <>
