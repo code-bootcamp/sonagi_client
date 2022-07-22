@@ -1,8 +1,9 @@
 import { getDateDay } from "../../../../commons/libraries/utils";
 import Button01 from "../../../commons/buttons/01";
 import * as S from "./NoticeList.styles";
+import { Iel, INoticeListPresenterProps } from "./NoticeList.types";
 
-export default function NoticeListPresenter(props) {
+export default function NoticeListPresenter(props: INoticeListPresenterProps) {
   return (
     <S.Wrap>
       <S.RowWrap>
@@ -14,7 +15,7 @@ export default function NoticeListPresenter(props) {
       </S.RowWrap>
       <S.NoticeListWrap>
         <S.Total>총 6 개의 글</S.Total>
-        {props.data?.fetchNoticesAll.map((el: any) => (
+        {props.data?.fetchNoticesAll.map((el: Iel) => (
           <S.NoticeWrap key={el.id} onClick={props.onClickNoticedetail}>
             <S.NoticeImg
               src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}

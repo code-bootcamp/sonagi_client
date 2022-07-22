@@ -1,15 +1,17 @@
 import DOMPurify from "dompurify";
 import * as S from "./NovelBestList.styles";
-import { INovelBestListUIProps } from "./NovelBestList.types";
+import { Iel, INovelBestListPresenterProps } from "./NovelBestList.types";
 
-export default function NovelBestListPresenter(props: INovelBestListUIProps) {
+export default function NovelBestListPresenter(
+  props: INovelBestListPresenterProps
+) {
   return (
     <S.Wrap>
       <S.Title>베스트셀러</S.Title>
       <S.GridWrap>
         {props.data?.fetchNovelsPage?.novels
           .slice(0, 10)
-          .map((el: any, index: number) => (
+          .map((el: Iel, index: number) => (
             <S.ItemWrap key={el.title}>
               <S.RowWrap>
                 <S.AwardWrap>
