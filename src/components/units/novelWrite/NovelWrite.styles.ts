@@ -258,7 +258,8 @@ export const CycleLabel = styled.div`
 
 export const WrapCycleButton = styled.div`
   margin-left: 25px;
-  display: ${(props) => (props.isClickDay ? "flex" : "none")};
+  display: ${(props: INovelWriteStyles) =>
+    props.isClickDay ? "flex" : "none"};
 
   @media ${breakPoints.mobile} {
     margin: 0;

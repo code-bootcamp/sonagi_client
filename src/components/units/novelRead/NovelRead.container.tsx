@@ -10,7 +10,7 @@ import {
   SWITCH_NOVEL_LIKE,
   TOGGLE_BOOK_MARK,
 } from "./NovelRead.queries";
-import { Iel } from "./NovelRead.types";
+import { Iel, ILikeEl } from "./NovelRead.types";
 
 export default function NovelReadContainer() {
   const router = useRouter();
@@ -84,7 +84,9 @@ export default function NovelReadContainer() {
 
   // 선호작 등록하기
 
-  const HeartList = likeData?.fetchNovelLikeInUser.map((el) => el.novel.id);
+  const HeartList = likeData?.fetchNovelLikeInUser.map(
+    (el: ILikeEl) => el.novel.id
+  );
   const NovelId = router.query._id;
   const Heart = HeartList?.includes(NovelId);
 

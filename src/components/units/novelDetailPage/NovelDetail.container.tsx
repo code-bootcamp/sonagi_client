@@ -12,6 +12,7 @@ import {
   PAIDPOINT,
   SWITCH_NOVEL_LIKE,
 } from "./NovelDetail.queries";
+import { Iel } from "./NovelDetail.types";
 
 export default function NovelDetailContainer() {
   const router = useRouter();
@@ -89,7 +90,9 @@ export default function NovelDetailContainer() {
 
   // 선호작 등록하기
   const { data: likeData, refetch } = useQuery(FETCH_NOVEL_LIKE_IN_USER);
-  const HeartList = likeData?.fetchNovelLikeInUser.map((el) => el.novel.id);
+  const HeartList = likeData?.fetchNovelLikeInUser.map(
+    (el: Iel) => el.novel.id
+  );
   const NovelId = router.query._id;
   const Heart = HeartList?.includes(NovelId);
 
@@ -197,8 +200,8 @@ export default function NovelDetailContainer() {
   //   return checkList.some((cur) => cur.id === list.id);
   // };
 
-  const onClickEditEpisode = (event) => {
-    router.push(`/novel/${router.query._id}/${event.target.id}/edit`);
+  const onClickEditEpisode = (event: MouseEvent<HTMLDivElement>) => {
+    router.push(`/novel/${router.query._id}/${event.currentTarget.id}/edit`);
   };
 
   return (

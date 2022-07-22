@@ -1,14 +1,19 @@
 import { PlusOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
 import { Input, Tag, Tooltip } from "antd";
-import { useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+
+interface ITagsProps {
+  tags: string[];
+  setTags: Dispatch<SetStateAction<string[]>>;
+}
 
 const Inputs = styled(Input)`
   width: 200px;
   border-radius: 10px;
 `;
 
-export default function Tags(props) {
+export default function Tags(props: ITagsProps) {
   // const [tags, setTags] = useState([""]);
   const [inputVisible, setInputVisible] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -26,7 +31,7 @@ export default function Tags(props) {
   }, [inputValue]);
 
   const handleClose = (removedTag: string) => {
-    const newTags = props.tags.filter((tag) => tag !== removedTag);
+    const newTags = props.tags.filter((tag: any) => tag !== removedTag);
     props.setTags(newTags);
   };
 
@@ -34,7 +39,7 @@ export default function Tags(props) {
     setInputVisible(true);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     setInputValue(e.target.value);
   };
 
@@ -47,7 +52,7 @@ export default function Tags(props) {
     setInputValue("");
   };
 
-  const handleEditInputChange = (e) => {
+  const handleEditInputChange = (e: any) => {
     setEditInputValue(e.target.value);
   };
 
@@ -61,7 +66,7 @@ export default function Tags(props) {
 
   return (
     <>
-      {props.tags.map((tag, index) => {
+      {props.tags.map((tag: any, index: any) => {
         if (editInputIndex === index) {
           return (
             <Inputs

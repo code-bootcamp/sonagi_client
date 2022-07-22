@@ -51,7 +51,7 @@ export interface IReadCommentListPresenterItemProps {
     updateAt?: string;
     user?: {
       id?: string;
-      nickname?: string;
+      nickName?: string;
     };
     count?: number;
   };

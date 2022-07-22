@@ -21,9 +21,17 @@ export interface IVolumeWritePresenterProps {
   onClickEpisode: () => void;
   isNotice: boolean;
   isEpisode: boolean;
+  onClickUpdate: (data: any) => void;
+  isEdit?: boolean;
+  editData?: any;
 }
 
 export interface IVolumeWriteStyles {
   isEpisode?: boolean;
   isNotice?: boolean;
+}
+
+export interface IVolumeWriteContainerProps {
+  editData?: any;
+  isEdit?: boolean;
 }

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
 import { breakPoints } from "../../../commons/styles/media";
+import { INovelDetailStyles } from "./NovelDetail.types";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -591,7 +592,8 @@ export const TableButton = styled.div`
 
 export const WrapEpisode = styled.div`
   display: flex;
-  flex-direction: ${(props) => (props.isFirst ? "column-reverse" : "column")};
+  flex-direction: ${(props: INovelDetailStyles) =>
+    props.isFirst ? "column-reverse" : "column"};
 `;
 
 export const TableLineWrapper = styled.div`

@@ -20,4 +20,17 @@ export interface INovelDetailPresenterProps {
   isDonate: boolean;
   isSubmitting: boolean;
   onClickFirstView: () => void;
+  onClickEditEpisode: (event: MouseEvent<HTMLDivElement>) => void;
+  Heart: boolean;
+}
+
+export interface Iel {
+  id: string;
+  novel: {
+    id: string;
+  };
+}
+
+export interface INovelDetailStyles {
+  isFirst: boolean;
 }

@@ -13,13 +13,16 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Editor } from "@toast-ui/react-editor";
 import { Modal } from "antd";
+import { IVolumeWriteContainerProps } from "./VolumeWrite.types";
 
 const schema = yup.object({
   title: yup.string().required("필수"),
   contents: yup.string().required("필수"),
 });
 
-export default function VolumeWriteContainer(props) {
+export default function VolumeWriteContainer(
+  props: IVolumeWriteContainerProps
+) {
   const { onClickMoveToPage } = useMoveToPage();
   const router = useRouter();
   const [createNovelIndex] = useMutation(CREATE_NOVEL_INDEX);
@@ -136,6 +139,7 @@ export default function VolumeWriteContainer(props) {
       // 수정
       onClickUpdate={onClickUpdate}
       editData={props.editData}
+      isEdit={props.isEdit}
     />
   );
 }

@@ -24,9 +24,20 @@ export interface INovelReadPresenterProps {
   onClickComment: () => void;
   commentData?: any;
   onClickRight: any;
+  onClickLike: () => void;
+  HeartList: string[];
+  NovelId: any;
+  Heart: boolean;
 }
 
 export interface INovelReadStyles {
   setDisplay?: Dispatch<SetStateAction<boolean>>;
   fontsize?: number;
+}
+
+export interface ILikeEl {
+  id: string;
+  novel: {
+    id: string;
+  };
 }
