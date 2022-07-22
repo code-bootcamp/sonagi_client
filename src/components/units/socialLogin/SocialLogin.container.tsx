@@ -6,6 +6,7 @@ import { ChangeEvent, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { AUTH_PHONE_OK, CREATE_USER, SEND_PHONE } from "./SocialLogin.queries";
+import { Modal } from "antd";
 
 const schema = yup.object({
   nickName: yup
@@ -51,7 +52,7 @@ export default function SocialLoginContainer() {
       }).then((result) => setToken(result.data.SendPhone));
       console.log(phone);
     } catch (error) {
-      console.log(error);
+      Modal.error({ content: "인증번호 전송에 실패했습니다" });
     }
   };
 
@@ -68,7 +69,7 @@ export default function SocialLoginContainer() {
       console.log(result);
       setPhoneCheck(true);
     } catch (error) {
-      console.log(error);
+      Modal.error({ content: "인증 실패" });
     }
   };
 
@@ -88,10 +89,10 @@ export default function SocialLoginContainer() {
         });
         console.log(data);
         console.log(result);
-        alert("회원가입 완료");
+        Modal.success({ content: "회원가입이 완료되었습니다" });
         router.push("/login");
-      } catch (error) {
-        console.log(error);
+      } catch (error: any) {
+        Modal.error({ content: error.message });
       }
     }
   };

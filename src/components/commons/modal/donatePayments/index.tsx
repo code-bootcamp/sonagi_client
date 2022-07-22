@@ -121,7 +121,7 @@ export const DONATE_POINT = gql`
   }
 `;
 
-export default function DonatePage(props) {
+export default function DonatePage(props: any) {
   const [donatePoint] = useMutation(DONATE_POINT);
   const [point, setPoint] = useState();
 
@@ -129,7 +129,7 @@ export default function DonatePage(props) {
     props.setIsDonate(false);
   };
 
-  const onChangeDonate = (event) => {
+  const onChangeDonate = (event: any) => {
     setPoint(event?.target.value);
   };
 
@@ -149,7 +149,7 @@ export default function DonatePage(props) {
       // alert("후원 감사합니데이~~!");
       message.info("후원감사합니다");
       props.setIsDonate(false);
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };

@@ -36,8 +36,6 @@ export default function LayoutHeader() {
   const { data } = useQuery(FETCH_LOGIN_USER);
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
 
-  console.log(data);
-
   const { onClickMoveToPage } = useMoveToPage();
 
   const onClickLogout = async () => {

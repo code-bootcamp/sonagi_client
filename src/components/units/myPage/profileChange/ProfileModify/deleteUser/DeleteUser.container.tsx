@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { Modal } from "antd";
 import { useState } from "react";
 import DeleteUserPresenter from "./DeleteUser.presenter";
 import { DELETE_USER } from "./DeleteUser.queries";
@@ -15,10 +16,10 @@ export default function DeleteUserContainer() {
     try {
       const result = await deleteLoginUser();
       console.log(result);
-      alert("회원 탈퇴가 완료되었습니다");
+      Modal.success({ content: "그동안 소나기를 이용해주셔서 감사합니다" });
       window.location.replace("/");
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 

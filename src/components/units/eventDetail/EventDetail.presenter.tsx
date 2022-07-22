@@ -1,7 +1,7 @@
 import Button01 from "../../commons/buttons/01";
 import * as S from "./EventDetail.styles";
 
-export default function EventDetailPresenter(props) {
+export default function EventDetailPresenter(props: any) {
   return (
     <S.Wrapper>
       <S.EventDetailWrap>

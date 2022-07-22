@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { Modal } from "antd";
 import useMoveToPage from "../../../../commons/hooks/UseMoveToPage";
 import LikeNovelPresenter from "./LikeNovel.presenter";
 import { DELETE_NOVEL_LIKE, FETCH_NOVEL_LIKE } from "./LikeNovel.queries";
@@ -25,9 +26,9 @@ export default function LikeNovelContainer() {
         ],
       });
       console.log(result);
-      alert("찜 취소 완료");
-    } catch (error) {
-      console.log(error);
+      Modal.success({ content: "찜하기가 취소되었습니다" });
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 
