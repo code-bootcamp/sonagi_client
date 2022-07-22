@@ -4,6 +4,7 @@ import { COMPARE_PASSWORD, UPDATE_USER_PWD } from "./PasswordChange.queries";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Modal } from "antd";
 
 const schema = yup.object({
   prevPwd: yup.string(),
@@ -42,16 +43,16 @@ export default function PasswordChangeContainer() {
             },
           });
           console.log(result);
-          alert("비밀번호가 변경되었습니다");
+          Modal.success({ content: "비밀번호가 변경되었습니다" });
           reset();
-        } catch (error) {
-          alert(error);
+        } catch (error: any) {
+          Modal.error({ content: error.message });
         }
         reset();
-      } else alert("현재 비밀번호가 일치하지 않습니다");
+      } else Modal.error({ content: "현재 비밀번호가 일치하지 않습니다" });
       return;
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
   return (

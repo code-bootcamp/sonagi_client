@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import { Modal } from "antd";
 
 const schema = yup.object({
   pwd: yup.string().required("필수 입력 사항"),
@@ -33,10 +34,10 @@ export default function ProfileCertifyContainer() {
       if (result.data.comparePassword.isSuccess === true) {
         reset();
         router.push("/myPage/profileModify");
-      } else alert("비밀번호가 일치하지 않습니다");
+      } else Modal.error({ content: "비밀번호가 일치하지 않습니다" });
       return;
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 

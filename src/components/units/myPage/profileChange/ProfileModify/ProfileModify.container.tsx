@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
+import { Modal } from "antd";
 
 const schema = yup.object({
   name: yup
@@ -46,10 +47,10 @@ export default function ProfileModifyContainer() {
         },
       });
       console.log(result);
-      alert("회원정보가 변경되었습니다");
+      Modal.success({ content: "회원정보가 변경되었습니다" });
       reset();
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 

@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { Modal } from "antd";
 import { useState } from "react";
 import PointChargePresenter from "./PointCharge.presenter";
 import {
@@ -13,7 +14,6 @@ declare const window: typeof globalThis & {
 
 export default function PointChargeContainer() {
   const { data: loginData } = useQuery(FETCH_LOGIN_USER);
-  console.log(loginData);
   const { data: pointData } = useQuery(FETCH_PRODUCTS_ALL);
   const [createPayment] = useMutation(CREATE_PAYMENT);
 
@@ -57,12 +57,12 @@ export default function PointChargeContainer() {
               },
             });
             console.log(result);
-            alert("충전완료");
-          } catch (error) {
-            console.log(error);
+            Modal.success({ content: "포인트 충전이 완료되었습니다" });
+          } catch (error: any) {
+            Modal.error({ content: error.message });
           }
         } else {
-          alert("결제 실패");
+          Modal.error({ content: "포인트 충전 실패" });
         }
       }
     );

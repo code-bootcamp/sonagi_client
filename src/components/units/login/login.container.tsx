@@ -7,6 +7,7 @@ import { accessTokenState } from "../../../commons/store";
 import { LOGIN_USER } from "./login.queries";
 import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
+import { Modal } from "antd";
 
 const schema = yup.object({
   email: yup
@@ -54,10 +55,10 @@ export default function LoginContainer() {
       });
       setAccessToken(result.data?.Login);
       localStorage.setItem("refreshToken", result.data?.Login);
-      alert("로그인 성공");
+      Modal.success({ content: "소나기에 오신 걸 환영합니다" });
       window.location.replace("/");
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 

@@ -6,6 +6,7 @@ import EventWritePresenter from "./EventWrite.presenter";
 import * as yup from "yup";
 import { CREATE_EVENT } from "./EventWrite.queries";
 import { useForm } from "react-hook-form";
+import { Modal } from "antd";
 
 const schema = yup.object({
   title: yup.string(),
@@ -54,9 +55,9 @@ export default function EventWriteContainer() {
         },
       });
       console.log("하하하", result);
-      alert("성공");
-    } catch (error) {
-      alert(error);
+      Modal.success({ content: "이벤트 등록 완료" });
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 
