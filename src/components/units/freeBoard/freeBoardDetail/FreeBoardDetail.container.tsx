@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import React from "react";
 import FreeBoardDetailPresenter from "./FreeBoardDetail.presenter";
@@ -21,10 +22,12 @@ export default function FreeBoardDetailContainer() {
       deleteBoard({
         variables: { BoardID: router.query._id },
       });
-      alert("게시글이 삭제되었습니다.");
+      // alert("게시글이 삭제되었습니다.");
+      Modal.success({ content: "게시글이 삭제되었습니다." });
       router.push("/freeBoard");
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      // alert(error);
+      Modal.error({ content: error.message });
     }
   };
 

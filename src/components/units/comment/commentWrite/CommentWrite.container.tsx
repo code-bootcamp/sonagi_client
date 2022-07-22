@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import React, { FormEventHandler, MouseEventHandler, useState } from "react";
 import CommentWritePresenter from "./CommentWrite.presenter";
@@ -39,9 +40,11 @@ export default function CommentWriteContainer(
           ],
         });
 
-        alert("댓글을 등록했습니다.");
+        // alert("댓글을 등록했습니다.");
+        Modal.success({ content: "댓글을 등록했습니다." });
       } catch (error: any) {
-        alert(`댓글 등록에 실패했습니다 ${error.message}`);
+        // alert(`댓글 등록에 실패했습니다 ${error.message}`);
+        Modal.error({ content: error.message });
       }
     }
   };

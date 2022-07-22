@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { Key } from "react";
 import { DELETE_COMMENT } from "../../comment/commentList/CommentList.queries";
@@ -31,9 +32,11 @@ export default function NestedCommentListContainer(
           },
         ],
       });
-      alert("대댓글이 삭제되었습니다.");
+      // alert("대댓글이 삭제되었습니다.");
+      Modal.success({ content: "대댓글이 삭제되었습니다." });
     } catch (error: any) {
-      alert(`대댓글 삭제에 실패했습니다. ${error.message}`);
+      // alert(`대댓글 삭제에 실패했습니다. ${error.message}`);
+      Modal.error({ content: error.message });
     }
   };
 
