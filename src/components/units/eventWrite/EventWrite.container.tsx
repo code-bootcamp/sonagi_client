@@ -39,7 +39,7 @@ export default function EventWriteContainer() {
     trigger("fileURLs");
   };
 
-  const onClickEventWrite = async (data) => {
+  const onClickEventWrite = async (data: any) => {
     try {
       const result = await createEvent({
         variables: {

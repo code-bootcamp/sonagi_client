@@ -115,7 +115,7 @@ export const CANCEL_PAYMENT = gql`
   }
 `;
 
-export default function PaymentPage(props) {
+export default function PaymentPage(props: any) {
   const [cancelPayment] = useMutation(CANCEL_PAYMENT);
   const [reason, setReason] = useState("");
   const handleCancel = () => {
@@ -125,7 +125,7 @@ export default function PaymentPage(props) {
   const impUid = String(props.CancelData?.impUid);
   const merchantUid = String(props.CancelData?.merchantUid);
 
-  const onChangeReason = (event) => {
+  const onChangeReason = (event: any) => {
     setReason(event.target.value);
   };
 
@@ -145,7 +145,7 @@ export default function PaymentPage(props) {
       });
       console.log(result);
       alert("환불이 완료되었습니다");
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };
