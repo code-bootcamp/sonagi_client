@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media ${breakPoints.mobile} {
-    padding: 100px 0px 100px 0;
+  @media (max-width: 960px) {
+    padding: 100px 0 50px 0;
   }
 `;
 
@@ -102,7 +102,26 @@ export const Con = styled.div`
   justify-content: center;
   font-weight: 300;
   padding-top: 2px;
-  margin-left: 137px;
+  margin-left: 125px;
+  margin-bottom: -17px;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+`;
+
+export const Con2 = styled.div`
+  width: 65px;
+  height: 35px;
+  background-image: url("/mainpage/textcon.png");
+  background-repeat: no-repeat;
+  background-size: 65px 35px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+  padding-top: 2px;
+  margin-left: 135px;
   margin-bottom: -17px;
 
   @media ${breakPoints.mobile} {

@@ -9,15 +9,11 @@ export const QuestionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media ${breakPoints.mobile} {
-    background: #f7f7f7;
-  }
 `;
 
 export const QuestionTitle = styled.div`
-  font-weight: 700;
-  font-size: 35px;
+  font-weight: 500;
+  font-size: 2.5rem;
   text-align: center;
   color: #484848;
   margin: 10px 0px 50px 0px;
@@ -30,6 +26,7 @@ export const QuestionBox = styled.div`
       ? "260px"
       : "60px"};
   display: flex;
+  transition: 0.3s;
   flex-direction: column;
   margin-bottom: 25px;
   padding: 10px 20px 10px 20px;

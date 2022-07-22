@@ -146,27 +146,38 @@ export const VideoWrapper = styled.div`
   width: 100%;
   height: 450px;
   padding: 100px 0px;
+  position: relative;
+  overflow: visible;
   background: #f7f7f7;
   display: flex;
   flex-direction: column;
 
-  @media ${breakPoints.mobile} {
-    display: none;
+  @media (max-width: 960px) {
+    flex-direction: column;
+    height: 800px;
+    position: static;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 export const VideoDiv = styled.div`
   position: absolute;
-  top: 490%;
-  left: 20%;
+  top: -18%;
+  left: 12%;
+  transform: translate(0%, -0%);
   box-shadow: 10px 10px 40px rgb(0 0 0 / 10%);
 
-  @media (min-width: 767px) and (max-width: 991px) {
-    left: 10%;
-  }
-
-  @media ${breakPoints.mobile} {
-    left: 3%;
+  @media (max-width: 960px) {
+    position: static;
+    top: 5%;
+    left: 0;
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
   }
 `;
 
@@ -181,6 +192,11 @@ export const VideoContentWrap = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 60%;
+
+  @media (max-width: 960px) {
+    padding-left: 0;
+    padding-top: 30px;
+  }
 `;
 
 export const VideoContent = styled.div`
