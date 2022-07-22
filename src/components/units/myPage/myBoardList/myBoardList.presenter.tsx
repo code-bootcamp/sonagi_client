@@ -1,5 +1,6 @@
 import { Key, ReactChild, ReactFragment, ReactPortal } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
+import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./myBoardList.styles";
 import { IMyBoardListPresenterProps } from "./myBoardList.types";
 export default function MyBoardListPresenter(
@@ -8,6 +9,9 @@ export default function MyBoardListPresenter(
   return (
     <S.DIV>
       <S.Wrapper>
+        <S.HamburgerWrapper>
+          <HamburgerPage />
+        </S.HamburgerWrapper>
         <S.WrapperHeader>
           <S.MenuWrapper>
             <S.ProductMenu
@@ -30,7 +34,7 @@ export default function MyBoardListPresenter(
               <S.ColumnName>번호</S.ColumnName>
               <S.ColumnTitle>제목</S.ColumnTitle>
               <S.ColumnContents>내용</S.ColumnContents>
-              <S.ColumnName>날짜</S.ColumnName>
+              <S.CreateAt>날짜</S.CreateAt>
             </S.RowName>
             {props.BoardData?.fetchBoards.map(
               (
@@ -58,7 +62,7 @@ export default function MyBoardListPresenter(
                   <S.Column>{index + 1}</S.Column>
                   <S.ColumnCommentTitle>{el.title}</S.ColumnCommentTitle>
                   <S.ColumnInnerContents>{el.contents}</S.ColumnInnerContents>
-                  <S.Column>{getDate(el.createAt)}</S.Column>
+                  <S.CreateAtColumn>{getDate(el.createAt)}</S.CreateAtColumn>
                 </S.Row>
               )
             )}
@@ -67,8 +71,8 @@ export default function MyBoardListPresenter(
           <S.WrapperBody>
             <S.RowName>
               <S.ColumnName>번호</S.ColumnName>
-              <S.ColumnCommentTitle>댓글내용</S.ColumnCommentTitle>
-              <S.ColumnName>날짜</S.ColumnName>
+              <S.CommentContents>댓글내용</S.CommentContents>
+              <S.date>날짜</S.date>
             </S.RowName>
             {props.CommentData?.fetchComments.map(
               (
@@ -87,8 +91,8 @@ export default function MyBoardListPresenter(
               ) => (
                 <S.CommentsRow key={el.id}>
                   <S.Column>{index + 1}</S.Column>
-                  <S.ColumnCommentTitle>{el.contents}</S.ColumnCommentTitle>
-                  <S.Column>{getDate(el.createAt)}</S.Column>
+                  <S.ColumnContentss>{el.contents}</S.ColumnContentss>
+                  <S.ColumnDate>{getDate(el.createAt)}</S.ColumnDate>
                 </S.CommentsRow>
               )
             )}

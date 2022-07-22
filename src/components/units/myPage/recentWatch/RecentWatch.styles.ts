@@ -43,7 +43,7 @@ export const NovelPic = styled.img`
   margin-left: 45px;
   position: absolute;
   top: 10px;
-  z-index: 3;
+  z-index: 2;
 
   /* top: 5px; */
   /* position: absolute;
@@ -67,11 +67,11 @@ export const NovelPic = styled.img`
     margin-left: 58px;
   }
   @media ${breakPoints.mobile} {
-    width: 95px;
-    height: 130px;
+    width: 88%;
+    height: 123px;
     position: absolute;
-    top: 19px;
-    margin-left: 70px;
+    top: 20px;
+    right: -12px;
   }
 `;
 
@@ -83,7 +83,7 @@ export const NovelPics = styled.img`
   margin-left: 45px;
   position: absolute;
   top: 306px;
-  z-index: 3;
+  z-index: 2;
   /* position: absolute;
   top: 100; */
   transition: all 0.6s ease 0.2s;
@@ -106,11 +106,11 @@ export const NovelPics = styled.img`
   }
 
   @media ${breakPoints.mobile} {
-    width: 95px;
-    height: 130px;
+    width: 88%;
+    height: 123px;
     position: absolute;
     top: 253px;
-    margin-left: 70px;
+    right: -12px;
   }
 `;
 
@@ -156,7 +156,7 @@ export const BookShelf = styled.img`
   position: absolute;
   width: 960px;
   top: 195px;
-  z-index: 2;
+  z-index: 1;
   @media ${breakPoints.tablet} {
     /* width: 100%; */
     width: 658px;
@@ -165,10 +165,9 @@ export const BookShelf = styled.img`
     left: 20px;
   }
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 110%;
     position: absolute;
     top: 140px;
-    left: 30px;
   }
 `;
 
@@ -176,7 +175,7 @@ export const BookShelfs = styled.img`
   position: absolute;
   top: 492px;
   width: 960px;
-  z-index: 2;
+  z-index: 1;
 
   @media ${breakPoints.tablet} {
     width: 658px;
@@ -185,10 +184,10 @@ export const BookShelfs = styled.img`
     left: 20px;
   }
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 110%;
     position: absolute;
     top: 373px;
-    left: 30px;
+    /* left: 10px; */
   }
 `;
 
@@ -243,8 +242,7 @@ export const Wrap = styled.div`
   }
   @media ${breakPoints.mobile} {
     position: relative;
-
-    width: 100%;
+    width: 95%;
   }
 `;
 
@@ -258,16 +256,22 @@ export const Wraps = styled.div`
     width: 90%;
   }
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 95%;
   }
 `;
 
 export const BoxWrap = styled.div`
   width: 100%;
+  @media ${breakPoints.mobile} {
+    position: relative;
+  }
 `;
 
 export const BoxWraps = styled.div`
   width: 100%;
+  @media ${breakPoints.mobile} {
+    position: relative;
+  }
 `;
 
 export const TitleWrap = styled.div`
@@ -292,9 +296,13 @@ export const HamburgerWrapper = styled.div`
   @media ${breakPoints.mobile} {
     display: flex;
     width: 100%;
-    z-index: 4;
-    position: relative;
+    z-index: 3;
+    position: absolute;
+    justify-content: right;
+    bottom: 510px;
+    right: 10px;
+    /* position: relative;
     left: 540px;
-    bottom: 80px;
+    bottom: 80px; */
   }
 `;

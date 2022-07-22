@@ -85,6 +85,9 @@ export default function HamburgerPage() {
             <Label onClick={onClickMoveToPage("/myPage/inquireList")}>
               1:1 문의
             </Label>
+            <Label onClick={onClickMoveToPage("/myPage/myBoardList")}>
+              내가 쓴 게시글
+            </Label>
             <Label onClick={onClickMoveToPage("/myPage/profileChange")}>
               회원정보 변경
             </Label>
