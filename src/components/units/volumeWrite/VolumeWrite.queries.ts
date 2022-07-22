@@ -25,3 +25,13 @@ export const FETCH_NOVEL_DETAIL = gql`
     }
   }
 `;
+
+export const UPDATE_NOVEL_INDEX = gql`
+  mutation updateNovelIndex($input: UpdateNovelIndexInput!) {
+    updateNovelIndex(input: $input) {
+      id
+      title
+      contents
+    }
+  }
+`;

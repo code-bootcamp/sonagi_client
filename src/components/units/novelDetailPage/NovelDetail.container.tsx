@@ -197,6 +197,10 @@ export default function NovelDetailContainer() {
   //   return checkList.some((cur) => cur.id === list.id);
   // };
 
+  const onClickEditEpisode = (event) => {
+    router.push(`/novel/${router.query._id}/${event.target.id}/edit`);
+  };
+
   return (
     <NovelDetailPresenter
       novelID={novelID}
@@ -221,6 +225,8 @@ export default function NovelDetailContainer() {
       Heart={Heart}
       // 첫화 보기
       onClickFirstView={onClickFirstView}
+      // 수정하기
+      onClickEditEpisode={onClickEditEpisode}
       // 체크박스
       // onClickCheckAll={onClickCheckAll}
       // onCheckedItem={onCheckedItem}

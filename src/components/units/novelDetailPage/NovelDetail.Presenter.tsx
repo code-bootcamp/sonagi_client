@@ -185,6 +185,9 @@ export default function NovelDetailPresenter(
                       <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
                         보기
                       </S.LookBtn>
+                      <S.LookBtn id={el.id} onClick={props.onClickEditEpisode}>
+                        수정
+                      </S.LookBtn>
                     </S.Wrap>
                   ) : (
                     ""

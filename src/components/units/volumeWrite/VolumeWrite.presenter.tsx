@@ -12,11 +12,19 @@ export default function VolumeWritePresenter(
   props: IVolumeWritePresenterProps
 ) {
   return (
-    <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
+    <form
+      onSubmit={
+        props.isEdit
+          ? props.handleSubmit(props.onClickUpdate)
+          : props.handleSubmit(props.onClickSubmit)
+      }
+    >
       <S.Wrapper>
         <S.WrapHeader>
           <S.WrapTitleWarning>
-            <S.MainTitle>회차/공지 쓰기</S.MainTitle>
+            <S.MainTitle>
+              {props.isEdit ? "회차/공지 수정" : "회차/공지 쓰기"}
+            </S.MainTitle>
             <S.WarningText>
               저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는 게시물은
               이용약관 및 관련 법률에 의하여 제재를 받을 수 있습니다.
@@ -67,6 +75,7 @@ export default function VolumeWritePresenter(
               type="text"
               placeholder="제목"
               {...props.register("title")}
+              defaultValue={props.editData?.fetchEpisodeDetail.title}
             />
           </S.WrapTitle>
         </S.WrapperLavel>
@@ -77,14 +86,17 @@ export default function VolumeWritePresenter(
             <ToastUi
               onChangeDescription={props.onChangeDescription}
               editorRef={props.editorRef}
-              // initialValue={props.productData?.fetchUseditem.contents}
+              initialValue={props.editData?.fetchEpisodeDetail.contents}
             />
           </S.UiWrapper>
         </S.WrapIntroduce>
         <S.Error>{props.formState.errors.contents?.message}</S.Error>
         <S.WrapperWriterSay>
           <S.Label>작가의 말</S.Label>
-          <S.WriteSay {...props.register("authorText")} />
+          <S.WriteSay
+            {...props.register("authorText")}
+            defaultValue={props.editData?.fetchEpisodeDetail.authorText}
+          />
         </S.WrapperWriterSay>
         <S.WrapperRule>
           <S.WrapRule>
