@@ -4,7 +4,11 @@ import React, { useRef, useState } from "react";
 import useMoveToPage from "../../../commons/hooks/UseMoveToPage";
 import * as yup from "yup";
 import VolumeWritePresenter from "./VolumeWrite.presenter";
-import { CREATE_NOVEL_INDEX, FETCH_NOVEL_DETAIL } from "./VolumeWrite.queries";
+import {
+  CREATE_NOVEL_INDEX,
+  FETCH_NOVEL_DETAIL,
+  UPDATE_NOVEL_INDEX,
+} from "./VolumeWrite.queries";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Editor } from "@toast-ui/react-editor";
@@ -15,10 +19,11 @@ const schema = yup.object({
   contents: yup.string().required("필수"),
 });
 
-export default function VolumeWriteContainer() {
+export default function VolumeWriteContainer(props) {
   const { onClickMoveToPage } = useMoveToPage();
   const router = useRouter();
   const [createNovelIndex] = useMutation(CREATE_NOVEL_INDEX);
+  const [updateNovelIndex] = useMutation(UPDATE_NOVEL_INDEX);
   const [isRule, setIsRule] = useState(false);
   const { data } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: { novelID: router.query._id },
@@ -82,6 +87,30 @@ export default function VolumeWriteContainer() {
       }
   };
 
+  // 수정
+  const onClickUpdate = async (data: any) => {
+    if (isRule === false) {
+      Modal.warning({ content: "운영원칙에 동의해주세요" });
+    } else
+      try {
+        await updateNovelIndex({
+          variables: {
+            input: {
+              id: router.query.volume_id,
+              title: data.title,
+              contents: data.contents,
+              authorText: data.authorText,
+              isFinish: finish,
+              isNotice,
+            },
+          },
+        });
+        Modal.success({ content: "수정이 완료됐습니다!" });
+      } catch (error: any) {
+        Modal.error({ content: error.message });
+      }
+  };
+
   const onClickRule = () => {
     setIsRule(true);
   };
@@ -104,6 +133,9 @@ export default function VolumeWriteContainer() {
       onClickEpisode={onClickEpisode}
       isNotice={isNotice}
       isEpisode={isEpisode}
+      // 수정
+      onClickUpdate={onClickUpdate}
+      editData={props.editData}
     />
   );
 }
