@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import NestedCommentWritePresenter from "./NestedCommentWrite.presenter";
@@ -38,10 +39,12 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
           ],
         },
       });
-      alert("대댓글을 등록합니다.");
+      // alert("대댓글을 등록합니다.");
+      Modal.success({ content: "대댓글을 등록합니다." });
       console.log("대댓글write", result);
     } catch (error: any) {
-      alert(error.message);
+      // alert(error.message);
+      Modal.error({ content: error.message });
     }
   };
 
