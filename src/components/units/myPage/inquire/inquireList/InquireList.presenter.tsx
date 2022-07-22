@@ -2,8 +2,11 @@ import React from "react";
 import { getDate } from "../../../../../commons/libraries/utils";
 import HamburgerPage from "../../../../commons/hamburger";
 import * as S from "./InquireList.styles";
+import { IInquireListPresenterProps } from "./InquireList.types";
 
-export default function InquireListPresenter(props) {
+export default function InquireListPresenter(
+  props: IInquireListPresenterProps
+) {
   return (
     <S.Wrapper>
       <S.WrapHambuger>

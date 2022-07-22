@@ -1,7 +1,7 @@
 import * as S from "./mainPagePayment.styles";
 import Fade from "react-reveal/Fade";
 
-export default function MainPagePaymentPresenter(props) {
+export default function MainPagePaymentPresenter(props: any) {
   return (
     <S.Wrapper>
       <Fade bottom duration={3000}>

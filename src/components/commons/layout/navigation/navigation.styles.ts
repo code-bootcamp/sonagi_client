@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { ILayoutNavigationProps } from "./index.types";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -23,7 +24,7 @@ export const ListTitle = styled.div`
   font-weight: 500;
   margin-right: 40px;
   font-size: 1.125rem;
-  color: ${(props: any) =>
+  color: ${(props: ILayoutNavigationProps) =>
     props.el.page === props.activeMenu ? "#2277d2" : "default"};
   cursor: pointer;
 

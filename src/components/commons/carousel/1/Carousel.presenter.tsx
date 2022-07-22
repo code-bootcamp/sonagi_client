@@ -1,5 +1,5 @@
 import * as S from "./Carousel.styles";
-export default function CarouselPresenter(props) {
+export default function CarouselPresenter(props: any) {
   const settings = {
     centerMode: true,
     infinite: true,
@@ -39,7 +39,7 @@ export default function CarouselPresenter(props) {
     <>
       <S.Wrapper>
         <S.Title>인기 소설</S.Title>
-        <S.MySlide class="novel-slick" {...settings}>
+        <S.MySlide {...settings}>
           {props.LikeData?.fetchNovelsPage.novels.map((el: any) => (
             <S.BookImg
               id={el.id}

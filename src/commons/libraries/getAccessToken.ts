@@ -22,7 +22,7 @@ export async function getAccessToken() {
     const newAccessToken = result.restoreToken;
     return newAccessToken;
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
     // refreshToken까지 만료된 상황이기 때문에 로그인 페이지로 이동시켜 줘야 함
   }
 }

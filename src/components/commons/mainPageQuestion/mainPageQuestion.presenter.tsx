@@ -1,6 +1,9 @@
 import * as S from "./mainPageQuestion.styles";
+import { IMainPageQuestionPresenterProps } from "./mainPageQuestion.types";
 
-export default function MainPageQuestionPresenter(props) {
+export default function MainPageQuestionPresenter(
+  props: IMainPageQuestionPresenterProps
+) {
   return (
     <S.QuestionWrapper>
       <S.QuestionTitle>자주 묻는 질문</S.QuestionTitle>

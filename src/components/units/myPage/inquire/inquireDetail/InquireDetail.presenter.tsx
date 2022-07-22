@@ -1,6 +1,9 @@
 import * as S from "./InquireDetail.styles";
+import { IInquireDetailPresenterProps } from "./InquireDetail.types";
 
-export default function InquireDetailPresenter(props) {
+export default function InquireDetailPresenter(
+  props: IInquireDetailPresenterProps
+) {
   return (
     <S.Wrapper>
       <S.MainTitle>1 : 1 문의</S.MainTitle>
