@@ -8,10 +8,7 @@ export default function SocialLoginPresenter(
   return (
     <form onSubmit={props.handleSubmit(props.onClickSignUp)}>
       <S.Wrapper>
-        <S.PhoneImg
-          src="/signup/sonagiphone.png"
-          onClick={props.onClickMoveToMain}
-        />
+        <S.PhoneImg src="/signup/sonagiphone.png" />
         <S.LoginWrapper>
           <S.LogoImg src="/signup/signup.png" />
           <S.LogoImg src="/socialLogin/social.png" />

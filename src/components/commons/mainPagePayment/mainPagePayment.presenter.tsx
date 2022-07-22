@@ -1,10 +1,12 @@
+import useScrollFadeIn from "../../../commons/hooks/useScrollFadeIn";
 import * as S from "./mainPagePayment.styles";
-import Fade from "react-reveal/Fade";
 
-export default function MainPagePaymentPresenter(props) {
+export default function MainPagePaymentPresenter(props: any) {
+  const FadeIn = useScrollFadeIn();
+
   return (
     <S.Wrapper>
-      <Fade bottom duration={3000}>
+      <div {...FadeIn}>
         <S.TitleWrapper>
           <S.Title>당신을 기다리는</S.Title>
           <S.Title>10만권의 소설</S.Title>
@@ -13,7 +15,7 @@ export default function MainPagePaymentPresenter(props) {
           <S.Subtitle>상황에 맞게 원하는 포인트를</S.Subtitle>
           <S.Subtitle>자유롭게 선택하세요</S.Subtitle>
         </S.TitleWrapper>
-      </Fade>
+      </div>
       <S.BoxWrapper>
         <S.Box>
           <S.BoxT>소나기와 함께하는</S.BoxT>

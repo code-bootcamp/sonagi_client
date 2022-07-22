@@ -1,14 +1,25 @@
 import * as S from "./mainPageQuestion.styles";
+import { IMainPageQuestionPresenterProps } from "./mainPageQuestion.types";
 
-export default function MainPageQuestionPresenter(props) {
+export default function MainPageQuestionPresenter(
+  props: IMainPageQuestionPresenterProps
+) {
   return (
     <S.QuestionWrapper>
       <S.QuestionTitle>자주 묻는 질문</S.QuestionTitle>
       <S.QuestionBox
         onClick={props.onClickQuestion1}
+        isAnswer2={props.isAnswer2}
         isAnswer1={props.isAnswer1}
+        isAnswer4={props.isAnswer4}
+        isAnswer3={props.isAnswer3}
       >
-        <S.QuestionContents isAnswer1={props.isAnswer1}>
+        <S.QuestionContents
+          isAnswer2={props.isAnswer2}
+          isAnswer1={props.isAnswer1}
+          isAnswer4={props.isAnswer4}
+          isAnswer3={props.isAnswer3}
+        >
           읽지 않으면 환불이 가능한가요?
         </S.QuestionContents>
         {props.isAnswer1 && (
@@ -27,8 +38,16 @@ export default function MainPageQuestionPresenter(props) {
       <S.QuestionBox
         onClick={props.onClickQuestion2}
         isAnswer2={props.isAnswer2}
+        isAnswer1={props.isAnswer1}
+        isAnswer4={props.isAnswer4}
+        isAnswer3={props.isAnswer3}
       >
-        <S.QuestionContents isAnswer2={props.isAnswer2}>
+        <S.QuestionContents
+          isAnswer2={props.isAnswer2}
+          isAnswer1={props.isAnswer1}
+          isAnswer4={props.isAnswer4}
+          isAnswer3={props.isAnswer3}
+        >
           어떤 기기에서 사용할 수 있나요?
         </S.QuestionContents>
         {props.isAnswer2 && (
@@ -46,9 +65,17 @@ export default function MainPageQuestionPresenter(props) {
       </S.QuestionBox>
       <S.QuestionBox
         onClick={props.onClickQuestion3}
+        isAnswer2={props.isAnswer2}
+        isAnswer1={props.isAnswer1}
+        isAnswer4={props.isAnswer4}
         isAnswer3={props.isAnswer3}
       >
-        <S.QuestionContents isAnswer3={props.isAnswer3}>
+        <S.QuestionContents
+          isAnswer2={props.isAnswer2}
+          isAnswer1={props.isAnswer1}
+          isAnswer4={props.isAnswer4}
+          isAnswer3={props.isAnswer3}
+        >
           기다리면 무료는 누구나 읽을 수 있나요?
         </S.QuestionContents>
         {props.isAnswer3 && (
@@ -66,9 +93,17 @@ export default function MainPageQuestionPresenter(props) {
       </S.QuestionBox>
       <S.QuestionBox
         onClick={props.onClickQuestion4}
+        isAnswer2={props.isAnswer2}
+        isAnswer1={props.isAnswer1}
         isAnswer4={props.isAnswer4}
+        isAnswer3={props.isAnswer3}
       >
-        <S.QuestionContents isAnswer4={props.isAnswer4}>
+        <S.QuestionContents
+          isAnswer2={props.isAnswer2}
+          isAnswer1={props.isAnswer1}
+          isAnswer4={props.isAnswer4}
+          isAnswer3={props.isAnswer3}
+        >
           회원가입 시 인증 / 로그인이 안돼요
         </S.QuestionContents>
         {props.isAnswer4 && (

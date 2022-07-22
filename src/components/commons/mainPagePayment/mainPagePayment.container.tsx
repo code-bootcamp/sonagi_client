@@ -1,5 +1,4 @@
 import useScrollCount from "../../../commons/hooks/useScrollCount";
-
 import MainPagePaymentPresenter from "./mainPagePayment.presenter";
 export default function MainPagePaymentContainer() {
   const animatedItem = useScrollCount(49000, 48000, 3000);

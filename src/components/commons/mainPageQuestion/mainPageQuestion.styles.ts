@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import { IMainPageQuestionStyledProps } from "./mainPageQuestion.types";
 
 export const QuestionWrapper = styled.div`
   /* height: 580px; */
@@ -21,7 +22,7 @@ export const QuestionTitle = styled.div`
 
 export const QuestionBox = styled.div`
   width: 90%;
-  height: ${(props: any) =>
+  height: ${(props: IMainPageQuestionStyledProps) =>
     props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
       ? "260px"
       : "60px"};
@@ -33,7 +34,7 @@ export const QuestionBox = styled.div`
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(204, 204, 204, 0.25);
   border-radius: 20px;
-  background-image: ${(props: any) =>
+  background-image: ${(props: IMainPageQuestionStyledProps) =>
     props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
       ? "url(/mainpage/arrowUp.png)"
       : "url(/mainpage/arrow.png)"};
@@ -50,7 +51,7 @@ export const QuestionBox = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    height: ${(props: any) =>
+    height: ${(props: IMainPageQuestionStyledProps) =>
       props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
         ? "410px"
         : "60px"};
@@ -63,7 +64,7 @@ export const QuestionContents = styled.div`
   font-size: 1.5rem;
   line-height: 41px;
   color: #484848;
-  border-bottom: ${(props: any) =>
+  border-bottom: ${(props: IMainPageQuestionStyledProps) =>
     props.isAnswer1 || props.isAnswer2 || props.isAnswer3 || props.isAnswer4
       ? "1px solid #bdbdbd"
       : "none"};

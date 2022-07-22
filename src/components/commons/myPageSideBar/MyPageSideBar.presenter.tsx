@@ -41,7 +41,7 @@ export default function MyPageSideBarPresenter(props: any) {
         <S.Vector src="../myPageSideBar/Vector.png" />
         <S.Column>
           <S.Title>개인</S.Title>
-          <S.Menu onClick={props.onClickMoveToPage("/myPage/inquireList")}>
+          <S.Menu onClick={props.onClickMoveToPage("/myPage/inquire/")}>
             1:1 문의
           </S.Menu>
           <S.Menu onClick={props.onClickMoveToPage("/myPage/profileChange")}>

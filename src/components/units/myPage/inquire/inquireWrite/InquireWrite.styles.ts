@@ -52,14 +52,28 @@ export const LabelInput = styled.input`
   background-color: #f6f6f6;
   border: none;
   border-radius: 8px;
+  padding: 10px;
+  &:focus {
+    outline: none;
+  }
 `;
 
-export const ContentsInput = styled.input`
+export const Error = styled.div`
+  font-size: 0.8rem;
+`;
+
+export const ContentsInput = styled.textarea`
   width: 100%;
   height: 200px;
   background-color: #f6f6f6;
   border: none;
   border-radius: 8px;
+  resize: none;
+  padding: 10px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const WrapButton = styled.div`
@@ -68,7 +82,7 @@ export const WrapButton = styled.div`
   justify-content: center;
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   width: 100px;
   height: 40px;
   background-color: #2277d8;
@@ -77,4 +91,6 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+  cursor: pointer;
+  border: none;
 `;

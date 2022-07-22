@@ -25,7 +25,9 @@ export const WrapperList = styled.div`
   height: 100px;
   align-items: center;
   margin-bottom: 25px;
-  border-radius: 8px; ;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px #f2f2f2;
+  cursor: pointer;
 `;
 
 export const WrapInfo = styled.div`
@@ -63,4 +65,5 @@ export const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;

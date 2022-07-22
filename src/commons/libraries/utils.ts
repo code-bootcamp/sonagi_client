@@ -1,4 +1,4 @@
-export const getDate = (value) => {
+export const getDate = (value: any) => {
   // const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
   const date = new Date(value);
   date.setHours(date.getHours() + 9);
@@ -12,7 +12,7 @@ export const getDate = (value) => {
   return `${yyyy}-${mm}-${dd} ${hh}:${MM}`;
 };
 
-export const getDateDay = (value) => {
+export const getDateDay = (value: any) => {
   const date = new Date(value);
   const yyyy = date.getFullYear();
   const mm = String(date.getMonth() + 1).padStart(2, "0");
