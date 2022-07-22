@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useMoveToPage from "../../../commons/hooks/UseMoveToPage";
 import * as yup from "yup";
 import VolumeWritePresenter from "./VolumeWrite.presenter";
@@ -83,12 +83,18 @@ export default function VolumeWriteContainer(
             },
           },
         });
-        alert("등록 성공");
+        Modal.success({ content: "등록 성공" });
         router.push(`/novel/${router.query._id}`);
-      } catch (error) {
-        alert(error);
+      } catch (error: any) {
+        Modal.error({ content: error.message });
       }
   };
+
+  // toastUI edit
+  useEffect(() => {
+    const htmlString = props.editData?.fetchEpisodeDetail.contents;
+    editorRef.current?.getInstance().setHTML(htmlString);
+  }, [props?.editData]);
 
   // 수정
   const onClickUpdate = async (data: any) => {
@@ -109,6 +115,7 @@ export default function VolumeWriteContainer(
           },
         });
         Modal.success({ content: "수정이 완료됐습니다!" });
+        router.push(`/novel/${router.query._id}`);
       } catch (error: any) {
         Modal.error({ content: error.message });
       }

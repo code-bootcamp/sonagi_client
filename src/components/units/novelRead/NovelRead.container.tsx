@@ -11,6 +11,7 @@ import {
   TOGGLE_BOOK_MARK,
 } from "./NovelRead.queries";
 import { Iel, ILikeEl } from "./NovelRead.types";
+import { Modal } from "antd";
 
 export default function NovelReadContainer() {
   const router = useRouter();
@@ -52,7 +53,7 @@ export default function NovelReadContainer() {
 
   const onClickMoveToPrevPage = () => {
     if (currentPage === 1) {
-      alert("처음 화 입니다");
+      Modal.warning({ content: "처음 화 입니다" });
       return;
     }
     router.push(`/novel/${router.query._id}/${indexPage[currentPage - 2]}`);
@@ -60,7 +61,7 @@ export default function NovelReadContainer() {
 
   const onClickMoveToNextPage = () => {
     if (currentPage === indexPage.length) {
-      alert("마지막 화 입니다");
+      Modal.warning({ content: "마지막 화 입니다" });
       return;
     }
     router.push(`/novel/${router.query._id}/${indexPage[currentPage]}`);
@@ -76,9 +77,9 @@ export default function NovelReadContainer() {
         },
       });
       console.log("북마크", result);
-      alert("북마크 성공!");
+      Modal.success({ content: "북마크 성공!" });
     } catch (error: any) {
-      alert(error.message);
+      Modal.error({ content: error.message });
     }
   };
 
@@ -102,9 +103,9 @@ export default function NovelReadContainer() {
           },
         ],
       });
-      alert(result.data?.switchNovelLike.msg);
-    } catch (error) {
-      alert(error);
+      Modal.success({ content: result.data?.switchNovelLike.msg });
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 
@@ -112,7 +113,7 @@ export default function NovelReadContainer() {
   const [size, setSize] = useState(1);
   const onClickSizeUp = () => {
     if (size > 5) {
-      alert("최대 사이즈 입니다.");
+      Modal.warning({ content: "최대 사이즈 입니다." });
       return;
     }
     setSize((prev) => prev + 1);
@@ -120,7 +121,7 @@ export default function NovelReadContainer() {
 
   const onClickSizeDown = () => {
     if (size === 1) {
-      alert("최소 사이즈 입니다");
+      Modal.warning({ content: "최소 사이즈 입니다" });
       return;
     }
     setSize((prev) => prev - 1);

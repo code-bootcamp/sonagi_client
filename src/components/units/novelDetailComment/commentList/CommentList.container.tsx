@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import React from "react";
 import DetailCommentListPresenter from "./CommentList.presenter";
@@ -45,7 +46,7 @@ export default function DetailCommentListContainer() {
       updateQuery: (prev, { fetchMoreResult }) => {
         // console.log("하하", fetchMoreResult?.fetchNovelReviewPage.novelRivews);
         if (fetchMoreResult?.fetchNovelReviewPage.novelRivews.length === 0) {
-          alert("리뷰가 더이상 없습니다");
+          Modal.error({ content: "리뷰가 더이상 없습니다" });
           return prev.fetchNovelReviewPage;
         }
         // console.log("패치", fetchMoreResult);

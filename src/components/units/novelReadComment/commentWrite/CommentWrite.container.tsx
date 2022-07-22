@@ -11,6 +11,7 @@ import * as yup from "yup";
 import ReadCommentWritePresenter from "./CommentWrite.presenter";
 import { FETCH_EPISODE_REVIEW_PAGE } from "../commentList/CommentList.queries";
 import { Idata, IReadCommentWriteContainerProps } from "./CommentWrite.types";
+import { Modal } from "antd";
 
 const schema = yup.object({
   contents: yup.string().required("리뷰를 입력해주세요."),
@@ -50,10 +51,10 @@ export default function ReadCommentWriteContainer(
         });
         props.setIsGoCommnet(false);
         reset();
-        alert("댓글을 등록했습니다.");
+        Modal.success({ content: "댓글을 등록했습니다." });
         console.log("질문등록", result);
       } catch (error: any) {
-        alert(error.message);
+        Modal.error({ content: error.message });
       }
     }
   };
@@ -76,10 +77,10 @@ export default function ReadCommentWriteContainer(
             },
           ],
         });
-        alert("수정 완료");
+        Modal.success({ content: "수정 되었습니다." });
         props.setIsEdit((prev: boolean) => !prev);
       } catch (error: any) {
-        alert(error.message);
+        Modal.error({ content: error.message });
       }
     }
   };

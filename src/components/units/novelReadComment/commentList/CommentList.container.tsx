@@ -49,8 +49,6 @@ export default function ReadCommentListContainer(
     // refetch();
   };
 
-  console.log("데이터", data);
-
   // 댓글 등록으로
   const [isGoComment, setIsGoCommnet] = useState(false);
   const onClickGoComment = () => {

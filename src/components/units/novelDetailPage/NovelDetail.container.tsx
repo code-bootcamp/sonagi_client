@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import React, { MouseEvent, useState } from "react";
 import { FETCH_NOVEL_LIKE_IN_USER } from "../novelRead/NovelRead.queries";
@@ -41,10 +42,10 @@ export default function NovelDetailContainer() {
       const result = await deleteNovel({
         variables: { novelID: router.query._id },
       });
-      alert(result.data.deleteNovel.msg);
+      Modal.success({ content: result.data.deleteNovel.msg });
       router.push("/novel/list/publish");
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 
@@ -74,9 +75,9 @@ export default function NovelDetailContainer() {
         ],
       });
 
-      alert("결제 성공");
-    } catch (error) {
-      alert(error);
+      Modal.success({ content: "결제 성공" });
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 
@@ -115,10 +116,10 @@ export default function NovelDetailContainer() {
       });
       refetch();
       // console.log("선호작", result);
-      alert(result.data?.switchNovelLike.msg);
+      Modal.success({ content: result.data?.switchNovelLike.msg });
       setIsSubmitting(false);
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 
@@ -135,9 +136,9 @@ export default function NovelDetailContainer() {
         ],
       });
       // console.log(result);
-      alert(result.data?.deleteNovelIndex.msg);
-    } catch (error) {
-      alert(error);
+      Modal.success({ content: result.data?.deleteNovelIndex.msg });
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 
@@ -153,10 +154,10 @@ export default function NovelDetailContainer() {
         variables: { novelIndexID: event.currentTarget.id },
       });
       // console.log(result);
-      alert("비공개");
+      Modal.success({ content: "비공개" });
       setSwitchPrivate(true);
-    } catch (error) {
-      alert(error);
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 
