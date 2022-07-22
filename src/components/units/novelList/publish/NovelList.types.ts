@@ -1,4 +1,3 @@
-import { ApolloQueryResult, OperationVariables } from "@apollo/client";
 import { MouseEvent } from "react";
 interface IFiles {
   url: string;
@@ -56,17 +55,12 @@ export interface INovelPbListUIProps {
   };
   data?: any;
   onClickMoveToDetail: (el: Iel) => (event: MouseEvent<HTMLDivElement>) => void;
-  refetch(
-    variables?: Partial<OperationVariables> | undefined
-  ): Promise<ApolloQueryResult<any>>;
   onClickMoveToRomancePage: () => void;
   onClickMoveToRomanceFantasyPage: () => void;
   onClickMoveToFantasyPage: () => void;
   onClickMoveToAsiaPage: () => void;
   onClickMoveToSchoolPage: () => void;
   onClickMoveToHorrorPage: () => void;
-  keyword: string;
-  onChangeKeyword: (value: string) => void;
 }
 
 export interface ITextTokenProps {

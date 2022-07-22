@@ -1,7 +1,10 @@
 import Button01 from "../../../commons/buttons/01";
 import * as S from "./NoticeDetail.styles";
+import { INoticeDetailPresenterProps } from "./NoticeDetail.types";
 
-export default function NoticeDetailPresenter(props: any) {
+export default function NoticeDetailPresenter(
+  props: INoticeDetailPresenterProps
+) {
   return (
     <S.Wrap>
       <S.NoticeDetailWrap>

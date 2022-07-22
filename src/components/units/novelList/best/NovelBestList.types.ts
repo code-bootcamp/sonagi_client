@@ -3,6 +3,7 @@ interface IFiles {
   url: string;
 }
 export interface Iel {
+  novel: any;
   cycle?: number;
   description?: string;
   files?: Array<IFiles>;
@@ -21,9 +22,10 @@ export interface Iel {
   viewCount?: number;
   __typename?: string;
 }
-
-export interface INovelBestListUIProps {
+export interface INovelBestListPresenterProps {
   data?: any;
-  el: string;
+  el: any;
   onClickMoveToDetail: (el: Iel) => (event: MouseEvent<HTMLDivElement>) => void;
+  HeartList: () => void;
+  onClickLike: (el: any) => () => Promise<void>;
 }

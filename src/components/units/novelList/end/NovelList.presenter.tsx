@@ -190,7 +190,7 @@ export default function NovelEndListPresenter(props: INovelEndListUIProps) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 공포/미스터리 */}
-      <S.RowWrap>
+      <S.RowWrap onClick={props.onClickMoveToHorrorPage}>
         <S.Category>공포/미스터리</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
