@@ -43,7 +43,7 @@ export default function Uploads01(props: IUploads01Props) {
       // setFileUrl(result.data.uploadFile[0].url);
       // console.log(result.data.uploadFile[0].url);
       props.onChangeFileUrls(result.data.uploadFile[0].url, props.index);
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   };
@@ -55,6 +55,7 @@ export default function Uploads01(props: IUploads01Props) {
       defaultFileUrl={props.defaultFileUrl}
       onClickUpload={onClickUpload}
       onChangeFile={onChangeFile}
+
       // imageUrl={imageUrl}
       // fileUrl={fileUrl}
     />

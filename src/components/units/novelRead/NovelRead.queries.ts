@@ -7,6 +7,7 @@ export const FETCH_EPISODE_DETAIL = gql`
       title
       contents
       index
+      authorText
     }
   }
 `;

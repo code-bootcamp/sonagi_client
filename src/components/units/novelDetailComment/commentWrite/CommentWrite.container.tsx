@@ -11,6 +11,7 @@ import {
 } from "./CommentWrite.queries";
 import * as yup from "yup";
 import { Idata, IDetailCommentWriteContainerProps } from "./CommentWrite.types";
+import { Modal } from "antd";
 
 const schema = yup.object({
   contents: yup.string().required("리뷰를 입력해주세요."),
@@ -60,10 +61,10 @@ export default function DetailCommentWriteContainer(
         });
         reset();
         setStar(0);
-        alert("리뷰를 등록했습니다.");
+        Modal.success({ content: "리뷰를 등록했습니다." });
         console.log("질문등록", result);
       } catch (error: any) {
-        alert(error.message);
+        Modal.error({ content: error.message });
       }
     }
   };
@@ -99,10 +100,10 @@ export default function DetailCommentWriteContainer(
           ],
         });
         console.log(result);
-        alert("수정 완료");
+        Modal.success({ content: "수정 완료" });
         props.setIsEdit((prev) => !prev);
       } catch (error: any) {
-        alert(error.message);
+        Modal.error({ content: error.message });
       }
     }
   };

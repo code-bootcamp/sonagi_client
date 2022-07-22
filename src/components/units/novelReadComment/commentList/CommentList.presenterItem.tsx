@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 // import { useRouter } from "next/router";
 import { MouseEvent, useState } from "react";
@@ -37,9 +38,9 @@ export default function ReadCommentListPresenterItem(
           },
         ],
       });
-      alert("리뷰가 삭제되었습니다");
+      Modal.success({ content: "리뷰가 삭제되었습니다" });
     } catch (error: any) {
-      alert(error.message);
+      Modal.error({ content: error.message });
     }
   };
   console.log(props.el);

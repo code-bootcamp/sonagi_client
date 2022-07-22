@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useMoveToPage from "../../../commons/hooks/UseMoveToPage";
 import * as yup from "yup";
 import VolumeWritePresenter from "./VolumeWrite.presenter";
@@ -13,13 +13,16 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Editor } from "@toast-ui/react-editor";
 import { Modal } from "antd";
+import { IVolumeWriteContainerProps } from "./VolumeWrite.types";
 
 const schema = yup.object({
   title: yup.string().required("필수"),
   contents: yup.string().required("필수"),
 });
 
-export default function VolumeWriteContainer(props) {
+export default function VolumeWriteContainer(
+  props: IVolumeWriteContainerProps
+) {
   const { onClickMoveToPage } = useMoveToPage();
   const router = useRouter();
   const [createNovelIndex] = useMutation(CREATE_NOVEL_INDEX);
@@ -80,12 +83,18 @@ export default function VolumeWriteContainer(props) {
             },
           },
         });
-        alert("등록 성공");
+        Modal.success({ content: "등록 성공" });
         router.push(`/novel/${router.query._id}`);
-      } catch (error) {
-        alert(error);
+      } catch (error: any) {
+        Modal.error({ content: error.message });
       }
   };
+
+  // toastUI edit
+  useEffect(() => {
+    const htmlString = props.editData?.fetchEpisodeDetail.contents;
+    editorRef.current?.getInstance().setHTML(htmlString);
+  }, [props?.editData]);
 
   // 수정
   const onClickUpdate = async (data: any) => {
@@ -106,6 +115,7 @@ export default function VolumeWriteContainer(props) {
           },
         });
         Modal.success({ content: "수정이 완료됐습니다!" });
+        router.push(`/novel/${router.query._id}`);
       } catch (error: any) {
         Modal.error({ content: error.message });
       }
@@ -136,6 +146,7 @@ export default function VolumeWriteContainer(props) {
       // 수정
       onClickUpdate={onClickUpdate}
       editData={props.editData}
+      isEdit={props.isEdit}
     />
   );
 }

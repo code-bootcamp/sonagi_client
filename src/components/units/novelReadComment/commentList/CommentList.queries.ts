@@ -29,3 +29,11 @@ export const DELETE_EPISODE_REVIEW = gql`
     }
   }
 `;
+
+export const FETCH_EPISODE_DETAIL = gql`
+  query fetchEpisodeDetail($novelIndexID: String!) {
+    fetchEpisodeDetail(novelIndexID: $novelIndexID) {
+      authorText
+    }
+  }
+`;
