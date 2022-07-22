@@ -41,7 +41,7 @@ export default function FreeBoardListPresenter(props: IFreeBoardListPresenter) {
           <S.WrapperBoard
             key={el.id}
             onClick={props.onClickMoveToFreeBoardDetail(el)}
-            id={el.id}
+            // id={el.id}
           >
             <S.AvatarImg src="/freeBoard/avatar.png" />
             <S.Column>

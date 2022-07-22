@@ -18,4 +18,6 @@ export interface ICommentWritePresenterProps {
   el: any;
   onChangeContents: ChangeEventHandler<HTMLInputElement> | undefined;
   isEdit: any;
+  isAnswer: any;
+  isAnswerEdit: any;
 }

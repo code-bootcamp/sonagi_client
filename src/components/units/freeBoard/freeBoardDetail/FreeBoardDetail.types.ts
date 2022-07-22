@@ -5,4 +5,5 @@ export interface IFreeBoardDetailPresenterProps {
   onClickMoveToEdit: () => void;
   onClickDelete: () => void;
   data: any;
+  UserData: any;
 }

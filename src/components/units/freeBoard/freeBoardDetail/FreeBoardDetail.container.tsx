@@ -44,6 +44,8 @@ export default function FreeBoardDetailContainer() {
       onClickMoveToEdit={onClickMoveToEdit}
       UserData={UserData}
       BoardData={BoardData}
+      LoginData={undefined}
+      data={undefined}
     />
   );
 }

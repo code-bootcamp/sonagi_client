@@ -32,8 +32,8 @@ export default function NestedCommentListContainer(
         ],
       });
       alert("대댓글이 삭제되었습니다.");
-    } catch (error) {
-      // alert(error.message);
+    } catch (error: any) {
+      alert(`대댓글 삭제에 실패했습니다. ${error.message}`);
     }
   };
 
@@ -59,6 +59,7 @@ export default function NestedCommentListContainer(
           DeleteNestedComment={DeleteNestedComment}
           onClickLikeComment={undefined}
           el={props.el}
+          isEdit={false}
         />
       ))}
     </>
