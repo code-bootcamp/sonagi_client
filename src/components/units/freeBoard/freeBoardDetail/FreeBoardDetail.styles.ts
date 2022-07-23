@@ -85,9 +85,10 @@ export const Title = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1.25em;
-    position: absolute;
-    right: 156px;
-    top: 360px;
+    width: 200%;
+    position: relative;
+    right: 65px;
+    top: 20px;
   }
 `;
 
