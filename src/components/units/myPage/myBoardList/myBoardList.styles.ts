@@ -194,7 +194,13 @@ export const ColumnInnerContents = styled.div`
   text-align: center;
   color: black;
   @media ${breakPoints.mobile} {
-    width: 50%;
+    width: 120px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 `;
 
