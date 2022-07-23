@@ -37,6 +37,7 @@ export const ItemWrap = styled.div`
   margin: 2% 1%;
   padding: 0 3px;
   overflow: hidden;
+  cursor: pointer;
 
   border: 1px solid #bdbdbd;
   border-radius: 30px;

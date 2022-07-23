@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-
 import AsiaPresenter from "./Asia.presenter";
 import { FETCH_NOVELS_PAGE } from "./Asia.queries";
 import { useQuery } from "@apollo/client";
+import { MouseEvent } from "react";
 
 export default function AsiaContainer() {
   const router = useRouter();
@@ -33,7 +33,7 @@ export default function AsiaContainer() {
   });
   console.log("소설데이터", FinAsia);
 
-  const onClickMoveToDetail = (event: any) => {
+  const onClickMoveToDetail = (event: MouseEvent<HTMLDivElement>) => {
     router.push(`/novel/${event.currentTarget.id}`);
     console.log(event.target);
   };

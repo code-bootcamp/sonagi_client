@@ -11,7 +11,9 @@ export default function NoticeListPresenter(props: INoticeListPresenterProps) {
           <S.Title>공지사항</S.Title>
           <S.Subtitle>소나기의 공지사항을 알립니다.</S.Subtitle>
         </S.NoticeTitleWrap>
-        <S.NoticeIcon src="../notice/notice.png" />
+        <S.ImgWrap>
+          <S.NoticeIcon src="../notice/notice.png" />
+        </S.ImgWrap>
       </S.RowWrap>
       <S.NoticeListWrap>
         <S.Total>총 6 개의 글</S.Total>

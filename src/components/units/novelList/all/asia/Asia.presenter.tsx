@@ -1,7 +1,8 @@
 import DOMPurify from "dompurify";
 import * as S from "./Asia.styles";
+import { IAsiaPresenterProps } from "./Asia.types";
 
-export default function AsiaPresenter(props: any) {
+export default function AsiaPresenter(props: IAsiaPresenterProps) {
   return (
     <S.Wrap>
       <S.Title>무협</S.Title>
@@ -13,7 +14,7 @@ export default function AsiaPresenter(props: any) {
       <S.GridWrap>
         {props.PbAsia?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >
@@ -22,7 +23,13 @@ export default function AsiaPresenter(props: any) {
             />
             <S.ItemInfo>
               <S.ItemName>{el.title}</S.ItemName>
-              <S.ItemNum>10화</S.ItemNum>
+              <S.ItemNum>
+                {el.cycle === 0 ? (
+                  <S.Cycle>자유연재</S.Cycle>
+                ) : (
+                  <S.Cycle>요일연재</S.Cycle>
+                )}
+              </S.ItemNum>
             </S.ItemInfo>
             <S.ItemWriterWrap>
               <S.WriterIcon src="/novelList/writer-icon.png" />
@@ -41,11 +48,12 @@ export default function AsiaPresenter(props: any) {
       <S.RowWrap>
         <S.Category>완결작품</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
+        {console.log(props.PbAsia)}
       </S.RowWrap>
       <S.GridWrap>
         {props.FinAsia?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >

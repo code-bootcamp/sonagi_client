@@ -24,7 +24,7 @@ export interface Iel {
 }
 export interface INovelBestListPresenterProps {
   data?: any;
-  el: any;
+  el?: any;
   onClickMoveToDetail: (el: Iel) => (event: MouseEvent<HTMLDivElement>) => void;
   HeartList: () => void;
   onClickLike: (el: any) => () => Promise<void>;

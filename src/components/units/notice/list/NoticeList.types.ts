@@ -6,7 +6,7 @@ export interface INoticeListPresenterProps {
 
 export interface Iel {
   id?: string;
-  files?: string[];
+  files?: any;
   title?: string;
   createAt?: string;
 }
