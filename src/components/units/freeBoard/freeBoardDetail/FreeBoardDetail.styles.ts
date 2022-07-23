@@ -221,8 +221,8 @@ export const Avatar = styled.img`
   width: 90px;
   height: 90px;
   @media ${breakPoints.mobile} {
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
   }
 `;
 
@@ -284,7 +284,7 @@ export const Columns = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    margin-left: 30%;
+    margin-left: 40%;
   }
 `;
 

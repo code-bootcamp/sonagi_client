@@ -5,7 +5,7 @@ import { useState } from "react";
 import NestedCommentWritePresenter from "./NestedCommentWrite.presenter";
 import {
   CREATE_NESTED_COMMENT,
-  FETCH_BOARD,
+  FETCH_COMMENTS_FROM_BOARDD,
 } from "./NestedCommentWrite.queries";
 import { INestedCommentWriteProps } from "./NestedCommentWrite.types";
 
@@ -33,8 +33,8 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
 
           refetchQueries: [
             {
-              query: FETCH_BOARD,
-              variables: { boardID: String(router.query._id) },
+              query: FETCH_COMMENTS_FROM_BOARDD,
+              variables: { page: 1, boardID: String(router.query._id) },
             },
           ],
         },

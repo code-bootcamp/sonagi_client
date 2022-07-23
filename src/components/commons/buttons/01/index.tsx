@@ -18,6 +18,7 @@ const Button = styled.button`
     width: 100px;
     height: 45px;
     font-size: 0.9rem;
+    margin-left: 25px;
     /* margin-bottom: 35px; */
   }
 `;
