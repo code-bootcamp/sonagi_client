@@ -1,7 +1,10 @@
 import DOMPurify from "dompurify";
 import * as S from "./RomanceFantasy.styles";
+import { IRomanceFantasyPresenterProps } from "./RomanceFantasy.types";
 
-export default function RomanceFantasyPresenter(props) {
+export default function RomanceFantasyPresenter(
+  props: IRomanceFantasyPresenterProps
+) {
   return (
     <S.Wrap>
       <S.Title>로맨스판타지</S.Title>
