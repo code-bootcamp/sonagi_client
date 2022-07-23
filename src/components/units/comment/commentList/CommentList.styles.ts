@@ -56,6 +56,12 @@ export const ProfileIcon = styled.img`
   width: 60px;
   height: 60px;
   margin-top: 2px;
+  @media ${breakPoints.mobile} {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    right: 22px;
+  }
 `;
 
 export const WrapCommentInfo = styled.div`
@@ -64,7 +70,9 @@ export const WrapCommentInfo = styled.div`
   flex-direction: column;
   margin-left: 25px;
   @media ${breakPoints.mobile} {
-    margin-top: 8px;
+    margin-top: 5px;
+    position: relative;
+    right: 42px;
   }
 `;
 
@@ -112,6 +120,7 @@ export const UpIcon = styled.img`
   @media ${breakPoints.mobile} {
     width: 15px;
     height: 15px;
+    display: none;
   }
 `;
 
@@ -128,6 +137,9 @@ export const UpCount = styled.div`
 export const WrapIcon = styled.div`
   display: flex;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    /* width: 10%; */
+  }
 `;
 
 export const EditIcon = styled.img`
@@ -136,8 +148,8 @@ export const EditIcon = styled.img`
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 `;
 
@@ -149,8 +161,8 @@ export const DeleteIcon = styled.img`
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 `;
 
@@ -159,6 +171,10 @@ export const AnswerIcon = styled.img`
   height: 23px;
   margin-left: 20px;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const FooterWrapper = styled.div`

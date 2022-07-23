@@ -10,6 +10,14 @@ export const Wrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
+    width: 100%;
+  }
+`;
+
+export const Arrow = styled.div`
+  @media ${breakPoints.mobile} {
+    position: absolute;
+    left: 70px;
   }
 `;
 
@@ -47,11 +55,21 @@ export const WrapInfo = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ProfileIcon = styled.img`
   width: 60px;
   height: 60px;
+  @media ${breakPoints.mobile} {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: -26px;
+    /* margin-top: 10px; */
+  }
 `;
 
 export const WrapCommentInfo = styled.div`
@@ -68,6 +86,9 @@ export const Comment = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;
+    position: relative;
+    top: 4px;
+    right: 49px;
   }
 `;
 
@@ -75,6 +96,8 @@ export const WrapUserInfo = styled.div`
   padding-top: 5px;
   display: flex;
   align-items: center;
+  @media ${breakPoints.mobile} {
+  }
 `;
 
 export const Name = styled.div`
@@ -84,6 +107,11 @@ export const Name = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
+    width: 100%;
+    position: relative;
+    right: 50px;
+    top: 3px;
+    bottom: 5px;
   }
 `;
 
@@ -94,6 +122,9 @@ export const Date = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
+    position: absolute;
+    top: 1118px;
+    right: 106px;
   }
 `;
 
@@ -106,6 +137,7 @@ export const UpIcon = styled.img`
   @media ${breakPoints.mobile} {
     width: 15px;
     height: 15px;
+    display: none;
   }
 `;
 

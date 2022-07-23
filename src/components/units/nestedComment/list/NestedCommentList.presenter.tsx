@@ -29,7 +29,7 @@ export default function NestedCommentListPresenter(
   return (
     <>
       <S.Wrapper>
-        <div>↪</div>
+        <S.Arrow>↪</S.Arrow>
         <S.WrapperUserInfo>
           <S.WrapBestIcon>
             {/* <S.BestComment>Best</S.BestComment> */}
@@ -75,7 +75,14 @@ export default function NestedCommentListPresenter(
       </S.Wrapper>
       <S.FooterWrapper>
         {isEdit && (
-          <NestedCommentWritePresenter isEdit={true} setIsEdit={setIsEdit} />
+          <NestedCommentWritePresenter
+            isEdit={true}
+            setIsEdit={setIsEdit}
+            WriteNestedComment={undefined}
+            contents={undefined}
+            el={undefined}
+            onChangeContents={undefined}
+          />
         )}
       </S.FooterWrapper>
     </>

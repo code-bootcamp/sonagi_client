@@ -54,6 +54,8 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
       WriteNestedComment={WriteNestedComment}
       contents={contents}
       el={undefined}
+      isEdit={undefined}
+      setIsEdit={undefined}
     />
   );
 }

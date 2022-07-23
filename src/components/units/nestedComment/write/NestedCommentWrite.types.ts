@@ -15,5 +15,7 @@ export interface INestedCommentWritePresenterProps {
   WriteNestedComment: MouseEventHandler<HTMLDivElement> | undefined;
   contents: any;
   el: any;
+  isEdit: any;
+  setIsEdit: any;
   onChangeContents: ChangeEventHandler<HTMLInputElement> | undefined;
 }

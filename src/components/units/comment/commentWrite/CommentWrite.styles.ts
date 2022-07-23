@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
+    width: 400px;
   }
 `;
 
@@ -67,8 +68,10 @@ export const ContentsInput = styled.input`
 
   @media ${breakPoints.mobile} {
     &::placeholder {
+      width: 80%;
       font-size: 0.55rem;
       color: #bdbdbd;
+      word-break: keep-all;
     }
   }
 `;
