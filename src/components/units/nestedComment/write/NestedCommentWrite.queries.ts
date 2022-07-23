@@ -95,3 +95,18 @@ export const FETCH_COMMENTS_ALL = gql`
     }
   }
 `;
+
+export const FETCH_COMMENTS_FROM_BOARDD = gql`
+  query fetchCommentsFromBoard($page: Float, $boardID: String!) {
+    fetchCommentsFromBoard(page: $page, boardID: $boardID) {
+      comments {
+        children {
+          id
+          contents
+          createAt
+        }
+      }
+      count
+    }
+  }
+`;

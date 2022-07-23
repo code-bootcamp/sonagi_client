@@ -17,6 +17,8 @@ const Button = styled.button`
     width: 100px;
     height: 45px;
     font-size: 0.9rem;
+    margin-right: 5px;
+    margin-left: 25px;
   }
 `;
 export default function Button02(props: any) {

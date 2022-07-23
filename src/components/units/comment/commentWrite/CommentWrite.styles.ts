@@ -104,7 +104,7 @@ export const CommentButton = styled.div`
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
-    font-size: 0.8rem;
-    width: 20%;
+    font-size: 0.9rem;
+    width: 27%;
   }
 `;
