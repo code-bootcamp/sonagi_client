@@ -56,6 +56,7 @@ export default function LoginContainer() {
       setAccessToken(result.data?.Login);
       localStorage.setItem("refreshToken", result.data?.Login);
       Modal.success({ content: "소나기에 오신 걸 환영합니다" });
+      console.log(result);
       window.location.replace("/");
     } catch (error: any) {
       Modal.error({ content: error.message });
