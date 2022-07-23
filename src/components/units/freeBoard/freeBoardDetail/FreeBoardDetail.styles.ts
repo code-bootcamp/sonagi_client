@@ -59,10 +59,11 @@ export const Writer = styled.div`
   margin-top: 10px;
 
   @media ${breakPoints.mobile} {
-    font-size: 1.5em;
+    font-size: 1em;
     width: 100%;
-    margin-left: 70%;
-    margin-top: 10%;
+    margin-right: 20px;
+    /* margin-top: 19%; */
+    /* background-color: blue; */
   }
 `;
 
@@ -84,6 +85,9 @@ export const Title = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1.25em;
+    position: absolute;
+    right: 156px;
+    top: 360px;
   }
 `;
 
@@ -111,7 +115,7 @@ export const Date = styled.div`
     width: 120%;
   }
   @media ${breakPoints.mobile} {
-    font-size: 0.95rem;
+    /* font-size: 0.95rem; */
   }
 `;
 export const ReportIcon = styled.img`
@@ -135,6 +139,7 @@ export const Contents = styled.div`
   @media ${breakPoints.tablet} {
     width: 100%;
   }
+
   /* border: 5px solid #eee; */
 `;
 
@@ -147,8 +152,10 @@ export const InnerContents = styled.div`
     margin-top: 10px;
   }
   @media ${breakPoints.mobile} {
-    font-size: 18px;
+    font-size: 1.16rem;
     margin-top: 10px;
+    width: 200%;
+    position: relative;
   }
 `;
 
@@ -174,6 +181,10 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+    margin-left: 5px;
+  }
 `;
 
 export const FreeBoardImg = styled.img`
@@ -221,8 +232,8 @@ export const Avatar = styled.img`
   width: 90px;
   height: 90px;
   @media ${breakPoints.mobile} {
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
   }
 `;
 
@@ -256,6 +267,9 @@ export const BottomWrapper = styled.div`
     /* top: 550px; */
     position: relative;
   }
+  @media ${breakPoints.mobile} {
+    width: 345px;
+  }
 `;
 
 export const Column = styled.div`
@@ -264,6 +278,12 @@ export const Column = styled.div`
   width: 15%;
   @media ${breakPoints.tablet} {
     width: 30%;
+  }
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 30%; */
   }
 `;
 
@@ -315,6 +335,7 @@ export const Flexs = styled.div`
   }
   @media ${breakPoints.mobile} {
     padding: 30px;
+    display: flex;
   }
 
   /* background-color: #eee; */
@@ -324,7 +345,10 @@ export const ContentsWrap = styled.div`
   width: 190%;
   height: 120px;
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 130%;
+    right: 128%;
+    position: relative;
+    top: 5%;
   }
   /* border: 2px solid black; */
 `;
@@ -349,6 +373,9 @@ export const DateWrapper = styled.div`
     /* width: 100%; */
   }
   @media ${breakPoints.mobile} {
-    width: 46%;
+    width: 100%;
+    position: absolute;
+    left: 10px;
+    /* background-color: blue; */
   }
 `;

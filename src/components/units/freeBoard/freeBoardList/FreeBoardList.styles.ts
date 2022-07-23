@@ -69,9 +69,9 @@ export const Title = styled.div`
   margin-left: 20px;
   color: #484848;
 
-  /* @media ${breakPoints.mobile} {
-    font-size: 1.3rem;
-  } */
+  @media ${breakPoints.mobile} {
+    width: 200%;
+  }
 `;
 
 export const WrapInfo = styled.div`
@@ -107,9 +107,9 @@ export const Date = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1.1rem;
-    width: 80%;
-    margin-left: 12%;
-    margin-top: 30px;
+    width: 120%;
+    margin-left: -96%;
+    margin-top: 90px;
   }
 `;
 
@@ -122,6 +122,9 @@ export const Flex = styled.div`
   display: flex;
   align-items: center;
   margin-left: 15px;
+  @media ${breakPoints.mobile} {
+    width: 200%;
+  }
 `;
 
 export const New = styled.div`
@@ -136,6 +139,10 @@ export const New = styled.div`
   justify-content: center;
   align-items: center;
   margin-left: 30px;
+  @media ${breakPoints.mobile} {
+    position: relative;
+    right: 55px;
+  }
 `;
 
 export const PagingBox = styled.div`
@@ -242,13 +249,16 @@ export const AvatarImg = styled.img`
   width: 90px;
   height: 90px;
   margin-right: 15px;
+  @media ${breakPoints.mobile} {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right:290px;
+  }
   /* @media ${breakPoints.tablet} {
     width: 11%;
   }
-  @media ${breakPoints.mobile} {
-    width: 80px;
-    height: 80px;
-  } */
+
 `;
 
 export const Column = styled.div`
