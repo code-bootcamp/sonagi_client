@@ -1,4 +1,4 @@
-schema: https://041e-61-43-54-3.jp.ngrok.io/graphql/
+schema: https://b451-112-152-231-30.jp.ngrok.io/grqphql
 generates:
   ./src/commons/types/generated/types.ts:
     plugins:

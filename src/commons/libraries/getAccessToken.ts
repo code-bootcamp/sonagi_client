@@ -13,7 +13,7 @@ export async function getAccessToken() {
   try {
     // 1. GraphQlClient import.
     const graphQlClient = new GraphQLClient(
-      "https://041e-61-43-54-3.jp.ngrok.io/graphql",
+      "https://b451-112-152-231-30.jp.ngrok.io/graphql",
       { credentials: "include" }
     );
     // 2. RESTORE_ACCESS_TOKEN gql을 요청한 뒤 반환되는 결과값을 result에 담기

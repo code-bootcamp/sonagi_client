@@ -44,7 +44,7 @@ export default function ApolloSetting(props: any) {
   });
 
   const uploadLink = createUploadLink({
-    uri: "https://041e-61-43-54-3.jp.ngrok.io/graphql/",
+    uri: "https://b451-112-152-231-30.jp.ngrok.io/graphql/",
     headers: {
       Authorization: `Bearer ${accessToken ?? ""}`,
     },
