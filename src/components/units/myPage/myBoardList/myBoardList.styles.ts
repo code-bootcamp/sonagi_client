@@ -193,6 +193,11 @@ export const ColumnInnerContents = styled.div`
   line-height: 24px;
   text-align: center;
   color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   @media ${breakPoints.mobile} {
     width: 120px;
     height: 20px;
