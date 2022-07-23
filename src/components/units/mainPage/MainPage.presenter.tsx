@@ -5,43 +5,18 @@ import MainPageQuestionContainer from "../../commons/mainPageQuestion/mainPageQu
 import MainPagePaymentContainer from "../../commons/mainPagePayment/mainPagePayment.container";
 import ReactPlayer from "react-player";
 import useScrollFadeIn from "../../../commons/hooks/useScrollFadeIn";
+import MainPageSubTitleContainer from "../../commons/mainPageSubTitle/mainPageSubTitle.container";
+import MainPagePhoneContainer from "../../commons/mainPagePhone/mainPagePhone.container";
 
 export default function MainPagePresenter() {
-  const FadeIn = useScrollFadeIn();
+  const FadeUp = useScrollFadeIn();
 
   return (
     <S.Wrapper>
       <LayoutBanner />
-      <div {...FadeIn}>
-        <S.TitleWrapper>
-          <S.SubTitleWrapper>
-            <S.Title>소소한</S.Title>
-            <S.Title>나의 이야기</S.Title>
-          </S.SubTitleWrapper>
-          <S.SubTitleWrapper>
-            <S.Subtitle>베스트 셀러와</S.Subtitle>
-            <S.Subtitle>최신 작품들까지</S.Subtitle>
-          </S.SubTitleWrapper>
-        </S.TitleWrapper>
-      </div>
+      <MainPageSubTitleContainer />
       <CarouselContainer />
-      <S.PhoneWrapper>
-        <div {...FadeIn}>
-          <S.SubTitleWrapper>
-            <S.Title>무료 소설과</S.Title>
-            <S.Title>인기 작가의 작품</S.Title>
-          </S.SubTitleWrapper>
-          <S.SubTitleWrapper>
-            <S.Subtitle>독자들이 픽한</S.Subtitle>
-            <S.Subtitle>인기 분야 소설을 확인해보세요</S.Subtitle>
-          </S.SubTitleWrapper>
-        </div>
-        <S.PhoneImg src="/mainpage/phone.png" />
-        <S.PhoneSubImg src="/mainpage/phone2-1.png" />
-        <S.PhoneSubImg2 src="/mainpage/phone2-4.png" />
-        <S.PhoneSubImg3 src="/mainpage/phone2-2.png" />
-        <S.PhoneSubImg4 src="/mainpage/phone2-3.png" />
-      </S.PhoneWrapper>
+      <MainPagePhoneContainer />
       <MainPagePaymentContainer />
       <S.VideoWrapper>
         <S.VideoDiv>
@@ -54,7 +29,7 @@ export default function MainPagePresenter() {
             controls={true}
           />
         </S.VideoDiv>
-        <S.VideoContentWrap {...FadeIn}>
+        <S.VideoContentWrap {...FadeUp}>
           <S.VideoTitle>
             내돈내산 <br />
             소나기 구독 이야기

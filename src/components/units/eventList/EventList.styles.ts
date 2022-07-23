@@ -40,17 +40,12 @@ export const Subtitle = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1em;
-    padding-top: 20px;
   }
 `;
 
 export const EventIcon = styled.img`
   width: 188px;
   height: 201px;
-
-  @media ${breakPoints.mobile} {
-    height: 150px;
-  }
 `;
 
 export const ListWrapper = styled.div`

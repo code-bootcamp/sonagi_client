@@ -24,14 +24,14 @@ const useScrollFadeIn = () => {
       observer = new IntersectionObserver(handleScroll, { threshold: 0.7 });
       observer.observe(current);
 
-      return () => observer && observer.disconnect();
+      return () => observer;
     }
   }, [handleScroll]);
 
   return {
     ref: dom,
     style: {
-      opacity: 0,
+      opacity: 1,
       transform: "translate3d(0, 50%, 0)",
     },
   };

@@ -82,7 +82,7 @@ export default function HamburgerPage() {
           </WrapTitle>
           <WrapTitle>
             <Title>개인</Title>
-            <Label onClick={onClickMoveToPage("/myPage/inquireList")}>
+            <Label onClick={onClickMoveToPage("/myPage/inquire")}>
               1:1 문의
             </Label>
             <Label onClick={onClickMoveToPage("/myPage/myBoardList")}>
