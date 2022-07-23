@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrap = styled.div`
-  width: 100%;
+  width: 98%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 20px;
+  margin: 30px 10px;
 `;
 export const RowWrap = styled.div`
   width: 100%;
@@ -23,7 +23,7 @@ export const Title = styled.label`
   font-size: 1.875em;
   font-weight: 700;
   color: #484848;
-  margin-top: 20px;
+  margin-top: 30px;
 
   @media ${breakPoints.mobile} {
     font-size: 1.5em;
@@ -40,13 +40,14 @@ export const Subtitle = styled.div`
     padding-top: 20px;
   }
 `;
+export const ImgWrap = styled.div``;
 export const NoticeIcon = styled.img`
-  /* width: 188px;
-  height: 201px; */
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
 
-  width: 20%;
   @media ${breakPoints.mobile} {
-    height: 150px;
+    /* height: 150px; */
   }
 `;
 

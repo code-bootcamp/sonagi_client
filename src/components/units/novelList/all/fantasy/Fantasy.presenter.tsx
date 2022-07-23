@@ -1,7 +1,8 @@
 import DOMPurify from "dompurify";
 import * as S from "./Fantasy.styles";
+import { IFantasyPresenterProps } from "./Fantasy.types";
 
-export default function FantasyPresenter(props: any) {
+export default function FantasyPresenter(props: IFantasyPresenterProps) {
   return (
     <S.Wrap>
       <S.Title>판타지</S.Title>
@@ -13,7 +14,7 @@ export default function FantasyPresenter(props: any) {
       <S.GridWrap>
         {props.PbFantasy?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >
@@ -45,7 +46,7 @@ export default function FantasyPresenter(props: any) {
       <S.GridWrap>
         {props.FinFantasy?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >

@@ -1,7 +1,8 @@
 import DOMPurify from "dompurify";
 import * as S from "./Horror.styles";
+import { IHorrorPresenterProps } from "./Horror.types";
 
-export default function HorrorPresenter(props: any) {
+export default function HorrorPresenter(props: IHorrorPresenterProps) {
   return (
     <S.Wrap>
       <S.Title>공포/미스터리</S.Title>
@@ -13,7 +14,7 @@ export default function HorrorPresenter(props: any) {
       <S.GridWrap>
         {props.PbHorror?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >
@@ -45,7 +46,7 @@ export default function HorrorPresenter(props: any) {
       <S.GridWrap>
         {props.FinHorror?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >

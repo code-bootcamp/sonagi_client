@@ -1,7 +1,8 @@
 import DOMPurify from "dompurify";
 import * as S from "./School.styles";
+import { ISchoolPresenterProps } from "./School.types";
 
-export default function SchoolPresenter(props: any) {
+export default function SchoolPresenter(props: ISchoolPresenterProps) {
   return (
     <S.Wrap>
       <S.Title>학원</S.Title>
@@ -13,7 +14,7 @@ export default function SchoolPresenter(props: any) {
       <S.GridWrap>
         {props.PbSchool?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >
@@ -45,7 +46,7 @@ export default function SchoolPresenter(props: any) {
       <S.GridWrap>
         {props.FinSchool?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >

@@ -35,7 +35,7 @@ export default function NovelBestListContainer(
   );
   console.log(HeartList);
 
-  const onClickLike = (el: any) => async () => {
+  const onClickLike = (el: Iel) => async () => {
     try {
       const result = await switchNovelLikes({
         variables: {

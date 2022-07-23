@@ -2,8 +2,9 @@ import * as S from "./Search.styles";
 import SearchbarContainer from "../../commons/search/Searchbar.container";
 import DOMPurify from "dompurify";
 import { v4 as uuidv4 } from "uuid";
+import { ISearchPresenterProps } from "./Search.types";
 
-export default function SearchPresenter(props: any) {
+export default function SearchPresenter(props: ISearchPresenterProps) {
   return (
     <S.Wrap>
       <S.SearchInputWrap>
@@ -35,7 +36,7 @@ export default function SearchPresenter(props: any) {
                 {el.title
                   .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
                   .split("@#$%")
-                  .map((el) => (
+                  .map((el: any) => (
                     <S.TextToken
                       key={uuidv4()}
                       isMatched={props.keyword === el}

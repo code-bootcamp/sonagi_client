@@ -1,7 +1,10 @@
 import DOMPurify from "dompurify";
 import * as S from "./RomanceFantasy.styles";
+import { IRomanceFantasyPresenterProps } from "./RomanceFantasy.types";
 
-export default function RomanceFantasyPresenter(props: any) {
+export default function RomanceFantasyPresenter(
+  props: IRomanceFantasyPresenterProps
+) {
   return (
     <S.Wrap>
       <S.Title>로맨스판타지</S.Title>
@@ -13,7 +16,7 @@ export default function RomanceFantasyPresenter(props: any) {
       <S.GridWrap>
         {props.PbRomanceFantasy?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >
@@ -47,7 +50,7 @@ export default function RomanceFantasyPresenter(props: any) {
           .slice(0, 5)
           .map((el: any) => (
             <S.ItemWrap
-              onClick={props.onClickMoveToDetail}
+              onClick={props.onClickMoveToDetail(el)}
               id={el.id}
               key={el.title}
             >

@@ -3,8 +3,11 @@ import Button02 from "../../../commons/buttons/02";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import * as S from "./NoticeWrite.styles";
 import { v4 as uuidv4 } from "uuid";
+import { INoticeWritePresenterProps } from "./NoticeWritetypes";
 
-export default function NoticeWritePresenter(props) {
+export default function NoticeWritePresenter(
+  props: INoticeWritePresenterProps
+) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickNoticeSubmit)}>
       <S.Wrapper>
@@ -24,7 +27,7 @@ export default function NoticeWritePresenter(props) {
         ></S.InputContents>
         <S.SubTitle>사진첨부</S.SubTitle>
         <S.UploadBox>
-          {props.fileUrls.map((el: any, index: number) => (
+          {props.fileUrls.map((el, index) => (
             <Uploads01
               fileUrl={el}
               key={uuidv4()}

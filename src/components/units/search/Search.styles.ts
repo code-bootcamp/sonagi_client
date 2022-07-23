@@ -78,7 +78,7 @@ export const Tag = styled.div`
   margin: 0px 15px;
   cursor: pointer;
 
-  :hover {
+  &:focus {
     background-color: #2277d8;
     color: #fff;
   }
@@ -91,59 +91,6 @@ export const Tag = styled.div`
 
   @media ${breakPoints.mobile} {
     margin-bottom: 20px;
-  }
-`;
-
-// 소설 목록 wrap
-export const ItemRowWrap = styled.div`
-  width: 100%;
-  padding: 2%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  @media ${breakPoints.tablet} {
-    width: 96%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media ${breakPoints.mobile} {
-    width: 96%;
-    display: flex;
-    flex-flow: row wrap;
-  }
-`;
-
-export const RowWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 10px;
-`;
-
-export const ItemPlus = styled.div`
-  width: 30%;
-  background-color: #eee;
-  padding: 5px;
-  margin-left: 13px;
-  font-size: 1em;
-  text-align: center;
-
-  @media ${breakPoints.tablet} {
-    padding: 2px;
-    font-size: 0.8em;
-  }
-  @media ${breakPoints.mobile} {
-    padding: 2px;
-    font-size: 0.8em;
-  }
-`;
-
-export const Writer = styled.div`
-  font-size: 1em;
-
-  @media ${breakPoints.mobile} {
-    font-size: 0.8em;
   }
 `;
 
@@ -170,6 +117,7 @@ export const ItemWrap = styled.div`
   margin: 20px 0 10px 0;
   padding: 0 3px;
   overflow: hidden;
+  cursor: pointer;
 
   @media (min-width: 768px) and (max-width: 990px) {
     transition-duration: 1s;
