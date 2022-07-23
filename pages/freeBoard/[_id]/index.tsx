@@ -13,7 +13,13 @@ export default function FreeBoardDetailPage() {
     <>
       <FreeBoardDetailContainer />
       <Wrapper>
-        <CommentWriteContainer />
+        <CommentWriteContainer
+          isAnswerEdit={undefined}
+          isAnswer={undefined}
+          isEdit={undefined}
+          setIsEdit={undefined}
+          el={undefined}
+        />
         <CommentListContainer />
       </Wrapper>
       {/* <NestedCommentListContainer /> */}

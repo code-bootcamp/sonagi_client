@@ -3,7 +3,7 @@ import Uploads01 from "../../commons/uploads/01/Uploads01.container";
 import { v4 as uuidv4 } from "uuid";
 import * as S from "./EventWrite.styles";
 
-export default function EventWritePresenter(props) {
+export default function EventWritePresenter(props: any) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickEventWrite)}>
       <S.Wrapper>
@@ -23,7 +23,7 @@ export default function EventWritePresenter(props) {
         ></S.InputContents>
         <S.SubTitle>사진첨부</S.SubTitle>
         <S.UploadBox>
-          {props.fileUrls.map((el, index) => (
+          {props.fileUrls.map((el: any, index: any) => (
             <Uploads01
               key={uuidv4()}
               fileUrl={el}

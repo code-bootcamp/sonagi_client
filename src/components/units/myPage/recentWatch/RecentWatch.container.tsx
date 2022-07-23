@@ -5,8 +5,9 @@ import RecentWatchPresenter from "./RecentWatch.presenter";
 export default function RecentWatchContainer() {
   const [basketItems, setBasketItmes] = useState([]);
   const router = useRouter();
+
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("baskets")) || [];
+    const items = JSON.parse(localStorage.getItem("baskets") || "[]");
     setBasketItmes(items);
   }, []);
 

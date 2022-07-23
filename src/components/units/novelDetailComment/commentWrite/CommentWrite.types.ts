@@ -20,8 +20,8 @@ export interface Iel {
 
 export interface IDetailCommentWriteContainerProps {
   el?: any;
-  setIsEdit: Dispatch<SetStateAction<boolean>>;
-  isEdit: boolean;
+  setIsEdit: any;
+  isEdit: any;
 }
 
 export interface IDetailCommentWritePresenterProps {
@@ -33,7 +33,8 @@ export interface IDetailCommentWritePresenterProps {
   setStar: Dispatch<SetStateAction<number>>;
   star: number;
   onChagneStar: (value: number) => void;
-  isEdit: boolean;
+  setIsEdit: any;
+  isEdit: any;
   el: Iel;
   click: boolean;
   setClick: Dispatch<SetStateAction<boolean>>;

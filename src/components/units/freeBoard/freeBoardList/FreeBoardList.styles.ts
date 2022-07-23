@@ -122,7 +122,6 @@ export const Flex = styled.div`
   display: flex;
   align-items: center;
   margin-left: 15px;
-  width
 `;
 
 export const New = styled.div`

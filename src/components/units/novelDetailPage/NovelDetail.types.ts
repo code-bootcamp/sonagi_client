@@ -19,6 +19,8 @@ export interface INovelDetailPresenterProps {
   isFirst: boolean;
   isDonate: boolean;
   isSubmitting: boolean;
+  setIsEdit: any;
+  isEdit: any;
   onClickFirstView: () => void;
   onClickEditEpisode: (event: MouseEvent<HTMLDivElement>) => void;
   Heart: boolean;

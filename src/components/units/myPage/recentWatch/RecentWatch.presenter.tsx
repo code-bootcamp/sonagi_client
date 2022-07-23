@@ -1,4 +1,3 @@
-import { Key } from "react";
 import HamburgerPage from "../../../commons/hamburger";
 import * as S from "./RecentWatch.styles";
 import { IRecentWatchPresenterProps } from "./RecentWatch.types";
@@ -13,7 +12,7 @@ export default function RecentWatchPresenter(
       </S.HamburgerWrapper>
       <S.Wrap>
         <S.Flex>
-          {props.basketItems?.slice(0, 4).map((el) => (
+          {props.basketItems?.slice(0, 4).map((el: any) => (
             <S.BoxWrap
               key={el.id}
               id={el.id}
@@ -35,24 +34,20 @@ export default function RecentWatchPresenter(
       </S.Wrap>
       <S.Wraps>
         <S.Flex>
-          {props.basketItems
-            ?.slice(5, 9)
-            .map(
-              (el: { id: Key | null | undefined; files: { url: any }[] }) => (
-                <S.BoxWraps
-                  key={el.id}
-                  id={el.id}
-                  onClick={props.onClickMoveToNovelDetail}
-                >
-                  <S.NovelPics
-                    src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-                  />
-                  {/* <S.TitleWrap>
+          {props.basketItems?.slice(5, 9).map((el: any) => (
+            <S.BoxWraps
+              key={el.id}
+              id={el.id}
+              onClick={props.onClickMoveToNovelDetail}
+            >
+              <S.NovelPics
+                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+              />
+              {/* <S.TitleWrap>
                     <S.Title>{el.title}</S.Title>
                   </S.TitleWrap> */}
-                </S.BoxWraps>
-              )
-            )}
+            </S.BoxWraps>
+          ))}
         </S.Flex>
         <S.BookShelfs src="/recentWatch/shelf.png" />
       </S.Wraps>
