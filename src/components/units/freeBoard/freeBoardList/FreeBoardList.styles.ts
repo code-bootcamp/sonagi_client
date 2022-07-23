@@ -253,12 +253,8 @@ export const AvatarImg = styled.img`
     width: 60px;
     height: 60px;
     position: absolute;
-    right:290px;
+    right: 290px;
   }
-  /* @media ${breakPoints.tablet} {
-    width: 11%;
-  }
-
 `;
 
 export const Column = styled.div`
