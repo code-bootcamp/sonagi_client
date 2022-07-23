@@ -247,7 +247,10 @@ export default function NovelDetailPresenter(
             )}
           </S.NovelRemarks>
           <S.FooterLabel>리뷰</S.FooterLabel>
-          <DetailCommentWriteContainer />
+          <DetailCommentWriteContainer
+            setIsEdit={undefined}
+            isEdit={undefined}
+          />
           <DetailCommentListContainer />
         </S.WrapFooter>
       </S.Wrapper>

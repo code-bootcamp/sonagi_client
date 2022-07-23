@@ -17,7 +17,7 @@ export default function MyBoardListContainer() {
   const onClickMyProductList = () => {
     setIsBoardList(false);
   };
-  const onClickMoveToDetail = (el) => () => {
+  const onClickMoveToDetail = (el: any) => () => {
     router.push(`/freeBoard/${el.id}`);
   };
 

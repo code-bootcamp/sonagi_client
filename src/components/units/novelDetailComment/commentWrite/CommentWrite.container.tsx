@@ -101,7 +101,7 @@ export default function DetailCommentWriteContainer(
         });
         console.log(result);
         Modal.success({ content: "수정 완료" });
-        props.setIsEdit((prev) => !prev);
+        props.setIsEdit((prev: any) => !prev);
       } catch (error: any) {
         Modal.error({ content: error.message });
       }
@@ -122,6 +122,7 @@ export default function DetailCommentWriteContainer(
       el={props.el}
       click={click}
       setClick={setClick}
+      setIsEdit={undefined}
     />
   );
 }

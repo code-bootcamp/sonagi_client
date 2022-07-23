@@ -21,6 +21,7 @@ export default function Tags(props: ITagsProps) {
   const [editInputValue, setEditInputValue] = useState("");
   const inputRef = useRef(null);
   const editInputRef = useRef(null);
+
   useEffect(() => {
     if (inputVisible) {
       inputRef.current?.focus();

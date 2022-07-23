@@ -7,6 +7,7 @@ export interface IReadCommentListContainerProps {
 
 export interface IReadCommentListPresenterProps {
   data: {
+    fetchEpisodeReviewPage: any;
     id: string;
     contents: string;
     likeCount: number;
