@@ -4,7 +4,7 @@ import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import * as S from "./NoticeWrite.styles";
 import { v4 as uuidv4 } from "uuid";
 
-export default function NoticeWritePresenter(props: any) {
+export default function NoticeWritePresenter(props) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickNoticeSubmit)}>
       <S.Wrapper>
