@@ -54,9 +54,9 @@ export const Box = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 220px;
     height: 270px;
-    padding: 30px 20px;
+    padding: 20px 5px;
+    align-items: center;
   }
 `;
 
@@ -70,7 +70,7 @@ export const BoxTitle = styled.div`
   padding-right: 5px;
 
   @media ${breakPoints.mobile} {
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 10px 5px;
     line-height: 30px;
   }
@@ -137,6 +137,11 @@ export const SubT = styled.div`
   font-size: 1rem;
   color: #848484;
   font-weight: 350;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    padding: 0 15px;
+  }
 `;
 
 export const Pay = styled.div`
