@@ -23,22 +23,22 @@ export default function Layout(props: ILayoutProps) {
   console.log(router);
 
   const HIDDEN_HEADER = [
-    "/login",
-    "/signup",
-    "/socialLogin",
-    "/novel/" + router.query._id + "/" + router.query.volume_id,
+    "/login/",
+    "/signup/",
+    "/socialLogin/",
+    "/novel/" + router.query._id + "/" + router.query.volume_id + "/",
   ];
   const HIDDEN_NAVIGATION = [
-    "/login",
-    "/signup",
-    "/socialLogin",
-    "/novel/" + router.query._id + "/" + router.query.volume_id,
+    "/login/",
+    "/signup/",
+    "/socialLogin/",
+    "/novel/" + router.query._id + "/" + router.query.volume_id + "/",
   ];
   const HIDDEN_FOOTER = [
-    "/login",
-    "/signup",
-    "/socialLogin",
-    "/novel/" + router.query._id + "/" + router.query.volume_id,
+    "/login/",
+    "/signup/",
+    "/socialLogin/",
+    "/novel/" + router.query._id + "/" + router.query.volume_id + "/",
   ];
 
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
