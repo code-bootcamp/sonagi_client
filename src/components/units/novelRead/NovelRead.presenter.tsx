@@ -19,13 +19,13 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
       ) : (
         <S.Wrapper onContextMenu={props.onClickRight}>
           <S.HeadWrapper setDisplay={props.setDisplay}>
-            <S.LeftWrapper>
+            <S.LeftWrapperTop>
               <S.LogoImg
                 onClick={props.onClickMoveToMain}
                 src="/header/logo.png"
               />
               <S.ArrowLeft src="/novelRead/arrowleft.png" />
-            </S.LeftWrapper>
+            </S.LeftWrapperTop>
             <S.TitleWrapper>
               <S.Title>{props.novelData?.fetchNovelDetail.title}</S.Title>
               <S.SubTitle>
@@ -33,7 +33,7 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
                 {props.readData?.fetchEpisodeDetail.title}
               </S.SubTitle>
             </S.TitleWrapper>
-            <S.RightWrapper>
+            <S.RightWrapperTop>
               <S.SettingImg
                 onClick={props.onClickLike}
                 src={
@@ -42,12 +42,15 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
                     : "/novelRead/heart.png"
                 }
               />
-              <S.SettingImg
-                src="/novelRead/bookmark.png"
+              <S.MarkImg
+                src={
+                  props.ismark
+                    ? "/novelRead/bookmarkFill.png"
+                    : "/novelRead/bookmark.png"
+                }
                 onClick={props.onClickBookMark}
               />
-              <S.SettingImg src="/novelRead/setting.png" />
-            </S.RightWrapper>
+            </S.RightWrapperTop>
           </S.HeadWrapper>
           <S.BodyWrapper fontsize={props.size} onClick={props.onClickDisplay}>
             {typeof window !== "undefined" ? (
@@ -63,13 +66,7 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
             )}
           </S.BodyWrapper>
           <S.FooterWrapper setDisplay={props.setDisplay}>
-            <S.LeftWrapper onClick={props.onClickComment}>
-              <S.Comment src="/novelRead/comment.png" />
-              <S.CommentNumber>
-                {props.commentData?.fetchEpisodeReviewPage?.count}
-              </S.CommentNumber>
-            </S.LeftWrapper>
-            <S.CenterWrapper>
+            <S.CenterWrapperMobile>
               <S.FooterArrow src="/novelRead/footerArrowLeft.png" />
               <S.Content onClick={props.onClickMoveToPrevPage}>
                 이전화
@@ -78,26 +75,45 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
                 다음화
               </S.Content>
               <S.FooterArrow src="/novelRead/footerArrowRight.png" />
-            </S.CenterWrapper>
-            <S.RightWrapper>
-              <S.WrapFont>
-                <S.Content>FontSize</S.Content>
-                <PlusOutlined
-                  style={{
-                    fontSize: "20px",
-                    paddingRight: "10px",
-                    paddingLeft: "10px",
-                  }}
-                  onClick={props.onClickSizeUp}
-                />
-                <MinusOutlined
-                  style={{ fontSize: "20px", paddingRight: "30px" }}
-                  onClick={props.onClickSizeDown}
-                />
-              </S.WrapFont>
-              <S.Comment src="/novelRead/list.png" />
-              <S.Content onClick={props.onClickMoveToList}>목록</S.Content>
-            </S.RightWrapper>
+            </S.CenterWrapperMobile>
+            <S.Footer>
+              <S.LeftWrapper onClick={props.onClickComment}>
+                <S.Comment src="/novelRead/comment.png" />
+                <S.CommentNumber>
+                  {props.commentData?.fetchEpisodeReviewPage?.count}
+                </S.CommentNumber>
+              </S.LeftWrapper>
+              <S.CenterWrapper>
+                <S.FooterArrow src="/novelRead/footerArrowLeft.png" />
+                <S.Content onClick={props.onClickMoveToPrevPage}>
+                  이전화
+                </S.Content>
+                <S.Content onClick={props.onClickMoveToNextPage}>
+                  다음화
+                </S.Content>
+                <S.FooterArrow src="/novelRead/footerArrowRight.png" />
+              </S.CenterWrapper>
+              <S.RightWrapper>
+                <S.WrapFont>
+                  <S.Content>글자크기</S.Content>
+                  <PlusOutlined
+                    style={{
+                      fontSize: "20px",
+                      paddingRight: "10px",
+                      paddingLeft: "10px",
+                    }}
+                    onClick={props.onClickSizeUp}
+                  />
+                  <MinusOutlined
+                    style={{ fontSize: "20px", paddingRight: "30px" }}
+                    onClick={props.onClickSizeDown}
+                  />
+                </S.WrapFont>
+
+                <S.Comment src="/novelRead/list.png" />
+                <S.Content onClick={props.onClickMoveToList}>목록</S.Content>
+              </S.RightWrapper>
+            </S.Footer>
           </S.FooterWrapper>
         </S.Wrapper>
       )}

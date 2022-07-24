@@ -19,12 +19,10 @@ export const Wrapper = styled.div`
   @media (min-width: 767px) and (max-width: 991px) {
     min-width: 767px;
     max-width: 991px;
-    background-color: green;
   }
 
   @media (max-width: 767px) {
     max-width: 767px;
-    background-color: yellow;
   }
 `;
 
@@ -32,7 +30,7 @@ export const HeadWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   background-color: #f1f4f5;
@@ -49,7 +47,7 @@ export const BodyWrapper = styled.pre`
   flex-direction: row;
   font-family: RIDIbatang, serif;
   /* background-color: #ffd2dd; */
-  font-size: ${(props: INovelReadStyles) => props.fontsize}rem;
+  font-size: ${(props: INovelReadStyles) => props.fontsize}px;
   white-space: pre-wrap;
   word-break: break-all;
   overflow: auto;
@@ -58,14 +56,12 @@ export const BodyWrapper = styled.pre`
     min-width: 767px;
     max-width: 991px;
     width: 100%;
-    background-color: green;
     padding: 30px;
   }
 
   @media (max-width: 767px) {
     max-width: 767px;
     width: 100%;
-    background-color: yellow;
     padding: 30px;
   }
 `;
@@ -85,19 +81,32 @@ export const FooterWrapper = styled.div`
   @media ${breakPoints.tablet} {
     padding: 20px;
   }
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    height: 12%;
+  }
 `;
 
 export const LogoImg = styled.img`
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 60px;
+  }
 `;
 
 export const ArrowLeft = styled.img`
   width: 12px;
   margin-left: 20px;
+
+  @media ${breakPoints.mobile} {
+    width: 9px;
+    margin-left: 10px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
-  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,6 +117,10 @@ export const Title = styled.div`
   font-size: 1rem;
   line-height: 24px;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const SubTitle = styled.div`
@@ -115,22 +128,40 @@ export const SubTitle = styled.div`
   font-size: 1.063rem;
   line-height: 25px;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.9rem;
+  }
 `;
 
 export const SettingImg = styled.img`
   margin-left: 20px;
+  width: 35px;
+
+  @media ${breakPoints.mobile} {
+    width: 25px;
+  }
+`;
+
+export const MarkImg = styled.img`
+  margin-left: 20px;
+  width: 25px;
+
+  @media ${breakPoints.mobile} {
+    width: 20px;
+  }
 `;
 
 export const FooterArrow = styled.img``;
 
 export const CenterWrapper = styled.div`
-  width: 60%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  /* margin-left: 170px; */
 
-  @media ${breakPoints.tablet} {
-    width: 40%;
+  @media ${breakPoints.mobile} {
+    display: none;
   }
 `;
 
@@ -156,19 +187,26 @@ export const Content = styled.div`
 `;
 
 export const LeftWrapper = styled.div`
-  width: 20%;
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+  width: 30%;
 
   @media ${breakPoints.tablet} {
-    width: 30%;
+    /* width: 30%; */
   }
 
   @media ${breakPoints.mobile} {
-    display: none;
+    /* width: 100%; */
   }
+`;
+
+export const LeftWrapperTop = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
 `;
 
 export const WrapFont = styled.div`
@@ -176,17 +214,39 @@ export const WrapFont = styled.div`
 `;
 
 export const RightWrapper = styled.div`
-  width: 20%;
   display: flex;
   flex-direction: row;
   justify-content: right;
   align-items: center;
-
-  @media ${breakPoints.tablet} {
-    width: 30%;
-  }
+  margin-right: 10px;
+  width: 30%;
 
   @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
+
+export const RightWrapperTop = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  margin-right: 10px;
+`;
+
+export const CenterWrapperMobile = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media (min-width: 768px) {
     display: none;
   }
+`;
+
+export const Footer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 `;
