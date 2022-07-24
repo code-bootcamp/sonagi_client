@@ -1,8 +1,10 @@
-import { Dispatch, SetStateAction } from "react";
-
 export interface IReadCommentListContainerProps {
-  setCommentClick: Dispatch<SetStateAction<boolean>>;
+  setCommentClick: any;
   commentClick: boolean;
+  setIsEdit: any;
+  isEdit: any;
+  el: any;
+  setIsGoCommnet: any;
 }
 
 export interface IReadCommentListPresenterProps {
@@ -24,7 +26,7 @@ export interface IReadCommentListPresenterProps {
   refetch: any;
   onClickGoComment: () => void;
   isGoComment: boolean;
-  setIsGoCommnet: Dispatch<SetStateAction<boolean>>;
+  setIsGoCommnet: any;
   onClickGoRead: () => void;
 }
 
@@ -43,17 +45,5 @@ export interface Iel {
 }
 
 export interface IReadCommentListPresenterItemProps {
-  el: {
-    id?: string;
-    contents?: string;
-    likeCount?: number;
-    star?: number;
-    createAt?: string;
-    updateAt?: string;
-    user?: {
-      id?: string;
-      nickName?: string;
-    };
-    count?: number;
-  };
+  el: any;
 }

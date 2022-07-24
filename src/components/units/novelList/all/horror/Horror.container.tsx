@@ -39,7 +39,7 @@ export default function HorrorContainer() {
 
   return (
     <HorrorPresenter
-      onClick={onClickMoveToDetail}
+      onClickMoveToDetail={onClickMoveToDetail}
       PbHorror={PbHorror}
       FinHorror={FinHorror}
     />

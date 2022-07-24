@@ -231,7 +231,8 @@ export default function NovelDetailContainer() {
       onClickFirstView={onClickFirstView}
       // 수정하기
       onClickEditEpisode={onClickEditEpisode}
-      // 체크박스
+      setIsEdit={undefined}
+      isEdit={undefined} // 체크박스
       // onClickCheckAll={onClickCheckAll}
       // onCheckedItem={onCheckedItem}
       // isChecked={isChecked}

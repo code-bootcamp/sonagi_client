@@ -1,4 +1,3 @@
-import { MouseEvent } from "react";
 interface IFiles {
   url: string;
 }
@@ -26,5 +25,5 @@ export interface ISchoolPresenterProps {
   PbSchool: any;
   FinSchool: any;
   data?: any;
-  onClickMoveToDetail: (el: Iel) => (event: MouseEvent<HTMLDivElement>) => void;
+  onClickMoveToDetail: any;
 }

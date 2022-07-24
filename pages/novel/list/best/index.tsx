@@ -3,7 +3,6 @@ import NovelBestListContainer from "../../../../src/components/units/novelList/b
 export default function NovelEndListPage() {
   return (
     <NovelBestListContainer
-      el={undefined}
       onClickMoveToDetail={function (el: any): (event: any) => void {
         throw new Error("Function not implemented.");
       }}
@@ -12,6 +11,10 @@ export default function NovelEndListPage() {
       }}
       onClickLike={function (el: any): () => Promise<void> {
         throw new Error("Function not implemented.");
+      }}
+      el={{
+        id: undefined,
+        el: undefined,
       }}
     />
   );

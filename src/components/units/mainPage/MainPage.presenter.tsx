@@ -21,7 +21,7 @@ export default function MainPagePresenter() {
       <S.VideoWrapper>
         <S.VideoDiv>
           <ReactPlayer
-            url={"https://www.youtube.com/watch?v=GI3kMiPwibQ"}
+            url={"https://www.youtube.com/watch?v=c-XG8k_w1LM&t=1s"}
             width="400px"
             height="400px"
             playing={true}

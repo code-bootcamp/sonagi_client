@@ -30,7 +30,7 @@ export default function SearchContainer() {
     console.log(event.target);
     const baskets = JSON.parse(localStorage.getItem("baskets") || "") || [];
     let isExists = false;
-    baskets.forEach((basketEL) => {
+    baskets.forEach((basketEL: any) => {
       if (el.id === basketEL.id) isExists = true;
     });
     if (isExists) {
@@ -56,6 +56,9 @@ export default function SearchContainer() {
       onClickMoveToDetail={onClickMoveToDetail}
       refetch={refetch}
       onChangeKeyword={onChangeKeyword}
+      PbSchool={undefined}
+      FinSchool={undefined}
+      refetchBoardsCount={undefined}
     />
   );
 }

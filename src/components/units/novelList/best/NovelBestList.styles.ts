@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { INovelBestListStyledProps } from "./NovelBestList.types";
 
 export const Wrap = styled.div`
   width: 96%;
@@ -190,7 +191,7 @@ export const ItemName = styled.div`
 export const HeartImg = styled.div`
   width: 22px;
   height: 21px;
-  background-image: ${(props: any) =>
+  background-image: ${(props: INovelBestListStyledProps) =>
     props.HeartList?.includes(props.el)
       ? "url(/novelList/best/heart2.png)"
       : "url(/novelList/best/heart1.png)"};
