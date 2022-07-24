@@ -9,9 +9,18 @@ export interface IMainPageQuestionPresenterProps {
   isAnswer4: any;
 }
 
-export interface IMainPageQuestionStyledProps {
+export interface IMainPageQuestionStyledProps1 {
   isAnswer1: any;
+}
+
+export interface IMainPageQuestionStyledProps2 {
   isAnswer2: any;
+}
+
+export interface IMainPageQuestionStyledProps3 {
   isAnswer3: any;
+}
+
+export interface IMainPageQuestionStyledProps4 {
   isAnswer4: any;
 }
