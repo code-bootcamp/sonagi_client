@@ -1,5 +1,3 @@
-import { ApolloQueryResult, OperationVariables } from "@apollo/client";
-import { MouseEvent } from "react";
 interface IFiles {
   url: string;
 }
@@ -27,13 +25,9 @@ export interface ISearchPresenterProps {
   PbSchool: any;
   FinSchool: any;
   data?: any;
-  onClickMoveToDetail: (el: Iel) => (event: MouseEvent<HTMLDivElement>) => void;
-  refetch(
-    variables?: Partial<OperationVariables> | undefined
-  ): Promise<ApolloQueryResult<any>>;
-  refetchBoardsCount: (
-    variables: Partial<OperationVariables>
-  ) => Promise<ApolloQueryResult<any>>;
+  onClickMoveToDetail: any;
+  refetch: any;
+  refetchBoardsCount: any;
   count?: number;
   keyword: string;
   onChangeKeyword: (value: string) => void;

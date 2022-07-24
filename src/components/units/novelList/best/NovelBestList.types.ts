@@ -1,7 +1,4 @@
-import { MouseEvent } from "react";
-interface IFiles {
-  url: string;
-}
+interface IFiles {}
 export interface Iel {
   novel: any;
   cycle?: number;
@@ -24,8 +21,20 @@ export interface Iel {
 }
 export interface INovelBestListPresenterProps {
   data?: any;
-  el?: any;
-  onClickMoveToDetail: (el: Iel) => (event: MouseEvent<HTMLDivElement>) => void;
-  HeartList: () => void;
-  onClickLike: (el: any) => () => Promise<void>;
+  el: {
+    id: any;
+    el: any;
+  };
+  onClickMoveToDetail: any;
+  HeartList: any;
+  onClickLike: any;
+}
+
+export interface INovelBestListStyledProps {
+  data?: any;
+  el: {
+    id: any;
+    el: any;
+  };
+  HeartList: any;
 }

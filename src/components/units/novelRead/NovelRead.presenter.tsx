@@ -11,6 +11,10 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
         <ReadCommentListContainer
           setCommentClick={props.setCommentClick}
           commentClick={props.commentClick}
+          setIsEdit={undefined}
+          isEdit={undefined}
+          el={undefined}
+          setIsGoCommnet={undefined}
         />
       ) : (
         <S.Wrapper onContextMenu={props.onClickRight}>

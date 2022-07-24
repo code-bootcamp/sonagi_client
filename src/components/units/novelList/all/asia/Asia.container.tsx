@@ -40,7 +40,7 @@ export default function AsiaContainer() {
 
   return (
     <AsiaPresenter
-      onClick={onClickMoveToDetail}
+      onClickMoveToDetail={onClickMoveToDetail}
       PbAsia={PbAsia}
       FinAsia={FinAsia}
     />

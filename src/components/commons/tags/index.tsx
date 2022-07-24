@@ -1,7 +1,7 @@
 import { PlusOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
 import { Input, Tag, Tooltip } from "antd";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 
 interface ITagsProps {
   tags: string[];
@@ -22,14 +22,14 @@ export default function Tags(props: ITagsProps) {
   const inputRef = useRef(null);
   const editInputRef = useRef(null);
 
-  useEffect(() => {
-    if (inputVisible) {
-      inputRef.current?.focus();
-    }
-  }, [inputVisible]);
-  useEffect(() => {
-    editInputRef.current?.focus();
-  }, [inputValue]);
+  // useEffect(() => {
+  //   if (inputVisible) {
+  //     inputRef.current?.focus();
+  //   }
+  // }, [inputVisible]);
+  // useEffect(() => {
+  //   editInputRef.current?.focus();
+  // }, [inputValue]);
 
   const handleClose = (removedTag: string) => {
     const newTags = props.tags.filter((tag: any) => tag !== removedTag);

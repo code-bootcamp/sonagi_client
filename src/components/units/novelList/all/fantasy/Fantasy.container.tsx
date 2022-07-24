@@ -40,7 +40,7 @@ export default function FantasyContainer() {
 
   return (
     <FantasyPresenter
-      onClick={onClickMoveToDetail}
+      onClickMoveToDetail={onClickMoveToDetail}
       PbFantasy={PbFantasy}
       FinFantasy={FinFantasy}
     />

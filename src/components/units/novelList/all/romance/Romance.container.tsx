@@ -62,7 +62,7 @@ export default function RomanceContainer() {
 
   return (
     <RomancePresenter
-      onClick={onClickMoveToDetail}
+      onClickMoveToDetail={onClickMoveToDetail}
       PbRomance={PbRomance}
       FinRomance={FinRomance}
       // loadFunc={loadFunc}

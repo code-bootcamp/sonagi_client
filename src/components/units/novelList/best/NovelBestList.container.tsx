@@ -95,6 +95,10 @@ export default function NovelBestListContainer(
       onClickLike={onClickLike}
       onClickMoveToDetail={onClickMoveToDetail}
       HeartList={HeartList}
+      el={{
+        id: undefined,
+        el: undefined,
+      }}
     />
   );
 }

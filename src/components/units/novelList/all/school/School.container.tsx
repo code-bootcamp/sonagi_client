@@ -40,7 +40,7 @@ export default function SchoolContainer() {
 
   return (
     <SchoolPresenter
-      onClick={onClickMoveToDetail}
+      onClickMoveToDetail={onClickMoveToDetail}
       PbSchool={PbSchool}
       FinSchool={FinSchool}
     />

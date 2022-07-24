@@ -89,6 +89,9 @@ export default function ReadCommentListPresenterItem(
             isEdit={true}
             setIsEdit={setIsEdit}
             el={props.el}
+            setIsGoCommnet={function (value: any): void {
+              throw new Error("Function not implemented.");
+            }}
           />
         )}
       </S.FooterWrapper>

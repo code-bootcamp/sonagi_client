@@ -45,7 +45,21 @@ export default function ReadCommentListPresenter(
   return (
     <Wrapper>
       {props.isGoComment ? (
-        <ReadCommentWriteContainer setIsGoCommnet={props.setIsGoCommnet} />
+        <ReadCommentWriteContainer
+          setIsGoCommnet={props.setIsGoCommnet}
+          setIsEdit={function (value: any): void {
+            throw new Error("Function not implemented.");
+          }}
+          isEdit={false}
+          el={{
+            contents: undefined,
+            createAt: undefined,
+            id: undefined,
+            likeCount: undefined,
+            updateAt: undefined,
+            user: undefined,
+          }}
+        />
       ) : (
         <>
           <HeadWrapper onClick={props.onClickGoRead}>읽으러 가기</HeadWrapper>
