@@ -24,9 +24,9 @@ export const FETCH_NOVEL_DETAIL = gql`
   }
 `;
 
-export const TOGGLE_BOOK_MARK = gql`
-  mutation toggleBookmark($createBookmarkInput: CreateBookmarkDto!) {
-    toggleBookmark(createBookmarkInput: $createBookmarkInput) {
+export const SWITCH_BOOK_MARK = gql`
+  mutation switchBookmark($novelIndexID: String!, $page: Float!) {
+    switchBookmark(novelIndexID: $novelIndexID, page: $page) {
       msg
       id
     }
@@ -58,6 +58,14 @@ export const FETCH_NOVEL_LIKE_IN_USER = gql`
       novel {
         id
       }
+    }
+  }
+`;
+
+export const FETCH_BOOK_MARKS_IN_USER = gql`
+  query fetchBookmarksInUser {
+    fetchBookmarksInUser {
+      id
     }
   }
 `;
