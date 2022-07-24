@@ -1,12 +1,16 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   height: 200px;
   display: flex;
-  flex-direction: row;
   padding: 20px 100px;
   background: #f7f7f7;
+  margin: 0 auto;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const LeftBox = styled.div`
@@ -28,15 +32,16 @@ export const RightBox = styled.div`
 
 export const Notice = styled.div`
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 18px;
   color: #828282;
   margin-bottom: 15px;
+  cursor: pointer;
 `;
 
 export const Title = styled.div`
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 18px;
   color: #828282;
   margin-bottom: 10px;
@@ -44,7 +49,7 @@ export const Title = styled.div`
 
 export const Contents = styled.div`
   font-weight: 400;
-  font-size: 11px;
+  font-size: 0.688rem;
   line-height: 15px;
   letter-spacing: 0.232836px;
   color: #bbbbbb;
@@ -53,7 +58,7 @@ export const Contents = styled.div`
 
 export const Corp = styled.div`
   font-weight: 400;
-  font-size: 11px;
+  font-size: 0.688rem;
   line-height: 15px;
   letter-spacing: 0.232836px;
   color: #bbbbbb;
@@ -74,7 +79,7 @@ export const SNSButton = styled.img`
 
 export const Number = styled.div`
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 27px;
   letter-spacing: 0.232836px;
   color: #2277d8;
@@ -87,7 +92,7 @@ export const QuestButton = styled.div`
   margin-top: 4px;
   background: #bbbbbb;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 14px;
   color: #ffffff;
   text-align: center;
@@ -98,61 +103,8 @@ export const QuestButton = styled.div`
 
 export const Contents2 = styled.div`
   font-weight: 400;
-  font-size: 11px;
+  font-size: 0.688rem;
   line-height: 15px;
   letter-spacing: 0.232836px;
   color: #bbbbbb;
 `;
-
-// export const TopBox = styled.div`
-//   height: 40px;
-//   padding: 10px 0px;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: right;
-//   border-bottom: 1px solid #e0e0e0;
-// `;
-
-// export const BottomBox = styled.div`
-//   height: 85px;
-//   padding: 20px 2px;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: center;
-//   border-bottom: 1px solid #e0e0e0;
-// `;
-
-// export const SignUpLoginButton = styled.div`
-//   font-weight: 500;
-//   font-size: 14px;
-//   line-height: 21px;
-//   text-align: center;
-//   margin-left: 30px;
-//   color: #787878;
-//   cursor: pointer;
-// `;
-
-// export const LogoImg = styled.img`
-//   width: 120px;
-//   height: 40px;
-//   cursor: pointer;
-// `;
-
-// export const SearchBox = styled.div`
-//   width: 310px;
-//   height: 40px;
-//   background: #f2f2f2;
-//   border-radius: 5px;
-//   padding: 8px;
-//   margin-right: -665px;
-//   cursor: pointer;
-// `;
-
-// export const SearchButton = styled.img``;
-
-// export const MyPageButton = styled.img`
-//   width: 29px;
-//   height: 25px;
-//   cursor: pointer;
-// `;

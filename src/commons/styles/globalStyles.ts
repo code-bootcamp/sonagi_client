@@ -10,7 +10,7 @@ export const globalStyles = css`
       Helvetica Neue, sans-serif;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    color: #484848;
   }
 
   a {
@@ -20,5 +20,10 @@ export const globalStyles = css`
 
   * {
     box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: "RIDIbatang";
+    src: url("/fonts/RIDIBAtang.otf");
   }
 `;

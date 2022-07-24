@@ -12,21 +12,34 @@ interface ILayoutProps {
 }
 
 const Wrapper = styled.div`
-  margin: 0px;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
-
-const HIDDEN_HEADER = [""];
-const HIDDEN_NAVIGATION = [""];
-const HIDDEN_FOOTER = [""];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
   console.log(router);
+
+  const HIDDEN_HEADER = [
+    "/login/",
+    "/signup/",
+    "/socialLogin/",
+    "/novel/" + router.query._id + "/" + router.query.volume_id + "/",
+  ];
+  const HIDDEN_NAVIGATION = [
+    "/login/",
+    "/signup/",
+    "/socialLogin/",
+    "/novel/" + router.query._id + "/" + router.query.volume_id + "/",
+  ];
+  const HIDDEN_FOOTER = [
+    "/login/",
+    "/signup/",
+    "/socialLogin/",
+    "/novel/" + router.query._id + "/" + router.query.volume_id + "/",
+  ];
 
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenNavigation = HIDDEN_NAVIGATION.includes(router.asPath);
@@ -36,9 +49,7 @@ export default function Layout(props: ILayoutProps) {
     <Wrapper>
       {!isHiddenHeader && <LayoutHeader />}
       {!isHiddenNavigation && <LayoutNavigation />}
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div>{props.children}</div>
-      </div>
+      <div>{props.children}</div>
       {!isHiddenFooter && <LayoutFooter />}
     </Wrapper>
   );

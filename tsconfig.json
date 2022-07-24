@@ -15,6 +15,14 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/units/myPage/profileChange/ProfileModify/ProfileModify.queries.ts",
+    "src/commons/hooks/useScrollCount.js",
+    "src/commons/hooks/useScrollFadeIn.js",
+    "src/commons/hooks/useScrollCount.js"
+  ],
   "exclude": ["node_modules"]
 }
