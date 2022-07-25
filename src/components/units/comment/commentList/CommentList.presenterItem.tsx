@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
 // import { useRouter } from "next/router";
@@ -44,9 +45,10 @@ export default function CommentListPresenterItem(
           },
         ],
       });
-      alert("댓글이 삭제되었습니다");
+
+      Modal.success({ content: "댓글이 삭제되었습니다" });
     } catch (error) {
-      alert(error);
+      Modal.error({ content: (error as Error).message });
     }
     console.log("댓글삭제", event);
   };

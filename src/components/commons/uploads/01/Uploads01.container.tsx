@@ -6,6 +6,7 @@ import { IUploads01Props } from "./Uploads01.types";
 import { UPLOAD_FILE } from "./Uploads01.queries";
 import { useMutation } from "@apollo/client";
 import { checkFileValidation } from "./Uploads01.fileValidation";
+import { Modal } from "antd";
 
 export default function Uploads01(props: IUploads01Props) {
   // const [imageUrl, setImageUrl] = useState("");
@@ -43,8 +44,8 @@ export default function Uploads01(props: IUploads01Props) {
       // setFileUrl(result.data.uploadFile[0].url);
       // console.log(result.data.uploadFile[0].url);
       props.onChangeFileUrls(result.data.uploadFile[0].url, props.index);
-    } catch (error: any) {
-      alert(error.message);
+    } catch (error) {
+      Modal.error({ content: (error as Error).message });
     }
   };
 

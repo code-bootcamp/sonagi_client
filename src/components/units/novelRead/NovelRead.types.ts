@@ -28,6 +28,7 @@ export interface INovelReadPresenterProps {
   HeartList: string[];
   NovelId: any;
   Heart: boolean;
+  ismark: boolean;
 }
 
 export interface INovelReadStyles {

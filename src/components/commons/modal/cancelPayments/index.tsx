@@ -4,6 +4,7 @@
 // 넥스트에서는 html에 직접 접근하기 어렵기 때문에 next에서 제공하는 head태그를 import하기
 import { gql, useMutation } from "@apollo/client";
 import styled from "@emotion/styled";
+import { Modal } from "antd";
 import { useState } from "react";
 import { breakPoints } from "../../../../commons/styles/media";
 
@@ -144,9 +145,9 @@ export default function PaymentPage(props: any) {
         },
       });
       console.log(result);
-      alert("환불이 완료되었습니다");
-    } catch (error: any) {
-      alert(error.message);
+      Modal.success({ content: "환불이 완료되었습니다" });
+    } catch (error) {
+      Modal.error({ content: (error as Error).message });
     }
   };
 

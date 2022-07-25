@@ -74,9 +74,9 @@ export default function CommentWriteContainer(
       });
       console.log("질문수정", result);
       props.setIsEdit?.(false);
-      alert("댓글을 수정합니다.");
+      Modal.success({ content: "댓글을 수정합니다." });
     } catch (error: any) {
-      alert(`댓글 수정에 실패했습니다. ${error.message}`);
+      Modal.error({ content: "댓글 수정에 실패했습니다." });
     }
   };
 

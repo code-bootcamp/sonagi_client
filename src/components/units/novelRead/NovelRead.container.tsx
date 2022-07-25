@@ -3,12 +3,13 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import {
+  FETCH_BOOK_MARKS_IN_USER,
   FETCH_EPISODE_DETAIL,
   FETCH_EPISODE_REVIEW_PAGE,
   FETCH_NOVEL_DETAIL,
   FETCH_NOVEL_LIKE_IN_USER,
+  SWITCH_BOOK_MARK,
   SWITCH_NOVEL_LIKE,
-  TOGGLE_BOOK_MARK,
 } from "./NovelRead.queries";
 import { Iel, ILikeEl } from "./NovelRead.types";
 import { Modal } from "antd";
@@ -17,7 +18,8 @@ export default function NovelReadContainer() {
   const router = useRouter();
   const [setDisplay, setIsDisplay] = useState(false);
   // 북마크
-  const [toggleBookmark] = useMutation(TOGGLE_BOOK_MARK);
+  const [switchBookmark] = useMutation(SWITCH_BOOK_MARK);
+  const { data: markData } = useQuery(FETCH_BOOK_MARKS_IN_USER);
   // 찜하기
   const [switchNovelLike] = useMutation(SWITCH_NOVEL_LIKE);
   const { data: readData } = useQuery(FETCH_EPISODE_DETAIL, {
@@ -68,16 +70,21 @@ export default function NovelReadContainer() {
   };
 
   // 북마크
+  const MarkList = markData?.fetchBookmarksInUser.map((el: any) => el.id);
+  const [ismark, setIsmark] = useState(false);
+  // const Mark = MarkList?.includes(NovelId)
   const onClickBookMark = async () => {
     try {
-      const result = await toggleBookmark({
+      const result = await switchBookmark({
         variables: {
           novelIndexID: router.query.volume_id,
           page: 1,
         },
       });
-      console.log("북마크", result);
-      Modal.success({ content: "북마크 성공!" });
+      Modal.success({ content: result.data.switchBookmark.msg });
+      console.log(MarkList?.includes(result.data.switchBookmark.id));
+      console.log(result.data.switchBookmark.id);
+      setIsmark((prev) => !prev);
     } catch (error: any) {
       Modal.error({ content: error.message });
     }
@@ -110,21 +117,21 @@ export default function NovelReadContainer() {
   };
 
   // 사이즈업
-  const [size, setSize] = useState(1);
+  const [size, setSize] = useState(13);
   const onClickSizeUp = () => {
-    if (size > 5) {
+    if (size > 40) {
       Modal.warning({ content: "최대 사이즈 입니다." });
       return;
     }
-    setSize((prev) => prev + 1);
+    setSize((prev) => prev + 4);
   };
 
   const onClickSizeDown = () => {
-    if (size === 1) {
+    if (size < 14) {
       Modal.warning({ content: "최소 사이즈 입니다" });
       return;
     }
-    setSize((prev) => prev - 1);
+    setSize((prev) => prev - 4);
   };
 
   // 댓글로 가기
@@ -155,6 +162,7 @@ export default function NovelReadContainer() {
       onClickMoveToNextPage={onClickMoveToNextPage}
       // 북마크
       onClickBookMark={onClickBookMark}
+      ismark={ismark}
       // 사이즈 업,다운
       onClickSizeDown={onClickSizeDown}
       onClickSizeUp={onClickSizeUp}
