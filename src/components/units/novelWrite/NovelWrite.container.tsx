@@ -12,6 +12,7 @@ import {
 import { Editor } from "@toast-ui/react-editor";
 import { useRouter } from "next/router";
 import { Idata, INovelWriteContainerProps } from "./NovelWrite.types";
+import { Modal } from "antd";
 
 const schema = yup.object({
   title: yup.string().required("작품 제목을 입력해 주세요!"),
@@ -137,10 +138,10 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
         },
       });
       console.log("하하하", result);
-      alert("성공");
+      Modal.success({ content: "등록 완료" });
       router.push(`/novel/${result.data?.createNovel.id}`);
     } catch (error) {
-      alert(error);
+      Modal.error({ content: (error as Error).message });
     }
   };
 
@@ -161,10 +162,10 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
         },
       });
       console.log(result);
-      alert("성공");
+      Modal.success({ content: "등록 완료" });
       router.push(`/novel/${result.data?.updateNovel.id}`);
     } catch (error) {
-      alert(error);
+      Modal.error({ content: (error as Error).message });
     }
   };
 
