@@ -11,7 +11,7 @@ export default function MyPagePresenter(props: any) {
       </S.HamburgerWrapper>
       <S.LargeBox>
         <S.InnerLeftBox>
-          <img src="myPage/avatar.png" />
+          <img src="/myPage/avatar.png" />
           <S.Name>
             <span>{props.data?.fetchLoginUser?.nickName}</span>님
           </S.Name>
@@ -26,7 +26,7 @@ export default function MyPagePresenter(props: any) {
         <S.InnerRightBox>
           <S.MainFlex>
             <S.Column>
-              <S.Icon src="myPage/won.svg" />
+              <S.Icon src="/myPage/won.svg" />
               <S.Title>소나기 포인트</S.Title>
               <S.Div>
                 <S.Middle>
@@ -41,7 +41,7 @@ export default function MyPagePresenter(props: any) {
               </S.MainBottom>
             </S.Column>
             <S.Column>
-              <S.Icon src="myPage/love.svg" />
+              <S.Icon src="/myPage/love.svg" />
               <S.Title>찜한 작품</S.Title>
               <S.Middle>{props.LikeCount}권</S.Middle>
               <S.MainBottom
@@ -51,7 +51,7 @@ export default function MyPagePresenter(props: any) {
               </S.MainBottom>
             </S.Column>
             <S.Column>
-              <S.Icon src="myPage/chat.svg" />
+              <S.Icon src="/myPage/chat.svg" />
               <S.Title>1:1 문의</S.Title>
               <S.Middle>0건</S.Middle>
               <S.MainBottom

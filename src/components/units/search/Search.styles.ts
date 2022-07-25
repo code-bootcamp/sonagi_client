@@ -66,7 +66,7 @@ export const TagWrap = styled.div`
 `;
 
 // 태그 낱개
-export const Tag = styled.div`
+export const Tag = styled.button`
   width: 100%;
   height: 40px;
   background-color: #fff;
@@ -160,16 +160,16 @@ export const ItemName = styled.h4`
   height: 7vh;
   font-size: 1.15rem;
   font-weight: 700;
-  margin: 0;
+  margin-bottom: 15px;
 
   @media (min-width: 768px) and (max-width: 816px) {
     width: 68%;
   }
 
   @media (min-width: 391px) and (max-width: 767px) {
-    width: 96%;
+    width: 100%;
     font-size: 1.125rem;
-    height: 5vh;
+    height: 7vh;
   }
 
   @media (max-width: 390px) {
@@ -235,4 +235,15 @@ export const Contents = styled.div`
   @media (max-width: 390px) {
     display: none;
   }
+`;
+
+export const GridWrap2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const NoImage = styled.img`
+  width: 30%;
 `;

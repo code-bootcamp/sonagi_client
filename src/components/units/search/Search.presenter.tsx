@@ -14,12 +14,24 @@ export default function SearchPresenter(props: ISearchPresenterProps) {
         />
       </S.SearchInputWrap>
       <S.TagWrap>
-        <S.Tag>#학원</S.Tag>
-        <S.Tag>#로맨스</S.Tag>
-        <S.Tag>#로맨스판타지</S.Tag>
-        <S.Tag>#판타지</S.Tag>
-        <S.Tag>#스릴러</S.Tag>
-        <S.Tag>#미스테리</S.Tag>
+        <S.Tag id="학원" onClick={props.onClickTag}>
+          #학원
+        </S.Tag>
+        <S.Tag id="로맨스" onClick={props.onClickTag}>
+          #로맨스
+        </S.Tag>
+        <S.Tag id="로맨스 판타지" onClick={props.onClickTag}>
+          #로맨스판타지
+        </S.Tag>
+        <S.Tag id="판타지" onClick={props.onClickTag}>
+          #판타지
+        </S.Tag>
+        <S.Tag id="무협" onClick={props.onClickTag}>
+          #무협
+        </S.Tag>
+        <S.Tag id="미스터리" onClick={props.onClickTag}>
+          #미스테리
+        </S.Tag>
       </S.TagWrap>
       <S.GridWrap>
         {props.data?.fetchNovelsPage?.novels.map((el: any) => (

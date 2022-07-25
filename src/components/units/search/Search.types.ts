@@ -1,3 +1,5 @@
+import { MouseEvent } from "react";
+
 interface IFiles {
   url: string;
 }
@@ -20,7 +22,10 @@ export interface Iel {
   viewCount?: number;
   __typename?: string;
 }
-
+export interface ISearchContainerProps {
+  onClickMoveToDetail: (el: Iel) => (event: MouseEvent<HTMLDivElement>) => void;
+  onClickTag: (event: MouseEvent<HTMLButtonElement>) => void;
+}
 export interface ISearchPresenterProps {
   PbSchool: any;
   FinSchool: any;
@@ -31,4 +36,5 @@ export interface ISearchPresenterProps {
   count?: number;
   keyword: string;
   onChangeKeyword: (value: string) => void;
+  onClickTag: (event: MouseEvent<HTMLButtonElement>) => void;
 }

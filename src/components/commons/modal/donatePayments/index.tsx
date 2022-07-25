@@ -5,7 +5,7 @@
 import { gql, useMutation } from "@apollo/client";
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { message } from "antd";
+import { message, Modal } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
 
 const Wrapper = styled.div``;
@@ -149,8 +149,8 @@ export default function DonatePage(props: any) {
       // alert("후원 감사합니데이~~!");
       message.info("후원감사합니다");
       props.setIsDonate(false);
-    } catch (error: any) {
-      alert(error.message);
+    } catch (error) {
+      Modal.error({ content: (error as Error).message });
     }
   };
 

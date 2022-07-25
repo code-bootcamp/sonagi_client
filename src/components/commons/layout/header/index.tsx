@@ -93,7 +93,7 @@ export default function LayoutHeader() {
           </S.SearchBox>
           <S.MyPageButton
             onClick={onClickMoveToPage("/myPage")}
-            src="/header/mypage.png"
+            src="/header/user.svg"
           />
         </S.WrapSearch>
       </S.BottomBox>
