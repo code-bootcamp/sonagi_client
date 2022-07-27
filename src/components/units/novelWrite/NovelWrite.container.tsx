@@ -33,6 +33,7 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
   const [createNovel] = useMutation(CREATE_NOVEL);
   const [updateNovel] = useMutation(UPDATE_NOVEL);
   const { data: categoryData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
+  console.log(categoryData);
 
   const { register, handleSubmit, formState, setValue, trigger } = useForm({
     resolver: yupResolver(schema),
