@@ -34,7 +34,7 @@ export default function ReadCommentWriteContainer(
   const onClickComment = async (data: Idata) => {
     if (data.contents) {
       try {
-        const result = await createEpisodeReview({
+        await createEpisodeReview({
           variables: {
             createEpisodeReviewInput: {
               contents: data.contents,
@@ -49,10 +49,9 @@ export default function ReadCommentWriteContainer(
             },
           ],
         });
-        props.setIsGoCommnet(false);
         reset();
         Modal.success({ content: "댓글을 등록했습니다." });
-        console.log("질문등록", result);
+        props.setIsGoCommnet(false);
       } catch (error: any) {
         Modal.error({ content: error.message });
       }

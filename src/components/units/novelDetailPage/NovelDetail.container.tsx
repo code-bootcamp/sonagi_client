@@ -174,32 +174,33 @@ export default function NovelDetailContainer() {
     router.push(`/novel/${router.query._id}/${viewOne}`);
   };
 
-  // // 체크박스
-  // const [checkList, setCheckList] = useState([]);
-  // const dataList = detailData?.fetchNovelDetail.novelIndexs;
+  // 체크박스
+  const [checkList, setCheckList] = useState<any>([]);
+  const dataList = detailData?.fetchNovelDetail.novelIndexs;
+  const buyList = dataList?.filter((el: any) => !el.isBuy);
 
-  // const onClickCheckAll = () => {
-  //   if (checkList.length !== dataList.length) {
-  //     setCheckList(dataList);
-  //   } else {
-  //     setCheckList([]);
-  //   }
-  // };
+  const onClickCheckAll = () => {
+    if (checkList.length !== buyList.length) {
+      setCheckList(buyList);
+    } else {
+      setCheckList([]);
+    }
+  };
 
-  // const onCheckedItem = (list) => {
-  //   // 모든 원소가 조건에 맞으면 true (checkLis에 값이 없음)
-  //   if (checkList.every((cur) => cur.id !== list.id)) {
-  //     setCheckList([...checkList, list]);
-  //   } else {
-  //     // 체크된것만 제외하고 배열에 담는다.
-  //     const result = checkList.filter((cur) => cur.id !== list.id);
-  //     setCheckList(result);
-  //   }
-  // };
+  const onCheckedItem = (el: any) => {
+    // 모든 원소가 조건에 맞으면 true (checkLis에 값이 없음)
+    if (checkList.every((cur: any) => cur?.id !== el?.id)) {
+      setCheckList([...checkList, el]);
+    } else {
+      // 체크된것만 제외하고 배열에 담는다.
+      const result = checkList.filter((cur: any) => cur?.id !== el?.id);
+      setCheckList(result);
+    }
+  };
 
-  // const isChecked = (list) => {
-  //   return checkList.some((cur) => cur.id === list.id);
-  // };
+  const isChecked = (el: any) => {
+    return checkList.some((cur: any) => cur?.id === el?.id);
+  };
 
   const onClickEditEpisode = (event: MouseEvent<HTMLDivElement>) => {
     router.push(`/novel/${router.query._id}/${event.currentTarget.id}/edit`);
@@ -232,12 +233,13 @@ export default function NovelDetailContainer() {
       // 수정하기
       onClickEditEpisode={onClickEditEpisode}
       setIsEdit={undefined}
-      isEdit={undefined} // 체크박스
-      // onClickCheckAll={onClickCheckAll}
-      // onCheckedItem={onCheckedItem}
-      // isChecked={isChecked}
-      // dataList={dataList}
-      // checkList={checkList}
+      isEdit={undefined}
+      // 체크박스
+      onClickCheckAll={onClickCheckAll}
+      onCheckedItem={onCheckedItem}
+      isChecked={isChecked}
+      checkList={checkList}
+      buyList={buyList}
     />
   );
 }

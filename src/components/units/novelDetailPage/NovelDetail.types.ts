@@ -24,6 +24,11 @@ export interface INovelDetailPresenterProps {
   onClickFirstView: () => void;
   onClickEditEpisode: (event: MouseEvent<HTMLDivElement>) => void;
   Heart: boolean;
+  onClickCheckAll: () => void;
+  onCheckedItem: (el: any) => void;
+  isChecked: (el: any) => boolean;
+  checkList: string[];
+  buyList: string[];
 }
 
 export interface Iel {
@@ -35,4 +40,19 @@ export interface Iel {
 
 export interface INovelDetailStyles {
   isFirst: boolean;
+}
+
+export interface NovelEl {
+  id: string;
+  title: string;
+  contents: string;
+  index: number;
+  createAt: string;
+  updateAt: string;
+  viewCount: number;
+  star: number;
+  isFinish: boolean;
+  isNotice: boolean;
+  isPrivate: boolean;
+  isBuy: boolean;
 }

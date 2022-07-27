@@ -14,6 +14,7 @@ const HeadWrapper = styled.div`
   align-items: center;
   background-color: #f1f4f5;
   height: 8%;
+  cursor: pointer;
 `;
 
 const FooterWrapper = styled.div`
@@ -24,6 +25,7 @@ const FooterWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #f1f4f5;
+  cursor: pointer;
 `;
 
 const Scroll = styled.div`
@@ -65,9 +67,9 @@ export default function ReadCommentListPresenter(
           <HeadWrapper onClick={props.onClickGoRead}>읽으러 가기</HeadWrapper>
           <Scroll>
             <InfiniteScroll
+              hasMore={false || true}
               pageStart={0}
               loadMore={props.onClickFetchMore}
-              hasMore={true || false}
               useWindow={false}
             >
               {props.data?.fetchEpisodeReviewPage.episodeReviews.map(
