@@ -80,8 +80,10 @@ export default function NestedCommentListPresenter(
             setIsEdit={setIsEdit}
             WriteNestedComment={undefined}
             contents={undefined}
-            el={undefined}
+            el={props.el}
             onChangeContents={undefined}
+            isHidden={undefined}
+            onClickUpdateComment={undefined}
           />
         )}
       </S.FooterWrapper>

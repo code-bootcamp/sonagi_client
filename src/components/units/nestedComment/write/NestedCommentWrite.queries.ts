@@ -67,15 +67,13 @@ export const FETCH_BOARD = gql`
       comments {
         id
         contents
-        createAt
-        user {
-          id
-          nickName
-        }
         children {
           id
           contents
           createAt
+          user {
+            nickName
+          }
         }
       }
     }
@@ -107,6 +105,24 @@ export const FETCH_COMMENTS_FROM_BOARDD = gql`
         }
       }
       count
+    }
+  }
+`;
+
+export const UPDATE_COMMENT = gql`
+  mutation updateComment($updateCommentInput: UpdateCommentInput!) {
+    updateComment(updateCommentInput: $updateCommentInput) {
+      children {
+        id
+        contents
+        createAt
+        board {
+          id
+        }
+        user {
+          nickName
+        }
+      }
     }
   }
 `;

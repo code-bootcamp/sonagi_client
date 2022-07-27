@@ -89,7 +89,7 @@ export default function NovelEndListContainer() {
   const onClickMoveToDetail =
     (el: Iel) => (event: MouseEvent<HTMLDivElement>) => {
       router.push(`/novel/${event.currentTarget.id}`);
-      const baskets = JSON.parse(localStorage.getItem("baskets") || "") || [];
+      const baskets = JSON.parse(localStorage.getItem("baskets") || "[]") || [];
       let isExists = false;
       baskets.forEach((basketEL: Iel) => {
         if (el.id === basketEL.id) isExists = true;

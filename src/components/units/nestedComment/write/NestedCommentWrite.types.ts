@@ -12,6 +12,8 @@ export interface INestedCommentWriteProps {
 }
 
 export interface INestedCommentWritePresenterProps {
+  onClickUpdateComment: MouseEventHandler<HTMLDivElement> | undefined;
+  isHidden: any;
   WriteNestedComment: MouseEventHandler<HTMLDivElement> | undefined;
   contents: any;
   el: any;
