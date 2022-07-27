@@ -72,55 +72,55 @@ export default function NovelWritePresenter(props: INovelWritePresenterProps) {
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[0].id}
                       >
-                        라이트노벨
+                        {props.categoryData?.fetchNovelCategorysAll[0].name}
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[1].id}
                       >
-                        미스터리/공포
+                        {props.categoryData?.fetchNovelCategorysAll[1].name}
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[2].id}
                       >
-                        무협
+                        {props.categoryData?.fetchNovelCategorysAll[2].name}
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[3].id}
                       >
-                        학원
+                        {props.categoryData?.fetchNovelCategorysAll[3].name}
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[4].id}
                       >
-                        로맨스
+                        {props.categoryData?.fetchNovelCategorysAll[4].name}
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[5].id}
                       >
-                        로맨스 판타지
+                        {props.categoryData?.fetchNovelCategorysAll[5].name}
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[6].id}
                       >
-                        스포츠
+                        {props.categoryData?.fetchNovelCategorysAll[6].name}
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[7].id}
                       >
-                        게임
+                        {props.categoryData?.fetchNovelCategorysAll[7].name}
                       </S.List>
                       <S.List
                         onClick={props.onClickGenre}
                         id={props.categoryData?.fetchNovelCategorysAll[8].id}
                       >
-                        판타지
+                        {props.categoryData?.fetchNovelCategorysAll[8].name}
                       </S.List>
                     </>
                   )}
