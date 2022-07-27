@@ -29,11 +29,11 @@ export default function ApolloSetting(props: any) {
       for (const err of graphQLErrors) {
         if (err.extensions.code === "UNAUTHENTICATED") {
           getAccessToken().then((newAccessToken) => {
-            setAccessToken(newAccessToken); // RecoilState도 새로운 토큰으로 바꿔주기
+            setAccessToken(newAccessToken);
             operation.setContext({
               headers: {
-                ...operation.getContext().headers, // operation 정보들을 가져오기
-                Authorization: `Bearer ${newAccessToken ?? ""}`, // accessToken만 바꿔치기
+                ...operation.getContext().headers,
+                Authorization: `Bearer ${newAccessToken ?? ""}`,
               },
             });
             return forward(operation);
