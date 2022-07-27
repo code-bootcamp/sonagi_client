@@ -1,4 +1,7 @@
 import * as S from "./Carousel.styles";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 export default function CarouselPresenter(props: any) {
   const settings = {
     centerMode: true,
