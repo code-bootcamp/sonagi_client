@@ -4,12 +4,15 @@ import { getDateDay } from "../../../commons/libraries/utils";
 import DetailCommentWriteContainer from "../novelDetailComment/commentWrite/CommentWrite.container";
 import DetailCommentListContainer from "../novelDetailComment/commentList/CommentList.container";
 import DonatePage from "../../commons/modal/donatePayments";
-import { INovelDetailPresenterProps, NovelEl } from "./NovelDetail.types";
+import { INovelDetailPresenterProps, INovelEl } from "./NovelDetail.types";
 
 const myImg = /^.*[.(jpg | svg | png | jpeg | gif  | webp)]$/g;
 export default function NovelDetailPresenter(
   props: INovelDetailPresenterProps
 ) {
+  const Writer =
+    props.detailData?.fetchNovelDetail.user.id ===
+    props.LoginData?.fetchLoginUser.id;
   return (
     <div>
       <S.Wrapper>
@@ -94,8 +97,7 @@ export default function NovelDetailPresenter(
               </S.Flexs>
             </S.ProfileWrapper>
             <S.Line />
-            {props.detailData?.fetchNovelDetail.user.id ===
-            props.LoginData?.fetchLoginUser.id ? (
+            {Writer ? (
               <S.LookButtonWrapper>
                 <S.Button2 onClick={props.onClickDelete}>삭제하기</S.Button2>
                 <S.Button5 onClick={props.onClickEdit}>수정하기</S.Button5>
@@ -148,7 +150,7 @@ export default function NovelDetailPresenter(
           {/* <S.TableDottedLine /> */}
           <S.WrapEpisode isFirst={props.isFirst}>
             {props.detailData?.fetchNovelDetail.novelIndexs.map(
-              (el: NovelEl) => (
+              (el: INovelEl) => (
                 <S.TableLineWrapper key={el.id}>
                   <S.WrapFirst>
                     <S.Square
@@ -156,7 +158,7 @@ export default function NovelDetailPresenter(
                       type="checkbox"
                       onChange={() => props.onCheckedItem(el)}
                       checked={props.isChecked(el)}
-                      disabled={el.isBuy}
+                      disabled={el.isBuy || el.index <= 3 || el.isNotice}
                     />
                     <S.TableSonWrapper>
                       <S.Title>
@@ -178,8 +180,7 @@ export default function NovelDetailPresenter(
                     </S.TableSonWrapper>
                   </S.WrapFirst>
                   <S.LookWrapper>
-                    {props.detailData?.fetchNovelDetail.user.id ===
-                    props.LoginData?.fetchLoginUser.id ? (
+                    {Writer && (
                       <S.Wrap>
                         <S.LookBtn
                           id={el.id}
@@ -197,17 +198,22 @@ export default function NovelDetailPresenter(
                           수정
                         </S.LookBtn>
                       </S.Wrap>
-                    ) : (
-                      ""
                     )}
-                    {el.isBuy || Number(el.index) < 4 ? (
-                      <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
-                        보기
-                      </S.LookBtn>
-                    ) : (
-                      <S.LookBtn id={el.id} onClick={props.onClickPayment}>
-                        구매
-                      </S.LookBtn>
+                    {Writer || (
+                      <>
+                        {el.isBuy || Number(el.index) <= 3 || el.isNotice ? (
+                          <S.LookBtn
+                            id={el.id}
+                            onClick={props.onClickMoveToRead}
+                          >
+                            보기
+                          </S.LookBtn>
+                        ) : (
+                          <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+                            구매
+                          </S.LookBtn>
+                        )}
+                      </>
                     )}
                   </S.LookWrapper>
                 </S.TableLineWrapper>
