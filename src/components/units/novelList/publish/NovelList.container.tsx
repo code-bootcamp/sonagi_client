@@ -13,7 +13,7 @@ export default function NovelPbListContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "8920f3ff-6ba9-4a01-8c2f-842a4adc19e0",
+        target: "64dc52e6-50dd-4403-ac72-6ced9b1d0d96",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -27,7 +27,7 @@ export default function NovelPbListContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "a5d5edfa-43f2-4931-978e-2c7a69f2161e",
+        target: "19295599-ㄷ565-4115-922f-d4a487bbcad1",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -45,7 +45,7 @@ export default function NovelPbListContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "e781d053-1749-400b-a5e7-1ece9bd3a3ca",
+        target: "c07e15ea-7d3f-4d2b-8394-409c4400ab86",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -59,7 +59,7 @@ export default function NovelPbListContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "49dd41d2-cd7b-4d2d-806b-d72c077e2d70",
+        target: "48133761-446e-4433-bbe7-4bd32771122f",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -73,7 +73,7 @@ export default function NovelPbListContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "74ca7d6a-f00d-43cb-8554-f0426a29cefb",
+        target: "5dfca982-fed3-4be2-aa10-aa7f001d5607",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -87,7 +87,7 @@ export default function NovelPbListContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "27a6ad7b-d039-42b1-b5d4-c766faf9cac8",
+        target: "8dc5f497-cb66-4ee5-a0a2-05cfa1a12da4",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,

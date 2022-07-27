@@ -11,7 +11,7 @@ export default function RomanceFantasyContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "a5d5edfa-43f2-4931-978e-2c7a69f2161e",
+        target: "19295599-ㄷ565-4115-922f-d4a487bbcad1",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -24,7 +24,7 @@ export default function RomanceFantasyContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "a5d5edfa-43f2-4931-978e-2c7a69f2161e",
+        target: "19295599-ㄷ565-4115-922f-d4a487bbcad1",
         order: "LAST",
         isFinish: "TRUE",
         page: 1,
