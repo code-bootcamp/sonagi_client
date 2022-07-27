@@ -23,6 +23,7 @@ export const HeadWrapper = styled.div`
   align-items: center;
   background-color: #f1f4f5;
   height: 8%;
+  cursor: pointer;
 `;
 
 export const WrapTitle = styled.div`

@@ -23,16 +23,11 @@ export default function ReadCommentListContainer(
           Math.ceil(data.fetchEpisodeReviewPage.episodeReviews.length / 10) + 1,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        console.log(
-          "하하",
-          fetchMoreResult?.fetchEpisodeReviewPage.episodeReviews
-        );
         if (
           fetchMoreResult?.fetchEpisodeReviewPage.episodeReviews.length === 0
         ) {
           return prev.fetchEpisodeReviewPage;
         }
-        // console.log("패치", fetchMoreResult);
         console.log(prev.fetchEpisodeReviewPage.episodeReviews);
         console.log(fetchMoreResult.fetchEpisodeReviewPage.episodeReviews);
         return {
@@ -46,7 +41,6 @@ export default function ReadCommentListContainer(
         };
       },
     });
-    // refetch();
   };
 
   // 댓글 등록으로

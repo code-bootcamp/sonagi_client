@@ -24,13 +24,11 @@ export default function ReadCommentListPresenterItem(
   };
 
   const onClickDelete = async (event: MouseEvent<HTMLImageElement>) => {
-    console.log("이벤트", event.currentTarget.id);
     try {
       await deleteEpisodeReview({
         variables: {
           ReviewID: event.currentTarget.id,
         },
-
         refetchQueries: [
           {
             query: FETCH_EPISODE_REVIEW_PAGE,

@@ -663,6 +663,7 @@ export const Borrows = styled.div`
   align-items: center;
   margin-left: 30px;
   margin-right: 15px;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     margin-left: 10px;

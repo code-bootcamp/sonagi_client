@@ -4,7 +4,7 @@ import { getDateDay } from "../../../commons/libraries/utils";
 import DetailCommentWriteContainer from "../novelDetailComment/commentWrite/CommentWrite.container";
 import DetailCommentListContainer from "../novelDetailComment/commentList/CommentList.container";
 import DonatePage from "../../commons/modal/donatePayments";
-import { INovelDetailPresenterProps } from "./NovelDetail.types";
+import { INovelDetailPresenterProps, NovelEl } from "./NovelDetail.types";
 
 const myImg = /^.*[.(jpg | svg | png | jpeg | gif  | webp)]$/g;
 export default function NovelDetailPresenter(
@@ -125,8 +125,8 @@ export default function NovelDetailPresenter(
           <S.TableLineWrapper>
             <S.WrapFirst>
               <S.Square
-                // onChange={props.onClickCheckAll}
-                // checked={props.checkList.length === props.dataList?.length}
+                onChange={props.onClickCheckAll}
+                checked={props.checkList.length === props.buyList?.length}
                 type="checkbox"
               />
               <S.SelectAll>전체선택</S.SelectAll>
@@ -139,85 +139,80 @@ export default function NovelDetailPresenter(
               </S.SortButton>
             </S.WrapFirst>
             <S.MarginWrapper>
-              <S.All>총 0화</S.All>
-              <S.Sum>0원</S.Sum>
+              <S.All>총 {props.checkList.length}화</S.All>
+              <S.Sum>{props.checkList.length * 100}원</S.Sum>
               {/* <S.Cart>카트</S.Cart> */}
-              <S.Borrows>선택대여</S.Borrows>
+              <S.Borrows>선택구매</S.Borrows>
             </S.MarginWrapper>
           </S.TableLineWrapper>
           {/* <S.TableDottedLine /> */}
           <S.WrapEpisode isFirst={props.isFirst}>
-            {props.detailData?.fetchNovelDetail.novelIndexs.map((el: any) => (
-              <S.TableLineWrapper key={el.id}>
-                <S.WrapFirst>
-                  <S.Square
-                    // id={props.detailData?.fetchNovelDetail.novelIndexs.index}
-                    type="checkbox"
-                    // onChange={() => props.onCheckedItem(props.list)}
-                    // checked={props.isChecked(props.list)}
-                  />
-                  <S.TableSonWrapper>
-                    <S.Title>
-                      {el?.isNotice ? "[공지]: " : `${el.index}화: `}
-                      {el.title}
-                    </S.Title>
-                    <S.WrapDate>
-                      <S.Date>{getDateDay(el.createAt)}</S.Date>
-                      <S.Date>{el.viewCount}명</S.Date>
-                      <S.VerticalLine />
-                      <S.SumCharacter>
-                        약{" "}
-                        {el.contents
-                          ?.replace(/<[^>]*>?/g, "")
-                          .length.toLocaleString("ko-KR")}
-                        자
-                      </S.SumCharacter>
-                    </S.WrapDate>
-                  </S.TableSonWrapper>
-                </S.WrapFirst>
-                <S.LookWrapper>
-                  {props.detailData?.fetchNovelDetail.user.id ===
-                  props.LoginData?.fetchLoginUser.id ? (
-                    <S.Wrap>
-                      <S.LookBtn id={el.id} onClick={props.onClickIndexDelete}>
-                        삭제
-                      </S.LookBtn>
+            {props.detailData?.fetchNovelDetail.novelIndexs.map(
+              (el: NovelEl) => (
+                <S.TableLineWrapper key={el.id}>
+                  <S.WrapFirst>
+                    <S.Square
+                      // id={props.detailData?.fetchNovelDetail.novelIndexs.index}
+                      type="checkbox"
+                      onChange={() => props.onCheckedItem(el)}
+                      checked={props.isChecked(el)}
+                      disabled={el.isBuy}
+                    />
+                    <S.TableSonWrapper>
+                      <S.Title>
+                        {el?.isNotice ? "[공지]: " : `${el.index}화: `}
+                        {el.title}
+                      </S.Title>
+                      <S.WrapDate>
+                        <S.Date>{getDateDay(el.createAt)}</S.Date>
+                        <S.Date>{el.viewCount}명</S.Date>
+                        <S.VerticalLine />
+                        <S.SumCharacter>
+                          약{" "}
+                          {el.contents
+                            ?.replace(/<[^>]*>?/g, "")
+                            .length.toLocaleString("ko-KR")}
+                          자
+                        </S.SumCharacter>
+                      </S.WrapDate>
+                    </S.TableSonWrapper>
+                  </S.WrapFirst>
+                  <S.LookWrapper>
+                    {props.detailData?.fetchNovelDetail.user.id ===
+                    props.LoginData?.fetchLoginUser.id ? (
+                      <S.Wrap>
+                        <S.LookBtn
+                          id={el.id}
+                          onClick={props.onClickIndexDelete}
+                        >
+                          삭제
+                        </S.LookBtn>
+                        <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
+                          보기
+                        </S.LookBtn>
+                        <S.LookBtn
+                          id={el.id}
+                          onClick={props.onClickEditEpisode}
+                        >
+                          수정
+                        </S.LookBtn>
+                      </S.Wrap>
+                    ) : (
+                      ""
+                    )}
+                    {el.isBuy || Number(el.index) < 4 ? (
                       <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
                         보기
                       </S.LookBtn>
-                      <S.LookBtn id={el.id} onClick={props.onClickEditEpisode}>
-                        수정
+                    ) : (
+                      <S.LookBtn id={el.id} onClick={props.onClickPayment}>
+                        구매
                       </S.LookBtn>
-                    </S.Wrap>
-                  ) : (
-                    ""
-                  )}
-                  {el.isBuy || Number(el.index) < 4 ? (
-                    <S.LookBtn id={el.id} onClick={props.onClickMoveToRead}>
-                      보기
-                    </S.LookBtn>
-                  ) : (
-                    <S.LookBtn id={el.id} onClick={props.onClickPayment}>
-                      구매
-                    </S.LookBtn>
-                  )}
-                  {/* {props.detailData?.fetchNovelDetail.user.id ===
-                  props.LoginData?.fetchLoginUser.id ? (
-                    <S.LookContent
-                      id={el.id}
-                      // checkedChildren="공개"
-                      // unCheckedChildren="비공개"
-                      // defaultChecked
-                      onClick={props.onClickPrivate}
-                    >
-                      공개
-                    </S.LookContent>
-                  ) : (
-                    ""
-                  )} */}
-                </S.LookWrapper>
-              </S.TableLineWrapper>
-            ))}
+                    )}
+                  </S.LookWrapper>
+                </S.TableLineWrapper>
+              )
+            )}
           </S.WrapEpisode>
         </S.WrapBody>
         <S.Margin />

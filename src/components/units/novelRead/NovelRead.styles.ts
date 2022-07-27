@@ -165,7 +165,9 @@ export const CenterWrapper = styled.div`
   }
 `;
 
-export const Comment = styled.img``;
+export const Comment = styled.img`
+  cursor: pointer;
+`;
 
 export const CommentNumber = styled.div`
   padding-left: 5px;
