@@ -11,7 +11,7 @@ export default function SchoolContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "74ca7d6a-f00d-43cb-8554-f0426a29cefb",
+        target: "5dfca982-fed3-4be2-aa10-aa7f001d5607",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -24,7 +24,7 @@ export default function SchoolContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "74ca7d6a-f00d-43cb-8554-f0426a29cefb",
+        target: "5dfca982-fed3-4be2-aa10-aa7f001d5607",
         order: "LAST",
         isFinish: "TRUE",
         page: 1,

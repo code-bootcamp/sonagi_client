@@ -11,7 +11,7 @@ export default function AsiaContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "49dd41d2-cd7b-4d2d-806b-d72c077e2d70",
+        target: "48133761-446e-4433-bbe7-4bd32771122f",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -24,7 +24,7 @@ export default function AsiaContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "49dd41d2-cd7b-4d2d-806b-d72c077e2d70",
+        target: "48133761-446e-4433-bbe7-4bd32771122f",
         order: "LAST",
         isFinish: "TRUE",
         page: 1,

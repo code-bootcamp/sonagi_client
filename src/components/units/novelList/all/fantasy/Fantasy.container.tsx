@@ -11,7 +11,7 @@ export default function FantasyContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "e781d053-1749-400b-a5e7-1ece9bd3a3ca",
+        target: "c07e15ea-7d3f-4d2b-8394-409c4400ab86",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -24,7 +24,7 @@ export default function FantasyContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "e781d053-1749-400b-a5e7-1ece9bd3a3ca",
+        target: "c07e15ea-7d3f-4d2b-8394-409c4400ab86",
         order: "LAST",
         isFinish: "TRUE",
         page: 1,
