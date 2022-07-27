@@ -10,7 +10,7 @@ export default function HorrorContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "27a6ad7b-d039-42b1-b5d4-c766faf9cac8",
+        target: "8dc5f497-cb66-4ee5-a0a2-05cfa1a12da4",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
@@ -23,7 +23,7 @@ export default function HorrorContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "27a6ad7b-d039-42b1-b5d4-c766faf9cac8",
+        target: "8dc5f497-cb66-4ee5-a0a2-05cfa1a12da4",
         order: "LAST",
         isFinish: "TRUE",
         page: 1,

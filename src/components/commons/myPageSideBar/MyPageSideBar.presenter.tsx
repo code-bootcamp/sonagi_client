@@ -6,7 +6,7 @@ export default function MyPageSideBarPresenter(props: any) {
         마이페이지
       </S.MyPage>
       <S.Flex>
-        <S.Img src="../myPageSideBar/menu_book.png" />
+        <S.Img src="/myPageSideBar/book.svg" />
         <S.Column>
           <S.Title>소설</S.Title>
           <S.Menu onClick={props.onClickMoveToPage("/myPage/recentWatch")}>
@@ -25,7 +25,7 @@ export default function MyPageSideBarPresenter(props: any) {
       </S.Flex>
       <S.Line />
       <S.Flex>
-        <S.Img src="../myPageSideBar/local_atm.png" />
+        <S.Img src="/myPageSideBar/won.svg" />
         <S.Column>
           <S.Title>구매</S.Title>
           <S.Menu onClick={props.onClickMoveToPage("/myPage/paymentHistory")}>
@@ -38,7 +38,7 @@ export default function MyPageSideBarPresenter(props: any) {
       </S.Flex>
       <S.Line />
       <S.Flex>
-        <S.Vector src="../myPageSideBar/Vector.png" />
+        <S.Vector src="/myPageSideBar/user2.svg" />
         <S.Column>
           <S.Title>개인</S.Title>
           <S.Menu onClick={props.onClickMoveToPage("/myPage/inquire/")}>
