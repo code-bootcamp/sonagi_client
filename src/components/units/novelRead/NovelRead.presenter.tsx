@@ -110,7 +110,10 @@ export default function NovelReadPresenter(props: INovelReadPresenterProps) {
                   />
                 </S.WrapFont>
 
-                <S.Comment src="/novelRead/list.png" />
+                <S.Comment
+                  onClick={props.onClickMoveToList}
+                  src="/novelRead/list.png"
+                />
                 <S.Content onClick={props.onClickMoveToList}>목록</S.Content>
               </S.RightWrapper>
             </S.Footer>
