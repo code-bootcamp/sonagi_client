@@ -13,7 +13,7 @@ import {
   PAIDPOINT,
   SWITCH_NOVEL_LIKE,
 } from "./NovelDetail.queries";
-import { Iel } from "./NovelDetail.types";
+import { Iel, INovelEl } from "./NovelDetail.types";
 
 export default function NovelDetailContainer() {
   const router = useRouter();
@@ -32,9 +32,6 @@ export default function NovelDetailContainer() {
       userEmail: LoginData?.fetchLoginUser.email,
     },
   });
-
-  // console.log("디테일", detailData);
-  // console.log("로그인", LoginData?.fetchLoginUser.id);
 
   // 소설 삭제
   const onClickDelete = async () => {
@@ -177,7 +174,10 @@ export default function NovelDetailContainer() {
   // 체크박스
   const [checkList, setCheckList] = useState<any>([]);
   const dataList = detailData?.fetchNovelDetail.novelIndexs;
-  const buyList = dataList?.filter((el: any) => !el.isBuy);
+
+  const buyList = dataList?.filter(
+    (el: INovelEl) => !el.isBuy && el.index > 3 && !el.isNotice
+  );
 
   const onClickCheckAll = () => {
     if (checkList.length !== buyList.length) {
@@ -189,11 +189,11 @@ export default function NovelDetailContainer() {
 
   const onCheckedItem = (el: any) => {
     // 모든 원소가 조건에 맞으면 true (checkLis에 값이 없음)
-    if (checkList.every((cur: any) => cur?.id !== el?.id)) {
+    if (checkList.every((cur: INovelEl) => cur?.id !== el?.id)) {
       setCheckList([...checkList, el]);
     } else {
       // 체크된것만 제외하고 배열에 담는다.
-      const result = checkList.filter((cur: any) => cur?.id !== el?.id);
+      const result = checkList.filter((cur: INovelEl) => cur?.id !== el?.id);
       setCheckList(result);
     }
   };

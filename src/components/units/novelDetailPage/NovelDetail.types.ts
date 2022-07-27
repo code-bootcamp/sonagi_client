@@ -42,7 +42,7 @@ export interface INovelDetailStyles {
   isFirst: boolean;
 }
 
-export interface NovelEl {
+export interface INovelEl {
   id: string;
   title: string;
   contents: string;
