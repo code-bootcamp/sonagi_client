@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   @media ${breakPoints.mobile} {
     padding: 0 20px;
     margin-top: 15px;
+    width: 94%;
   }
 `;
 
