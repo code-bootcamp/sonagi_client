@@ -13,6 +13,11 @@ const Inputs = styled(Input)`
   border-radius: 10px;
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 export default function Tags(props: ITagsProps) {
   // const [tags, setTags] = useState([""]);
   const [inputVisible, setInputVisible] = useState(false);
@@ -66,7 +71,7 @@ export default function Tags(props: ITagsProps) {
   };
 
   return (
-    <>
+    <Wrapper>
       {props.tags.map((tag: any, index: any) => {
         if (editInputIndex === index) {
           return (
@@ -148,6 +153,6 @@ export default function Tags(props: ITagsProps) {
           <PlusOutlined /> 태그
         </Tag>
       )}
-    </>
+    </Wrapper>
   );
 }

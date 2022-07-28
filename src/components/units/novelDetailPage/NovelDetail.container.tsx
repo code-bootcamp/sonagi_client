@@ -1,4 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
+import styled from "@emotion/styled";
+
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import React, { MouseEvent, useState } from "react";
@@ -15,6 +17,11 @@ import {
 } from "./NovelDetail.queries";
 import { Iel, INovelEl } from "./NovelDetail.types";
 
+const Loading = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
+
 export default function NovelDetailContainer() {
   const router = useRouter();
 
@@ -26,7 +33,7 @@ export default function NovelDetailContainer() {
   const [changePrivateNovelIndex] = useMutation(CHANGE_PRIVATE_NOVEL_INDEX);
   const { data: LoginData } = useQuery(FETCH_LOGIN_USER);
 
-  const { data: detailData } = useQuery(FETCH_NOVEL_DETAIL, {
+  const { data: detailData, loading } = useQuery(FETCH_NOVEL_DETAIL, {
     variables: {
       novelID: router.query._id,
       userEmail: LoginData?.fetchLoginUser.email,
@@ -206,7 +213,9 @@ export default function NovelDetailContainer() {
     router.push(`/novel/${router.query._id}/${event.currentTarget.id}/edit`);
   };
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <NovelDetailPresenter
       novelID={novelID}
       detailData={detailData}
