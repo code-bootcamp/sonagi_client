@@ -27,7 +27,7 @@ export default function NovelPbListContainer() {
     variables: {
       fetchNovelInput: {
         type: "CATEGORY",
-        target: "19295599-ㄷ565-4115-922f-d4a487bbcad1",
+        target: "19295599-e565-4115-922f-d4a487bbcad1",
         order: "LAST",
         isFinish: "FALSE",
         page: 1,
