@@ -33,50 +33,59 @@ export default function SearchPresenter(props: ISearchPresenterProps) {
           #미스테리
         </S.Tag>
       </S.TagWrap>
-      <S.GridWrap>
-        {props.data?.fetchNovelsPage?.novels.map((el: any) => (
-          <S.ItemWrap
-            onClick={props.onClickMoveToDetail(el)}
-            id={el.id}
-            key={el}
-          >
-            <S.ItemPic
-              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-            />
-            <S.ItemInfo>
-              <S.ItemName>
-                {el.title
-                  .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
-                  .split("@#$%")
-                  .map((el: any) => (
-                    <S.TextToken
-                      key={uuidv4()}
-                      isMatched={props.keyword === el}
-                    >
-                      {el}
-                    </S.TextToken>
-                  ))}
-              </S.ItemName>
-              <S.ItemNum>
-                {el.cycle === 0 ? (
-                  <S.Cycle>자유연재</S.Cycle>
-                ) : (
-                  <S.Cycle>요일연재</S.Cycle>
-                )}
-              </S.ItemNum>
-            </S.ItemInfo>
-            <S.ItemWriterWrap>
-              <S.WriterIcon src="/novelList/writer-icon.png" />
-              <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
-            </S.ItemWriterWrap>
-            <S.Contents
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(el.description),
-              }}
-            ></S.Contents>
-          </S.ItemWrap>
-        ))}
-      </S.GridWrap>
+      {props.data?.fetchNovelsPage.novels.length === 0 ? (
+        <S.GridWrap2>
+          <S.NoImage
+            src="/search/no-search.png"
+            alt="찾으시는 작품이 없습니다.."
+          />
+        </S.GridWrap2>
+      ) : (
+        <S.GridWrap>
+          {props.data?.fetchNovelsPage?.novels.map((el: any) => (
+            <S.ItemWrap
+              onClick={props.onClickMoveToDetail(el)}
+              id={el.id}
+              key={el}
+            >
+              <S.ItemPic
+                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+              />
+              <S.ItemInfo>
+                <S.ItemName>
+                  {el.title
+                    .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
+                    .split("@#$%")
+                    .map((el: any) => (
+                      <S.TextToken
+                        key={uuidv4()}
+                        isMatched={props.keyword === el}
+                      >
+                        {el}
+                      </S.TextToken>
+                    ))}
+                </S.ItemName>
+                <S.ItemNum>
+                  {el.cycle === 0 ? (
+                    <S.Cycle>자유연재</S.Cycle>
+                  ) : (
+                    <S.Cycle>요일연재</S.Cycle>
+                  )}
+                </S.ItemNum>
+              </S.ItemInfo>
+              <S.ItemWriterWrap>
+                <S.WriterIcon src="/novelList/writer-icon.png" />
+                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+              </S.ItemWriterWrap>
+              <S.Contents
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(el.description),
+                }}
+              ></S.Contents>
+            </S.ItemWrap>
+          ))}
+        </S.GridWrap>
+      )}
     </S.Wrap>
   );
 }
