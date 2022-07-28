@@ -42,13 +42,13 @@ export default function LoginPresenter(props: ILoginPresenterProps) {
             <S.Line></S.Line>
           </S.OrBox>
           <S.SignUpBox>
-            <a href="https://041e-61-43-54-3.jp.ngrok.io/login/google">
+            <a href="https://miny-shrimp.shop/login/google">
               <S.LoginLogoImg src="/login/google.png" />
             </a>
-            <a href="https://041e-61-43-54-3.jp.ngrok.io/login/naver">
+            <a href="https://miny-shrimp.shop/login/naver">
               <S.LoginLogoImg src="/login/naver.png" />
             </a>
-            <a href="https://041e-61-43-54-3.jp.ngrok.io/login/kakao">
+            <a href="https://miny-shrimp.shop/login/kakao">
               <S.LoginLogoImg src="/login/kakao.png" />
             </a>
           </S.SignUpBox>
