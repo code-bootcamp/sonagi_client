@@ -9,6 +9,7 @@ import {
 export interface ISignupContainerProps {}
 
 export interface ISignupPresenterProps {
+  sendPhone: any;
   setAgree1: any;
   setAgree2: any;
   phoneCheck: any;

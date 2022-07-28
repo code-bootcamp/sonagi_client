@@ -37,6 +37,7 @@ export default function SignUpContainer() {
   const [createUser] = useMutation(CREATE_USER);
   const [phone, setPhone] = useState("");
   const [token, setToken] = useState("");
+  const [sendPhone, setSendPhone] = useState(false);
   const [phoneCheck, setPhoneCheck] = useState(false);
   const [Agree1, setAgree1] = useState(false);
   const [Agree2, setAgree2] = useState(false);
@@ -71,6 +72,7 @@ export default function SignUpContainer() {
         },
       }).then((result) => setToken(result.data.SendPhone));
       console.log(phone);
+      setSendPhone(true);
     } catch (error: any) {
       Modal.error({ content: "인증번호 전송에 실패했습니다" });
     }
@@ -129,6 +131,7 @@ export default function SignUpContainer() {
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}
+      sendPhone={sendPhone}
       phoneCheck={phoneCheck}
       setAgree1={setAgree1}
       setAgree2={setAgree2}

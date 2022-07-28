@@ -2,7 +2,7 @@
 
 // 1. 아임포트 사용하려면 head 부분에 아임포트 라이브러리를 추가해줘야 하는데
 // 넥스트에서는 html에 직접 접근하기 어렵기 때문에 next에서 제공하는 head태그를 import하기
-import { gql, useMutation } from "@apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
 import styled from "@emotion/styled";
 import { Modal } from "antd";
 import { useState } from "react";
@@ -116,7 +116,36 @@ export const CANCEL_PAYMENT = gql`
   }
 `;
 
+export const FETCH_PAYMENTS = gql`
+  query fetchPaymentsInUser($page: Int!) {
+    fetchPaymentsInUser(page: $page) {
+      payments {
+        id
+        impUid
+        merchantUid
+        amount
+        createAt
+        user {
+          id
+          name
+          nickName
+        }
+        product {
+          point
+          id
+          name
+          price
+          point
+        }
+      }
+      count
+    }
+  }
+`;
+
 export default function PaymentPage(props: any) {
+  const { data } = useQuery(FETCH_PAYMENTS, { variables: { page: 1 } });
+  console.log(data);
   const [cancelPayment] = useMutation(CANCEL_PAYMENT);
   const [reason, setReason] = useState("");
   const handleCancel = () => {
@@ -143,6 +172,12 @@ export default function PaymentPage(props: any) {
             reason,
           },
         },
+        refetchQueries: [
+          {
+            query: FETCH_PAYMENTS,
+            variables: { page: 1 },
+          },
+        ],
       });
       console.log(result);
       Modal.success({ content: "환불이 완료되었습니다" });
