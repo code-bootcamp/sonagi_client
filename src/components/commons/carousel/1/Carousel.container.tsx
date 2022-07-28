@@ -8,7 +8,7 @@ export default function CarouselContainer() {
   const LastRandomPage = Math.floor(Math.random() * 2) + 1;
   const TodayRandomPage = Math.floor(Math.random() * 2) + 1;
 
-  const { data: LastData } = useQuery(FETCH_NOVELS_PAGE, {
+  const { data: LastData, loading } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
       fetchNovelInput: {
         type: "ALL",
@@ -20,7 +20,7 @@ export default function CarouselContainer() {
     },
   });
 
-  const { data: LikeData } = useQuery(FETCH_NOVELS_PAGE, {
+  const { data: LikeData, loading: Likeloading } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
       fetchNovelInput: {
         type: "ALL",
@@ -36,17 +36,20 @@ export default function CarouselContainer() {
   const week = [7, 1, 2, 3, 4, 5, 6];
   const Today = week[day.getDay()];
 
-  const { data: TodayData } = useQuery(FETCH_NOVELS_PAGE, {
-    variables: {
-      fetchNovelInput: {
-        type: "CYCLE",
-        target: String(Today),
-        order: "LIKE",
-        isFinish: "FALSE",
-        page: TodayRandomPage,
+  const { data: TodayData, loading: Todayloading } = useQuery(
+    FETCH_NOVELS_PAGE,
+    {
+      variables: {
+        fetchNovelInput: {
+          type: "CYCLE",
+          target: String(Today),
+          order: "LIKE",
+          isFinish: "FALSE",
+          page: TodayRandomPage,
+        },
       },
-    },
-  });
+    }
+  );
 
   console.log(TodayData);
 
@@ -54,7 +57,9 @@ export default function CarouselContainer() {
     router.push(`/novel/${el.id}`);
   };
 
-  return (
+  return loading || Likeloading || Todayloading ? (
+    <></>
+  ) : (
     <CarouselPresenter
       LastData={LastData}
       LikeData={LikeData}
