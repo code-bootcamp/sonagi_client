@@ -19,7 +19,7 @@ const FETCH_EVENTS = gql`
 export default function LayoutBanner() {
   const { onClickMoveToPage } = useMoveToPage();
 
-  const { data } = useQuery(FETCH_EVENTS);
+  const { data, loading } = useQuery(FETCH_EVENTS);
 
   const settings = {
     infinite: true,
@@ -32,7 +32,9 @@ export default function LayoutBanner() {
     pauseOnHover: true,
   };
 
-  return (
+  return loading ? (
+    <></>
+  ) : (
     <>
       <S.SliderWrapper onClick={onClickMoveToPage("/event")}>
         <S.MySlide {...settings}>
