@@ -55,6 +55,11 @@ export default function PointChargeContainer() {
                   productID,
                 },
               },
+              refetchQueries: [
+                {
+                  query: FETCH_LOGIN_USER,
+                },
+              ],
             });
             console.log(result);
             Modal.success({ content: "포인트 충전이 완료되었습니다" });

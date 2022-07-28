@@ -66,9 +66,15 @@ export default function SignUpPresenter(props: ISignupPresenterProps) {
               placeholder="휴대폰 번호"
               onChange={props.onChangePhone}
             ></S.InputBox>
-            <S.InputButton onClick={props.onClickSendPhone}>
-              인증번호 전송
-            </S.InputButton>
+            {props.sendPhone ? (
+              <>
+                <S.InputText>전송 완료</S.InputText>
+              </>
+            ) : (
+              <S.InputButton onClick={props.onClickSendPhone}>
+                인증번호 전송
+              </S.InputButton>
+            )}
           </S.InputWrapper>
           <S.Error>{props.formState.errors.phone?.message}</S.Error>
           <S.InputWrapper>
@@ -80,7 +86,7 @@ export default function SignUpPresenter(props: ISignupPresenterProps) {
             {props.phoneCheck ? (
               <>
                 <S.InputText>인증 완료</S.InputText>
-                <S.CheckImg src="signup/check.png" />
+                <S.CheckImg src="/signup/check.png" />
               </>
             ) : (
               <S.InputButton onClick={props.onClickAuthPhone}>
