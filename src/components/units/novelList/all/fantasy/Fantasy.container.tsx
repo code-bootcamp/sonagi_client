@@ -34,7 +34,7 @@ export default function FantasyContainer() {
   console.log("소설데이터", FinFantasy);
 
   const onClickMoveToDetail = (event: any) => {
-    router.push(`/novel/${event.currentTarget.id}`);
+    router.push(`/novel/${event.currentTarget?.id}`);
     console.log(event.target);
   };
 
