@@ -170,7 +170,7 @@ export const Name = styled.div`
   @media (min-width: 768px) and (max-width: 991px) {
   }
   @media (max-width: 767px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
   }
 `;
