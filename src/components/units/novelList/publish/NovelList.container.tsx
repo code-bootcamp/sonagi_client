@@ -20,7 +20,6 @@ export default function NovelPbListContainer() {
       },
     },
   });
-  console.log("로맨스", Romance);
 
   // 로맨스 판타지
   const { data: RomanceFantasy } = useQuery(FETCH_NOVELS_PAGE, {
@@ -38,7 +37,6 @@ export default function NovelPbListContainer() {
       },
     },
   });
-  console.log("로맨스판타지", RomanceFantasy);
 
   // 판타지
   const { data: Fantasy } = useQuery(FETCH_NOVELS_PAGE, {
@@ -52,7 +50,6 @@ export default function NovelPbListContainer() {
       },
     },
   });
-  console.log("소설데이터", Fantasy);
 
   // 무협
   const { data: Asia } = useQuery(FETCH_NOVELS_PAGE, {
@@ -66,7 +63,6 @@ export default function NovelPbListContainer() {
       },
     },
   });
-  console.log("소설데이터", Asia);
 
   // 학원
   const { data: School } = useQuery(FETCH_NOVELS_PAGE, {
@@ -80,7 +76,6 @@ export default function NovelPbListContainer() {
       },
     },
   });
-  console.log("소설데이터", School);
 
   // 공포
   const { data: Horror } = useQuery(FETCH_NOVELS_PAGE, {
@@ -94,7 +89,6 @@ export default function NovelPbListContainer() {
       },
     },
   });
-  console.log("소설데이터", Horror);
 
   const onClickMoveToDetail =
     (el: Iel) => (event: MouseEvent<HTMLDivElement>) => {
