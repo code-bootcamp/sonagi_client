@@ -7,7 +7,7 @@ export default function NovelPbListPresenter(props: INovelPbListUIProps) {
     <S.Wrap>
       <S.Title>연재작품</S.Title>
       <S.RowWrap>
-        <S.Category onClick={props.onClickMoveToRomancePage}>로맨스</S.Category>
+        <S.Category onClick={props.onClickMoveToRomancePage}>로맨서</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
