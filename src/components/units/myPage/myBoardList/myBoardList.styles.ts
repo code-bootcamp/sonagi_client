@@ -6,6 +6,7 @@ export const DIV = styled.div`
   align-items: center;
   margin-top: 2%;
   width: 100%;
+
   @media ${breakPoints.mobile} {
     margin-bottom: 70px;
   }
@@ -16,9 +17,11 @@ export const Wrapper = styled.div`
   padding-top: 56px;
   padding-right: 300px;
   padding-left: 40px;
+
   @media ${breakPoints.tablet} {
-    width: 110%;
+    width: 100%;
   }
+
   @media ${breakPoints.mobile} {
     width: 100%;
     display: flex;
