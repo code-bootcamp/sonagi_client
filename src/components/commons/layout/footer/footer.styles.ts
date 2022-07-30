@@ -99,6 +99,7 @@ export const QuestButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const Contents2 = styled.div`
