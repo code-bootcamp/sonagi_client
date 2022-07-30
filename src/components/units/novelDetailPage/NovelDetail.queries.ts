@@ -67,6 +67,14 @@ export const PAIDPOINT = gql`
   }
 `;
 
+export const PAID_POINTS = gql`
+  mutation paidPoints($novelIndexIDs: [String!]!) {
+    paidPoints(novelIndexIDs: $novelIndexIDs) {
+      id
+    }
+  }
+`;
+
 export const DONATEPOINT = gql`
   mutation donatePoint($donateInput: DonatePaymentPointInput!) {
     donatePoint(donateInput: $donateInput) {
