@@ -15,6 +15,10 @@ export const QuestionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 50px;
+  }
 `;
 
 export const QuestionTitle = styled.div`
