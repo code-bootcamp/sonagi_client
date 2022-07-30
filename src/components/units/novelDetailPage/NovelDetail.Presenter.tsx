@@ -13,6 +13,7 @@ export default function NovelDetailPresenter(
   const Writer =
     props.detailData?.fetchNovelDetail.user.id ===
     props.LoginData?.fetchLoginUser.id;
+
   return (
     <div>
       <S.Wrapper>
@@ -144,7 +145,9 @@ export default function NovelDetailPresenter(
               <S.All>총 {props.checkList.length}화</S.All>
               <S.Sum>{props.checkList.length * 100}원</S.Sum>
               {/* <S.Cart>카트</S.Cart> */}
-              <S.Borrows>선택구매</S.Borrows>
+              <S.Borrows onClick={props.onClickSelectPayment}>
+                선택구매
+              </S.Borrows>
             </S.MarginWrapper>
           </S.TableLineWrapper>
           {/* <S.TableDottedLine /> */}

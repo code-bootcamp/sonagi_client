@@ -13,9 +13,10 @@ import {
   FETCH_LOGIN_USER,
   FETCH_NOVEL_DETAIL,
   PAIDPOINT,
+  PAID_POINTS,
   SWITCH_NOVEL_LIKE,
 } from "./NovelDetail.queries";
-import { Iel, INovelEl } from "./NovelDetail.types";
+import { ICheckListEl, Iel, INovelEl } from "./NovelDetail.types";
 
 const Loading = styled.div`
   width: 100vw;
@@ -29,6 +30,7 @@ export default function NovelDetailContainer() {
   const [deleteNovel] = useMutation(DELETE_NOVEL);
   const [deleteNovelIndex] = useMutation(DELETE_NOVEL_INDEX);
   const [paidPoint] = useMutation(PAIDPOINT);
+  const [paidPonts] = useMutation(PAID_POINTS);
   const [switchNovelLike] = useMutation(SWITCH_NOVEL_LIKE);
   const [changePrivateNovelIndex] = useMutation(CHANGE_PRIVATE_NOVEL_INDEX);
   const { data: LoginData } = useQuery(FETCH_LOGIN_USER);
@@ -114,7 +116,10 @@ export default function NovelDetailContainer() {
         refetchQueries: [
           {
             query: FETCH_NOVEL_DETAIL,
-            variables: { novelID: router.query._id },
+            variables: {
+              novelID: router.query._id,
+              userEmail: LoginData?.fetchLoginUser.email,
+            },
           },
         ],
       });
@@ -213,6 +218,30 @@ export default function NovelDetailContainer() {
     router.push(`/novel/${router.query._id}/${event.currentTarget.id}/edit`);
   };
 
+  // 선택 결제
+  console.log(checkList);
+  const selectNovelIndexIDs = checkList.map((el: ICheckListEl) => el.id);
+
+  const onClickSelectPayment = async () => {
+    try {
+      await paidPonts({
+        variables: { novelIndexIDs: selectNovelIndexIDs },
+        refetchQueries: [
+          {
+            query: FETCH_NOVEL_DETAIL,
+            variables: {
+              novelID: router.query._id,
+              userEmail: LoginData?.fetchLoginUser.email,
+            },
+          },
+        ],
+      });
+      Modal.success({ content: "결제 성공" });
+    } catch (error: any) {
+      Modal.error({ content: error.message });
+    }
+  };
+
   return loading ? (
     <Loading />
   ) : (
@@ -249,6 +278,8 @@ export default function NovelDetailContainer() {
       isChecked={isChecked}
       checkList={checkList}
       buyList={buyList}
+      // 결제
+      onClickSelectPayment={onClickSelectPayment}
     />
   );
 }

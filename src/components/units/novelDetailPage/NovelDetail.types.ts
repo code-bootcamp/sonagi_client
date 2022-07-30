@@ -29,6 +29,7 @@ export interface INovelDetailPresenterProps {
   isChecked: (el: any) => boolean;
   checkList: string[];
   buyList: string[];
+  onClickSelectPayment: () => void;
 }
 
 export interface Iel {
@@ -55,4 +56,20 @@ export interface INovelEl {
   isNotice: boolean;
   isPrivate: boolean;
   isBuy: boolean;
+}
+
+export interface ICheckListEl {
+  contents: string;
+  createAt: string;
+  id: string;
+  index: number;
+  isBuy: boolean;
+  isFinish: boolean;
+  isNotice: boolean;
+  isPrivate: boolean;
+  star: number;
+  title: string;
+  updateAt: string;
+  viewCount: number;
+  __typename: string;
 }

@@ -5,7 +5,7 @@
 import { gql, useMutation } from "@apollo/client";
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { message, Modal } from "antd";
+import { Modal } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
 
 const Wrapper = styled.div``;
@@ -137,7 +137,7 @@ export default function DonatePage(props: any) {
     console.log(point);
 
     try {
-      const result = await donatePoint({
+      await donatePoint({
         variables: {
           donateInput: {
             novelID: props.novelID,
@@ -145,12 +145,10 @@ export default function DonatePage(props: any) {
           },
         },
       });
-      console.log(result);
-      // alert("후원 감사합니데이~~!");
-      message.info("후원감사합니다");
+      Modal.success({ content: "후원감사합니다" });
       props.setIsDonate(false);
-    } catch (error) {
-      Modal.error({ content: (error as Error).message });
+    } catch (error: any) {
+      Modal.error({ content: error.message });
     }
   };
 
