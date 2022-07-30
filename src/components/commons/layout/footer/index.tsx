@@ -1,17 +1,14 @@
-import { useRouter } from "next/router";
+import useMoveToPage from "../../../../commons/hooks/UseMoveToPage";
 import * as S from "./footer.styles";
 import FooterMobile from "./footerMobile";
 export default function LayoutFooter() {
-  const router = useRouter();
-  const MoveToNotice = () => {
-    router.push("/notice");
-  };
+  const { onClickMoveToPage } = useMoveToPage();
 
   return (
     <>
       <S.Wrapper>
         <S.LeftBox>
-          <S.Notice onClick={MoveToNotice}>공지사항</S.Notice>
+          <S.Notice onClick={onClickMoveToPage("/notice")}>공지사항</S.Notice>
           {/* d */}
           <S.Title>(주)소나기 사업자 정보</S.Title>
           <S.Contents>
@@ -32,7 +29,9 @@ export default function LayoutFooter() {
           <S.Title>소나기 고객센터</S.Title>
           <S.RightSubBox>
             <S.Number>0000-0000</S.Number>
-            <S.QuestButton>1 : 1 문의</S.QuestButton>
+            <S.QuestButton onClick={onClickMoveToPage("/myPage/inquire/new")}>
+              1 : 1 문의
+            </S.QuestButton>
           </S.RightSubBox>
           <S.Contents2>
             평일 10:00~17:00 | 점심시간 12:30~14:00
