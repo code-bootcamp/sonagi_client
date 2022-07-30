@@ -5,7 +5,7 @@ import { IAsiaPresenterProps } from "./Asia.types";
 export default function AsiaPresenter(props: IAsiaPresenterProps) {
   return (
     <S.Wrap>
-      <S.Title>무협</S.Title>
+      <S.Title>무협-test</S.Title>
       {/* 연재중 */}
       <S.RowWrap>
         <S.Category>연재작품</S.Category>
