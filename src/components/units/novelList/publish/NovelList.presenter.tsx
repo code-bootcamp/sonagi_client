@@ -3,12 +3,11 @@ import DOMPurify from "dompurify";
 import { INovelPbListUIProps } from "./NovelList.types";
 
 export default function NovelPbListPresenter(props: INovelPbListUIProps) {
-  console.log(props.data);
   return (
     <S.Wrap>
       <S.Title>연재작품</S.Title>
-      <S.RowWrap onClick={props.onClickMoveToRomancePage}>
-        <S.Category>로맨스</S.Category>
+      <S.RowWrap>
+        <S.Category onClick={props.onClickMoveToRomancePage}>로맨스</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
@@ -43,8 +42,10 @@ export default function NovelPbListPresenter(props: INovelPbListUIProps) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 로맨스판타지 */}
-      <S.RowWrap onClick={props.onClickMoveToRomanceFantasyPage}>
-        <S.Category>로맨스판타지</S.Category>
+      <S.RowWrap>
+        <S.Category onClick={props.onClickMoveToRomanceFantasyPage}>
+          로맨스판타지
+        </S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
@@ -81,8 +82,8 @@ export default function NovelPbListPresenter(props: INovelPbListUIProps) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 판타지 */}
-      <S.RowWrap onClick={props.onClickMoveToFantasyPage}>
-        <S.Category>판타지</S.Category>
+      <S.RowWrap>
+        <S.Category onClick={props.onClickMoveToFantasyPage}>판타지</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
@@ -118,8 +119,8 @@ export default function NovelPbListPresenter(props: INovelPbListUIProps) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 무협 */}
-      <S.RowWrap onClick={props.onClickMoveToAsiaPage}>
-        <S.Category>무협</S.Category>
+      <S.RowWrap>
+        <S.Category onClick={props.onClickMoveToAsiaPage}>무협</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
@@ -154,8 +155,8 @@ export default function NovelPbListPresenter(props: INovelPbListUIProps) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 학원 */}
-      <S.RowWrap onClick={props.onClickMoveToSchoolPage}>
-        <S.Category>학원</S.Category>
+      <S.RowWrap>
+        <S.Category onClick={props.onClickMoveToSchoolPage}>학원</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
@@ -190,8 +191,10 @@ export default function NovelPbListPresenter(props: INovelPbListUIProps) {
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 공포/미스터리 */}
-      <S.RowWrap onClick={props.onClickMoveToHorrorPage}>
-        <S.Category>공포/미스터리</S.Category>
+      <S.RowWrap>
+        <S.Category onClick={props.onClickMoveToHorrorPage}>
+          공포/미스터리
+        </S.Category>
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
