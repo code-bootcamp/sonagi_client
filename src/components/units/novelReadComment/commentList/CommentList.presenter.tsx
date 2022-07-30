@@ -67,7 +67,7 @@ export default function ReadCommentListPresenter(
           <HeadWrapper onClick={props.onClickGoRead}>읽으러 가기</HeadWrapper>
           <Scroll>
             <InfiniteScroll
-              hasMore={false || true}
+              hasMore={false}
               pageStart={0}
               loadMore={props.onClickFetchMore}
               useWindow={false}
