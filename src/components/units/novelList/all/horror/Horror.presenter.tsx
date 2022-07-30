@@ -14,7 +14,7 @@ export default function HorrorPresenter(props: IHorrorPresenterProps) {
       <S.GridWrap>
         {props.PbHorror?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail(el)}
+            onClick={props.onClickMoveToDetail}
             id={el.id}
             key={el.title}
           >
@@ -46,7 +46,7 @@ export default function HorrorPresenter(props: IHorrorPresenterProps) {
       <S.GridWrap>
         {props.FinHorror?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail(el)}
+            onClick={props.onClickMoveToDetail}
             id={el.id}
             key={el.title}
           >
