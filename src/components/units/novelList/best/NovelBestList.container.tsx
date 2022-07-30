@@ -65,7 +65,7 @@ export default function NovelBestListContainer(
         Modal.success({ content: "선호작 취소" });
       } else Modal.success({ content: "선호작 등록!" });
     } catch (error) {
-      Modal.error({ content: (error as Error).message });
+      Modal.error({ content: "로그인 후 이용해주세요." });
     }
   };
 
