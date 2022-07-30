@@ -34,7 +34,7 @@ export default function AsiaContainer() {
   console.log("소설데이터", FinAsia);
 
   const onClickMoveToDetail = (event: MouseEvent<HTMLDivElement>) => {
-    router.push(`/novel/${event.currentTarget?.id}`);
+    router.push(`/novel/${event.currentTarget.id}`);
     console.log(event.target);
   };
 
