@@ -6,7 +6,6 @@ import { FETCH_NOVELS_PAGE } from "./Carousel.queries";
 export default function CarouselContainer() {
   const router = useRouter();
   const LastRandomPage = Math.floor(Math.random() * 2) + 1;
-  const TodayRandomPage = Math.floor(Math.random() * 2) + 1;
 
   const { data: LastData, loading } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -45,7 +44,7 @@ export default function CarouselContainer() {
           target: String(Today),
           order: "LIKE",
           isFinish: "FALSE",
-          page: TodayRandomPage,
+          page: 1,
         },
       },
     }
