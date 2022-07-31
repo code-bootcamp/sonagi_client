@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import * as S from "./FreeBoardWrite.styles";
 import { IFreeBoardWritePresenterProps } from "./FreeBoardWrite.types";
+import Button01 from "../../../commons/buttons/01";
 export default function FreeBoardWritePresenter(
   props: IFreeBoardWritePresenterProps
 ) {
@@ -42,7 +43,7 @@ export default function FreeBoardWritePresenter(
       <S.ButtonWrapper>
         <Button02 title="취소" onClick={props.onClickMoveToList} />
         <S.Margin>
-          <Button02
+          <Button01
             title={props.isEdit ? "수정" : "등록"}
             onClick={props.isEdit ? props.onClickUpdate : props.onClickSubmit}
           />
