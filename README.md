@@ -35,16 +35,18 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 - 반응형 디자인 구현
 
 ## 송인호
-:email: </br>
-:clipboard: </br>
-:dog: </br>
+:email: inhosong96@gmail.com </br>
+:clipboard: https://velog.io/@songinho96 </br>
+:dog: https://github.com/songinho96 </br>
+- 소설등록 페이지, 소설디테일 페이지, 애피소드 등록 페이지, 소설리드 페이지 구현
 - 깃 관리
 - 반응형 디자인 구현
 
 ## 이은희
-:email: </br>
-:clipboard: </br>
-:cat: </br>
+:email: ehlee860@gmail.com </br>
+:clipboard: https://velog.io/@space086 </br>
+:cat: https://github.com/space086 </br>
+- 연재작품 페이지, 완결작품 페이지, 검색페이지, 장르별 리스트 페이지 , 공지사항 페이지
 - 발표자료 제작
 - 반응형 디자인 구현
 
@@ -52,7 +54,7 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 :email: heejoo45890@gmail.com </br>
 :clipboard: https://velog.io/@huiju </br>
 :rabbit: https://github.com/2huiju </br>
-- 메인 페이지, 헤더, 네비게이션, 푸터, 로그인, 회원가입, 마이페이지(찜한 작품, 후원 작품, 나의 작품, 결제 내역, 포인트 충전, 1:1문의, 회원정보 변경, 비밀번호 변경, 회원 탈퇴), 결제, 환불 구현
+- 메인 페이지, 헤더, 네비게이션, 푸터, 로그인, 회원가입, 마이페이지(찜한 작품, 후원 작품, 나의 작품, 결제 내역, 포인트 충전, 1:1문의, 회원정보 변경, 비밀번호 변경, 회원 탈퇴), 이벤트 페이지, 결제, 환불 구현
 - 반응형 디자인 구현
 
 </br>
