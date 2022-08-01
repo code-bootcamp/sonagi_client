@@ -112,7 +112,7 @@ export default function NestedCommentListPresenter(
             isHidden={undefined}
             onClickUpdateComment={undefined}
             onClickUpdateNestedComment={undefined}
-            answerEL={undefined}
+            answerEL={props.answerEL}
           />
         )}
       </S.FooterWrapper>
