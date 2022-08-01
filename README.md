@@ -30,14 +30,14 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 ## 권형석
 :email: hskwon5170@gmail.com </br>
 :clipboard: https://velog.io/@hskwon517 </br>
-:dog: https://github.com/hskwon5170 </br>
--자유게시판, 마이페이지(최근 본 작품, 내가 쓴 게시글 및 내가 쓴 댓글) </br>
--반응형 디자인 구현
+:bear: https://github.com/hskwon5170 </br>
+- 자유게시판, 마이페이지(최근 본 작품, 내가 쓴 게시글 및 내가 쓴 댓글) </br>
+- 반응형 디자인 구현
 
 ## 송인호
 :email: </br>
 :clipboard: </br>
-:bear: </br>
+:dog: </br>
 - 깃 관리
 - 반응형 디자인 구현
 
