@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
-    width: 400px;
+    width: 110%;
   }
 `;
 

@@ -26,7 +26,8 @@ export const MainTitle = styled.div`
   margin-bottom: 12px;
 
   @media ${breakPoints.mobile} {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
+    margin-top: 60px;
   }
 `;
 
@@ -36,7 +37,8 @@ export const WrapButton = styled.div`
   justify-content: flex-end;
 
   @media ${breakPoints.mobile} {
-    justify-content: center;
+    position: relative;
+    left: 20px;
   }
 `;
 
@@ -60,6 +62,9 @@ export const WrapperBoard = styled.div`
   margin: 20px 0px 20px 0px;
   width: 100%;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.div`
