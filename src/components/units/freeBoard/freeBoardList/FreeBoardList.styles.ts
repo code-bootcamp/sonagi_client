@@ -70,7 +70,13 @@ export const Title = styled.div`
   color: #484848;
 
   @media ${breakPoints.mobile} {
-    width: 200%;
+    width: 60%;
+    margin-top: 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 `;
 
@@ -89,6 +95,9 @@ export const Writer = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1rem;
+    position: relative;
+    left: 6px;
+    bottom: 5px;
   }
 `;
 
@@ -97,19 +106,18 @@ export const Date = styled.div`
   color: #7e7e7e;
   margin-left: 57%;
   margin-top: 30px;
+  @media ${breakPoints.mobile} {
+    font-size: 1.1rem;
+    width: 120%;
+    margin-left: -92%;
+    margin-top: 90px;
+  }
 
   @media ${breakPoints.tablet} {
     font-size: 1.1rem;
     width: 100%;
     margin-left: 42%;
     margin-top: 30px;
-  }
-
-  @media ${breakPoints.mobile} {
-    font-size: 1.1rem;
-    width: 120%;
-    margin-left: -96%;
-    margin-top: 90px;
   }
 `;
 
@@ -141,7 +149,8 @@ export const New = styled.div`
   margin-left: 30px;
   @media ${breakPoints.mobile} {
     position: relative;
-    right: 55px;
+    right: 25px;
+    top: 5px;
   }
 `;
 
@@ -253,7 +262,7 @@ export const AvatarImg = styled.img`
     width: 60px;
     height: 60px;
     position: absolute;
-    right: 290px;
+    right: 285px;
   }
 `;
 
