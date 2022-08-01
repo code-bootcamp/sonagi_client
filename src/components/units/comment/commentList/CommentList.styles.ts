@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   @media ${breakPoints.mobile} {
     padding: 0 20px;
     margin-top: 15px;
-    width: 94%;
+    width: 97%;
   }
 `;
 
@@ -66,14 +66,14 @@ export const ProfileIcon = styled.img`
 `;
 
 export const WrapCommentInfo = styled.div`
-  width: 90%;
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   margin-left: 25px;
   @media ${breakPoints.mobile} {
-    margin-top: 5px;
+    /* margin-top: 5px;
     position: relative;
-    right: 42px;
+    right: 42px; */
   }
 `;
 
@@ -83,6 +83,13 @@ export const Comment = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;
+    position: relative;
+    top: 10px;
+    left: -24px;
+    /* border: 1px solid black; */
+    width: 160px;
+    word-wrap: break-word;
+    /* background-color: yellow; */
   }
 `;
 
@@ -90,6 +97,10 @@ export const WrapUserInfo = styled.div`
   padding-top: 5px;
   display: flex;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 55px;
+  }
 `;
 
 export const Name = styled.div`
@@ -99,6 +110,10 @@ export const Name = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
+    position: relative;
+    right: 88px;
+    top: 12px;
+    width: 160%;
   }
 `;
 
@@ -109,6 +124,12 @@ export const Date = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
+    width: 250px;
+    position: relative;
+    right: 199px;
+    top: 12px;
+    /* top: 100px; */
+    /* left: 40px; */
   }
 `;
 
@@ -140,6 +161,8 @@ export const WrapIcon = styled.div`
   align-items: center;
   @media ${breakPoints.mobile} {
     /* width: 10%; */
+    position: relative;
+    right: 130px;
   }
 `;
 
@@ -180,4 +203,10 @@ export const AnswerIcon = styled.img`
 
 export const FooterWrapper = styled.div`
   margin-left: 60px;
+`;
+
+export const CommentWrap = styled.div`
+  @media ${breakPoints.mobile} {
+    /* width: 20%; */
+  }
 `;

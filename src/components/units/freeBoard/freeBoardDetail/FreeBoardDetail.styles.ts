@@ -60,8 +60,10 @@ export const Writer = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1em;
-    width: 100%;
-    margin-right: 20px;
+    width: 200%;
+    position: relative;
+    left: 5px;
+    /* margin-right: 20px; */
     /* margin-top: 19%; */
     /* background-color: blue; */
   }
@@ -85,10 +87,10 @@ export const Title = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1.25em;
-    width: 200%;
+    width: 180%;
     position: relative;
     right: 65px;
-    top: 20px;
+    top: 31px;
   }
 `;
 
@@ -157,6 +159,8 @@ export const InnerContents = styled.div`
     margin-top: 10px;
     width: 200%;
     position: relative;
+    top: 20px;
+    /* border-top: 1px solid black; */
   }
 `;
 

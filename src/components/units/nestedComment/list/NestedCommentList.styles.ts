@@ -10,7 +10,9 @@ export const Wrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     padding: 0 20px;
-    width: 100%;
+    width: 110%;
+    height: 100px;
+    /* border: 1px solid black; */
   }
 `;
 
@@ -68,6 +70,7 @@ export const ProfileIcon = styled.img`
     height: 50px;
     position: relative;
     left: -26px;
+    top: -8px;
     /* margin-top: 10px; */
   }
 `;
@@ -88,7 +91,9 @@ export const Comment = styled.div`
     font-size: 0.95rem;
     position: relative;
     top: 4px;
-    right: 49px;
+    right: 38px;
+    width: 155px;
+    word-wrap: break-word;
   }
 `;
 
@@ -109,8 +114,8 @@ export const Name = styled.div`
     font-size: 0.75rem;
     width: 100%;
     position: relative;
-    right: 50px;
-    top: 3px;
+    right: 93px;
+    top: 13px;
     bottom: 5px;
   }
 `;
@@ -122,9 +127,13 @@ export const Date = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
-    position: absolute;
+    width: 250px;
+    position: relative;
+    right: 170px;
+    top: 13px;
+    /* position: absolute;
     top: 1118px;
-    right: 106px;
+    right: 106px; */
   }
 `;
 
@@ -154,6 +163,11 @@ export const UpCount = styled.div`
 export const WrapIcon = styled.div`
   display: flex;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    /* width: 10%; */
+    position: relative;
+    right: 130px;
+  }
 `;
 
 export const EditIcon = styled.img`
