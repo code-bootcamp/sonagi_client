@@ -35,7 +35,12 @@ export const HamburgerWrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     display: flex;
-    margin-left: 920%;
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    justify-content: right;
+    bottom: 375px;
+    right: -1px;
   }
 `;
 
@@ -87,7 +92,7 @@ export const MenuWrapper = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 300px;
-    margin-left: 230px;
+    margin-left: 280px;
   }
 `;
 
@@ -104,6 +109,9 @@ export const RowName = styled.div`
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
+  @media ${breakPoints.mobile} {
+    width: 215%;
+  }
 `;
 
 export const ColumnName = styled.div`
@@ -145,6 +153,9 @@ export const Row = styled.div`
   line-height: 24px;
   color: #4f4f4f;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 215%;
+  }
 `;
 
 export const CommentsRow = styled.div`
@@ -225,6 +236,11 @@ export const ColumnCommentTitle = styled.div`
   width: 40%;
   @media ${breakPoints.mobile} {
     width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 `;
 
