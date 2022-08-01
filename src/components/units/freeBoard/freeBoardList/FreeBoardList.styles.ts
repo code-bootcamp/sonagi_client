@@ -262,7 +262,7 @@ export const AvatarImg = styled.img`
     width: 60px;
     height: 60px;
     position: absolute;
-    right: 285px;
+    right: 270px;
   }
 `;
 
