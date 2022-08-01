@@ -16,6 +16,7 @@ export async function getAccessToken() {
     );
     const result = await graphQlClient.request(RESTORE_ACCESS_TOKEN);
     const newAccessToken = result.restoreToken;
+    sessionStorage.setItem("socialToken", result.restoreToken);
     return newAccessToken;
   } catch (error: any) {
     console.log(error.message);
