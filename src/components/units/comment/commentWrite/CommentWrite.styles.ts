@@ -68,10 +68,11 @@ export const ContentsInput = styled.input`
 
   @media ${breakPoints.mobile} {
     &::placeholder {
-      width: 80%;
+      width: 98%;
       font-size: 0.55rem;
       color: #bdbdbd;
       word-break: keep-all;
+      white-space: normal;
     }
   }
 `;
