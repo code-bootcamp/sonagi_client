@@ -28,7 +28,8 @@ export default function CommentListPresenterItem(
   // const router = useRouter();
 
   const onClickUpdate = () => {
-    setIsEdit(true);
+    setIsEdit((prev) => !prev);
+    // setIsNested((prev) => !prev);
   };
 
   const onClickDelete = async () => {

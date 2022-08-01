@@ -49,6 +49,9 @@ export const WriterWrapper = styled.div`
   padding-bottom: 30px;
   border-bottom: 1px solid #bdbdbd;
   width: 100%;
+  @media ${breakPoints.mobile} {
+    width: 115%;
+  }
 `;
 
 export const Writer = styled.div`

@@ -50,7 +50,7 @@ export const BestComment = styled.div`
 export const WrapInfo = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 16px;
 `;
 
 export const ProfileIcon = styled.img`
@@ -88,7 +88,7 @@ export const Comment = styled.div`
     top: 10px;
     left: -24px;
     /* border: 1px solid black; */
-    width: 160px;
+    width: 170px;
     word-wrap: break-word;
     /* background-color: yellow; */
   }
@@ -161,9 +161,9 @@ export const WrapIcon = styled.div`
   display: flex;
   align-items: center;
   @media ${breakPoints.mobile} {
-    /* width: 100%; */
+    width: 100%;
     position: relative;
-    right: 60px;
+    right: 50px;
     bottom: 10px;
     /* left: 30px; */
     /* left: 280px; */

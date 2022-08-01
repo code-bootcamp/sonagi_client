@@ -1,7 +1,9 @@
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
+import { DELETE_COMMENT } from "../../comment/commentList/CommentList.queries";
 import NestedCommentWritePresenter from "../write/NestedCommentWrite.presenter";
 import { FETCH_BOARD } from "./NestedCommentList.queries";
 import * as S from "./NestedCommentList.styles";
@@ -18,13 +20,38 @@ export default function NestedCommentListPresenter(
   //   data?.fetchBoard?.comments[0]?.children[0]?.contents
   // );
   console.log("대댓글데이터를조회해보자", data);
+  console.log("answerEL", props.answerEL);
 
   const [isEdit, setIsEdit] = useState(false);
   const onClickUpdateNestedReply = () => {
     setIsEdit(true);
+    // setIsEdit((prev) => !prev);
   };
 
   console.log("this is a el", props.answerEL);
+
+  // 삭제
+  const [deleteComment] = useMutation(DELETE_COMMENT);
+  const DeleteNestedComment = async () => {
+    try {
+      await deleteComment({
+        variables: {
+          CommentID: props.answerEL?.id,
+        },
+        refetchQueries: [
+          {
+            query: FETCH_BOARD,
+            variables: { boardID: router.query._id },
+          },
+        ],
+      });
+      // alert("대댓글이 삭제되었습니다.");
+      Modal.success({ content: "대댓글이 삭제되었습니다." });
+    } catch (error: any) {
+      // alert(`대댓글 삭제에 실패했습니다. ${error.message}`);
+      Modal.error({ content: error.message });
+    }
+  };
 
   return (
     <>
@@ -66,7 +93,7 @@ export default function NestedCommentListPresenter(
               />
               <S.DeleteIcon
                 src="/comment/Trash.png"
-                onClick={props.DeleteNestedComment}
+                onClick={DeleteNestedComment}
               />
               {/* <S.AnswerIcon src="/comment/insert_comment.png" /> */}
             </S.WrapIcon>
