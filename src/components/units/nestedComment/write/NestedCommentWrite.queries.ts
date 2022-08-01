@@ -109,19 +109,11 @@ export const FETCH_COMMENTS_FROM_BOARDD = gql`
   }
 `;
 
-export const UPDATE_COMMENT = gql`
+export const UPDATE_NESTED_COMMENT = gql`
   mutation updateComment($updateCommentInput: UpdateCommentInput!) {
     updateComment(updateCommentInput: $updateCommentInput) {
       children {
-        id
         contents
-        createAt
-        board {
-          id
-        }
-        user {
-          nickName
-        }
       }
     }
   }

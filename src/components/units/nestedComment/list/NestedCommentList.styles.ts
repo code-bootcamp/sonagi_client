@@ -81,6 +81,9 @@ export const WrapCommentInfo = styled.div`
   flex-direction: column;
   margin-left: 25px;
   /* background-color: blue; */
+  @media ${breakPoints.mobile} {
+    width: 80%;
+  }
 `;
 
 export const Comment = styled.div`
@@ -92,7 +95,7 @@ export const Comment = styled.div`
     position: relative;
     top: 4px;
     right: 38px;
-    width: 155px;
+    width: 137px;
     word-wrap: break-word;
   }
 `;
@@ -129,7 +132,7 @@ export const Date = styled.div`
     font-size: 0.75rem;
     width: 250px;
     position: relative;
-    right: 170px;
+    right: 150px;
     top: 13px;
     /* position: absolute;
     top: 1118px;
@@ -166,7 +169,7 @@ export const WrapIcon = styled.div`
   @media ${breakPoints.mobile} {
     /* width: 10%; */
     position: relative;
-    right: 130px;
+    right: 103px;
   }
 `;
 
