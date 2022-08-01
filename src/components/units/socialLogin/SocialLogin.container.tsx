@@ -2,10 +2,16 @@ import SocialLoginPresenter from "./SocialLogin.presenter";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { AUTH_PHONE_OK, CREATE_USER, SEND_PHONE } from "./SocialLogin.queries";
+import { GraphQLClient } from "graphql-request";
+import {
+  AUTH_PHONE_OK,
+  RESTORE_ACCESS_TOKEN,
+  SEND_PHONE,
+  SOCIAL_AUTH,
+} from "./SocialLogin.queries";
 import { Modal } from "antd";
 
 const schema = yup.object({
@@ -18,7 +24,7 @@ const schema = yup.object({
 export default function SocialLoginContainer() {
   const router = useRouter();
 
-  const [createUser] = useMutation(CREATE_USER);
+  const [socialAuth] = useMutation(SOCIAL_AUTH);
   const [phone, setPhone] = useState("");
   const [token, setToken] = useState("");
   const [phoneCheck, setPhoneCheck] = useState(false);
@@ -76,26 +82,32 @@ export default function SocialLoginContainer() {
   const onClickSignUp = (data: any) => {
     if (Agree1 && Agree2) {
       try {
-        const result = createUser({
+        const result = socialAuth({
           variables: {
-            createUserInput: {
-              name: data.name,
+            authInput: {
               nickName: data.nickName,
-              email: data.email,
               phone,
-              pwd: data.pwd,
             },
           },
         });
         console.log(data);
         console.log(result);
-        Modal.success({ content: "회원가입이 완료되었습니다" });
-        router.push("/login");
+        Modal.success({ content: "소셜 로그인이 완료되었습니다" });
+        router.push("/");
       } catch (error: any) {
         Modal.error({ content: error.message });
       }
     }
   };
+
+  useEffect(() => {
+    const graphQlClient = new GraphQLClient(
+      "https://miny-shrimp.shop/graphql",
+      { credentials: "include" }
+    );
+    const result = graphQlClient.request(RESTORE_ACCESS_TOKEN);
+    console.log(result);
+  }, []);
 
   return (
     <SocialLoginPresenter
