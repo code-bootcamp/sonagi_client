@@ -75,9 +75,9 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
       });
       console.log("대댓수정", result);
       props.setIsEdit?.(false);
-      Modal.success({ content: "댓글을 수정합니다." });
+      Modal.success({ content: "대댓글을 수정합니다." });
     } catch (error: any) {
-      Modal.error({ content: "댓글 수정에 실패했습니다." });
+      Modal.error({ content: "대댓글 수정에 실패했습니다." });
     }
   };
 

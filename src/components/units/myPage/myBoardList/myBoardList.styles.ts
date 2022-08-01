@@ -39,7 +39,9 @@ export const HamburgerWrapper = styled.div`
     z-index: 3;
     position: absolute;
     justify-content: right;
-    bottom: 375px;
+    bottom: 385px;
+    /* bottom: 475px; */
+
     right: -1px;
   }
 `;
@@ -61,10 +63,10 @@ export const ProductMenu = styled.div<{ isPickList: boolean }>`
   cursor: pointer;
   @media ${breakPoints.tablet} {
     /* font-size: 1.2rem; */
-    width: 55%;
+    width: 80%;
   }
   @media ${breakPoints.mobile} {
-    font-size: ${(props) => (props.isPickList ? "15px" : "22px")};
+    font-size: ${(props) => (props.isPickList ? "15px" : "20px")};
   }
 `;
 
@@ -79,7 +81,7 @@ export const PickMenu = styled.div<{ isPickList: boolean }>`
     width: 100%;
   }
   @media ${breakPoints.mobile} {
-    font-size: ${(props) => (props.isPickList ? "22px" : "15px")};
+    font-size: ${(props) => (props.isPickList ? "20px" : "15px")};
   }
 `;
 
@@ -119,7 +121,7 @@ export const ColumnName = styled.div`
   font-weight: 700;
   font-size: 1.15rem;
   @media ${breakPoints.mobile} {
-    width: 13%;
+    width: 20%;
   }
 `;
 
@@ -127,6 +129,9 @@ export const date = styled.div`
   width: 50%;
   font-weight: 700;
   font-size: 1.15rem;
+  @media ${breakPoints.mobile} {
+    width: 50%;
+  }
 `;
 
 export const CreateAt = styled.div`
@@ -172,14 +177,23 @@ export const CommentsRow = styled.div`
   font-size: 16px;
   line-height: 24px;
   color: #4f4f4f;
+  @media ${breakPoints.mobile} {
+    width: 216%;
+  }
 `;
 
 export const Column = styled.div`
   width: 10%;
+  @media ${breakPoints.mobile} {
+    width: 20%;
+  }
 `;
 
 export const ColumnDate = styled.div`
   width: 50%;
+  @media ${breakPoints.mobile} {
+    width: 55%;
+  }
 `;
 export const CreateAtColumn = styled.div`
   width: 52%;
@@ -245,13 +259,19 @@ export const ColumnCommentTitle = styled.div`
 `;
 
 export const ColumnContentss = styled.div`
-  width: 60%;
+  width: 50%;
+  @media ${breakPoints.mobile} {
+    width: 50%;
+  }
 `;
 
 export const CommentContents = styled.div`
   width: 60%;
   font-weight: 700;
   font-size: 1.15rem;
+  @media ${breakPoints.mobile} {
+    width: 60%;
+  }
 `;
 
 export const PickColumnTitle = styled.div`
@@ -272,7 +292,8 @@ export const WrapperBody = styled.div`
   display: flex;
   flex-direction: column;
   @media ${breakPoints.tablet} {
-    width: 65%;
+    width: 90%;
+    margin-bottom: 10%;
   }
   @media ${breakPoints.mobile} {
     width: 386%;
