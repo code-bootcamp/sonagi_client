@@ -70,6 +70,7 @@ export const WrapCommentInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 25px;
+  width: 100%;
   @media ${breakPoints.mobile} {
     /* margin-top: 5px;
     position: relative;
@@ -124,9 +125,9 @@ export const Date = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
-    width: 250px;
+    width: 450px;
     position: relative;
-    right: 199px;
+    right: 138px;
     top: 12px;
     /* top: 100px; */
     /* left: 40px; */
@@ -160,9 +161,13 @@ export const WrapIcon = styled.div`
   display: flex;
   align-items: center;
   @media ${breakPoints.mobile} {
-    /* width: 10%; */
+    /* width: 100%; */
     position: relative;
-    right: 130px;
+    right: 60px;
+    bottom: 10px;
+    /* left: 30px; */
+    /* left: 280px; */
+    /* left: 230px; */
   }
 `;
 
