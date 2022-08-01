@@ -20,11 +20,10 @@ export const WrapTitle = styled.div`
 `;
 
 export const MainTitle = styled.div`
-  font-size: 1.875em;
-  font-weight: normal;
-  color: #484848;
-  margin-top: 20px;
-  border-radius: 8px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #4d4d4d;
+  margin-bottom: 12px;
 
   @media ${breakPoints.mobile} {
     font-size: 1.5rem;
