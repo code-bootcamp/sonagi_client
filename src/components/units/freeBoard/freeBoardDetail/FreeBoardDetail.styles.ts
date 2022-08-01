@@ -89,11 +89,14 @@ export const Title = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 1.25em;
-    width: 180%;
+    font-size: 1.15em;
+    width: 200px;
     position: relative;
     right: 65px;
     top: 31px;
+    /* border: 1px solid black; */
+    word-break: break-all;
+    white-space: normal;
   }
 `;
 
@@ -145,6 +148,9 @@ export const Contents = styled.div`
   @media ${breakPoints.tablet} {
     width: 100%;
   }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 
   /* border: 5px solid #eee; */
 `;
@@ -160,9 +166,12 @@ export const InnerContents = styled.div`
   @media ${breakPoints.mobile} {
     font-size: 1.16rem;
     margin-top: 10px;
-    width: 200%;
+    width: 160%;
     position: relative;
     top: 20px;
+    left: 60%;
+    word-break: break-all;
+    white-space: normal;
     /* border-top: 1px solid black; */
   }
 `;
@@ -280,6 +289,7 @@ export const BottomWrapper = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 345px;
+    /* margin-top: 20%; */
   }
 `;
 
@@ -329,6 +339,9 @@ export const Flex = styled.div`
   @media ${breakPoints.tablet} {
     width: 100%;
   }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const FlexWrap = styled.div`
@@ -356,8 +369,8 @@ export const ContentsWrap = styled.div`
   width: 190%;
   height: 120px;
   @media ${breakPoints.mobile} {
-    width: 130%;
-    right: 128%;
+    width: 100%;
+    right: 130%;
     position: relative;
     top: 5%;
   }
