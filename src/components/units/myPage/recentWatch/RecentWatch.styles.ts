@@ -299,8 +299,8 @@ export const HamburgerWrapper = styled.div`
     z-index: 3;
     position: absolute;
     justify-content: right;
-    bottom: 510px;
-    right: 10px;
+    bottom: 375px;
+    right: -1px;
     /* position: relative;
     left: 540px;
     bottom: 80px; */
