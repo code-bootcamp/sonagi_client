@@ -160,10 +160,17 @@ export const UpCount = styled.div`
 export const WrapIcon = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
+  left: 72%;
+  bottom: 55%;
+  @media ${breakPoints.tablet} {
+    position: relative;
+    left: 55%;
+  }
   @media ${breakPoints.mobile} {
     width: 100%;
     position: relative;
-    right: 50px;
+    left: -18%;
     bottom: 10px;
     /* left: 30px; */
     /* left: 280px; */

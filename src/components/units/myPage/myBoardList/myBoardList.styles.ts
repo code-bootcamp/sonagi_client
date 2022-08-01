@@ -61,7 +61,7 @@ export const ProductMenu = styled.div<{ isPickList: boolean }>`
   cursor: pointer;
   @media ${breakPoints.tablet} {
     /* font-size: 1.2rem; */
-    width: 55%;
+    width: 80%;
   }
   @media ${breakPoints.mobile} {
     font-size: ${(props) => (props.isPickList ? "15px" : "22px")};
@@ -272,7 +272,8 @@ export const WrapperBody = styled.div`
   display: flex;
   flex-direction: column;
   @media ${breakPoints.tablet} {
-    width: 65%;
+    width: 90%;
+    margin-bottom: 10%;
   }
   @media ${breakPoints.mobile} {
     width: 386%;
