@@ -63,7 +63,7 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 
 # :rainbow: 서비스 시연
 ## :umbrella: 메인 페이지
-
+![main2](https://user-images.githubusercontent.com/87798108/182107736-d37192cf-5c4c-4e70-b8f8-4bc139e821af.gif)
 ## :umbrella: 회원가입 페이지
 
 ## :umbrella: 로그인 페이지
