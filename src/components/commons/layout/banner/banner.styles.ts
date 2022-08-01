@@ -11,13 +11,15 @@ export const SliderWrapper = styled.div`
     background-color: pink;
   }
 
-  @media (max-width: 767px) {
+  /* @media (max-width: 767px) {
     max-width: 767px;
-  }
+  } */
 `;
 
-export const MySlide = styled(Slider)``;
+export const MySlide = styled(Slider)`
+  overflow-x: hidden;
+`;
 
 export const CarouselImg = styled.img`
-  width: 80vw;
+  width: 100vw;
 `;
