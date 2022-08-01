@@ -189,6 +189,7 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
+
   @media ${breakPoints.mobile} {
     width: 330px;
     margin-left: 5px;
@@ -271,9 +272,11 @@ export const BottomWrapper = styled.div`
   height: 120px;
   background-color: #f6f6f6;
   @media ${breakPoints.tablet} {
-    width: 139.2%;
+    /* width: 139.2%; */
+    width: 136.1%;
+
     /* top: 550px; */
-    position: relative;
+    /* position: relative; */
   }
   @media ${breakPoints.mobile} {
     width: 345px;

@@ -78,10 +78,10 @@ export default function NestedCommentListPresenter(
                 {/* <S.Date>2022.07.04</S.Date> */}
                 <S.Date>{getDate(props.el?.createAt)}</S.Date>
 
-                <S.UpIcon
+                {/* <S.UpIcon
                   src="/comment/thumb_up.png"
                   onClick={props.onClickLikeComment}
-                />
+                /> */}
                 {/* <S.UpCount>325</S.UpCount> */}
                 {/* <S.UpCount>{props.data?.fetchComments.likeCount}</S.UpCount> */}
               </S.WrapUserInfo>
@@ -111,6 +111,8 @@ export default function NestedCommentListPresenter(
             onChangeContents={undefined}
             isHidden={undefined}
             onClickUpdateComment={undefined}
+            onClickUpdateNestedComment={undefined}
+            answerEL={props.answerEL}
           />
         )}
       </S.FooterWrapper>
