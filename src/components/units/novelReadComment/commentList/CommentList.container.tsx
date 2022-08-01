@@ -3,7 +3,10 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import ReadCommentListPresenter from "./CommentList.presenter";
 
-import { FETCH_EPISODE_REVIEW_PAGE } from "./CommentList.queries";
+import {
+  FETCH_EPISODE_DETAIL,
+  FETCH_EPISODE_REVIEW_PAGE,
+} from "./CommentList.queries";
 import { IReadCommentListContainerProps } from "./CommentList.types";
 
 export default function ReadCommentListContainer(
@@ -15,12 +18,16 @@ export default function ReadCommentListContainer(
     variables: { episodeID: router.query.volume_id, page: 1 },
   });
 
+  const { data: AuthorData } = useQuery(FETCH_EPISODE_DETAIL, {
+    variables: { novelIndexID: router.query.volume_id },
+  });
+
   const onClickFetchMore = () => {
+    // if (data?.fetchEpisodeReviewPage.episodeReviews.length === 0) return;
     if (!data) return;
     fetchMore({
       variables: {
-        page:
-          Math.ceil(data.fetchEpisodeReviewPage.episodeReviews.length / 10) + 1,
+        page: Math.ceil(data?.fetchEpisodeReviewPage.count / 10) + 1,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (
@@ -28,8 +35,8 @@ export default function ReadCommentListContainer(
         ) {
           return prev.fetchEpisodeReviewPage;
         }
-        console.log(prev.fetchEpisodeReviewPage.episodeReviews);
-        console.log(fetchMoreResult.fetchEpisodeReviewPage.episodeReviews);
+        // console.log(prev.fetchEpisodeReviewPage.episodeReviews);
+        // console.log(fetchMoreResult.fetchEpisodeReviewPage.episodeReviews);
         return {
           fetchEpisodeReviewPage: {
             episodeReviews: [
@@ -64,6 +71,7 @@ export default function ReadCommentListContainer(
       setIsGoCommnet={setIsGoCommnet}
       // 읽으러
       onClickGoRead={onClickGoRead}
+      AuthorData={AuthorData}
     />
   );
 }

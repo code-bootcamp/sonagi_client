@@ -28,6 +28,12 @@ export interface IReadCommentListPresenterProps {
   isGoComment: boolean;
   setIsGoCommnet: any;
   onClickGoRead: () => void;
+  AuthorData: {
+    fetchEpisodeDetail: {
+      authorText: string;
+      __typename: string;
+    };
+  };
 }
 
 export interface Iel {

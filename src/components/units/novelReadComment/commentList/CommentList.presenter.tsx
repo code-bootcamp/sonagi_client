@@ -29,7 +29,7 @@ const FooterWrapper = styled.div`
 `;
 
 const Scroll = styled.div`
-  height: 84%;
+  height: 69%;
   overflow: auto;
   margin: 0px auto;
 `;
@@ -41,9 +41,33 @@ const Wrapper = styled.div`
   left: calc(-50vw + 50%);
 `;
 
+const WrapAuthorText = styled.div`
+  height: 15%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-bottom: 1px solid gray;
+`;
+
+const Text = styled.div`
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+`;
+const AuthorText = styled.div`
+  font-size: 1rem;
+`;
+
 export default function ReadCommentListPresenter(
   props: IReadCommentListPresenterProps
 ) {
+  // const [reviewLength, setReviewLength] = useState(false);
+  // if (props.data?.fetchEpisodeReviewPage.episodeReviews.length > 9) {
+  //   setReviewLength((prev) => !prev);
+  // }
+
   return (
     <Wrapper>
       {props.isGoComment ? (
@@ -65,6 +89,12 @@ export default function ReadCommentListPresenter(
       ) : (
         <>
           <HeadWrapper onClick={props.onClickGoRead}>읽으러 가기</HeadWrapper>
+          <WrapAuthorText>
+            <Text>작가의 말</Text>
+            <AuthorText>
+              {props.AuthorData?.fetchEpisodeDetail.authorText}
+            </AuthorText>
+          </WrapAuthorText>
           <Scroll>
             <InfiniteScroll
               hasMore={false}
