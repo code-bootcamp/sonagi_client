@@ -89,9 +89,37 @@ export default function CommentListPresenterItem(
                 /> */}
                 {/* <S.UpCount>325</S.UpCount> */}
                 {/* <S.UpCount>{props.data?.fetchComments.likeCount}</S.UpCount> */}
+                {props.el.user.id === props.UserData?.fetchLoginUser.id ? (
+                  <S.WrapIcon>
+                    <S.EditIcon
+                      title="수정하기"
+                      src="/comment/create.png"
+                      onClick={onClickUpdate}
+                    />
+                    <S.DeleteIcon
+                      title="삭제하기"
+                      src="/comment/Trash.png"
+                      onClick={onClickDelete}
+                    />
+
+                    <S.AnswerIcon
+                      title="대댓글 달기"
+                      src="/comment/insert_comment.png"
+                      onClick={onWriteAnswer}
+                    />
+                  </S.WrapIcon>
+                ) : (
+                  <S.WrapIcon>
+                    <S.AnswerIcon
+                      title="대댓글 달기"
+                      src="/comment/insert_comment.png"
+                      onClick={onWriteAnswer}
+                    />
+                  </S.WrapIcon>
+                )}
               </S.WrapUserInfo>
             </S.WrapCommentInfo>
-            {props.el.user.id === props.UserData?.fetchLoginUser.id ? (
+            {/* {props.el.user.id === props.UserData?.fetchLoginUser.id ? (
               <S.WrapIcon>
                 <S.EditIcon
                   title="수정하기"
@@ -118,7 +146,7 @@ export default function CommentListPresenterItem(
                   onClick={onWriteAnswer}
                 />
               </S.WrapIcon>
-            )}
+            )} */}
           </S.WrapInfo>
         </S.WrapperUserInfo>
       </S.Wrapper>
