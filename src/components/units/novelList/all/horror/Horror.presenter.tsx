@@ -5,7 +5,7 @@ import { IHorrorPresenterProps } from "./Horror.types";
 export default function HorrorPresenter(props: IHorrorPresenterProps) {
   return (
     <S.Wrap>
-      <S.Title>공포/미스터리test</S.Title>
+      <S.Title>공포/미스터리</S.Title>
       {/* 연재중 */}
       <S.RowWrap>
         <S.Category>연재작품</S.Category>
@@ -25,7 +25,13 @@ export default function HorrorPresenter(props: IHorrorPresenterProps) {
               />
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
-                <S.ItemNum>10화</S.ItemNum>
+                <S.ItemNum>
+                  {el.cycle === 0 ? (
+                    <S.Cycle>자유연재</S.Cycle>
+                  ) : (
+                    <S.Cycle>요일연재</S.Cycle>
+                  )}
+                </S.ItemNum>
               </S.ItemInfo>
               <S.ItemWriterWrap>
                 <S.WriterIcon src="/novelList/writer-icon.png" />
