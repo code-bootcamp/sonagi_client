@@ -66,11 +66,9 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 ## :umbrella: 메인 페이지
 ![main2](https://user-images.githubusercontent.com/87798108/182107736-d37192cf-5c4c-4e70-b8f8-4bc139e821af.gif)
 ## :umbrella: 회원가입 페이지
-
+![signup](https://user-images.githubusercontent.com/87798108/182114570-a72cfa9c-a8a6-4f6a-891d-feb4934a9d89.gif)
 ## :umbrella: 로그인 페이지
-
-## :umbrella: 소셜 로그인 페이지
-
+![signup-login](https://user-images.githubusercontent.com/87798108/182114550-edb915d0-009b-4225-a96f-6e9617437a7c.gif)
 ## :umbrella: 연재 작품
 
 ## :umbrella: 완결 작품
@@ -78,7 +76,7 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 ## :umbrella: 베스트 셀러
 
 ## :umbrella: 이벤트
-
+![event](https://user-images.githubusercontent.com/87798108/182115024-e63617be-a0a0-4bc3-b6ce-53aabefe42e9.gif)
 ## :umbrella: 공지사항
 
 ## :umbrella: 자유 게시판
