@@ -179,3 +179,17 @@ export const Line = styled.div`
   background-color: #eee;
   margin: 40px 0 80px;
 `;
+
+export const Cycle = styled.p`
+  font-size: 0.75em;
+  margin: 0;
+  padding: 4px;
+  background-color: aliceblue;
+  @media (min-width: 391px) and (max-width: 767px) {
+    display: none;
+  }
+
+  @media (max-width: 390px) {
+    display: none;
+  }
+`;
