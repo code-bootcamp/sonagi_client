@@ -39,6 +39,9 @@ export const WrapContents = styled.div`
   display: flex;
   flex-direction: column;
   /* height: 161px; */
+  @media ${breakPoints.mobile} {
+    width: 108%;
+  }
 `;
 
 export const ContentsInput = styled.input`

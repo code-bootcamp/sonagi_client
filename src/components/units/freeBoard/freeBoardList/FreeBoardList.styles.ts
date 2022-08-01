@@ -74,7 +74,8 @@ export const Title = styled.div`
   color: #484848;
 
   @media ${breakPoints.mobile} {
-    width: 60%;
+    width: 100%;
+    font-size: 1.15rem;
     margin-top: 7px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -98,7 +99,7 @@ export const Writer = styled.div`
   margin-left: 11px;
 
   @media ${breakPoints.mobile} {
-    font-size: 1rem;
+    font-size: 0.9rem;
     position: relative;
     left: 6px;
     bottom: 5px;
@@ -111,10 +112,10 @@ export const Date = styled.div`
   margin-left: 57%;
   margin-top: 30px;
   @media ${breakPoints.mobile} {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     width: 120%;
-    margin-left: -92%;
-    margin-top: 90px;
+    margin-left: -73%;
+    margin-top: 65%;
   }
 
   @media ${breakPoints.tablet} {
@@ -135,7 +136,7 @@ export const Flex = styled.div`
   align-items: center;
   margin-left: 15px;
   @media ${breakPoints.mobile} {
-    width: 200%;
+    width: 120%;
   }
 `;
 
@@ -153,7 +154,7 @@ export const New = styled.div`
   margin-left: 30px;
   @media ${breakPoints.mobile} {
     position: relative;
-    right: 25px;
+    left: 15%;
     top: 5px;
   }
 `;
@@ -274,6 +275,10 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   width: 60%;
+  @media ${breakPoints.mobile} {
+    position: relative;
+    left: 8%;
+  }
 `;
 
 export const MobileColumn = styled.div`
