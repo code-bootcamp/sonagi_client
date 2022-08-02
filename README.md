@@ -72,6 +72,10 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 ![signup-login](https://user-images.githubusercontent.com/87798108/182114550-edb915d0-009b-4225-a96f-6e9617437a7c.gif)
 ## :umbrella: 로그인 페이지
 ![login2](https://user-images.githubusercontent.com/87798108/182276561-f5fa8125-3de2-4c35-880b-0e1d62cbc07f.gif)
+## :umbrella: 소설 전체 목록 페이지
+![novelList-all](https://user-images.githubusercontent.com/87798108/182282745-8c437aca-bf2e-4024-9cfc-1a3c2771c4bb.gif)
+## :umbrella: 베스트셀러 페이지
+![베스트셀러](https://user-images.githubusercontent.com/87798108/182282754-abbfb85e-9b7b-4cfb-be8b-34cb71be7aa4.gif)
 ## :umbrella: 소설 디테일 페이지
 ![detail](https://user-images.githubusercontent.com/87798108/182274825-2fad0848-b219-45db-9ab4-402fc96c07bf.gif)
 ## :umbrella: 소설 읽기 페이지
@@ -88,17 +92,28 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 
 ## :umbrella: 완결 작품
 
-## :umbrella: 베스트 셀러
-
 ## :umbrella: 이벤트
 ![event](https://user-images.githubusercontent.com/87798108/182115024-e63617be-a0a0-4bc3-b6ce-53aabefe42e9.gif)
 ## :umbrella: 공지사항
-
+![notice](https://user-images.githubusercontent.com/87798108/182282736-2333d231-1956-4e04-8d33-a664b76f5852.gif)
 ## :umbrella: 자유 게시판
-
+![freeboard_write](https://user-images.githubusercontent.com/87798108/182282953-a3926c33-7f36-47eb-8bec-59d31be9da97.gif)
+![freeboard_comment_write](https://user-images.githubusercontent.com/87798108/182282957-a3093302-184c-4470-b990-358f62cf622b.gif)
 ## :umbrella: 검색 페이지
 
-## :umbrella: 마이 페이지
-
-
-
+## :umbrella: 마이 페이지 (구매)
+### 구매 내역 & 포인트 환불
+![mypage_paymenthistory,cancelpayment](https://user-images.githubusercontent.com/87798108/182283305-2357bbd4-9fba-401c-a3f3-e5e17771a635.gif)
+### 포인트 충전
+![mypage_pointCharge](https://user-images.githubusercontent.com/87798108/182283311-3775b8ad-5f9e-4412-abcc-8c0bfa90f1c5.gif)
+![mypage_pointCharge2](https://user-images.githubusercontent.com/87798108/182283410-5b45bf27-c630-4378-bd02-7e67ba275373.gif)
+## :umbrella: 마이 페이지 (개인)
+### 문의하기
+![mypage_inquire](https://user-images.githubusercontent.com/87798108/182283143-c19cdbde-66e2-47b7-a030-11ea1de8d4e7.gif)
+### 내가 쓴 게시물
+![mypage_myboard](https://user-images.githubusercontent.com/87798108/182283115-a2c47557-c4df-4fa9-89f0-f6c6fcc4c94a.gif)
+### 회원정보 변경 & 회원 탈퇴
+![mypage_profileChange](https://user-images.githubusercontent.com/87798108/182283125-52beabf2-c3e6-4756-a5b7-9b38436b4add.gif)
+![mypage_profileCancel](https://user-images.githubusercontent.com/87798108/182283122-2573dcd1-000f-4a0b-b6d0-188f1dac94be.gif)
+### 비밀번호 변경
+![mypage_passwordChange](https://user-images.githubusercontent.com/87798108/182283120-6443620d-5f4a-4dc4-87b8-2d52000135b2.gif)
