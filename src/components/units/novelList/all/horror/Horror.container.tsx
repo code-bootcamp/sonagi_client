@@ -32,7 +32,7 @@ export default function HorrorContainer() {
   });
   console.log("소설데이터", FinHorror);
 
-  const onClickMoveToDetail = (event: any) => {
+  const onClickMoveToDetail = (el: any) => (event: any) => {
     router.push(`/novel/${event.currentTarget?.id}`);
     console.log(event.target);
   };

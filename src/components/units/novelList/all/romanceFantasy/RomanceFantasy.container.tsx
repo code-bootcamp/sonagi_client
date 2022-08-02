@@ -33,7 +33,7 @@ export default function RomanceFantasyContainer() {
   });
   console.log("소설데이터", FinRomanceFantasy);
 
-  const onClickMoveToDetail = (event: any) => {
+  const onClickMoveToDetail = (el: any) => (event: any) => {
     router.push(`/novel/${event.currentTarget?.id}`);
     console.log(event.target);
   };

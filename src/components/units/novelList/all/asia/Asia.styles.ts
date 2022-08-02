@@ -6,7 +6,11 @@ export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 30px 10px;
+  margin: 30px 10px 80px;
+
+  @media ${breakPoints.mobile} {
+    margin: 0px 10px 80px;
+  }
 `;
 
 export const Title = styled.label`
@@ -109,28 +113,47 @@ export const ItemInfo = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin: 20px 0px;
 `;
 export const ItemName = styled.h4`
   width: 70%;
+  height: 7vh;
   font-size: 1.15rem;
   font-weight: 700;
   margin: 0;
 
+  @media (min-width: 768px) and (max-width: 990px) {
+    width: 96%;
+  }
+
   @media (min-width: 391px) and (max-width: 767px) {
+    width: 96%;
     font-size: 1.125rem;
+    height: 5vh;
   }
 
   @media (max-width: 390px) {
+    width: 96%;
     font-size: 1.25rem;
   }
 `;
-export const ItemNum = styled.p`
-  background-color: #eee;
-  font-size: 0.875em;
-  padding: 5px;
+
+export const Cycle = styled.p`
+  width: 30%;
+  font-size: 0.75em;
   margin: 0;
+  padding: 4px;
+  text-align: center;
+  background-color: aliceblue;
+
+  @media (min-width: 391px) and (max-width: 767px) {
+    display: none;
+  }
+
+  @media (max-width: 390px) {
+    display: none;
+  }
 `;
 export const ItemWriterWrap = styled.div`
   width: 100%;
@@ -178,18 +201,4 @@ export const Line = styled.div`
   height: 1px;
   background-color: #eee;
   margin: 40px 0 80px;
-`;
-
-export const Cycle = styled.p`
-  font-size: 0.75em;
-  margin: 0;
-  padding: 4px;
-  background-color: aliceblue;
-  @media (min-width: 391px) and (max-width: 767px) {
-    display: none;
-  }
-
-  @media (max-width: 390px) {
-    display: none;
-  }
 `;
