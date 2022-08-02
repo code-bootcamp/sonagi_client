@@ -1,5 +1,5 @@
 import { getDateDay } from "../../../../commons/libraries/utils";
-import Button01 from "../../../commons/buttons/01";
+// import Button01 from "../../../commons/buttons/01";
 import * as S from "./NoticeList.styles";
 import { Iel, INoticeListPresenterProps } from "./NoticeList.types";
 
@@ -35,7 +35,7 @@ export default function NoticeListPresenter(props: INoticeListPresenterProps) {
         ))}
       </S.NoticeListWrap>
       <S.RowWrap3 onClick={props.onClickNoticeNew}>
-        <Button01 title="공지 작성하기" type="button" />
+        {/* <Button01 title="공지 작성하기" type="button" /> */}
       </S.RowWrap3>
     </S.Wrap>
   );

@@ -14,7 +14,7 @@ export default function HorrorPresenter(props: IHorrorPresenterProps) {
       <S.GridWrap>
         {props.PbHorror?.fetchNovelsPage?.novels.map((el: any) => (
           <S.ItemWrap
-            onClick={props.onClickMoveToDetail}
+            onClick={props.onClickMoveToDetail(el)}
             id={el.id}
             key={el.title}
           >
@@ -23,7 +23,11 @@ export default function HorrorPresenter(props: IHorrorPresenterProps) {
             />
             <S.ItemInfo>
               <S.ItemName>{el.title}</S.ItemName>
-              <S.ItemNum>10화</S.ItemNum>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>요일연재</S.Cycle>
+              )}
             </S.ItemInfo>
             <S.ItemWriterWrap>
               <S.WriterIcon src="/novelList/writer-icon.png" />
@@ -55,7 +59,11 @@ export default function HorrorPresenter(props: IHorrorPresenterProps) {
             />
             <S.ItemInfo>
               <S.ItemName>{el.title}</S.ItemName>
-              <S.ItemNum>10화</S.ItemNum>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>요일연재</S.Cycle>
+              )}
             </S.ItemInfo>
             <S.ItemWriterWrap>
               <S.WriterIcon src="/novelList/writer-icon.png" />

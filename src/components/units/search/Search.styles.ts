@@ -9,6 +9,10 @@ export const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   margin: 5% 0%;
+
+  @media ${breakPoints.mobile} {
+    margin: 0px 10px 80px;
+  }
 `;
 export const SearchInputWrap = styled.div`
   display: flex;

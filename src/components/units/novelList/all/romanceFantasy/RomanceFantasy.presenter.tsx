@@ -25,7 +25,11 @@ export default function RomanceFantasyPresenter(
             />
             <S.ItemInfo>
               <S.ItemName>{el.title}</S.ItemName>
-              <S.ItemNum>10화</S.ItemNum>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>요일연재</S.Cycle>
+              )}
             </S.ItemInfo>
             <S.ItemWriterWrap>
               <S.WriterIcon src="/novelList/writer-icon.png" />
@@ -59,7 +63,11 @@ export default function RomanceFantasyPresenter(
               />
               <S.ItemInfo>
                 <S.ItemName>{el.title}</S.ItemName>
-                <S.ItemNum>10화</S.ItemNum>
+                {el.cycle === 0 ? (
+                  <S.Cycle>자유연재</S.Cycle>
+                ) : (
+                  <S.Cycle>요일연재</S.Cycle>
+                )}
               </S.ItemInfo>
               <S.ItemWriterWrap>
                 <S.WriterIcon src="/novelList/writer-icon.png" />

@@ -33,32 +33,10 @@ export default function RomanceContainer() {
   });
   console.log("소설데이터", FinRomance);
 
-  const onClickMoveToDetail = (event: any) => {
+  const onClickMoveToDetail = (el: any) => (event: any) => {
     router.push(`/novel/${event.currentTarget?.id}`);
     console.log(event.target);
   };
-
-  // const loadFunc = () => {
-  //   if (!PbRomance) return;
-
-  //   fetchMore({
-  //     variables: {
-  //       count: Math.ceil(PbRomance.fetchNovelsPage.length / 10) + 1,
-  //     },
-  //     updateQuery: (prev, { fetchMoreResult }) => {
-  //       if (!fetchMoreResult.fetchNovelsPage)
-  //         return {
-  //           fetchNovelsPage: [...prev.fetchNovelsPage],
-  //         };
-  //       return {
-  //         fetchNovelsPage: [
-  //           ...prev.fetchNovelsPage,
-  //           ...fetchMoreResult.fetchNovelsPage,
-  //         ],
-  //       };
-  //     },
-  //   });
-  // };
 
   return (
     <RomancePresenter

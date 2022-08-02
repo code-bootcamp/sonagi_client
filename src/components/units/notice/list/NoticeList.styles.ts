@@ -6,10 +6,14 @@ export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 30px 10px;
+  margin: 30px 10px 80px;
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 80px;
+  }
 `;
 export const RowWrap = styled.div`
-  width: 100%;
+  width: 96%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,7 +21,7 @@ export const RowWrap = styled.div`
 export const NoticeTitleWrap = styled.div`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
 `;
 export const Title = styled.label`
   font-size: 1.875em;
@@ -54,6 +58,7 @@ export const NoticeIcon = styled.img`
 export const NoticeListWrap = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 2%;
 `;
 export const Total = styled.span`
   font-size: 1em;
@@ -65,7 +70,8 @@ export const Total = styled.span`
   }
 `;
 export const NoticeWrap = styled.div`
-  width: 100%;
+  width: 96%;
+  margin: 2% 0;
   display: flex;
   flex-direction: row;
   background-color: #fff;
@@ -89,6 +95,7 @@ export const NoticeImg = styled.img`
   @media ${breakPoints.mobile} {
     transition-duration: 1s;
     width: 35%;
+    height: 100px;
   }
 `;
 export const TextWrap = styled.div`
@@ -121,7 +128,7 @@ export const TextRowWrap = styled.div`
 `;
 
 export const RowWrap2 = styled.div`
-  width: 100%;
+  width: 96%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -158,8 +165,7 @@ export const NoticeTag = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 25px;
-    font-size: 0.5em;
+    display: none;
   }
 `;
 export const CreatAt = styled.span`
@@ -212,7 +218,7 @@ export const RowWrap3 = styled.div`
 `;
 
 export const RowWrap4 = styled.div`
-  width: 100%;
+  width: 96%;
   display: flex;
   flex-direction: row;
   align-items: center;
