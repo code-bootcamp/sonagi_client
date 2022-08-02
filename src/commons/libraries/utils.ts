@@ -1,7 +1,7 @@
 export const getDate = (value: any) => {
   // const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
   const date = new Date(value);
-  date.setHours(date.getHours() + 9);
+  // date.setHours(date.getHours() + 9);
   const yyyy = date.getFullYear();
   const mm = String(date.getMonth() + 1).padStart(2, "0");
   const dd = String(date.getDate()).padStart(2, "0");
