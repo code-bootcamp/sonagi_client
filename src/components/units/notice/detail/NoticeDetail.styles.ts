@@ -88,7 +88,7 @@ export const Line = styled.div`
 export const contents = styled.div`
   width: 100%;
   background-color: #eee;
-  height: 70vh;
+  height: 78vh;
   padding: 50px;
   border: none;
 
@@ -99,7 +99,7 @@ export const contents = styled.div`
 
   @media ${breakPoints.mobile} {
     transition-duration: 1s;
-    padding: 30px;
+    padding: 30px 10px;
     font-size: 0.875em;
   }
 `;
@@ -108,4 +108,9 @@ export const BtnWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  @media ${breakPoints.mobile} {
+    transition-duration: 1s;
+    margin: 30px;
+  }
 `;

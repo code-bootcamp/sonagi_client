@@ -116,6 +116,10 @@ export const ItemName = styled.h4`
   font-weight: 700;
   margin: 0;
 
+  @media (min-width: 768px) and (max-width: 990px) {
+    width: 96%;
+  }
+
   @media (min-width: 391px) and (max-width: 767px) {
     width: 96%;
     font-size: 1.125rem;
@@ -123,20 +127,22 @@ export const ItemName = styled.h4`
   }
 
   @media (max-width: 390px) {
+    width: 96%;
     font-size: 1.25rem;
   }
 `;
 export const ItemNum = styled.p`
-  background-color: #eee;
   font-size: 0.875em;
   padding: 5px;
   margin: 0;
 `;
 
 export const Cycle = styled.p`
+  width: 30%;
   font-size: 0.75em;
   margin: 0;
   padding: 4px;
+  text-align: center;
   background-color: aliceblue;
   @media (min-width: 391px) and (max-width: 767px) {
     display: none;

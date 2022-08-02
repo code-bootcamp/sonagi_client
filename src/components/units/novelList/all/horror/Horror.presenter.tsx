@@ -12,38 +12,34 @@ export default function HorrorPresenter(props: IHorrorPresenterProps) {
         <S.Arrow src="/novelList/arrow.png" />
       </S.RowWrap>
       <S.GridWrap>
-        {props.PbHorror?.fetchNovelsPage?.novels
-          .filter((v: any) => v)
-          .map((el: any) => (
-            <S.ItemWrap
-              onClick={props.onClickMoveToDetail(el)}
-              id={el.id}
-              key={el.title}
-            >
-              <S.ItemPic
-                src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
-              />
-              <S.ItemInfo>
-                <S.ItemName>{el.title}</S.ItemName>
-                <S.ItemNum>
-                  {el.cycle === 0 ? (
-                    <S.Cycle>자유연재</S.Cycle>
-                  ) : (
-                    <S.Cycle>요일연재</S.Cycle>
-                  )}
-                </S.ItemNum>
-              </S.ItemInfo>
-              <S.ItemWriterWrap>
-                <S.WriterIcon src="/novelList/writer-icon.png" />
-                <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
-              </S.ItemWriterWrap>
-              <S.Contents
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(el.description),
-                }}
-              ></S.Contents>
-            </S.ItemWrap>
-          ))}
+        {props.PbHorror?.fetchNovelsPage?.novels.map((el: any) => (
+          <S.ItemWrap
+            onClick={props.onClickMoveToDetail(el)}
+            id={el.id}
+            key={el.title}
+          >
+            <S.ItemPic
+              src={`https://storage.googleapis.com/code-camp-main-project/${el.files[0]?.url}`}
+            />
+            <S.ItemInfo>
+              <S.ItemName>{el.title}</S.ItemName>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>요일연재</S.Cycle>
+              )}
+            </S.ItemInfo>
+            <S.ItemWriterWrap>
+              <S.WriterIcon src="/novelList/writer-icon.png" />
+              <S.WrtiterName>{el.user?.nickName}</S.WrtiterName>
+            </S.ItemWriterWrap>
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(el.description),
+              }}
+            ></S.Contents>
+          </S.ItemWrap>
+        ))}
       </S.GridWrap>
       <S.Line></S.Line>
       {/* 완결작 */}
@@ -63,7 +59,11 @@ export default function HorrorPresenter(props: IHorrorPresenterProps) {
             />
             <S.ItemInfo>
               <S.ItemName>{el.title}</S.ItemName>
-              <S.ItemNum>10화</S.ItemNum>
+              {el.cycle === 0 ? (
+                <S.Cycle>자유연재</S.Cycle>
+              ) : (
+                <S.Cycle>요일연재</S.Cycle>
+              )}
             </S.ItemInfo>
             <S.ItemWriterWrap>
               <S.WriterIcon src="/novelList/writer-icon.png" />
