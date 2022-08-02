@@ -71,6 +71,18 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 ![signup](https://user-images.githubusercontent.com/87798108/182114570-a72cfa9c-a8a6-4f6a-891d-feb4934a9d89.gif)
 ## :umbrella: 로그인 페이지
 ![signup-login](https://user-images.githubusercontent.com/87798108/182114550-edb915d0-009b-4225-a96f-6e9617437a7c.gif)
+## :umbrella: 소설 디테일 페이지
+![detail](https://user-images.githubusercontent.com/87798108/182274825-2fad0848-b219-45db-9ab4-402fc96c07bf.gif)
+## :umbrella: 소설 읽기 페이지
+![EpiRead](https://user-images.githubusercontent.com/87798108/182274853-5fdd2feb-e015-4a39-a10e-67ca976852fc.gif)
+## :umbrella: 소설 작성 페이지
+![NovelWrite2](https://user-images.githubusercontent.com/87798108/182274880-91dc9420-779a-4267-9367-491d71aebe7b.gif)
+## :umbrella: 소설(회차/공지) 작성 페이지
+![EpisodeWrite](https://user-images.githubusercontent.com/87798108/182274872-a29b3b73-72a9-4845-871f-d8a5cc1b58a3.gif)
+## :umbrella: 작가에게 후원하기
+![donate](https://user-images.githubusercontent.com/87798108/182274845-6c080b60-8e44-4b58-9ba8-0ea5b457bc81.gif)
+## :umbrella: 소설 결제하기
+![payment](https://user-images.githubusercontent.com/87798108/182274867-c461279e-76a5-4ade-985c-31d2ebb84d54.gif)
 ## :umbrella: 연재 작품
 
 ## :umbrella: 완결 작품
