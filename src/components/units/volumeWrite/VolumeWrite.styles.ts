@@ -233,6 +233,10 @@ export const WrapSubmitButton = styled.div`
   display: flex;
   padding: 20px 10%;
   justify-content: space-around;
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 50px;
+  }
 `;
 
 export const ClickButton = styled.button`

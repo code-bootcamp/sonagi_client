@@ -113,7 +113,7 @@ export default function VolumeWritePresenter(
         </S.WrapperRule>
         <S.WrapSubmitButton>
           <Button01 title="취소" onClick={props.onClickMoveToPage("/")} />
-          <Button01 title="임시저장" />
+          {/* <Button01 title="임시저장" /> */}
           <Button01 title="저장" />
         </S.WrapSubmitButton>
       </S.Wrapper>
