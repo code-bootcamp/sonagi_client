@@ -76,7 +76,7 @@ export const TitleLabel = styled.input`
     font-size: 1.2rem;
   }
 
-  width: 80%;
+  width: 75%;
   font-size: 1.2rem;
   font-weight: 400;
   border: none;
@@ -96,6 +96,7 @@ export const Label = styled.div`
   font-size: 1.5rem;
   font-weight: 500;
   padding-right: 40px;
+
   @media ${breakPoints.mobile} {
     font-size: 1.2rem;
     margin-bottom: 20px;

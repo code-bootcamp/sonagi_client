@@ -2,6 +2,7 @@ import { PlusOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
 import { Input, Tag, Tooltip } from "antd";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { breakPoints } from "../../../commons/styles/media";
 
 interface ITagsProps {
   tags: string[];
@@ -11,11 +12,16 @@ interface ITagsProps {
 const Inputs = styled(Input)`
   width: 200px;
   border-radius: 10px;
+
+  @media ${breakPoints.mobile} {
+    width: 100px;
+  }
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
 `;
 
 export default function Tags(props: ITagsProps) {
