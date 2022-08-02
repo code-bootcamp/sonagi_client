@@ -27,6 +27,9 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 </br>
 
 # :computer: FrontEnd 팀원 역할
+
+![IMG_1606](https://user-images.githubusercontent.com/87798108/182403474-77652880-b884-4a89-8ff9-ea684fa9178e.JPG)
+
 ## 권형석
 :email: hskwon5170@gmail.com </br>
 :clipboard: https://velog.io/@hskwon517 </br>
