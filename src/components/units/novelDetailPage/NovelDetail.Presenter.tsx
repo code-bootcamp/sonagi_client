@@ -32,7 +32,7 @@ export default function NovelDetailPresenter(
           <S.ColumnWrapper>
             <S.Genre>
               <S.LeftWrapper>
-                <S.TopFont>장르</S.TopFont>
+                <S.TopFont>장르.</S.TopFont>
                 {/* <S.SmallArrow src="/novelDetail/Polygon.png" /> */}
                 <S.Arrow>{">"}</S.Arrow>
                 <S.TopFont>
