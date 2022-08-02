@@ -63,9 +63,9 @@ export const Writer = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1em;
-    width: 200%;
+    width: 250%;
     position: relative;
-    left: 5px;
+    left: 29%;
     /* margin-right: 20px; */
     /* margin-top: 19%; */
     /* background-color: blue; */
@@ -97,6 +97,7 @@ export const Title = styled.div`
     /* border: 1px solid black; */
     word-break: break-all;
     white-space: normal;
+    margin-left: 10%;
   }
 `;
 
@@ -125,6 +126,7 @@ export const Date = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* font-size: 0.95rem; */
+    margin-left: 4%;
   }
 `;
 export const ReportIcon = styled.img`
