@@ -39,6 +39,9 @@ export const WrapContents = styled.div`
   display: flex;
   flex-direction: column;
   /* height: 161px; */
+  @media ${breakPoints.mobile} {
+    width: 108%;
+  }
 `;
 
 export const ContentsInput = styled.input`
@@ -57,6 +60,11 @@ export const ContentsInput = styled.input`
   &::placeholder {
     font-size: 0.7rem;
     color: #bdbdbd;
+    width: 98%;
+    font-size: 0.55rem;
+    color: #bdbdbd;
+    word-break: keep-all;
+    white-space: normal;
   }
 
   @media ${breakPoints.mobile} {

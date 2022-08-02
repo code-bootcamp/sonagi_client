@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const TitleWrapper = styled.div`
+  width: 100%;
   height: 400px;
   padding: 0px 20px;
   display: flex;

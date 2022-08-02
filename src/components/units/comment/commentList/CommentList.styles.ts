@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   @media ${breakPoints.mobile} {
     padding: 0 20px;
     margin-top: 15px;
-    width: 94%;
+    width: 97%;
   }
 `;
 
@@ -50,7 +50,7 @@ export const BestComment = styled.div`
 export const WrapInfo = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 16px;
 `;
 
 export const ProfileIcon = styled.img`
@@ -66,14 +66,15 @@ export const ProfileIcon = styled.img`
 `;
 
 export const WrapCommentInfo = styled.div`
-  width: 90%;
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   margin-left: 25px;
+  width: 100%;
   @media ${breakPoints.mobile} {
-    margin-top: 5px;
+    /* margin-top: 5px;
     position: relative;
-    right: 42px;
+    right: 42px; */
   }
 `;
 
@@ -83,6 +84,13 @@ export const Comment = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.95rem;
+    position: relative;
+    top: 10px;
+    left: -24px;
+    /* border: 1px solid black; */
+    width: 170px;
+    word-wrap: break-word;
+    /* background-color: yellow; */
   }
 `;
 
@@ -90,6 +98,10 @@ export const WrapUserInfo = styled.div`
   padding-top: 5px;
   display: flex;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 55px;
+  }
 `;
 
 export const Name = styled.div`
@@ -99,6 +111,10 @@ export const Name = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
+    position: relative;
+    right: 88px;
+    top: 12px;
+    width: 160%;
   }
 `;
 
@@ -109,6 +125,12 @@ export const Date = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.75rem;
+    width: 450px;
+    position: relative;
+    right: 138px;
+    top: 12px;
+    /* top: 100px; */
+    /* left: 40px; */
   }
 `;
 
@@ -138,8 +160,21 @@ export const UpCount = styled.div`
 export const WrapIcon = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
+  left: 72%;
+  bottom: 55%;
+  @media ${breakPoints.tablet} {
+    position: relative;
+    left: 55%;
+  }
   @media ${breakPoints.mobile} {
-    /* width: 10%; */
+    width: 100%;
+    position: relative;
+    left: -18%;
+    bottom: 10px;
+    /* left: 30px; */
+    /* left: 280px; */
+    /* left: 230px; */
   }
 `;
 
@@ -180,4 +215,10 @@ export const AnswerIcon = styled.img`
 
 export const FooterWrapper = styled.div`
   margin-left: 60px;
+`;
+
+export const CommentWrap = styled.div`
+  @media ${breakPoints.mobile} {
+    /* width: 20%; */
+  }
 `;

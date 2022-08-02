@@ -49,6 +49,9 @@ export const WriterWrapper = styled.div`
   padding-bottom: 30px;
   border-bottom: 1px solid #bdbdbd;
   width: 100%;
+  @media ${breakPoints.mobile} {
+    width: 115%;
+  }
 `;
 
 export const Writer = styled.div`
@@ -60,8 +63,10 @@ export const Writer = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 1em;
-    width: 100%;
-    margin-right: 20px;
+    width: 200%;
+    position: relative;
+    left: 5px;
+    /* margin-right: 20px; */
     /* margin-top: 19%; */
     /* background-color: blue; */
   }
@@ -84,11 +89,14 @@ export const Title = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 1.25em;
-    width: 200%;
+    font-size: 1.15em;
+    width: 200px;
     position: relative;
     right: 65px;
-    top: 20px;
+    top: 31px;
+    /* border: 1px solid black; */
+    word-break: break-all;
+    white-space: normal;
   }
 `;
 
@@ -140,6 +148,9 @@ export const Contents = styled.div`
   @media ${breakPoints.tablet} {
     width: 100%;
   }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 
   /* border: 5px solid #eee; */
 `;
@@ -155,8 +166,13 @@ export const InnerContents = styled.div`
   @media ${breakPoints.mobile} {
     font-size: 1.16rem;
     margin-top: 10px;
-    width: 200%;
+    width: 160%;
     position: relative;
+    top: 20px;
+    left: 60%;
+    word-break: break-all;
+    white-space: normal;
+    /* border-top: 1px solid black; */
   }
 `;
 
@@ -182,6 +198,7 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
+
   @media ${breakPoints.mobile} {
     width: 330px;
     margin-left: 5px;
@@ -264,12 +281,15 @@ export const BottomWrapper = styled.div`
   height: 120px;
   background-color: #f6f6f6;
   @media ${breakPoints.tablet} {
-    width: 139.2%;
+    /* width: 139.2%; */
+    width: 136.1%;
+
     /* top: 550px; */
-    position: relative;
+    /* position: relative; */
   }
   @media ${breakPoints.mobile} {
     width: 345px;
+    /* margin-top: 20%; */
   }
 `;
 
@@ -319,6 +339,9 @@ export const Flex = styled.div`
   @media ${breakPoints.tablet} {
     width: 100%;
   }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const FlexWrap = styled.div`
@@ -346,8 +369,8 @@ export const ContentsWrap = styled.div`
   width: 190%;
   height: 120px;
   @media ${breakPoints.mobile} {
-    width: 130%;
-    right: 128%;
+    width: 100%;
+    right: 130%;
     position: relative;
     top: 5%;
   }

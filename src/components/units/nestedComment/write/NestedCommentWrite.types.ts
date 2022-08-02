@@ -6,12 +6,15 @@ import {
 } from "react";
 
 export interface INestedCommentWriteProps {
+  [x: string]: any;
   el: any;
   setIsNested?: Dispatch<SetStateAction<boolean>>;
   isNested?: boolean;
 }
 
 export interface INestedCommentWritePresenterProps {
+  onClickUpdateNestedComment: MouseEventHandler<HTMLDivElement> | undefined;
+  answerEL: any;
   onClickUpdateComment: MouseEventHandler<HTMLDivElement> | undefined;
   isHidden: any;
   WriteNestedComment: MouseEventHandler<HTMLDivElement> | undefined;

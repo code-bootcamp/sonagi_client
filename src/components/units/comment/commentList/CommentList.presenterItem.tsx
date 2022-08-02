@@ -28,7 +28,8 @@ export default function CommentListPresenterItem(
   // const router = useRouter();
 
   const onClickUpdate = () => {
-    setIsEdit(true);
+    setIsEdit((prev) => !prev);
+    // setIsNested((prev) => !prev);
   };
 
   const onClickDelete = async () => {
@@ -71,7 +72,9 @@ export default function CommentListPresenterItem(
             <S.ProfileIcon src="/comment/avatar.png" />
             <S.WrapCommentInfo>
               {/* <S.Comment>너무 재미있아요!!! 최고최고</S.Comment> */}
-              <S.Comment>{props.el?.contents}</S.Comment>
+              <S.CommentWrap>
+                <S.Comment>{props.el?.contents}</S.Comment>
+              </S.CommentWrap>
               {/* <S.Comment>{props.el?.comments?.contents}</S.Comment> */}
 
               <S.WrapUserInfo>
@@ -81,15 +84,43 @@ export default function CommentListPresenterItem(
                 {/* <S.Date>2022.07.04</S.Date> */}
                 <S.Date>{getDate(props.el?.createAt)}</S.Date>
 
-                <S.UpIcon
+                {/* <S.UpIcon
                   src="/comment/thumb_up.png"
                   onClick={props.onClickLikeComment}
-                />
+                /> */}
                 {/* <S.UpCount>325</S.UpCount> */}
                 {/* <S.UpCount>{props.data?.fetchComments.likeCount}</S.UpCount> */}
+                {props.el.user.id === props.UserData?.fetchLoginUser.id ? (
+                  <S.WrapIcon>
+                    <S.EditIcon
+                      title="수정하기"
+                      src="/comment/create.png"
+                      onClick={onClickUpdate}
+                    />
+                    <S.DeleteIcon
+                      title="삭제하기"
+                      src="/comment/Trash.png"
+                      onClick={onClickDelete}
+                    />
+
+                    <S.AnswerIcon
+                      title="대댓글 달기"
+                      src="/comment/insert_comment.png"
+                      onClick={onWriteAnswer}
+                    />
+                  </S.WrapIcon>
+                ) : (
+                  <S.WrapIcon>
+                    <S.AnswerIcon
+                      title="대댓글 달기"
+                      src="/comment/insert_comment.png"
+                      onClick={onWriteAnswer}
+                    />
+                  </S.WrapIcon>
+                )}
               </S.WrapUserInfo>
             </S.WrapCommentInfo>
-            {props.el.user.id === props.UserData?.fetchLoginUser.id ? (
+            {/* {props.el.user.id === props.UserData?.fetchLoginUser.id ? (
               <S.WrapIcon>
                 <S.EditIcon
                   title="수정하기"
@@ -116,7 +147,7 @@ export default function CommentListPresenterItem(
                   onClick={onWriteAnswer}
                 />
               </S.WrapIcon>
-            )}
+            )} */}
           </S.WrapInfo>
         </S.WrapperUserInfo>
       </S.Wrapper>

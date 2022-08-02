@@ -41,7 +41,6 @@ export default function ReadCommentListPresenterItem(
       Modal.error({ content: error.message });
     }
   };
-  console.log(props.el);
 
   return (
     <>

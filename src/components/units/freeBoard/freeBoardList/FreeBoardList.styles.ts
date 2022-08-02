@@ -20,14 +20,14 @@ export const WrapTitle = styled.div`
 `;
 
 export const MainTitle = styled.div`
-  font-size: 1.875em;
-  font-weight: normal;
-  color: #484848;
-  margin-top: 20px;
-  border-radius: 8px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #4d4d4d;
+  margin-bottom: 12px;
 
   @media ${breakPoints.mobile} {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
+    margin-top: 60px;
   }
 `;
 
@@ -37,7 +37,8 @@ export const WrapButton = styled.div`
   justify-content: flex-end;
 
   @media ${breakPoints.mobile} {
-    justify-content: center;
+    position: relative;
+    left: 20px;
   }
 `;
 
@@ -61,6 +62,9 @@ export const WrapperBoard = styled.div`
   margin: 20px 0px 20px 0px;
   width: 100%;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.div`
@@ -70,7 +74,14 @@ export const Title = styled.div`
   color: #484848;
 
   @media ${breakPoints.mobile} {
-    width: 200%;
+    width: 100%;
+    font-size: 1.15rem;
+    margin-top: 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 `;
 
@@ -88,7 +99,10 @@ export const Writer = styled.div`
   margin-left: 11px;
 
   @media ${breakPoints.mobile} {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    position: relative;
+    left: 6px;
+    bottom: 5px;
   }
 `;
 
@@ -97,19 +111,18 @@ export const Date = styled.div`
   color: #7e7e7e;
   margin-left: 57%;
   margin-top: 30px;
+  @media ${breakPoints.mobile} {
+    font-size: 0.9rem;
+    width: 120%;
+    margin-left: -73%;
+    margin-top: 65%;
+  }
 
   @media ${breakPoints.tablet} {
     font-size: 1.1rem;
     width: 100%;
     margin-left: 42%;
     margin-top: 30px;
-  }
-
-  @media ${breakPoints.mobile} {
-    font-size: 1.1rem;
-    width: 120%;
-    margin-left: -96%;
-    margin-top: 90px;
   }
 `;
 
@@ -123,7 +136,7 @@ export const Flex = styled.div`
   align-items: center;
   margin-left: 15px;
   @media ${breakPoints.mobile} {
-    width: 200%;
+    width: 120%;
   }
 `;
 
@@ -141,7 +154,8 @@ export const New = styled.div`
   margin-left: 30px;
   @media ${breakPoints.mobile} {
     position: relative;
-    right: 55px;
+    left: 15%;
+    top: 5px;
   }
 `;
 
@@ -253,7 +267,7 @@ export const AvatarImg = styled.img`
     width: 60px;
     height: 60px;
     position: absolute;
-    right: 290px;
+    right: 270px;
   }
 `;
 
@@ -261,6 +275,10 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   width: 60%;
+  @media ${breakPoints.mobile} {
+    position: relative;
+    left: 8%;
+  }
 `;
 
 export const MobileColumn = styled.div`

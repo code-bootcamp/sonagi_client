@@ -13,9 +13,7 @@ export default function FreeBoardDetailPresenter(
         <S.MainTitle>자유게시판</S.MainTitle>
         {/* <S.TitleLine></S.TitleLine> */}
       </S.RowWrap>
-      <S.WriterWrapper>
-        {/* <S.ReportIcon src="/freeBoard/report.png" /> */}
-      </S.WriterWrapper>
+      <S.WriterWrapper />
       <S.Flex>
         <S.Contents>
           <S.Flexs>
