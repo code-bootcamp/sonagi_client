@@ -7,8 +7,6 @@ export default function NoticeListContainer() {
   const router = useRouter();
   const { data } = useQuery(FETCH_NOTICES);
 
-  console.log(data);
-
   const onClickNoticedetail = () => {
     router.push("/notice/_id");
   };

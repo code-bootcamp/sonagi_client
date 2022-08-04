@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import {
-  FETCH_BOOK_MARKS_IN_USER,
   FETCH_EPISODE_DETAIL,
   FETCH_EPISODE_REVIEW_PAGE,
   FETCH_NOVEL_DETAIL,
@@ -19,7 +18,6 @@ export default function NovelReadContainer() {
   const [setDisplay, setIsDisplay] = useState(false);
   // 북마크
   const [switchBookmark] = useMutation(SWITCH_BOOK_MARK);
-  const { data: markData } = useQuery(FETCH_BOOK_MARKS_IN_USER);
   // 찜하기
   const [switchNovelLike] = useMutation(SWITCH_NOVEL_LIKE);
   const { data: readData } = useQuery(FETCH_EPISODE_DETAIL, {
@@ -46,8 +44,6 @@ export default function NovelReadContainer() {
     .map((el: Iel) => el.id)
     .reverse();
   const currentPage = readData?.fetchEpisodeDetail.index;
-  // console.log(indexPage);
-  // console.log(currentPage); // 5
 
   const onClickMoveToList = () => {
     router.push(`/novel/${router.query._id}`);
@@ -70,9 +66,7 @@ export default function NovelReadContainer() {
   };
 
   // 북마크
-  const MarkList = markData?.fetchBookmarksInUser.map((el: any) => el.id);
   const [ismark, setIsmark] = useState(false);
-  // const Mark = MarkList?.includes(NovelId)
   const onClickBookMark = async () => {
     try {
       const result = await switchBookmark({
@@ -82,8 +76,6 @@ export default function NovelReadContainer() {
         },
       });
       Modal.success({ content: result.data.switchBookmark.msg });
-      console.log(MarkList?.includes(result.data.switchBookmark.id));
-      console.log(result.data.switchBookmark.id);
       setIsmark((prev) => !prev);
     } catch (error: any) {
       Modal.error({ content: error.message });

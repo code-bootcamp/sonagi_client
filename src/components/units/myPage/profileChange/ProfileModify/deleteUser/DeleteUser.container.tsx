@@ -14,8 +14,7 @@ export default function DeleteUserContainer() {
 
   const onClickDeleteUser = async () => {
     try {
-      const result = await deleteLoginUser();
-      console.log(result);
+      await deleteLoginUser();
       Modal.success({ content: "그동안 소나기를 이용해주셔서 감사합니다" });
       window.location.replace("/");
     } catch (error: any) {

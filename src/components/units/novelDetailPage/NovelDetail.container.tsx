@@ -124,7 +124,6 @@ export default function NovelDetailContainer() {
         ],
       });
       refetch();
-      // console.log("선호작", result);
       Modal.success({ content: result.data?.switchNovelLike.msg });
       setIsSubmitting(false);
     } catch (error: any) {
@@ -144,7 +143,6 @@ export default function NovelDetailContainer() {
           },
         ],
       });
-      // console.log(result);
       Modal.success({ content: result.data?.deleteNovelIndex.msg });
     } catch (error: any) {
       Modal.error({ content: error.message });
@@ -162,7 +160,6 @@ export default function NovelDetailContainer() {
       await changePrivateNovelIndex({
         variables: { novelIndexID: event.currentTarget.id },
       });
-      // console.log(result);
       Modal.success({ content: "비공개" });
       setSwitchPrivate(true);
     } catch (error: any) {
@@ -219,7 +216,6 @@ export default function NovelDetailContainer() {
   };
 
   // 선택 결제
-  console.log(checkList);
   const selectNovelIndexIDs = checkList.map((el: ICheckListEl) => el.id);
 
   const onClickSelectPayment = async () => {

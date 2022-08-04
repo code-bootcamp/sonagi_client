@@ -17,7 +17,6 @@ export default function NoticeDetailContainer() {
     deleteNotice({
       variables: { noticeID: router.query.id },
     });
-    console.log(router.query.id);
     router.push("/notice");
     Modal.success({ content: "게시글을 삭제했습니다!" });
   };

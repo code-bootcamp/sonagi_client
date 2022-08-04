@@ -21,17 +21,6 @@ export default function Uploads01(props: IUploads01Props) {
   const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = checkFileValidation(event.target.files?.[0]);
     if (!file) return;
-    console.log(file);
-    // props.onChangeFileUrls(file, props.index);
-
-    // const fileReader = new FileReader();
-    // fileReader.readAsDataURL(file);
-    // fileReader.onload = (data) => {
-    //   if (typeof data.target?.result === "string") {
-    //     console.log(data.target?.result);
-    //     setImageUrl(data.target?.result);
-    //   }
-    // };
 
     try {
       const result = await uploadFile({
@@ -40,9 +29,7 @@ export default function Uploads01(props: IUploads01Props) {
           files: [file],
         },
       });
-      // console.log(result);
-      // setFileUrl(result.data.uploadFile[0].url);
-      // console.log(result.data.uploadFile[0].url);
+
       props.onChangeFileUrls(result.data.uploadFile[0].url, props.index);
     } catch (error) {
       Modal.error({ content: (error as Error).message });

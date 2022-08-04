@@ -13,17 +13,11 @@ function FreeBoardListContainer() {
 
   const { data } = useQuery(FETCH_BOARDS_ALL);
 
-  // const { data: dataBoardsCount, refetch: refetchBoardsCount } = useQuery(
-  //   FETCH_BOARD_ALL_COUNT
-  // );
-  // console.log("dataBoardsCount", dataBoardsCount);
-
   const onClickMoveToFreeBoardWrite = () => {
     router.push("/freeBoard/new");
   };
 
   const onClickMoveToFreeBoardDetail = (el: { id: any }) => () => {
-    console.log("el", el);
     router.push(`/freeBoard/${el.id}`);
   };
 

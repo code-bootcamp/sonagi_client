@@ -5,13 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { GraphQLClient } from "graphql-request";
-import {
-  AUTH_PHONE_OK,
-  RESTORE_ACCESS_TOKEN,
-  SEND_PHONE,
-  SOCIAL_AUTH,
-} from "./SocialLogin.queries";
+import { AUTH_PHONE_OK, SEND_PHONE, SOCIAL_AUTH } from "./SocialLogin.queries";
 import { Modal } from "antd";
 
 const schema = yup.object({
@@ -56,7 +50,6 @@ export default function SocialLoginContainer() {
           phone,
         },
       }).then((result) => setToken(result.data.SendPhone));
-      console.log(phone);
     } catch (error) {
       Modal.error({ content: "인증번호 전송에 실패했습니다" });
     }
@@ -64,7 +57,7 @@ export default function SocialLoginContainer() {
 
   const onClickAuthPhone = () => {
     try {
-      const result = AuthPhoneOK({
+      AuthPhoneOK({
         variables: {
           phoneInput: {
             phone,
@@ -72,7 +65,6 @@ export default function SocialLoginContainer() {
           },
         },
       });
-      console.log(result);
       setPhoneCheck(true);
     } catch (error) {
       Modal.error({ content: "인증 실패" });
@@ -82,7 +74,7 @@ export default function SocialLoginContainer() {
   const onClickSignUp = (data: any) => {
     if (Agree1 && Agree2) {
       try {
-        const result = socialAuth({
+        socialAuth({
           variables: {
             authInput: {
               nickName: data.nickName,
@@ -90,8 +82,6 @@ export default function SocialLoginContainer() {
             },
           },
         });
-        console.log(data);
-        console.log(result);
         Modal.success({ content: "소셜 로그인이 완료되었습니다" });
         router.push("/");
       } catch (error: any) {
@@ -101,12 +91,11 @@ export default function SocialLoginContainer() {
   };
 
   useEffect(() => {
-    const graphQlClient = new GraphQLClient(
-      "https://miny-shrimp.shop/graphql",
-      { credentials: "include" }
-    );
-    const result = graphQlClient.request(RESTORE_ACCESS_TOKEN);
-    console.log(result);
+    // const graphQlClient = new GraphQLClient(
+    //   "https://miny-shrimp.shop/graphql",
+    //   { credentials: "include" }
+    // );
+    // const result = graphQlClient.request(RESTORE_ACCESS_TOKEN);
   }, []);
 
   return (

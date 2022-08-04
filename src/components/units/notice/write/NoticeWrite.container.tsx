@@ -24,7 +24,7 @@ export default function NoticeWriteContainer() {
   // 등록
   const onClickNoticeSubmit = async (data: any) => {
     try {
-      const result = await createNotice({
+      await createNotice({
         variables: {
           createNoticeInput: {
             title: data.title,
@@ -35,10 +35,8 @@ export default function NoticeWriteContainer() {
         },
       });
       Modal.success({ content: "등록 완료" });
-      console.log(result);
       router.push("/notice");
     } catch (error) {
-      console.log(error);
       Modal.error({ content: (error as Error).message });
     }
   };
@@ -50,7 +48,6 @@ export default function NoticeWriteContainer() {
 
   // 이미지 파일 수정
   const onChangeFileUrls = (fileUrl: string, index: number) => {
-    // console.log(fileUrls)
     const newFileUrls = [...fileUrls];
     newFileUrls[index] = fileUrl;
     setFileUrls(newFileUrls);

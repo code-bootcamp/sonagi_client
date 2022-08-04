@@ -30,6 +30,7 @@ export const FETCH_LOGIN_USER = gql`
 export default function LayoutHeader() {
   const router = useRouter();
   const [skeyword, setSkeyword] = useRecoilState(searchKeyword);
+  console.log(skeyword);
 
   const [inputblank, setinputblank] = useState("");
 
@@ -40,8 +41,7 @@ export default function LayoutHeader() {
   const { onClickMoveToPage } = useMoveToPage();
 
   const onClickLogout = async () => {
-    const result = await Logout();
-    console.log(result);
+    await Logout();
 
     localStorage.removeItem("refreshToken");
     setAccessToken("");
@@ -57,8 +57,6 @@ export default function LayoutHeader() {
     setSkeyword(inputblank);
     setinputblank("");
   };
-
-  console.log(skeyword);
 
   return (
     <>

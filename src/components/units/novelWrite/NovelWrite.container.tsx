@@ -22,8 +22,6 @@ const schema = yup.object({
 });
 
 export default function NovelWriteContainer(props: INovelWriteContainerProps) {
-  console.log(props.editData);
-
   const router = useRouter();
 
   const [genre, setGenre] = useState("");
@@ -33,7 +31,6 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
   const [createNovel] = useMutation(CREATE_NOVEL);
   const [updateNovel] = useMutation(UPDATE_NOVEL);
   const { data: categoryData } = useQuery(FETCH_NOVEL_CATEGORYS_ALL);
-  console.log(categoryData);
 
   const { register, handleSubmit, formState, setValue, trigger } = useForm({
     resolver: yupResolver(schema),
@@ -45,7 +42,6 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
   const editorRef = useRef<Editor>(null);
   const onChangeDescription = (value: string) => {
     const htmlData = editorRef.current?.getInstance()?.getHTML();
-    console.log(htmlData);
     setValue("description", htmlData);
     trigger("description");
   };
@@ -64,7 +60,6 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
     const newFileUrls = [...fileUrls];
     newFileUrls[index] = fileUrl;
     setFileUrls(newFileUrls);
-    // console.log(newFileUrls);
 
     setValue("fileURLs", newFileUrls);
     trigger("fileURLs");
@@ -93,7 +88,6 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
 
   const onClickGenre = (event: any) => {
     setGenre(event?.target.id);
-    console.log(event?.target.id);
     setName(event.target.innerText);
     SetIsSelect((prev) => !prev);
 
@@ -124,7 +118,6 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
 
   // 등록
   const onClickSubmit = async (data: Idata) => {
-    // console.log(fileId[0]);
     try {
       const result = await createNovel({
         variables: {
@@ -138,7 +131,6 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
           },
         },
       });
-      console.log("하하하", result);
       Modal.success({ content: "등록 완료" });
       router.push(`/novel/${result.data?.createNovel.id}`);
     } catch (error) {
@@ -162,7 +154,6 @@ export default function NovelWriteContainer(props: INovelWriteContainerProps) {
           },
         },
       });
-      console.log(result);
       Modal.success({ content: "등록 완료" });
       router.push(`/novel/${result.data?.updateNovel.id}`);
     } catch (error) {

@@ -17,7 +17,6 @@ export default function HorrorContainer() {
       },
     },
   });
-  console.log("소설데이터", PbHorror);
 
   const { data: FinHorror } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -30,11 +29,9 @@ export default function HorrorContainer() {
       },
     },
   });
-  console.log("소설데이터", FinHorror);
 
   const onClickMoveToDetail = (el: any) => (event: any) => {
     router.push(`/novel/${event.currentTarget?.id}`);
-    console.log(event.target);
   };
 
   return (

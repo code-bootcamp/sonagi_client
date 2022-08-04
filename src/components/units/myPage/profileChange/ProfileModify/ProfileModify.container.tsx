@@ -37,7 +37,7 @@ export default function ProfileModifyContainer() {
 
   const onClickChangeUser = async (data: any) => {
     try {
-      const result = await updateLoginUser({
+      await updateLoginUser({
         variables: {
           updateInput: {
             name: data.name,
@@ -46,7 +46,6 @@ export default function ProfileModifyContainer() {
           },
         },
       });
-      console.log(result);
       Modal.success({ content: "회원정보가 변경되었습니다" });
       reset();
     } catch (error: any) {

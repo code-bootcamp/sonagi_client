@@ -44,14 +44,11 @@ export default function DetailCommentListContainer() {
         page: Math.ceil(data.fetchNovelReviewPage.novelRivews.length / 10) + 1,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        // console.log("하하", fetchMoreResult?.fetchNovelReviewPage.novelRivews);
         if (fetchMoreResult?.fetchNovelReviewPage.novelRivews.length === 0) {
           Modal.error({ content: "리뷰가 더이상 없습니다" });
           return prev.fetchNovelReviewPage;
         }
-        // console.log("패치", fetchMoreResult);
-        // console.log(prev.fetchNovelReviewPage.novelRivews);
-        // console.log("123", fetchMoreResult.fetchNovelReviewPage.novelRivews);
+
         return {
           fetchNovelReviewPage: {
             novelRivews: [
@@ -66,7 +63,6 @@ export default function DetailCommentListContainer() {
     // refetch();
   };
 
-  // console.log("데이터", data);
   return (
     <DetailCommentListPresenter
       data={data}
