@@ -56,6 +56,7 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 :clipboard: https://velog.io/@huiju </br>
 :rabbit: https://github.com/2huiju </br>
 - 메인 페이지, 헤더, 네비게이션, 푸터, 로그인, 회원가입, 마이페이지(찜한 작품, 후원 작품, 나의 작품, 결제 내역, 포인트 충전, 1:1문의, 회원정보 변경, 비밀번호 변경, 회원 탈퇴), 이벤트 페이지, 결제, 환불 구현
+- Layout & GlobalStyles
 - 반응형 디자인 구현
 
 </br>
