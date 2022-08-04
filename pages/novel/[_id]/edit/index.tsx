@@ -52,7 +52,6 @@ export default function NovelEditPage() {
   });
 
   // console.log(data);
-
   return loading ? (
     <></>
   ) : (
