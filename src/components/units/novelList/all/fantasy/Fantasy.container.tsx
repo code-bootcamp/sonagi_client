@@ -18,7 +18,6 @@ export default function FantasyContainer() {
       },
     },
   });
-  console.log("소설데이터", PbFantasy);
 
   const { data: FinFantasy } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -31,11 +30,9 @@ export default function FantasyContainer() {
       },
     },
   });
-  console.log("소설데이터", FinFantasy);
 
   const onClickMoveToDetail = (el: any) => (event: any) => {
     router.push(`/novel/${event.currentTarget?.id}`);
-    console.log(event.target);
   };
 
   return (

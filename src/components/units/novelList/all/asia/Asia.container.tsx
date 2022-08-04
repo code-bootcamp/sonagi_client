@@ -18,7 +18,6 @@ export default function AsiaContainer() {
       },
     },
   });
-  console.log("소설데이터", PbAsia);
 
   const { data: FinAsia } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -31,12 +30,10 @@ export default function AsiaContainer() {
       },
     },
   });
-  console.log("소설데이터", FinAsia);
 
   const onClickMoveToDetail =
     (el: any) => (event: MouseEvent<HTMLDivElement>) => {
       router.push(`/novel/${event.currentTarget.id}`);
-      console.log(event.target);
     };
 
   return (

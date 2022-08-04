@@ -14,7 +14,6 @@ const ToastUi = dynamic(() => import("../../commons/toastUI"), {
 });
 
 export default function NovelWritePresenter(props: INovelWritePresenterProps) {
-  console.log(props.isDay);
   return (
     <form
       onSubmit={

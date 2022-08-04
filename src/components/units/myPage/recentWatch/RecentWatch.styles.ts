@@ -2,8 +2,11 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 1000px;
-  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
 `;
 
 export const Flex = styled.div`
@@ -17,6 +20,14 @@ export const Flex = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
 
+export const TopWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 3% 0;
+`;
+
 export const Flex2 = styled.div`
   display: flex;
   margin-left: 20px;
@@ -25,8 +36,7 @@ export const Flex2 = styled.div`
 `;
 
 export const RecentWatch = styled.div`
-  font-size: 1.563rem;
-  margin: 20px 0px 40px 0px;
+  font-size: 1.125rem;
 `;
 
 export const Column = styled.div`
@@ -296,13 +306,6 @@ export const HamburgerWrapper = styled.div`
   @media ${breakPoints.mobile} {
     display: flex;
     width: 100%;
-    z-index: 3;
-    position: absolute;
     justify-content: right;
-    bottom: 375px;
-    right: -1px;
-    /* position: relative;
-    left: 540px;
-    bottom: 80px; */
   }
 `;

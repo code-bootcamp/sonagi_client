@@ -4,7 +4,8 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  margin: 3% 0;
+  padding: 2%;
 `;
 
 export const WrapHambuger = styled.div`

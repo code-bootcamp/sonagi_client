@@ -8,14 +8,12 @@ import { ILikeNovelContainerProps } from "./LikeNovel.types";
 export default function LikeNovelContainer() {
   const { data } = useQuery(FETCH_NOVEL_LIKE);
 
-  console.log(data);
-
   const [deleteNovelLike] = useMutation(DELETE_NOVEL_LIKE);
   const { onClickMoveToPage } = useMoveToPage();
 
   const onClickDeleteNovelLike = (el: ILikeNovelContainerProps) => async () => {
     try {
-      const result = await deleteNovelLike({
+      await deleteNovelLike({
         variables: {
           novelLikeID: String(el.id),
         },
@@ -25,7 +23,6 @@ export default function LikeNovelContainer() {
           },
         ],
       });
-      console.log(result);
       Modal.success({ content: "찜하기가 취소되었습니다" });
     } catch (error: any) {
       Modal.error({ content: error.message });

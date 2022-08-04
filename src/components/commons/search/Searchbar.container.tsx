@@ -17,7 +17,6 @@ export default function SearchbarContainer(props: ISearchbarsProps) {
   function onChangeSearchbar(event: any) {
     getDebounce(event.target.value);
   }
-  console.log(skeyword);
 
   useEffect(() => {
     props.onChangeKeyword(skeyword);

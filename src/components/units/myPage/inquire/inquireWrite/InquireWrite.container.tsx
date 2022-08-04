@@ -24,7 +24,7 @@ export default function InquireWriteContainer() {
 
   const onClickCreateQuestion = async (data: any) => {
     try {
-      const result = await createQuestion({
+      await createQuestion({
         variables: {
           createQuestionInput: {
             title: data.title,
@@ -32,7 +32,6 @@ export default function InquireWriteContainer() {
           },
         },
       });
-      console.log(result);
       Modal.success({ content: "문의가 등록되었습니다" });
       router.push("/myPage/inquire/");
     } catch (error: any) {

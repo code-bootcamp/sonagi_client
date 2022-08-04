@@ -64,23 +64,27 @@ export default function SignUpContainer() {
   };
 
   const onClickSendPhone = () => {
-    setPhoneCheck(false);
-    try {
-      SendPhone({
-        variables: {
-          phone,
-        },
-      }).then((result) => setToken(result.data.SendPhone));
-      console.log(phone);
-      setSendPhone(true);
-    } catch (error: any) {
-      Modal.error({ content: "인증번호 전송에 실패했습니다" });
+    if (!phone) Modal.warning({ content: "휴대폰번호를 입력해주세요" });
+    else if (phone.length !== 11)
+      Modal.warning({ content: "올바른 번호를 입력해주세요" });
+    else {
+      setPhoneCheck(false);
+      try {
+        SendPhone({
+          variables: {
+            phone,
+          },
+        }).then((result) => setToken(result.data.SendPhone));
+        setSendPhone(true);
+      } catch (error: any) {
+        Modal.error({ content: "인증번호 전송에 실패했습니다" });
+      }
     }
   };
 
   const onClickAuthPhone = () => {
     try {
-      const result = AuthPhoneOK({
+      AuthPhoneOK({
         variables: {
           phoneInput: {
             phone,
@@ -88,7 +92,6 @@ export default function SignUpContainer() {
           },
         },
       });
-      console.log(result);
       setPhoneCheck(true);
     } catch (error) {
       Modal.error({ content: "인증 실패" });
@@ -96,10 +99,9 @@ export default function SignUpContainer() {
   };
 
   const onClickSignUp = (data: any) => {
-    console.log(Agree1, Agree2);
     if (Agree1 && Agree2) {
       try {
-        const result = createUser({
+        createUser({
           variables: {
             createUserInput: {
               name: data.name,
@@ -110,8 +112,7 @@ export default function SignUpContainer() {
             },
           },
         });
-        console.log(data);
-        console.log(result);
+
         Modal.success({ content: "회원가입이 완료되었습니다" });
         router.push("/login");
       } catch (error: any) {

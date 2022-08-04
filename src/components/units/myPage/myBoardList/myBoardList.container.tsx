@@ -8,11 +8,9 @@ export default function MyBoardListContainer() {
   const router = useRouter();
   const { data: BoardData } = useQuery(FETCH_BOARDS);
   const { data: CommentData } = useQuery(FETCH_COMMENTS);
-  console.log("CommentData", CommentData);
   const [isBoardList, setIsBoardList] = useState(false);
   const onClickMyBordList = () => {
     setIsBoardList(true);
-    console.log(isBoardList);
   };
   const onClickMyProductList = () => {
     setIsBoardList(false);

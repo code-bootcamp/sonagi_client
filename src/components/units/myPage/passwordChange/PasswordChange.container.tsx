@@ -37,12 +37,11 @@ export default function PasswordChangeContainer() {
       });
       if (result.data.comparePassword.isSuccess === true) {
         try {
-          const result = await updateUserPwd({
+          await updateUserPwd({
             variables: {
               pwd: data.pwd,
             },
           });
-          console.log(result);
           Modal.success({ content: "비밀번호가 변경되었습니다" });
           reset();
         } catch (error: any) {

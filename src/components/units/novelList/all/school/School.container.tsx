@@ -18,7 +18,6 @@ export default function SchoolContainer() {
       },
     },
   });
-  console.log("소설데이터", PbSchool);
 
   const { data: FinSchool } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -31,11 +30,9 @@ export default function SchoolContainer() {
       },
     },
   });
-  console.log("소설데이터", FinSchool);
 
   const onClickMoveToDetail = (el: any) => (event: any) => {
     router.push(`/novel/${event.currentTarget?.id}`);
-    console.log(event.target);
   };
 
   return (

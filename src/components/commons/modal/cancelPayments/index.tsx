@@ -160,11 +160,10 @@ export default function PaymentPage(props: any) {
   };
 
   const onClickCancelPayment = async () => {
-    console.log(reason);
     props.setIsModalVisible(false);
 
     try {
-      const result = await cancelPayment({
+      await cancelPayment({
         variables: {
           cancelPaymentInput: {
             impUid,
@@ -179,7 +178,6 @@ export default function PaymentPage(props: any) {
           },
         ],
       });
-      console.log(result);
       Modal.success({ content: "환불이 완료되었습니다" });
     } catch (error) {
       Modal.error({ content: (error as Error).message });

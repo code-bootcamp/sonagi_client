@@ -20,7 +20,6 @@ export default function LayoutNavigation() {
   };
 
   useEffect(() => {
-    console.log(activeMenu);
     if (!router.asPath.includes(activeMenu) || activeMenu === "") {
       setActiveMenu(router.asPath);
     }

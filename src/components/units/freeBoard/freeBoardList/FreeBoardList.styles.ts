@@ -39,6 +39,7 @@ export const WrapButton = styled.div`
   @media ${breakPoints.mobile} {
     position: relative;
     left: 20px;
+    bottom: 12px;
   }
 `;
 
@@ -64,6 +65,7 @@ export const WrapperBoard = styled.div`
   cursor: pointer;
   @media ${breakPoints.mobile} {
     width: 100%;
+    padding: 45px 20px 45px 20px;
   }
 `;
 
@@ -72,6 +74,11 @@ export const Title = styled.div`
   font-weight: bold;
   margin-left: 20px;
   color: #484848;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -103,6 +110,7 @@ export const Writer = styled.div`
     position: relative;
     left: 6px;
     bottom: 5px;
+    margin-left: 9px;
   }
 `;
 
@@ -111,12 +119,6 @@ export const Date = styled.div`
   color: #7e7e7e;
   margin-left: 57%;
   margin-top: 30px;
-  @media ${breakPoints.mobile} {
-    font-size: 0.9rem;
-    width: 120%;
-    margin-left: -73%;
-    margin-top: 65%;
-  }
 
   @media ${breakPoints.tablet} {
     font-size: 1.1rem;
@@ -126,9 +128,23 @@ export const Date = styled.div`
   }
 `;
 
+export const Date2 = styled.div`
+  font-size: 1rem;
+  color: #7e7e7e;
+  margin-left: 35px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
 export const DateWrapper = styled.div`
   width: 50%;
   margin-right: 1%;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Flex = styled.div`
@@ -153,9 +169,7 @@ export const New = styled.div`
   align-items: center;
   margin-left: 30px;
   @media ${breakPoints.mobile} {
-    position: relative;
-    left: 15%;
-    top: 5px;
+    margin-top: 10px;
   }
 `;
 
@@ -266,8 +280,7 @@ export const AvatarImg = styled.img`
   @media ${breakPoints.mobile} {
     width: 60px;
     height: 60px;
-    position: absolute;
-    right: 270px;
+    margin-right: 0;
   }
 `;
 
@@ -276,8 +289,6 @@ export const Column = styled.div`
   flex-direction: column;
   width: 60%;
   @media ${breakPoints.mobile} {
-    position: relative;
-    left: 8%;
   }
 `;
 

@@ -35,8 +35,6 @@ export default function ReadCommentListContainer(
         ) {
           return prev.fetchEpisodeReviewPage;
         }
-        // console.log(prev.fetchEpisodeReviewPage.episodeReviews);
-        // console.log(fetchMoreResult.fetchEpisodeReviewPage.episodeReviews);
         return {
           fetchEpisodeReviewPage: {
             episodeReviews: [

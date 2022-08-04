@@ -41,7 +41,6 @@ export default function VolumeWriteContainer(
   const editorRef = useRef<Editor>(null);
   const onChangeDescription = (value: string) => {
     const htmlData = editorRef.current?.getInstance()?.getHTML();
-    console.log(htmlData);
     setValue("contents", htmlData);
     trigger("contents");
   };

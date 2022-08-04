@@ -15,7 +15,6 @@ export default function FreeBoardDetailContainer() {
   const { data: BoardData } = useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
-  console.log("페치데이터", BoardData);
   const [deleteBoard] = useMutation(DELETE_BOARD);
   const onClickDelete = () => {
     try {

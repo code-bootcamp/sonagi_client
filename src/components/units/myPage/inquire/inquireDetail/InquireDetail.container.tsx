@@ -13,8 +13,6 @@ export default function InquireDetailContainer() {
     variables: { questionID: router.query._id },
   });
 
-  console.log(data);
-
   return (
     <InquireDetailPresenter data={data} onClickMoveToPage={onClickMoveToPage} />
   );

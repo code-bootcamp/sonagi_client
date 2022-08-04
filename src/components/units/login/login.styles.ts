@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -101,6 +102,10 @@ export const LoginButton = styled.button`
   font-size: 13px;
   cursor: pointer;
   border: none;
+
+  @media ${breakPoints.mobile} {
+    margin: 10px 0;
+  }
 `;
 
 export const SubBox = styled.div`
@@ -110,6 +115,10 @@ export const SubBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media ${breakPoints.mobile} {
+    padding: 10px 10px;
+  }
 `;
 
 export const SubButton = styled.div`
