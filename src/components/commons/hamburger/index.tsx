@@ -6,15 +6,19 @@ import { breakPoints } from "../../../commons/styles/media";
 
 const Wrapper = styled.div`
   width: 150px;
+  z-index: 50;
 `;
 
 const WrapToggle = styled.div`
   position: absolute;
   width: 150px;
+  height: 100vh;
   padding: 10px;
   background-color: #ffffff;
-  border: 1px solid #2277d8;
-  border-radius: 10px;
+  border: 1px solid #2277d2;
+  z-index: 50;
+  right: 0;
+  transition: 1s;
 `;
 
 const WrapTitle = styled.div`
@@ -32,7 +36,7 @@ const HamburgerWrapper = styled.div`
 
 const Title = styled.div`
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 500;
 `;
 
 const Label = styled.div`

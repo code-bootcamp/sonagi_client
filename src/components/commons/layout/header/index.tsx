@@ -5,6 +5,7 @@ import { useRecoilState } from "recoil";
 import useMoveToPage from "../../../../commons/hooks/UseMoveToPage";
 import { accessTokenState, searchKeyword } from "../../../../commons/store";
 import * as S from "./header.styles";
+import LayoutHeaderMobile from "./headerMobile";
 
 const LOGOUT_USER = gql`
   mutation Logout {
@@ -60,43 +61,46 @@ export default function LayoutHeader() {
   console.log(skeyword);
 
   return (
-    <S.Wrapper>
-      <S.TopBox>
-        {accessToken ? (
-          <>
-            <S.LoginUser>{data?.fetchLoginUser?.nickName}</S.LoginUser>
-            <S.LoginUser2>님 환영합니다!</S.LoginUser2>
-            <S.SignUpLoginButton onClick={onClickLogout}>
-              로그아웃
-            </S.SignUpLoginButton>
-          </>
-        ) : (
-          <>
-            <S.SignUpLoginButton onClick={onClickMoveToPage("/signup")}>
-              회원가입
-            </S.SignUpLoginButton>
-            <S.SignUpLoginButton onClick={onClickMoveToPage("/login")}>
-              로그인
-            </S.SignUpLoginButton>
-          </>
-        )}
-      </S.TopBox>
-      <S.BottomBox>
-        <S.LogoImg onClick={onClickMoveToPage("/")} src="/header/logo.svg" />
-        <S.WrapSearch>
-          <S.SearchBox>
-            <S.SearchButton
-              onClick={onClickSearchPage}
-              src="/header/search.png"
+    <>
+      <S.Wrapper>
+        <S.TopBox>
+          {accessToken ? (
+            <>
+              <S.LoginUser>{data?.fetchLoginUser?.nickName}</S.LoginUser>
+              <S.LoginUser2>님 환영합니다!</S.LoginUser2>
+              <S.SignUpLoginButton onClick={onClickLogout}>
+                로그아웃
+              </S.SignUpLoginButton>
+            </>
+          ) : (
+            <>
+              <S.SignUpLoginButton onClick={onClickMoveToPage("/signup")}>
+                회원가입
+              </S.SignUpLoginButton>
+              <S.SignUpLoginButton onClick={onClickMoveToPage("/login")}>
+                로그인
+              </S.SignUpLoginButton>
+            </>
+          )}
+        </S.TopBox>
+        <S.BottomBox>
+          <S.LogoImg onClick={onClickMoveToPage("/")} src="/header/logo.svg" />
+          <S.WrapSearch>
+            <S.SearchBox>
+              <S.SearchButton
+                onClick={onClickSearchPage}
+                src="/header/search.png"
+              />
+              <S.SearchInput onChange={onChangeSearchbar} value={inputblank} />
+            </S.SearchBox>
+            <S.MyPageButton
+              onClick={onClickMoveToPage("/myPage")}
+              src="/header/user.svg"
             />
-            <S.SearchInput onChange={onChangeSearchbar} value={inputblank} />
-          </S.SearchBox>
-          <S.MyPageButton
-            onClick={onClickMoveToPage("/myPage")}
-            src="/header/user.svg"
-          />
-        </S.WrapSearch>
-      </S.BottomBox>
-    </S.Wrapper>
+          </S.WrapSearch>
+        </S.BottomBox>
+      </S.Wrapper>
+      <LayoutHeaderMobile />
+    </>
   );
 }

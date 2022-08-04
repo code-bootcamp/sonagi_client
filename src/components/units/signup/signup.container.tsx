@@ -64,17 +64,22 @@ export default function SignUpContainer() {
   };
 
   const onClickSendPhone = () => {
-    setPhoneCheck(false);
-    try {
-      SendPhone({
-        variables: {
-          phone,
-        },
-      }).then((result) => setToken(result.data.SendPhone));
-      console.log(phone);
-      setSendPhone(true);
-    } catch (error: any) {
-      Modal.error({ content: "인증번호 전송에 실패했습니다" });
+    if (!phone) Modal.warning({ content: "휴대폰번호를 입력해주세요" });
+    else if (phone.length !== 11)
+      Modal.warning({ content: "올바른 번호를 입력해주세요" });
+    else {
+      setPhoneCheck(false);
+      try {
+        SendPhone({
+          variables: {
+            phone,
+          },
+        }).then((result) => setToken(result.data.SendPhone));
+        console.log(phone);
+        setSendPhone(true);
+      } catch (error: any) {
+        Modal.error({ content: "인증번호 전송에 실패했습니다" });
+      }
     }
   };
 

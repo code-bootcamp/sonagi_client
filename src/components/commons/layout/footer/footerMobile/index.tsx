@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 100;
 
   @media (min-width: 768px) {
     display: none;
@@ -56,7 +57,7 @@ export default function FooterMobile() {
         <ColumnWrap>
           <Image
             src="/footer/footer03.png"
-            onClick={onClickMoveToPage("/notice")}
+            onClick={onClickMoveToPage("/myPage/recentWatch")}
           />
           <Text>내 서재</Text>
         </ColumnWrap>

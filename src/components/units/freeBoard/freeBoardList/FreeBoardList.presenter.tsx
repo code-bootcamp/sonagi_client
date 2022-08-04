@@ -41,7 +41,6 @@ export default function FreeBoardListPresenter(props: IFreeBoardListPresenter) {
           <S.WrapperBoard
             key={el.id}
             onClick={props.onClickMoveToFreeBoardDetail(el)}
-            // id={el.id}
           >
             <S.AvatarImg src="/freeBoard/avatar.png" />
             <S.Column>
@@ -51,8 +50,8 @@ export default function FreeBoardListPresenter(props: IFreeBoardListPresenter) {
               </S.Flex>
               <S.WrapInfo>
                 <S.Writer>{el.user?.nickName}</S.Writer>
-                {/* <div>{el.viewCount}</div> */}
               </S.WrapInfo>
+              <S.Date2>{getDate(el.createAt)}</S.Date2>
             </S.Column>
             <S.DateWrapper>
               <S.Date>{getDate(el.createAt)}</S.Date>
@@ -60,13 +59,6 @@ export default function FreeBoardListPresenter(props: IFreeBoardListPresenter) {
           </S.WrapperBoard>
         )
       )}
-      {/* <Paginations refetch={props.refetch} count={props.dataBoardsCount} /> */}
-      {/* <S.WrapButton>
-        <Button01
-          title="작성하기"
-          onClick={props.onClickMoveToFreeBoardWrite}
-        />
-      </S.WrapButton> */}
     </S.Wrapper>
   );
 }

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../commons/styles/media";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -8,22 +8,15 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   justify-content: center;
 
-  @media ${breakPoints.mobile} {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
 
 export const TopBox = styled.div`
-  height: 40px;
-  padding: 10px 0px;
   display: flex;
-  flex-direction: row;
   justify-content: right;
-  border-bottom: 1px solid #e0e0e0;
-
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
+  padding: 10px 10px 0 0;
 `;
 
 export const BottomBox = styled.div`
@@ -81,6 +74,20 @@ export const SearchBox = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 80vw;
+  }
+`;
+
+export const SearchBox2 = styled.div`
+  width: 310px;
+  height: 40px;
+  background: #f2f2f2;
+  border-radius: 5px;
+  padding: 8px;
+  display: flex;
+  cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 60vw;
   }
 `;
 
