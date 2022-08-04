@@ -28,16 +28,14 @@ export default function NovelBestListContainer(
       },
     },
   });
-  console.log(LikeNovel);
 
   const HeartList = LikeNovel?.fetchNovelLikeInUser.map(
     (el: Iel) => el.novel.id
   );
-  console.log(HeartList);
 
   const onClickLike = (el: Iel) => async () => {
     try {
-      const result = await switchNovelLikes({
+      await switchNovelLikes({
         variables: {
           novelID: el.id,
         },
@@ -59,8 +57,6 @@ export default function NovelBestListContainer(
           },
         ],
       });
-      console.log(el.id);
-      console.log(result);
       if (HeartList.includes(el.id)) {
         Modal.success({ content: "선호작 취소" });
       } else Modal.success({ content: "선호작 등록!" });

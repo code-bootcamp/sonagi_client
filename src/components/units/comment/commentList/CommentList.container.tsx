@@ -13,7 +13,6 @@ export default function CommentListContainer() {
   const { data: NestedData } = useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
-  console.log("댓글리스트data", CommentData);
 
   return (
     <CommentListPresenter

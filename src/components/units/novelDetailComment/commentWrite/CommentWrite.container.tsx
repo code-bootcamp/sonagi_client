@@ -44,7 +44,7 @@ export default function DetailCommentWriteContainer(
   const onClickComment = async (data: Idata) => {
     if (data.contents) {
       try {
-        const result = await createNovelReview({
+        await createNovelReview({
           variables: {
             createReviewInput: {
               contents: data.contents,
@@ -62,7 +62,6 @@ export default function DetailCommentWriteContainer(
         reset();
         setStar(0);
         Modal.success({ content: "리뷰를 등록했습니다." });
-        console.log("질문등록", result);
       } catch (error: any) {
         Modal.error({ content: error.message });
       }
@@ -78,11 +77,9 @@ export default function DetailCommentWriteContainer(
   }, [props.el]);
 
   const onClickUpdateComment = async (data: Idata) => {
-    console.log("el", props.el);
-
     if (data.contents) {
       try {
-        const result = await updateNovelReview({
+        await updateNovelReview({
           variables: {
             updateNovelReviewInput: {
               id: props.el.id,
@@ -99,7 +96,6 @@ export default function DetailCommentWriteContainer(
             },
           ],
         });
-        console.log(result);
         Modal.success({ content: "수정 완료" });
         props.setIsEdit((prev: any) => !prev);
       } catch (error: any) {

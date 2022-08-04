@@ -24,11 +24,9 @@ export default function SearchContainer() {
       },
     },
   });
-  console.log("소설데이터", data);
 
   const onClickMoveToDetail = (el: Iel) => (event: MouseEvent) => {
     router.push(`/novel/${event.currentTarget.id}`);
-    console.log(event.target);
     const baskets = JSON.parse(localStorage.getItem("baskets") || "") || [];
     let isExists = false;
     baskets.forEach((basketEL: any) => {
@@ -51,14 +49,12 @@ export default function SearchContainer() {
   }
 
   const onClickTag = (event: any) => {
-    console.log(event.target.id);
     refetch({
       searchInput: {
         type: "ALL",
         keyword: event.target.id,
       },
     });
-    console.log(data);
   };
 
   return (

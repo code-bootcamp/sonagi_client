@@ -43,10 +43,9 @@ export default function PointChargeContainer() {
         m_redirect_url: "http://localhost:3000/mypage",
       },
       async (rsp: any) => {
-        console.log(rsp);
         if (rsp.success) {
           try {
-            const result = await createPayment({
+            await createPayment({
               variables: {
                 createPaymentInput: {
                   impUid: rsp.imp_uid,
@@ -61,7 +60,6 @@ export default function PointChargeContainer() {
                 },
               ],
             });
-            console.log(result);
             Modal.success({ content: "포인트 충전이 완료되었습니다" });
           } catch (error: any) {
             Modal.error({ content: error.message });

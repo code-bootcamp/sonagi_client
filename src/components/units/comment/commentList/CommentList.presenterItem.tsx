@@ -51,7 +51,6 @@ export default function CommentListPresenterItem(
     } catch (error) {
       Modal.error({ content: (error as Error).message });
     }
-    console.log("댓글삭제", event);
   };
 
   // const [isNestedExist, setIsNestedExist] = useState(false);

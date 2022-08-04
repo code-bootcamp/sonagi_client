@@ -34,7 +34,6 @@ export default function EventWriteContainer() {
     const newFileUrls = [...fileUrls];
     newFileUrls[index] = fileUrl;
     setFileUrls(newFileUrls);
-    // console.log(newFileUrls);
 
     setValue("fileURLs", newFileUrls);
     trigger("fileURLs");
@@ -42,7 +41,7 @@ export default function EventWriteContainer() {
 
   const onClickEventWrite = async (data: any) => {
     try {
-      const result = await createEvent({
+      await createEvent({
         variables: {
           createEventInput: {
             title: data.title,
@@ -54,7 +53,6 @@ export default function EventWriteContainer() {
           },
         },
       });
-      console.log("하하하", result);
       Modal.success({ content: "이벤트 등록 완료" });
     } catch (error: any) {
       Modal.error({ content: error.message });

@@ -59,14 +59,10 @@ export default function FreeBoardWriteContainer(
           },
         },
       });
-      console.log("result", result);
-      console.log("result.data.createBoard.id", result.data.createBoard.id);
-      // alert("게시글이 등록되었습니다");
       Modal.success({ content: "게시글이 등록되었습니다." });
 
       router.push(`/freeBoard/${result.data?.createBoard.id}`);
     } catch (error) {
-      // alert(error);
       Modal.error({ content: "게시글 등록에 실패하였습니다." });
     }
   };
@@ -75,9 +71,7 @@ export default function FreeBoardWriteContainer(
   const [updateBoard] = useMutation(UPDATE_BOARD);
   const onClickUpdate = async (data: any) => {
     try {
-      console.log("상품업데이트data찍은콘솔", data);
       if (!title && !contents) {
-        // alert("수정된 내용이 없습니다.");
         Modal.error({
           content: "수정된 내용이 없습니다. 제목 또는 내용을 수정해주세요",
         });
@@ -92,12 +86,9 @@ export default function FreeBoardWriteContainer(
           },
         },
       });
-      console.log(result);
-      // alert("게시글을 수정합니다");
       Modal.success({ content: "게시글을 수정합니다" });
       router.push(`/freeBoard/${result.data?.updateBoard.id}`);
     } catch (error: any) {
-      // alert(error);
       Modal.error({ content: error.message });
     }
   };

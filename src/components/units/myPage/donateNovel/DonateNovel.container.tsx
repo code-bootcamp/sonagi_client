@@ -9,8 +9,6 @@ export default function DonateNovelContainer() {
   const { data } = useQuery(FETCH_DONATE, { variables: { page: 1 } });
   const [isDonate, setIsDonate] = useState(false);
 
-  console.log(data);
-
   const onClickDonate = () => {
     setIsDonate(true);
   };

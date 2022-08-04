@@ -57,7 +57,7 @@ export default function CommentWriteContainer(
         alert("내용이 수정되지 않았습니다.");
         return;
       }
-      const result = updateComment({
+      updateComment({
         variables: {
           updateCommentInput: {
             contents,
@@ -72,7 +72,6 @@ export default function CommentWriteContainer(
           },
         ],
       });
-      console.log("질문수정", result);
       props.setIsEdit?.(false);
       Modal.success({ content: "댓글을 수정합니다." });
     } catch (error: any) {

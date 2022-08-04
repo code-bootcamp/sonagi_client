@@ -46,7 +46,6 @@ export default function AsiaPresenter(props: IAsiaPresenterProps) {
       <S.RowWrap>
         <S.Category>완결작품</S.Category>
         <S.Arrow src="/novelList/arrow.png" />
-        {console.log(props.PbAsia)}
       </S.RowWrap>
       <S.GridWrap>
         {props.FinAsia?.fetchNovelsPage?.novels.map((el: any) => (

@@ -18,7 +18,6 @@ export default function RomanceContainer() {
       },
     },
   });
-  console.log("소설데이터", PbRomance);
 
   const { data: FinRomance } = useQuery(FETCH_NOVELS_PAGE, {
     variables: {
@@ -31,11 +30,9 @@ export default function RomanceContainer() {
       },
     },
   });
-  console.log("소설데이터", FinRomance);
 
   const onClickMoveToDetail = (el: any) => (event: any) => {
     router.push(`/novel/${event.currentTarget?.id}`);
-    console.log(event.target);
   };
 
   return (

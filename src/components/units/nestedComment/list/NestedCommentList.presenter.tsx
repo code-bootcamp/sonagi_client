@@ -12,23 +12,14 @@ export default function NestedCommentListPresenter(
   props: INestedCommentListPresenterProps
 ) {
   const router = useRouter();
-  const { data } = useQuery(FETCH_BOARD, {
+  useQuery(FETCH_BOARD, {
     variables: { boardID: router.query._id },
   });
-  // console.log(
-  //   "대댓글데이터를조회해보자",
-  //   data?.fetchBoard?.comments[0]?.children[0]?.contents
-  // );
-  console.log("대댓글데이터를조회해보자", data);
-  console.log("answerEL", props.answerEL);
 
   const [isEdit, setIsEdit] = useState(false);
   const onClickUpdateNestedReply = () => {
     setIsEdit(true);
-    // setIsEdit((prev) => !prev);
   };
-
-  console.log("this is a el", props.answerEL);
 
   // 삭제
   const [deleteComment] = useMutation(DELETE_COMMENT);
@@ -45,10 +36,8 @@ export default function NestedCommentListPresenter(
           },
         ],
       });
-      // alert("대댓글이 삭제되었습니다.");
       Modal.success({ content: "대댓글이 삭제되었습니다." });
     } catch (error: any) {
-      // alert(`대댓글 삭제에 실패했습니다. ${error.message}`);
       Modal.error({ content: error.message });
     }
   };

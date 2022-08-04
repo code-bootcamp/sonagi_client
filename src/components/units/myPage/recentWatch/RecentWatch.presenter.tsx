@@ -6,10 +6,10 @@ export default function RecentWatchPresenter(
 ) {
   return (
     <S.Wrapper>
-      <S.RecentWatch>최근 본 작품</S.RecentWatch>
-      <S.HamburgerWrapper>
+      <S.TopWrapper>
+        <S.RecentWatch>최근 본 작품</S.RecentWatch>
         <HamburgerPage />
-      </S.HamburgerWrapper>
+      </S.TopWrapper>
       <S.Wrap>
         <S.Flex>
           {props.basketItems?.slice(0, 4).map((el: any) => (

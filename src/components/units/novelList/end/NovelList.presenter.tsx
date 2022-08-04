@@ -3,7 +3,6 @@ import * as S from "./NovelList.styles";
 import { INovelEndListUIProps } from "./NovelList.types";
 
 export default function NovelEndListPresenter(props: INovelEndListUIProps) {
-  console.log(props.data);
   return (
     <S.Wrap>
       <S.Title>완결작품</S.Title>

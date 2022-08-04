@@ -25,7 +25,6 @@ const Wrapper = styled.div`
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
-  console.log(router);
 
   const HIDDEN_HEADER = [
     "/login/",

@@ -12,8 +12,7 @@ import { INestedCommentWriteProps } from "./NestedCommentWrite.types";
 
 export default function NestedCommentWrite(props: INestedCommentWriteProps) {
   const router = useRouter();
-  const { data } = useQuery(FETCH_BOARD);
-  console.log("대댓글리페치......", data);
+  useQuery(FETCH_BOARD);
   const [contents, setContents] = useState("");
   const onChangeContents = (event: any) => {
     setContents(event.target.value);
@@ -26,7 +25,7 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
   const WriteNestedComment = async () => {
     setIsHidden(true);
     try {
-      const result = await createNestedComment({
+      await createNestedComment({
         variables: {
           createCommentInput: {
             contents,
@@ -43,7 +42,6 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
       });
       // alert("대댓글을 등록합니다.");
       Modal.success({ content: "대댓글을 등록합니다." });
-      console.log("대댓글write", result);
     } catch (error: any) {
       // alert(error.message);
       Modal.error({ content: error.message });
@@ -55,10 +53,10 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
   const onClickUpdateNestedComment = async () => {
     try {
       if (!contents) {
-        alert("내용이 수정되지 않았습니다.");
+        Modal.error({ content: "수정한 내용이 없습니다" });
         return;
       }
-      const result = await updateComment({
+      await updateComment({
         variables: {
           updateCommentInput: {
             contents,
@@ -73,7 +71,6 @@ export default function NestedCommentWrite(props: INestedCommentWriteProps) {
           },
         ],
       });
-      console.log("대댓수정", result);
       props.setIsEdit?.(false);
       Modal.success({ content: "대댓글을 수정합니다." });
     } catch (error: any) {

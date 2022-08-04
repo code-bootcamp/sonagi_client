@@ -134,8 +134,6 @@ export default function DonatePage(props: any) {
   };
 
   const onClickDonate = async () => {
-    console.log(point);
-
     try {
       await donatePoint({
         variables: {

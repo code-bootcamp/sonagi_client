@@ -9,8 +9,6 @@ export default function InquireListContainer() {
 
   const { data } = useQuery(FETCH_QUESTION);
 
-  console.log(data);
-
   return (
     <InquireListPresenter onClickMoveToPage={onClickMoveToPage} data={data} />
   );
