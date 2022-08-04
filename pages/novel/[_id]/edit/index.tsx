@@ -51,6 +51,8 @@ export default function NovelEditPage() {
     variables: { novelID: router.query._id },
   });
 
+  // console.log(data);
+
   return loading ? (
     <></>
   ) : (
