@@ -26,8 +26,8 @@ const schema = yup.object({
 export default function LoginContainer() {
   const router = useRouter();
 
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
-  console.log(accessToken);
+  const [, setAccessToken] = useRecoilState(accessTokenState);
+
   const [loginUser] = useMutation(LOGIN_USER);
 
   const { register, handleSubmit, formState } = useForm({

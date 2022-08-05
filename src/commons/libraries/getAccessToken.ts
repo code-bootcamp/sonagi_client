@@ -19,6 +19,6 @@ export async function getAccessToken() {
     sessionStorage.setItem("socialToken", result.restoreToken);
     return newAccessToken;
   } catch (error: any) {
-    console.log(error.message);
+    // console.log(error.message);
   }
 }

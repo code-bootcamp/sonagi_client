@@ -20,7 +20,7 @@ export default function NovelReadContainer() {
   const [switchBookmark] = useMutation(SWITCH_BOOK_MARK);
   // 찜하기
   const [switchNovelLike] = useMutation(SWITCH_NOVEL_LIKE);
-  const { data: readData } = useQuery(FETCH_EPISODE_DETAIL, {
+  const { data: readData, loading } = useQuery(FETCH_EPISODE_DETAIL, {
     variables: { novelIndexID: router.query.volume_id },
   });
   const { data: novelData } = useQuery(FETCH_NOVEL_DETAIL, {
@@ -142,7 +142,9 @@ export default function NovelReadContainer() {
   // const onClickSetting = () => {
   //   setSetting((prev) => !prev);
   // };
-  return (
+  return loading ? (
+    <></>
+  ) : (
     <NovelReadPresenter
       onClickMoveToMain={onClickMoveToMain}
       onClickDisplay={onClickDisplay}

@@ -29,8 +29,7 @@ export const FETCH_LOGIN_USER = gql`
 
 export default function LayoutHeader() {
   const router = useRouter();
-  const [skeyword, setSkeyword] = useRecoilState(searchKeyword);
-  console.log(skeyword);
+  const [, setSkeyword] = useRecoilState(searchKeyword);
 
   const [inputblank, setinputblank] = useState("");
 
