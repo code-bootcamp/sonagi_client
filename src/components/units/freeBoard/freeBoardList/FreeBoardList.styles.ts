@@ -264,8 +264,8 @@ export const AvatarImg = styled.img`
   height: 90px;
   margin-right: 15px;
   @media ${breakPoints.mobile} {
-    width: 60px;
-    height: 60px;
+    width: 62px;
+    height: 62px;
     position: absolute;
     right: 270px;
   }
