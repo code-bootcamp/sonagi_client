@@ -171,6 +171,11 @@ JavaScript, TypeScript, Next.js, React Hooks, Emotion, Apollo-Client, GraphQL, D
 
 ![mypage_myboard](https://user-images.githubusercontent.com/87798108/182283115-a2c47557-c4df-4fa9-89f0-f6c6fcc4c94a.gif)
 
+### 최근 본 작품
+
+![Sep-19-2022 18-35-57](https://user-images.githubusercontent.com/104052466/190989946-41913f6d-7c4b-4fe9-ba84-8be7b0050328.gif)
+
+
 ### 회원정보 변경 & 회원 탈퇴
 
 ![mypage_profileChange](https://user-images.githubusercontent.com/87798108/182283125-52beabf2-c3e6-4756-a5b7-9b38436b4add.gif)
